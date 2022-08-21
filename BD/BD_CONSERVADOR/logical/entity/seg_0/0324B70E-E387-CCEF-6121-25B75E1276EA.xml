@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0324B70E-E387-CCEF-6121-25B75E1276EA" name="REGION">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-21 19:10:29 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_REGION" id="5DC3013A-DE8F-7222-37A9-9C504933F9A9">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-21 19:10:47 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NOMBRE_REG" id="1FBE3A2E-DA0E-678F-2F73-84B8C6DB6969">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-21 19:10:47 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FEB0176B-8708-6B4A-7B78-260A0E088F74" name="REGION PK">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-21 19:10:58 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5DC3013A-DE8F-7222-37A9-9C504933F9A9</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
