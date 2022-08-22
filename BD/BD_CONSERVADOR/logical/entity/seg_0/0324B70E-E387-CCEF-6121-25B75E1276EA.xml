@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="ID_REGION" id="5DC3013A-DE8F-7222-37A9-9C504933F9A9">
+<Attribute name="id_region" id="5DC3013A-DE8F-7222-37A9-9C504933F9A9">
 <createdBy>56946</createdBy>
 <createdTime>2022-08-21 19:10:47 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="NOMBRE_REG" id="1FBE3A2E-DA0E-678F-2F73-84B8C6DB6969">
+<Attribute name="nombre_region" id="1FBE3A2E-DA0E-678F-2F73-84B8C6DB6969">
 <createdBy>56946</createdBy>
 <createdTime>2022-08-21 19:10:47 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>

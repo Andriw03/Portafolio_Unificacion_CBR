@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="68E4EFFC-5050-6A91-BED2-DA4485D649CF" name="SOLICITUD">
-<createdBy>56946</createdBy>
-<createdTime>2022-08-21 19:45:20 UTC</createdTime>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2172B0DE-8694-D70D-1BDE-D41E157CED4F" name="TIPO_TRAMITE">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-22 15:30:05 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_soli" id="5FF020CE-1F3F-4C34-04D0-791F03C52BC5">
-<createdBy>56946</createdBy>
-<createdTime>2022-08-21 19:46:00 UTC</createdTime>
+<Attribute name="id_tipoT" id="DE6F99E6-82FB-0999-0AC7-E3673846FE9C">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-22 15:30:19 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
@@ -27,30 +27,31 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="fecha_solicitud" id="9FF676A4-9605-46FC-0742-20FE349CCA40">
+<Attribute name="nombre_tipoT" id="FA2C5DF1-A142-9C55-A1D0-FF7AE3C77218">
 <createdBy>Andres</createdBy>
-<createdTime>2022-08-22 15:29:36 UTC</createdTime>
+<createdTime>2022-08-22 15:30:32 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT008</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="289D5C73-3B2E-EBEA-DE7B-B2E45981B259" name="SOLICITUD PK">
-<createdBy>56946</createdBy>
-<createdTime>2022-08-21 19:46:09 UTC</createdTime>
+<identifier id="0D0708C6-928D-8AB5-D66E-D419909DE61F" name="TIPO_TRAMITE PK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-22 15:30:28 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>5FF020CE-1F3F-4C34-04D0-791F03C52BC5</attributeRef>
+<attributeRef>DE6F99E6-82FB-0999-0AC7-E3673846FE9C</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

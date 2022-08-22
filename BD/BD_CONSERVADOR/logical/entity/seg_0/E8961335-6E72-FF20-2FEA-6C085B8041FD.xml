@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="68E4EFFC-5050-6A91-BED2-DA4485D649CF" name="SOLICITUD">
-<createdBy>56946</createdBy>
-<createdTime>2022-08-21 19:45:20 UTC</createdTime>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E8961335-6E72-FF20-2FEA-6C085B8041FD" name="PAGOS_TRAMITES">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-22 15:11:41 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_soli" id="5FF020CE-1F3F-4C34-04D0-791F03C52BC5">
-<createdBy>56946</createdBy>
-<createdTime>2022-08-21 19:46:00 UTC</createdTime>
+<Attribute name="id_pago" id="A17B9909-FA8F-93C1-D035-D1FF8E17CACB">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-22 15:12:08 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
@@ -27,9 +27,21 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="fecha_solicitud" id="9FF676A4-9605-46FC-0742-20FE349CCA40">
+<Attribute name="monto_pago" id="93C60051-E50E-8A5E-AB83-EBEC852D3B6C">
 <createdBy>Andres</createdBy>
-<createdTime>2022-08-22 15:29:36 UTC</createdTime>
+<createdTime>2022-08-22 15:12:33 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_pago" id="ABEBABEB-7BFB-BDC8-9023-21E030A15B9A">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-22 15:13:01 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
@@ -41,16 +53,16 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="289D5C73-3B2E-EBEA-DE7B-B2E45981B259" name="SOLICITUD PK">
-<createdBy>56946</createdBy>
-<createdTime>2022-08-21 19:46:09 UTC</createdTime>
+<identifier id="DBED8A86-0675-47AD-E6DB-BF2ABB4A90C9" name="PAGOS_TRAMITES PK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-22 15:12:30 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>5FF020CE-1F3F-4C34-04D0-791F03C52BC5</attributeRef>
+<attributeRef>A17B9909-FA8F-93C1-D035-D1FF8E17CACB</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

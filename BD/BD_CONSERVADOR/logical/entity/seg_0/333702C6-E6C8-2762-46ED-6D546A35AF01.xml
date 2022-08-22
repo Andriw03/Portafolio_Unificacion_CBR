@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="ID_COMUNA" id="09D25E5A-F99A-205C-BDD3-97C0481E3CBE">
+<Attribute name="id_comuna" id="09D25E5A-F99A-205C-BDD3-97C0481E3CBE">
 <createdBy>56946</createdBy>
 <createdTime>2022-08-21 19:31:26 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="NOMBRE_COMUNA" id="D3982949-9F07-0BDC-770D-F696D4C19E6E">
+<Attribute name="nombre_comuna" id="D3982949-9F07-0BDC-770D-F696D4C19E6E">
 <createdBy>56946</createdBy>
 <createdTime>2022-08-21 19:31:26 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>

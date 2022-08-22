@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="ID_TIPODOC" id="EA88A726-BB74-1654-FB71-C7917A13579E">
+<Attribute name="id_tipodoc" id="EA88A726-BB74-1654-FB71-C7917A13579E">
 <createdBy>56946</createdBy>
 <createdTime>2022-08-21 19:06:21 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="TIPO_DOCU" id="C1CA4843-9505-82FB-5064-99C0ED696A91">
+<Attribute name="tipo_doc" id="C1CA4843-9505-82FB-5064-99C0ED696A91">
 <createdBy>56946</createdBy>
 <createdTime>2022-08-21 19:06:22 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>

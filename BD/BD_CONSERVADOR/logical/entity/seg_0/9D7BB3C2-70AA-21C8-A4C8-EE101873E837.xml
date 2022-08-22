@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9D7BB3C2-70AA-21C8-A4C8-EE101873E837" name="USUARIO_CLIENTE">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9D7BB3C2-70AA-21C8-A4C8-EE101873E837" name="U_CLIENTE">
 <createdBy>56946</createdBy>
 <createdTime>2022-08-21 19:55:45 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
@@ -15,7 +15,19 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="RUT_CLIENTE" id="71CD0090-E833-728A-BE8E-5E9F1FE2CCC5">
+<Attribute name="id_cliente" id="8C9279BB-53AC-BF81-42BA-DE96D0CA9074">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-22 15:15:53 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rut_cliente" id="71CD0090-E833-728A-BE8E-5E9F1FE2CCC5">
 <createdBy>56946</createdBy>
 <createdTime>2022-08-21 19:56:34 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
@@ -25,10 +37,10 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>12 CHAR</dataTypeSize>
-<ownDataTypeParameters>12 CHAR,,</ownDataTypeParameters>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="CONTRASEÑA" id="B40754AB-BFE2-68DA-F526-082DB120E30E">
+<Attribute name="contraseña" id="B40754AB-BFE2-68DA-F526-082DB120E30E">
 <createdBy>56946</createdBy>
 <createdTime>2022-08-21 19:56:34 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
@@ -41,7 +53,7 @@
 <dataTypeSize>10 CHAR</dataTypeSize>
 <ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="PRIMER_NOMBRE" id="AF680386-ABBF-B44F-52B3-A792521BBBC5">
+<Attribute name="primer_nombre" id="AF680386-ABBF-B44F-52B3-A792521BBBC5">
 <createdBy>56946</createdBy>
 <createdTime>2022-08-21 19:56:34 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
@@ -54,7 +66,7 @@
 <dataTypeSize>15 CHAR</dataTypeSize>
 <ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="SEGUNDO_NOMBRE" id="5971B86B-7BAF-2736-1EF0-3799259DFC22">
+<Attribute name="segundo_nombre" id="5971B86B-7BAF-2736-1EF0-3799259DFC22">
 <createdBy>56946</createdBy>
 <createdTime>2022-08-21 19:56:34 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
@@ -67,7 +79,7 @@
 <dataTypeSize>15 CHAR</dataTypeSize>
 <ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="PRIMER_APELLIDO" id="7C16A5B6-0675-53A4-9CA4-3862882591BF">
+<Attribute name="primer_apellido" id="7C16A5B6-0675-53A4-9CA4-3862882591BF">
 <createdBy>56946</createdBy>
 <createdTime>2022-08-21 19:56:35 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
@@ -80,7 +92,7 @@
 <dataTypeSize>15 CHAR</dataTypeSize>
 <ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="SEGUNDO_APELLIDO" id="36E0FF3A-99A2-92D0-3D8E-036456B45F00">
+<Attribute name="segundo_apellido" id="36E0FF3A-99A2-92D0-3D8E-036456B45F00">
 <createdBy>56946</createdBy>
 <createdTime>2022-08-21 20:01:08 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
@@ -93,7 +105,7 @@
 <dataTypeSize>15 CHAR</dataTypeSize>
 <ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="CORREO_ELECTRONICO" id="9A9A5E55-C090-F39B-E290-97CF2381607C">
+<Attribute name="correo_electronico" id="9A9A5E55-C090-F39B-E290-97CF2381607C">
 <createdBy>56946</createdBy>
 <createdTime>2022-08-21 20:01:09 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
@@ -106,7 +118,7 @@
 <dataTypeSize>30 CHAR</dataTypeSize>
 <ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="TELEFONO" id="DD2AEA90-C4A6-F950-C353-1B77485A07CC">
+<Attribute name="telefono" id="DD2AEA90-C4A6-F950-C353-1B77485A07CC">
 <createdBy>56946</createdBy>
 <createdTime>2022-08-21 20:02:05 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
@@ -115,8 +127,9 @@
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12 CHAR</dataTypeSize>
+<ownDataTypeParameters>12 CHAR,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
@@ -129,7 +142,7 @@
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>71CD0090-E833-728A-BE8E-5E9F1FE2CCC5</attributeRef>
+<attributeRef>8C9279BB-53AC-BF81-42BA-DE96D0CA9074</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

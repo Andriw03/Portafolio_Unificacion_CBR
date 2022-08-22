@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="ID_PROPIE" id="6EDE2E98-A923-BFFA-9688-A48CE997B76A">
+<Attribute name="id_propiedad" id="6EDE2E98-A923-BFFA-9688-A48CE997B76A">
 <createdBy>56946</createdBy>
 <createdTime>2022-08-21 18:16:03 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="NOMBRE" id="5908536C-20A4-5B8B-B341-E5D9F150736C">
+<Attribute name="nombre_propiedad" id="5908536C-20A4-5B8B-B341-E5D9F150736C">
 <createdBy>56946</createdBy>
 <createdTime>2022-08-21 18:16:03 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
@@ -39,19 +39,6 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50 CHAR</dataTypeSize>
 <ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="DIRECCION" id="40BAEBBA-C18C-ADD7-536D-82E8DD0B3BA5">
-<createdBy>56946</createdBy>
-<createdTime>2022-08-21 19:15:32 UTC</createdTime>
-<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
-<engineerTo>
-<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100 CHAR</dataTypeSize>
-<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

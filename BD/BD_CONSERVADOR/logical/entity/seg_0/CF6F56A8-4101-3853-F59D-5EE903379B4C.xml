@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A86A038B-30BA-8F5C-77C1-01050F9A8597" name="U_TRABAJADOR">
-<createdBy>56946</createdBy>
-<createdTime>2022-08-21 20:08:23 UTC</createdTime>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CF6F56A8-4101-3853-F59D-5EE903379B4C" name="DUENNO_PROP">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-22 15:54:23 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_trabajador" id="FD022D97-B470-BA74-CF87-C3AD81A8E45A">
-<createdBy>56946</createdBy>
-<createdTime>2022-08-21 20:08:33 UTC</createdTime>
+<Attribute name="id_duenno" id="AA95DA4F-109E-A752-6996-F8DF4E20390D">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-22 15:54:23 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
@@ -27,9 +27,9 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="rut_trabajador" id="42185BF6-CC66-1A3B-9BE1-F2E0CDCAA7B7">
+<Attribute name="rut_duenno" id="1A77B7DE-3952-5D0A-FD59-F0E6AEB67D70">
 <createdBy>Andres</createdBy>
-<createdTime>2022-08-22 15:21:17 UTC</createdTime>
+<createdTime>2022-08-22 15:54:23 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
@@ -40,22 +40,9 @@
 <dataTypeSize>15 CHAR</dataTypeSize>
 <ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="contraseña" id="9A18852D-EAC3-B96D-9577-BDF944001095">
-<createdBy>56946</createdBy>
-<createdTime>2022-08-21 20:08:33 UTC</createdTime>
-<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
-<engineerTo>
-<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>10 CHAR</dataTypeSize>
-<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="primer_nombre" id="EC36C147-EC6B-B96F-D96C-85881B2F7C39">
-<createdBy>56946</createdBy>
-<createdTime>2022-08-21 20:08:34 UTC</createdTime>
+<Attribute name="primer_nombre" id="57B4D1AB-8F01-2C5C-536C-A34834672EF2">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-22 15:54:23 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
@@ -66,9 +53,9 @@
 <dataTypeSize>15 CHAR</dataTypeSize>
 <ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="segundo_nombre" id="DC315C30-F6F1-741E-7323-94F30AEEEB88">
-<createdBy>56946</createdBy>
-<createdTime>2022-08-21 20:08:34 UTC</createdTime>
+<Attribute name="segundo_nombre" id="069F3957-A6D2-DE7F-4065-B5F5F215568E">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-22 15:54:23 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
@@ -79,9 +66,9 @@
 <dataTypeSize>15 CHAR</dataTypeSize>
 <ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="primer_apellido" id="D6AAE85A-BEA9-B699-8859-D5A0519D42B3">
-<createdBy>56946</createdBy>
-<createdTime>2022-08-21 20:08:34 UTC</createdTime>
+<Attribute name="primer_apellido" id="7D452399-C95F-DAB5-F6BC-EB9268F11736">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-22 15:54:23 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
@@ -92,9 +79,9 @@
 <dataTypeSize>15 CHAR</dataTypeSize>
 <ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="segundo_apellido" id="C03ED173-ABA7-14C3-14AC-09A9C526EC23">
-<createdBy>56946</createdBy>
-<createdTime>2022-08-21 20:08:34 UTC</createdTime>
+<Attribute name="segundo_apellido" id="71762DA5-2048-2617-EE67-A071E01BF21A">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-22 15:54:23 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
@@ -105,9 +92,9 @@
 <dataTypeSize>15 CHAR</dataTypeSize>
 <ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="correo_electronico" id="4A61B592-C6A2-CF9C-E7F8-CDDFEB199303">
-<createdBy>56946</createdBy>
-<createdTime>2022-08-21 20:08:34 UTC</createdTime>
+<Attribute name="correo_electronico" id="9994CD40-235C-2064-78A7-52D0A81AB986">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-22 15:54:23 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
@@ -118,9 +105,9 @@
 <dataTypeSize>30 CHAR</dataTypeSize>
 <ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="telefono" id="1C08D09F-9F2F-8EF5-2583-0C557A745082">
-<createdBy>56946</createdBy>
-<createdTime>2022-08-21 20:08:35 UTC</createdTime>
+<Attribute name="telefono" id="F3714E0D-3B0E-C9E5-453B-3816932482A1">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-22 15:54:23 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
@@ -133,16 +120,16 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="36E6CA54-9B92-7148-F16D-3463FCCEAB17" name="USUARIO_TRABAJADOR PK">
-<createdBy>56946</createdBy>
-<createdTime>2022-08-21 20:08:45 UTC</createdTime>
+<identifier id="54E15EAA-4F29-233D-7BF7-500F4D15E48C" name="USUARIO_CLIENTE PK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-22 15:54:23 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>FD022D97-B470-BA74-CF87-C3AD81A8E45A</attributeRef>
+<attributeRef>AA95DA4F-109E-A752-6996-F8DF4E20390D</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
