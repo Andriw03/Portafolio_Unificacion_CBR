@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="BD_CONSERVADOR" id="A4496927-3640-90F3-A081-1DD27D678E59" version="3.5">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-21 18:07:19 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>A4496927-3640-90F3-A081-1DD27D678E59</designId>
+</OSDM_Design>
