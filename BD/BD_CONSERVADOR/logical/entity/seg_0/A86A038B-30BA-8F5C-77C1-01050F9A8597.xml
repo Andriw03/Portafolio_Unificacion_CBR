@@ -40,7 +40,7 @@
 <dataTypeSize>15 CHAR</dataTypeSize>
 <ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="contraseña" id="9A18852D-EAC3-B96D-9577-BDF944001095">
+<Attribute name="contrasenna" id="9A18852D-EAC3-B96D-9577-BDF944001095">
 <createdBy>56946</createdBy>
 <createdTime>2022-08-21 20:08:33 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>

@@ -1,5 +1,6 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="Entity" objectID="7458A42F-37E9-D8E6-B428-ABC713594553" name="BOLETA_PAGO" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="D939ACB8-2F7E-5081-28E1-8EA645ED5BBE" propertySourceId="" propertyTargetId=""/>
    <object objectType="Entity" objectID="AC6BF64E-CB8C-7BB1-7A08-5EDE380E11C7" name="CLAS_PROP" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="D939ACB8-2F7E-5081-28E1-8EA645ED5BBE" propertySourceId="" propertyTargetId=""/>
    <object objectType="Entity" objectID="333702C6-E6C8-2762-46ED-6D546A35AF01" name="COMUNA" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="D939ACB8-2F7E-5081-28E1-8EA645ED5BBE" propertySourceId="" propertyTargetId=""/>
    <object objectType="Entity" objectID="B880CDDF-BE5F-E190-D243-3CC3A1B0B592" name="DIRECCION" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.logical.Entity" propertyParentId="D939ACB8-2F7E-5081-28E1-8EA645ED5BBE" propertySourceId="" propertyTargetId=""/>

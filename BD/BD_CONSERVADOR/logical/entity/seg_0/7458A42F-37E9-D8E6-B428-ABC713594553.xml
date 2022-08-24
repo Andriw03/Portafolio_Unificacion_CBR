@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7458A42F-37E9-D8E6-B428-ABC713594553" name="BOLETA_PAGO">
+<createdBy>sebas</createdBy>
+<createdTime>2022-08-24 17:30:42 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_boleta" id="43684D44-623B-762C-2CB2-8F16C9537653">
+<createdBy>sebas</createdBy>
+<createdTime>2022-08-24 17:31:37 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_emision" id="6AD5DAC5-64E6-F00C-9291-F1F98A39B445">
+<createdBy>sebas</createdBy>
+<createdTime>2022-08-24 17:33:29 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="monto_pago" id="B5667F64-5FE9-030F-0144-E9DDF8717351">
+<createdBy>sebas</createdBy>
+<createdTime>2022-08-24 17:35:22 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nom_conservador" id="804744A5-ADE4-8B26-0F5E-3DC6CCB4DBEA">
+<createdBy>sebas</createdBy>
+<createdTime>2022-08-24 17:38:29 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rut_conservador" id="EA0CB380-F8C9-C401-CB07-A69F303F2FDA">
+<createdBy>sebas</createdBy>
+<createdTime>2022-08-24 17:40:08 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="direc_conservador" id="5BECE369-2987-2CEB-E9A1-8CC8960B44E3">
+<createdBy>sebas</createdBy>
+<createdTime>2022-08-24 17:42:57 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9EBFF133-E2B3-549C-69D3-C1A524DA2E90" name="BOLETA_PAGO PK">
+<createdBy>sebas</createdBy>
+<createdTime>2022-08-24 17:31:56 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>43684D44-623B-762C-2CB2-8F16C9537653</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
