@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DB44FE31-A9A5-7F53-96E7-3972D2394B09" name="DIRECCION">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>B880CDDF-BE5F-E190-D243-3CC3A1B0B592</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_direccion" id="9D695973-5A82-8362-5E7F-65C386CED07C">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>DAB5CA05-3100-B3FF-78F1-2B1817F2B184</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre_calle" id="C2946FBE-718F-E912-8422-ED8197DFE6D9">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>FC954300-5EB6-DC14-CE7D-B6DC69B919D2</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numero_casa" id="54B9A233-A29D-35A7-5757-FD13758CCED7">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>EB1A4942-E976-FB97-A978-2E9430C56800</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COMUNA_id_comuna" id="CFA2A851-1569-14FA-5D33-DFFDC03FF516">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>CC6ED399-8895-FB22-78BB-A57796CE0EE9</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7EEB29BC-86A1-7102-1EBC-07A22F53966F" referredColumn="F3F00B15-BF80-42C0-F09E-99C37B46EA75"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6790F19F-BD3F-EBB1-8BDF-8A2D3A84FDBC" name="DIRECCION_PK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>22AA88D2-9B8E-FCD4-7F33-2D850C78DE79</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9D695973-5A82-8362-5E7F-65C386CED07C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CFD592DC-98D3-D96C-9BB0-91FBCED17C9D" name="DIRECCION_COMUNA_FK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>A8F9491B-4739-B712-47A0-0F146D6F3308</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CFA2A851-1569-14FA-5D33-DFFDC03FF516"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

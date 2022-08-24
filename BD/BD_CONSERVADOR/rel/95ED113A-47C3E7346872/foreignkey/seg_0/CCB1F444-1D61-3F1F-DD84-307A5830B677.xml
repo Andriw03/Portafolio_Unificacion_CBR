@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CCB1F444-1D61-3F1F-DD84-307A5830B677" containerWithKeyObject="D9CFA448-3816-CE99-324A-79C51406D601" localFKIndex="E928D22E-68D4-858D-850B-AC1DB86C8492" name="DOCUMENTO_TIPO_DOCUMENTO_FK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>F99D6831-068D-6BC5-3209-E35FA40A4BBB</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<referredTableLongName>TIPO_DOCUMENTO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>02EBAD2C-41E9-B630-589C-0CB3A6F383C4</referredTableID>
+<keyObject>FC31F7B2-B2AA-B5B3-1155-2E9E1CD11DAB</keyObject>
+<referredKeyID>FC31F7B2-B2AA-B5B3-1155-2E9E1CD11DAB</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_tipodoc</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

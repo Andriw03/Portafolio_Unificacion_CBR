@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6B893528-1391-A08F-A620-F14083F6A1BC" name="HOR_ATENCION">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>FD1CC574-EEC2-86EF-923E-2E3A1211E543</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_horario" id="B000B95B-4170-1B28-046E-B2A987FAC700">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>BE3A0872-1868-701A-2D58-EA6BD72EA655</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dias_atencion" id="23F88050-49CD-5684-ABF2-A6C831530DF9">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>1D4E79DB-C40E-E7A2-7002-8A1DD0C80483</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="horario_apertura" id="171407BC-1E39-758A-1723-7F01D9E01898">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>EBABB6AA-4FDC-C075-D31F-E7BF9A31101D</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="horario_cierre" id="EFC0FC40-01F0-091D-9F7A-F39AEA45E3D5">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>74D2B4B0-4995-1640-14D8-9FFF3E9272FE</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="431CB027-D206-74C5-F482-564CB2961712" name="HOR_ATENCION_PK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>F8B5AEDE-5DB9-0DA4-0134-B39DDD72F327</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B000B95B-4170-1B28-046E-B2A987FAC700"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

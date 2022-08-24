@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7458A42F-37E9-D8E6-B428-ABC713594553" name="B_PAGO">
-<createdBy>sebas</createdBy>
-<createdTime>2022-08-24 17:30:42 UTC</createdTime>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6CDB2450-C278-09EE-46B7-F24E57F9330B" name="CAR_COMPRA">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:05:06 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_boleta" id="43684D44-623B-762C-2CB2-8F16C9537653">
-<createdBy>sebas</createdBy>
-<createdTime>2022-08-24 17:31:37 UTC</createdTime>
+<Attribute name="id_carrito" id="4C5DDF15-E575-9367-3B45-B68681E460FC">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:05:16 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
@@ -27,39 +27,29 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="fecha_emision" id="6AD5DAC5-64E6-F00C-9291-F1F98A39B445">
-<createdBy>sebas</createdBy>
-<createdTime>2022-08-24 17:33:29 UTC</createdTime>
+<Attribute name="id_tramite" id="899E8C53-0A5A-7479-D79D-092D54F79EC3">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:06:28 UTC</createdTime>
+<generatorID>E1278104-AC8E-AF10-AC26-E051FB26702F</generatorID>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
 </engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT008</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="monto_pago" id="B5667F64-5FE9-030F-0144-E9DDF8717351">
-<createdBy>sebas</createdBy>
-<createdTime>2022-08-24 17:35:22 UTC</createdTime>
-<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
-<engineerTo>
-<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
-</engineerTo>
+<referedAttribute>63648865-A4A6-53F6-FB50-866C9CA6F314</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_tipoP" id="7247306E-BC44-8F9B-2922-26777DB4FEDB">
-<createdBy>56946</createdBy>
-<createdTime>2022-08-24 20:14:30 UTC</createdTime>
-<generatorID>411E25D9-FAE3-9ECF-9C89-15484B3D9B08</generatorID>
+<Attribute name="id_usuario" id="CB2D4F62-1B89-5B46-D68A-D562CAEF2D2C">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:06:54 UTC</createdTime>
+<generatorID>25BBB28F-9466-751C-03F8-C3F9918826AC</generatorID>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
 </engineerTo>
-<referedAttribute>A17B9909-FA8F-93C1-D035-D1FF8E17CACB</referedAttribute>
+<referedAttribute>81FBBA7E-6E1C-C746-5870-040EA3AEB736</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -67,16 +57,16 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="9EBFF133-E2B3-549C-69D3-C1A524DA2E90" name="BOLETA_PAGO PK">
-<createdBy>sebas</createdBy>
-<createdTime>2022-08-24 17:31:56 UTC</createdTime>
+<identifier id="731D6D79-2B73-0B14-AFCD-1F492233C90C" name="CAR_COMPRA PK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:05:32 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
 <item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>43684D44-623B-762C-2CB2-8F16C9537653</attributeRef>
+<attributeRef>4C5DDF15-E575-9367-3B45-B68681E460FC</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

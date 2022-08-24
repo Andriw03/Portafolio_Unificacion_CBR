@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C21DAFB7-009A-17D0-6BEF-A8E2D7AFB145" containerWithKeyObject="B4C4BE1D-FBA1-6861-750B-DD24EB3230BF" localFKIndex="93FD96D0-CE75-875C-94BF-4E24916866B8" name="TRAMITE_B_PAGO_FK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>4FD3720C-C3E1-8572-DC2C-6C46116A92CC</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<referredTableLongName>B_PAGO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>76D5EF6F-BA08-8583-D35E-ABBFE94536F7</referredTableID>
+<keyObject>021899DF-44C0-9EBE-6F13-F7AF42B4B41A</keyObject>
+<referredKeyID>021899DF-44C0-9EBE-6F13-F7AF42B4B41A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_boleta</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

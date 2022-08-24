@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E8961335-6E72-FF20-2FEA-6C085B8041FD" name="TIPO_PAGO">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E8961335-6E72-FF20-2FEA-6C085B8041FD" name="T_PAGO">
 <createdBy>Andres</createdBy>
 <createdTime>2022-08-22 15:11:41 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>

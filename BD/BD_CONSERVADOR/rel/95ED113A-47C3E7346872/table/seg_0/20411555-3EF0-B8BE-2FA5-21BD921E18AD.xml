@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="20411555-3EF0-B8BE-2FA5-21BD921E18AD" name="CAR_COMPRA">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>6CDB2450-C278-09EE-46B7-F24E57F9330B</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_carrito" id="FECC263F-3340-F77B-DD75-75AAB9B83E02">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>4C5DDF15-E575-9367-3B45-B68681E460FC</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRAMITE_id_tramite" id="34130AD3-F969-2FA9-EAB3-D254A2C580D1">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>899E8C53-0A5A-7479-D79D-092D54F79EC3</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E297213D-795A-D209-114A-376DEA6119D0" referredColumn="FB9B0907-9C60-7F1F-6CB6-F304469722A5"/>
+</associations>
+</Column>
+<Column name="USUARIO_id_usuario" id="84C5A1EC-61CB-A5A4-0662-69AFD7165421">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>CB2D4F62-1B89-5B46-D68A-D562CAEF2D2C</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C2B2B81F-3299-33F3-0F60-CF86578BDA85" referredColumn="FF070826-5A89-B48C-F07E-B725DBE469DB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E0DB6C29-4845-B2F7-4AD3-BC6FB6F8165D" name="CAR_COMPRA_PK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>731D6D79-2B73-0B14-AFCD-1F492233C90C</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FECC263F-3340-F77B-DD75-75AAB9B83E02"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2413D255-0C6B-8260-EA7B-D61D3A80C66C" name="CAR_COMPRA_TRAMITE_FK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>E1278104-AC8E-AF10-AC26-E051FB26702F</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="34130AD3-F969-2FA9-EAB3-D254A2C580D1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C6FF5871-739A-D00E-5FF0-6547A3ACF0C4" name="CAR_COMPRA_USUARIO_FK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-24 21:08:49 UTC</createdTime>
+<generatorID>25BBB28F-9466-751C-03F8-C3F9918826AC</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="84C5A1EC-61CB-A5A4-0662-69AFD7165421"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
