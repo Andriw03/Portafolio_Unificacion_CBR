@@ -1,0 +1,127 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D7FAC164-2093-BE49-E1B9-0AEDE4778314" name="SOLICITUD">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>68E4EFFC-5050-6A91-BED2-DA4485D649CF</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_soli" id="3441F048-C99E-3D0D-CC63-B834464E123D">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>5FF020CE-1F3F-4C34-04D0-791F03C52BC5</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_solicitud" id="04930BE9-1D76-7256-C8CF-19EAED48DB6F">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>9FF676A4-9605-46FC-0742-20FE349CCA40</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PROPIEDAD_id_propiedad" id="B55DB348-A65D-188D-B4D8-5589555676B1">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>C522E216-07B4-C713-35CD-EC44570EDAD4</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="77560BFA-6744-8370-4CAB-1FD4F06BCF65" referredColumn="A1C5554F-658B-10A9-9ED6-471F7B604301"/>
+</associations>
+</Column>
+<Column name="TRAMITE_id_tramite" id="7EB518C4-206E-9518-EDFB-FE2AAD43A938">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>F477A128-95BE-31BF-374A-DD4B9687CC66</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0F560B2D-54A2-C07F-DF0E-D65C1F767A6D" referredColumn="A5C7B8F1-4AE4-C731-5409-EE4B88935D41"/>
+</associations>
+</Column>
+<Column name="DOCUMENTO_id_doc" id="337AFC84-B4F2-BBFB-0543-F5DCD77CEC3C">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>1D47D6C9-1A3F-F35F-91A6-0135D5093F1C</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2C5DDE57-CA68-810B-4CC6-11046A9500C2" referredColumn="CAB64AE7-13FF-A09B-9CDD-D6B61657C6BA"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="46733E1B-9DEF-8619-BBFB-6F7EDE17761D" name="SOLICITUD_PK">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>289D5C73-3B2E-EBEA-DE7B-B2E45981B259</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3441F048-C99E-3D0D-CC63-B834464E123D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="215FCBCF-678D-0368-A81F-AC5AAFBBC73A" name="SOLICITUD_PROPIEDAD_FK">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>1D1F8D50-AD26-9028-53A9-1EC147EFB246</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B55DB348-A65D-188D-B4D8-5589555676B1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4444D16E-1D1D-7B1B-52F3-8E9E9E161E2A" name="SOLICITUD_TRAMITE_FK">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>AA46B70F-5117-F54F-9A58-42E439EB059F</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7EB518C4-206E-9518-EDFB-FE2AAD43A938"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="26EDEBE6-AC4D-314B-2248-FF11A61CC93C" name="SOLICITUD_DOCUMENTO_FK">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>172BD19F-9DA7-2374-9095-58682648309C</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="337AFC84-B4F2-BBFB-0543-F5DCD77CEC3C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

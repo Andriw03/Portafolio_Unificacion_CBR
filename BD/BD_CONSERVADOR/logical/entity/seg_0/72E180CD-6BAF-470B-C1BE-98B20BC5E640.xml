@@ -40,6 +40,20 @@
 <dataTypeSize>30 CHAR</dataTypeSize>
 <ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="id_tipodoc" id="C1575FEE-EF76-04C5-6322-D1898E8281A3">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 19:39:07 UTC</createdTime>
+<generatorID>F99D6831-068D-6BC5-3209-E35FA40A4BBB</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<referedAttribute>EA88A726-BB74-1654-FB71-C7917A13579E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="3C138461-06EC-269C-A888-D21A71C71E2B" name="DOCUMENTO PK">

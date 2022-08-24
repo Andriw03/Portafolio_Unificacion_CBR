@@ -40,6 +40,20 @@
 <dataTypeSize>30 CHAR</dataTypeSize>
 <ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="id_region" id="3611117E-789D-00DB-6DFB-24648043D7FD">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 19:31:52 UTC</createdTime>
+<generatorID>72A7A541-2428-64DC-93EE-AAA834659691</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<referedAttribute>5DC3013A-DE8F-7222-37A9-9C504933F9A9</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="A5E155C2-8AB9-1A96-7E73-62446E5B86FA" name="COMUNA PK">

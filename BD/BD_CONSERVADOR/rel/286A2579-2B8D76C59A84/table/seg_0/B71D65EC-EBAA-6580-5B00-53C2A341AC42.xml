@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B71D65EC-EBAA-6580-5B00-53C2A341AC42" name="TIPO_TRAMITE">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>2172B0DE-8694-D70D-1BDE-D41E157CED4F</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_tipoT" id="46D998D0-094D-E78B-70AD-C43EE15CC3C9">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>DE6F99E6-82FB-0999-0AC7-E3673846FE9C</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre_tipoT" id="D9954647-8FCB-E7EC-B965-AC7271AFD1E6">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>FA2C5DF1-A142-9C55-A1D0-FF7AE3C77218</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B874880D-E1EF-289C-7989-C3CD8915138F" name="TIPO_TRAMITE_PK">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>0D0708C6-928D-8AB5-D66E-D419909DE61F</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="46D998D0-094D-E78B-70AD-C43EE15CC3C9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

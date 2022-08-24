@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4A2826BE-FC94-29D1-49F5-6D777E56B081" name="CLAS_PROP">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>AC6BF64E-CB8C-7BB1-7A08-5EDE380E11C7</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_clasificacion" id="E1C88168-6C16-497C-E198-0AD7343C9D44">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>600504EE-2884-D477-D190-57C19CF46D5A</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="foja" id="18E7498D-F99D-E754-D486-98468F71024B">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>338EA492-FEF4-EB0B-CA54-1B9446F82898</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numero" id="A76F70B7-EC2C-B4EF-7414-4A49D5FE0502">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>A93F1106-8A29-0993-751D-1B2E16831DBB</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="anno" id="C3406C5F-D9A4-0386-0711-40469F786A25">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>E1FA2CCB-EF61-AB1A-0EA7-655D425011D1</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PROPIEDAD_id_propiedad" id="CD511973-1B5A-7CB4-959F-D294A8C0E189">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>AF855DB7-451A-23D8-1750-42A2D56580D3</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="817B2D3C-501E-313F-9CDD-8ED2E84E8B04" referredColumn="A1C5554F-658B-10A9-9ED6-471F7B604301"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="59CE1646-C9B7-BF8C-D008-A182B98651ED" name="CLAS_PROP_PK">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>4B05BF61-F73B-AC1A-8C9C-B6EA53F3FFCD</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E1C88168-6C16-497C-E198-0AD7343C9D44"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AF3DFA15-2F8A-B004-6C85-D7A56A8E08EA" name="CLAS_PROP_PROPIEDAD_FK">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>935F3201-AE48-76F6-0E40-2C9D6C671972</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CD511973-1B5A-7CB4-959F-D294A8C0E189"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

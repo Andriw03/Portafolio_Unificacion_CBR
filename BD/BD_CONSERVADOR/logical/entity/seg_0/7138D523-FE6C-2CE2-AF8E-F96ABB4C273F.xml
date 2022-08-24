@@ -40,6 +40,62 @@
 <dataTypeSize>50 CHAR</dataTypeSize>
 <ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="id_tipoP" id="75FE3909-05E7-01FC-BBED-75FA535F7C06">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 19:37:49 UTC</createdTime>
+<generatorID>A7CEE0A8-0F01-A646-236C-2215F2FCD360</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<referedAttribute>878EFDF3-0E55-3C63-D70C-834E8A3DFF2A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_direccion" id="5E39261A-03C1-00C7-D62B-4005251D76EB">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 19:44:07 UTC</createdTime>
+<generatorID>85182047-D55B-BB52-733B-F2221528A1AD</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<referedAttribute>DAB5CA05-3100-B3FF-78F1-2B1817F2B184</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_cbr" id="D9CCA03F-B508-34DF-0971-7B1C50D630F6">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 19:44:21 UTC</createdTime>
+<generatorID>9D93928E-8454-B1F7-95B5-0E17B714D61B</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<referedAttribute>B845EC46-8C5E-71E3-F9A4-BF619AA07C52</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_duenno" id="3DCC8D22-8730-F6F9-0619-DD12A38B6DC1">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 19:59:21 UTC</createdTime>
+<generatorID>CE8F5CD3-10C5-14EB-1F85-F940338D7B9A</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<referedAttribute>AA95DA4F-109E-A752-6996-F8DF4E20390D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="8A54CD29-2FF6-3478-B5D3-3294FC43B387" name="CONSERVADOR PK">

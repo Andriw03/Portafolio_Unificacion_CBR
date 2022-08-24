@@ -65,4 +65,18 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F8B5AEDE-5DB9-0DA4-0134-B39DDD72F327" name="HORARIO_ATENCION PK">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 19:25:07 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>BE3A0872-1868-701A-2D58-EA6BD72EA655</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

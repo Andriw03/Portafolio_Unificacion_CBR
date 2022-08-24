@@ -52,6 +52,20 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="id_comuna" id="CC6ED399-8895-FB22-78BB-A57796CE0EE9">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 19:40:38 UTC</createdTime>
+<generatorID>A8F9491B-4739-B712-47A0-0F146D6F3308</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<referedAttribute>09D25E5A-F99A-205C-BDD3-97C0481E3CBE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="22AA88D2-9B8E-FCD4-7F33-2D850C78DE79" name="DIRECCION PK">

@@ -51,6 +51,20 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="id_tipoP" id="7247306E-BC44-8F9B-2922-26777DB4FEDB">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:14:30 UTC</createdTime>
+<generatorID>411E25D9-FAE3-9ECF-9C89-15484B3D9B08</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<referedAttribute>A17B9909-FA8F-93C1-D035-D1FF8E17CACB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="9EBFF133-E2B3-549C-69D3-C1A524DA2E90" name="BOLETA_PAGO PK">

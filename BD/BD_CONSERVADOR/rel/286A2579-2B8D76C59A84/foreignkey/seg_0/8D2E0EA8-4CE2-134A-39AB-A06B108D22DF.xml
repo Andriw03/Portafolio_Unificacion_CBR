@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="8D2E0EA8-4CE2-134A-39AB-A06B108D22DF" containerWithKeyObject="D2762D3D-EDA8-05CB-4A69-D36D755B0568" localFKIndex="3947416C-B5A8-5CFD-463D-3DE4C00F4817" name="CONSERVADOR_HORARIO_ATENCION_FK">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:30:47 UTC</createdTime>
+<generatorID>3DBAF314-2F1B-F9C0-1D40-468F681F6805</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<referredTableLongName>HORARIO_ATENCION</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>99A6AEF6-E5C1-FB52-83D3-4E519C91CF7F</referredTableID>
+<keyObject>51C8D621-E4D5-9060-51E6-9EA1FF91156D</keyObject>
+<referredKeyID>51C8D621-E4D5-9060-51E6-9EA1FF91156D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_horario</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

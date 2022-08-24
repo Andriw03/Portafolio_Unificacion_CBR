@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CC3650AD-ABEA-5374-5F6B-EC4864A24ABA" name="U_ADMINISTRADOR">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CC3650AD-ABEA-5374-5F6B-EC4864A24ABA" name="USUARIO">
 <createdBy>Andres</createdBy>
 <createdTime>2022-08-22 15:32:59 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_administrador" id="81FBBA7E-6E1C-C746-5870-040EA3AEB736">
+<Attribute name="id_usuario" id="81FBBA7E-6E1C-C746-5870-040EA3AEB736">
 <createdBy>Andres</createdBy>
 <createdTime>2022-08-22 15:32:59 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="rut_administrador" id="AEDACBAA-6E23-D195-8A6E-C359CEBD473C">
+<Attribute name="rut_usuario" id="AEDACBAA-6E23-D195-8A6E-C359CEBD473C">
 <createdBy>Andres</createdBy>
 <createdTime>2022-08-22 15:32:59 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
@@ -130,6 +130,20 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>12 CHAR</dataTypeSize>
 <ownDataTypeParameters>12 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_tipoU" id="B5EB6A09-8E88-0BE0-C85F-EC8390F7840E">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 20:09:51 UTC</createdTime>
+<generatorID>828ED9F5-AF62-1E02-6E10-4F76E3E37DD7</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<referedAttribute>8C9279BB-53AC-BF81-42BA-DE96D0CA9074</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

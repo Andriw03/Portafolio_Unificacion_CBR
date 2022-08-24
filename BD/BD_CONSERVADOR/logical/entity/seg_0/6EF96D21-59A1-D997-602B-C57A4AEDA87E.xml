@@ -77,5 +77,47 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="id_direccion" id="615D9A5D-B4E3-B647-B2F9-B1EDBD3AA5B8">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 19:29:47 UTC</createdTime>
+<generatorID>A1AA1C6F-AF40-DEFC-25E9-B8EE54EA5D44</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<referedAttribute>DAB5CA05-3100-B3FF-78F1-2B1817F2B184</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_horario" id="8BA1FA40-7135-AA2F-F987-601368C6CA5E">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 19:56:52 UTC</createdTime>
+<generatorID>3DBAF314-2F1B-F9C0-1D40-468F681F6805</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<referedAttribute>BE3A0872-1868-701A-2D58-EA6BD72EA655</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="338858CF-069E-C5BD-A825-C622617126C5" name="CONSERVADOR PK">
+<createdBy>56946</createdBy>
+<createdTime>2022-08-24 19:23:37 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B845EC46-8C5E-71E3-F9A4-BF619AA07C52</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>
