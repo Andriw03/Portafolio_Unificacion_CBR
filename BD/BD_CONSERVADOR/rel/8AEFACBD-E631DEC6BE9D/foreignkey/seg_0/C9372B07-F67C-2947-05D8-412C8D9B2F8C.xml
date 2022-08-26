@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C9372B07-F67C-2947-05D8-412C8D9B2F8C" containerWithKeyObject="CB465A69-248A-E9B3-224B-15D928ECFF6D" localFKIndex="6F6164CA-67D8-636F-ED7B-CF451BB4038E" name="CAR_COMPRA_SOLICITUD_FK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>E1278104-AC8E-AF10-AC26-E051FB26702F</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<referredTableLongName>SOLICITUD</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4C46DC88-89F5-11B1-71EC-E45EB2A9E7B8</referredTableID>
+<keyObject>0352BB5A-CD61-FF15-BBA3-01CA59ADC80E</keyObject>
+<referredKeyID>0352BB5A-CD61-FF15-BBA3-01CA59ADC80E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_soli</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

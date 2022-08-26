@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5AB5332C-69B5-5879-31DE-23544E11395D" containerWithKeyObject="4C46DC88-89F5-11B1-71EC-E45EB2A9E7B8" localFKIndex="6163E832-8C7C-D945-CA49-B1E2FA772F34" name="SOLICITUD_TRAMITE_FK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>AA46B70F-5117-F54F-9A58-42E439EB059F</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<referredTableLongName>TRAMITE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>7511F4E5-D93A-9844-4957-68030C7BED90</referredTableID>
+<keyObject>17CB725D-2349-BA88-8420-03F967DEE0A2</keyObject>
+<referredKeyID>17CB725D-2349-BA88-8420-03F967DEE0A2</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_tramite</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

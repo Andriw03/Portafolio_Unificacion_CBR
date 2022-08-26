@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4B238445-EC68-3ED9-1E42-93DC26F720F1" containerWithKeyObject="4C46DC88-89F5-11B1-71EC-E45EB2A9E7B8" localFKIndex="29362649-46DC-9F07-58ED-F511183445EB" name="SOLICITUD_PROPIEDAD_FK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>1D1F8D50-AD26-9028-53A9-1EC147EFB246</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<referredTableLongName>PROPIEDAD</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>203BB3BE-FF24-6037-4F2E-37DFF112A59B</referredTableID>
+<keyObject>D585AFCA-C2F9-0359-5A9E-540293B33D47</keyObject>
+<referredKeyID>D585AFCA-C2F9-0359-5A9E-540293B33D47</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_propiedad</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,124 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BA3371DE-ACCE-BA5C-D600-5BAF8DF14290" name="CBR">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>6EF96D21-59A1-D997-602B-C57A4AEDA87E</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_cbr" id="50054DC7-1D2D-0CB6-DFDB-42C7183BB75A">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>B845EC46-8C5E-71E3-F9A4-BF619AA07C52</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre_cbr" id="F9EFE906-4678-180A-AC70-BE3A7971FAE5">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>05D36551-01E2-8715-7FB9-E02AD80FD497</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="correo_cbr" id="259E44B9-AC8E-2ADA-8729-C7C4D7E19B06">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>2786B43B-9CB9-16FB-908E-8B15BCAD1DC6</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="telefono_cbr" id="79128831-986A-5368-A0BB-E19F943D49FF">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>7789ABDA-ABCF-52B0-B5BC-A1FBA22FAD23</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DIRECCION_id_direccion" id="025F9B66-2DD6-0E47-B961-4E62E12D3B64">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>615D9A5D-B4E3-B647-B2F9-B1EDBD3AA5B8</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5B415532-1A06-1206-9634-5268706F0F50" referredColumn="C09F0DF7-9E81-3163-79F6-581E0C9123BD"/>
+</associations>
+</Column>
+<Column name="HOR_ATENCION_id_horario" id="EAF00D24-DDFA-9E0B-5BED-9DD217FB3644">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>8BA1FA40-7135-AA2F-F987-601368C6CA5E</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1F626A1B-B817-9E9D-0F33-EA5C37A756EC" referredColumn="AA33194B-36C5-2DDD-6A85-858094B0A3D9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5D16FF22-162A-ACB4-D9D6-BB122A8D49A5" name="CBR_PK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>338858CF-069E-C5BD-A825-C622617126C5</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="50054DC7-1D2D-0CB6-DFDB-42C7183BB75A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="498735FE-2460-6958-727E-7B10FE4ABA8F" name="CBR_DIRECCION_FK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>A1AA1C6F-AF40-DEFC-25E9-B8EE54EA5D44</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="025F9B66-2DD6-0E47-B961-4E62E12D3B64"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5951F3E1-098C-97DD-8A78-BBD8E335F990" name="CBR_HOR_ATENCION_FK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>3DBAF314-2F1B-F9C0-1D40-468F681F6805</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EAF00D24-DDFA-9E0B-5BED-9DD217FB3644"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

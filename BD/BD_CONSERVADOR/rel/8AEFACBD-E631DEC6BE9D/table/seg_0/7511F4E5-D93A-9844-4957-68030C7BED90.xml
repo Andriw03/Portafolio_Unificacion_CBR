@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7511F4E5-D93A-9844-4957-68030C7BED90" name="TRAMITE">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>AD0F3597-AACB-DB6E-34AC-EB9B18DC0B34</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_tramite" id="15234112-9CBA-A957-A126-52EE3060EDC6">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>63648865-A4A6-53F6-FB50-866C9CA6F314</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre_tramite" id="23B145C3-0206-9718-9631-AFD386BBA6C1">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>6C63C579-C027-60FF-BE6D-EF8426A9F400</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valor_tramite" id="4CDADED4-2F3B-A3E1-4372-7904D61CD8A8">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>5B0B92D0-8237-B086-EE38-EDC126FC8A02</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="T_TRAMITE_id_tipoT" id="F83FBC35-000B-3D59-FFBE-1401CDADCF14">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>87C9BA82-2D8A-1371-74B6-39C6B6554EA0</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="321782D6-766E-C714-886C-831DCD4D5CA2" referredColumn="5D94ED81-52D9-6A67-6EFC-4AD3FF7EFA57"/>
+</associations>
+</Column>
+<Column name="id_boleta" id="91CF2EF4-39E0-C03A-C1D8-FBFBF285ADA0">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>EB0B64A0-3813-2A48-BEB3-98877C72F6BE</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="17CB725D-2349-BA88-8420-03F967DEE0A2" name="TRAMITE_PK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>724485F4-D37C-04EF-A501-3B3E4DA03E1E</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="15234112-9CBA-A957-A126-52EE3060EDC6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EF64FAFD-6304-6BF5-3076-DC62F90D75C3" name="TRAMITE_T_TRAMITE_FK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>BF9926C0-E26D-E8BC-62E7-A87E15473596</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F83FBC35-000B-3D59-FFBE-1401CDADCF14"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

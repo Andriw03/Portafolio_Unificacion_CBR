@@ -4,7 +4,7 @@
 <createdTime>2022-08-24 18:06:31 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
-<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+<item key="8AEFACBD-2A69-3012-8741-E631DEC6BE9D" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -20,7 +20,7 @@
 <createdTime>2022-08-24 18:07:07 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
-<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+<item key="8AEFACBD-2A69-3012-8741-E631DEC6BE9D" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -32,20 +32,7 @@
 <createdTime>2022-08-24 18:07:45 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
-<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100 CHAR</dataTypeSize>
-<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="direccion_cbr" id="3310ADB5-14BE-AD4B-4CB3-ECD6039E12E3">
-<createdBy>sebas</createdBy>
-<createdTime>2022-08-24 18:08:43 UTC</createdTime>
-<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
-<engineerTo>
-<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+<item key="8AEFACBD-2A69-3012-8741-E631DEC6BE9D" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -58,7 +45,7 @@
 <createdTime>2022-08-24 18:09:38 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
-<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+<item key="8AEFACBD-2A69-3012-8741-E631DEC6BE9D" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -71,7 +58,7 @@
 <createdTime>2022-08-24 18:10:41 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
-<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+<item key="8AEFACBD-2A69-3012-8741-E631DEC6BE9D" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -84,7 +71,7 @@
 <generatorID>A1AA1C6F-AF40-DEFC-25E9-B8EE54EA5D44</generatorID>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
-<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+<item key="8AEFACBD-2A69-3012-8741-E631DEC6BE9D" value="true"/>
 </engineerTo>
 <referedAttribute>DAB5CA05-3100-B3FF-78F1-2B1817F2B184</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -98,7 +85,7 @@
 <generatorID>3DBAF314-2F1B-F9C0-1D40-468F681F6805</generatorID>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
-<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+<item key="8AEFACBD-2A69-3012-8741-E631DEC6BE9D" value="true"/>
 </engineerTo>
 <referedAttribute>BE3A0872-1868-701A-2D58-EA6BD72EA655</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -113,7 +100,7 @@
 <createdTime>2022-08-24 19:23:37 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
-<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+<item key="8AEFACBD-2A69-3012-8741-E631DEC6BE9D" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

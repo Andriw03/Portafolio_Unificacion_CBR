@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7E98029C-ED95-9AB0-A7C0-6108B2946950" containerWithKeyObject="3E7FC2F0-F638-2097-551D-B77F25D8A080" localFKIndex="1608CCCC-AF65-C024-ADA1-DF5D2654D8BF" name="B_PAGO_CAR_COMPRA_FK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>4FD3720C-C3E1-8572-DC2C-6C46116A92CC</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<referredTableLongName>CAR_COMPRA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>CB465A69-248A-E9B3-224B-15D928ECFF6D</referredTableID>
+<keyObject>575A8C72-F830-058C-0B4E-2A1F9B069618</keyObject>
+<referredKeyID>575A8C72-F830-058C-0B4E-2A1F9B069618</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_carrito</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

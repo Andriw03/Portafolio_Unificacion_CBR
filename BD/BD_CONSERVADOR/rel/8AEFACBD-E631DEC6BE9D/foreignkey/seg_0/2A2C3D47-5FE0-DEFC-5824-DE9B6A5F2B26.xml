@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2A2C3D47-5FE0-DEFC-5824-DE9B6A5F2B26" containerWithKeyObject="203BB3BE-FF24-6037-4F2E-37DFF112A59B" localFKIndex="6DBE0003-B736-45F2-9BE8-95B8A16163D8" name="PROPIEDAD_DIRECCION_FK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>85182047-D55B-BB52-733B-F2221528A1AD</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<referredTableLongName>DIRECCION</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>C478FB86-4A81-27DB-303E-36695C7F33B5</referredTableID>
+<keyObject>EC9BB388-0E4E-E675-5141-EA1012673E86</keyObject>
+<referredKeyID>EC9BB388-0E4E-E675-5141-EA1012673E86</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_direccion</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

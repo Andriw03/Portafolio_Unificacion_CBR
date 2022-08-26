@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A054C6B8-93DC-46E0-D9BE-859731EE0771" containerWithKeyObject="203BB3BE-FF24-6037-4F2E-37DFF112A59B" localFKIndex="18178FB4-D45A-1DA3-026C-4004BA84F55B" name="PROPIEDAD_CBR_FK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:40:35 UTC</createdTime>
+<generatorID>9D93928E-8454-B1F7-95B5-0E17B714D61B</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<referredTableLongName>CBR</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>BA3371DE-ACCE-BA5C-D600-5BAF8DF14290</referredTableID>
+<keyObject>5D16FF22-162A-ACB4-D9D6-BB122A8D49A5</keyObject>
+<referredKeyID>5D16FF22-162A-ACB4-D9D6-BB122A8D49A5</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_cbr</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

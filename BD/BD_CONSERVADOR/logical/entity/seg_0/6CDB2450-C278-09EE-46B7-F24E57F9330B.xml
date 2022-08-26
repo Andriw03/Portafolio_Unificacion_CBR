@@ -4,7 +4,7 @@
 <createdTime>2022-08-24 21:05:06 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
-<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+<item key="8AEFACBD-2A69-3012-8741-E631DEC6BE9D" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -20,22 +20,8 @@
 <createdTime>2022-08-24 21:05:16 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
-<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+<item key="8AEFACBD-2A69-3012-8741-E631DEC6BE9D" value="true"/>
 </engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="id_tramite" id="899E8C53-0A5A-7479-D79D-092D54F79EC3">
-<createdBy>Andres</createdBy>
-<createdTime>2022-08-24 21:06:28 UTC</createdTime>
-<generatorID>E1278104-AC8E-AF10-AC26-E051FB26702F</generatorID>
-<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
-<engineerTo>
-<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
-</engineerTo>
-<referedAttribute>63648865-A4A6-53F6-FB50-866C9CA6F314</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -47,9 +33,23 @@
 <generatorID>25BBB28F-9466-751C-03F8-C3F9918826AC</generatorID>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
-<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+<item key="8AEFACBD-2A69-3012-8741-E631DEC6BE9D" value="true"/>
 </engineerTo>
 <referedAttribute>81FBBA7E-6E1C-C746-5870-040EA3AEB736</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_soli" id="42C9AE30-0B34-82A6-30E6-D9C16B792268">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 00:33:18 UTC</createdTime>
+<generatorID>E1278104-AC8E-AF10-AC26-E051FB26702F</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<engineerTo>
+<item key="8AEFACBD-2A69-3012-8741-E631DEC6BE9D" value="true"/>
+</engineerTo>
+<referedAttribute>5FF020CE-1F3F-4C34-04D0-791F03C52BC5</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -62,7 +62,7 @@
 <createdTime>2022-08-24 21:05:32 UTC</createdTime>
 <ownerDesignName>BD_CONSERVADOR</ownerDesignName>
 <engineerTo>
-<item key="286A2579-AC55-00CF-41CF-2B8D76C59A84" value="true"/>
+<item key="8AEFACBD-2A69-3012-8741-E631DEC6BE9D" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

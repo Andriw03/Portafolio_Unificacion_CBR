@@ -1,5 +1,5 @@
 -- Generado por Oracle SQL Developer Data Modeler 19.1.0.081.0911
---   en:        2022-08-24 18:11:05 CLST
+--   en:        2022-08-25 21:42:25 CLST
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
@@ -44,18 +44,19 @@ DROP TABLE tramite CASCADE CONSTRAINTS;
 DROP TABLE usuario CASCADE CONSTRAINTS;
 
 CREATE TABLE b_pago (
-    id_boleta         INTEGER NOT NULL,
-    fecha_emision     DATE NOT NULL,
-    monto_pago        INTEGER NOT NULL,
-    t_pago_id_tipop   INTEGER NOT NULL
+    id_boleta               INTEGER NOT NULL,
+    fecha_emision           DATE NOT NULL,
+    monto_pago              INTEGER NOT NULL,
+    t_pago_id_tipop         INTEGER NOT NULL,
+    car_compra_id_carrito   INTEGER NOT NULL
 );
 
 ALTER TABLE b_pago ADD CONSTRAINT b_pago_pk PRIMARY KEY ( id_boleta );
 
 CREATE TABLE car_compra (
     id_carrito           INTEGER NOT NULL,
-    tramite_id_tramite   INTEGER NOT NULL,
-    usuario_id_usuario   INTEGER NOT NULL
+    usuario_id_usuario   INTEGER NOT NULL,
+    solicitud_id_soli    INTEGER NOT NULL
 );
 
 ALTER TABLE car_compra ADD CONSTRAINT car_compra_pk PRIMARY KEY ( id_carrito );
@@ -63,7 +64,6 @@ ALTER TABLE car_compra ADD CONSTRAINT car_compra_pk PRIMARY KEY ( id_carrito );
 CREATE TABLE cbr (
     id_cbr                    INTEGER NOT NULL,
     nombre_cbr                VARCHAR2(100 CHAR) NOT NULL,
-    direccion_cbr             VARCHAR2(100 CHAR) NOT NULL,
     correo_cbr                VARCHAR2(30 CHAR) NOT NULL,
     telefono_cbr              INTEGER NOT NULL,
     direccion_id_direccion    INTEGER NOT NULL,
@@ -197,8 +197,7 @@ CREATE TABLE tramite (
     nombre_tramite       VARCHAR2(30 CHAR) NOT NULL,
     valor_tramite        INTEGER NOT NULL,
     t_tramite_id_tipot   INTEGER NOT NULL,
-    id_propiedad         INTEGER NOT NULL,
-    b_pago_id_boleta     INTEGER NOT NULL
+    id_boleta            INTEGER NOT NULL
 );
 
 ALTER TABLE tramite ADD CONSTRAINT tramite_pk PRIMARY KEY ( id_tramite );
@@ -213,18 +212,23 @@ CREATE TABLE usuario (
     segundo_apellido     VARCHAR2(15 CHAR) NOT NULL,
     correo_electronico   VARCHAR2(30 CHAR) NOT NULL,
     telefono             VARCHAR2(12 CHAR) NOT NULL,
-    t_usuario_id_tipou   INTEGER NOT NULL
+    t_usuario_id_tipou   INTEGER NOT NULL,
+    cbr_id_cbr           INTEGER
 );
 
 ALTER TABLE usuario ADD CONSTRAINT usuario_pk PRIMARY KEY ( id_usuario );
+
+ALTER TABLE b_pago
+    ADD CONSTRAINT b_pago_car_compra_fk FOREIGN KEY ( car_compra_id_carrito )
+        REFERENCES car_compra ( id_carrito );
 
 ALTER TABLE b_pago
     ADD CONSTRAINT b_pago_t_pago_fk FOREIGN KEY ( t_pago_id_tipop )
         REFERENCES t_pago ( id_tipop );
 
 ALTER TABLE car_compra
-    ADD CONSTRAINT car_compra_tramite_fk FOREIGN KEY ( tramite_id_tramite )
-        REFERENCES tramite ( id_tramite );
+    ADD CONSTRAINT car_compra_solicitud_fk FOREIGN KEY ( solicitud_id_soli )
+        REFERENCES solicitud ( id_soli );
 
 ALTER TABLE car_compra
     ADD CONSTRAINT car_compra_usuario_fk FOREIGN KEY ( usuario_id_usuario )
@@ -283,12 +287,12 @@ ALTER TABLE solicitud
         REFERENCES tramite ( id_tramite );
 
 ALTER TABLE tramite
-    ADD CONSTRAINT tramite_b_pago_fk FOREIGN KEY ( b_pago_id_boleta )
-        REFERENCES b_pago ( id_boleta );
-
-ALTER TABLE tramite
     ADD CONSTRAINT tramite_t_tramite_fk FOREIGN KEY ( t_tramite_id_tipot )
         REFERENCES t_tramite ( id_tipot );
+
+ALTER TABLE usuario
+    ADD CONSTRAINT usuario_cbr_fk FOREIGN KEY ( cbr_id_cbr )
+        REFERENCES cbr ( id_cbr );
 
 ALTER TABLE usuario
     ADD CONSTRAINT usuario_t_usuario_fk FOREIGN KEY ( t_usuario_id_tipou )
@@ -300,7 +304,7 @@ ALTER TABLE usuario
 -- 
 -- CREATE TABLE                            19
 -- CREATE INDEX                             0
--- ALTER TABLE                             38
+-- ALTER TABLE                             39
 -- CREATE VIEW                              0
 -- ALTER VIEW                               0
 -- CREATE PACKAGE                           0
