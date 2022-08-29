@@ -57,18 +57,6 @@
 <colAssociation fkAssociation="321782D6-766E-C714-886C-831DCD4D5CA2" referredColumn="5D94ED81-52D9-6A67-6EFC-4AD3FF7EFA57"/>
 </associations>
 </Column>
-<Column name="id_boleta" id="91CF2EF4-39E0-C03A-C1D8-FBFBF285ADA0">
-<createdBy>Andres</createdBy>
-<createdTime>2022-08-26 00:40:35 UTC</createdTime>
-<generatorID>EB0B64A0-3813-2A48-BEB3-98877C72F6BE</generatorID>
-<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="17CB725D-2349-BA88-8420-03F967DEE0A2" name="TRAMITE_PK">

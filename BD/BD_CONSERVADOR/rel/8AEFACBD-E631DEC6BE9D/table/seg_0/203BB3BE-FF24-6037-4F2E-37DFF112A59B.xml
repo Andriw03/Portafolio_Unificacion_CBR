@@ -91,6 +91,20 @@
 <colAssociation fkAssociation="B5BD9760-41DA-7EF4-9F38-4006D090EB72" referredColumn="1AB7E8D2-E52F-12CA-3839-F03AEFD84F59"/>
 </associations>
 </Column>
+<Column name="CLAS_PROP_id_clas" id="BFBA6AFB-5227-CEF9-D720-DE64BCA274BF">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 16:23:54 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C623DB87-BBA5-9108-B085-9ECD53CD563A" referredColumn="0B34FCEF-5F7D-0FA6-80E5-EA6816193A7D"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="D585AFCA-C2F9-0359-5A9E-540293B33D47" name="PROPIEDAD_PK">
@@ -147,6 +161,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="25FCA587-2EF4-3447-61CB-1D7149309242"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CAF67DB5-4C82-7963-EB0C-FFE8CA4EBD30" name="PROPIEDAD_CLAS_PROP_FK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 16:23:54 UTC</createdTime>
+<generatorID>4B05BF61-F73B-AC1A-8C9C-B6EA53F3FFCD</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BFBA6AFB-5227-CEF9-D720-DE64BCA274BF"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

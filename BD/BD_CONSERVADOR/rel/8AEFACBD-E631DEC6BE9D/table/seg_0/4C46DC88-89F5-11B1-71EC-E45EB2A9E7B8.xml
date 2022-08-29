@@ -30,6 +30,27 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="fecha_cierre" id="38ED7B0A-3587-322C-7269-A17D7D473497">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 17:00:36 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="estado" id="4080E58E-647F-BB98-0245-94283C31FC31">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 16:55:28 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="PROPIEDAD_id_propiedad" id="425B50C9-3CCB-AF1C-F42F-76CCE18CCF33">
 <createdBy>Andres</createdBy>
 <createdTime>2022-08-26 00:40:35 UTC</createdTime>
@@ -74,6 +95,20 @@
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="C6C1C98D-419A-C7DC-D656-8B6C49E21D3F" referredColumn="7A75B627-472C-A707-B905-B37DA64AD6F1"/>
+</associations>
+</Column>
+<Column name="USUARIO_id_usuario" id="B09246E8-2745-1617-2067-1C6B0D6329E0">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 17:05:30 UTC</createdTime>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="45813F4A-3E87-B5B0-8800-1425FEFEFBC6" referredColumn="F4A6ED47-4F0B-CF15-4A11-FE98BFD2CD24"/>
 </associations>
 </Column>
 </columns>
@@ -121,6 +156,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="368E6B57-DBD4-9B6F-7597-E9B0735F56E0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8C09F2B2-F150-2B8D-BDF5-E801BB914B08" name="SOLICITUD_USUARIO_FK">
+<createdBy>Andres</createdBy>
+<createdTime>2022-08-26 17:05:30 UTC</createdTime>
+<generatorID>86665DEC-494C-2B05-AE00-6FC103D0ADF1</generatorID>
+<ownerDesignName>BD_CONSERVADOR</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B09246E8-2745-1617-2067-1C6B0D6329E0"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
