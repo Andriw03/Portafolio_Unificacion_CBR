@@ -296,6 +296,40 @@ DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
+-- Table `UNIONLINE`.`T_TRAMITE`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `UNIONLINE`.`T_TRAMITE` ;
+
+CREATE TABLE IF NOT EXISTS `UNIONLINE`.`T_TRAMITE` (
+  `id_tipoT` INT NOT NULL,
+  `nombre_tipoT` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_tipoT`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `UNIONLINE`.`TRAMITE`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `UNIONLINE`.`TRAMITE` ;
+
+CREATE TABLE IF NOT EXISTS `UNIONLINE`.`TRAMITE` (
+  `id_tramite` INT NOT NULL,
+  `nombre_tramite` VARCHAR(45) NOT NULL,
+  `valor_tramite` VARCHAR(45) NOT NULL,
+  `T_TRAMITE_id_tipoT` INT NOT NULL,
+  PRIMARY KEY (`id_tramite`, `T_TRAMITE_id_tipoT`),
+  INDEX `fk_TRAMITE1_T_TRAMITE1_idx` (`T_TRAMITE_id_tipoT` ASC) VISIBLE,
+  CONSTRAINT `fk_TRAMITE1_T_TRAMITE1`
+    FOREIGN KEY (`T_TRAMITE_id_tipoT`)
+    REFERENCES `UNIONLINE`.`T_TRAMITE` (`id_tipoT`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
 -- Table `UNIONLINE`.`SOLICITUD`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `UNIONLINE`.`SOLICITUD` ;
@@ -308,10 +342,12 @@ CREATE TABLE IF NOT EXISTS `UNIONLINE`.`SOLICITUD` (
   `USUARIO_id_usuario` INT NOT NULL,
   `PROPIEDAD_id_propiedad` INT NOT NULL,
   `DOCUMUENTO_id_documento` INT NOT NULL,
-  PRIMARY KEY (`id_soli`, `USUARIO_id_usuario`, `PROPIEDAD_id_propiedad`),
+  `TRAMITE_id_tramite` INT NOT NULL,
+  PRIMARY KEY (`id_soli`, `USUARIO_id_usuario`, `PROPIEDAD_id_propiedad`, `TRAMITE_id_tramite`),
   INDEX `fk_SOLICITUD_USUARIO_idx` (`USUARIO_id_usuario` ASC) VISIBLE,
   INDEX `fk_SOLICITUD_PROPIEDAD1_idx` (`PROPIEDAD_id_propiedad` ASC) VISIBLE,
   INDEX `fk_SOLICITUD_DOCUMUENTO1_idx` (`DOCUMUENTO_id_documento` ASC) VISIBLE,
+  INDEX `fk_SOLICITUD_TRAMITE1_idx` (`TRAMITE_id_tramite` ASC) VISIBLE,
   CONSTRAINT `fk_SOLICITUD_USUARIO`
     FOREIGN KEY (`USUARIO_id_usuario`)
     REFERENCES `UNIONLINE`.`USUARIO` (`id_usuario`)
@@ -325,6 +361,11 @@ CREATE TABLE IF NOT EXISTS `UNIONLINE`.`SOLICITUD` (
   CONSTRAINT `fk_SOLICITUD_DOCUMUENTO1`
     FOREIGN KEY (`DOCUMUENTO_id_documento`)
     REFERENCES `UNIONLINE`.`DOCUMUENTO` (`id_documento`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_SOLICITUD_TRAMITE1`
+    FOREIGN KEY (`TRAMITE_id_tramite`)
+    REFERENCES `UNIONLINE`.`TRAMITE` (`id_tramite`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -419,47 +460,6 @@ CREATE TABLE IF NOT EXISTS `UNIONLINE`.`FORMULARIO` (
   `asunto_form` VARCHAR(45) NOT NULL,
   `detalle_form` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_formulario`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb3;
-
-
--- -----------------------------------------------------
--- Table `UNIONLINE`.`T_TRAMITE`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `UNIONLINE`.`T_TRAMITE` ;
-
-CREATE TABLE IF NOT EXISTS `UNIONLINE`.`T_TRAMITE` (
-  `id_tipoT` INT NOT NULL,
-  `nombre_tipoT` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id_tipoT`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb3;
-
-
--- -----------------------------------------------------
--- Table `UNIONLINE`.`TRAMITE1`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `UNIONLINE`.`TRAMITE1` ;
-
-CREATE TABLE IF NOT EXISTS `UNIONLINE`.`TRAMITE1` (
-  `id_tramite` INT NOT NULL,
-  `nombre_tramite` VARCHAR(45) NOT NULL,
-  `valor_tramite` VARCHAR(45) NOT NULL,
-  `SOLICITUD_id_soli` INT NOT NULL,
-  `T_TRAMITE_id_tipoT` INT NOT NULL,
-  PRIMARY KEY (`id_tramite`, `SOLICITUD_id_soli`, `T_TRAMITE_id_tipoT`),
-  INDEX `fk_TRAMITE1_SOLICITUD1_idx` (`SOLICITUD_id_soli` ASC) VISIBLE,
-  INDEX `fk_TRAMITE1_T_TRAMITE1_idx` (`T_TRAMITE_id_tipoT` ASC) VISIBLE,
-  CONSTRAINT `fk_TRAMITE1_SOLICITUD1`
-    FOREIGN KEY (`SOLICITUD_id_soli`)
-    REFERENCES `UNIONLINE`.`SOLICITUD` (`id_soli`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_TRAMITE1_T_TRAMITE1`
-    FOREIGN KEY (`T_TRAMITE_id_tipoT`)
-    REFERENCES `UNIONLINE`.`T_TRAMITE` (`id_tipoT`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
