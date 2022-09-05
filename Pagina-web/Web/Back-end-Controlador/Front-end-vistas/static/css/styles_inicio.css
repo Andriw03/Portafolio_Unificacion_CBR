@@ -1,0 +1,18 @@
+.buscador{
+    padding: 0 20%;
+}
+.btn {
+   background-color: rgb(255, 255, 255);
+   border-color: #1E4D40;
+   color: #1E4D40;
+  }
+.btn:hover{
+    background-color: #1E4D40;
+    border: #1E4D40;
+}
+footer{
+    background-color: #1E4D40;
+    text-align: center;
+    padding:40px;
+    color: white;
+}
