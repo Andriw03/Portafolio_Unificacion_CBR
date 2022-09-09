@@ -25,7 +25,7 @@
   <!-- Template Main CSS File -->
   <link href="static/css/main.css" rel="stylesheet">
   <link rel="stylesheet" href="static/css/reset.css">
-  <link rel="stylesheet" href="static/css/styles_inicio.css">
+  <link rel="stylesheet" href="static/css/styles_trabajador.css">
   <!-- CSS only -->
   <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </head>
@@ -64,8 +64,7 @@
         </ul>
       </nav><!-- .navbar -->
 
-      <a class="btn-book-a-table" href="#book-a-table">Crear Cuenta</a>
-      <a class="btn-book-a-table" href="#book-a-table">Iniciar Sesión</a>
+      <a class="btn-book-a-table" href="#book-a-table">Nombre generico trabajador</a>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
@@ -74,50 +73,173 @@
   <main>
     <div class="px-4 py-5  text-center">
       <img class="d-block mx-auto mb-4" src="imagenes/LogoCBR.png" alt="" width="25%" height="25%">
-      <h1 class="display-5 fw-bold">Elige tu conservador</h1>
+      <h1 class="display-5 fw-bold">Ingresa una propiedad</h1>
       <br>
-      <div class="buscador">
-        <div class="input-group">
-          <select class="form-select form-select-lg mb-3" aria-label="Default select example">
-            <option selected>Región</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-          <br>
-          <select class="form-select form-select-lg mb-3" aria-label="Default select example">
-            <option selected>Provincia</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-          <select class="form-select form-select-lg mb-3" aria-label="Default select example">
-            <option selected>Comuna</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-        </div>
-        <select class="form-select form-select-lg mb-3" aria-label="Default select example">
-          <option selected>Conservador</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-        <br>
+
+<br>
+      </div>
+      <div class="formulario">
+        <form class="row g-3" action="">
+          <div class="col-md-3">
+            <label for="inputRut" class="form-label">Rut Dueño</label>
+            <input type="text" class="form-control" id="inputRut">
+          </div>
+          <div class="col-md-3">
+            <button type="button" class="btn btn-secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+</svg>
+            </button>
+          </div>
+          <div class="col-md-3">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              Agregar Dueño
+            </button>
+          </div>
+        </form>
+        <form action="">
+          <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Agregar Dueño</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="row g-3 mt-3">
+                      <div class="col-12">
+                          <label for="inputName" class="form-label">Primer Nombre.</label>
+                          <input type="name" class="form-control" id="inputName"placeholder="Escribe tu Primer Nombre.">
+                      </div>
+              
+                      <div class="col-12">
+                          <label for="inputSecondName" class="form-label">Segundo Nombre.</label>
+                          <input type="name" class="form-control" id="inputSecondName"placeholder="Escribe tu Segundo Nombre.">
+                      </div>
+              
+                      <div class="col-12">
+                          <label for="inputLastName" class="form-label">Primer Apellido.</label>
+                          <input type="name" class="form-control" id="inputLastName"placeholder="Escribe tu Primer Apellido.">
+                      </div>
+              
+                      <div class="col-12">
+                          <label for="inputSecondLastName" class="form-label">Segundo Apellido.</label>
+                          <input type="name" class="form-control" id="inputSecondLastName"placeholder="Escribe tu Segundo Apellido.">
+                      </div>
+              
+                      <div class="col-12">
+                          <label for="inputRUT" class="form-label">RUT de Usuario.</label>
+                          <input type="name" class="form-control" id="inputRUT"placeholder="Escribe tu RUT.">
+                      </div>
+              
+                      <div class="col-12">
+                          <label for="inputPhone" class="form-label">Teléfono de Contacto.</label>
+                          <input type="name" class="form-control" id="inputPhone"placeholder="Escribe tu Teléfono de Contacto.">
+                      </div>
+              
+                      <div class="col-12">
+                          <label for="emailInput" class="form-label">Correo Electrónico.</label>
+                          <input type="name" class="form-control" id="emailInput"placeholder="Correo Electrónico.">
+                      </div>
+          
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                  </div>
+                </form>
+                </div>
+              </div>
+            </div>
+        </form>
+        <div class="row g-3">
+        <form class="row g-3" >
+          <div class="col-md-6">
+            <label for="inputRut" class="form-label">Rut Dueño</label>
+            <input type="text" class="form-control" id="inputRut" disabled>
+          </div>
+        
+          <div class="col-md-6">
+            <label for="inputRutD" class="form-label">Nombre Dueño</label>
+            <input type="text" class="form-control" id="inputRutD" disabled>
+          </div>
+          <div class="col-md-3">
+            <label for="inputTipo" class="form-label">Tipo de propiedad</label>
+            <select id="inputTipo" class="form-select">
+              <option selected>Residencial</option>
+              <option>Comercial</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="inputFoja" class="form-label">Foja</label>
+            <input type="text" class="form-control" id="inputFoja">
+          </div>
+          <div class="col-md-3">
+            <label for="inputNumero" class="form-label">Numero</label>
+            <input type="text" class="form-control" id="inputNumero" >
+          </div>
+          <div class="col-md-3">
+            <label for="inputAnno" class="form-label">Año</label>
+            <input type="text" class="form-control" id="inputAnno" >
+          </div>
+         
+          <div class="col-md-6">
+            <label for="inputSocial" class="form-label">Razon social</label>
+            <input type="text" class="form-control" id="inputSocial" >
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmpresa" class="form-label">Rut Empresa</label>
+            <input type="text" class="form-control" id="inputEmpresa">
+          </div>
+          <div class="col-md-12">
+            <label for="inputDescripcion" class="form-label">Descripción</label>
+            <input type="text" class="form-control" id="inputDescripcion" >
+          </div>
+          <hr>
+          <h3>Dirección de la propiedad</h3>
+            <div class="input-group">
+              <select class="form-select col-mb-3" aria-label="Default select example">
+                <option selected>Región</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+              <br>
+              <select class="form-select col-mb-3" aria-label="Default select example">
+                <option selected>Provincia</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+              <select class="form-select col-mb-3" aria-label="Default select example">
+                <option selected>Comuna</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+            <div class="col-md-10">
+              <label for="inputDireccion" class="form-label">Dirección</label>
+              <input type="text" class="form-control" id="inputDireccion" >
+            </div>
+            <div class="col-md-2">
+              <label for="inputNumeroC" class="form-label">Número</label>
+              <input type="text" class="form-control" id="inputNumeroC">
+            </div>
+          </div>
+
+          
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+          </div>
+        </form>
       </div>
       
       <br>
-      <div class="col-lg-6 mx-auto">
-          <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Buscar</button>
-        </div>
-      </div>
-    </div>
-    <div class="whatsapp">
-        <a href="https://wa.me/+56946411039?text=¡Otakuuuuuuuuu!" class="btn-wsp" target="_blank">
-            <i class="fa fa-whatsapp icono"></i>
-        </a>
-    </div>
+ 
+   
   </main>
   <footer>
     <p class="copyright">&copy Copyright Ministerio de Vivienda y Urbanismo - 2022</p>
