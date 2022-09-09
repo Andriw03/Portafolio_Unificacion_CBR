@@ -9,6 +9,7 @@
     <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +26,7 @@
   <!-- Template Main CSS File -->
   <link href="static/css/main.css" rel="stylesheet">
   <link rel="stylesheet" href="static/css/reset.css">
-  <link rel="stylesheet" href="static/css/styles_inicio.css">
+  <link rel="stylesheet" href="static/css/styles_recepcion.css">
   <!-- CSS only -->
   <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </head>
@@ -43,30 +44,11 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="#hero">Inicio</a></li>
-          <li><a href="#about">Misión</a></li>
-          <li><a href="#menu">Contacto</a></li>
-          <li class="dropdown"><a href="#"><span>Trámites en línea</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="#">Inscripción de Propiedad</a></li>
-              <li><a href="#">Inscripción de Comercio</a></li>
-              <li><a href="#">Estudio de títulos (10 años)</a></li>
-              <li><a href="#">Copia de Inscripción de propiedad o comercio con Vigencia</a></li>
-              <li><a href="#">Copia de Inscripción de propiedad o comercio sin Vigencia</a></li>
-              <li><a href="#">Certificado de Hipotecas, Gravámenes y Prohibiciones</a></li>
-              <li><a href="#">Certificado de Deslindes</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="#"><span>Consultas en línea</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="#">Indice de Propiedades</a></li>
-              <li><a href="#">Indice de Comercio</a></li>
-            </ul>
-          </li>
+          <li><a href="#about">Revisar solicitud</a></li>
         </ul>
       </nav><!-- .navbar -->
 
-      <a class="btn-book-a-table" href="#book-a-table">Crear Cuenta</a>
-      <a class="btn-book-a-table" href="#book-a-table">Iniciar Sesión</a>
+      <a class="btn-book-a-table" href="#book-a-table"> <i class="bi bi-person-circle"></i> Nombre genérico recepción</a>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
@@ -75,36 +57,12 @@
   <main>
     <div class="px-4 py-5  text-center">
       <img class="d-block mx-auto mb-4" src="imagenes/LogoCBR.png" alt="" width="25%" height="25%">
-      <h1 class="display-5 fw-bold">Elige tu conservador</h1>
+      <h1 class="display-5 fw-bold">Ingrese el rut del cliente o N° de seguimiento</h1>
       <br>
       <div class="buscador">
-        <div class="input-group">
-          <select class="form-select form-select-lg mb-3" aria-label="Default select example">
-            <option selected>Región</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-          <br>
-          <select class="form-select form-select-lg mb-3" aria-label="Default select example">
-            <option selected>Provincia</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-          <select class="form-select form-select-lg mb-3" aria-label="Default select example">
-            <option selected>Comuna</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-        </div>
-        <select class="form-select form-select-lg mb-3" aria-label="Default select example">
-          <option selected>Conservador</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
+        <div class="mb-3">
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Rut Cliente o N° Seguimiento">
+          </div>
         <br>
       </div>
       
@@ -112,13 +70,51 @@
       <div class="col-lg-6 mx-auto">
           <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Buscar</button>
         </div>
+        <br>
+        <div class="tabla">
+            <table class="table table-striped">
+                <thead  class="table-dark">
+                  <tr>
+                    <th scope="col">Rut</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">N° Seguimiento</th>
+                    <th scope="col">Estado solicitud</th>
+                    <th scope="col">Detalle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">11.111.111-2</th>
+                    <th>Andres</th>
+                    <th>González</th>
+                    <th>2938547192</th>
+                    <th>  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        En revisión</th>
+                    <th><a href=""><i class="bi bi-search"></i></a></th>
+                  </tr>
+                  <tr>
+                    <th scope="row">11.111.111-2</th>
+                    <th>Andres</th>
+                    <th>González</th>
+                    <th>23423423423</th>
+                    <th>  <i class="bi bi-x-circle"></i>
+                        Denegado</th>
+                    <th><a href=""><i class="bi bi-search"></i></a></th>
+                  </tr>
+                  <tr>
+                    <th scope="row">11.111.111-2</th>
+                    <th>Andres</th>
+                    <th>González</th>
+                    <th>23523523342</th>
+                    <th>  <i class="bi bi-check2-circle"></i>
+                        Aprobado</th>
+                    <th><a href=""><i class="bi bi-search"></i></a></th>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
       </div>
-    </div>
-    <div class="whatsapp">
-        <a href="https://wa.me/+56946411039?text=¡Otakuuuuuuuuu!" class="btn-wsp" target="_blank">
-            <i class="fa fa-whatsapp icono"></i>
-        </a>
-    </div>
   </main>
   <footer>
     <p class="copyright">&copy Copyright Ministerio de Vivienda y Urbanismo - 2022</p>

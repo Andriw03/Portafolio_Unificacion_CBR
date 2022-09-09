@@ -34,6 +34,10 @@
 body {
   font-family: var(--font-default);
   color: var(--color-default);
+  margin-top: 3rem !important;
+}
+header{
+  background-color: #3C9980 !important;
 }
 
 a {
@@ -354,7 +358,7 @@ section {
     font-family: var(--font-secondary);
     font-size: 16px;
     font-weight: 600;
-    color: #7f7f90;
+    color: rgb(0, 0, 0);
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
