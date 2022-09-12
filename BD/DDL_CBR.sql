@@ -464,7 +464,7 @@ DROP function IF EXISTS `UNIONLINE`.`FN_AGREGAR_BOLETA`;
 
 DELIMITER $$
 USE `UNIONLINE`$$
-CREATE DEFINER=`root`@`%` FUNCTION `FN_AGREGAR_BOLETA`(estado int) RETURNS int
+CREATE DEFINER=`root`@`%` FUNCTION `FN_AGREGAR_BOLETA`(estado int) RETURNS varchar(20) CHARSET utf8mb3
 BEGIN
 	declare monto_total int;
     declare conservador int;
@@ -497,13 +497,13 @@ IF monto_total > 0 THEN
 	INSERT INTO  `UNIONLINE`. `B_PAGO` (`fecha_emision`,`monto_pago`,`tipo_pago`,`nombre_conservador`)
     VALUES
     (now(),monto_total,tipoP,conservador);
-    RETURN monto_total;
+    RETURN "Éxito";
     
 ELSE 
 	INSERT INTO  `UNIONLINE`. `ERROR` (`codigo_error`,`mensaje_error`,`fecha_error`)
     VALUES
     ('1002','Carrito de compra sin monto',now());
-    RETURN monto_total;
+    RETURN "Error";
 END IF;
 END$$
 
@@ -517,7 +517,15 @@ DROP TRIGGER IF EXISTS `UNIONLINE`.`ESTADO_PAGO_AFTER_INSERT` $$
 USE `UNIONLINE`$$
 CREATE DEFINER = CURRENT_USER TRIGGER `UNIONLINE`.`ESTADO_PAGO_AFTER_INSERT` AFTER INSERT ON `ESTADO_PAGO` FOR EACH ROW
 BEGIN
-	select FN_AGREGAR_BOLETA (NEW.id_estado);
+	IF FN_AGREGAR_BOLETA (NEW.id_estado) then
+		INSERT INTO  `UNIONLINE`. `B_PAGO` (`fecha_emision`,`monto_pago`,`tipo_pago`,`nombre_conservador`)
+		VALUES
+		(now(),monto_total,tipoP,conservador);
+	ELSE
+		INSERT INTO  `UNIONLINE`. `ERROR` (`codigo_error`,`mensaje_error`,`fecha_error`)
+		VALUES
+		('1002','Carrito de compra sin monto',now());
+	END IF;
 END$$
 
 
