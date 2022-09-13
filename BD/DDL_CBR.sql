@@ -31,37 +31,6 @@ DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
--- Table `UNIONLINE`.`TIPO_DOCUMENTO`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `UNIONLINE`.`TIPO_DOCUMENTO` ;
-
-CREATE TABLE IF NOT EXISTS `UNIONLINE`.`TIPO_DOCUMENTO` (
-  `id_tipodoc` INT NOT NULL,
-  `tipo_doc` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id_tipodoc`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb3;
-
-
--- -----------------------------------------------------
--- Table `UNIONLINE`.`DOCUMUENTO`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `UNIONLINE`.`DOCUMUENTO` ;
-
-CREATE TABLE IF NOT EXISTS `UNIONLINE`.`DOCUMUENTO` (
-  `id_documento` INT NOT NULL,
-  `nombre_doc` VARCHAR(45) NOT NULL,
-  `TIPO_DOCUMENTO_id_tipodoc` INT NOT NULL,
-  PRIMARY KEY (`id_documento`, `TIPO_DOCUMENTO_id_tipodoc`),
-  INDEX `fk_DOCUMUENTO_TIPO_DOCUMENTO1_idx` (`TIPO_DOCUMENTO_id_tipodoc` ASC) VISIBLE,
-  CONSTRAINT `fk_DOCUMUENTO_TIPO_DOCUMENTO1`
-    FOREIGN KEY (`TIPO_DOCUMENTO_id_tipodoc`)
-    REFERENCES `UNIONLINE`.`TIPO_DOCUMENTO` (`id_tipodoc`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb3;
-
-
--- -----------------------------------------------------
 -- Table `UNIONLINE`.`CLAS_PROP`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `UNIONLINE`.`CLAS_PROP` ;
@@ -269,11 +238,18 @@ CREATE TABLE IF NOT EXISTS `UNIONLINE`.`CBR` (
   `correo_cbr` VARCHAR(50) NOT NULL,
   `telefono` VARCHAR(12) NOT NULL,
   `HOR_ATENCION_id_horario` INT NOT NULL,
-  PRIMARY KEY (`id_cbr`, `HOR_ATENCION_id_horario`),
+  `DIRECCION_id_direccion` INT NOT NULL,
+  PRIMARY KEY (`id_cbr`, `HOR_ATENCION_id_horario`, `DIRECCION_id_direccion`),
   INDEX `fk_CBR_HOR_ATENCION1_idx` (`HOR_ATENCION_id_horario` ASC) VISIBLE,
+  INDEX `fk_CBR_DIRECCION1_idx` (`DIRECCION_id_direccion` ASC) VISIBLE,
   CONSTRAINT `fk_CBR_HOR_ATENCION1`
     FOREIGN KEY (`HOR_ATENCION_id_horario`)
-    REFERENCES `UNIONLINE`.`HOR_ATENCION` (`id_horario`))
+    REFERENCES `UNIONLINE`.`HOR_ATENCION` (`id_horario`),
+  CONSTRAINT `fk_CBR_DIRECCION1`
+    FOREIGN KEY (`DIRECCION_id_direccion`)
+    REFERENCES `UNIONLINE`.`DIRECCION` (`id_direccion`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -322,6 +298,40 @@ DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
+-- Table `UNIONLINE`.`TIPO_DOCUMENTO`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `UNIONLINE`.`TIPO_DOCUMENTO` ;
+
+CREATE TABLE IF NOT EXISTS `UNIONLINE`.`TIPO_DOCUMENTO` (
+  `id_tipodoc` INT NOT NULL,
+  `tipo_doc` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_tipodoc`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `UNIONLINE`.`DOCUMENTO`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `UNIONLINE`.`DOCUMENTO` ;
+
+CREATE TABLE IF NOT EXISTS `UNIONLINE`.`DOCUMENTO` (
+  `id_documento` INT NOT NULL,
+  `nombre_doc` VARCHAR(45) NOT NULL,
+  `doc` BLOB NOT NULL,
+  `TIPO_DOCUMENTO_id_tipodoc` INT NOT NULL,
+  PRIMARY KEY (`id_documento`),
+  INDEX `fk_DOCUMENTO_TIPO_DOCUMENTO1_idx` (`TIPO_DOCUMENTO_id_tipodoc` ASC) VISIBLE,
+  CONSTRAINT `fk_DOCUMENTO_TIPO_DOCUMENTO1`
+    FOREIGN KEY (`TIPO_DOCUMENTO_id_tipodoc`)
+    REFERENCES `UNIONLINE`.`TIPO_DOCUMENTO` (`id_tipodoc`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
 -- Table `UNIONLINE`.`SOLICITUD`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `UNIONLINE`.`SOLICITUD` ;
@@ -331,18 +341,16 @@ CREATE TABLE IF NOT EXISTS `UNIONLINE`.`SOLICITUD` (
   `fecha_solicitud` DATETIME NOT NULL,
   `fecha_cierre` DATETIME NOT NULL,
   `estado` VARCHAR(45) NOT NULL,
+  `numero_seguimiento` VARCHAR(45) NOT NULL,
   `USUARIO_id_usuario` INT NOT NULL,
   `PROPIEDAD_id_propiedad` INT NOT NULL,
-  `DOCUMUENTO_id_documento` INT NOT NULL,
   `TRAMITE_id_tramite` INT NOT NULL,
+  `DOCUMENTO_id_documento` INT NOT NULL,
   PRIMARY KEY (`id_soli`, `USUARIO_id_usuario`, `PROPIEDAD_id_propiedad`, `TRAMITE_id_tramite`),
   INDEX `fk_SOLICITUD_USUARIO_idx` (`USUARIO_id_usuario` ASC) VISIBLE,
   INDEX `fk_SOLICITUD_PROPIEDAD1_idx` (`PROPIEDAD_id_propiedad` ASC) VISIBLE,
-  INDEX `fk_SOLICITUD_DOCUMUENTO1_idx` (`DOCUMUENTO_id_documento` ASC) VISIBLE,
   INDEX `fk_SOLICITUD_TRAMITE1_idx` (`TRAMITE_id_tramite` ASC) VISIBLE,
-  CONSTRAINT `fk_SOLICITUD_DOCUMUENTO1`
-    FOREIGN KEY (`DOCUMUENTO_id_documento`)
-    REFERENCES `UNIONLINE`.`DOCUMUENTO` (`id_documento`),
+  INDEX `fk_SOLICITUD_DOCUMENTO1_idx` (`DOCUMENTO_id_documento` ASC) VISIBLE,
   CONSTRAINT `fk_SOLICITUD_PROPIEDAD1`
     FOREIGN KEY (`PROPIEDAD_id_propiedad`)
     REFERENCES `UNIONLINE`.`PROPIEDAD` (`id_propiedad`),
@@ -351,7 +359,12 @@ CREATE TABLE IF NOT EXISTS `UNIONLINE`.`SOLICITUD` (
     REFERENCES `UNIONLINE`.`TRAMITE` (`id_tramite`),
   CONSTRAINT `fk_SOLICITUD_USUARIO`
     FOREIGN KEY (`USUARIO_id_usuario`)
-    REFERENCES `UNIONLINE`.`USUARIO` (`id_usuario`))
+    REFERENCES `UNIONLINE`.`USUARIO` (`id_usuario`),
+  CONSTRAINT `fk_SOLICITUD_DOCUMENTO1`
+    FOREIGN KEY (`DOCUMENTO_id_documento`)
+    REFERENCES `UNIONLINE`.`DOCUMENTO` (`id_documento`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -440,35 +453,21 @@ CREATE TABLE IF NOT EXISTS `UNIONLINE`.`FORMULARIO` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
-
--- -----------------------------------------------------
--- Table `UNIONLINE`.`T_PAGO`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `UNIONLINE`.`T_PAGO` ;
-
-CREATE TABLE IF NOT EXISTS `UNIONLINE`.`T_PAGO` (
-  `id_tipoP` INT NOT NULL,
-  `nombre_tipoP` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id_tipoP`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb3;
-
 USE `UNIONLINE` ;
 
 -- -----------------------------------------------------
--- function FN_AGREGAR_BOLETA
+-- function FN_CALCULAR_MONTO
 -- -----------------------------------------------------
 
 USE `UNIONLINE`;
-DROP function IF EXISTS `UNIONLINE`.`FN_AGREGAR_BOLETA`;
+DROP function IF EXISTS `UNIONLINE`.`FN_CALCULAR_MONTO`;
 
 DELIMITER $$
 USE `UNIONLINE`$$
-CREATE DEFINER=`root`@`%` FUNCTION `FN_AGREGAR_BOLETA`(estado int) RETURNS varchar(20) CHARSET utf8mb3
+CREATE DEFINER=`root`@`%` FUNCTION `FN_CALCULAR_MONTO`(estado int) RETURNS int
 BEGIN
 	declare monto_total int;
-    declare conservador int;
-    declare tipoP int;
+
 SELECT 
     SUM(TRAMITE.valor_tramite)
 INTO monto_total FROM
@@ -481,29 +480,16 @@ INTO monto_total FROM
     UNIONLINE.TRAMITE ON SOLICITUD.TRAMITE_id_tramite = TRAMITE.id_tramite
 WHERE
     ESTADO_PAGO.id_estado = estado;
-SELECT 
-    ESTADO_PAGO.TIPO_PAGO_id_tipoP,
-    SOLICITUD.PROPIEDAD_id_propiedad
-INTO conservador , tipoP FROM
-    UNIONLINE.ESTADO_PAGO
-        INNER JOIN
-    UNIONLINE.CAR_COMPRA ON ESTADO_PAGO.CAR_COMPRA_id_carrito = CAR_COMPRA.id_carrito
-        INNER JOIN
-    UNIONLINE.SOLICITUD ON CAR_COMPRA.SOLICITUD_id_soli = SOLICITUD.id_soli
-WHERE
-    ESTADO_PAGO.id_estado = estado;
 
 IF monto_total > 0 THEN
-	INSERT INTO  `UNIONLINE`. `B_PAGO` (`fecha_emision`,`monto_pago`,`tipo_pago`,`nombre_conservador`)
-    VALUES
-    (now(),monto_total,tipoP,conservador);
-    RETURN "Éxito";
+	
+    RETURN monto_total;
     
 ELSE 
 	INSERT INTO  `UNIONLINE`. `ERROR` (`codigo_error`,`mensaje_error`,`fecha_error`)
     VALUES
     ('1002','Carrito de compra sin monto',now());
-    RETURN "Error";
+    RETURN 0;
 END IF;
 END$$
 
@@ -515,9 +501,13 @@ DELIMITER $$
 USE `UNIONLINE`$$
 DROP TRIGGER IF EXISTS `UNIONLINE`.`ESTADO_PAGO_AFTER_INSERT` $$
 USE `UNIONLINE`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `UNIONLINE`.`ESTADO_PAGO_AFTER_INSERT` AFTER INSERT ON `ESTADO_PAGO` FOR EACH ROW
+CREATE
+DEFINER=`root`@`%`
+TRIGGER `UNIONLINE`.`ESTADO_PAGO_AFTER_INSERT`
+AFTER INSERT ON `UNIONLINE`.`ESTADO_PAGO`
+FOR EACH ROW
 BEGIN
-	IF FN_AGREGAR_BOLETA (NEW.id_estado) then
+	IF  FN_CALCULAR_MONTO(NEW.id_estado) > 0 then
 		INSERT INTO  `UNIONLINE`. `B_PAGO` (`fecha_emision`,`monto_pago`,`tipo_pago`,`nombre_conservador`)
 		VALUES
 		(now(),monto_total,tipoP,conservador);
