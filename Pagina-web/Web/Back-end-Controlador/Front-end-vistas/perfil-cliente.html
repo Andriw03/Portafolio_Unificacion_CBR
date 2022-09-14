@@ -9,6 +9,7 @@
     <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +27,8 @@
   <link href="static/css/main.css" rel="stylesheet">
   <link rel="stylesheet" href="static/css/reset.css">
   <link rel="stylesheet" href="static/css/perfil-cliente.css">
-
+  <!-- CSS only -->
+  <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </head>
 <body>
     
@@ -63,42 +65,57 @@
             </ul>
           </nav> <!-- .navbar -->
     
-          <a class="btn-book-a-table" href="#book-a-table">Crear Cuenta</a>
-          <a class="btn-book-a-table" href="#book-a-table">Iniciar Sesión</a>
+          <a class="btn-book-a-table" href="#book-a-table">Nombre genérico cliente</a>
           <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
           <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
         </div>
       </header> <!-- End Header -->
 
     <Main>
+      <div class="px-4 py-5  text-center">
+        <img class="d-block mx-auto mb-4" src="imagenes/LogoCBR.png" alt="" width="25%" height="25%">
+        <h3 class="display-5 fw-bold">Historial de trámites</h3>
+        <br>
+        
         <div>
-            <div class="container_tabla">
-                <table class="table table-hover table-bordered">
-                    <thead class="thead-dark">
-                      <tr class="table-dark">
-                        <th scope="col">#</th>
-                        <th scope="col">Tipo Trámite</th>
-                        <th scope="col">Fecha Emisión</th>
-                        <th scope="col">Estado</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Inscripción de Propiedad</td>
-                        <td>05/09/2022</td>
-                        <td>Rechazado</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Inscripción de Comercio</td>
-                        <td>05/09/2022</td>
-                        <td>En proceso</td>
-                      </tr>
-                    </tbody>
-                  </table>
-              </div>
+          <div class="tabla">
+            <table class="table table-striped">
+                <thead  class="table-dark">
+                  <tr>
+                    <th scope="col">Nombre del trámite</th>
+                    <th scope="col">N° Seguimiento</th>
+                    <th scope="col">Estado solicitud</th>
+                    <th scope="col">Detalle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Copia con Vigencia o Dominio Vigente</th>
+                    <th>2938547192</th>
+                    <th>  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        En Proceso</th>
+                    <th>
+                     <a href=""><i class="bi bi-search"></i></a> </th>
+                  </tr>
+                  <tr>
+                    <th scope="row">Copia con Vigencia o Dominio Vigente</th>
+                    <th>23423423423</th>
+                    <th>  <i class="bi bi-x-circle"></i>
+                        Rechazado</th>
+                    <th><a href=""><i class="bi bi-search"></i></a></th>
+                  </tr>
+                  <tr>
+                    <th scope="row">Copia con Vigencia o Dominio Vigente</th>
+                    <th>23523523342</th>
+                    <th>  <i class="bi bi-check2-circle"></i>
+                        Aprobado</th>
+                    <th><a href=""><i class="bi bi-search"></i></a></th>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
         </div> 
+      </div>
     </Main>
     
     

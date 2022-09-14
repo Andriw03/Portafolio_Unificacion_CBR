@@ -2,14 +2,14 @@
     padding: 0 20%;
 }
 .btn {
-   background-color: rgb(255, 255, 255);
-   border-color: #1E4D40;
-   color: #1E4D40;
+    background-color: #F0F2F2;
+    border-color: #393E59;
+    color: #393E59;
     margin-top: 23px;
   }
 .btn:hover{
-    background-color: #1E4D40;
-    border: #1E4D40;
+    background-color: #393E59;
+    border: #393E59;
 }
 footer{
     background-color: #1E4D40;

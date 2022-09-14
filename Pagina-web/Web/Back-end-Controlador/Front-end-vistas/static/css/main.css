@@ -18,9 +18,9 @@
 
 /* Colors */
 :root {
-  --color-default: #212529;
-  --color-primary: #1E4D40;
-  --color-secondary: #37373f;
+  --color-default: #010326;
+  --color-primary: #393E59;
+  --color-secondary: #F0F2F2;
 }
 
 /* Smooth scroll behavior */
@@ -35,18 +35,25 @@ body {
   font-family: var(--font-default);
   color: var(--color-default);
   margin-top: 3rem !important;
+  background-color:#F0F2F2;
+}
+body h1, h2, h3, h4{
+  color: #010326 !important;
 }
 header{
-  background-color: #3C9980 !important;
+  background-color: #010326 !important;
+}
+header h1{
+  color: #F0F2F2 !important;
 }
 
-a {
-  color: var(--color-primary);
+header a {
+  color: #F0F2F2 !important;
   text-decoration: none;
 }
 
 a:hover {
-  color: #1E4D40;
+  color: #6FBFBF;
   text-decoration: none;
 }
 
@@ -57,7 +64,9 @@ h4,
 h5,
 h6 {
   font-family: var(--font-secondary);
+
 }
+
 
 /*--------------------------------------------------------------
 # Sections & Section Header
@@ -1620,11 +1629,11 @@ section {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-.footer {
+footer {
   font-size: 14px;
-  background-color: #1f1f24;
+  background-color:#010326 !important;
   padding: 50px 0;
-  color: rgba(255, 255, 255, 0.7);
+  color: #F0F2F2 !important;
 }
 
 .footer .icon {
