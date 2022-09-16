@@ -9,7 +9,7 @@ VALUES
 
 INSERT INTO `UNIONLINE`. `TIPO_PROPIEDAD` (`id_tipoP`,`nombre_tipoP`)
 VALUES
-	(1,'Recidencial'),
+	(1,'Residencial'),
 	(2,'Comercial');
 
 INSERT INTO `UNIONLINE`. `REGION` (`id_region`,`nombre_region`)
