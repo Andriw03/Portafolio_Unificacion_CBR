@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("logocbr.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modelo/dbapp.mdf")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modelo/dbapp_log.ldf")]
 
 

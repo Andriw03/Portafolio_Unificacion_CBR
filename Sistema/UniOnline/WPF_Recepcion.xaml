@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline"
         mc:Ignorable="d"
-        Title="WPF_Recepcion" Height="450" Width="800">
+        Title="WPF_Recepcion" Height="500" Width="800">
     <Grid Margin="0,0,0,1">
         <Rectangle HorizontalAlignment="Center" Height="87" Stroke="Black" VerticalAlignment="Top" Width="800" Fill="#FF010326" Margin="-4,0"/>
         <Image HorizontalAlignment="Center" Height="105" Margin="340,75,344,0" VerticalAlignment="Top" Width="108" Source="LogoCBR.png" />
