@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\
 UniOnline
 none
 false
 DEBUG;TRACE
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\App.xaml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\App.xaml
 5941439421
 
 11-1441809092
 13-1505183044
 MainWindow.xaml;WPF_Director.xaml;WPF_Moderador.xaml;WPF_Recepcion.xaml;WPF_Trabajador.xaml;
 
-False
+True
 

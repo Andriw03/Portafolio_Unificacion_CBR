@@ -23,5 +23,26 @@ namespace UniOnline
         {
             InitializeComponent();
         }
+
+        private void Button_Inicio(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Gestion_Prop(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Gestion_Tra(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Consulta_Tra(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
+
 }
