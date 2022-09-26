@@ -23,5 +23,20 @@ namespace UniOnline.Properties
         {
             InitializeComponent();
         }
+
+        private void Button_Inicio(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
