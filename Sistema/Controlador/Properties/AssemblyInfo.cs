@@ -1,8 +1,6 @@
 ﻿using System.Reflection;
-using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Windows;
 
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
@@ -21,25 +19,8 @@ using System.Windows;
 // COM, establezca el atributo ComVisible en true en este tipo.
 [assembly: ComVisible(false)]
 
-//Para comenzar a compilar aplicaciones que se puedan traducir, establezca
-//<UICulture>CultureYouAreCodingWith</UICulture> en el archivo .csproj
-//dentro de <PropertyGroup>.  Por ejemplo, si utiliza inglés de EE.UU.
-//en los archivos de código fuente, establezca <UICulture> en en-US.  A continuación, quite la marca de comentario
-//del atributo NeutralResourceLanguage.  Actualice "en-US" en
-//la siguiente línea para que coincida con el valor UICulture del archivo de proyecto.
-
-//[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]
-
-
-[assembly: ThemeInfo(
-    ResourceDictionaryLocation.None, //donde se encuentran los diccionarios de recursos específicos del tema
-                                     //(se utiliza si no se encuentra ningún recurso en la página,
-                                     // ni diccionarios de recursos de la aplicación)
-    ResourceDictionaryLocation.SourceAssembly //donde se encuentra el diccionario de recursos genérico
-                                              //(se utiliza si no se encuentra ningún recurso en la página,
-                                              // aplicación o diccionarios de recursos específicos del tema)
-)]
-
+// El siguiente GUID sirve como id. de typelib si este proyecto se expone a COM.
+[assembly: Guid("cd1706f8-9a8a-4083-b111-85f5b20b4b52")]
 
 // La información de versión de un ensamblado consta de los cuatro valores siguientes:
 //

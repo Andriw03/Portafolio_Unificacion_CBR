@@ -12,6 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Windows.Navigation;
+using System.Data.SqlClient;
+using System.Data;
+using System.Collections;
+using Controlador;
+
 
 namespace UniOnline
 {
@@ -57,6 +63,19 @@ namespace UniOnline
 
         private void Button_Consulta_Tra(object sender, RoutedEventArgs e)
         {
+
+        }
+        Conexion con = new Conexion();
+        private void Button_Conect(object sender, RoutedEventArgs e)
+        {
+            if (con.Conectar())
+            {
+                MessageBox.Show("Conexion lista");
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
 
         }
     }
