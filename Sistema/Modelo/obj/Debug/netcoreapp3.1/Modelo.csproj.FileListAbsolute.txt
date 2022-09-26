@@ -1,9 +1,0 @@
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Modelo\bin\Debug\netcoreapp3.1\Modelo.deps.json
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Modelo\bin\Debug\netcoreapp3.1\Modelo.dll
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Modelo\bin\Debug\netcoreapp3.1\Modelo.pdb
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Modelo\obj\Debug\netcoreapp3.1\Modelo.GeneratedMSBuildEditorConfig.editorconfig
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Modelo\obj\Debug\netcoreapp3.1\Modelo.AssemblyInfoInputs.cache
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Modelo\obj\Debug\netcoreapp3.1\Modelo.AssemblyInfo.cs
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Modelo\obj\Debug\netcoreapp3.1\Modelo.csproj.CoreCompileInputs.cache
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Modelo\obj\Debug\netcoreapp3.1\Modelo.dll
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Modelo\obj\Debug\netcoreapp3.1\Modelo.pdb

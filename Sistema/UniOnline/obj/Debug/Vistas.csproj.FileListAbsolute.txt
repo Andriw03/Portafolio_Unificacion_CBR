@@ -1,9 +1,0 @@
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.AssemblyReference.cache
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\MainWindow.g.cs
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\WPF_Director.g.cs
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\WPF_Moderador.g.cs
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\WPF_Recepcion.g.cs
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\WPF_Trabajador.g.cs
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\App.g.cs
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\UniOnline_MarkupCompile.cache
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\UniOnline_MarkupCompile.lref
