@@ -1,0 +1,17 @@
+﻿<Window x:Class="UniOnline.WPF_Trabajador"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniOnline"
+        mc:Ignorable="d"
+        Title="CBR UniOnline" Height="500" Width="900">
+    <Grid>
+        <Rectangle HorizontalAlignment="Center" Height="87" Stroke="Black" VerticalAlignment="Top" Width="892" Fill="#FF010623"/>
+        <TextBlock HorizontalAlignment="Left" Margin="12,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="189" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="30" Text="CBRS de Chile"/>
+        <Button x:Name="btnInicio" Content="Inicio" Margin="231,32,0,0" VerticalAlignment="Top" Width="51" HorizontalAlignment="Left" Background="#FF010623" Click="Button_Inicio" FontSize="16" Foreground="White" BorderBrush="#FF010623"/>
+        <Button x:Name="btnGestionProp" Content="Gestión Propiedad" HorizontalAlignment="Left" Margin="287,32,0,0" VerticalAlignment="Top" Width="142" Background="#FF010623" BorderBrush="#FF010623" Foreground="White" FontSize="16" Click="Button_Gestion_Prop"/>
+        <Button Content="Gestión Trámites" HorizontalAlignment="Left" Margin="434,32,0,0" VerticalAlignment="Top" Width="123" Background="#FF010623" BorderBrush="#FF010623" Foreground="White" FontSize="16" Click="Button_Gestion_Tra"/>
+        <Button Content="Consultar Trámite" HorizontalAlignment="Left" Margin="562,32,0,0" VerticalAlignment="Top" Width="129" Background="#FF010623" BorderBrush="#FF010623" Foreground="White" FontSize="16" Click="Button_Consulta_Tra"/>
+    </Grid>
+</Window>

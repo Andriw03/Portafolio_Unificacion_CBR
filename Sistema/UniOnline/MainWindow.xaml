@@ -1,0 +1,22 @@
+﻿<Window x:Class="UniOnline.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniOnline"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800">
+    <Grid>
+        <Rectangle HorizontalAlignment="Center" Height="483" Stroke="Black" VerticalAlignment="Center" Width="800" Fill="#F0F2F2" StrokeThickness="0"/>
+        <Rectangle HorizontalAlignment="Center" Height="87" Stroke="Black" VerticalAlignment="Top" Width="800" Fill="#FF010326"/>
+        <Image HorizontalAlignment="Center" Height="152" Margin="330,92,323.6,0" VerticalAlignment="Top" Width="140" Source="LogoCBR.png" />
+        <TextBlock HorizontalAlignment="Left" Margin="21,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="253" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="36"><Run Language="es-es" Text="CBRS de Chile."/></TextBlock>
+        <Label Content="Rut" HorizontalAlignment="Left" Height="28" Margin="330,280,0,0" VerticalAlignment="Top" Width="31" Foreground="#FF010326"/>
+        <TextBox HorizontalAlignment="Left" Margin="366,285,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="#FFF0F2F2" TextChanged="TextBox_TextChanged" Foreground="#FF010326"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Height="28" Margin="289,319,0,0" VerticalAlignment="Top" Width="79"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="368,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Background="#FFF0F2F2" Foreground="#FF010326"/>
+        <TextBlock HorizontalAlignment="Center" Height="35" Margin="0,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Foreground="#FF010326" FontSize="22" FontFamily="Segoe UI Historic" FontWeight="Bold"><Run Language="es-es" Text="Ingrese sus credenciales"/></TextBlock>
+        <Button Content="Iniciar sesión" HorizontalAlignment="Left" Margin="426,376,0,0" VerticalAlignment="Top" Background="#FFF0F2F2" IsEnabled="False" Height="32" Width="99" Foreground="#FF010326" BorderBrush="#FF010326"/>
+        <Button Content="¿Olvido su contraseña?" HorizontalAlignment="Left" Margin="275,376,0,0" VerticalAlignment="Top" Foreground="#FF010326" Height="32" Width="125" BorderBrush="#FF010326" Background="#FFF0F2F2"/>
+    </Grid>
+</Window>
