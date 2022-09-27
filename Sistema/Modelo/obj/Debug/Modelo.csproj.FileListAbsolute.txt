@@ -1,6 +1,0 @@
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Modelo\bin\Debug\Modelo.dll
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Modelo\bin\Debug\Modelo.pdb
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Modelo\obj\Debug\Modelo.csproj.AssemblyReference.cache
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Modelo\obj\Debug\Modelo.dll
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Modelo\obj\Debug\Modelo.pdb
