@@ -61,24 +61,48 @@ namespace Controlador
                 return null;
             }
         }
-        //Método para Buscar en la base de datos una columna de una tabla con un where
-        public List<string> LlenadoWhere(string tab, string colum)
+        //Método para Buscar en la base de datos una columna de una tabla con un where = INT
+        public List<string> LlenadoWhereInt(string tab, string colum, string colum2, int filtro)
         {
             List<string> registro = new List<string>();
             try
             {
-                cmd = new MySqlCommand("SELECT " + colum + " FROM UNIONLINE." + tab + ";", conex);
+                cmd = new MySqlCommand("SELECT " + colum + " FROM UNIONLINE." + tab + " where "+colum2+" = "+filtro+";", conex);
+                rd = cmd.ExecuteReader();
                 while (rd.Read())
                 {
                     registro.Add(rd[colum].ToString());
                 }
                 rd.Close();
-                rd = cmd.ExecuteReader();
                 return registro;
             }
             catch (Exception ex)
             {
-                return null;
+                registro.Add("Error BD");
+                registro.Add(ex.Message);
+                return registro;
+            }
+        }
+        //Método para Buscar en la base de datos una columna de una tabla con un where = String
+        public List<string> LlenadoWhereString(string tab, string colum, string colum2, string filtro)
+        {
+            List<string> registro = new List<string>();
+            try
+            {
+                cmd = new MySqlCommand("SELECT " + colum + " FROM UNIONLINE." + tab + " where " + colum2 + " = '" + filtro + "';", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    registro.Add(rd[colum].ToString());
+                }
+                rd.Close();
+                return registro;
+            }
+            catch (Exception ex)
+            {
+                registro.Add("Error BD");
+                registro.Add(ex.Message);
+                return registro;
             }
         }
     }
