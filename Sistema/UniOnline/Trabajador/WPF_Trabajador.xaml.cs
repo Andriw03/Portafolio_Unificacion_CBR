@@ -83,9 +83,6 @@ namespace UniOnline.Trabajador
             System.Windows.Application.Current.Shutdown();
         }
 
-        private void Button_Conect(object sender, RoutedEventArgs e)
-        {
 
-        }
     }
 }

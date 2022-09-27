@@ -24,6 +24,7 @@ namespace UniOnline.Trabajador
         {
             InitializeComponent();
             Conectar();
+            LlenarCmbPropiedad();
         }
         //Conexión BD
         Conexion con = new Conexion();
@@ -38,7 +39,25 @@ namespace UniOnline.Trabajador
                 MessageBox.Show("Error Conexión");
             }
         }
+        //Método para llenar el combobox tipo de propiedad
+        private void LlenarCmbPropiedad()
+        {
+            List<string> registro = con.Llenado("TIPO_PROPIEDAD", "nombre_tipoP");
+            if (registro != null)
+            {
+                for (int i = 0; i < registro.Count(); i++)
+                {
+                    cmbTipoProp.Items.Add(registro[i]);
+                }
+                cmbTipoProp.Items.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Error", "Error Conexion TIPO_PROPIEDAD");
+            }
+        }
         //Botón para volver a la vista principal de Trabajador
+
         private void btnVolverProp_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

@@ -8,7 +8,7 @@
         Title="UniOnline"  WindowState="Maximized">
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="87" Stroke="Black" VerticalAlignment="Top" Width="762" Fill="#FF010326" Margin="0,0,-0.4,0"/>
-        <Image HorizontalAlignment="Center" Height="152" Margin="330,92,323.6,0" VerticalAlignment="Top" Width="140" Source="LogoCBR.png" />
+        <Image HorizontalAlignment="Center" Height="152" Margin="330,87,291.6,0" VerticalAlignment="Top" Width="140" Source="LogoCBR.png" />
         <TextBlock HorizontalAlignment="Left" Margin="21,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="253" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="36"><Run Language="es-es" Text="CBRS de Chile."/></TextBlock>
         <Label Content="Rut" HorizontalAlignment="Left" Height="28" Margin="330,280,0,0" VerticalAlignment="Top" Width="31" Foreground="#FF010326"/>
         <TextBox x:Name="textRut" HorizontalAlignment="Left" Margin="366,285,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="#FFF0F2F2" Foreground="#FF010326"/>

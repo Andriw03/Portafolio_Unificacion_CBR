@@ -17,6 +17,5 @@
         <Rectangle Fill="#FF393E59" HorizontalAlignment="Left" Height="55" Margin="12,101,0,0" Stroke="Black" VerticalAlignment="Top" Width="134"/>
         <TextBlock x:Name="MyTime" HorizontalAlignment="Left" Margin="44,132,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="17" Foreground="#FFF0F2F2"/>
         <TextBlock x:Name="datelbl" HorizontalAlignment="Left" Margin="34,101,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="18" Foreground="#FFF0F2F2"/>
-        <Button Content="a" HorizontalAlignment="Left" Margin="231,181,0,0" VerticalAlignment="Top" Width="75" Click="Button_Conect"/>
     </Grid>
 </Window>
