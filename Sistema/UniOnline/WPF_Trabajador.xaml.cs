@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
@@ -40,6 +41,7 @@ namespace UniOnline
             datelbl.Text = DateTime.Now.ToString("d");
         }
 
+
         private void Button_Inicio(object sender, RoutedEventArgs e)
         {
 
@@ -47,7 +49,9 @@ namespace UniOnline
 
         private void Button_Gestion_Prop(object sender, RoutedEventArgs e)
         {
-
+            
+            WPF_Trabajador_Prop tprop = new WPF_Trabajador_Prop();
+            tprop.ShowDialog();
         }
 
         private void Button_Gestion_Tra(object sender, RoutedEventArgs e)
@@ -58,6 +62,11 @@ namespace UniOnline
         private void Button_Consulta_Tra(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 

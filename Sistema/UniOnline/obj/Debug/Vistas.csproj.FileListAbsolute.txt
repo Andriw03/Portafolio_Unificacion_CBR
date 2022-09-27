@@ -60,3 +60,5 @@ D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.C
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.CopyComplete
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.exe
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\WPF_Trabajador_Prop.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\WPF_Trabajador_Prop.baml
