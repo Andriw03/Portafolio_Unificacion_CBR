@@ -41,5 +41,45 @@ namespace Controlador
                 return false;
             }
         }
+        //Método para Buscar en la base de datos una columna de una tabla
+        public List<string> Llenado(string tab, string colum)
+        {
+            List<string> registro = new List<string>();
+            try
+            {
+                cmd = new MySqlCommand("SELECT "+colum+" FROM UNIONLINE."+tab+";", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    registro.Add(rd[colum].ToString());
+                }
+                rd.Close();
+                return registro;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        //Método para Buscar en la base de datos una columna de una tabla con un where
+        public List<string> LlenadoWhere(string tab, string colum)
+        {
+            List<string> registro = new List<string>();
+            try
+            {
+                cmd = new MySqlCommand("SELECT " + colum + " FROM UNIONLINE." + tab + ";", conex);
+                while (rd.Read())
+                {
+                    registro.Add(rd[colum].ToString());
+                }
+                rd.Close();
+                rd = cmd.ExecuteReader();
+                return registro;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }
