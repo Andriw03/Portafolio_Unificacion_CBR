@@ -35,14 +35,7 @@
                     <TextBox x:Name="txtRutDueño" HorizontalAlignment="Left" Height="32" Margin="10,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" MaxLength="15" IsEnabled="False" IsUndoEnabled="False"/>
                     <TextBox x:Name="txtNombreDueño" HorizontalAlignment="Left" Height="32" Margin="223,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" MaxLength="15" IsEnabled="False" IsUndoEnabled="False"/>
                     <Label Content="Nombre Dueño:" HorizontalAlignment="Left" Margin="223,105,0,0" VerticalAlignment="Top" FontSize="15"/>
-                    <ComboBox Name="TipoProp" Margin="10,193,677,304" FontSize="15">
-                        <ComboBoxItem>
-                            <TextBlock Text="Residencial"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock Text="Comercial"/>
-                        </ComboBoxItem>
-                    </ComboBox>
+                    <ComboBox x:Name="cmbTipoProp" Margin="10,193,677,304" FontSize="15" IsEditable="True" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbTipoProp_SelectionChanged" Grid.Row="1"/>
                     <Label Content="Tipos de propiedad:" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" FontSize="15"/>
                     <Label Content="Foja:" HorizontalAlignment="Left" Margin="223,165,0,0" VerticalAlignment="Top" FontSize="15"/>
                     <TextBox x:Name="txtFoja" HorizontalAlignment="Left" Height="32" Margin="223,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" />
@@ -57,79 +50,15 @@
                     <Label Content="Descripción:" HorizontalAlignment="Left" Margin="10,285,0,0" VerticalAlignment="Top" FontSize="15"/>
                     <TextBox x:Name="txtDescripcion" HorizontalAlignment="Left" Height="32" Margin="10,313,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="836" />
                     <Label Content="Región" HorizontalAlignment="Left" Margin="10,345,0,0" VerticalAlignment="Top" FontSize="15"/>
-                    <ComboBox Name="Region" Margin="10,373,677,124" FontSize="15">
-                        <ComboBoxItem Name="arica">
-                            <TextBlock Text="Región de Arica y Parinacota"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem Name="tarapaca">
-                            <TextBlock Text="Región de Tarapacá"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem Name="antofagasta">
-                            <TextBlock Text="Región de Antofagasta"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem Name="atacama">
-                            <TextBlock Text="Región de Atacama"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem Name="coquimbo">
-                            <TextBlock Text="Región de Coquimbo"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem Name="valparaiso">
-                            <TextBlock Text="Región de Valparíso"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem Name="sangiago">
-                            <TextBlock Text="Región Metropolitana"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem Name="ohiggins">
-                            <TextBlock Text="Región de O'Higgins"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem Name="maule">
-                            <TextBlock Text="Región de Maule"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem Name="biobio">
-                            <TextBlock Text="Región de Biobío"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem Name="araucania">
-                            <TextBlock Text="Región de La Araucanía"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem Name="lagos">
-                            <TextBlock Text="Región de Los Lagos"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem Name="aysen">
-                            <TextBlock Text="Región de Aysén"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem Name="magallanes">
-                            <TextBlock Text="Región de Magallanes"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem Name="rios">
-                            <TextBlock Text="Región de Los Ríos"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem Name="ñuble">
-                            <TextBlock Text="Región de Ñuble"/>
-                        </ComboBoxItem>
-                    </ComboBox>
+                    <ComboBox x:Name="cmbRegion" Margin="10,373,677,124" FontSize="15" IsEditable="True" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbRegion_SelectionChanged"/>
                     <Label Content="Provincia" HorizontalAlignment="Left" Margin="223,345,0,0" VerticalAlignment="Top" FontSize="15"/>
-                    <ComboBox Name="Provincia" Margin="223,373,464,124" FontSize="15">
-                        <ComboBoxItem>
-                            <TextBlock Text="Residencial"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock Text="Comercial"/>
-                        </ComboBoxItem>
-                    </ComboBox>
+                    <ComboBox x:Name="cmbProvincia" Margin="223,373,464,124" FontSize="15" IsEditable="True" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbProvincia_SelectionChanged"/>
                     <Label Content="Comuna" HorizontalAlignment="Left" Margin="436,345,0,0" VerticalAlignment="Top" FontSize="15"/>
-                    <ComboBox x:Name="Comuna" Margin="436,373,251,124" FontSize="15">
-                        <ComboBoxItem>
-                            <TextBlock Text="Residencial"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock Text="Comercial"/>
-                        </ComboBoxItem>
-                    </ComboBox>
+                    <ComboBox x:Name="cmbComuna" Margin="436,373,251,124" FontSize="15" IsEditable="True" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbComuna_SelectionChanged"/>
                     <Label Content="Dirección" HorizontalAlignment="Left" Margin="10,405,0,0" VerticalAlignment="Top" FontSize="15"/>
                     <TextBox x:Name="txtDireccion" HorizontalAlignment="Left" Height="32" Margin="10,433,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="836" />
                     <Button x:Name="btnGuardar"  Content="Guardar" HorizontalAlignment="Left" Margin="10,492,0,0" VerticalAlignment="Top" Width="81" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnGuardar_Click"/>
                 </Grid>
-
             </TabItem>
 
             <TabItem Header="Modificar Propiedad" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="Auto" HorizontalAlignment="Center">
@@ -140,11 +69,6 @@
 
             </TabItem>
 
-            <TabItem Header="Eliminar Propiedad" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="Auto" HorizontalAlignment="Right">
-                <Grid Background="#FFF0F2F2">
-                    <Button Content="Volver" HorizontalAlignment="Right" Margin="0,491,10,0" VerticalAlignment="Top" Width="75"/>
-                </Grid>
-            </TabItem>
         </TabControl>
     </Grid>
 </Window>

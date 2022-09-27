@@ -38,12 +38,33 @@ namespace UniOnline.Trabajador
                 MessageBox.Show("Error Conexión");
             }
         }
+        //Botón para volver a la vista principal de Trabajador
         private void btnVolverProp_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cmbTipoProp_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void cmbRegion_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void cmbProvincia_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void cmbComuna_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

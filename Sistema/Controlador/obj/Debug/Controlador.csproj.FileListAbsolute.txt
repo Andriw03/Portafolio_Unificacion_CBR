@@ -35,3 +35,40 @@ D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.AssemblyReference.cache
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CopyComplete
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Controlador.dll.config
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Controlador.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Controlador.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\BouncyCastle.Crypto.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Hash.xxHash.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySql.Data.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySqlConnector.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Buffers.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Memory.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Numerics.Vectors.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Ubiety.Dns.Core.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\ZstdNet.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\BouncyCastle.Crypto.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Hash.xxHash.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySql.Data.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySqlConnector.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Buffers.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Memory.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Numerics.Vectors.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.AssemblyReference.cache
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CoreCompileInputs.cache
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CopyComplete
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.pdb
