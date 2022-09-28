@@ -118,7 +118,7 @@ namespace Controlador
                 }
                 rd.Close();
                 Conectar();
-                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`DIRECCION` (`nombre_calle`, `numero_casa`, `COMUNA_id_comuna`) VALUES ( '"+ nombreCalle + "',"+ numeroCasa + ", "+Int32.Parse(idComuna)+");", conex);
+                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`DIRECCION` (`nombre_calle`, `numero_casa`, `COMUNA_id_comuna`) VALUES ( '"+ nombreCalle + "',"+ numeroCasa + ", "+ Int32.Parse(idComuna) +");", conex);
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -132,7 +132,7 @@ namespace Controlador
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("", conex);
+                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`CLAS_PROP`(`foja`, `numero`, `anno`, `razon_social`, `rut_empresa`) VALUES ("+ foja + ", " + numero + ", "+ anno +", '"+razonSocial+ "', '" + rutEmpresa + "');", conex);
                 cmd.ExecuteNonQuery();
                 return true;
             }

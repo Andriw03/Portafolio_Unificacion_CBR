@@ -26,7 +26,6 @@ namespace UniOnline.Trabajador
             Conectar();
             LlenarCmbPropiedad();
             LlenarCmbRegion();
-            con.InsertDireccion("Valle rico",23,"Arica");
         }
         //Conexión BD
         Conexion con = new Conexion();
