@@ -95,6 +95,7 @@
   <ItemGroup>
     <Compile Include="Duenno.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="Director.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Propiedad.cs" />
   </ItemGroup>

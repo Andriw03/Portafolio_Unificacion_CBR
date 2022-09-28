@@ -11,13 +11,9 @@ using System.Data.SqlClient;
 using System.Security.Cryptography;
 using MySql.Data.MySqlClient;
 using MySqlConnector;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MySql.Data;
-using MySql.Data.MySqlClient;
+using MySqlCommand = MySql.Data.MySqlClient.MySqlCommand;
+
 namespace Controlador
 {
     public class Usuario : Conexion
@@ -31,6 +27,8 @@ namespace Controlador
         public string segundo_apellido { get; set; }
         public string correo_electronico { get; set; }
         public string telefono { get; set; }
+        public int id_cbr { get; set; }
+        public int id_tipoU { get; set; }
 
         public Usuario()
         {
@@ -46,8 +44,10 @@ namespace Controlador
             segundo_nombre = string.Empty;
             primer_apellido = string.Empty;
             segundo_apellido = string.Empty;
-            telefono = string.Empty;
             correo_electronico = string.Empty;
+            telefono = string.Empty;
+            id_cbr = 1;
+            id_tipoU = 0;
         }
 
         public string Insertar(Usuario usu)
@@ -56,7 +56,7 @@ namespace Controlador
             try
             {
                 Conectar();
-                cmd = new SqlCommand("insert into USUARIO values ('"+ usu.id_usuario + "','"  + usu.rut_usuario +  "," + usu.contrasenna + "','" + usu.primer_nombre + "','" + usu.segundo_nombre + "','" + usu.primer_apellido + "','" + usu.segundo_apellido + "','" + usu.telefono + "','" + usu.correo_electronico+")", conex);
+                cmd = new MySqlCommand("insert into USUARIO (`rut_usuario`,`contrasenna`,`primer_nombre`,`segundo_nombre`,`primer_apellido`,`segundo_apellido`,`correo_electronico`,`telefono`,`CBR_id_cbr`,`T_USUARIO_id_tipoU`) VALUES ('" + usu.rut_usuario + "','" + usu.contrasenna + "','" + usu.primer_nombre + "','" + usu.segundo_nombre + "','" + usu.primer_apellido + "','" + usu.segundo_apellido + "','" + usu.correo_electronico + "','" + usu.telefono + "'," + usu.id_cbr + "," + usu.id_tipoU + ")", conex);
                 cmd.ExecuteNonQuery();
                 salida = "Cliente agregado correctamente";
             }
@@ -67,8 +67,28 @@ namespace Controlador
             }
             return salida;
         }
+        public bool ExisteUsuario(string id)
+        {
+
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT * FROM USUARIO where rut_usuario = '" + id + "' ", conex);
+                rd = cmd.ExecuteReader();
+                bool e = rd.Read();
+                rd.Close();
+                return e;
+
+            }
+            catch (Exception ex)
+            {
+                return true;
+
+            }
+        }
+
     }
-    
-    
+
+
 
 }
