@@ -42,5 +42,52 @@ namespace UniOnline.Trabajador
         {
             this.Close();
         }
+
+        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtRutDuenno.Text != string.Empty && txtPrimerNombre.Text != string.Empty && txtSegundoNombre.Text != string.Empty && txtPrimerApellido.Text != string.Empty && txtSegundoApellido.Text != string.Empty && txtCorreo != null && txtTelefono != null )
+            {
+                try
+                {
+                    Duenno due = new Duenno();
+                    if (!due.ExisteDuenno(txtRutDuenno.Text))
+                    {
+                        due.RutDuenno = txtRutDuenno.Text;
+                        due.PrimerNombre = txtPrimerNombre.Text;
+                        due.SegundoNombre = txtSegundoNombre.Text;
+                        due.PrimerApellido = txtPrimerApellido.Text;
+                        due.SegundoApellido = txtSegundoApellido.Text;
+                        due.CorreoElectronico = txtCorreo.Text;
+                        due.Telefono = txtTelefono.Text;
+                        MessageBox.Show(due.Insertar(due),"Mensaje:");
+                        limpiarCliente();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error, El Dueño ya se encuentra registrado.");
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Error al ingresar el Dueño:" + ex.ToString());
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Error, Debe ingresar los campos por favor.");
+            }
+        }
+        private void limpiarCliente()
+        {
+            txtRutDuenno.Text = string.Empty;
+            txtPrimerNombre.Text = string.Empty;
+            txtSegundoNombre.Text = string.Empty;
+            txtPrimerApellido.Text = string.Empty;
+            txtSegundoApellido.Text = string.Empty;
+            txtCorreo.Text = string.Empty;
+            txtTelefono.Text = string.Empty;
+        }
     }
 }

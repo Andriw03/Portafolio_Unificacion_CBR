@@ -102,3 +102,5 @@ D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.C
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.CopyComplete
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.exe
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Dueño.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Dueño.baml

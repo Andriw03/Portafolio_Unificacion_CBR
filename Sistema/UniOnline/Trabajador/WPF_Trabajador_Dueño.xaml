@@ -73,21 +73,21 @@
 
         <TextBlock FontFamily="Cambria" Text="Ingresar Dueño" FontSize="25" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource TextBlockStyle}"/>
         <Label Content="RUT:" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalAlignment="Right" FontSize="15" Style="{DynamicResource LabelStyle}"/>
-        <TextBox Grid.Column="2" Grid.Row="3" x:Name="txtRutDueño" MaxLength="15" Style="{DynamicResource TextBoxStyle}" BorderThickness="2"/>
+        <TextBox Grid.Column="2" Grid.Row="3" x:Name="txtRutDuenno" MaxLength="15" Style="{DynamicResource TextBoxStyle}" BorderThickness="2"/>
         <Label Content="Primer nombre:" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalAlignment="Right" FontSize="15" Style="{DynamicResource LabelStyle}"/>
         <TextBox Grid.Column="2" Grid.Row="5" x:Name="txtPrimerNombre" MaxLength="45" Style="{DynamicResource TextBoxStyle}"/>
         <Label Content="Segundo nombre:" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalAlignment="Right" FontSize="15" Style="{DynamicResource LabelStyle}"/>
-        <TextBox Grid.Column="5" Grid.Row="5" x:Name="txtPrimerAellido" MaxLength="45" Style="{DynamicResource TextBoxStyle}"/>
+        <TextBox Grid.Column="5" Grid.Row="5" x:Name="txtSegundoNombre" MaxLength="45" Style="{DynamicResource TextBoxStyle}"/>
         <Label Content="Primer Apellido:" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalAlignment="Right" FontSize="15" Style="{DynamicResource LabelStyle}"/>
-        <TextBox Grid.Column="2" Grid.Row="7" x:Name="txtSegundoNombre" MaxLength="45" Style="{DynamicResource TextBoxStyle}"/>
+        <TextBox Grid.Column="2" Grid.Row="7" x:Name="txtPrimerApellido" MaxLength="45" Style="{DynamicResource TextBoxStyle}"/>
         <Label Content="Segundo Apellido:" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalAlignment="Right" FontSize="15" Style="{DynamicResource LabelStyle}"/>
         <TextBox Grid.Column="5" Grid.Row="7" x:Name="txtSegundoApellido" MaxLength="45" Style="{DynamicResource TextBoxStyle}"/>
         <Label Content="Correo Electrónico:" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalAlignment="Right" FontSize="15" Style="{DynamicResource LabelStyle}"/>
         <TextBox Grid.Column="2" Grid.Row="9" Grid.ColumnSpan="2" x:Name="txtCorreo" MaxLength="50" Style="{DynamicResource TextBoxStyle}"/>
         <Label Content="Teléfono:" Grid.Column="1" Grid.Row="11" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalAlignment="Right" FontSize="15" Style="{DynamicResource LabelStyle}"/>
-        <TextBox Grid.Column="2" Grid.Row="11" Grid.ColumnSpan="2" x:Name="txtS" MaxLength="50" Style="{DynamicResource TextBoxStyle}"/>
+        <TextBox Grid.Column="2" Grid.Row="11" Grid.ColumnSpan="2" x:Name="txtTelefono" MaxLength="50" Style="{DynamicResource TextBoxStyle}"/>
 
-        <Button x:Name="btnGuardar" Grid.Column="3" Grid.Row="14" Grid.ColumnSpan="1" Content="Guardar" FontSize="20" Background="#FF393E59" Foreground="#FFF0F2F2" Style="{DynamicResource BtnStyle}"/>
+        <Button x:Name="btnGuardar" Grid.Column="3" Grid.Row="14" Grid.ColumnSpan="1" Content="Guardar" FontSize="20" Background="#FF393E59" Foreground="#FFF0F2F2" Style="{DynamicResource BtnStyle}" Click="btnGuardar_Click"/>
 
         <Button x:Name="btnVolver" Grid.Column="5" Grid.Row="14" Grid.ColumnSpan="1" Content="Volver" FontSize="20" Background="#FF393E59" Foreground="#FFF0F2F2" Style="{DynamicResource BtnStyle}" Click="btnVolver_Click"/>
         
