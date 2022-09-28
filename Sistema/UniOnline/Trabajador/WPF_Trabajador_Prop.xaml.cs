@@ -26,6 +26,7 @@ namespace UniOnline.Trabajador
             Conectar();
             LlenarCmbPropiedad();
             LlenarCmbRegion();
+            con.InsertDireccion("Valle rico",23,"Arica");
         }
         //Conexión BD
         Conexion con = new Conexion();
@@ -145,6 +146,28 @@ namespace UniOnline.Trabajador
         {
             WPF_Trabajador_Dueño tdueño = new WPF_Trabajador_Dueño();
             tdueño.ShowDialog();
+        }
+
+        private void btnBuscarDueño_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtDueño.Text != string.Empty)
+            {
+                Duenno duenno = new Duenno();
+                duenno = duenno.BuscarDuenno(txtDueño.Text);
+                if (duenno != null)
+                {
+                    txtRutDueño.Text = duenno.RutDuenno;
+                    txtNombreDueño.Text = duenno.PrimerNombre + ' ' + duenno.PrimerApellido;
+                }
+                else
+                {
+                    MessageBox.Show("Dueño vacío", "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe digitar un Rut para usar esta función", "Error");
+            }
         }
     }
 }

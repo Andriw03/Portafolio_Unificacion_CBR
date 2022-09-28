@@ -105,5 +105,41 @@ namespace Controlador
                 return registro;
             }
         }
+        public bool InsertDireccion(string nombreCalle, int numeroCasa, String comuna)
+        {
+            try
+            {
+                string idComuna = string.Empty;
+                cmd = new MySqlCommand("SELECT id_comuna FROM UNIONLINE.COMUNA where nombre_comuna = '"+comuna+"';", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    idComuna = rd["id_comuna"].ToString();
+                }
+                rd.Close();
+                Conectar();
+                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`DIRECCION` (`nombre_calle`, `numero_casa`, `COMUNA_id_comuna`) VALUES ( '"+ nombreCalle + "',"+ numeroCasa + ", "+Int32.Parse(idComuna)+");", conex);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool ClasProp(int foja, int numero, DateTime anno, string razonSocial, string rutEmpresa)
+        {
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("", conex);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

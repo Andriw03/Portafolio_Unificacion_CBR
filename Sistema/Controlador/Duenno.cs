@@ -31,26 +31,35 @@ namespace Controlador
             CorreoElectronico = string.Empty;
             Telefono = string.Empty;
         }
+        public Duenno BuscarDuenno(string rut)
+        {
+            try
+            {
 
-        //public bool BuscarDuenno(string rut)
-        //{
-        //try
-        //{
-        //Conectar();
-        //cmd = new MySqlCommand("SELECT * FROM Cliente where RutCliente = '" + id + "' ", conex);
-        //rd = cmd.ExecuteReader();
-        //bool e = rd.Read();
-        //rd.Close();
-        //return e;
+                Conectar();
+                cmd = new MySqlCommand("SELECT * FROM UNIONLINE.DUENNO_PROP where rut_duenno = '" + rut + "';", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    RutDuenno = rd["rut_duenno"].ToString();
+                    PrimerNombre = rd["primer_nombre"].ToString();
+                    SegundoNombre = rd["segundo_nombre"].ToString();
+                    PrimerApellido = rd["primer_apellido"].ToString();
+                    SegundoApellido = rd["segundo_apellido"].ToString();
+                    CorreoElectronico = rd["correo_electronico"].ToString();
+                    Telefono = rd["telefono"].ToString();
+                }
+                rd.Close();
+                return this;
 
-        //}
-        //catch (Exception ex)
-        //{
-        // return true;
 
-        //}
-        //}
+            }
+            catch (Exception ex)
+            {
+                return null;
 
+            }
+        }
         public string Insertar(Duenno due)
         {
             string salida;

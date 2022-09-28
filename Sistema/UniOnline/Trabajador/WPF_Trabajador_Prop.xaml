@@ -29,7 +29,7 @@
                     <TextBlock HorizontalAlignment="Left" Margin="308,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Width="244" FontWeight="Bold" FontSize="23"><Run Text="Ingresa una Propiedad"/></TextBlock>
                     <Label Content="Rut Dueño:" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" FontSize="15"/>
                     <TextBox x:Name="txtDueño" HorizontalAlignment="Left" Height="32" Margin="10,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" MaxLength="15"/>
-                    <Button x:Name="btnBuscarDueño" Content="" HorizontalAlignment="Left" Margin="177,73,0,0" VerticalAlignment="Top" Width="32" Height="32" Background="#FF393E59"/>
+                    <Button x:Name="btnBuscarDueño" Content="" HorizontalAlignment="Left" Margin="177,73,0,0" VerticalAlignment="Top" Width="32" Height="32" Click="btnBuscarDueño_Click" Background="#FF393E59"/>
                     <Button x:Name="btnAgregarDuenno" Content="Agregar dueño" HorizontalAlignment="Left" Margin="223,73,0,0" VerticalAlignment="Top" Width="138" Height="32" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnAgregarDuenno_Click"/>
                     <Label Content="Rut Dueño:" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" FontSize="15"/>
                     <TextBox x:Name="txtRutDueño" HorizontalAlignment="Left" Height="32" Margin="10,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" MaxLength="15" IsEnabled="False" IsUndoEnabled="False"/>
