@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Controlador",
     "\\UniOnline",
     "\\UniOnline\\Trabajador"
   ],
-  "SelectedNode": "\\UniOnline\\Trabajador\\WPF_Trabajador_Prop.xaml.cs",
+  "SelectedNode": "\\Controlador\\Conexion.cs",
   "PreviewInSolutionExplorer": false
 }

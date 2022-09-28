@@ -140,5 +140,11 @@ namespace UniOnline.Trabajador
         {
 
         }
+        private void btnAgregarDueño_Click(object sender, RoutedEventArgs e)
+        {
+            WPF_Trabajador_Dueño tdueño = new WPF_Trabajador_Dueño();
+            tdueño.ShowDialog();
+        }
+
     }
 }
