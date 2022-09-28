@@ -58,11 +58,10 @@ namespace Controlador
                 Conectar();
                 cmd = new MySqlCommand("insert into USUARIO (`rut_usuario`,`contrasenna`,`primer_nombre`,`segundo_nombre`,`primer_apellido`,`segundo_apellido`,`correo_electronico`,`telefono`,`CBR_id_cbr`,`T_USUARIO_id_tipoU`) VALUES ('" + usu.rut_usuario + "','" + usu.contrasenna + "','" + usu.primer_nombre + "','" + usu.segundo_nombre + "','" + usu.primer_apellido + "','" + usu.segundo_apellido + "','" + usu.correo_electronico + "','" + usu.telefono + "'," + usu.id_cbr + "," + usu.id_tipoU + ")", conex);
                 cmd.ExecuteNonQuery();
-                salida = "Cliente agregado correctamente";
+                salida = "Usuario agregado correctamente.";
             }
             catch (Exception ex)
             {
-
                 salida = "Error al agregar el Cliente: " + ex.ToString();
             }
             return salida;

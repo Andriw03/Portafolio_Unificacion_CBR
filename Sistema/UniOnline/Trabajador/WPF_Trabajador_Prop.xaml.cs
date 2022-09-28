@@ -15,9 +15,6 @@ using Controlador;
 
 namespace UniOnline.Trabajador
 {
-    /// <summary>
-    /// Lógica de interacción para WPF_Trabajador_Prop.xaml
-    /// </summary>
     public partial class WPF_Trabajador_Prop : Window
     {
         public WPF_Trabajador_Prop()

@@ -18,9 +18,6 @@ using System.Collections;
 
 namespace UniOnline.Director
 {
-    /// <summary>
-    /// Lógica de interacción para WPF_Director.xaml
-    /// </summary>
     public partial class WPF_Director : Window
     {
         Conexion con = new Conexion();
@@ -64,20 +61,17 @@ namespace UniOnline.Director
                         if(rdBtn_Recepcionista.IsChecked == true)
                         {
                             usu.id_tipoU = 3;
-                            //MessageBox.Show(usu.Insertar(usu), "Mensaje");
-                            MessageBox.Show(usu.id_tipoU.ToString());
+                            MessageBox.Show(usu.Insertar(usu), "Mensaje");
                         }
                         else if(rdBtn_Trabajador.IsChecked == true)
                         {
                             usu.id_tipoU = 4;
-                            //MessageBox.Show(usu.Insertar(usu), "Mensaje");
-                            MessageBox.Show(usu.id_tipoU.ToString());
+                            MessageBox.Show(usu.Insertar(usu), "Mensaje");
                         }
                         else if (rdBtn_Moderador.IsChecked == true)
                         {
                             usu.id_tipoU = 6;
-                            //MessageBox.Show(usu.Insertar(usu), "Mensaje");
-                            MessageBox.Show(usu.id_tipoU.ToString());
+                            MessageBox.Show(usu.Insertar(usu), "Mensaje");
                         }
                         else
                         {
@@ -92,13 +86,13 @@ namespace UniOnline.Director
                 catch (Exception ex)
                 {
 
-                    MessageBox.Show("Error Error al ingresar el Usuario:" + ex.ToString());
+                    MessageBox.Show("Error al ingresar el Usuario:" + ex.ToString());
                 }
 
             }
             else
             {
-                MessageBox.Show("Error Debe ingresar los campos porfavor");
+                MessageBox.Show("Error, debe ingresar los campos porfavor");
             }
 
         }
