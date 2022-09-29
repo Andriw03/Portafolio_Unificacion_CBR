@@ -10,7 +10,9 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using Controlador;
 
 namespace UniOnline.Moderador
@@ -37,6 +39,17 @@ namespace UniOnline.Moderador
             {
                 MessageBox.Show("Error Conexión");
             }
+        }
+
+        private void Button_Soporte(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Perfil(object sender, RoutedEventArgs e)
+        {
+            WPF_Moderador wpfMod = new WPF_Moderador();
+            wpfMod.ShowDialog();
         }
     }
 }
