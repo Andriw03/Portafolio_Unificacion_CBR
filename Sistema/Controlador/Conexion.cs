@@ -105,7 +105,7 @@ namespace Controlador
                 return registro;
             }
         }
-        public bool InsertDireccion(string nombreCalle, int numeroCasa, String comuna)
+        public int InsertDireccion(string nombreCalle, int numeroCasa, String comuna)
         {
             try
             {
@@ -120,25 +120,41 @@ namespace Controlador
                 Conectar();
                 cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`DIRECCION` (`nombre_calle`, `numero_casa`, `COMUNA_id_comuna`) VALUES ( '"+ nombreCalle + "',"+ numeroCasa + ", "+ Int32.Parse(idComuna) +");", conex);
                 cmd.ExecuteNonQuery();
-                return true;
+                string idDireccion = string.Empty;
+                cmd = new MySqlCommand("SELECT id_direccion FROM UNIONLINE.DIRECCION order by id_direccion desc limit 1;", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    idDireccion = rd["id_direccion"].ToString();
+                }
+                rd.Close();
+                return Int32.Parse(idDireccion);
             }
             catch
             {
-                return false;
+                return 0;
             }
         }
-        public bool ClasProp(int foja, int numero, DateTime anno, string razonSocial, string rutEmpresa)
+        public int InsertClasProp(int foja, int numero, string anno, string razonSocial, string rutEmpresa)
         {
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`CLAS_PROP`(`foja`, `numero`, `anno`, `razon_social`, `rut_empresa`) VALUES ("+ foja + ", " + numero + ", "+ anno +", '"+razonSocial+ "', '" + rutEmpresa + "');", conex);
+                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`CLAS_PROP`(`foja`, `numero`, `anno`, `razon_social`, `rut_empresa`) VALUES ("+ foja + ", " + numero + ", '"+ anno +"', '"+razonSocial+ "', '" + rutEmpresa + "');", conex);
                 cmd.ExecuteNonQuery();
-                return true;
+                string idClasProp = string.Empty;
+                cmd = new MySqlCommand("SELECT id_clas FROM UNIONLINE.CLAS_PROP where foja = "+ foja +";", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    idClasProp = rd["id_clas"].ToString();
+                }
+                rd.Close();
+                return Int32.Parse(idClasProp);
             }
             catch
             {
-                return false;
+                return 0;
             }
         }
     }

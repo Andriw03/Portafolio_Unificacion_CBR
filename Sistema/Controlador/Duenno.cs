@@ -9,6 +9,7 @@ namespace Controlador
 {
     public class Duenno : Conexion
     {
+        public int duennoId { get; set; }
         public string RutDuenno { get; set; }
         public string PrimerNombre { get; set; }
         public string SegundoNombre { get; set; }
@@ -23,6 +24,7 @@ namespace Controlador
         }
         private void Init()
         {
+            duennoId = 0;
             RutDuenno = string.Empty;
             PrimerNombre = string.Empty;
             SegundoNombre = string.Empty;
@@ -41,6 +43,7 @@ namespace Controlador
                 rd = cmd.ExecuteReader();
                 while (rd.Read())
                 {
+                    duennoId = Int32.Parse(rd["id_duenno"].ToString());
                     RutDuenno = rd["rut_duenno"].ToString();
                     PrimerNombre = rd["primer_nombre"].ToString();
                     SegundoNombre = rd["segundo_nombre"].ToString();
@@ -79,7 +82,6 @@ namespace Controlador
 
         public bool ExisteDuenno(string id)
         {
-
             try
             {
                 Conectar();

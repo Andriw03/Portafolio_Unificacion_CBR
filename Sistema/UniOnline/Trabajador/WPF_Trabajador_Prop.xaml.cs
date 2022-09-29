@@ -40,6 +40,8 @@ namespace UniOnline.Trabajador
         //Método para llenar el combobox tipo de propiedad
         private void LlenarCmbPropiedad()
         {
+            cmbTipoProp.Items.Clear();
+            cmbTipoProp.Items.Add("-------");
             List<string> registro = con.Llenado("TIPO_PROPIEDAD", "nombre_tipoP");
             if (registro != null)
             {
@@ -125,7 +127,52 @@ namespace UniOnline.Trabajador
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-
+                        if (txtRutDueño.Text != string.Empty && txtAnno.Text != string.Empty && txtFoja.Text != string.Empty && txtNumero.Text != string.Empty && txtDescripcion.Text != string.Empty && txtDireccion.Text != string.Empty && cmbTipoProp.SelectedItem != null && cmbRegion.SelectedItem != null && cmbRegion.SelectedItem != null && cmbComuna.SelectedItem != null)
+            {
+                try
+                {
+                    Propiedad prop = new Propiedad();
+                    if (!prop.ExistePropiedad(txtFoja.Text))
+                    {
+                        prop.Descripcion = txtDescripcion.Text;
+                        int idDireccion = con.InsertDireccion(txtDireccion.Text, Int32.Parse(txtNumero.Text), cmbComuna.SelectedItem.ToString());
+                        if ( idDireccion != 0)
+                        {
+                            DateTime fecha = DateTime.ParseExact((txtAnno.Text).ToString(), "yyyy", null);
+                            int idClas = con.InsertClasProp(Int32.Parse(txtFoja.Text), Int32.Parse(txtNumero.Text), fecha.ToString("yyyy/MM/dd HH:mm:ss"), txtRazonSocial.Text, txtRutEmpresa.Text);
+                            if ( idClas != 0)
+                            {
+                                prop.Direccion = con.InsertDireccion(txtDireccion.Text, Int32.Parse(txtNumero.Text), cmbComuna.SelectedItem.ToString());
+                                prop.TipoPropiedad = Int32.Parse(cmbTipoProp.SelectedIndex.ToString());
+                                prop.ClasPropiedad = con.InsertClasProp(Int32.Parse(txtFoja.Text), Int32.Parse(txtNumero.Text), fecha.ToString("yyyy/MM/dd HH:mm:ss"), txtRazonSocial.Text, txtRutEmpresa.Text);
+                                Duenno duenno = new Duenno();
+                                duenno = duenno.BuscarDuenno(txtDueño.Text);
+                                if (duenno != null)
+                                {
+                                    prop.Duenno = duenno.duennoId;
+                                    MessageBox.Show(prop.Insertar(prop));
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Dueño vacío", "Error");
+                                }
+                                
+                            }                         
+                        }                   
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ya existe una propiedad con esta Foja", "Advertencia");
+                    }
+                }catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString(), "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe llenar todos los campos","Advertencia");
+            }
         }
 
         private void cmbTipoProp_SelectionChanged(object sender, SelectionChangedEventArgs e)

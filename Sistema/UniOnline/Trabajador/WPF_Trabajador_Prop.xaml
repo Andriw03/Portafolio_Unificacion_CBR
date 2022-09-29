@@ -41,7 +41,7 @@
                     <TextBox x:Name="txtFoja" HorizontalAlignment="Left" Height="32" Margin="223,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" />
                     <TextBox x:Name="txtNumero" HorizontalAlignment="Left" Height="32" Margin="436,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" />
                     <Label Content="Número:" HorizontalAlignment="Left" Margin="436,165,0,0" VerticalAlignment="Top" FontSize="15"/>
-                    <TextBox x:Name="txtAño" HorizontalAlignment="Left" Height="32" Margin="648,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" />
+                    <TextBox x:Name="txtAnno" HorizontalAlignment="Left" Height="32" Margin="648,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" />
                     <Label Content="Año" HorizontalAlignment="Left" Margin="648,165,0,0" VerticalAlignment="Top" FontSize="15"/>
                     <Label Content="Razón Social:" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top" FontSize="15"/>
                     <TextBox x:Name="txtRazonSocial" HorizontalAlignment="Left" Height="32" Margin="10,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="412" />

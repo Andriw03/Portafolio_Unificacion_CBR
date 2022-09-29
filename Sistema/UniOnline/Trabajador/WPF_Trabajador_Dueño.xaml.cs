@@ -60,7 +60,7 @@ namespace UniOnline.Trabajador
                         due.CorreoElectronico = txtCorreo.Text;
                         due.Telefono = txtTelefono.Text;
                         MessageBox.Show(due.Insertar(due),"Mensaje:");
-                        limpiarCliente();
+                        limpiarDuenno();
                     }
                     else
                     {
@@ -79,7 +79,7 @@ namespace UniOnline.Trabajador
                 MessageBox.Show("Error, Debe ingresar los campos por favor.");
             }
         }
-        private void limpiarCliente()
+        private void limpiarDuenno()
         {
             txtRutDuenno.Text = string.Empty;
             txtPrimerNombre.Text = string.Empty;
