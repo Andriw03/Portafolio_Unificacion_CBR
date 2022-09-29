@@ -5,14 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline.Recepcion"
         mc:Ignorable="d"
-        Title="CBR UniOnline" Height="450" Width="800">
-    <Grid>
-        <Rectangle HorizontalAlignment="Center" Height="87" Stroke="Black" VerticalAlignment="Top" Width="800" Fill="#FF010326" Margin="-4,0"/>
-        <Image HorizontalAlignment="Center" Height="105" Margin="340,75,344,0" VerticalAlignment="Top" Width="108" Source="LogoCBR.png" />
+        Title="CBR UniOnline" Height="695.74" Width="918.386">
+    <Grid OpacityMask="#FFF0F2F2" Background="#FFF0F2F2" Margin="10,0,2,-3">
+        <Rectangle Height="87" Stroke="Black" VerticalAlignment="Top" Fill="#FF010326" Margin="-20,0,0,0"/>
+        <Image HorizontalAlignment="Center" Height="105" Margin="383,142,417,0" VerticalAlignment="Top" Width="108" Source="LogoCBR.png" />
         <TextBlock HorizontalAlignment="Left" Margin="21,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="253" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="36"><Run Language="es-es" Text="CBRS de Chile."/></TextBlock>
-        <TextBlock HorizontalAlignment="Center" Height="35" Margin="165,173,151,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="476" Foreground="#FF010326" FontSize="22" FontFamily="Segoe UI Historic" FontWeight="Bold"><Run Text="Ingrese el rut del Cliente o "/><Run Text="N° de seguimiento"/></TextBlock>
-        <TextBox x:Name="txt_buscar" HorizontalAlignment="Left" Height="23" Margin="301,213,0,0" TextWrapping="Wrap" Text="Rut Cliente o N° Seguimiento" VerticalAlignment="Top" Width="165" Cursor="Cross"/>
-        <Button x:Name="btn_consultar" Content="Consultar" HorizontalAlignment="Left" Margin="340,241,0,0" VerticalAlignment="Top" Width="75" Cursor="Hand" Click="btn_consultar_Click"/>
-        <DataGrid x:Name="dg_listartramite" HorizontalAlignment="Left" Height="125" Margin="165,293,0,0" VerticalAlignment="Top" Width="458"/>
+        <TextBlock HorizontalAlignment="Center" Height="35" Margin="196,223,219,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="483" Foreground="#FF010326" FontSize="22" FontFamily="Segoe UI Historic" FontWeight="Bold"><Run Text="Ingrese el rut del Cliente o "/><Run Text="N° de seguimiento"/></TextBlock>
+        <TextBox x:Name="txt_buscar" HorizontalAlignment="Left" Height="23" Margin="357,258,0,0" TextWrapping="Wrap" Text="Rut Cliente o N° Seguimiento" VerticalAlignment="Top" Width="165" Cursor="Cross"/>
+        <Button x:Name="btn_consultar" Content="Consultar" HorizontalAlignment="Left" Margin="399,286,0,0" VerticalAlignment="Top" Width="75" Cursor="Hand" Click="btn_consultar_Click" BorderBrush="#FF393E59" Background="#FFF0F2F2"/>
+        <DataGrid x:Name="dg_listartramite" HorizontalAlignment="Left" Margin="208,358,0,185" Width="476" Background="#FFF0F2F2" BorderBrush="#FF393E59"/>
+        <Button x:Name="btnInicio" Content="Inicio" Margin="279,38,0,0" VerticalAlignment="Top" Width="51" HorizontalAlignment="Left" Background="#FF010623" Click="Button_Inicio" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623" RenderTransformOrigin="0.837,0.463"/>
+        <Button x:Name="btnInicio_Copy" Content="Revisión de Solicitud" Margin="361,38,0,0" VerticalAlignment="Top" Width="177" HorizontalAlignment="Left" Background="#FF010623" Click="Button_Inicio" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623" RenderTransformOrigin="0.837,0.463"/>
     </Grid>
 </Window>
