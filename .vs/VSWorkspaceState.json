@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Sistema",
+    "\\Sistema\\Controlador",
     "\\Sistema\\UniOnline",
     "\\Sistema\\UniOnline\\Director"
   ],
-  "SelectedNode": "\\Sistema\\UniOnline\\Director\\WPF_Director.xaml.cs",
+  "SelectedNode": "\\Sistema\\Controlador\\Conexion.cs",
   "PreviewInSolutionExplorer": false
 }

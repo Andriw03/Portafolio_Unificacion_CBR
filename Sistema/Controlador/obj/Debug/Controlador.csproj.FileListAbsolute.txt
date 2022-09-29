@@ -109,3 +109,7 @@ D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Co
 D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CopyComplete
 D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.dll
 D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.pdb
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.AssemblyReference.cache
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CoreCompileInputs.cache
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.pdb
