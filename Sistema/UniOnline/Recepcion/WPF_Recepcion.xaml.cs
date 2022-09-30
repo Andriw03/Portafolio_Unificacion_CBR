@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,7 +42,32 @@ namespace UniOnline.Recepcion
 
         private void btn_consultar_Click(object sender, RoutedEventArgs e)
         {
-
+                if (txt_buscar.Text != string.Empty)
+                {
+                    Recepcionista recep = new Recepcionista();
+                    if (recep.ExisteRut(txt_buscar.Text))
+                    {
+                        DataTable tabla = recep.MostrarSolicitud(txt_buscar.Text);
+                        if (tabla != null)
+                        {
+                        dg_listartramite.ItemsSource = tabla.DefaultView;
+                        dg_listartramite.Items.Refresh();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tabla sin registro", "Error");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Solicitud no encontrada", "Error");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe llenar todos los campos para buscar", "Advertencia");
+                }
+            
         }
     }
 }
