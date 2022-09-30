@@ -1,9 +1,11 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Controlador
 {
@@ -63,6 +65,49 @@ namespace Controlador
 
             }
         }
-
+        public DataTable MostrarPropiedad(int foja)
+        {
+            Conectar();
+            DataTable tabla = new DataTable();
+            tabla.Columns.Add(new DataColumn("Foja"));
+            tabla.Columns.Add(new DataColumn("Tipo de Propiedad"));
+            tabla.Columns.Add(new DataColumn("Dirección"));
+            tabla.Columns.Add(new DataColumn("Rut Dueño"));
+            tabla.Columns.Add(new DataColumn("Nombre Dueño"));
+            tabla.Columns.Add(new DataColumn("Correo Electrónico"));
+            tabla.Columns.Add(new DataColumn("Teléfono"));
+            tabla.Columns.Add(new DataColumn("Descripción"));
+            tabla.Columns.Add(new DataColumn("Razon social"));
+            tabla.Columns.Add(new DataColumn("Rut Empresa"));
+            try
+            {
+                cmd = new MySqlCommand("SELECT foja, nombre_tipoP, concat(nombre_calle,' ', numero_casa ,', ', nombre_comuna, ', ', nombre_region) as direccion_prop, rut_duenno, concat(primer_nombre, ' ', primer_apellido) as nombre_duenno , correo_electronico, telefono, descripcion, razon_social, rut_empresa FROM UNIONLINE.PROPIEDAD join UNIONLINE.DIRECCION on UNIONLINE.PROPIEDAD.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas join UNIONLINE.DUENNO_PROP on UNIONLINE.PROPIEDAD.DUENNO_PROP_id_duenno = UNIONLINE.DUENNO_PROP.id_duenno join UNIONLINE.TIPO_PROPIEDAD on UNIONLINE.PROPIEDAD.TIPO_PROPIEDAD_id_tipoP = UNIONLINE.TIPO_PROPIEDAD.id_tipoP join UNIONLINE.COMUNA on UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna join UNIONLINE.PROVINCIA on UNIONLINE.COMUNA.PROVINCIA_id_provincia= UNIONLINE.PROVINCIA.id_provincia join UNIONLINE.REGION on UNIONLINE.PROVINCIA.REGION_id_region = UNIONLINE.REGION.id_region where foja = "+foja+";", conex);
+                rd = cmd.ExecuteReader();
+                
+                while (rd.Read())
+                {
+                    DataRow row;
+                    row = tabla.NewRow();
+                    row[0] = rd["foja"].ToString();
+                    row[1] = rd["nombre_tipoP"].ToString();
+                    row[2] = rd["direccion_prop"].ToString();
+                    row[3] = rd["rut_duenno"].ToString();
+                    row[4] = rd["nombre_duenno"].ToString();
+                    row[5] = rd["correo_electronico"].ToString();
+                    row[6] = rd["telefono"].ToString();
+                    row[7] = rd["descripcion"].ToString();
+                    row[8] = rd["razon_social"].ToString();
+                    row[9] = rd["rut_empresa"].ToString();
+                    tabla.Rows.Add(row);
+                }
+                rd.Close();
+                return tabla;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+                return null;
+            }
+        }
     }
 }

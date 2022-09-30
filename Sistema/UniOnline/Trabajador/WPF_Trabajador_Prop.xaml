@@ -44,9 +44,9 @@
                     <TextBox x:Name="txtAnno" HorizontalAlignment="Left" Height="32" Margin="648,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" />
                     <Label Content="Año" HorizontalAlignment="Left" Margin="648,165,0,0" VerticalAlignment="Top" FontSize="15"/>
                     <Label Content="Razón Social:" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top" FontSize="15"/>
-                    <TextBox x:Name="txtRazonSocial" HorizontalAlignment="Left" Height="32" Margin="10,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="412" />
+                    <TextBox x:Name="txtRazonSocial" HorizontalAlignment="Left" Height="32" Margin="10,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="412" IsEnabled="False" />
                     <Label Content="Rut Empresa:" HorizontalAlignment="Left" Margin="436,225,0,0" VerticalAlignment="Top" FontSize="15"/>
-                    <TextBox x:Name="txtRutEmpresa" HorizontalAlignment="Left" Height="32" Margin="436,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" MaxLength="15"/>
+                    <TextBox x:Name="txtRutEmpresa" HorizontalAlignment="Left" Height="32" Margin="436,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" MaxLength="15" IsEnabled="False"/>
                     <Label Content="Descripción:" HorizontalAlignment="Left" Margin="10,285,0,0" VerticalAlignment="Top" FontSize="15"/>
                     <TextBox x:Name="txtDescripcion" HorizontalAlignment="Left" Height="32" Margin="10,313,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="836" />
                     <Label Content="Región" HorizontalAlignment="Left" Margin="10,345,0,0" VerticalAlignment="Top" FontSize="15"/>
@@ -61,11 +61,53 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Modificar Propiedad" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="Auto" HorizontalAlignment="Center">
+            <TabItem Header="Listar Propiedades" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="Auto" HorizontalAlignment="Center">
                 <Grid Background="#FFF0F2F2">
-                    <Button Content="Volver" HorizontalAlignment="Center" Margin="801,491,10,0" VerticalAlignment="Top" Width="75"/>
-                </Grid>
 
+                    <!-- Start Column and Row Definition-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <!--End Column and Row Definition-->
+
+                    <Label Content="Buscar por Foja:" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtFojaListar" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="212" MaxLength="15" PreviewTextInput="txtFojaListar_PreviewTextInput"/>
+                    <Button x:Name="btnBuscar" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2" Height="30" Width="100" Click="btnBuscar_Click" Background="#FF393E59" Foreground="#FFF0F2F2">
+                        <TextBlock Text="Buscar" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Button>
+                    <Button x:Name="btnLimpiar" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Height="30" Width="100" Click="btnLimpiar_Click" Background="#FF393E59" Foreground="#FFF0F2F2">
+                        <TextBlock Text="Limpiar" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Button>
+                    <Label Content="Buscar por Número:" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtNumListar" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="212" MaxLength="15" PreviewTextInput="txtNumListar_PreviewTextInput"/>
+                    <Label Content="Buscar por Año:" Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtAnnoListar" Grid.Column="7" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="212" MaxLength="15" PreviewTextInput="txtAnnoListar_PreviewTextInput"/>
+                    <DataGrid x:Name="dtgPropiedad" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="8" Grid.RowSpan="5"/>
+
+                    <Button x:Name="btnVolverProp2" Content="Volver" Grid.Column="8" Grid.Row="9" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="75" Click="btnVolverProp_Click" Background="#FF393E59" Foreground="#FFF0F2F2"/>
+
+                </Grid>
 
             </TabItem>
 

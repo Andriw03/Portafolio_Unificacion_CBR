@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Controlador;
+using System.Text.RegularExpressions;
+using System.Data;
 
 namespace UniOnline.Trabajador
 {
@@ -177,7 +179,16 @@ namespace UniOnline.Trabajador
 
         private void cmbTipoProp_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (cmbTipoProp.SelectedItem.ToString() == "Comercial")
+            {
+                txtRazonSocial.IsEnabled = true;
+                txtRutEmpresa.IsEnabled = true;
+            }
+            else
+            {
+                txtRazonSocial.IsEnabled = false;
+                txtRutEmpresa.IsEnabled = false;
+            }
         }
 
         private void cmbComuna_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -210,6 +221,57 @@ namespace UniOnline.Trabajador
             else
             {
                 MessageBox.Show("Debe digitar un Rut para usar esta función", "Error");
+            }
+        }
+        private void txtFojaListar_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        }
+
+        private void txtNumListar_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        }
+
+        private void txtAnnoListar_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        }
+
+
+        private void btnLimpiar_Click(object sender, RoutedEventArgs e)
+        {
+            txtFojaListar.Text = "";
+            txtNumListar.Text = "";
+            txtAnnoListar.Text = "";
+        }
+
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtFojaListar.Text != string.Empty && txtNumListar.Text != string.Empty && txtAnnoListar.Text != string.Empty)
+            {
+                Propiedad prop = new Propiedad();
+                if (prop.ExistePropiedad(txtFoja.Text))
+                {
+                    DataTable tabla = prop.MostrarPropiedad(Int32.Parse(txtFojaListar.Text));
+                    if (tabla != null)
+                    {
+                        dtgPropiedad.ItemsSource = tabla.DefaultView;
+                        dtgPropiedad.Items.Refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tabla sin registro", "Error");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Propiedad no encontrada", "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe llenar todos los campos para buscar","Advertencia");
             }
         }
     }

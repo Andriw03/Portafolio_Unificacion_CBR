@@ -52,6 +52,7 @@
     <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
       <HintPath>..\UniOnline\packages\MySqlConnector.2.1.13\lib\net471\MySqlConnector.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\UniOnline\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
