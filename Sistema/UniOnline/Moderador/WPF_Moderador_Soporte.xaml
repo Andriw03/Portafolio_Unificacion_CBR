@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline.Moderador"
         mc:Ignorable="d"
-        Title="WPF_Moderador_Soporte" Height="450" Width="800">
+        Title="WPF_Moderador_Soporte" Height="484.04" Width="900">
+    <Window.Resources>
+
+        <Style x:Key="BtnStyle" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="Cambria"/>
+        </Style>
+
+    </Window.Resources>
     <Grid>
-        
+        <Rectangle HorizontalAlignment="Center" Height="87" Stroke="Black" VerticalAlignment="Top" Width="892" Fill="#FF010623"/>
+        <TextBlock HorizontalAlignment="Left" Margin="12,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="189" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="30" Text="CBRS de Chile"/>
+        <Button x:Name="btnInicio" Content="Inicio" Margin="231,32,0,0" VerticalAlignment="Top" Width="51" HorizontalAlignment="Left" Background="#FF010623" Click="btnInicioMod" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
+        <Button x:Name="btnPerfil" Content="Perfil Clientes" Margin="319,32,0,0" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" Background="#FF010623" Click="btnPerfilMod" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
+        <Button x:Name="btnSoporte" Content="Soporte en Linea" Margin="451,32,0,0" VerticalAlignment="Top" Width="125" HorizontalAlignment="Left" Background="#FF010623" Click="btnSoporteMod" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
+        <Image Margin="70,141,671,185" Source="/UniOnline;component/pngegg (1).png" Stretch="Fill"/>
+        <Label Content="Tickets de Soporte: &#xD;&#xA;Aquí se muestran todos los tickets de&#xD;&#xA;soporte realizados por los clientes." HorizontalAlignment="Left" Margin="43.098,273,0,0" Width="220.018" Height="57.436" VerticalAlignment="Top" UseLayoutRounding="False" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsHitTestVisible="False" FontWeight="Bold"/>
+        <Button x:Name="btnVerTicket" Grid.ColumnSpan="1" Content="Ver Ticket" FontSize="20" Background="#FF393E59" Foreground="#FFF0F2F2" Style="{DynamicResource BtnStyle}" Click="btnVerTicket_Click" Margin="70,350,671,69"/>
     </Grid>
 </Window>

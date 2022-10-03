@@ -169,5 +169,14 @@
   <ItemGroup>
     <Resource Include="LogoCBR.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="png-clipart-graphics-technical-support-customer-service-computer-icons-technical-support-customer-service.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pngegg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pngegg %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

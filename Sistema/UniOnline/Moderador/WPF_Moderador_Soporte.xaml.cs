@@ -23,5 +23,27 @@ namespace UniOnline.Moderador
         {
             InitializeComponent();
         }
+
+        private void btnInicioMod(object sender, RoutedEventArgs e)
+        {
+            WPF_Moderador wpfMod = new WPF_Moderador();
+            wpfMod.ShowDialog();
+        }
+
+        private void btnPerfilMod(object sender, RoutedEventArgs e)
+        {
+            WPF_Moderador_Perfil wpfPerfil = new WPF_Moderador_Perfil();
+            wpfPerfil.ShowDialog();
+        }
+
+        private void btnSoporteMod(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnVerTicket_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
