@@ -129,7 +129,7 @@ namespace UniOnline.Trabajador
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-                        if (txtRutDueño.Text != string.Empty && txtAnno.Text != string.Empty && txtFoja.Text != string.Empty && txtNumero.Text != string.Empty && txtDescripcion.Text != string.Empty && txtDireccion.Text != string.Empty && cmbTipoProp.SelectedItem != null && cmbRegion.SelectedItem != null && cmbRegion.SelectedItem != null && cmbComuna.SelectedItem != null)
+            if (txtRutDueño.Text != string.Empty && txtAnno.Text != string.Empty && txtFoja.Text != string.Empty && txtNumero.Text != string.Empty && txtDescripcion.Text != string.Empty && txtDireccion.Text != string.Empty && cmbTipoProp.SelectedItem != null && cmbRegion.SelectedItem != null && cmbRegion.SelectedItem != null && cmbComuna.SelectedItem != null)
             {
                 try
                 {
@@ -274,5 +274,6 @@ namespace UniOnline.Trabajador
                 MessageBox.Show("Debe llenar todos los campos para buscar","Advertencia");
             }
         }
+
     }
 }

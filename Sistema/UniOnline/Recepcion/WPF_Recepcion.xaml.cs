@@ -42,32 +42,59 @@ namespace UniOnline.Recepcion
 
         private void btn_consultar_Click(object sender, RoutedEventArgs e)
         {
-                if (txt_buscar.Text != string.Empty)
+            if (txt_buscar.Text != string.Empty)
+            {
+                Recepcionista recep = new Recepcionista();
+                if (recep.ExisteRut(txt_buscar.Text))
                 {
-                    Recepcionista recep = new Recepcionista();
-                    if (recep.ExisteRut(txt_buscar.Text))
+                    DataTable tabla = recep.MostrarSolicitud(txt_buscar.Text);
+                    if (tabla != null)
                     {
-                        DataTable tabla = recep.MostrarSolicitud(txt_buscar.Text);
-                        if (tabla != null)
-                        {
                         dg_listartramite.ItemsSource = tabla.DefaultView;
                         dg_listartramite.Items.Refresh();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Tabla sin registro", "Error");
-                        }
                     }
                     else
                     {
-                        MessageBox.Show("Solicitud no encontrada", "Error");
+                        MessageBox.Show("Tabla sin registro", "Error");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Debe llenar todos los campos para buscar", "Advertencia");
+                    MessageBox.Show("Solicitud no encontrada", "Error");
                 }
+            }
+            else
+            {
+                MessageBox.Show("Debe llenar todos los campos para buscar", "Advertencia");
+            }
             
+        }
+
+        private void txtPlaceHolder_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtPlaceHolder.Visibility = System.Windows.Visibility.Collapsed;
+            txt_buscar.Visibility = System.Windows.Visibility.Visible;
+            txt_buscar.Focus();
+
+        }
+
+        private void txt_buscar_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_buscar.Text))
+            {
+                txt_buscar.Visibility = System.Windows.Visibility.Collapsed;
+                txtPlaceHolder.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
+
+        private void txtPlaceHolder_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_buscar.Text))
+            {
+                txtPlaceHolder.Visibility = System.Windows.Visibility.Collapsed;
+                txt_buscar.Visibility = System.Windows.Visibility.Visible;
+
+            }
         }
     }
 }

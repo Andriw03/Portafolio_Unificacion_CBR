@@ -67,6 +67,9 @@
     <Compile Include="Trabajador\WPF_Trabajador_Prop.xaml.cs">
       <DependentUpon>WPF_Trabajador_Prop.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Trabajador\WPF_Trabajador_Tra.xaml.cs">
+      <DependentUpon>WPF_Trabajador_Tra.xaml</DependentUpon>
+    </Compile>
     <Page Include="Director\WPF_Director.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -103,6 +106,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Trabajador\WPF_Trabajador_Prop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Trabajador\WPF_Trabajador_Tra.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -70,7 +70,8 @@ namespace UniOnline.Trabajador
 
         private void Button_Gestion_Tra(object sender, RoutedEventArgs e)
         {
-
+            WPF_Trabajador_Tra ttra = new WPF_Trabajador_Tra();
+            ttra.ShowDialog();
         }
 
         private void Button_Consulta_Tra(object sender, RoutedEventArgs e)
