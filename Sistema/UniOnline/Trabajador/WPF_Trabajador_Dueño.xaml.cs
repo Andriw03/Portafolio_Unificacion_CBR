@@ -31,7 +31,7 @@ namespace UniOnline.Trabajador
         {
             if (con.Conectar())
             {
-                MessageBox.Show("Vas bien mi rey");
+
             }
             else
             {

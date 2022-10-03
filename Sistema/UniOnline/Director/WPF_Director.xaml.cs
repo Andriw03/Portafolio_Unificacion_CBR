@@ -32,7 +32,7 @@ namespace UniOnline.Director
         {
             if (con.Conectar())
             {
-                MessageBox.Show("Vas bien mi rey");
+                
             }
             else
             {

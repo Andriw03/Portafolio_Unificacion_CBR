@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 using Controlador;
 using System.Text.RegularExpressions;
 using System.Data;
+using MessageBox = System.Windows.MessageBox;
+using MySql.Data.MySqlClient;
 
 namespace UniOnline.Trabajador
 {
@@ -32,7 +34,7 @@ namespace UniOnline.Trabajador
         {
             if (con.Conectar())
             {
-                MessageBox.Show("Vas bien mi rey");
+
             }
             else
             {
@@ -81,10 +83,10 @@ namespace UniOnline.Trabajador
         //Método para llenar el combobox de Provincia
         private void cmbRegion_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            cmbProvincia.Items.Clear();
-            cmbProvincia.Items.Add("-------");
             cmbComuna.Items.Clear();
             cmbComuna.Items.Add("-------");
+            cmbProvincia.Items.Clear();
+            cmbProvincia.Items.Add("-------");
             int RegionId = Convert.ToInt32(cmbRegion.SelectedIndex);
             List<string> registro = con.LlenadoWhereInt("PROVINCIA", "nombre_provincia", "REGION_id_region", RegionId);
             if (registro != null)
@@ -106,19 +108,27 @@ namespace UniOnline.Trabajador
         {
             cmbComuna.Items.Clear();
             cmbComuna.Items.Add("-------");
-            List<string> registro = con.LlenadoWhereString("COMUNA inner join UNIONLINE.PROVINCIA on UNIONLINE.COMUNA.PROVINCIA_id_provincia = PROVINCIA.id_provincia", "nombre_comuna", "PROVINCIA.nombre_provincia", cmbProvincia.SelectedItem.ToString());
-            if (registro != null)
+            try
             {
-                for (int i = 0; i < registro.Count(); i++)
+                List<string> registro = con.LlenadoWhereString("COMUNA inner join UNIONLINE.PROVINCIA on UNIONLINE.COMUNA.PROVINCIA_id_provincia = PROVINCIA.id_provincia", "nombre_comuna", "PROVINCIA.nombre_provincia", cmbProvincia.SelectedItem.ToString());
+                if (registro != null)
                 {
-                    cmbComuna.Items.Add(registro[i]);
+                    for (int i = 0; i < registro.Count(); i++)
+                    {
+                        cmbComuna.Items.Add(registro[i]);
+                    }
+                    cmbComuna.Items.Refresh();
                 }
-                cmbComuna.Items.Refresh();
+                else
+                {
+                    MessageBox.Show("Error", "Error Conexion Comuna");
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Error", "Error Conexion Comuna");
+                MessageBox.Show("Error", "nose que pasa");
             }
+            
         }
 
         //Botón para volver a la vista principal de Trabajador
@@ -134,33 +144,25 @@ namespace UniOnline.Trabajador
                 try
                 {
                     Propiedad prop = new Propiedad();
-                    if (!prop.ExistePropiedad(txtFoja.Text))
+                    if (!prop.ExistePropiedad(Int32.Parse(txtFoja.Text)))
                     {
                         prop.Descripcion = txtDescripcion.Text;
-                        int idDireccion = con.InsertDireccion(txtDireccion.Text, Int32.Parse(txtNumero.Text), cmbComuna.SelectedItem.ToString());
-                        if ( idDireccion != 0)
+                        DateTime fecha = DateTime.ParseExact((txtAnno.Text).ToString(), "yyyy", null);                                                                        
+                        Duenno duenno = new Duenno();
+                        duenno = duenno.BuscarDuenno(txtDueño.Text);
+                        if (duenno != null)
                         {
-                            DateTime fecha = DateTime.ParseExact((txtAnno.Text).ToString(), "yyyy", null);
-                            int idClas = con.InsertClasProp(Int32.Parse(txtFoja.Text), Int32.Parse(txtNumero.Text), fecha.ToString("yyyy/MM/dd HH:mm:ss"), txtRazonSocial.Text, txtRutEmpresa.Text);
-                            if ( idClas != 0)
-                            {
-                                prop.Direccion = con.InsertDireccion(txtDireccion.Text, Int32.Parse(txtNumero.Text), cmbComuna.SelectedItem.ToString());
-                                prop.TipoPropiedad = Int32.Parse(cmbTipoProp.SelectedIndex.ToString());
-                                prop.ClasPropiedad = con.InsertClasProp(Int32.Parse(txtFoja.Text), Int32.Parse(txtNumero.Text), fecha.ToString("yyyy/MM/dd HH:mm:ss"), txtRazonSocial.Text, txtRutEmpresa.Text);
-                                Duenno duenno = new Duenno();
-                                duenno = duenno.BuscarDuenno(txtDueño.Text);
-                                if (duenno != null)
-                                {
-                                    prop.Duenno = duenno.duennoId;
-                                    MessageBox.Show(prop.Insertar(prop));
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Dueño vacío", "Error");
-                                }
-                                
-                            }                         
-                        }                   
+                            prop.Direccion = con.InsertDireccion(txtDireccion.Text, Int32.Parse(txtNumero.Text), cmbComuna.SelectedItem.ToString());
+                            prop.TipoPropiedad = Int32.Parse(cmbTipoProp.SelectedIndex.ToString());
+                            prop.ClasPropiedad = con.InsertClasProp(Int32.Parse(txtFoja.Text), Int32.Parse(txtNumero.Text), fecha.ToString("yyyy/MM/dd HH:mm:ss"), txtRazonSocial.Text, txtRutEmpresa.Text);
+                            prop.Duenno = duenno.duennoId;
+                            MessageBox.Show(prop.Insertar(prop));
+                        }
+                        else
+                        {
+                            MessageBox.Show("Dueño no existe", "Error");
+                        }
+                                                                                               
                     }
                     else
                     {
@@ -251,13 +253,23 @@ namespace UniOnline.Trabajador
             if (txtFojaListar.Text != string.Empty && txtNumListar.Text != string.Empty && txtAnnoListar.Text != string.Empty)
             {
                 Propiedad prop = new Propiedad();
-                if (prop.ExistePropiedad(txtFoja.Text))
+                if (prop.ExistePropiedad(Int32.Parse(txtFojaListar.Text)))
                 {
                     DataTable tabla = prop.MostrarPropiedad(Int32.Parse(txtFojaListar.Text));
                     if (tabla != null)
                     {
-                        dtgPropiedad.ItemsSource = tabla.DefaultView;
-                        dtgPropiedad.Items.Refresh();
+                        try
+                        {
+                            
+                            dtgPropiedad.ItemsSource = tabla.DefaultView;
+                            //dtgPropiedad.ItemsSource = tabla.DefaultView;
+                            //dtgPropiedad.Items.Refresh();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                        
                     }
                     else
                     {
@@ -275,5 +287,38 @@ namespace UniOnline.Trabajador
             }
         }
 
+        private void btnLimpiarProp_Click(object sender, RoutedEventArgs e)
+        {
+            txtDueño.Text = string.Empty;
+            txtRutDueño.Text = string.Empty;
+            txtNombreDueño.Text = string.Empty;
+            cmbTipoProp.SelectedIndex = 0;
+            txtFoja.Text = string.Empty;
+            txtNumero.Text = string.Empty;
+            txtAnno.Text = string.Empty; 
+            txtRazonSocial.Text = string.Empty;
+            txtRutEmpresa.Text = string.Empty;
+            txtDescripcion.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
+            
+
+        }
+
+        private void btnEditar_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView dataView = (DataRowView)((Button)e.Source).DataContext;
+            try
+            {
+                WPF_EditarProp editarProp = new WPF_EditarProp();
+                editarProp.ObtenerFoja = Int32.Parse(dataView[0].ToString());
+                //editarProp.v_foja = Int32.Parse(dataView[1].ToString());
+                editarProp.ShowDialog();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
     }
 }
