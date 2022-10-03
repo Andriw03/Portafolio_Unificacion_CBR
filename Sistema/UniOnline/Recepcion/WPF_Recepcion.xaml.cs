@@ -96,5 +96,10 @@ namespace UniOnline.Recepcion
 
             }
         }
+
+        private void txtPlaceHolder_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

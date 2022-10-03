@@ -30,10 +30,20 @@
         <Button x:Name="btnInicio" Content="Inicio" Margin="231,32,0,0" VerticalAlignment="Top" Width="51" HorizontalAlignment="Left" Background="#FF010623" Click="btnInicioMod" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
         <Button x:Name="btnPerfil" Content="Perfil Clientes" Margin="319,32,0,0" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" Background="#FF010623" Click="btnPerfilMod" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
         <Button x:Name="btnSoporte" Content="Soporte en Linea" Margin="451,32,0,0" VerticalAlignment="Top" Width="125" HorizontalAlignment="Left" Background="#FF010623" Click="btnSoporteMod" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
-        <TextBlock FontFamily="Cambria" Text="Ingrese RUT de cliente." FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource TextBlockStyle}" Margin="126,204,522,220" Width="244"/>
-        <TextBox x:Name="txtRutCliente" MaxLength="15" Style="{DynamicResource TextBoxStyle}" BorderThickness="2" Margin="388,204,260,218" FontSize="20" BorderBrush="Black" MaxLines="1" IsUndoEnabled="False" IsReadOnly="True" SpellCheck.IsEnabled="True"/>
-        <Button x:Name="btnBuscar" Content="Buscar" Margin="648,204,126,0" VerticalAlignment="Top" Cursor="Hand" Click="btnBuscar_Click" Height="31"/>
-        <DataGrid HorizontalAlignment="Left" Height="166" Margin="126,250,0,0" VerticalAlignment="Top" Width="640"/>
+        <TextBlock FontFamily="Cambria" Text="Ingrese RUT de cliente." FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource TextBlockStyle}" Margin="126,120,522,303" Width="244"/>
+        <TextBox x:Name="txtRutCliente" MaxLength="15" Style="{DynamicResource TextBoxStyle}" BorderThickness="2" Margin="375,120,273,303" BorderBrush="#FF747474"/>
+        <Button x:Name="btnBuscar" Content="Buscar" Margin="624,120,146,0" VerticalAlignment="Top" Cursor="Hand" Click="btnBuscar_Click" Height="31"/>
+        <DataGrid x:Name="datagridPerfil" HorizontalAlignment="Left" Height="263" Margin="12,167,0,0" VerticalAlignment="Top" Width="870" SelectionChanged="datagridPerfil_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="RUT Cliente" Width="Auto"/>
+                <DataGridTextColumn Header="Primer Nombre" Width="Auto"/>
+                <DataGridTextColumn Header="Segundo Nombre" Width="Auto"/>
+                <DataGridTextColumn Header="Primer Apellido" Width="Auto"/>
+                <DataGridTextColumn Header="Segundo Apellido" Width="Auto"/>
+                <DataGridTextColumn Header="Correo Electronico" Width="Auto"/>
+                <DataGridTextColumn Header="Telefono" Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
 
 

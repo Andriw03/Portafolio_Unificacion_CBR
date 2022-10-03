@@ -40,6 +40,7 @@ namespace Controlador
             {
                 return false;
             }
+            
         }
         //Método para Buscar en la base de datos una columna de una tabla
         public List<string> Llenado(string tab, string colum)

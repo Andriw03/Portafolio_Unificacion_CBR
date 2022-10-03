@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using Controlador;
 using System.Data;
 
+
 namespace UniOnline.Moderador
 {
     /// <summary>
@@ -24,9 +25,11 @@ namespace UniOnline.Moderador
         public WPF_Moderador_Perfil()
         {
             InitializeComponent();
-            Conectar();
+            Conectar();         
+            
         }
 
+    
         Conexion con = new Conexion();
         private void Conectar()
         {
@@ -39,12 +42,6 @@ namespace UniOnline.Moderador
                 MessageBox.Show("Error Conexión");
             }
         }
-
-        private void btnBuscar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btnInicioMod(object sender, RoutedEventArgs e)
         {
             WPF_Moderador wpfMod= new WPF_Moderador();
@@ -57,6 +54,37 @@ namespace UniOnline.Moderador
         }
 
         private void btnSoporteMod(object sender, RoutedEventArgs e)
+        {
+            WPF_Moderador_Soporte wpfSoporte = new WPF_Moderador_Soporte();
+            wpfSoporte.ShowDialog();
+        }
+
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+            Duenno cli = new Duenno();
+            if (txtRutCliente.Text != string.Empty)
+            {
+                try
+                {
+                    cli = cli.BuscarDuenno(txtRutCliente.Text);
+                    if (cli.ExisteDuenno(txtRutCliente.Text))
+                    {
+                        MessageBox.Show("EL CLIENTE EXISTE PERO AUN NO SABI RELLENAR LA TABLA XD");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error, Cliente no encontrado");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.ToString());
+                }
+            }
+
+        }
+
+        private void datagridPerfil_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

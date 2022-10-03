@@ -54,7 +54,8 @@ namespace UniOnline.Moderador
 
         private void btnSoporteMod(object sender, RoutedEventArgs e)
         {
-
+            WPF_Moderador_Soporte wpfSoporte = new WPF_Moderador_Soporte();
+            wpfSoporte.ShowDialog(); 
         }
     }
 }
