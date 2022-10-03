@@ -15,7 +15,6 @@
         
         
         <Rectangle HorizontalAlignment="Center" Height="87" Stroke="Black" VerticalAlignment="Top" Width="800" Fill="#FF010326" Margin="-4,0"/>
-        <Image HorizontalAlignment="Center" Height="105" Margin="340,75,344,0" VerticalAlignment="Top" Width="108" Source="LogoCBR.png" />
         <TextBlock HorizontalAlignment="Left" Margin="21,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="253" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="36"><Run Language="es-es" Text="CBRS de Chile."/></TextBlock>
         <TextBlock HorizontalAlignment="Center" Height="35" Margin="165,173,151,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="476" Foreground="#FF010326" FontSize="22" FontFamily="Segoe UI Historic" FontWeight="Bold"><Run Text="Ingrese el rut del Cliente o "/><Run Text="N° de seguimiento"/></TextBlock>
         <TextBox x:Name="txt_buscar" HorizontalAlignment="Left" Height="23" Margin="301,213,0,0" TextWrapping="Wrap" Text="Rut Cliente o N° Seguimiento" VerticalAlignment="Top" Width="165" Cursor="Pen"/>

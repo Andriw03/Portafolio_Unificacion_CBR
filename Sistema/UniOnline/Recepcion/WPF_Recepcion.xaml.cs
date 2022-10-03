@@ -69,5 +69,15 @@ namespace UniOnline.Recepcion
                 }
             
         }
+
+        private void txt_buscar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void dg_listartramite_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

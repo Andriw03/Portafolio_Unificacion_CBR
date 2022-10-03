@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\
 UniOnline
 none
 false
 DEBUG;TRACE
-D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\App.xaml
-7244546511
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\App.xaml
+9792035078
 
-11-1828018630
-14-640397580
-Director\WPF_Director.xaml;MainWindow.xaml;Moderador\WPF_Moderador.xaml;Recepcion\WPF_Recepcion.xaml;Trabajador\WPF_Trabajador.xaml;Trabajador\WPF_Trabajador_Dueño.xaml;Trabajador\WPF_Trabajador_Prop.xaml;
+13-648232465
+14196011386
+Director\WPF_Director.xaml;MainWindow.xaml;Moderador\WPF_Moderador.xaml;Moderador\WPF_Moderador_Perfil.xaml;Moderador\WPF_Moderador_Soporte.xaml;Recepcion\WPF_Recepcion.xaml;Trabajador\WPF_Trabajador.xaml;Trabajador\WPF_Trabajador_Dueño.xaml;Trabajador\WPF_Trabajador_Prop.xaml;
 
 False
 

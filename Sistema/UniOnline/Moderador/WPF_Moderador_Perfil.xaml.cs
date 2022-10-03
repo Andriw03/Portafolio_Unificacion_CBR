@@ -10,24 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Threading;
 using Controlador;
+using System.Data;
 
 namespace UniOnline.Moderador
 {
     /// <summary>
-    /// Lógica de interacción para WPF_Moderador.xaml
+    /// Lógica de interacción para WPF_Moderador_Perfil.xaml
     /// </summary>
-    public partial class WPF_Moderador : Window
+    public partial class WPF_Moderador_Perfil : Window
     {
-        public WPF_Moderador()
+        public WPF_Moderador_Perfil()
         {
             InitializeComponent();
             Conectar();
         }
-        //Conexión BD
+
         Conexion con = new Conexion();
         private void Conectar()
         {
@@ -41,15 +40,20 @@ namespace UniOnline.Moderador
             }
         }
 
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void btnInicioMod(object sender, RoutedEventArgs e)
         {
-            
+            WPF_Moderador wpfMod= new WPF_Moderador();
+            wpfMod.ShowDialog();
         }
 
         private void btnPerfilMod(object sender, RoutedEventArgs e)
         {
-            WPF_Moderador_Perfil wpfPerfil = new WPF_Moderador_Perfil();
-            wpfPerfil.ShowDialog();
+
         }
 
         private void btnSoporteMod(object sender, RoutedEventArgs e)
