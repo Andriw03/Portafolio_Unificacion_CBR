@@ -110,7 +110,7 @@
                     <TextBox x:Name="txtNumListar" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="187" MaxLength="15" PreviewTextInput="txtNumListar_PreviewTextInput" Margin="100.6,0.2,74.8,0"/>
                     <Label Content="Buscar por Año:" Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <TextBox x:Name="txtAnnoListar" Grid.Column="7" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="212" MaxLength="15" PreviewTextInput="txtAnnoListar_PreviewTextInput"/>
-                    <DataGrid x:Name="dtgPropiedad" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="8" Grid.RowSpan="5">
+                    <DataGrid x:Name="dtgPropiedad" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="8" Grid.RowSpan="5" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Foja" Binding="{Binding Path = 'foja'}" IsReadOnly="True"/>
                             <DataGridTextColumn Header="Tipo de Propiedad" Binding="{Binding Path = 'nombre_tipoP'}" IsReadOnly="True"/>
