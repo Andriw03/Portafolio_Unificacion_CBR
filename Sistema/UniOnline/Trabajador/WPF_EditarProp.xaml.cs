@@ -115,7 +115,7 @@ namespace UniOnline.Trabajador
         {
             this.Close();
         }
-
+        //Boton que busca el dueño en base su rut
         private void btnBuscarDueño_Click(object sender, RoutedEventArgs e)
         {
             if (txtDueño.Text != string.Empty)
@@ -140,12 +140,29 @@ namespace UniOnline.Trabajador
 
         private void btnAgregarDuenno_Click(object sender, RoutedEventArgs e)
         {
-
+            WPF_Trabajador_Dueño tdueño = new WPF_Trabajador_Dueño();
+            tdueño.ShowDialog();
         }
 
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
-
+            if (txtRutDueño.Text != string.Empty && txtFoja.Text != string.Empty && txtDescripcion.Text != string.Empty && txtDireccion.Text != string.Empty && cmbTipoProp.SelectedItem != null)
+            {
+                Propiedad prop = new Propiedad();
+                if (prop.ModificarProp(txtDescripcion.Text,cmbTipoProp.SelectedIndex, txtRutDueño.Text, Int32.Parse(txtFoja.Text)))
+                {
+                    MessageBox.Show("Propiedad Modificada con Éxito");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error en el Update","Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Rellene todos los campos","Advertencia");
+            }
         }
         private void cmbTipoProp_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -163,7 +180,16 @@ namespace UniOnline.Trabajador
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-
+            Propiedad prop = new Propiedad();
+            if (prop.EliminarProp(Int32.Parse(txtFoja.Text)))
+            {
+                MessageBox.Show("Propiedad Eliminada con Éxito");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error en el Eliminar", "Error");
+            }
         }
     }
 }

@@ -86,5 +86,70 @@ namespace Controlador
                 return null;
             }
         }
+        public bool ModificarProp(string descripcion, int tipoPropiedad, string rutDuenno, int foja)
+        {
+            try
+            {
+                Conectar();
+                
+                int idDuenno = 0;
+                cmd = new MySqlCommand("SELECT id_duenno FROM UNIONLINE.DUENNO_PROP where rut_duenno = '"+rutDuenno+"';",conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    idDuenno = Int32.Parse(rd["id_duenno"].ToString()); 
+                }
+                rd.Close();
+                int idPropiedad = 0;
+                cmd = new MySqlCommand("SELECT id_propiedad FROM UNIONLINE.PROPIEDAD inner join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas where foja = "+ foja +";", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    idPropiedad = Int32.Parse(rd["id_propiedad"].ToString());
+                }
+                rd.Close();
+                cmd = new MySqlCommand("UPDATE `UNIONLINE`.`PROPIEDAD` SET `descripcion` = '"+ descripcion +"', `TIPO_PROPIEDAD_id_tipoP` = " + tipoPropiedad + ", `DUENNO_PROP_id_duenno` = " + idDuenno + " WHERE `id_propiedad` = "+ idPropiedad +";", conex);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+        public bool EliminarProp(int foja)
+        {
+            Conectar();
+            try
+            {
+                int idFoja = 0;
+                cmd = new MySqlCommand("SELECT id_clas FROM UNIONLINE.CLAS_PROP where foja = "+ foja +" ;", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    idFoja = Int32.Parse(rd["id_clas"].ToString());
+                }
+                rd.Close();
+                int idPropiedad = 0;
+                cmd = new MySqlCommand("SELECT id_propiedad FROM UNIONLINE.PROPIEDAD inner join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas where foja = " + foja + ";", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    idPropiedad = Int32.Parse(rd["id_propiedad"].ToString());
+                }
+                rd.Close();
+                cmd = new MySqlCommand("DELETE FROM `UNIONLINE`.`PROPIEDAD` WHERE id_propiedad = "+ idPropiedad +"; ",conex);
+                cmd.ExecuteReader();
+                cmd = new MySqlCommand("DELETE FROM `UNIONLINE`.`CLAS_PROP` WHERE foja = "+ idFoja +";", conex);
+                cmd.ExecuteReader();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
     }
 }
