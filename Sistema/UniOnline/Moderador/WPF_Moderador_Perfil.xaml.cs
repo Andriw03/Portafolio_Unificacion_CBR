@@ -13,7 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Controlador;
 using System.Data;
-
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace UniOnline.Moderador
 {
@@ -42,6 +43,33 @@ namespace UniOnline.Moderador
                 MessageBox.Show("Error Conexión");
             }
         }
+
+        private void btnFillGrid_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                MySqlConnection con = new MySqlConnection("server=unificacion.cmvnu851mzxa.us-east-1.rds.amazonaws.com;user id=root;password=nohomo123;persistsecurityinfo=True;database=UNIONLINE");
+                MySqlCommand cmd = new MySqlCommand("SELECT rut_usuario, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_electronico, telefono FROM UNIONLINE.USUARIO WHERE id_usuario = 5;", con);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                cmd.Dispose();
+                adapter.Dispose();
+                con.Close();
+                datagridPerfil.ItemsSource = dt.DefaultView;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se encuentran datos");
+            }
+        }
+
+
+
+
+
+
+
         private void btnInicioMod(object sender, RoutedEventArgs e)
         {
             WPF_Moderador wpfMod= new WPF_Moderador();
@@ -85,6 +113,11 @@ namespace UniOnline.Moderador
         }
 
         private void datagridPerfil_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, RoutedEventArgs e)
         {
 
         }
