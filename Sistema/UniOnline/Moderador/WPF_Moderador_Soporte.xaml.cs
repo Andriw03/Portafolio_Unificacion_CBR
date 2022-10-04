@@ -43,7 +43,8 @@ namespace UniOnline.Moderador
 
         private void btnVerTicket_Click(object sender, RoutedEventArgs e)
         {
-
+            WPF_Moderador_Soporte_Tickets wpfTicket = new WPF_Moderador_Soporte_Tickets();
+            wpfTicket.ShowDialog();
         }
     }
 }

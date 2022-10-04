@@ -89,26 +89,7 @@ namespace UniOnline.Moderador
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            Duenno cli = new Duenno();
-            if (txtRutCliente.Text != string.Empty)
-            {
-                try
-                {
-                    cli = cli.BuscarDuenno(txtRutCliente.Text);
-                    if (cli.ExisteDuenno(txtRutCliente.Text))
-                    {
-                        MessageBox.Show("EL CLIENTE EXISTE PERO AUN NO SABI RELLENAR LA TABLA XD");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error, Cliente no encontrado");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.ToString());
-                }
-            }
+            
 
         }
 
@@ -119,7 +100,7 @@ namespace UniOnline.Moderador
 
         private void btnEditar_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
