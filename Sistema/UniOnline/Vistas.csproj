@@ -99,6 +99,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Director\WPF_ModificarUsuario.xaml.cs">
+      <DependentUpon>WPF_ModificarUsuario.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Moderador\WPF_Moderador_Perfil.xaml.cs">
       <DependentUpon>WPF_Moderador_Perfil.xaml</DependentUpon>
     </Compile>
@@ -127,6 +130,10 @@
       <DependentUpon>WPF_Trabajador_Tra.xaml</DependentUpon>
     </Compile>
     <Page Include="Director\WPF_Director.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Director\WPF_ModificarUsuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

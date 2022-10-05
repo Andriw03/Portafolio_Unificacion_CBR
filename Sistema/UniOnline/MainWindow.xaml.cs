@@ -59,7 +59,7 @@ namespace UniOnline
                 {
                     if (us.id_tipoU == 2)
                     {
-                        WPF_Director dir = new WPF_Director();
+                        WPF_ModificarUsuario dir = new WPF_ModificarUsuario();
                         dir.ShowDialog();
                         this.Close();
 
