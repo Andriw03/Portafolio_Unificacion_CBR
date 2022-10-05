@@ -32,7 +32,7 @@ namespace UniOnline.Moderador
             try
             {
                 MySqlConnection con = new MySqlConnection("server=unificacion.cmvnu851mzxa.us-east-1.rds.amazonaws.com;user id=root;password=nohomo123;persistsecurityinfo=True;database=UNIONLINE");
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM UNIONLINE.FORMULARIO;", con);
+                MySqlCommand cmd = new MySqlCommand("SELECT id_formulario, nombre_form, telefono, correo_form, asunto_form, detalle_form FROM UNIONLINE.FORMULARIO;", con);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);

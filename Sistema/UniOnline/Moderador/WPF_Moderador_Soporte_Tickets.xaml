@@ -21,12 +21,12 @@
         </Grid.ColumnDefinitions>
         <DataGrid x:Name="dataForm" HorizontalAlignment="Left" Height="282" VerticalAlignment="Top" Width="642" AutoGenerateColumns="False" Grid.ColumnSpan="3">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Path= 'rut_usuario'}" IsReadOnly="True" Width="Auto"/>
-                <DataGridTextColumn Header="Nombre" Binding="{Binding Path= 'primer_nombre'}" IsReadOnly="True" Width="Auto"/>
-                <DataGridTextColumn Header="Telefono" Binding="{Binding Path= 'segundo_nombre'}" IsReadOnly="True" Width="Auto"/>
-                <DataGridTextColumn Header="Correo" Binding="{Binding Path= 'primer_apellido'}" IsReadOnly="True" Width="Auto"/>
-                <DataGridTextColumn Header="Asunto" Binding="{Binding Path= 'segundo_apellido'}" IsReadOnly="True" Width="Auto"/>
-                <DataGridTextColumn Header="Detalle" Binding="{Binding Path= 'correo_electronico'}" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding Path= 'id_formulario'}" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Path= 'nombre_form'}" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn Header="Telefono" Binding="{Binding Path= 'telefono'}" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn Header="Correo" Binding="{Binding Path= 'correo_form'}" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn Header="Asunto" Binding="{Binding Path= 'asunto_form'}" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn Header="Detalle" Binding="{Binding Path= 'detalle_form'}" IsReadOnly="True" Width="Auto"/>
                 <DataGridTemplateColumn Header="Ver Detalle">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
