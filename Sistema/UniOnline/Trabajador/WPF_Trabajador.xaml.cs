@@ -28,6 +28,20 @@ namespace UniOnline.Trabajador
             startclock();
             Conectar();
         }
+        Usuario us = new Usuario();
+        public Usuario ObtenerUsuario
+        {
+            get
+            {
+                return this.us;
+            }
+            set
+            {
+                this.us = value;
+                this.us = value;
+                LabelSaludo.Content = "Hoy hace un buen dia para que seas nuestro esclavo mi estimade " + us.primer_nombre + " " + us.primer_apellido;  
+            }
+        }
         //Conexión BD
         Conexion con = new Conexion();
         private void Conectar()
