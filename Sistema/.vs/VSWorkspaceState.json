@@ -1,10 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Controlador",
     "\\UniOnline",
     "\\UniOnline\\Recepcion",
     "\\UniOnline\\Trabajador"
   ],
-  "SelectedNode": "\\UniOnline\\Trabajador\\WPF_Trabajador_Tra.xaml.cs",
+  "SelectedNode": "\\UniOnline\\Recepcion\\WPF_Recepcion.xaml",
   "PreviewInSolutionExplorer": false
 }

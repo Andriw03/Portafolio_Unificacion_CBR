@@ -236,3 +236,11 @@ D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug
 D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte_Tickets.baml
 D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarProp.baml
 D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Tra.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Perfil.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte_Tickets.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarProp.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Perfil.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte_Tickets.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarProp.baml
