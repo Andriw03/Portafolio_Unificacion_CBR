@@ -36,13 +36,12 @@ namespace Controlador
 
         }
 
-        public bool ExisteRut(string id)
+        public bool ExisteID(int id)
         {
-
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT rut_usuario FROM UNIONLINE.USUARIO where rut_usuario = " + id + ";", conex);
+                cmd = new MySqlCommand("SELECT id_usuario FROM UNIONLINE.USUARIO inner join UNIONLINE.SOLICITUD on UNIONLINE.USUARIO.id_usuario = UNIONLINE.SOLICITUD.USUARIO_id_usuario where rut_usuario = " + id + ";", conex);
                 rd = cmd.ExecuteReader();
                 bool e = rd.Read();
                 rd.Close();
@@ -51,41 +50,49 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                return true;
+                MessageBox.Show(ex.Message);
+                return false;
+            }
 
+        }
+
+        public bool ExisteRut(string id)
+        {
+
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT * FROM UNIONLINE.USUARIO inner join UNIONLINE.SOLICITUD on UNIONLINE.USUARIO.id_usuario = UNIONLINE.SOLICITUD.USUARIO_id_usuario where rut_usuario or numero_seguimiento = '" + id + "' ;", conex);
+                rd = cmd.ExecuteReader();
+                bool e = rd.Read();
+                rd.Close();
+                return e;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
             }
         }
 
 
-        public DataTable MostrarSolicitud(string rut)
+        public DataTable MostrarSolicitud(string rut, string nseg)
         {
             Conectar();
             DataTable tabla = new DataTable();
-            tabla.Columns.Add(new DataColumn("Rut"));
-            tabla.Columns.Add(new DataColumn("Nombre"));
-            tabla.Columns.Add(new DataColumn("Apellido"));
-            tabla.Columns.Add(new DataColumn("N Seguimiento"));
-            tabla.Columns.Add(new DataColumn("Estado"));
+
+           
             try
             {
-                cmd = new MySqlCommand("SELECT rut_usuario, primer_nombre, primer_apellido, numero_seguimiento, estado FROM UNIONLINE.USUARIO join UNIONLINE.SOLICITUD on UNIONLINE.USUARIO.id_usuario = UNIONLINE.SOLICITUD.USUARIO_id_usuario where rut_usuario or numero_seguimiento = '" + rut + "';", conex);
-                rd = cmd.ExecuteReader();
-
-              
-
-                while (rd.Read())
-                {
-                    DataRow row;
-                    row = tabla.NewRow();
-                    row[0] = rd["rut_usuario"].ToString();
-                    row[1] = rd["primer_nombre"].ToString();
-                    row[2] = rd["primer_apellido"].ToString();
-                    row[3] = rd["numero_seguimiento"].ToString();
-                    row[4] = rd["estado"].ToString();
-                    tabla.Rows.Add(row);
-                }
-                rd.Close();
+                cmd = new MySqlCommand("SELECT rut_usuario, primer_nombre, primer_apellido, numero_seguimiento, estado FROM UNIONLINE.USUARIO join UNIONLINE.SOLICITUD on UNIONLINE.USUARIO.id_usuario = UNIONLINE.SOLICITUD.USUARIO_id_usuario where rut_usuario or numero_seguimiento = '" + rut + "'  '" + nseg + "';", conex);
+                MySqlDataAdapter ap = new MySqlDataAdapter(cmd);
+                ap.Fill(tabla);
+                cmd.Dispose();
+                ap.Dispose();
                 return tabla;
+
+               
             }
             catch (Exception ex)
             {

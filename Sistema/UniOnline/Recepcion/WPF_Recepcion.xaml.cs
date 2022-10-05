@@ -47,7 +47,7 @@ namespace UniOnline.Recepcion
                 Recepcionista recep = new Recepcionista();
                 if (recep.ExisteRut(txt_buscar.Text))
                 {
-                    DataTable tabla = recep.MostrarSolicitud(txt_buscar.Text);
+                    DataTable tabla = recep.MostrarSolicitud( txt_buscar.Text,txt_buscar.Text);
                     if (tabla != null)
                     {
                         dg_listartramite.ItemsSource = tabla.DefaultView;

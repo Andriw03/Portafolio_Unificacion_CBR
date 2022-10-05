@@ -226,4 +226,13 @@ C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnl
 C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarProp.baml
 C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte_Tickets.g.cs
 C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte_Tickets.baml
-C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.SuggestedBindingRedirects.cache
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Perfil.g.cs
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte.g.cs
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte_Tickets.g.cs
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarProp.g.cs
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Tra.g.cs
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Perfil.baml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte.baml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte_Tickets.baml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarProp.baml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Tra.baml
