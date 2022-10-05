@@ -5,16 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline.Moderador"
         mc:Ignorable="d"
-        Title="WPF_Moderador_Soporte_Tickets" Height="440.126" Width="367.998">
+        Title="WPF_Moderador_Soporte_Tickets" Height="385.126" Width="649.998">
+    <Window.Resources>
+
+        <Style x:Key="BtnStyle" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="Cambria"/>
+        </Style>
+
+    </Window.Resources>
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="399" Margin="0,10,0,0" VerticalAlignment="Top" Width="360">
-            <DataGridTextColumn Header="ID" IsReadOnly="True" Width="Auto"/>
-            <DataGridTextColumn Header="Nombre" IsReadOnly="True" Width="Auto"/>
-            <DataGridTextColumn Header="Telefono" IsReadOnly="True" Width="Auto"/>
-            <DataGridTextColumn Header="Correo" IsReadOnly="True" Width="Auto"/>
-            <DataGridTextColumn Header="Asunto" IsReadOnly="True" Width="Auto"/>
-            <DataGridTextColumn Header="Detalle" IsReadOnly="True" Width="Auto"/>
-            <DataGridTextColumn Header="Estado" IsReadOnly="True" Width="Auto"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="99*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="35*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dataForm" HorizontalAlignment="Left" Height="282" VerticalAlignment="Top" Width="642" AutoGenerateColumns="False" Grid.ColumnSpan="3">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Path= 'rut_usuario'}" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Path= 'primer_nombre'}" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn Header="Telefono" Binding="{Binding Path= 'segundo_nombre'}" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn Header="Correo" Binding="{Binding Path= 'primer_apellido'}" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn Header="Asunto" Binding="{Binding Path= 'segundo_apellido'}" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn Header="Detalle" Binding="{Binding Path= 'correo_electronico'}" IsReadOnly="True" Width="Auto"/>
+                <DataGridTemplateColumn Header="Ver Detalle">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnDetalle" Content="Detalle"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
         </DataGrid>
+        <Button x:Name="btnCargaForm" Content="Cargar Formularios" FontSize="20" Background="#FF393E59" Foreground="#FFF0F2F2" Style="{DynamicResource BtnStyle}" Click="btnCargaForm_Click" Margin="10,287,6,26"/>
     </Grid>
 </Window>

@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace UniOnline.Moderador
 {
@@ -22,6 +25,26 @@ namespace UniOnline.Moderador
         public WPF_Moderador_Soporte_Tickets()
         {
             InitializeComponent();
+        }
+
+        private void btnCargaForm_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                MySqlConnection con = new MySqlConnection("server=unificacion.cmvnu851mzxa.us-east-1.rds.amazonaws.com;user id=root;password=nohomo123;persistsecurityinfo=True;database=UNIONLINE");
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM UNIONLINE.FORMULARIO;", con);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                cmd.Dispose();
+                adapter.Dispose();
+                con.Close();
+                dataForm.ItemsSource = dt.DefaultView;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se encuentran datos");
+            }
         }
     }
 }
