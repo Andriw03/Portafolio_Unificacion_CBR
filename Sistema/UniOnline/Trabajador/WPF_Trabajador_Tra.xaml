@@ -20,8 +20,9 @@
     </Window.Resources>
 
     <Grid>
+
         <TabControl>
-            <TabItem Header="Agregar Propiedad" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="Auto" HorizontalAlignment="Center">
+            <TabItem Header="Agregar Trámite" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="Auto" HorizontalAlignment="Center">
                 <Grid Background="#FFF0F2F2" Margin="0,0,0,0">
 
                     <Grid.ColumnDefinitions>
@@ -45,18 +46,61 @@
                     </Grid.RowDefinitions>
                     
                     <Button x:Name="btnVolverTra" Content="Volver" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" Width="100" Click="btnVolverTra_Click" Background="#FF393E59" Foreground="#FFF0F2F2" Grid.Column="5" Grid.Row="6"/>
-                    <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF010326" Width="244" FontWeight="Bold" FontSize="25" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3"><Run Text="Ingresa un Trámite"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="#FF010326" Width="244" FontWeight="Bold" FontSize="25" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3"><Run Text="Ingresa un Trámite"/></TextBlock>
                     <Label Content="Nombre del Trámite:" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="txtNomTra" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalAlignment="Center" Width="250" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <TextBox x:Name="txtNomTra" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalAlignment="Center" Width="310" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
                     <Label Content="Valor del Trámite:" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2"/>
                     <TextBox x:Name="txtValorTra" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" MaxLength="15" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
                     <Label Content="Tipo de Trámite:" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="3" Grid.Row="3"/>
-                    <ComboBox x:Name="cmbTipoTra" FontSize="15" Height="30" Width="280" IsEditable="True" Text="Seleccione un tipo de trámite" IsReadOnly="True" Focusable="False" SelectionChanged="cmbTipoTra_SelectionChanged" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3"/>
+                    <ComboBox x:Name="cmbTipoTra" FontSize="15" Height="30" Width="290" IsEditable="True" Text="Seleccione un tipo de trámite" IsReadOnly="True" Focusable="False" SelectionChanged="cmbTipoTra_SelectionChanged" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3"/>
 
                     <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="40" Width="100" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnGuardar_Click" Grid.Column="1" Grid.Row="6"/>
                     
                 </Grid>
             </TabItem>
+
+            <TabItem Header="Listar Trámites" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="Auto" HorizontalAlignment="Center">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Width="350" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Foreground="#FF010326" FontSize="25" TextWrapping="Wrap" FontWeight="Bold"><Run Text="Seleccione un tipo de Trámite"/></TextBlock>
+
+                    <ComboBox x:Name="cmbListarTra" FontSize="15" Height="30" Width="290" IsEditable="True" Text="Seleccione un tipo de trámite" IsReadOnly="True" Focusable="False" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" SelectionChanged="cmbListarTra_SelectionChanged"/>
+
+                    <Button x:Name="btnBuscarTra" Content="Buscar" Height="40" Width="100" Grid.Column="3" Grid.Row="3" Click="btnBuscarTra_Click" Background="#FF393E59" Foreground="#FFF0F2F2"/>
+
+                    <DataGrid x:Name="dtgTramite" AutoGenerateColumns="False" CanUserAddRows="False" Width="700" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" Grid.RowSpan="3">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Nombre" Width="310" Binding="{Binding Path = 'nombre_tramite'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Valor" Width="120" Binding="{Binding Path = 'valor_tramite'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Tipo" Width="310" Binding="{Binding Path = 'nombre_tipoT'}" IsReadOnly="True"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Button x:Name="btnListarVol" Content="Volver" Height="40" Width="100" Grid.Column="5" Grid.Row="7" Click="btnListarVol_Click" Background="#FF393E59" Foreground="#FFF0F2F2" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+
+                </Grid>
+            </TabItem>
+            
         </TabControl>
     </Grid>
 </Window>

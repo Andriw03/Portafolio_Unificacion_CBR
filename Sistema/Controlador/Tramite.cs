@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using MySql.Data.MySqlClient;
 
 
@@ -48,7 +50,7 @@ namespace Controlador
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT * FROM UNIONLINE.TRAMITE WHERE nombre_tramite = " + id + ";", conex);
+                cmd = new MySqlCommand("SELECT * FROM UNIONLINE.TRAMITE WHERE nombre_tramite = '" + id + "';", conex);
                 rd = cmd.ExecuteReader();
                 bool e = rd.Read();
                 rd.Close();
@@ -57,6 +59,44 @@ namespace Controlador
             catch (Exception ex)
             {
                 return true;
+            }
+        }
+
+        public bool ExisteTipo(string id)
+        {
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT id_tipoT FROM UNIONLINE.T_TRAMITE WHERE UNIONLINE.T_TRAMITE.id_tipoT = " + id + ";", conex);
+                rd = cmd.ExecuteReader();
+                bool e = rd.Read();
+                rd.Close();
+                return e;
+            }
+            catch (Exception ex)
+            {
+                return true;
+            }
+        }
+
+        public DataTable MostrarTipoTra(int tipo)
+        {
+            Conectar();
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                cmd = new MySqlCommand("SELECT tra.nombre_tramite, tra.valor_tramite, titra.nombre_tipoT FROM UNIONLINE.TRAMITE AS tra INNER JOIN UNIONLINE.T_TRAMITE AS titra ON tra.T_TRAMITE_id_tipoT = titra.id_tipoT WHERE tra.T_TRAMITE_id_tipoT = " + tipo + "", conex);
+                MySqlDataAdapter ap = new MySqlDataAdapter(cmd);
+                ap.Fill(tabla);
+                cmd.Dispose();
+                ap.Dispose();
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+                return null;
             }
         }
 

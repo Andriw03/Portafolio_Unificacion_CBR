@@ -17,9 +17,6 @@ using Controlador;
 
 namespace UniOnline.Moderador
 {
-    /// <summary>
-    /// Lógica de interacción para WPF_Moderador.xaml
-    /// </summary>
     public partial class WPF_Moderador : Window
     {
         public WPF_Moderador()
@@ -33,7 +30,7 @@ namespace UniOnline.Moderador
         {
             if (con.Conectar())
             {
-                MessageBox.Show("Vas bien mi rey");
+                MessageBox.Show("Vas bien");
             }
             else
             {

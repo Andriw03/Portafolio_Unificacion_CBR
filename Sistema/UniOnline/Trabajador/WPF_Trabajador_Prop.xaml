@@ -16,14 +16,11 @@
             <Setter Property = "FontFamily" Value="Segoe UI Emoji"/>
         </Style>
 
-        <Style x:Key="TabControlStyle" TargetType="TabControl">
-            <Setter Property = "Background" Value="#010326"/>
-        </Style>
-
     </Window.Resources>
     <Grid>
+
         <Rectangle HorizontalAlignment="Stretch" Width="Auto" MinHeight="100" MinWidth="800" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" Grid.RowSpan="3" Fill="#FF010326" Stroke="Black" Margin="0,0,-8,1"/>
-        <TabControl HorizontalAlignment="Center" Height="569" VerticalAlignment="Center" Width="892" Style="{DynamicResource TabControlStyle}" IsSynchronizedWithCurrentItem="True" Cursor="Arrow">
+        <TabControl IsSynchronizedWithCurrentItem="True" Cursor="Arrow">
             <TabItem Header="Agregar Propiedad" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="Auto" HorizontalAlignment="Left" Margin="277,0,-276.8,1" Foreground="#FFFDFDFD" BorderBrush="#FF010326" Background="#FF010326">
                 <Grid Background="#FFF0F2F2" Margin="0,5,0.4,-1.4">
                     <Grid.ColumnDefinitions>
@@ -110,7 +107,7 @@
                     <TextBox x:Name="txtNumListar" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="187" MaxLength="15" PreviewTextInput="txtNumListar_PreviewTextInput" Margin="100.6,0.2,74.8,0"/>
                     <Label Content="Buscar por Año:" Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <TextBox x:Name="txtAnnoListar" Grid.Column="7" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="212" MaxLength="15" PreviewTextInput="txtAnnoListar_PreviewTextInput"/>
-                    <DataGrid x:Name="dtgPropiedad" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="8" Grid.RowSpan="5" AutoGenerateColumns="False">
+                    <DataGrid x:Name="dtgPropiedad" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="8" Grid.RowSpan="5" AutoGenerateColumns="False" CanUserAddRows="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Foja" Binding="{Binding Path = 'foja'}" IsReadOnly="True"/>
                             <DataGridTextColumn Header="Tipo de Propiedad" Binding="{Binding Path = 'nombre_tipoP'}" IsReadOnly="True"/>
