@@ -58,6 +58,7 @@ namespace Controlador
 
         public bool ExisteRut(string id)
         {
+             
 
             try
             {

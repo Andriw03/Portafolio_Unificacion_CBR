@@ -244,3 +244,13 @@ D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_M
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte.baml
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte_Tickets.baml
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarProp.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Perfil.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte_Tickets.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarProp.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Tra.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Perfil.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte_Tickets.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarProp.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Tra.baml

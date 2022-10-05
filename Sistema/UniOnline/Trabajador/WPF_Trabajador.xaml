@@ -13,9 +13,11 @@
         <Button x:Name="btnGestionProp" Content="Gestión Propiedad" HorizontalAlignment="Left" Margin="287,32,0,0" VerticalAlignment="Top" Width="142" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" Click="Button_Gestion_Prop"/>
         <Button x:Name="btnGestionTra" Content="Gestión Trámites" HorizontalAlignment="Left" Margin="434,32,0,0" VerticalAlignment="Top" Width="123" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" Click="Button_Gestion_Tra"/>
         <Button x:Name="btnConsultaTra" Content="Consultar Trámite" HorizontalAlignment="Left" Margin="562,32,0,0" VerticalAlignment="Top" Width="129" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" Click="Button_Consulta_Tra"/>
-        <Label Content="Bienvenido" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="728,30,0,0" Width="154" Foreground="#FFF0F2F2" FontSize="15"/>
+        <Label x:Name="labelBienvenido" Content="Bienvenido" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="728,30,0,0" Width="154" Foreground="#FFF0F2F2" FontSize="15"/>
         <Rectangle Fill="#FF393E59" HorizontalAlignment="Left" Height="55" Margin="12,101,0,0" Stroke="Black" VerticalAlignment="Top" Width="134"/>
         <TextBlock x:Name="MyTime" HorizontalAlignment="Left" Margin="44,132,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="17" Foreground="#FFF0F2F2"/>
         <TextBlock x:Name="datelbl" HorizontalAlignment="Left" Margin="34,101,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="18" Foreground="#FFF0F2F2"/>
+        <Image HorizontalAlignment="Left" Height="202" Margin="340,0,0,181.4" VerticalAlignment="Bottom" Width="217" Source="/UniOnline;component/LogoCBR.png"/>
+        <Label x:Name="LabelSaludo" Content="" HorizontalAlignment="Left" Height="119" Margin="171,289,0,0" VerticalAlignment="Top" Width="588" FontSize="24" FontFamily="Segoe UI Emoji"/>
     </Grid>
 </Window>

@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline"
         mc:Ignorable="d"
-        Title="UniOnline"  WindowState="Maximized">
+        Title="UniOnline" Height="600" Width="900" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="87" Stroke="Black" VerticalAlignment="Top" Width="762" Fill="#FF010326" Margin="0,0,-0.4,0"/>
-        <Image HorizontalAlignment="Center" Height="152" Margin="330,87,291.6,0" VerticalAlignment="Top" Width="140" Source="LogoCBR.png" />
+        <Rectangle Height="87" Stroke="Black" VerticalAlignment="Top" Fill="#FF010326" Margin="0,0,-0.4,0"/>
+        <Image HorizontalAlignment="Center" Height="191" Margin="360,92,336.6,0" VerticalAlignment="Top" Width="197" Source="LogoCBR.png" />
         <TextBlock HorizontalAlignment="Left" Margin="21,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="253" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="36"><Run Language="es-es" Text="CBRS de Chile."/></TextBlock>
-        <Label Content="Rut" HorizontalAlignment="Left" Height="28" Margin="330,280,0,0" VerticalAlignment="Top" Width="31" Foreground="#FF010326"/>
-        <TextBox x:Name="textRut" HorizontalAlignment="Left" Margin="366,285,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="#FFF0F2F2" Foreground="#FF010326"/>
-        <Label Content="Contraseña" HorizontalAlignment="Left" Height="28" Margin="289,319,0,0" VerticalAlignment="Top" Width="79"/>
-        <TextBox x:Name="TextPass" HorizontalAlignment="Left" Height="20" Margin="368,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Background="#FFF0F2F2" Foreground="#FF010326"/>
-        <TextBlock HorizontalAlignment="Center" Height="35" Margin="0,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Foreground="#FF010326" FontSize="22" FontFamily="Segoe UI Historic" FontWeight="Bold"><Run Language="es-es" Text="Ingrese sus credenciales"/></TextBlock>
-        <Button x:Name="btnInicioSesion" Content="Iniciar sesión" HorizontalAlignment="Left" Margin="426,376,0,0" VerticalAlignment="Top" Background="#FFF0F2F2" IsEnabled="False" Height="32" Width="99" Foreground="#FF010326" BorderBrush="#FF010326" Click="btnInicioSesion_Click"/>
-        <Button x:Name="btnOlvidarCon" Content="¿Olvido su contraseña?" HorizontalAlignment="Left" Margin="275,376,0,0" VerticalAlignment="Top" Foreground="#FF010326" Height="32" Width="125" BorderBrush="#FF010326" Background="#FFF0F2F2" Click="btnOlvidarCon_Click"/>
+        <Label Content="Rut" HorizontalAlignment="Right" Margin="0,341,461.6,0" Width="31" Foreground="#FF010326" Height="28" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtRut" HorizontalAlignment="Right" Margin="0,0,336.6,206.4" TextWrapping="Wrap" Text="" Width="120" Background="#FFF0F2F2" Foreground="#FF010326" Height="18" VerticalAlignment="Bottom"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="360,0,0,162.4" Width="79" Height="28" VerticalAlignment="Bottom"/>
+        <TextBlock HorizontalAlignment="Center" Margin="342,288,301.6,247.4" TextWrapping="Wrap" Width="250" Foreground="#FF010326" FontSize="22" FontFamily="Segoe UI Historic" FontWeight="Bold"><Run Language="es-es" Text="Ingrese sus credenciales"/></TextBlock>
+        <Button x:Name="btnInicioSesion" Content="Iniciar sesión" HorizontalAlignment="Left" Margin="493,433,0,105.4" Background="#FFF0F2F2" Width="99" Foreground="#FF010326" BorderBrush="#FF010326" Click="btnInicioSesion_Click"/>
+        <Button x:Name="btnOlvidarCon" Content="¿Olvido su contraseña?" HorizontalAlignment="Left" Margin="342,433,0,105.4" Foreground="#FF010326" Width="125" BorderBrush="#FF010326" Background="#FFF0F2F2" Click="btnOlvidarCon_Click"/>
+        <PasswordBox x:Name="txtPass" HorizontalAlignment="Left" Margin="439,0,0,170.4"  Width="116" Background="#FFF0F2F2" Foreground="#FF010326" Height="20" VerticalAlignment="Bottom" RenderTransformOrigin="-0.364,0.553"/>
     </Grid>
 </Window>

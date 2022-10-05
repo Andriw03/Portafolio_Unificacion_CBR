@@ -85,6 +85,38 @@ namespace Controlador
 
             }
         }
+        public Usuario LoginUsuario( string rut)
+        {
+            Usuario usuario = new Usuario();
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT id_usuario, rut_usuario, contrasenna, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_electronico, telefono, CBR_id_cbr, T_USUARIO_id_tipoU FROM UNIONLINE.USUARIO where rut_usuario = '"+ rut +"';", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    usuario.id_usuario = Int32.Parse(rd["id_usuario"].ToString());
+                    usuario.rut_usuario = rd["rut_usuario"].ToString();
+                    usuario.contrasenna = rd["contrasenna"].ToString();
+                    usuario.primer_nombre = rd["primer_nombre"].ToString();
+                    usuario.segundo_nombre = rd["segundo_nombre"].ToString();
+                    usuario.primer_apellido = rd["primer_apellido"].ToString();
+                    usuario.segundo_apellido = rd["segundo_apellido"].ToString();
+                    usuario.correo_electronico = rd["correo_electronico"].ToString();
+                    usuario.telefono = rd["telefono"].ToString();
+                    usuario.id_cbr = Int32.Parse(rd["CBR_id_cbr"].ToString());
+                    usuario.id_tipoU = Int32.Parse(rd["T_USUARIO_id_tipoU"].ToString());
+                }
+                rd.Close();
+                return usuario;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
 
 
     }
