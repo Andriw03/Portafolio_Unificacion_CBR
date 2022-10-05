@@ -49,7 +49,7 @@ namespace UniOnline.Moderador
             try
             {
                 MySqlConnection con = new MySqlConnection("server=unificacion.cmvnu851mzxa.us-east-1.rds.amazonaws.com;user id=root;password=nohomo123;persistsecurityinfo=True;database=UNIONLINE");
-                MySqlCommand cmd = new MySqlCommand("SELECT rut_usuario, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_electronico, telefono FROM UNIONLINE.USUARIO WHERE id_usuario = 5;", con);
+                MySqlCommand cmd = new MySqlCommand("SELECT rut_usuario, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_electronico, telefono FROM UNIONLINE.USUARIO WHERE T_USUARIO_id_tipoU = 5;", con);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
@@ -91,7 +91,27 @@ namespace UniOnline.Moderador
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            
+            Cliente cli = new Cliente();
+
+            if(txtRutCliente.Text != string.Empty)
+            {
+                try
+                {
+                    cli = cli.BuscarCliente(txtRutCliente.Text);
+                    if (cli.ExisteCliente(txtRutCliente.Text))
+                    {
+                        datagridPerfil.FindName(txtRutCliente.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cliente no encontrado");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
 
         }
 
@@ -103,6 +123,9 @@ namespace UniOnline.Moderador
         private void btnEditar_Click(object sender, RoutedEventArgs e)
         {
             
+
+
+
         }
     }
 }
