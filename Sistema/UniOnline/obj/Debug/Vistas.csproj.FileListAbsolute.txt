@@ -226,3 +226,4 @@ C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnl
 C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarProp.baml
 C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte_Tickets.g.cs
 C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte_Tickets.baml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.SuggestedBindingRedirects.cache

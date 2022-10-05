@@ -27,12 +27,14 @@ namespace UniOnline.Moderador
         private void btnInicioMod(object sender, RoutedEventArgs e)
         {
             WPF_Moderador wpfMod = new WPF_Moderador();
+            this.Close();
             wpfMod.ShowDialog();
         }
 
         private void btnPerfilMod(object sender, RoutedEventArgs e)
         {
             WPF_Moderador_Perfil wpfPerfil = new WPF_Moderador_Perfil();
+            this.Close();
             wpfPerfil.ShowDialog();
         }
 

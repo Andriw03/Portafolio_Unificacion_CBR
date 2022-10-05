@@ -73,6 +73,7 @@ namespace UniOnline.Moderador
         private void btnInicioMod(object sender, RoutedEventArgs e)
         {
             WPF_Moderador wpfMod= new WPF_Moderador();
+            this.Close();
             wpfMod.ShowDialog();
         }
 
@@ -84,6 +85,7 @@ namespace UniOnline.Moderador
         private void btnSoporteMod(object sender, RoutedEventArgs e)
         {
             WPF_Moderador_Soporte wpfSoporte = new WPF_Moderador_Soporte();
+            this.Close();
             wpfSoporte.ShowDialog();
         }
 
