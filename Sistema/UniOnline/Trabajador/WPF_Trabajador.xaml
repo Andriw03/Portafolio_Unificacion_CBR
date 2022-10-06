@@ -18,6 +18,7 @@
         <TextBlock x:Name="MyTime" HorizontalAlignment="Left" Margin="44,132,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="17" Foreground="#FFF0F2F2"/>
         <TextBlock x:Name="datelbl" HorizontalAlignment="Left" Margin="34,101,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="18" Foreground="#FFF0F2F2"/>
         <Image HorizontalAlignment="Left" Height="202" Margin="340,0,0,181.4" VerticalAlignment="Bottom" Width="217" Source="/UniOnline;component/LogoCBR.png"/>
-        <Label x:Name="LabelSaludo" Content="" HorizontalAlignment="Left" Height="119" Margin="171,289,0,0" VerticalAlignment="Top" Width="588" FontSize="24" FontFamily="Segoe UI Emoji"/>
+        <Label x:Name="LabelSaludo" Content="" HorizontalAlignment="Left" Height="59" Margin="151,289,0,0" VerticalAlignment="Top" Width="731" FontSize="24" FontFamily="Segoe UI Emoji"/>
+        <Label x:Name="LabelMotivacion" Content="" HorizontalAlignment="Left" Height="59" Margin="104,367,0,0" VerticalAlignment="Top" Width="778" FontSize="24" FontFamily="Segoe UI Emoji"/>
     </Grid>
 </Window>
