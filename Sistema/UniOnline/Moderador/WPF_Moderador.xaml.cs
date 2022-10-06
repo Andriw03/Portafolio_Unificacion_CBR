@@ -22,8 +22,24 @@ namespace UniOnline.Moderador
         public WPF_Moderador()
         {
             InitializeComponent();
+            startclock();
             Conectar();
         }
+
+        //Usuario us = new Usuario();
+        //public Usuario ObtenerUsuario
+        //{
+        //    get
+        //    {
+        //        return this.us;
+        //    }
+        //    set
+        //    {
+        //        this.us = value;
+        //        this.us = value;
+        //        Saludos.Content = "Bienvenido/a " + us.primer_nombre + " " + us.primer_apellido;
+        //    }
+        //}
         //Conexión BD
         Conexion con = new Conexion();
         private void Conectar()
@@ -37,6 +53,22 @@ namespace UniOnline.Moderador
                 MessageBox.Show("Error Conexión");
             }
         }
+
+        private void startclock()
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += tickevent;
+            timer.Start();
+        }
+
+
+        private void tickevent(object sender, EventArgs e)
+        {
+            MyTime.Text = DateTime.Now.ToString("T");
+            datelbl.Text = DateTime.Now.ToString("d");
+        }
+
 
         private void btnInicioMod(object sender, RoutedEventArgs e)
         {

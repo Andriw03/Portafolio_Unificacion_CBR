@@ -13,8 +13,10 @@
         <Button x:Name="btnPerfil" Content="Perfil Clientes" Margin="319,32,0,0" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" Background="#FF010623" Click="btnPerfilMod" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
         <Button x:Name="btnSoporte" Content="Soporte en Linea" Margin="451,32,0,0" VerticalAlignment="Top" Width="125" HorizontalAlignment="Left" Background="#FF010623" Click="btnSoporteMod" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
         <Image HorizontalAlignment="Center" Height="196" Margin="288,121,307,0" VerticalAlignment="Top" Width="297" Source="/UniOnline;component/LogoCBR.png" />
-        <TextBlock HorizontalAlignment="Left" Margin="361,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Width="146" FontWeight="Bold" FontSize="23"><Run Text="Bienvenido/a"/></TextBlock>
-
+        <Rectangle Fill="#FF393E59" HorizontalAlignment="Left" Height="55" Margin="12,101,0,0" Stroke="Black" VerticalAlignment="Top" Width="134"/>
+        <TextBlock x:Name="MyTime" HorizontalAlignment="Left" Margin="44,132,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="17" Foreground="#FFF0F2F2"/>
+        <TextBlock x:Name="datelbl" HorizontalAlignment="Left" Margin="34,101,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="18" Foreground="#FFF0F2F2"/>
+        <Label x:Name="Saludos" Content="" HorizontalAlignment="Left" Height="119" Margin="147,296,0,0" VerticalAlignment="Top" Width="588" FontSize="24" FontFamily="Segoe UI Emoji"/>
 
     </Grid>
 </Window>
