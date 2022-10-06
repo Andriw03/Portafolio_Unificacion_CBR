@@ -116,7 +116,61 @@ namespace Controlador
                 return null;
             }
         }
+        public Usuario BuscarUsuario(string rut)
+        {
+            try
+            {
 
+                Conectar();
+                cmd = new MySqlCommand("SELECT * FROM `UNIONLINE`.`USUARIO` where rut_usuario =  '" + rut + "';", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    id_usuario = Int32.Parse(rd["id_usuario"].ToString());
+                    rut_usuario = rd["rut_usuario"].ToString();
+                    contrasenna = rd["contrasenna"].ToString();
+                    primer_nombre = rd["primer_nombre"].ToString();
+                    segundo_nombre = rd["segundo_nombre"].ToString();
+                    primer_apellido = rd["primer_apellido"].ToString();
+                    segundo_apellido = rd["segundo_apellido"].ToString();
+                    correo_electronico = rd["correo_electronico"].ToString();
+                    telefono = rd["telefono"].ToString();
+
+                }
+                rd.Close();
+                return this;
+            }
+            catch (Exception ex)
+            {
+                return null;
+
+            }
+        }
+
+        public bool ModificarUsuario(string rutUsuario, string Nombre, string SNombre, string Apellido, string SApellido, string Telefono, string Correo, string Contrasenna)
+        {
+
+            try
+            {
+                Conectar();
+                int idUsuario = 0;
+                cmd = new MySqlCommand("SELECT id_usuario FROM UNIONLINE.USUARIO where rut_usuario = '" + rutUsuario + "';", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    idUsuario = Int32.Parse(rd["id_usuario"].ToString());
+                }
+                rd.Close();
+                cmd = new MySqlCommand("UPDATE USUARIO SET contrasenna = '" + Contrasenna + "', primer_nombre = '" + Nombre + "', segundo_nombre = '" + SNombre + "', primer_apellido = '" + Apellido + "', segundo_apellido = '" + SApellido + "', correo_electronico = '" + Correo + "', telefono = '" + Telefono + "' WHERE id_usuario = " + idUsuario + " ;", conex);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
 
 
     }

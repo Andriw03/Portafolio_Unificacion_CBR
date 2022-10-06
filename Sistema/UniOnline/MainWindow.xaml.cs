@@ -58,30 +58,42 @@ namespace UniOnline
                 if (us.rut_usuario != string.Empty)
                 {
                     if (us.id_tipoU == 2)
-                    {
+                    {                        
                         WPF_Director dir = new WPF_Director();
-                        dir.ShowDialog();
                         this.Close();
+                        dir.ShowDialog();
+                        
 
                     }
                     else if (us.id_tipoU == 3)
                     {
+                        
                         WPF_Recepcion rep = new WPF_Recepcion();
-                        rep.ShowDialog();
                         this.Close();
+                        rep.ShowDialog();
+                        
                     }
                     else if(us.id_tipoU == 4)
                     {
+                        
                         WPF_Trabajador tra = new WPF_Trabajador();
                         tra.ObtenerUsuario = us;
-                        tra.ShowDialog();
                         this.Close();
+                        tra.ShowDialog();
+                        
                     }else if(us.id_tipoU == 6)
                     {
+                        
                         WPF_Moderador mod = new WPF_Moderador();
-                        mod.ShowDialog();
                         this.Close();
+                        mod.ShowDialog();
+
                     }
+                    else
+                    {
+                        MessageBox.Show("El Usuario no pertenece a este Conservador","Error");
+                    }
+
                     
                 }
                 else

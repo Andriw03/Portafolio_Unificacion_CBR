@@ -21,51 +21,80 @@
 
         <Rectangle HorizontalAlignment="Stretch" Width="Auto" MinHeight="100" MinWidth="800" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" Grid.RowSpan="3" Fill="#FF010326" Stroke="Black" Margin="0,0,-8,1"/>
         <TabControl IsSynchronizedWithCurrentItem="True" Cursor="Arrow">
-            <TabItem Header="Agregar Propiedad" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="Auto" HorizontalAlignment="Left" Margin="277,0,-276.8,1" Foreground="#FFFDFDFD" BorderBrush="#FF010326" Background="#FF010326">
+            <TabItem Header="Agregar Propiedad" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="Auto" HorizontalAlignment="Left" Foreground="#FFFDFDFD" BorderBrush="#FF010326" Margin="270,0,-269.8,1">
                 <Grid Background="#FFF0F2F2" Margin="0,5,0.4,-1.4">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="213*"/>
-                        <ColumnDefinition Width="72*"/>
-                        <ColumnDefinition Width="602*"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="20"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="btnVolverProp" Content="Volver" HorizontalAlignment="Left" Margin="517.2,492,0,0" VerticalAlignment="Top" Width="75" Click="btnVolverProp_Click" Background="#FF393E59" Foreground="#FFF0F2F2" Grid.Column="2" Height="30"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="23.2,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF010326" Width="264" FontWeight="Bold" FontSize="25" Grid.Column="2" Height="33"><Run Text="Ingresa una Propiedad"/></TextBlock>
-                    <Label Content="Buscar Dueño:" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" FontSize="15" Width="142" Height="30"/>
-                    <TextBox x:Name="txtDueño" HorizontalAlignment="Left" Height="32" Margin="10,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" MaxLength="15"/>
-                    <Button x:Name="btnBuscarDueño" Content="" HorizontalAlignment="Left" Margin="177,73,0,0" VerticalAlignment="Top" Width="32" Height="32" Click="btnBuscarDueño_Click" Background="#FF393E59"/>
-                    <Button x:Name="btnAgregarDuenno" Content="Agregar dueño" HorizontalAlignment="Left" Margin="17.2,73,0,0" VerticalAlignment="Top" Width="138" Height="32" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnAgregarDuenno_Click" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <Label Content="Rut Dueño:" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" FontSize="15" Height="30" Width="85"/>
-                    <TextBox x:Name="txtRutDueño" HorizontalAlignment="Left" Height="32" Margin="10,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" MaxLength="15" IsEnabled="False" IsUndoEnabled="False"/>
-                    <TextBox x:Name="txtNombreDueño" HorizontalAlignment="Left" Height="32" Margin="17.2,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" MaxLength="15" IsEnabled="False" IsUndoEnabled="False" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <Label Content="Nombre Dueño:" HorizontalAlignment="Left" Margin="17.2,105,0,0" VerticalAlignment="Top" FontSize="15" Grid.ColumnSpan="2" Grid.Column="1" Height="30" Width="117"/>
-                    <ComboBox x:Name="cmbTipoProp" Margin="10,193,1.8,303.6" FontSize="15" IsEditable="True" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbTipoProp_SelectionChanged"/>
-                    <Label Content="Tipos de propiedad:" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" FontSize="15" Height="30" Width="142"/>
-                    <Label Content="Foja:" HorizontalAlignment="Left" Margin="17.2,165,0,0" VerticalAlignment="Top" FontSize="15" Grid.Column="1" Height="30" Width="40"/>
-                    <TextBox x:Name="txtFoja" HorizontalAlignment="Left" Height="32" Margin="17.2,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Grid.ColumnSpan="2" Grid.Column="1" />
-                    <TextBox x:Name="txtNumero" HorizontalAlignment="Left" Height="32" Margin="151.2,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Grid.Column="2" />
-                    <Label Content="Número:" HorizontalAlignment="Left" Margin="152.2,165,0,0" VerticalAlignment="Top" FontSize="15" Grid.Column="2" Height="30" Width="67"/>
-                    <TextBox x:Name="txtAnno" HorizontalAlignment="Left" Height="32" Margin="363.2,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Grid.Column="2" />
-                    <Label Content="Año" HorizontalAlignment="Left" Margin="364.2,165,0,0" VerticalAlignment="Top" FontSize="15" Grid.Column="2" Height="30" Width="37"/>
-                    <Label Content="Razón Social:" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top" FontSize="15" Height="30" Width="96"/>
-                    <TextBox x:Name="txtRazonSocial" HorizontalAlignment="Left" Height="32" Margin="10,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="412" IsEnabled="False" Grid.ColumnSpan="3" />
-                    <Label Content="Rut Empresa:" HorizontalAlignment="Left" Margin="152.2,225,0,0" VerticalAlignment="Top" FontSize="15" Grid.Column="2" Height="30" Width="96"/>
-                    <TextBox x:Name="txtRutEmpresa" HorizontalAlignment="Left" Height="32" Margin="151.2,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" MaxLength="15" IsEnabled="False" Grid.Column="2"/>
-                    <Label Content="Descripción:" HorizontalAlignment="Left" Margin="10,285,0,0" VerticalAlignment="Top" FontSize="15" Height="30" Width="91"/>
-                    <TextBox x:Name="txtDescripcion" HorizontalAlignment="Left" Height="32" Margin="10,313,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="836" Grid.ColumnSpan="3" />
-                    <Label Content="Región" HorizontalAlignment="Left" Margin="10,345,0,0" VerticalAlignment="Top" FontSize="15" Height="30" Width="56"/>
-                    <ComboBox x:Name="cmbRegion" Margin="10,373,1.8,123.6" FontSize="15" IsEditable="True" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbRegion_SelectionChanged"/>
-                    <Label Content="Provincia" HorizontalAlignment="Left" Margin="17.2,345,0,0" VerticalAlignment="Top" FontSize="15" Grid.ColumnSpan="2" Grid.Column="1" Height="30" Width="70"/>
-                    <ComboBox x:Name="cmbProvincia" Margin="17.2,373,461.4,123.6" FontSize="15" IsEditable="True" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbProvincia_SelectionChanged" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <Label Content="Comuna" HorizontalAlignment="Left" Margin="152.2,345,0,0" VerticalAlignment="Top" FontSize="15" Grid.Column="2" Height="30" Width="66"/>
-                    <ComboBox x:Name="cmbComuna" Margin="152.2,373,248.4,123.6" FontSize="15" IsEditable="True" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbComuna_SelectionChanged" Grid.Column="2"/>
-                    <Label Content="Dirección" HorizontalAlignment="Left" Margin="10,405,0,0" VerticalAlignment="Top" FontSize="15" Height="30" Width="72"/>
-                    <TextBox x:Name="txtDireccion" HorizontalAlignment="Left" Height="32" Margin="10,433,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="836" Grid.ColumnSpan="3" />
-                    <Button x:Name="btnGuardar"  Content="Guardar" HorizontalAlignment="Left" Margin="10,492,0,0" VerticalAlignment="Top" Width="81" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnGuardar_Click" Height="30"/>
-                    <Button x:Name="btnLimpiarProp" Content="Limpiar" HorizontalAlignment="Left" Margin="415.2,492,0,0" VerticalAlignment="Top" Width="75" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnLimpiarProp_Click" Grid.Column="2" Height="30"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="2" MaxHeight="10"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="2" MaxHeight="10"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="2" MaxHeight="10"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="2" MaxHeight="10"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="2" MaxHeight="10"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="2" MaxHeight="10"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="10" MaxHeight="10"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+
+                    <Button x:Name="btnVolverProp" Content="Volver" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Click="btnVolverProp_Click" Background="#FF393E59" Foreground="#FFF0F2F2" Grid.Column="9" Grid.Row="16" Height="30"/>
+                    <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF010326" Width="264" FontWeight="Bold" FontSize="25" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="3" Height="33"><Run Text="Ingresa una Propiedad"/></TextBlock>
+                    <Label Content="Buscar Dueño:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Width="142" Height="30" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txtDueño" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="199" MaxLength="15" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3"/>
+                    <Button x:Name="btnBuscarDueño" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="35" Height="35" Click="btnBuscarDueño_Click" Background="#FF393E59" Grid.Column="3" Grid.Row="2"/>
+                    <Button x:Name="btnAgregarDuenno" Content="Agregar dueño" HorizontalAlignment="Center" VerticalAlignment="Center" Width="138" Height="35" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnAgregarDuenno_Click" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="2"/>
+                    <Label Content="Rut Dueño:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="85" Grid.Column="1" Grid.Row="4"/>
+                    <TextBox x:Name="txtRutDueño" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="199" MaxLength="15" IsEnabled="False" IsUndoEnabled="False" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3"/>
+                    <TextBox x:Name="txtNombreDueño" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="240" MaxLength="15" IsEnabled="False" IsUndoEnabled="False" Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="3"/>
+                    <Label Content="Nombre Dueño:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="117" Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="2" Margin="21,0,0,0"/>
+                    <ComboBox x:Name="cmbTipoProp" Height="32" Width="199" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15" IsEditable="True" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbTipoProp_SelectionChanged" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="3"/>
+                    <Label Content="Tipos de propiedad:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="142" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2"/>
+                    <Label Content="Foja:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Grid.Column="3" Grid.Row="6"  Height="30" Width="40" Margin="42,0,0,0"/>
+                    <TextBox x:Name="txtFoja" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="150" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="6" Margin="42,0,90,0"/>
+                    <TextBox x:Name="txtNumero" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="198" Grid.Column="5" Grid.ColumnSpan="3" Grid.Row="6" Margin="31,0,53,0"/>
+                    <Label Content="Número:" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="15" Height="30" Width="67" Grid.Column="5" Grid.Row="6"/>
+                    <TextBox x:Name="txtAnno" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="90" Grid.Column="8" Grid.Row="6" Grid.ColumnSpan="2"/>
+                    <Label Content="Año" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="37" Grid.Column="8" Grid.Row="6"/>
+                    <Label Content="Razón Social:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="96" Grid.Column="1" Grid.Row="8"/>
+                    <TextBox x:Name="txtRazonSocial" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="412" IsEnabled="False" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="5"/>
+                    <Label Content="Rut Empresa:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Grid.Column="6" Grid.Row="8" Height="30" Width="96"/>
+                    <TextBox x:Name="txtRutEmpresa" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="198" MaxLength="15" IsEnabled="False" Grid.Column="6" Grid.Row="8" Grid.ColumnSpan="3"/>
+                    <Label Content="Descripción:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="91" Grid.Column="1" Grid.Row="10"/>
+                    <TextBox x:Name="txtDescripcion" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="840" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="9"/>
+                    <Label Content="Región" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="56" Grid.Column="1" Grid.Row="12"/>
+                    <ComboBox x:Name="cmbRegion" FontSize="15" Height="32" IsEditable="True" VerticalAlignment="Bottom" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbRegion_SelectionChanged" Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2" Margin="0,0,4,0"/>
+                    <Label Content="Provincia" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="15" Height="30" Width="70" Grid.Column="3" Grid.Row="12" Grid.ColumnSpan="2"/>
+                    <ComboBox x:Name="cmbProvincia" FontSize="15" Height="32" IsEditable="True" VerticalAlignment="Bottom" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbProvincia_SelectionChanged" Grid.Column="3" Grid.Row="12" Grid.ColumnSpan="3" Margin="59,0,35,0"/>
+                    <Label Content="Comuna" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Grid.Column="6" Grid.Row="12" Height="30" Width="66"/>
+                    <ComboBox x:Name="cmbComuna" FontSize="15" Height="32" IsEditable="True" VerticalAlignment="Bottom" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbComuna_SelectionChanged" Grid.Column="6" Grid.Row="12" Grid.ColumnSpan="2"/>
+                    <Label Content="Dirección" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="72" Grid.Column="1" Grid.Row="14"/>
+                    <TextBox x:Name="txtDireccion" HorizontalAlignment="Left" Height="32" Width="840" TextWrapping="Wrap" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="14" Grid.ColumnSpan="9"/>
+                    <Button x:Name="btnGuardar"  Content="Guardar" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="81" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnGuardar_Click" Height="30" Grid.Column="1" Grid.Row="16"/>
+                    <Button x:Name="btnLimpiarProp" Content="Limpiar" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnLimpiarProp_Click" Grid.Column="2" Grid.Row="16" Height="30"/>
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Listar Propiedades" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="207" HorizontalAlignment="Right" Margin="0,0,-302.6,1" BorderBrush="#FF010326" Foreground="#FFFDFDFD">
+            <TabItem Header="Listar Propiedades" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="207" HorizontalAlignment="Right" Margin="0,0,-272,1" BorderBrush="#FF010326" Foreground="#FFFDFDFD">
                 <Grid Background="#FFF0F2F2">
 
                     <!-- Start Column and Row Definition-->
@@ -138,6 +167,6 @@
             </TabItem>
 
         </TabControl>
-        <TextBlock Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="28" MinWidth="265" Margin="10,0,618.6,534.4"><Run Language="es-es" Text="CBRS de Chile"/></TextBlock>
+        <TextBlock Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="28" MinWidth="265" Margin="0,0,628.6,534.4"><Run Language="es-es" Text="CBRS de Chile"/></TextBlock>
     </Grid>
 </Window>
