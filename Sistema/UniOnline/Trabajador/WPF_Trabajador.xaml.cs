@@ -94,7 +94,8 @@ namespace UniOnline.Trabajador
 
         private void Button_Consulta_Tra(object sender, RoutedEventArgs e)
         {
-
+            WPF_ConsultarTramite consultarTramite = new WPF_ConsultarTramite();
+            consultarTramite.ShowDialog();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -102,6 +103,19 @@ namespace UniOnline.Trabajador
             System.Windows.Application.Current.Shutdown();
         }
 
+        private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow ventana = new MainWindow();
+            this.Hide();
+            ventana.ShowDialog();
+                       
+        }
 
+        private void btnPerfil_Click(object sender, RoutedEventArgs e)
+        {
+            WPF_PerfilUsuario perfilUsuario = new WPF_PerfilUsuario();
+            perfilUsuario.ObtenerUsuario = us;
+            perfilUsuario.ShowDialog();
+        }
     }
 }

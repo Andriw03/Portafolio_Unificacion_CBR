@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
@@ -75,6 +76,22 @@ namespace Controlador
                 return null;
             }
             return this;
+        }
+        public bool Formulario(string nombre, string telefono, string correo, string asunto, string detalle)
+        {
+            try
+            {
+                Conectar();
+                asunto = "Usuario CBR: " + asunto;
+                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`FORMULARIO` (`nombre_form`, `telefono`, `correo_form`, `asunto_form`, `detalle_form`) VALUES ('"+ nombre + "', '" + telefono + "', '" + correo + "', '" + asunto + "', '" + detalle + "'); ", conex);
+                cmd.ExecuteReader();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
         }
 
     }

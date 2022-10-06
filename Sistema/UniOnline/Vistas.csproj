@@ -62,6 +62,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
@@ -102,6 +103,12 @@
     <Compile Include="Director\WPF_ModificarUsuario.xaml.cs">
       <DependentUpon>WPF_ModificarUsuario.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Form_SolicitudModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SolicitudModificar.Designer.cs">
+      <DependentUpon>Form_SolicitudModificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Moderador\WPF_Moderador_Perfil.xaml.cs">
       <DependentUpon>WPF_Moderador_Perfil.xaml</DependentUpon>
     </Compile>
@@ -113,6 +120,9 @@
     </Compile>
     <Compile Include="Recepcion\WPF_Recepcion.xaml.cs">
       <DependentUpon>WPF_Recepcion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Trabajador\WPF_ConsultarTramite.xaml.cs">
+      <DependentUpon>WPF_ConsultarTramite.xaml</DependentUpon>
     </Compile>
     <Compile Include="Trabajador\WPF_EditarProp.xaml.cs">
       <DependentUpon>WPF_EditarProp.xaml</DependentUpon>
@@ -128,6 +138,9 @@
     </Compile>
     <Compile Include="Trabajador\WPF_Trabajador_Tra.xaml.cs">
       <DependentUpon>WPF_Trabajador_Tra.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF_PerfilUsuario.xaml.cs">
+      <DependentUpon>WPF_PerfilUsuario.xaml</DependentUpon>
     </Compile>
     <Page Include="Director\WPF_Director.xaml">
       <SubType>Designer</SubType>
@@ -172,6 +185,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Trabajador\WPF_ConsultarTramite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Trabajador\WPF_EditarProp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -189,6 +206,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Trabajador\WPF_Trabajador_Tra.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF_PerfilUsuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -210,6 +231,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Form_SolicitudModificar.resx">
+      <DependentUpon>Form_SolicitudModificar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
