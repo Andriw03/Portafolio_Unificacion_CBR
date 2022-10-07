@@ -135,6 +135,7 @@ namespace Controlador
                     segundo_apellido = rd["segundo_apellido"].ToString();
                     correo_electronico = rd["correo_electronico"].ToString();
                     telefono = rd["telefono"].ToString();
+                    id_tipoU = Int32.Parse(rd["T_USUARIO_id_tipoU"].ToString());
 
                 }
                 rd.Close();
@@ -147,21 +148,23 @@ namespace Controlador
             }
         }
 
-        public bool ModificarUsuario(string rutUsuario, string Nombre, string SNombre, string Apellido, string SApellido, string Telefono, string Correo, string Contrasenna)
+        public bool ModificarUsuario(string rutUsuario, string Nombre, string SNombre, string Apellido, string SApellido, string Telefono, string Correo, string Contrasenna, int idTUser)
         {
 
             try
             {
                 Conectar();
                 int idUsuario = 0;
-                cmd = new MySqlCommand("SELECT id_usuario FROM UNIONLINE.USUARIO where rut_usuario = '" + rutUsuario + "';", conex);
+                int idTu = 0;
+                cmd = new MySqlCommand("SELECT id_usuario, T_USUARIO_id_tipoU from T_USUARIO INNER JOIN USUARIO ON T_USUARIO.id_tipoU = USUARIO.T_USUARIO_id_tipoU WHERE rut_usuario = '" + rutUsuario + "';", conex);
                 rd = cmd.ExecuteReader();
                 while (rd.Read())
                 {
                     idUsuario = Int32.Parse(rd["id_usuario"].ToString());
+                    idTu = Int32.Parse(rd["T_USUARIO_id_tipoU"].ToString());
                 }
                 rd.Close();
-                cmd = new MySqlCommand("UPDATE USUARIO SET contrasenna = '" + Contrasenna + "', primer_nombre = '" + Nombre + "', segundo_nombre = '" + SNombre + "', primer_apellido = '" + Apellido + "', segundo_apellido = '" + SApellido + "', correo_electronico = '" + Correo + "', telefono = '" + Telefono + "' WHERE id_usuario = " + idUsuario + " ;", conex);
+                cmd = new MySqlCommand("UPDATE USUARIO SET contrasenna = '" + Contrasenna + "', primer_nombre = '" + Nombre + "', segundo_nombre = '" + SNombre + "', primer_apellido = '" + Apellido + "', segundo_apellido = '" + SApellido + "', correo_electronico = '" + Correo + "', telefono = '" + Telefono + "' , T_USUARIO_id_tipoU = "+ idTUser + " WHERE id_usuario = " + idUsuario + " ;", conex);
                 cmd.ExecuteNonQuery();
                 return true;
             }

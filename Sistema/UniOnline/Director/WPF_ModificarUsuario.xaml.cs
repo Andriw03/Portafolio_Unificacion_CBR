@@ -63,10 +63,22 @@ namespace UniOnline.Director
                     txtBoxTelefono.Text = usu.telefono;
                     txtBoxCorreo.Text = usu.correo_electronico;
                     txtBoxContra.Text = usu.contrasenna;
+                    if(usu.id_tipoU == 4)
+                    {
+                        rdBtn_Trabajador.IsChecked = true;
+                    }
+                    else if(usu.id_tipoU == 3)
+                    {
+                        rdBtn_Recepcionista.IsChecked = true;
+                    }
+                    else if(usu.id_tipoU == 6)
+                    {
+                        rdBtn_Moderador.IsChecked = true;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Dueño vacío", "Error");
+                    MessageBox.Show("Usuario no existe", "Error");
                 }
             }
             else
@@ -106,13 +118,32 @@ namespace UniOnline.Director
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
             {
-                if (txtBoxRUT.Text != string.Empty && txtBoxContra.Text != string.Empty && txtBoxNombre.Text != string.Empty && txtBoxSNombre.Text != string.Empty && txtBoxApellido.Text != string.Empty && txtBoxSApellido.Text != string.Empty && txtBoxCorreo.Text != string.Empty && txtBoxTelefono.Text != string.Empty)
+                if (txtBoxRUT.Text != string.Empty && txtBoxContra.Text != string.Empty && txtBoxNombre.Text != string.Empty && txtBoxSNombre.Text != string.Empty && txtBoxApellido.Text != string.Empty && txtBoxSApellido.Text != string.Empty && txtBoxCorreo.Text != string.Empty && txtBoxTelefono.Text != string.Empty )
                 {
                     Usuario usu = new Usuario();
-                    if (usu.ModificarUsuario(txtBoxRUT.Text, txtBoxNombre.Text, txtBoxSNombre.Text, txtBoxApellido.Text, txtBoxSApellido.Text, txtBoxTelefono.Text, txtBoxCorreo.Text, txtBoxContra.Text))
+                    int idTUser = 0;
+                    if((bool)rdBtn_Recepcionista.IsChecked)
                     {
+                        idTUser = 3;
+                    }
+                    else if((bool)rdBtn_Moderador.IsChecked)
+                    {
+                        idTUser = 6;
+                    }
+                    else if((bool)rdBtn_Trabajador.IsChecked)
+                    {
+                        idTUser = 4;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Seleccione un rol");
+                    }
+                    if (usu.ModificarUsuario(txtBoxRUT.Text, txtBoxNombre.Text, txtBoxSNombre.Text, txtBoxApellido.Text, txtBoxSApellido.Text, txtBoxTelefono.Text, txtBoxCorreo.Text, txtBoxContra.Text, idTUser))
+                    
+                    {
+                       
                         MessageBox.Show("Usuario Modificado con Éxito");
-                        this.Close();
+                        
                     }
                     else
                     {

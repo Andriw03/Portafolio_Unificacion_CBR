@@ -78,15 +78,15 @@
         </Viewbox>
 
         <Viewbox Grid.Column="1" Grid.Row="13" Grid.ColumnSpan="1" Grid.RowSpan="3">
-            <RadioButton x:Name="rdBtn_Recepcionista" Content="Recepcionista" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Width="99" Checked="rdBtn_Recepcionista_Checked"/>
+            <RadioButton x:Name="rdBtn_Recepcionista" Content="Recepcionista" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Width="99" Checked="rdBtn_Recepcionista_Checked" GroupName="roles"/>
         </Viewbox>
 
         <Viewbox Grid.Column="2" Grid.Row="13" Grid.ColumnSpan="1" Grid.RowSpan="3">
-            <RadioButton x:Name="rdBtn_Moderador" Content="Moderador" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Width="99" Checked="rdBtn_Recepcionista_Checked"/>
+            <RadioButton x:Name="rdBtn_Moderador" Content="Moderador" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Width="99" Checked="rdBtn_Recepcionista_Checked" GroupName="roles"/>
         </Viewbox>
 
         <Viewbox Grid.Column="3" Grid.Row="13" Grid.ColumnSpan="1" Grid.RowSpan="3">
-            <RadioButton x:Name="rdBtn_Trabajador" Content="Trabajador" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Width="99" Checked="rdBtn_Recepcionista_Checked"/>
+            <RadioButton x:Name="rdBtn_Trabajador" Content="Trabajador" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Width="99" Checked="rdBtn_Recepcionista_Checked" GroupName="roles"/>
         </Viewbox>
 
         <Viewbox Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="1">
