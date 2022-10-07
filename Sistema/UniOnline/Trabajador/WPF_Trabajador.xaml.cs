@@ -108,6 +108,7 @@ namespace UniOnline.Trabajador
             MainWindow ventana = new MainWindow();
             this.Hide();
             ventana.ShowDialog();
+            this.Close();
                        
         }
 

@@ -1,0 +1,79 @@
+﻿<Window x:Class="UniOnline.Trabajador.WPF_VisorSolicitud"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniOnline.Trabajador"
+        mc:Ignorable="d"
+        Title="CBR UniOnline" Height="600" Width="900"  WindowStartupLocation="CenterScreen">
+    <Grid>
+        <!-- Start Column and Row Definition-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--End Column and Row Definition-->
+        <Rectangle Height="87" Stroke="Black" VerticalAlignment="Top" Fill="#FF010623" Grid.ColumnSpan="10" Grid.RowSpan="3" Margin="0,0,-0.4,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="0,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="189" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="30" Text="CBRS de Chile" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Grid.Row="3" TextWrapping="Wrap" Text="Datos Solicitante: " VerticalAlignment="Top" Grid.ColumnSpan="2" Width="158" Grid.Column="1" FontFamily="Segoe UI Emoji" FontSize="20" Margin="0,30.6,0,0"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Grid.Row="4" TextWrapping="Wrap" Text="Datos Propiedad:" VerticalAlignment="Top" FontFamily="Segoe UI Emoji" FontSize="20" Grid.ColumnSpan="2" Width="158" Margin="0,34.8,0,0" Grid.RowSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="19,18.6,0,0" Grid.Row="6" TextWrapping="Wrap" Text="Datos Tramite:" VerticalAlignment="Top" FontFamily="Segoe UI Emoji" Grid.ColumnSpan="3" Width="133" FontSize="20"/>
+        <TextBox x:Name="lbNumeroSO"  Grid.Column="3" HorizontalAlignment="Left" Margin="10,40.4,0,0" Grid.Row="2" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.204,4.194" Grid.ColumnSpan="3" Width="138" IsEnabled="False"/>
+        <TextBox x:Name="lbFecha"  Grid.Column="6" HorizontalAlignment="Left" Margin="13,40.4,0,0" Grid.Row="2" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="2" Width="144" Grid.RowSpan="2" IsEnabled="False"/>
+        <TextBox x:Name="lbRutSolicitante" Grid.Column="2" HorizontalAlignment="Left" Margin="79.6,38.6,0,0" Grid.Row="3" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="4" Width="230" IsEnabled="False"/>
+        <TextBox x:Name="lbNombreSolicitante"  Grid.Column="6" HorizontalAlignment="Left" Margin="34,37.6,0,0" Grid.Row="3" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="3" Width="287" IsEnabled="False"/>
+        <TextBlock HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" Text="Datos Solicitud: " VerticalAlignment="Top" Grid.ColumnSpan="2" Width="158" Grid.Column="1" FontFamily="Segoe UI Emoji" FontSize="20" Margin="0,34.4,0,0"/>
+        <TextBox x:Name="lbFoja" Grid.Column="2" HorizontalAlignment="Left" Margin="79.6,38.8,0,0" Grid.Row="4" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="4" Width="190" IsEnabled="False"/>
+        <TextBox x:Name="lbDescripcion" Grid.Column="6" HorizontalAlignment="Left" Margin="43,39.2,0,0" Grid.Row="5" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="4" Width="323" IsEnabled="False"/>
+        <TextBox x:Name="lbDireccion" Grid.Column="1" HorizontalAlignment="Left" Margin="68,39.2,0,0" Grid.Row="5" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="5" Width="364" IsEnabled="False"/>
+        <TextBox x:Name="lbNombreTramite"  Grid.Column="2" HorizontalAlignment="Left" Margin="91.6,23.6,0,0" Grid.Row="6" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="4" Width="222" IsEnabled="False"/>
+        <TextBox x:Name="lbNombreDoc" Grid.Column="6" HorizontalAlignment="Left" Margin="79,22.6,0,0" Grid.Row="6" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="2" Width="101" IsEnabled="False"/>
+        <TextBox x:Name="txtComentario" Grid.ColumnSpan="7" Grid.Column="1" HorizontalAlignment="Left" Height="102" Margin="122,14,0,0" Grid.Row="7" Grid.RowSpan="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="547"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0,14,0,0" Grid.Row="7" TextWrapping="Wrap" Text="Comentarios:" VerticalAlignment="Top" FontFamily="Segoe UI Emoji" Grid.ColumnSpan="2" Width="133" FontSize="20"/>
+        <Button x:Name="btnGuardar" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="122,10.4,0,0" Grid.Row="9" VerticalAlignment="Top" Width="122" Grid.ColumnSpan="2" Background="#FF010623" Foreground="#FFF0F2F2" Content="Guardar"/>
+        <Button x:Name="btnVolver" Grid.Column="6" HorizontalAlignment="Left" Margin="122,10.4,0,0" Grid.Row="9" VerticalAlignment="Top" Width="122" Height="32" Grid.ColumnSpan="2" Background="#FF010623" Foreground="#FFF0F2F2" Content="Volver" Click="btnVolver_Click"/>
+        <ComboBox x:Name="cmbEstado" Grid.Column="8" HorizontalAlignment="Left" Margin="2,37.4,0,0" Grid.Row="2" VerticalAlignment="Top" Width="120" BorderBrush="#FFF0F2F2" Grid.ColumnSpan="2">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                    <GradientStop Color="#FFF0F2F2" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <Label Content="Rut:" Grid.Column="2" HorizontalAlignment="Left" Margin="36.6,35.6,0,0" Grid.Row="3" VerticalAlignment="Top" RenderTransformOrigin="0.38,-0.367"/>
+        <Label Content="Nombre:" Grid.Column="5" HorizontalAlignment="Left" Margin="87.4,35.6,0,0" Grid.Row="3" Grid.RowSpan="2" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Label Content="Estado:" Grid.Column="7" HorizontalAlignment="Left" Margin="63.6,38.4,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <Label Content="N° Seguimiento" Grid.Column="2" HorizontalAlignment="Left" Margin="28.6,39.4,0,0" Grid.Row="2" Grid.RowSpan="2" VerticalAlignment="Top"/>
+        <Label Content="Fecha Solicitud:" Grid.Column="5" HorizontalAlignment="Left" Margin="40.4,39.4,0,0" Grid.Row="2" Grid.RowSpan="2" VerticalAlignment="Top" Width="95" Grid.ColumnSpan="2"/>
+        <Label Content="Foja:" Grid.Column="2" HorizontalAlignment="Left" Margin="36.6,38.8,0,0" Grid.Row="4" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <Label Content="Dirección:" Grid.Column="1" HorizontalAlignment="Left" Margin="0,36.2,0,0" Grid.Row="5" VerticalAlignment="Top" Width="63"/>
+        <Label Content="Descripción:" Grid.Column="5" HorizontalAlignment="Left" Margin="87.4,39.2,0,0" Grid.Row="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Label Content="Trámite:" Grid.Column="2" HorizontalAlignment="Left" Margin="35.6,19.6,0,0" Grid.Row="6" VerticalAlignment="Top"/>
+        <Label x:Name="lbDocumento" Content="Documento:" Grid.Column="5" HorizontalAlignment="Left" Margin="121.4,22.6,0,0" Grid.Row="6" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnVerDoc" Grid.ColumnSpan="2" Content="Ver" Grid.Column="7" HorizontalAlignment="Left" Margin="77.6,22.6,0,0" Grid.Row="6" VerticalAlignment="Top" Width="75" Background="#FF010623" Foreground="#FFF0F2F2" Click="btnVerDoc_Click"/>
+        <TextBox x:Name="lbNombreDuenno"  Grid.Column="6" HorizontalAlignment="Left" Margin="34,38.8,0,0" Grid.Row="4" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="3" Width="287" IsEnabled="False"/>
+        <Label Content="Nombre Dueño:" Grid.Column="5" HorizontalAlignment="Left" Margin="50.4,38.8,0,0" Grid.Row="4" Grid.RowSpan="2" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+
+
+    </Grid>
+</Window>

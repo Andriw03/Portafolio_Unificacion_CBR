@@ -56,7 +56,7 @@
         </Viewbox>
 
         <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="9" Grid.RowSpan="4" Margin="14,64.8,15.6,18">
-            <DataGrid x:Name="dg_listartramite"  CanUserAddRows="False" HorizontalAlignment="Center" MinHeight="137" MinWidth="502" Width="575" Height="164">
+            <DataGrid x:Name="dg_listartramite"  CanUserAddRows="False" HorizontalAlignment="Center" MinHeight="137" MinWidth="502" Width="575" Height="164" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Rut" Binding="{Binding Path = 'rut_usuario'}" Width="100" IsReadOnly="True" />
                     <DataGridTextColumn Header="Nombre"  Binding="{Binding Path = 'primer_nombre'}" Width="100" IsReadOnly="True"/>

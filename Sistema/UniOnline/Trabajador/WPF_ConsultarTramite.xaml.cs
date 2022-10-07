@@ -60,10 +60,9 @@ namespace UniOnline.Trabajador
             DataRowView dataView = (DataRowView)((Button)e.Source).DataContext;
             try
             {
-                WPF_EditarProp editarProp = new WPF_EditarProp();
-                editarProp.ObtenerFoja = Int32.Parse(dataView[0].ToString());
-                //editarProp.v_foja = Int32.Parse(dataView[1].ToString());
-                editarProp.ShowDialog();
+                WPF_VisorSolicitud solicitud = new WPF_VisorSolicitud();
+                solicitud.ObtenerSeguimiento = dataView[3].ToString();
+                solicitud.ShowDialog();
             }
             catch (Exception ex)
             {
