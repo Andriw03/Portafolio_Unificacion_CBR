@@ -64,7 +64,7 @@
         </Viewbox>
 
         <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="2" Grid.Row="11" Grid.ColumnSpan="4" Grid.RowSpan="5">
-            <DataGrid x:Name="dg_listartramite"  CanUserAddRows="False" HorizontalAlignment="Center" MinHeight="137" MinWidth="502" Width="595" >
+            <DataGrid x:Name="dg_listartramite"  AutoGenerateColumns="False" CanUserAddRows="False" HorizontalAlignment="Center" MinHeight="137" MinWidth="502" Width="595" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Rut" Binding="{Binding Path = 'rut_usuario'}" Width="100" IsReadOnly="True" />
                     <DataGridTextColumn Header="Nombre"  Binding="{Binding Path = 'primer_nombre'}" Width="100" IsReadOnly="True"/>
@@ -76,7 +76,7 @@
                             <DataTemplate>
                                 <Button x:Name="btnDetalles" Foreground="#FFF0F2F2" Click="btnDetalles_Click" BorderBrush="{x:Null}">
                                     <Button.Background>
-                                        <ImageBrush ImageSource="/UniOnline;component/buscar.png"/>
+                                        <ImageBrush ImageSource="/UniOnline;component/buscar.png" Stretch="Uniform"/>
                                     </Button.Background>
                                     <TextBlock Text="Detalles" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                 </Button>

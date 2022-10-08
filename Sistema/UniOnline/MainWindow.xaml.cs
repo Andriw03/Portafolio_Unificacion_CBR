@@ -17,6 +17,7 @@ using UniOnline.Director;
 using UniOnline.Moderador;
 using UniOnline.Recepcion;
 using UniOnline.Trabajador;
+using System.Security.Cryptography;
 
 namespace UniOnline
 {
@@ -31,6 +32,7 @@ namespace UniOnline
             InitializeComponent();
             Conectar();
         }
+        
         //Conexión BD
         private void Conectar()
         {

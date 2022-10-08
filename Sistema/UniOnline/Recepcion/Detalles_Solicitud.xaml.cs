@@ -40,22 +40,22 @@ namespace UniOnline.Recepcion
                 this.rec = value;
              
 
-                lblNombreCompleto.Content = "Nombre Completo:" + rec.primer_nombre + " " + rec.segundo_nombre + " " + rec.primer_apellido + " " + rec.segundo_apellido + " ";
+                lblNombreCompleto.Content = "Nombre Completo: " + rec.primer_nombre + " " + rec.segundo_nombre + " " + rec.primer_apellido + " " + rec.segundo_apellido + " ";
                 lblFechaSoli.Content = "Fecha Solicitud: "+ rec.fecha_solicitud;
-                lblFechaCierre.Content = "Fecha Cierre:" + rec.fecha_cierre;
-                lblIdSoli.Content = "Número Solicitud:" + rec.id_soli;
-                lblNseg.Content = "Número Seguimiento:"+ rec.numero_seguimiento;
+                lblFechaCierre.Content = "Fecha Cierre: " + rec.fecha_cierre;
+                lblEstado.Content = "Estado Solicitud: " + rec.estado;
+                lblIdSoli.Content = "Número Solicitud: " + rec.id_soli;
+                lblNseg.Content = "Número Seguimiento: "+ rec.numero_seguimiento;
 
                 
 
             }
         }
-      
-        private void btnCerrar_Click(object sender, RoutedEventArgs e)
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             
             this.Close();
         }
-       
     }
 }

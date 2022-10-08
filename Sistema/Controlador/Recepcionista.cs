@@ -41,9 +41,9 @@ namespace Controlador
 
             numero_seguimiento = string.Empty;
             estado = string.Empty;
-            fecha_solicitud = DateTime.Now;
-            fecha_cierre = DateTime.Now;
-            id_soli = 0;
+            fecha_solicitud = fecha_solicitud;
+            fecha_cierre = fecha_cierre;
+            id_soli = id_soli;
 
 
         }

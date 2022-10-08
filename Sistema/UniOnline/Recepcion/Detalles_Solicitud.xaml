@@ -8,13 +8,13 @@
         Title="Detalles_Solicitud" Height="413" Width="605">
     <Grid HorizontalAlignment="Left" Width="587">
         <Image HorizontalAlignment="Left" Height="86" Margin="239,0,0,296" VerticalAlignment="Bottom" Width="105" Source="/UniOnline;component/LogoCBR.png"/>
-        <Button x:Name="btnCerrar" Content="Cerrar" HorizontalAlignment="Left" Margin="461,330,0,0" VerticalAlignment="Top" Width="87" Click="btnCerrar_Click" Height="29"/>
-        <Label x:Name="lblNombreCompleto" Content="label" HorizontalAlignment="Left" Margin="19,91,0,0" VerticalAlignment="Top" Width="358"/>
-        <Label x:Name="lblFechaSoli" Content="label" HorizontalAlignment="Left" Margin="19,145,0,0" VerticalAlignment="Top" Width="99"/>
-        <Label x:Name="lblFechaCierre" Content="label" HorizontalAlignment="Left" Margin="19,191,0,0" VerticalAlignment="Top" Width="118"/>
-        <Label x:Name="lblEstado" Content="label" HorizontalAlignment="Left" Margin="19,238,0,0" VerticalAlignment="Top" Width="121"/>
-        <Label x:Name="lblIdSoli" Content="LAbel" HorizontalAlignment="Left" Margin="336,145,0,0" VerticalAlignment="Top" Width="111"/>
-        <Label x:Name="lblNseg" Content="Label" HorizontalAlignment="Left" Margin="336,209,0,0" VerticalAlignment="Top" Width="96"/>
+        <Label x:Name="lblNombreCompleto" Content="Label" HorizontalAlignment="Left" Margin="19,91,0,0" VerticalAlignment="Top" Width="558"/>
+        <Label x:Name="lblFechaSoli" Content="Label" HorizontalAlignment="Left" Margin="19,145,0,0" VerticalAlignment="Top" Width="558"/>
+        <Label x:Name="lblFechaCierre" Content="Label" HorizontalAlignment="Left" Margin="19,191,0,0" VerticalAlignment="Top" Width="558"/>
+        <Label x:Name="lblEstado" Content="Label" HorizontalAlignment="Left" Margin="19,238,0,0" VerticalAlignment="Top" Width="558" Height="30"/>
+        <Label x:Name="lblIdSoli" Content="Label" HorizontalAlignment="Left" Margin="19,287,0,0" VerticalAlignment="Top" Width="558"/>
+        <Label x:Name="lblNseg" Content="Label" HorizontalAlignment="Left" Margin="19,330,0,0" VerticalAlignment="Top" Width="422" Height="29"/>
+        <Button Content="Cerrar" HorizontalAlignment="Left" Margin="487,344,0,0" VerticalAlignment="Top" Width="75" Background="#FF393E59" BorderBrush="#FFF0F2F2" Foreground="#FF96ACAC" Click="Button_Click"/>
 
     </Grid>
 </Window>

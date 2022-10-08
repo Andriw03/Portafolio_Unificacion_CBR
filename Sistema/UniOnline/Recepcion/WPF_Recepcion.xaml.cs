@@ -70,6 +70,7 @@ namespace UniOnline.Recepcion
                     DataTable tabla = recep.MostrarSolicitud( txt_buscar.Text,txt_buscar.Text);
                     if (tabla != null)
                     {
+
                         dg_listartramite.ItemsSource = tabla.DefaultView;
                         dg_listartramite.Items.Refresh();
                     }
@@ -145,17 +146,11 @@ namespace UniOnline.Recepcion
 
         private void btnDetalles_Click(object sender, RoutedEventArgs e)
         {
-            DataRowView dataView = (DataRowView)((Button)e.Source).DataContext;
-            try
-            {
+           
                 Detalles_Solicitud dSoli = new Detalles_Solicitud();
+                dSoli.ObtenerUsuarioRec = rec;
                 dSoli.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
+           
         }
 
         private void btnPerfil_Click(object sender, RoutedEventArgs e)
