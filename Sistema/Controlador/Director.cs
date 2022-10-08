@@ -13,6 +13,15 @@ using MySql.Data.MySqlClient;
 using MySqlConnector;
 using MySql.Data;
 using MySqlCommand = MySql.Data.MySqlClient.MySqlCommand;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Kernel.Geom;
+using iText.Kernel.Font;
+using iText.IO.Font.Constants;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using MySqlConnection = MySql.Data.MySqlClient.MySqlConnection;
+using MySqlDataReader = MySql.Data.MySqlClient.MySqlDataReader;
 
 namespace Controlador
 {
@@ -85,13 +94,13 @@ namespace Controlador
 
             }
         }
-        public Usuario LoginUsuario( string rut)
+        public Usuario LoginUsuario(string rut)
         {
             Usuario usuario = new Usuario();
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT id_usuario, rut_usuario, contrasenna, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_electronico, telefono, CBR_id_cbr, T_USUARIO_id_tipoU FROM UNIONLINE.USUARIO where rut_usuario = '"+ rut +"';", conex);
+                cmd = new MySqlCommand("SELECT id_usuario, rut_usuario, contrasenna, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_electronico, telefono, CBR_id_cbr, T_USUARIO_id_tipoU FROM UNIONLINE.USUARIO where rut_usuario = '" + rut + "';", conex);
                 rd = cmd.ExecuteReader();
                 while (rd.Read())
                 {
@@ -110,7 +119,7 @@ namespace Controlador
                 rd.Close();
                 return usuario;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return null;
@@ -164,7 +173,7 @@ namespace Controlador
                     idTu = Int32.Parse(rd["T_USUARIO_id_tipoU"].ToString());
                 }
                 rd.Close();
-                cmd = new MySqlCommand("UPDATE USUARIO SET contrasenna = '" + Contrasenna + "', primer_nombre = '" + Nombre + "', segundo_nombre = '" + SNombre + "', primer_apellido = '" + Apellido + "', segundo_apellido = '" + SApellido + "', correo_electronico = '" + Correo + "', telefono = '" + Telefono + "' , T_USUARIO_id_tipoU = "+ idTUser + " WHERE id_usuario = " + idUsuario + " ;", conex);
+                cmd = new MySqlCommand("UPDATE USUARIO SET contrasenna = '" + Contrasenna + "', primer_nombre = '" + Nombre + "', segundo_nombre = '" + SNombre + "', primer_apellido = '" + Apellido + "', segundo_apellido = '" + SApellido + "', correo_electronico = '" + Correo + "', telefono = '" + Telefono + "' , T_USUARIO_id_tipoU = " + idTUser + " WHERE id_usuario = " + idUsuario + " ;", conex);
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -174,7 +183,54 @@ namespace Controlador
                 return false;
             }
         }
+        public void crearPDF()
+        {
+            PdfWriter pdfWriter = new PdfWriter("Reporte.pdf");
+            PdfDocument pdf = new PdfDocument(pdfWriter);
+            Document documento = new Document(pdf, PageSize.LETTER);
 
+            documento.SetMargins(60, 10, 55, 10);
+
+            PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+            PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+
+            string[] columnas = { "ID Boleta", "Fecha Emisión", "Monto de Boleta", "Metodo de Pago", "Conservador Perteneciente" };
+
+            float[] tamanios = { 2, 4, 4, 3, 5 };
+            Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
+            tabla.SetWidth(UnitValue.CreatePercentValue(100));
+
+
+            foreach (string columna in columnas)
+            {
+                tabla.AddHeaderCell(new Cell().Add(new Paragraph(columna).SetFont(fontColumnas)));
+            }
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT id_boleta, fecha_emision, monto_pago, T_PAGO.nombre_tipoP, CBR.nombre_cbr FROM UNIONLINE.B_PAGO INNER JOIN T_PAGO ON T_PAGO.id_tipoP = B_PAGO.tipo_pago INNER JOIN CBR ON CBR.id_cbr = B_PAGO.nombre_conservador;", conex);
+                cmd.ExecuteNonQuery();
+                rd = cmd.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    tabla.AddCell(new Cell().Add(new Paragraph(rd["id_boleta"].ToString()).SetFont(fontContenido)));
+                    tabla.AddCell(new Cell().Add(new Paragraph(rd["fecha_emision"].ToString()).SetFont(fontContenido)));
+                    tabla.AddCell(new Cell().Add(new Paragraph(rd["monto_pago"].ToString()).SetFont(fontContenido)));
+                    tabla.AddCell(new Cell().Add(new Paragraph(rd["nombre_tipoP"].ToString()).SetFont(fontContenido)));
+                    tabla.AddCell(new Cell().Add(new Paragraph(rd["nombre_cbr"].ToString()).SetFont(fontContenido)));
+                }
+                rd.Close();
+            }
+            catch
+            {
+                MessageBox.Show("");
+            }
+            Exception ex;
+
+            documento.Add(tabla);
+            documento.Close();
+        }
 
     }
 

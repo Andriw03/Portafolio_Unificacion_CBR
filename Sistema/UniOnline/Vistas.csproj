@@ -109,6 +109,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Director\WPF_Informes.xaml.cs">
+      <DependentUpon>WPF_Informes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Director\WPF_MainDirector.xaml.cs">
       <DependentUpon>WPF_MainDirector.xaml</DependentUpon>
     </Compile>
@@ -167,6 +170,10 @@
       <DependentUpon>WPF_PerfilUsuario.xaml</DependentUpon>
     </Compile>
     <Page Include="Director\WPF_Director.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Director\WPF_Informes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
