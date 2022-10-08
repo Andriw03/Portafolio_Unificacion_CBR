@@ -68,7 +68,8 @@ namespace UniOnline
                     else if (us.id_tipoU == 3)
                     {
                         
-                        WPF_Recepcion rep = new WPF_Recepcion();
+                        WPF_MainRecepcion rep = new WPF_MainRecepcion();
+                        rep.ObtenerUsuario = us;
                         this.Close();
                         rep.ShowDialog();
                         

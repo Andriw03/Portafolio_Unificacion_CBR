@@ -14,9 +14,15 @@ namespace Controlador
         public int id_usuario { get; set; }
         public string rut_usuario { get; set; }
         public string primer_nombre { get; set; }
+        public string segundo_nombre { get; set; }
         public string primer_apellido { get; set; }
+        public string segundo_apellido { get; set; }
         public string numero_seguimiento { get; set; }
         public string estado { get; set; }
+
+        public DateTime fecha_solicitud { get; set; }
+        public DateTime fecha_cierre { get; set; }
+        public int id_soli { get; set; }
 
 
         public Recepcionista()
@@ -30,9 +36,15 @@ namespace Controlador
             rut_usuario = string.Empty;
             primer_nombre = string.Empty;
             primer_apellido = string.Empty;
+            segundo_nombre = string.Empty;
+            segundo_apellido = string.Empty;
 
             numero_seguimiento = string.Empty;
             estado = string.Empty;
+            fecha_solicitud = DateTime.Now;
+            fecha_cierre = DateTime.Now;
+            id_soli = 0;
+
 
         }
 

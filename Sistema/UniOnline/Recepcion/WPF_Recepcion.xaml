@@ -64,14 +64,25 @@
         </Viewbox>
 
         <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="2" Grid.Row="11" Grid.ColumnSpan="4" Grid.RowSpan="5">
-            <DataGrid x:Name="dg_listartramite"  CanUserAddRows="False" HorizontalAlignment="Center" MinHeight="137" MinWidth="502" IsEnabled="False" Width="520">
+            <DataGrid x:Name="dg_listartramite"  CanUserAddRows="False" HorizontalAlignment="Center" MinHeight="137" MinWidth="502" Width="595" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Rut" Binding="{Binding Path = 'rut_usuario'}" Width="100" IsReadOnly="True" />
                     <DataGridTextColumn Header="Nombre"  Binding="{Binding Path = 'primer_nombre'}" Width="100" IsReadOnly="True"/>
                     <DataGridTextColumn Header="Apellido" Binding="{Binding Path = 'primer_apellido'}" Width="130" IsReadOnly="True"/>
                     <DataGridTextColumn Header="N° Seguimiento" Binding="{Binding Path = 'numero_seguimiento'}" IsReadOnly="True"/>
                     <DataGridTextColumn Header="Estado" Binding="{Binding Path = 'estado'}" Width="100" IsReadOnly="True"/>
-
+                    <DataGridTemplateColumn Header="Detalles">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="btnDetalles" Foreground="#FFF0F2F2" Click="btnDetalles_Click" BorderBrush="{x:Null}">
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="/UniOnline;component/buscar.png"/>
+                                    </Button.Background>
+                                    <TextBlock Text="Detalles" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
 
                 </DataGrid.Columns>
             </DataGrid>
@@ -79,8 +90,14 @@
 
         </Viewbox>
         <Button x:Name="btnInicio" Content="Inicio" Margin="64,0,0,1" Width="51" HorizontalAlignment="Left" Background="#FF010623" Click="Button_Inicio" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623" FontFamily="Segoe UI Emoji" Grid.Column="2" Grid.Row="1"/>
-        <Button x:Name="btnCerrarSesion" Content="Cerrar Sesion" Grid.Column="6" HorizontalAlignment="Left" Margin="24,19,0,0" VerticalAlignment="Top" Width="75" Height="26" Grid.RowSpan="2" Click="btnCerrarSesion_Click" Background="#FF010623" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
-        <Label x:Name="lblBienvenidoRec" Content="Bienvenid@" Grid.Column="4" HorizontalAlignment="Left" Margin="0,1,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="204" Foreground="#FFEEEEEE" Grid.RowSpan="2"/>
+        <Button x:Name="btnCerrarSesion" Content="Cerrar Sesión" Grid.Column="6" HorizontalAlignment="Left" Margin="50,0,0,0" Width="75" Click="btnCerrarSesion_Click" Background="#FF010623" Foreground="#FFF0F2F2" BorderBrush="#FF010623" Grid.Row="1"/>
+        <Label x:Name="lblBienvenidoRec" Content="" Grid.Column="3" HorizontalAlignment="Left" Margin="124,19,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="151" Foreground="#FFEEEEEE" Grid.RowSpan="2"/>
+        <Label x:Name="lblB" Content="Bienvenid@:" Grid.Column="3" HorizontalAlignment="Left" Margin="44,19,0,0" VerticalAlignment="Top" Width="80" Height="27" Foreground="#FFEEEEEE" Grid.RowSpan="2"/>
+        <Button x:Name="btnPerfil" Content="" Grid.Column="6" HorizontalAlignment="Left" Height="37" Margin="8,19,0,0" Grid.RowSpan="3" VerticalAlignment="Top" Width="37" Cursor="Hand" BorderBrush="{x:Null}" Click="btnPerfil_Click" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/UniOnline;component/perfil.png"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 

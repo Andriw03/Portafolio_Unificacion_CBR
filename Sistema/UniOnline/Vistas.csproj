@@ -130,6 +130,9 @@
     <Compile Include="Moderador\WPF_Moderador_Soporte_Tickets.xaml.cs">
       <DependentUpon>WPF_Moderador_Soporte_Tickets.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Recepcion\Detalles_Solicitud.xaml.cs">
+      <DependentUpon>Detalles_Solicitud.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Recepcion\WPF_MainRecepcion.xaml.cs">
       <DependentUpon>WPF_MainRecepcion.xaml</DependentUpon>
     </Compile>
@@ -203,6 +206,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Moderador\WPF_Moderador_Soporte_Tickets.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Recepcion\Detalles_Solicitud.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -304,6 +311,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="buscar.png" />
+    <Resource Include="eliminar.png" />
+    <Resource Include="modiicar.png" />
+    <Resource Include="perfil.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -24,6 +24,8 @@ namespace UniOnline.Recepcion
         public WPF_MainRecepcion()
         {
             InitializeComponent();
+            startclock();
+            Conectar();
         }
         Usuario us = new Usuario();
         public Usuario ObtenerUsuario
@@ -40,6 +42,7 @@ namespace UniOnline.Recepcion
                 Random rand = new Random();
                 int randN = rand.Next(0, 5);
                 LabelSaludo.Content = us.primer_nombre + " " + us.primer_apellido + " Recuerda:";
+                lblBienvenidoRec.Content = us.primer_nombre + " " + us.primer_apellido + " ";
                 LabelMotivacion.Content = motivacion[randN];
             }
         }
@@ -82,7 +85,16 @@ namespace UniOnline.Recepcion
         private void btnRevisarSoli_Click(object sender, RoutedEventArgs e)
         {
             WPF_Recepcion mrec = new WPF_Recepcion();
+            mrec.ObtenerUsuario = us;
             mrec.ShowDialog();
+            
+        }
+
+        private void btnPerfil_Click(object sender, RoutedEventArgs e)
+        {
+            WPF_PerfilUsuario perfilUsuario = new WPF_PerfilUsuario();
+            perfilUsuario.ObtenerUsuario = us;
+            perfilUsuario.ShowDialog();
         }
     }
 }

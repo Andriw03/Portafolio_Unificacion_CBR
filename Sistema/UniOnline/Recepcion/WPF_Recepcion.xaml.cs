@@ -27,8 +27,9 @@ namespace UniOnline.Recepcion
             InitializeComponent();
             Conectar();
         }
-        
+        Recepcionista rec = new Recepcionista();
         Usuario us = new Usuario();
+
         public Usuario ObtenerUsuario
         {
             get
@@ -37,6 +38,7 @@ namespace UniOnline.Recepcion
             }
             set
             {
+                this.us = value;
                 this.us = value;
 
                 lblBienvenidoRec.Content = us.primer_nombre + " " + us.primer_apellido + " ";
@@ -127,6 +129,7 @@ namespace UniOnline.Recepcion
         private void Button_Inicio(object sender, RoutedEventArgs e)
         {
             WPF_MainRecepcion mrec = new WPF_MainRecepcion();
+            mrec.ObtenerUsuario = us;
             mrec.ShowDialog();
             
         }
@@ -140,7 +143,29 @@ namespace UniOnline.Recepcion
 
         }
 
-       
+        private void btnDetalles_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView dataView = (DataRowView)((Button)e.Source).DataContext;
+            try
+            {
+                Detalles_Solicitud dSoli = new Detalles_Solicitud();
+                dSoli.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void btnPerfil_Click(object sender, RoutedEventArgs e)
+        {
+            WPF_PerfilUsuario perfilUsuario = new WPF_PerfilUsuario();
+            perfilUsuario.ObtenerUsuario = us;
+            perfilUsuario.ShowDialog();
+
+        }
+    }
     }
 
-}
+
