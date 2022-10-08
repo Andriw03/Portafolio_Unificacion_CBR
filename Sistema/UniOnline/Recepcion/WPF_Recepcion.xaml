@@ -66,18 +66,21 @@
         <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="2" Grid.Row="11" Grid.ColumnSpan="4" Grid.RowSpan="5">
             <DataGrid x:Name="dg_listartramite"  CanUserAddRows="False" HorizontalAlignment="Center" MinHeight="137" MinWidth="502" IsEnabled="False" Width="520">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Rut" Binding="{Binding Path = 'rut_usuario'}" Width="100" IsReadOnly="True" /> 
+                    <DataGridTextColumn Header="Rut" Binding="{Binding Path = 'rut_usuario'}" Width="100" IsReadOnly="True" />
                     <DataGridTextColumn Header="Nombre"  Binding="{Binding Path = 'primer_nombre'}" Width="100" IsReadOnly="True"/>
                     <DataGridTextColumn Header="Apellido" Binding="{Binding Path = 'primer_apellido'}" Width="130" IsReadOnly="True"/>
                     <DataGridTextColumn Header="N° Seguimiento" Binding="{Binding Path = 'numero_seguimiento'}" IsReadOnly="True"/>
                     <DataGridTextColumn Header="Estado" Binding="{Binding Path = 'estado'}" Width="100" IsReadOnly="True"/>
-                   
-                    
+
+
                 </DataGrid.Columns>
             </DataGrid>
-        
-        
+
+
         </Viewbox>
+        <Button x:Name="btnInicio" Content="Inicio" Margin="64,0,0,1" Width="51" HorizontalAlignment="Left" Background="#FF010623" Click="Button_Inicio" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623" FontFamily="Segoe UI Emoji" Grid.Column="2" Grid.Row="1"/>
+        <Button x:Name="btnCerrarSesion" Content="Cerrar Sesion" Grid.Column="6" HorizontalAlignment="Left" Margin="24,19,0,0" VerticalAlignment="Top" Width="75" Height="26" Grid.RowSpan="2" Click="btnCerrarSesion_Click" Background="#FF010623" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
+        <Label x:Name="lblBienvenidoRec" Content="Bienvenid@" Grid.Column="4" HorizontalAlignment="Left" Margin="0,1,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="204" Foreground="#FFEEEEEE" Grid.RowSpan="2"/>
 
     </Grid>
 

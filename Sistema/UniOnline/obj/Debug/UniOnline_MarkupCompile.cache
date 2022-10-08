@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\
 UniOnline
 none
 false
 DEBUG;TRACE
-D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\App.xaml
-16229859536
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\App.xaml
+191701775349
 
-22-1459650285
-35-1010926996
-Director\WPF_Director.xaml;Director\WPF_MainDirector.xaml;Director\WPF_ModificarUsuario.xaml;MainWindow.xaml;Moderador\WPF_Moderador.xaml;Moderador\WPF_Moderador_Perfil.xaml;Moderador\WPF_Moderador_Soporte.xaml;Moderador\WPF_Moderador_Soporte_Tickets.xaml;Recepcion\WPF_Recepcion.xaml;Trabajador\WPF_ConsultarTramite.xaml;Trabajador\WPF_EditarProp.xaml;Trabajador\WPF_Trabajador.xaml;Trabajador\WPF_Trabajador_Dueño.xaml;Trabajador\WPF_Trabajador_Prop.xaml;Trabajador\WPF_Trabajador_Tra.xaml;WPF_PerfilUsuario.xaml;
+25872623978
+381520390928
+Director\WPF_Director.xaml;Director\WPF_MainDirector.xaml;Director\WPF_ModificarUsuario.xaml;MainWindow.xaml;Moderador\WPF_Moderador.xaml;Moderador\WPF_Moderador_Perfil.xaml;Moderador\WPF_Moderador_Soporte.xaml;Moderador\WPF_Moderador_Soporte_Tickets.xaml;Recepcion\WPF_MainRecepcion.xaml;Recepcion\WPF_Recepcion.xaml;Trabajador\WPF_ConsultarTramite.xaml;Trabajador\WPF_EditarProp.xaml;Trabajador\WPF_Trabajador.xaml;Trabajador\WPF_Trabajador_Dueño.xaml;Trabajador\WPF_Trabajador_Prop.xaml;Trabajador\WPF_Trabajador_Tra.xaml;Trabajador\WPF_VisorSolicitud.xaml;Trabajador\WPF_VistaDoc.xaml;WPF_PerfilUsuario.xaml;
 
 False
 

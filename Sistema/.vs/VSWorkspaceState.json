@@ -3,9 +3,10 @@
     "",
     "\\Controlador",
     "\\UniOnline",
+    "\\UniOnline\\Director",
     "\\UniOnline\\Recepcion",
     "\\UniOnline\\Trabajador"
   ],
-  "SelectedNode": "\\UniOnline\\Recepcion\\WPF_Recepcion.xaml",
+  "SelectedNode": "\\UniOnline\\Director\\WPF_MainDirector.xaml",
   "PreviewInSolutionExplorer": false
 }

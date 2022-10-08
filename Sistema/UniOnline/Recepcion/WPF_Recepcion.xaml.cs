@@ -21,11 +21,29 @@ namespace UniOnline.Recepcion
     /// </summary>
     public partial class WPF_Recepcion : Window
     {
+        
         public WPF_Recepcion()
         {
             InitializeComponent();
             Conectar();
         }
+        
+        Usuario us = new Usuario();
+        public Usuario ObtenerUsuario
+        {
+            get
+            {
+                return this.us;
+            }
+            set
+            {
+                this.us = value;
+
+                lblBienvenidoRec.Content = us.primer_nombre + " " + us.primer_apellido + " ";
+
+            }
+        }
+       
         //Conexión BD
         Conexion con = new Conexion();
         private void Conectar()
@@ -101,5 +119,28 @@ namespace UniOnline.Recepcion
         {
 
         }
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
+
+        private void Button_Inicio(object sender, RoutedEventArgs e)
+        {
+            WPF_MainRecepcion mrec = new WPF_MainRecepcion();
+            mrec.ShowDialog();
+            
+        }
+
+        private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow ventana = new MainWindow();
+            this.Hide();
+            ventana.ShowDialog();
+            this.Close();
+
+        }
+
+       
     }
+
 }
