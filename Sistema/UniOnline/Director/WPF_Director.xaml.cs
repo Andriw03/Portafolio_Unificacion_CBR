@@ -32,7 +32,7 @@ namespace UniOnline.Director
         {
             if (con.Conectar())
             {
-                
+
             }
             else
             {
@@ -42,7 +42,7 @@ namespace UniOnline.Director
 
         private void btnRegistrarUser_Click(object sender, RoutedEventArgs e)
         {
-            if (txtBoxRUT.Text != string.Empty && txtBoxContra.Text != string.Empty && txtBoxNombre.Text != string.Empty && txtBoxSNombre.Text != string.Empty && txtBoxApellido.Text != string.Empty && txtBoxSApellido.Text != string.Empty && txtBoxCorreo.Text != string.Empty &&  txtBoxTelefono.Text!= string.Empty)
+            if (txtBoxRUT.Text != string.Empty && txtBoxContra.Text != string.Empty && txtBoxNombre.Text != string.Empty && txtBoxSNombre.Text != string.Empty && txtBoxApellido.Text != string.Empty && txtBoxSApellido.Text != string.Empty && txtBoxCorreo.Text != string.Empty && txtBoxTelefono.Text != string.Empty)
             {
                 try
                 {
@@ -51,19 +51,19 @@ namespace UniOnline.Director
                     {
                         usu.rut_usuario = txtBoxRUT.Text;
                         usu.contrasenna = txtBoxContra.Text;
-                        usu.primer_nombre= txtBoxNombre.Text;
+                        usu.primer_nombre = txtBoxNombre.Text;
                         usu.segundo_nombre = txtBoxSNombre.Text;
                         usu.primer_apellido = txtBoxApellido.Text;
                         usu.segundo_apellido = txtBoxSApellido.Text;
                         usu.correo_electronico = txtBoxCorreo.Text;
                         usu.telefono = txtBoxTelefono.Text;
                         usu.id_cbr = 1;
-                        if(rdBtn_Recepcionista.IsChecked == true)
+                        if (rdBtn_Recepcionista.IsChecked == true)
                         {
                             usu.id_tipoU = 3;
                             MessageBox.Show(usu.Insertar(usu), "Mensaje");
                         }
-                        else if(rdBtn_Trabajador.IsChecked == true)
+                        else if (rdBtn_Trabajador.IsChecked == true)
                         {
                             usu.id_tipoU = 4;
                             MessageBox.Show(usu.Insertar(usu), "Mensaje");

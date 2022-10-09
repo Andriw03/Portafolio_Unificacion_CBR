@@ -41,11 +41,11 @@ namespace UniOnline.Director
             {
                 this.us = value;
                 this.us = value;
-                string[] motivacion = { "Si tú sabes lo que vales, ve y consigue lo que mereces. Rocky Balboa.", "Por muy alta que sea una montaña, siempre hay un camino hacia la cima.", "El triunfo verdadero del hombre surge de las cenizas del error. Pablo Neruda.", "Lo único imposible es aquello que no intentas.", "El 80% del éxito se basa simplemente en insistir. Woody Allen.", "Cuanto más hacemos, más podemos hacer. William Hazlitt." };
+                string[] motivacion = { "Si tú sabes lo que vales, ve y consigue lo que mereces. Rocky Balboa.", "Por muy alta que sea una montaña, siempre hay un camino hacia la cima.", "El triunfo verdadero del hombre surge de las cenizas del error. Pablo Neruda.", "Lo único imposible es aquello que no intentas. Anónimo.", "El 80% del éxito se basa simplemente en insistir. Woody Allen.", "Cuanto más hacemos, más podemos hacer. William Hazlitt." };
                 Random rand = new Random();
                 int randN = rand.Next(0, 5);
-                LabelSaludo.Content = us.primer_nombre + " " + us.primer_apellido + " Recuerda:";
-                LabelMotivacion.Content = motivacion[randN];
+                LblSaludo.Content = us.primer_nombre + " " + us.primer_apellido + " Recuerda:";
+                LblMotivacion.Content = motivacion[randN];
             }
         }
         //Conexión BD
@@ -95,6 +95,21 @@ namespace UniOnline.Director
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
+        }
+
+        private void btnGestionInforme_Click(object sender, RoutedEventArgs e)
+        {
+            WPF_Informes tprop = new WPF_Informes();
+            tprop.ShowDialog();
+        }
+
+
+        private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow ventana = new MainWindow();
+            this.Hide();
+            ventana.ShowDialog();
+            this.Close();
         }
     }
 }

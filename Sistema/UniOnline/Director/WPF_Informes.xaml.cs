@@ -50,5 +50,11 @@ namespace UniOnline.Director
             Usuario usu = new Usuario();
             usu.crearPDF();
         }
+
+        private void btnInfoUsers_Click(object sender, RoutedEventArgs e)
+        {
+            Usuario usu = new Usuario();
+            usu.CrearInformeUsuarios();
+        }
     }
 }
