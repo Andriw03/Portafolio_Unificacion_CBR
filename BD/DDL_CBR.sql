@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS `UNIONLINE`.`B_PAGO` (
   `nombre_conservador` INT NOT NULL,
   PRIMARY KEY (`id_boleta`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -36,7 +37,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 DROP TABLE IF EXISTS `UNIONLINE`.`CLAS_PROP` ;
 
 CREATE TABLE IF NOT EXISTS `UNIONLINE`.`CLAS_PROP` (
-  `id_clas` INT NOT NULL,
+  `id_clas` INT NOT NULL AUTO_INCREMENT,
   `foja` INT NOT NULL,
   `numero` INT NOT NULL,
   `anno` DATETIME NOT NULL,
@@ -44,6 +45,7 @@ CREATE TABLE IF NOT EXISTS `UNIONLINE`.`CLAS_PROP` (
   `rut_empresa` VARCHAR(15) NULL DEFAULT NULL,
   PRIMARY KEY (`id_clas`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 13
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -102,7 +104,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 DROP TABLE IF EXISTS `UNIONLINE`.`DIRECCION` ;
 
 CREATE TABLE IF NOT EXISTS `UNIONLINE`.`DIRECCION` (
-  `id_direccion` INT NOT NULL,
+  `id_direccion` INT NOT NULL AUTO_INCREMENT,
   `nombre_calle` VARCHAR(45) NOT NULL,
   `numero_casa` INT NOT NULL,
   `COMUNA_id_comuna` INT NOT NULL,
@@ -112,6 +114,7 @@ CREATE TABLE IF NOT EXISTS `UNIONLINE`.`DIRECCION` (
     FOREIGN KEY (`COMUNA_id_comuna`)
     REFERENCES `UNIONLINE`.`COMUNA` (`id_comuna`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 22
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -121,7 +124,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 DROP TABLE IF EXISTS `UNIONLINE`.`DUENNO_PROP` ;
 
 CREATE TABLE IF NOT EXISTS `UNIONLINE`.`DUENNO_PROP` (
-  `id_duenno` INT NOT NULL,
+  `id_duenno` INT NOT NULL AUTO_INCREMENT,
   `rut_duenno` VARCHAR(15) NOT NULL,
   `primer_nombre` VARCHAR(45) NOT NULL,
   `segundo_nombre` VARCHAR(45) NOT NULL,
@@ -131,6 +134,7 @@ CREATE TABLE IF NOT EXISTS `UNIONLINE`.`DUENNO_PROP` (
   `telefono` VARCHAR(12) NOT NULL,
   PRIMARY KEY (`id_duenno`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 9
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -153,7 +157,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 DROP TABLE IF EXISTS `UNIONLINE`.`PROPIEDAD` ;
 
 CREATE TABLE IF NOT EXISTS `UNIONLINE`.`PROPIEDAD` (
-  `id_propiedad` INT NOT NULL,
+  `id_propiedad` INT NOT NULL AUTO_INCREMENT,
   `descripcion` VARCHAR(100) NOT NULL,
   `DIRECCION_id_direccion` INT NOT NULL,
   `TIPO_PROPIEDAD_id_tipoP` INT NOT NULL,
@@ -177,6 +181,7 @@ CREATE TABLE IF NOT EXISTS `UNIONLINE`.`PROPIEDAD` (
     FOREIGN KEY (`TIPO_PROPIEDAD_id_tipoP`)
     REFERENCES `UNIONLINE`.`TIPO_PROPIEDAD` (`id_tipoP`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 10
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -186,9 +191,16 @@ DEFAULT CHARACTER SET = utf8mb3;
 DROP TABLE IF EXISTS `UNIONLINE`.`T_TRAMITE` ;
 
 CREATE TABLE IF NOT EXISTS `UNIONLINE`.`T_TRAMITE` (
-  `id_tipoT` INT NOT NULL,
+  `id_tipoT` INT NOT NULL AUTO_INCREMENT,
   `nombre_tipoT` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id_tipoT`))
+  `TIPO_PROPIEDAD_id_tipoP` INT NOT NULL,
+  PRIMARY KEY (`id_tipoT`, `TIPO_PROPIEDAD_id_tipoP`),
+  INDEX `fk_T_TRAMITE_TIPO_PROPIEDAD1_idx` (`TIPO_PROPIEDAD_id_tipoP` ASC) VISIBLE,
+  CONSTRAINT `fk_T_TRAMITE_TIPO_PROPIEDAD1`
+    FOREIGN KEY (`TIPO_PROPIEDAD_id_tipoP`)
+    REFERENCES `UNIONLINE`.`TIPO_PROPIEDAD` (`id_tipoP`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -199,9 +211,10 @@ DEFAULT CHARACTER SET = utf8mb3;
 DROP TABLE IF EXISTS `UNIONLINE`.`TRAMITE` ;
 
 CREATE TABLE IF NOT EXISTS `UNIONLINE`.`TRAMITE` (
-  `id_tramite` INT NOT NULL,
+  `id_tramite` INT NOT NULL AUTO_INCREMENT,
   `nombre_tramite` VARCHAR(45) NOT NULL,
   `valor_tramite` VARCHAR(45) NOT NULL,
+  `estado` VARCHAR(45) NOT NULL,
   `T_TRAMITE_id_tipoT` INT NOT NULL,
   PRIMARY KEY (`id_tramite`, `T_TRAMITE_id_tipoT`),
   INDEX `fk_TRAMITE1_T_TRAMITE1_idx` (`T_TRAMITE_id_tipoT` ASC) VISIBLE,
@@ -209,6 +222,7 @@ CREATE TABLE IF NOT EXISTS `UNIONLINE`.`TRAMITE` (
     FOREIGN KEY (`T_TRAMITE_id_tipoT`)
     REFERENCES `UNIONLINE`.`T_TRAMITE` (`id_tipoT`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 8
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -218,12 +232,13 @@ DEFAULT CHARACTER SET = utf8mb3;
 DROP TABLE IF EXISTS `UNIONLINE`.`HOR_ATENCION` ;
 
 CREATE TABLE IF NOT EXISTS `UNIONLINE`.`HOR_ATENCION` (
-  `id_horario` INT NOT NULL,
+  `id_horario` INT NOT NULL AUTO_INCREMENT,
   `dias_atencion` VARCHAR(45) NOT NULL,
   `horario_apertura` VARCHAR(10) NOT NULL,
   `horario_cierre` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`id_horario`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -233,7 +248,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 DROP TABLE IF EXISTS `UNIONLINE`.`CBR` ;
 
 CREATE TABLE IF NOT EXISTS `UNIONLINE`.`CBR` (
-  `id_cbr` INT NOT NULL,
+  `id_cbr` INT NOT NULL AUTO_INCREMENT,
   `nombre_cbr` VARCHAR(100) NOT NULL,
   `correo_cbr` VARCHAR(50) NOT NULL,
   `telefono` VARCHAR(12) NOT NULL,
@@ -242,15 +257,14 @@ CREATE TABLE IF NOT EXISTS `UNIONLINE`.`CBR` (
   PRIMARY KEY (`id_cbr`, `HOR_ATENCION_id_horario`, `DIRECCION_id_direccion`),
   INDEX `fk_CBR_HOR_ATENCION1_idx` (`HOR_ATENCION_id_horario` ASC) VISIBLE,
   INDEX `fk_CBR_DIRECCION1_idx` (`DIRECCION_id_direccion` ASC) VISIBLE,
-  CONSTRAINT `fk_CBR_HOR_ATENCION1`
-    FOREIGN KEY (`HOR_ATENCION_id_horario`)
-    REFERENCES `UNIONLINE`.`HOR_ATENCION` (`id_horario`),
   CONSTRAINT `fk_CBR_DIRECCION1`
     FOREIGN KEY (`DIRECCION_id_direccion`)
-    REFERENCES `UNIONLINE`.`DIRECCION` (`id_direccion`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    REFERENCES `UNIONLINE`.`DIRECCION` (`id_direccion`),
+  CONSTRAINT `fk_CBR_HOR_ATENCION1`
+    FOREIGN KEY (`HOR_ATENCION_id_horario`)
+    REFERENCES `UNIONLINE`.`HOR_ATENCION` (`id_horario`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -273,11 +287,11 @@ DEFAULT CHARACTER SET = utf8mb3;
 DROP TABLE IF EXISTS `UNIONLINE`.`USUARIO` ;
 
 CREATE TABLE IF NOT EXISTS `UNIONLINE`.`USUARIO` (
-  `id_usuario` INT NOT NULL,
+  `id_usuario` INT NOT NULL AUTO_INCREMENT,
   `rut_usuario` VARCHAR(15) NOT NULL,
-  `contrasenna` VARCHAR(45) NOT NULL,
+  `contrasenna` VARCHAR(100) NOT NULL,
   `primer_nombre` VARCHAR(45) NOT NULL,
-  `segundo_nombre` VARCHAR(45) NOT NULL,
+  `segundo_nombre` VARCHAR(45) NULL,
   `primer_apellido` VARCHAR(45) NOT NULL,
   `segundo_apellido` VARCHAR(45) NOT NULL,
   `correo_electronico` VARCHAR(45) NOT NULL,
@@ -293,6 +307,56 @@ CREATE TABLE IF NOT EXISTS `UNIONLINE`.`USUARIO` (
   CONSTRAINT `fk_USUARIO_T_USUARIO1`
     FOREIGN KEY (`T_USUARIO_id_tipoU`)
     REFERENCES `UNIONLINE`.`T_USUARIO` (`id_tipoU`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 18
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `UNIONLINE`.`SOLICITUD`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `UNIONLINE`.`SOLICITUD` ;
+
+CREATE TABLE IF NOT EXISTS `UNIONLINE`.`SOLICITUD` (
+  `id_soli` INT NOT NULL AUTO_INCREMENT,
+  `fecha_solicitud` DATETIME NOT NULL,
+  `fecha_cierre` DATETIME NOT NULL,
+  `estado` VARCHAR(45) NOT NULL,
+  `numero_seguimiento` VARCHAR(45) NOT NULL,
+  `USUARIO_id_usuario` INT NOT NULL,
+  `PROPIEDAD_id_propiedad` INT NOT NULL,
+  `TRAMITE_id_tramite` INT NOT NULL,
+  PRIMARY KEY (`id_soli`, `USUARIO_id_usuario`, `PROPIEDAD_id_propiedad`, `TRAMITE_id_tramite`),
+  INDEX `fk_SOLICITUD_USUARIO_idx` (`USUARIO_id_usuario` ASC) VISIBLE,
+  INDEX `fk_SOLICITUD_PROPIEDAD1_idx` (`PROPIEDAD_id_propiedad` ASC) VISIBLE,
+  INDEX `fk_SOLICITUD_TRAMITE1_idx` (`TRAMITE_id_tramite` ASC) VISIBLE,
+  CONSTRAINT `fk_SOLICITUD_PROPIEDAD1`
+    FOREIGN KEY (`PROPIEDAD_id_propiedad`)
+    REFERENCES `UNIONLINE`.`PROPIEDAD` (`id_propiedad`),
+  CONSTRAINT `fk_SOLICITUD_TRAMITE1`
+    FOREIGN KEY (`TRAMITE_id_tramite`)
+    REFERENCES `UNIONLINE`.`TRAMITE` (`id_tramite`),
+  CONSTRAINT `fk_SOLICITUD_USUARIO`
+    FOREIGN KEY (`USUARIO_id_usuario`)
+    REFERENCES `UNIONLINE`.`USUARIO` (`id_usuario`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 4
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `UNIONLINE`.`CAR_COMPRA`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `UNIONLINE`.`CAR_COMPRA` ;
+
+CREATE TABLE IF NOT EXISTS `UNIONLINE`.`CAR_COMPRA` (
+  `id_carrito` INT NOT NULL AUTO_INCREMENT,
+  `SOLICITUD_id_soli` INT NOT NULL,
+  PRIMARY KEY (`id_carrito`, `SOLICITUD_id_soli`),
+  INDEX `fk_CAR_COMPRA_SOLICITUD1_idx` (`SOLICITUD_id_soli` ASC) VISIBLE,
+  CONSTRAINT `fk_CAR_COMPRA_SOLICITUD1`
+    FOREIGN KEY (`SOLICITUD_id_soli`)
+    REFERENCES `UNIONLINE`.`SOLICITUD` (`id_soli`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -316,73 +380,26 @@ DEFAULT CHARACTER SET = utf8mb3;
 DROP TABLE IF EXISTS `UNIONLINE`.`DOCUMENTO` ;
 
 CREATE TABLE IF NOT EXISTS `UNIONLINE`.`DOCUMENTO` (
-  `id_documento` INT NOT NULL,
+  `id_documento` INT NOT NULL AUTO_INCREMENT,
   `nombre_doc` VARCHAR(45) NOT NULL,
-  `doc` BLOB NOT NULL,
+  `doc` BLOB NULL DEFAULT NULL,
+  `SOLICITUD_id_soli` INT NOT NULL,
   `TIPO_DOCUMENTO_id_tipodoc` INT NOT NULL,
-  PRIMARY KEY (`id_documento`),
+  PRIMARY KEY (`id_documento`, `SOLICITUD_id_soli`, `TIPO_DOCUMENTO_id_tipodoc`),
+  INDEX `fk_DOCUMENTO_SOLICITUD1_idx` (`SOLICITUD_id_soli` ASC) VISIBLE,
   INDEX `fk_DOCUMENTO_TIPO_DOCUMENTO1_idx` (`TIPO_DOCUMENTO_id_tipodoc` ASC) VISIBLE,
+  CONSTRAINT `fk_DOCUMENTO_SOLICITUD1`
+    FOREIGN KEY (`SOLICITUD_id_soli`)
+    REFERENCES `UNIONLINE`.`SOLICITUD` (`id_soli`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
   CONSTRAINT `fk_DOCUMENTO_TIPO_DOCUMENTO1`
     FOREIGN KEY (`TIPO_DOCUMENTO_id_tipodoc`)
     REFERENCES `UNIONLINE`.`TIPO_DOCUMENTO` (`id_tipodoc`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb3;
-
-
--- -----------------------------------------------------
--- Table `UNIONLINE`.`SOLICITUD`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `UNIONLINE`.`SOLICITUD` ;
-
-CREATE TABLE IF NOT EXISTS `UNIONLINE`.`SOLICITUD` (
-  `id_soli` INT NOT NULL,
-  `fecha_solicitud` DATETIME NOT NULL,
-  `fecha_cierre` DATETIME NOT NULL,
-  `estado` VARCHAR(45) NOT NULL,
-  `numero_seguimiento` VARCHAR(45) NOT NULL,
-  `USUARIO_id_usuario` INT NOT NULL,
-  `PROPIEDAD_id_propiedad` INT NOT NULL,
-  `TRAMITE_id_tramite` INT NOT NULL,
-  `DOCUMENTO_id_documento` INT NOT NULL,
-  PRIMARY KEY (`id_soli`, `USUARIO_id_usuario`, `PROPIEDAD_id_propiedad`, `TRAMITE_id_tramite`),
-  INDEX `fk_SOLICITUD_USUARIO_idx` (`USUARIO_id_usuario` ASC) VISIBLE,
-  INDEX `fk_SOLICITUD_PROPIEDAD1_idx` (`PROPIEDAD_id_propiedad` ASC) VISIBLE,
-  INDEX `fk_SOLICITUD_TRAMITE1_idx` (`TRAMITE_id_tramite` ASC) VISIBLE,
-  INDEX `fk_SOLICITUD_DOCUMENTO1_idx` (`DOCUMENTO_id_documento` ASC) VISIBLE,
-  CONSTRAINT `fk_SOLICITUD_PROPIEDAD1`
-    FOREIGN KEY (`PROPIEDAD_id_propiedad`)
-    REFERENCES `UNIONLINE`.`PROPIEDAD` (`id_propiedad`),
-  CONSTRAINT `fk_SOLICITUD_TRAMITE1`
-    FOREIGN KEY (`TRAMITE_id_tramite`)
-    REFERENCES `UNIONLINE`.`TRAMITE` (`id_tramite`),
-  CONSTRAINT `fk_SOLICITUD_USUARIO`
-    FOREIGN KEY (`USUARIO_id_usuario`)
-    REFERENCES `UNIONLINE`.`USUARIO` (`id_usuario`),
-  CONSTRAINT `fk_SOLICITUD_DOCUMENTO1`
-    FOREIGN KEY (`DOCUMENTO_id_documento`)
-    REFERENCES `UNIONLINE`.`DOCUMENTO` (`id_documento`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb3;
-
-
--- -----------------------------------------------------
--- Table `UNIONLINE`.`CAR_COMPRA`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `UNIONLINE`.`CAR_COMPRA` ;
-
-CREATE TABLE IF NOT EXISTS `UNIONLINE`.`CAR_COMPRA` (
-  `id_carrito` INT NOT NULL,
-  `SOLICITUD_id_soli` INT NOT NULL,
-  PRIMARY KEY (`id_carrito`, `SOLICITUD_id_soli`),
-  INDEX `fk_CAR_COMPRA_SOLICITUD1_idx` (`SOLICITUD_id_soli` ASC) VISIBLE,
-  CONSTRAINT `fk_CAR_COMPRA_SOLICITUD1`
-    FOREIGN KEY (`SOLICITUD_id_soli`)
-    REFERENCES `UNIONLINE`.`SOLICITUD` (`id_soli`))
-ENGINE = InnoDB
+AUTO_INCREMENT = 8
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -420,7 +437,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 DROP TABLE IF EXISTS `UNIONLINE`.`ESTADO_PAGO` ;
 
 CREATE TABLE IF NOT EXISTS `UNIONLINE`.`ESTADO_PAGO` (
-  `id_estado` INT NOT NULL,
+  `id_estado` INT NOT NULL AUTO_INCREMENT,
   `estado` TINYINT NOT NULL,
   `CAR_COMPRA_id_carrito` INT NOT NULL,
   `TIPO_PAGO_id_tipoP` INT NOT NULL,
@@ -443,13 +460,219 @@ DEFAULT CHARACTER SET = utf8mb3;
 DROP TABLE IF EXISTS `UNIONLINE`.`FORMULARIO` ;
 
 CREATE TABLE IF NOT EXISTS `UNIONLINE`.`FORMULARIO` (
-  `id_formulario` INT NOT NULL,
+  `id_formulario` INT NOT NULL AUTO_INCREMENT,
   `nombre_form` VARCHAR(45) NOT NULL,
   `telefono` VARCHAR(45) NOT NULL,
   `correo_form` VARCHAR(45) NOT NULL,
   `asunto_form` VARCHAR(45) NOT NULL,
-  `detalle_form` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id_formulario`))
+  `detalle_form` VARCHAR(500) NOT NULL,
+  `USUARIO_id_usuario` INT NOT NULL,
+  PRIMARY KEY (`id_formulario`),
+  INDEX `fk_FORMULARIO_USUARIO1_idx` (`USUARIO_id_usuario` ASC) VISIBLE,
+  CONSTRAINT `fk_FORMULARIO_USUARIO1`
+    FOREIGN KEY (`USUARIO_id_usuario`)
+    REFERENCES `UNIONLINE`.`USUARIO` (`id_usuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 5
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `UNIONLINE`.`auth_group`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `UNIONLINE`.`auth_group` ;
+
+CREATE TABLE IF NOT EXISTS `UNIONLINE`.`auth_group` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(150) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `name` (`name` ASC) VISIBLE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `UNIONLINE`.`django_content_type`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `UNIONLINE`.`django_content_type` ;
+
+CREATE TABLE IF NOT EXISTS `UNIONLINE`.`django_content_type` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `app_label` VARCHAR(100) NOT NULL,
+  `model` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label` ASC, `model` ASC) VISIBLE)
+ENGINE = InnoDB
+AUTO_INCREMENT = 7
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `UNIONLINE`.`auth_permission`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `UNIONLINE`.`auth_permission` ;
+
+CREATE TABLE IF NOT EXISTS `UNIONLINE`.`auth_permission` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL,
+  `content_type_id` INT NOT NULL,
+  `codename` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id` ASC, `codename` ASC) VISIBLE,
+  CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co`
+    FOREIGN KEY (`content_type_id`)
+    REFERENCES `UNIONLINE`.`django_content_type` (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 25
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `UNIONLINE`.`auth_group_permissions`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `UNIONLINE`.`auth_group_permissions` ;
+
+CREATE TABLE IF NOT EXISTS `UNIONLINE`.`auth_group_permissions` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `group_id` INT NOT NULL,
+  `permission_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `auth_group_permissions_group_id_permission_id_0cd325b0_uniq` (`group_id` ASC, `permission_id` ASC) VISIBLE,
+  INDEX `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` (`permission_id` ASC) VISIBLE,
+  CONSTRAINT `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm`
+    FOREIGN KEY (`permission_id`)
+    REFERENCES `UNIONLINE`.`auth_permission` (`id`),
+  CONSTRAINT `auth_group_permissions_group_id_b120cbf9_fk_auth_group_id`
+    FOREIGN KEY (`group_id`)
+    REFERENCES `UNIONLINE`.`auth_group` (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `UNIONLINE`.`auth_user`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `UNIONLINE`.`auth_user` ;
+
+CREATE TABLE IF NOT EXISTS `UNIONLINE`.`auth_user` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `password` VARCHAR(128) NOT NULL,
+  `last_login` DATETIME(6) NULL DEFAULT NULL,
+  `is_superuser` TINYINT(1) NOT NULL,
+  `username` VARCHAR(150) NOT NULL,
+  `first_name` VARCHAR(150) NOT NULL,
+  `last_name` VARCHAR(150) NOT NULL,
+  `email` VARCHAR(254) NOT NULL,
+  `is_staff` TINYINT(1) NOT NULL,
+  `is_active` TINYINT(1) NOT NULL,
+  `date_joined` DATETIME(6) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `username` (`username` ASC) VISIBLE)
+ENGINE = InnoDB
+AUTO_INCREMENT = 2
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `UNIONLINE`.`auth_user_groups`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `UNIONLINE`.`auth_user_groups` ;
+
+CREATE TABLE IF NOT EXISTS `UNIONLINE`.`auth_user_groups` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `user_id` INT NOT NULL,
+  `group_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `auth_user_groups_user_id_group_id_94350c0c_uniq` (`user_id` ASC, `group_id` ASC) VISIBLE,
+  INDEX `auth_user_groups_group_id_97559544_fk_auth_group_id` (`group_id` ASC) VISIBLE,
+  CONSTRAINT `auth_user_groups_group_id_97559544_fk_auth_group_id`
+    FOREIGN KEY (`group_id`)
+    REFERENCES `UNIONLINE`.`auth_group` (`id`),
+  CONSTRAINT `auth_user_groups_user_id_6a12ed8b_fk_auth_user_id`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `UNIONLINE`.`auth_user` (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `UNIONLINE`.`auth_user_user_permissions`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `UNIONLINE`.`auth_user_user_permissions` ;
+
+CREATE TABLE IF NOT EXISTS `UNIONLINE`.`auth_user_user_permissions` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `user_id` INT NOT NULL,
+  `permission_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `auth_user_user_permissions_user_id_permission_id_14a6b632_uniq` (`user_id` ASC, `permission_id` ASC) VISIBLE,
+  INDEX `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm` (`permission_id` ASC) VISIBLE,
+  CONSTRAINT `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm`
+    FOREIGN KEY (`permission_id`)
+    REFERENCES `UNIONLINE`.`auth_permission` (`id`),
+  CONSTRAINT `auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `UNIONLINE`.`auth_user` (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `UNIONLINE`.`django_admin_log`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `UNIONLINE`.`django_admin_log` ;
+
+CREATE TABLE IF NOT EXISTS `UNIONLINE`.`django_admin_log` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `action_time` DATETIME(6) NOT NULL,
+  `object_id` LONGTEXT NULL DEFAULT NULL,
+  `object_repr` VARCHAR(200) NOT NULL,
+  `action_flag` SMALLINT UNSIGNED NOT NULL,
+  `change_message` LONGTEXT NOT NULL,
+  `content_type_id` INT NULL DEFAULT NULL,
+  `user_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `django_admin_log_content_type_id_c4bce8eb_fk_django_co` (`content_type_id` ASC) VISIBLE,
+  INDEX `django_admin_log_user_id_c564eba6_fk_auth_user_id` (`user_id` ASC) VISIBLE,
+  CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co`
+    FOREIGN KEY (`content_type_id`)
+    REFERENCES `UNIONLINE`.`django_content_type` (`id`),
+  CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `UNIONLINE`.`auth_user` (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `UNIONLINE`.`django_migrations`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `UNIONLINE`.`django_migrations` ;
+
+CREATE TABLE IF NOT EXISTS `UNIONLINE`.`django_migrations` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `app` VARCHAR(255) NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  `applied` DATETIME(6) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 19
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `UNIONLINE`.`django_session`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `UNIONLINE`.`django_session` ;
+
+CREATE TABLE IF NOT EXISTS `UNIONLINE`.`django_session` (
+  `session_key` VARCHAR(40) NOT NULL,
+  `session_data` LONGTEXT NOT NULL,
+  `expire_date` DATETIME(6) NOT NULL,
+  PRIMARY KEY (`session_key`),
+  INDEX `django_session_expire_date_a5c62663` (`expire_date` ASC) VISIBLE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
