@@ -48,7 +48,7 @@ namespace UniOnline.Trabajador
         {
             cmbEstado.Items.Add("Aprobado");
             cmbEstado.Items.Add("Rechazado");
-            cmbEstado.Items.Add("En proceso");
+            cmbEstado.Items.Add("En Proceso");
         }
         //Metodo que llena los datos de la solicitud
         public void LlenadoSolicitud(string numeroS)
@@ -67,13 +67,15 @@ namespace UniOnline.Trabajador
                 lbDireccion.Text = soli[8];
                 lbDescripcion.Text = soli[7];
                 lbNombreTramite.Text = soli[5];
-                lbNombreDuenno.Text = soli[11];
-                if (soli[10] != null)
+                lbNombreDuenno.Text = soli[9];
+                List<string> doc = cli.Documento(Int32.Parse(soli[10]));
+                if (doc.Count != 0)
                 {
+                    int cant = doc.Count;
                     btnVerDoc.Visibility = Visibility.Visible;
                     lbDocumento.Visibility = Visibility.Visible;
                     lbNombreDoc.Visibility = Visibility.Visible;
-                    lbNombreDoc.Text = soli[9];
+                    lbNombreDoc.Text = "Hay " + (cant/2) +" Documentos";
                 }
                 else
                 {

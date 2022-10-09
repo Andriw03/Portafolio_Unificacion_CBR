@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\
 UniOnline
 none
 false
 DEBUG;TRACE
-D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\App.xaml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\App.xaml
 211023244290
 
 28-301516576
-38-376798878
+381278591177
 Director\WPF_Director.xaml;Director\WPF_Informes.xaml;Director\WPF_MainDirector.xaml;Director\WPF_ModificarUsuario.xaml;MainWindow.xaml;Moderador\WPF_Moderador.xaml;Moderador\WPF_Moderador_Perfil.xaml;Moderador\WPF_Moderador_Soporte.xaml;Moderador\WPF_Moderador_Soporte_Tickets.xaml;Recepcion\Detalles_Solicitud.xaml;Recepcion\WPF_MainRecepcion.xaml;Recepcion\WPF_Recepcion.xaml;Trabajador\WPF_ConsultarTramite.xaml;Trabajador\WPF_EditarProp.xaml;Trabajador\WPF_Trabajador.xaml;Trabajador\WPF_Trabajador_Dueño.xaml;Trabajador\WPF_Trabajador_Prop.xaml;Trabajador\WPF_Trabajador_Tra.xaml;Trabajador\WPF_VisorSolicitud.xaml;Trabajador\WPF_VistaDoc.xaml;WPF_PerfilUsuario.xaml;
 
 True

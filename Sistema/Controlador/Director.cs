@@ -305,11 +305,11 @@ namespace Controlador
                 }
                 rd.Close();
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("");
+                MessageBox.Show(ex.Message);
             }
-            Exception ex;
+            
 
             documento.Add(tabla);
             documento.Close();

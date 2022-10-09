@@ -100,9 +100,10 @@ namespace Controlador
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT numero_seguimiento, estado, fecha_solicitud ,rut_usuario, Concat(UNIONLINE.USUARIO.primer_nombre, ' ' , UNIONLINE.USUARIO.primer_apellido) as nombre_solicitante, nombre_tramite, foja, descripcion, concat(nombre_calle,' ', numero_casa ,', ', nombre_comuna, ', ', nombre_region) as direccion_prop,nombre_doc, doc, id_documento, Concat(UNIONLINE.DUENNO_PROP.primer_nombre, ' ' , UNIONLINE.DUENNO_PROP.primer_apellido) as nombre_duenno FROM UNIONLINE.SOLICITUD inner join UNIONLINE.DOCUMENTO on UNIONLINE.SOLICITUD.DOCUMENTO_id_documento = UNIONLINE.DOCUMENTO.id_documento inner join UNIONLINE.USUARIO on UNIONLINE.SOLICITUD.USUARIO_id_usuario = UNIONLINE.USUARIO.id_usuario inner join UNIONLINE.TRAMITE on UNIONLINE.SOLICITUD.TRAMITE_id_tramite = UNIONLINE.TRAMITE.id_tramite inner join UNIONLINE.PROPIEDAD on UNIONLINE.SOLICITUD.PROPIEDAD_id_propiedad = UNIONLINE.PROPIEDAD.id_propiedad inner join UNIONLINE.DUENNO_PROP on UNIONLINE.PROPIEDAD.DUENNO_PROP_id_duenno = UNIONLINE.DUENNO_PROP.id_duenno inner join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas inner join UNIONLINE.DIRECCION on UNIONLINE.PROPIEDAD.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion inner join UNIONLINE.COMUNA on UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna  inner join UNIONLINE.PROVINCIA on UNIONLINE.COMUNA.PROVINCIA_id_provincia= UNIONLINE.PROVINCIA.id_provincia  inner join UNIONLINE.REGION on UNIONLINE.PROVINCIA.REGION_id_region = UNIONLINE.REGION.id_region where numero_seguimiento = '" + NumeroS+"'; ", conex);
+                cmd = new MySqlCommand("SELECT id_soli, numero_seguimiento, SOLICITUD.estado, fecha_solicitud ,rut_usuario, Concat(UNIONLINE.USUARIO.primer_nombre, ' ' , UNIONLINE.USUARIO.primer_apellido) as nombre_solicitante, nombre_tramite, foja, descripcion, concat(nombre_calle,' ', numero_casa ,', ', nombre_comuna, ', ', nombre_region) as direccion_prop, Concat(UNIONLINE.DUENNO_PROP.primer_nombre, ' ' , UNIONLINE.DUENNO_PROP.primer_apellido) as nombre_duenno FROM UNIONLINE.SOLICITUD inner join UNIONLINE.USUARIO on UNIONLINE.SOLICITUD.USUARIO_id_usuario = UNIONLINE.USUARIO.id_usuario inner join UNIONLINE.TRAMITE on UNIONLINE.SOLICITUD.TRAMITE_id_tramite = UNIONLINE.TRAMITE.id_tramite inner join UNIONLINE.PROPIEDAD on UNIONLINE.SOLICITUD.PROPIEDAD_id_propiedad = UNIONLINE.PROPIEDAD.id_propiedad inner join UNIONLINE.DUENNO_PROP on UNIONLINE.PROPIEDAD.DUENNO_PROP_id_duenno = UNIONLINE.DUENNO_PROP.id_duenno inner join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas inner join UNIONLINE.DIRECCION on UNIONLINE.PROPIEDAD.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion inner join UNIONLINE.COMUNA on UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna  inner join UNIONLINE.PROVINCIA on UNIONLINE.COMUNA.PROVINCIA_id_provincia= UNIONLINE.PROVINCIA.id_provincia  inner join UNIONLINE.REGION on UNIONLINE.PROVINCIA.REGION_id_region = UNIONLINE.REGION.id_region where numero_seguimiento = '" + NumeroS + "'; ", conex);
                 rd = cmd.ExecuteReader();
-                while(rd.Read()){
+                while (rd.Read())
+                {
                     soli.Add(rd["numero_seguimiento"].ToString());
                     soli.Add(rd["estado"].ToString());
                     soli.Add(rd["fecha_solicitud"].ToString());
@@ -112,27 +113,43 @@ namespace Controlador
                     soli.Add(rd["foja"].ToString());
                     soli.Add(rd["descripcion"].ToString());
                     soli.Add(rd["direccion_prop"].ToString());
-                    soli.Add(rd["nombre_doc"].ToString());
-                    if (rd["doc"].ToString() != string.Empty)
-                    {
-                        soli.Add("id_documento");
-                    }
-                    else {
-                        soli.Add(null);
-                    }
                     soli.Add(rd["nombre_duenno"].ToString());
-                    
+                    soli.Add(rd["id_soli"].ToString());
                 }
+                rd.Close();
                 return soli;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return null;
             }
         }
-       
-        
+        public List<string> Documento(int id)
+        {
+            List<string> doc = new List<string>();
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT nombre_doc, doc FROM UNIONLINE.DOCUMENTO where SOLICITUD_id_soli = " + id + " and TIPO_DOCUMENTO_id_tipodoc = 1;", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    doc.Add(rd["nombre_doc"].ToString());
+                    doc.Add(rd["doc"].ToString());
+
+                }
+                rd.Close();
+                return doc;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Buscar documento: " + ex.Message);
+                return null;
+            }
+        }
+
+
     }
 
 
