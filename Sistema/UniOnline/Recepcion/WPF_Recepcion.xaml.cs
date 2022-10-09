@@ -148,7 +148,8 @@ namespace UniOnline.Recepcion
         {
            
                 Detalles_Solicitud dSoli = new Detalles_Solicitud();
-                dSoli.ObtenerUsuarioRec = rec;
+                Recepcionista recep = new Recepcionista();
+                dSoli.ObtenerUsuarioRec = recep.ObtenerDatos(txt_buscar.Text, txt_buscar.Text);
                 dSoli.ShowDialog();
            
         }

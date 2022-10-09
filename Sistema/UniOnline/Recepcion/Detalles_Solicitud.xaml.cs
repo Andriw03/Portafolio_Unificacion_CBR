@@ -27,27 +27,28 @@ namespace UniOnline.Recepcion
             
         }
         
-        Recepcionista rec = new Recepcionista();
+        Recepcionista recep = new Recepcionista();
         public Recepcionista ObtenerUsuarioRec
         {
             get
             {
-                return this.rec;
+                return this.recep;
             }
             set
             {
-                this.rec = value;
-                this.rec = value;
-             
+                this.recep = value;
+                this.recep = value;
 
-                lblNombreCompleto.Content = "Nombre Completo: " + rec.primer_nombre + " " + rec.segundo_nombre + " " + rec.primer_apellido + " " + rec.segundo_apellido + " ";
-                lblFechaSoli.Content = "Fecha Solicitud: "+ rec.fecha_solicitud;
-                lblFechaCierre.Content = "Fecha Cierre: " + rec.fecha_cierre;
-                lblEstado.Content = "Estado Solicitud: " + rec.estado;
-                lblIdSoli.Content = "Número Solicitud: " + rec.id_soli;
-                lblNseg.Content = "Número Seguimiento: "+ rec.numero_seguimiento;
 
-                
+                lblNombreCompleto.Content = "Nombre Completo: " + recep.primer_nombre + " " + recep.segundo_nombre + " " + recep.primer_apellido + " " + recep.segundo_apellido + " ";
+                lblFechaSoli.Content = "Fecha Solicitud: " + recep.fecha_solicitud;
+                lblNombreT.Content = "Nombre del Trámite: " + recep.nombre_tramite;
+                lblEstado.Content = "Estado Solicitud: " + recep.estado;
+                lblIdSoli.Content = "Número Solicitud: " + recep.id_soli;
+                lblNseg.Content = "Número Seguimiento: " + recep.numero_seguimiento;
+                lblValorT.Content = "Valor Pagado : " + recep.valor_tramite;
+
+
 
             }
         }

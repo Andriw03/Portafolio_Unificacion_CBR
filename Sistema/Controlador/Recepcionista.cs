@@ -20,10 +20,12 @@ namespace Controlador
         public string numero_seguimiento { get; set; }
         public string estado { get; set; }
 
-        public DateTime fecha_solicitud { get; set; }
-        public DateTime fecha_cierre { get; set; }
+        public string fecha_solicitud { get; set; }
+        public string fecha_cierre { get; set; }
         public int id_soli { get; set; }
 
+        public string nombre_tramite { get; set; }
+        public string valor_tramite { get; set; }
 
         public Recepcionista()
         {
@@ -41,10 +43,11 @@ namespace Controlador
 
             numero_seguimiento = string.Empty;
             estado = string.Empty;
-            fecha_solicitud = fecha_solicitud;
-            fecha_cierre = fecha_cierre;
-            id_soli = id_soli;
-
+            fecha_solicitud = string.Empty;
+            fecha_cierre = string.Empty;
+            id_soli = 0;
+            nombre_tramite = string.Empty;
+            valor_tramite = string.Empty;
 
         }
 
@@ -110,6 +113,46 @@ namespace Controlador
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
+                return null;
+            }
+        }
+
+        public Recepcionista ObtenerDatos(string rut, string nseg)
+        {
+            Recepcionista recep = new Recepcionista();
+
+
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT * FROM UNIONLINE.USUARIO inner join UNIONLINE.SOLICITUD join UNIONLINE.TRAMITE on UNIONLINE.USUARIO.id_usuario = UNIONLINE.SOLICITUD.USUARIO_id_usuario where rut_usuario = '" + rut + "' or numero_seguimiento = '" + nseg + "'", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    //hacer cosulta de los datos de detalle solicitud.
+
+                    recep.primer_nombre = rd["primer_nombre"].ToString();
+                    recep.segundo_nombre = rd["segundo_nombre"].ToString();
+                    recep.primer_apellido = rd["primer_apellido"].ToString();
+                    recep.segundo_apellido = rd["segundo_apellido"].ToString();
+                    recep.segundo_apellido = rd["segundo_apellido"].ToString();
+                    recep.fecha_solicitud = rd["fecha_solicitud"].ToString();
+                    recep.nombre_tramite = rd["nombre_tramite"].ToString();
+                    recep.estado = rd["estado"].ToString();
+                    recep.id_soli = Int32.Parse(rd["id_soli"].ToString());
+                    recep.numero_seguimiento = rd["numero_seguimiento"].ToString();
+                    recep.valor_tramite = rd["valor_tramite"].ToString();
+
+
+
+                }
+                rd.Close();
+                return recep;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
                 return null;
             }
         }
