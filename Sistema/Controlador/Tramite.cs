@@ -14,6 +14,7 @@ namespace Controlador
     {
         public string NombreTra { get; set; }
         public string ValorTra { get; set; }
+        public string Estado { get; set; }
         public int TipoTramite { get; set; }
 
         public Tramite()
@@ -25,6 +26,7 @@ namespace Controlador
         {
             NombreTra = string.Empty;
             ValorTra = string.Empty;
+            Estado = string.Empty;
             TipoTramite = 0;
         }
 
@@ -34,7 +36,7 @@ namespace Controlador
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`TRAMITE` (`nombre_tramite`, `valor_tramite`, `T_TRAMITE_id_tipoT`) VALUES ('" + Tra.NombreTra + "', " + Tra.ValorTra + ", " + Tra.TipoTramite + ");", conex);
+                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`TRAMITE` (`nombre_tramite`, `valor_tramite`, `estado`, `T_TRAMITE_id_tipoT`) VALUES ('" + Tra.NombreTra + "', " + Tra.ValorTra + ",'" + Tra.Estado + "'," + Tra.TipoTramite + ");", conex);
                 cmd.ExecuteNonQuery();
                 salida = "Trámite agregado correctamente";
             }
@@ -86,7 +88,7 @@ namespace Controlador
 
             try
             {
-                cmd = new MySqlCommand("SELECT tra.nombre_tramite, tra.valor_tramite, titra.nombre_tipoT FROM UNIONLINE.TRAMITE AS tra INNER JOIN UNIONLINE.T_TRAMITE AS titra ON tra.T_TRAMITE_id_tipoT = titra.id_tipoT WHERE tra.T_TRAMITE_id_tipoT = " + tipo + "", conex);
+                cmd = new MySqlCommand("SELECT tra.id_tramite, tra.nombre_tramite, tra.valor_tramite, tra.estado, titra.nombre_tipoT FROM UNIONLINE.TRAMITE AS tra INNER JOIN UNIONLINE.T_TRAMITE AS titra ON tra.T_TRAMITE_id_tipoT = titra.id_tipoT WHERE tra.T_TRAMITE_id_tipoT = " + tipo + ";", conex);
                 MySqlDataAdapter ap = new MySqlDataAdapter(cmd);
                 ap.Fill(tabla);
                 cmd.Dispose();
@@ -97,6 +99,51 @@ namespace Controlador
             {
                 MessageBox.Show(ex.Message.ToString());
                 return null;
+            }
+        }
+
+        public DataTable MostrarEstado(int tipot, string estadot)
+        {
+            Conectar();
+            DataTable testado = new DataTable();
+
+            try
+            {
+                cmd = new MySqlCommand("SELECT tra.id_tramite, tra.nombre_tramite, tra.valor_tramite, tra.estado, titra.nombre_tipoT FROM UNIONLINE.TRAMITE AS tra INNER JOIN UNIONLINE.T_TRAMITE AS titra ON tra.T_TRAMITE_id_tipoT = titra.id_tipoT WHERE tra.T_TRAMITE_id_tipoT = " + tipot +" AND estado = '" + estadot +"';", conex);
+                MySqlDataAdapter ap = new MySqlDataAdapter(cmd);
+                ap.Fill(testado);
+                cmd.Dispose();
+                ap.Dispose();
+                return testado;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+                return null;
+            }
+        }
+
+        public bool ModificarEstado(int idTramite, string nestado)
+        {
+            try
+            {
+                Conectar();
+                int idTra = 0;
+                cmd = new MySqlCommand("SELECT * FROM UNIONLINE.TRAMITE where id_tramite = " + idTramite + ";", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    idTra = Int32.Parse(rd["id_tramite"].ToString());
+                }
+                rd.Close();
+                cmd = new MySqlCommand("UPDATE `UNIONLINE`.`TRAMITE` SET `estado` = '" + nestado + "' WHERE `id_tramite` = " + idTra + ";", conex);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+                return false;
             }
         }
 
