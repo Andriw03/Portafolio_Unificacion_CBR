@@ -32,7 +32,35 @@ namespace UniOnline
             InitializeComponent();
             Conectar();
         }
-        
+      
+      
+        Cliente cli = new Cliente();
+        MasterMailServer mailService = new MasterMailServer();
+        public Cliente passRecov
+        {
+            get
+            {
+                return this.cli;
+            }
+            set
+            {
+                this.cli = value;
+                this.cli = value;
+
+
+                MasterMailServer mailService = new MasterMailServer();
+
+                mailService.sendMail(
+                subject: "SYSTEM: Restauración de Contraseña ",
+                body: "Hola " + cli.primer_nombre + " " + cli.primer_apellido + " has pedido recuperar tu contraseña, la cual es: "
+                + cli.contrasenna + " ,pero recuerda que recomendamos que cambies tu contrseña lo antes posible. Atte. Soporte CBR.",
+                recipientMail: cli.correo_electronico
+
+                );
+
+            }
+        }
+
         //Conexión BD
         private void Conectar()
         {
@@ -46,8 +74,12 @@ namespace UniOnline
         }
 
 
+
         private void btnOlvidarCon_Click(object sender, RoutedEventArgs e)
         {
+            RecuperarContraseña mod = new RecuperarContraseña();
+            this.Close();
+            mod.ShowDialog();
 
         }
 

@@ -145,6 +145,9 @@
     <Compile Include="Recepcion\WPF_Recepcion.xaml.cs">
       <DependentUpon>WPF_Recepcion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RecuperarContraseña.xaml.cs">
+      <DependentUpon>RecuperarContraseña.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Trabajador\WPF_ConsultarTramite.xaml.cs">
       <DependentUpon>WPF_ConsultarTramite.xaml</DependentUpon>
     </Compile>
@@ -237,6 +240,10 @@
     <Page Include="Recepcion\WPF_Recepcion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecuperarContraseña.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Trabajador\WPF_ConsultarTramite.xaml">
       <SubType>Designer</SubType>

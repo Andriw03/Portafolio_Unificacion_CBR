@@ -3,8 +3,9 @@
     "",
     "\\Controlador",
     "\\UniOnline",
+    "\\UniOnline\\Moderador",
     "\\UniOnline\\Trabajador"
   ],
-  "SelectedNode": "\\UniOnline\\UniOnline.sln",
+  "SelectedNode": "\\UniOnline\\Moderador\\WPF_ModificarPerfil.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

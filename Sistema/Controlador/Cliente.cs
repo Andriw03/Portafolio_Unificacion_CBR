@@ -18,6 +18,8 @@ namespace Controlador
         public string segundo_nombre { get; set; }
         public string primer_apellido { get; set; }
         public string segundo_apellido { get; set; }
+        public string contrasenna { get; set; }
+        
         public string correo_electronico { get; set; }
         public int telefono { get; set; }
 
@@ -34,6 +36,7 @@ namespace Controlador
             primer_apellido = string.Empty;
             segundo_apellido = string.Empty;
             correo_electronico = string.Empty;
+            contrasenna = string.Empty;
             telefono = 0;
         }
 
@@ -150,6 +153,34 @@ namespace Controlador
             }
         }
 
+
+        public Cliente RecuperarContraseña(string userRequesting)
+        {
+            Cliente cli = new Cliente();
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT * FROM UNIONLINE.USUARIO WHERE correo_electronico = '" + userRequesting + "' ", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read() == true)
+                {
+                    cli.primer_apellido = rd["primer_apellido"].ToString();
+                    cli.primer_nombre = rd["primer_nombre"].ToString();
+                    cli.contrasenna = rd["contrasenna"].ToString();
+                    cli.correo_electronico = rd["correo_electronico"].ToString();
+
+
+
+                }
+                rd.Close();
+                return cli;
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
 
 
     }
