@@ -133,6 +133,9 @@
     <Compile Include="Moderador\WPF_Moderador_Soporte_Tickets.xaml.cs">
       <DependentUpon>WPF_Moderador_Soporte_Tickets.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Moderador\WPF_ModificarPerfil.xaml.cs">
+      <DependentUpon>WPF_ModificarPerfil.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Recepcion\Detalles_Solicitud.xaml.cs">
       <DependentUpon>Detalles_Solicitud.xaml</DependentUpon>
     </Compile>
@@ -213,6 +216,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Moderador\WPF_Moderador_Soporte_Tickets.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Moderador\WPF_ModificarPerfil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

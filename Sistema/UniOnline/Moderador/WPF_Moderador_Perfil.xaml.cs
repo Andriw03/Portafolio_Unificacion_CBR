@@ -30,6 +30,8 @@ namespace UniOnline.Moderador
             
         }
 
+        
+
     
         Conexion con = new Conexion();
         private void Conectar()
@@ -89,31 +91,31 @@ namespace UniOnline.Moderador
             wpfSoporte.ShowDialog();
         }
 
-        private void btnBuscar_Click(object sender, RoutedEventArgs e)
-        {
-            Cliente cli = new Cliente();
+        //private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Cliente cli = new Cliente();
 
-            if(txtRutCliente.Text != string.Empty)
-            {
-                try
-                {
-                    cli = cli.BuscarCliente(txtRutCliente.Text);
-                    if (cli.ExisteCliente(txtRutCliente.Text))
-                    {
-                        datagridPerfil.FindName(txtRutCliente.Text);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Cliente no encontrado");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-            }
+        //    if(txtRutCliente.Text != string.Empty)
+        //    {
+        //        try
+        //        {
+        //            cli = cli.BuscarCliente(txtRutCliente.Text);
+        //            if (cli.ExisteCliente(txtRutCliente.Text))
+        //            {
+        //                datagridPerfil.FindName(txtRutCliente.Text);
+        //            }
+        //            else
+        //            {
+        //                MessageBox.Show("Cliente no encontrado");
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show(ex.ToString());
+        //        }
+        //    }
 
-        }
+        //}
 
         private void datagridPerfil_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -122,7 +124,8 @@ namespace UniOnline.Moderador
 
         private void btnEditar_Click(object sender, RoutedEventArgs e)
         {
-            
+            WPF_ModificarPerfil wpfModificarPerfil = new WPF_ModificarPerfil();
+            wpfModificarPerfil.ShowDialog();
            
 
 
