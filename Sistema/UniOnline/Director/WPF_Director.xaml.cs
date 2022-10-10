@@ -46,11 +46,12 @@ namespace UniOnline.Director
             {
                 try
                 {
+                    Hashing hash = new Hashing();
                     Usuario usu = new Usuario();
                     if (!usu.ExisteUsuario(txtBoxRUT.Text))
                     {
                         usu.rut_usuario = txtBoxRUT.Text;
-                        usu.contrasenna = txtBoxContra.Text;
+                        usu.contrasenna = hash.ToSHA512(txtBoxContra.Text);
                         usu.primer_nombre = txtBoxNombre.Text;
                         usu.segundo_nombre = txtBoxSNombre.Text;
                         usu.primer_apellido = txtBoxApellido.Text;

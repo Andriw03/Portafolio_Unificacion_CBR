@@ -52,6 +52,7 @@ namespace UniOnline.Director
         {
             if (txtBoxRUT.Text != string.Empty)
             {
+                Hashing hash = new Hashing();
                 Usuario usu = new Usuario();
                 usu = usu.BuscarUsuario(txtBoxRUT.Text);
                 if (usu != null)
@@ -62,7 +63,7 @@ namespace UniOnline.Director
                     txtBoxSApellido.Text = usu.segundo_apellido;
                     txtBoxTelefono.Text = usu.telefono;
                     txtBoxCorreo.Text = usu.correo_electronico;
-                    txtBoxContra.Text = usu.contrasenna;
+                    txtBoxContra.Text =usu.contrasenna;
                     if (usu.id_tipoU == 4)
                     {
                         rdBtn_Trabajador.IsChecked = true;
@@ -138,7 +139,8 @@ namespace UniOnline.Director
                     {
                         MessageBox.Show("Seleccione un rol");
                     }
-                    if (usu.ModificarUsuario(txtBoxRUT.Text, txtBoxNombre.Text, txtBoxSNombre.Text, txtBoxApellido.Text, txtBoxSApellido.Text, txtBoxTelefono.Text, txtBoxCorreo.Text, txtBoxContra.Text, idTUser))
+                    Hashing hash = new Hashing();
+                    if (usu.ModificarUsuario(txtBoxRUT.Text, txtBoxNombre.Text, txtBoxSNombre.Text, txtBoxApellido.Text, txtBoxSApellido.Text, txtBoxTelefono.Text, txtBoxCorreo.Text, hash.ToSHA512(txtBoxContra.Text), idTUser))
 
                     {
 

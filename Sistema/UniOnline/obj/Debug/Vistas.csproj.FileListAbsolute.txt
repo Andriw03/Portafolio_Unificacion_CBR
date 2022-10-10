@@ -334,10 +334,8 @@ D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\WPF_
 D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.Form_SolicitudModificar.resources
 D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_MainDirector.g.cs
 D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_MainDirector.baml
-D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\MoonPdfLib.dll
 D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\PdfSharp.Charting.dll
 D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\PdfSharp.dll
-D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\MouseKeyboardActivityMonitor.dll
 D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\PdfSharp.xml
 D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\PdfSharp.Charting.xml
 D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\de\PdfSharp.resources.dll
@@ -673,3 +671,9 @@ D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_VistaDoc.baml
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\WPF_PerfilUsuario.baml
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.Form_SolicitudModificar.resources
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_ModificarPerfil.g.cs
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\RecuperarContraseña.g.cs
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarDueño.g.cs
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_ModificarPerfil.baml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\RecuperarContraseña.baml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarDueño.baml
