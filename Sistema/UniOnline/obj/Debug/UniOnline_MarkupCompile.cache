@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\
 UniOnline
 none
 false
 DEBUG;TRACE
-D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\App.xaml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\App.xaml
 24-2117689841
 
-30-1512873070
-37-119003177
+311939734859
+372088881716
 Director\WPF_Director.xaml;Director\WPF_Informes.xaml;Director\WPF_MainDirector.xaml;Director\WPF_ModificarUsuario.xaml;MainWindow.xaml;Moderador\WPF_Moderador.xaml;Moderador\WPF_Moderador_Perfil.xaml;Moderador\WPF_Moderador_Soporte.xaml;Moderador\WPF_Moderador_Soporte_Tickets.xaml;Moderador\WPF_ModificarPerfil.xaml;Recepcion\Detalles_Solicitud.xaml;Recepcion\WPF_MainRecepcion.xaml;Recepcion\WPF_Recepcion.xaml;RecuperarContraseña.xaml;Trabajador\WPF_ConsultarTramite.xaml;Trabajador\WPF_EditarDueño.xaml;Trabajador\WPF_EditarProp.xaml;Trabajador\WPF_Trabajador.xaml;Trabajador\WPF_Trabajador_Dueño.xaml;Trabajador\WPF_Trabajador_Prop.xaml;Trabajador\WPF_Trabajador_Tra.xaml;Trabajador\WPF_VisorSolicitud.xaml;Trabajador\WPF_VistaDoc.xaml;WPF_PerfilUsuario.xaml;
 
-False
+True
 

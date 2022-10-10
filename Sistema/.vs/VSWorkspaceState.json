@@ -3,9 +3,10 @@
     "",
     "\\Controlador",
     "\\UniOnline",
+    "\\UniOnline\\Director",
     "\\UniOnline\\Moderador",
     "\\UniOnline\\Trabajador"
   ],
-  "SelectedNode": "\\Controlador\\Cliente.cs",
+  "SelectedNode": "\\UniOnline\\Director\\WPF_ModificarUsuario.xaml.cs",
   "PreviewInSolutionExplorer": false
 }
