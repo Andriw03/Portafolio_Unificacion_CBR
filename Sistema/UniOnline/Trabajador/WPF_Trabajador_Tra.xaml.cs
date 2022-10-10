@@ -23,8 +23,21 @@ namespace UniOnline.Trabajador
             InitializeComponent();
             Conectar();
             LimpiarTra();
+            LlenadoEstado();
+            LlenadoEstadoListar();
             LlenarCmbTramite();
             LlenarCmbListar();
+        }
+
+        private void LlenadoEstado()
+        {
+            cmbEstado.Items.Add("Vigente");
+            cmbEstado.Items.Add("No vigente");
+        }
+        private void LlenadoEstadoListar()
+        {
+            cmbEstadoListar.Items.Add("Vigente");
+            cmbEstadoListar.Items.Add("No vigente");
         }
 
         private void LimpiarTra()
@@ -62,7 +75,7 @@ namespace UniOnline.Trabajador
             }
             else
             {
-                MessageBox.Show("Error", "Error Conexion T_TRAMITE");
+                MessageBox.Show("Error Conexion T_TRAMITE", "Advertencia");
             }
         }
 
@@ -78,7 +91,7 @@ namespace UniOnline.Trabajador
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (txtNomTra.Text != string.Empty && txtValorTra.Text != string.Empty && cmbTipoTra.SelectedItem != null)
+            if (txtNomTra.Text != string.Empty && txtValorTra.Text != string.Empty && cmbEstado.SelectedItem != null && cmbTipoTra.SelectedItem != null)
             {
                 try
                 {
@@ -87,13 +100,28 @@ namespace UniOnline.Trabajador
                     {
                         Tra.NombreTra = txtNomTra.Text;
                         Tra.ValorTra = txtValorTra.Text;
-                        Tra.TipoTramite = Int32.Parse(cmbTipoTra.SelectedIndex.ToString());
-                        MessageBox.Show(Tra.InsertarTramite(Tra), "Mensaje:");
-                        LimpiarTra();
+                        if (cmbEstado.SelectedIndex == 0)
+                        {
+                            Tra.Estado = "Vigente";
+                            Tra.TipoTramite = Int32.Parse(cmbTipoTra.SelectedIndex.ToString());
+                            MessageBox.Show(Tra.InsertarTramite(Tra), "Mensaje:");
+                            LimpiarTra();
+                        }
+                        else if (cmbEstado.SelectedIndex == 1)
+                        {
+                            Tra.Estado = "No vigente";
+                            Tra.TipoTramite = Int32.Parse(cmbTipoTra.SelectedIndex.ToString());
+                            MessageBox.Show(Tra.InsertarTramite(Tra), "Mensaje:");
+                            LimpiarTra();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El Trámite ya se encuentra registrado.", "Advertencia");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Error, El Trámite ya se encuentra registrado.");
+                        MessageBox.Show("El Trámite ya se encuentra registrado.", "Advertencia");
                     }
                 }
                 catch (Exception ex)
@@ -105,7 +133,7 @@ namespace UniOnline.Trabajador
             }
             else
             {
-                MessageBox.Show("Error, Debe ingresar los campos por favor.");
+                MessageBox.Show("Debe ingresar los campos por favor.", "Advertencia");
             }
         }
 
@@ -127,6 +155,7 @@ namespace UniOnline.Trabajador
                         try
                         {
                             dtgTramite.ItemsSource = tabla.DefaultView;
+                            cmbEstadoListar.Visibility = Visibility.Visible;
                         }
                         catch (Exception ex)
                         {
@@ -135,12 +164,12 @@ namespace UniOnline.Trabajador
                     }
                     else
                     {
-                        MessageBox.Show("Tabla sin registro", "Error");
+                        MessageBox.Show("Tabla sin registro", "Advertencia");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Propiedad no encontrada", "Error");
+                    MessageBox.Show("Propiedad no encontrada", "Advertencia");
                 }
             }
             else
@@ -169,9 +198,118 @@ namespace UniOnline.Trabajador
             }
             else
             {
-                MessageBox.Show("Error", "Error Conexion T_TRAMITE");
+                MessageBox.Show("Error Conexion T_TRAMITE", "Advertencia");
             }
         }
-    }
 
+        private void cmbEstadoListar_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmbListarTra.SelectedIndex != 0 && cmbEstadoListar != null)
+            {
+                Tramite tra = new Tramite();
+                if (tra.ExisteTipo(cmbListarTra.SelectedIndex.ToString()))
+                {
+                    if (cmbEstadoListar.SelectedIndex == 0)
+                    {
+                        string estado = "Vigente";
+                        DataTable tabla = tra.MostrarEstado(cmbListarTra.SelectedIndex, estado);
+                        if (tabla != null)
+                        {
+                            try
+                            {
+                                dtgTramite.ItemsSource = tabla.DefaultView;
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tabla sin registro", "Advertencia");
+                        }
+                    }
+                    else if (cmbEstadoListar.SelectedIndex == 1)
+                    {
+                        string estado = "No vigente";
+                        DataTable tabla = tra.MostrarEstado(cmbListarTra.SelectedIndex, estado);
+                        if (tabla != null)
+                        {
+                            try
+                            {
+                                dtgTramite.ItemsSource = tabla.DefaultView;
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tabla sin registro", "Advertencia");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tabla sin registro", "Advertencia");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Tabla sin registro", "Advertencia");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe llenar todos los campos para buscar", "Advertencia");
+            }
+        }
+
+        private void btnCamEstado_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView dataView = (DataRowView)((Button)e.Source).DataContext;
+            try
+            {
+                int tramid = Int32.Parse(dataView[0].ToString());
+                string estado = dataView[3].ToString();
+                if (estado == "Vigente")
+                {
+                    estado = "No vigente";
+                    Tramite tram = new Tramite();
+                    if (tram.ModificarEstado(tramid, estado))
+                    {
+                        MessageBox.Show("Estado del trámite modificado con Éxito.");
+                        dtgTramite.Items.Refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al modificar el estado del trámite.", "Advertencia");
+                    }
+                }
+                else if (estado == "No vigente")
+                {
+                    estado = "Vigente";
+                    Tramite tram = new Tramite();
+                    if (tram.ModificarEstado(tramid, estado))
+                    {
+                        MessageBox.Show("Estado del trámite modificado con Éxito.");
+                        dtgTramite.Items.Refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al modificar el estado del trámite.", "Advertencia");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error al modificar el estado del trámite.", "Advertencia");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+    }
 }

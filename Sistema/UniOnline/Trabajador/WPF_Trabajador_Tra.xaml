@@ -51,10 +51,11 @@
                     <TextBox x:Name="txtNomTra" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalAlignment="Center" Width="310" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
                     <Label Content="Valor del Trámite:" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2"/>
                     <TextBox x:Name="txtValorTra" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" MaxLength="15" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-                    <Label Content="Tipo de Trámite:" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="3" Grid.Row="3"/>
-                    <ComboBox x:Name="cmbTipoTra" FontSize="15" Height="30" Width="290" IsEditable="True" Text="Seleccione un tipo de trámite" IsReadOnly="True" Focusable="False" SelectionChanged="cmbTipoTra_SelectionChanged" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3"/>
-
-                    <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="40" Width="100" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnGuardar_Click" Grid.Column="1" Grid.Row="6"/>
+                    <Label Content="Tipo de Trámite:" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"/>
+                    <ComboBox x:Name="cmbTipoTra" FontSize="15" Height="30" Width="290" IsEditable="True" Text="Seleccione un tipo de trámite" IsReadOnly="True" Focusable="False" SelectionChanged="cmbTipoTra_SelectionChanged" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"/>
+                    <Label Content="Estado" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2"/>
+                    <ComboBox x:Name="cmbEstado" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2" FontSize="15" Height="30" Width="170" IsEditable="True" Text="Seleccione un estado" IsReadOnly="True" Focusable="False"/>
+                        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="40" Width="100" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnGuardar_Click" Grid.Column="1" Grid.Row="6"/>
                     
                 </Grid>
             </TabItem>
@@ -84,15 +85,28 @@
 
                     <TextBlock Width="350" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Foreground="#FF010326" FontSize="25" TextWrapping="Wrap" FontWeight="Bold"><Run Text="Seleccione un tipo de Trámite"/></TextBlock>
 
-                    <ComboBox x:Name="cmbListarTra" FontSize="15" Height="30" Width="290" IsEditable="True" Text="Seleccione un tipo de trámite" IsReadOnly="True" Focusable="False" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" SelectionChanged="cmbListarTra_SelectionChanged"/>
+                    <ComboBox x:Name="cmbListarTra" FontSize="15" Height="30" Width="290" IsEditable="True" Text="Seleccione un tipo de trámite" IsReadOnly="True" Focusable="False" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" SelectionChanged="cmbListarTra_SelectionChanged"/>
+
+                    <ComboBox x:Name="cmbEstadoListar" FontSize="15" Height="30" Width="170" IsEditable="True" Text="Seleccione un estado" IsReadOnly="True" Focusable="False" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" SelectionChanged="cmbEstadoListar_SelectionChanged" Visibility="Hidden"/>
 
                     <Button x:Name="btnBuscarTra" Content="Buscar" Height="40" Width="100" Grid.Column="3" Grid.Row="3" Click="btnBuscarTra_Click" Background="#FF393E59" Foreground="#FFF0F2F2"/>
 
-                    <DataGrid x:Name="dtgTramite" AutoGenerateColumns="False" CanUserAddRows="False" Width="700" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" Grid.RowSpan="3">
+                    <DataGrid x:Name="dtgTramite" AutoGenerateColumns="False" CanUserAddRows="False" Width="762" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" Grid.RowSpan="3">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Nombre" Width="310" Binding="{Binding Path = 'nombre_tramite'}" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="Valor" Width="120" Binding="{Binding Path = 'valor_tramite'}" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="Tipo" Width="310" Binding="{Binding Path = 'nombre_tipoT'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="ID" Width="38" FontSize="20" Binding="{Binding Path = 'id_tramite'}" IsReadOnly="True" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Nombre" Width="250" FontSize="20" Binding="{Binding Path = 'nombre_tramite'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Valor" Width="100" FontSize="20" Binding="{Binding Path = 'valor_tramite'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Estado" Width="100" FontSize="20" Binding="{Binding Path= 'estado'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Tipo" Width="250" FontSize="20" Binding="{Binding Path = 'nombre_tipoT'}" IsReadOnly="True"/>
+                            <DataGridTemplateColumn Header="Editar" Width="160">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button x:Name="btnCamEstado" Background="#FF010326" Foreground="#FFF0F2F2" Click="btnCamEstado_Click">
+                                            <TextBlock Text="Cambiar estado" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
                         </DataGrid.Columns>
                     </DataGrid>
 

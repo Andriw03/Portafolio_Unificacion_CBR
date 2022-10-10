@@ -57,10 +57,28 @@ namespace UniOnline.Trabajador
                         due.SegundoNombre = txtSegundoNombre.Text;
                         due.PrimerApellido = txtPrimerApellido.Text;
                         due.SegundoApellido = txtSegundoApellido.Text;
-                        due.CorreoElectronico = txtCorreo.Text;
-                        due.Telefono = txtTelefono.Text;
-                        MessageBox.Show(due.Insertar(due),"Mensaje:");
-                        limpiarDuenno();
+
+                        string email = txtCorreo.Text;
+                        if (!due.CorreoValido(email) == true)
+                        {
+                            AdvertenciaCor.Text = "El formato del correo es invalido.";
+                        }
+                        else
+                        {
+                            AdvertenciaCor.Text = string.Empty;
+                            due.CorreoElectronico = txtCorreo.Text;
+                            string texto = txtTelefono.Text;
+                            if (texto.Length <= 8)
+                            {
+                                AdvertenciaTel.Text = "Teléfono debe tener al menos 9 dígitos.";
+                            }
+                            else
+                            {
+                                AdvertenciaTel.Text = string.Empty;
+                                due.Telefono = txtTelefono.Text;
+                                MessageBox.Show(due.Insertar(due), "Mensaje:");
+                            }
+                        }
                     }
                     else
                     {

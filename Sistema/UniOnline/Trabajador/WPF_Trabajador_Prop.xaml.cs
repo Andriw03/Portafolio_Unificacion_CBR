@@ -210,10 +210,11 @@ namespace UniOnline.Trabajador
             {
                 Duenno duenno = new Duenno();
                 duenno = duenno.BuscarDuenno(txtDueño.Text);
-                if (duenno != null)
+                if (duenno.RutDuenno == txtDueño.Text)
                 {
                     txtRutDueño.Text = duenno.RutDuenno;
                     txtNombreDueño.Text = duenno.PrimerNombre + ' ' + duenno.PrimerApellido;
+                    btnModificarDuenno.Visibility = Visibility.Visible;
                 }
                 else
                 {
@@ -319,6 +320,14 @@ namespace UniOnline.Trabajador
                 MessageBox.Show(ex.Message);
             }
             
+        }
+
+        private void btnModificarDuenno_Click(object sender, RoutedEventArgs e)
+        {
+            Duenno due = new Duenno();
+            WPF_EditarDueño edue = new WPF_EditarDueño();
+            edue.ObtenerDuenno = due.BuscarDuenno(txtDueño.Text);
+            edue.ShowDialog();
         }
     }
 }

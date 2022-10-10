@@ -191,5 +191,13 @@ namespace UniOnline.Trabajador
                 MessageBox.Show("Error en el Eliminar", "Error");
             }
         }
+
+        private void btnModificarDuenno_Click(object sender, RoutedEventArgs e)
+        {
+            Duenno due = new Duenno();
+            WPF_EditarDueño edue = new WPF_EditarDueño();
+            edue.ObtenerDuenno = due.BuscarDuenno(txtDueño.Text);
+            edue.ShowDialog();
+        }
     }
 }

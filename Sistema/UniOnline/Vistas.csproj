@@ -145,6 +145,9 @@
     <Compile Include="Trabajador\WPF_ConsultarTramite.xaml.cs">
       <DependentUpon>WPF_ConsultarTramite.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Trabajador\WPF_EditarDueño.xaml.cs">
+      <DependentUpon>WPF_EditarDueño.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Trabajador\WPF_EditarProp.xaml.cs">
       <DependentUpon>WPF_EditarProp.xaml</DependentUpon>
     </Compile>
@@ -231,6 +234,10 @@
     <Page Include="Trabajador\WPF_ConsultarTramite.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Trabajador\WPF_EditarDueño.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Trabajador\WPF_EditarProp.xaml">
       <SubType>Designer</SubType>

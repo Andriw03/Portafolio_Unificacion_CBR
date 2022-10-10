@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
+using System.Windows;
 
 namespace Controlador
 {
@@ -35,6 +37,36 @@ namespace Controlador
             CorreoElectronico = string.Empty;
             Telefono = string.Empty;
         }
+
+        public String Formatear(String rut)
+        {
+            int cont = 0;
+            String format;
+            if (rut.Length == 0)
+            {
+                return "";
+            }
+            else
+            {
+                rut = rut.Replace(".", "");
+                rut = rut.Replace("-", "");
+                format = "-" + rut.Substring(rut.Length - 1);
+                for (int i = rut.Length - 2; i >= 0; i--)
+                {
+
+                    format = rut.Substring(i, 1) + format;
+
+                    cont++;
+                    if (cont == 3 && i != 0)
+                    {
+                        format = "." + format;
+                        cont = 0;
+                    }
+                }
+                return format;
+            }
+        }
+
         public Duenno BuscarDuenno(string rut)
         {
             try
@@ -98,6 +130,38 @@ namespace Controlador
             {
                 return true;
 
+            }
+        }
+
+        public bool CorreoValido(string correo)
+        {
+            Regex correoregex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", RegexOptions.IgnoreCase);
+
+            return correoregex.IsMatch(correo);
+        }
+
+        public bool ModificarDuenno(string rutDuenno, string PNombreDuenno, string SNombreDuenno, string PApellidoDuenno, string SApellidoDuenno, string CorreoDuenno, string TelefonoDuenno)
+        {
+            try
+            {
+                Conectar();
+                int idDuenno = 0;
+                cmd = new MySqlCommand("SELECT id_duenno FROM UNIONLINE.DUENNO_PROP where rut_duenno = '" + rutDuenno + "';", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    idDuenno = Int32.Parse(rd["id_duenno"].ToString());
+                }
+                rd.Close();
+                cmd = new MySqlCommand("UPDATE `UNIONLINE`.`DUENNO_PROP` SET `primer_nombre` = '" + PNombreDuenno + "', `segundo_nombre` = '" + SNombreDuenno + "', `primer_apellido` = '" + PApellidoDuenno + "', `segundo_apellido` = '" + SApellidoDuenno + "', `correo_electronico` = '" + CorreoDuenno + "', `telefono` = '" + TelefonoDuenno + "' WHERE `id_duenno` = '" + idDuenno + "'; ", conex);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
             }
         }
 
