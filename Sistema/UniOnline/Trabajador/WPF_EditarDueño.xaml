@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline.Trabajador"
         mc:Ignorable="d"
-        Title="CBR UniOnline" Height="600" Width="900" WindowStartupLocation="CenterScreen">
+        Title="CBR UniOnline" Height="600" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="CanResize">
     <Window.Resources>
         <!-- Inicio Style-->
 

@@ -9,21 +9,58 @@
 
     <Window.Resources>
         <!--Segoe UI Emoji-->
+        <SolidColorBrush x:Key="PrimaryBackColor" Color="#FF010623"/>
+        <SolidColorBrush x:Key="SecondaryBackColor" Color="#FF393E59"/>
+        <SolidColorBrush x:Key="PrimaryTabColor" Color="#6FBFBF"/>
+
+        <SolidColorBrush x:Key="PrimaryTextColor" Color="#FFF0F2F2"/>
+        <SolidColorBrush x:Key="SecondaryTextColor" Color="#FF82D9D9"/>
+
+        <SolidColorBrush x:Key="PrimaryGreyColor" Color="#BBC1D1"/>
+
+
         <Style x:Key="TabItemStyle" TargetType="TabItem">
-            <Setter Property = "Background" Value="#010326"/>
-            <Setter Property = "Foreground" Value="#F0F2F2"/>
-            <Setter Property = "Margin" Value = "0,0,5,0 " />
-            <Setter Property = "Width" Value = "100 "/>
-            <Setter Property = "Padding" Value = "10,5"/>
+            <Setter Property = "Background" Value="Transparent"/>
+            <Setter Property = "BorderBrush" Value="Transparent"/>
+            <Setter Property = "BorderThickness" Value="0"/>
+            <Setter Property = "Foreground" Value="{DynamicResource PrimaryTextColor}"/>
+            <Setter Property = "Margin" Value = "10,0,10,3" />
+            <Setter Property = "Width" Value = "150"/>
+            <Setter Property = "Padding" Value = "15"/>
+            <Setter Property = "FontWeight" Value = "500"/>
+            <Setter Property = "VerticalAlignment" Value = "Top"/>
+            <Setter Property = "HorizontalAlignment" Value = "Left"/>
             <Setter Property = "FontFamily" Value="Segoe UI Emoji"/>
+            <Setter Property = "Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Grid SnapsToDevicePixels="True">
+                            <Border CornerRadius="10" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}"
+                                    BorderBrush="{TemplateBinding BorderBrush}" Margin="{TemplateBinding Padding}"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True"
+                                              Margin="{TemplateBinding Margin}" RecognizesAccessKey="True" ContentSource="Header"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property = "Background" Value="{DynamicResource SecondaryBackColor}"/>
+                                <Setter Property = "Foreground" Value="{DynamicResource PrimaryGreyColor}"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property = "Background" Value="{DynamicResource PrimaryBackColor}"/>
+                                <Setter Property = "Foreground" Value="{DynamicResource SecondaryTextColor}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Window.Resources>
 
-    <Grid>
+    <Grid Background="#FF010623">
 
         <TabControl>
             <TabItem Header="Agregar Trámite" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="Auto" HorizontalAlignment="Center">
-                <Grid Background="#FFF0F2F2" Margin="0,0,0,0">
+                <Grid Background="#FFF0F2F2">
 
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="20"/>

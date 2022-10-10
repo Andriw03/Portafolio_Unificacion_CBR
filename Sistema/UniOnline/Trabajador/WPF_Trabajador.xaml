@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline.Trabajador"
         mc:Ignorable="d"
-        Title="CBR UniOnline" Height="500" Width="900" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+        Title="CBR UniOnline" Height="500" Width="910" Closing="Window_Closing" WindowStartupLocation="CenterScreen" ResizeMode="CanResize">
     <Grid>
-        <Rectangle HorizontalAlignment="Center" Height="87" Stroke="Black" VerticalAlignment="Top" Width="892" Fill="#FF010623"/>
+        <Rectangle HorizontalAlignment="Stretch" Height="87" Stroke="Black" VerticalAlignment="Top" Width="Auto" MinWidth="892" Fill="#FF010623"/>
         <TextBlock HorizontalAlignment="Left" Margin="12,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="189" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="30" Text="CBRS de Chile"/>
         <Button x:Name="btnInicio" Content="Inicio" Margin="231,32,0,0" VerticalAlignment="Top" Width="51" HorizontalAlignment="Left" Background="#FF010623" Click="Button_Inicio" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623" FontFamily="Segoe UI Emoji"/>
         <Button x:Name="btnGestionProp" Content="Gestión Propiedad" HorizontalAlignment="Left" Margin="287,32,0,0" VerticalAlignment="Top" Width="142" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" Click="Button_Gestion_Prop" FontFamily="Segoe UI Emoji"/>
@@ -20,7 +20,7 @@
         <Label x:Name="LabelSaludo" Content="" HorizontalAlignment="Left" Height="59" Margin="151,289,0,0" VerticalAlignment="Top" Width="614" FontSize="24" FontFamily="Segoe UI Emoji"/>
         <Label x:Name="LabelMotivacion" Content="" HorizontalAlignment="Left" Height="59" Margin="104,367,0,0" VerticalAlignment="Top" Width="698" FontSize="24" FontFamily="Segoe UI Emoji"/>
         <Button x:Name="btnPerfil" Content="Perfil" HorizontalAlignment="Left" Margin="705,32,0,0" VerticalAlignment="Top" Width="60" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" FontFamily="Segoe UI Emoji" Click="btnPerfil_Click"/>
-        <Button x:Name="btnCerrarSesion" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="786,32,0,0" VerticalAlignment="Top" Width="96" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16"  FontFamily="Segoe UI Emoji" Click="btnCerrarSesion_Click"/>
+        <Button x:Name="btnCerrarSesion" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="786,32,0,0" VerticalAlignment="Top" Width="100" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16"  FontFamily="Segoe UI Emoji" Click="btnCerrarSesion_Click"/>
 
     </Grid>
 </Window>

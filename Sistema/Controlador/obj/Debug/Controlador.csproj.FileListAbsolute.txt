@@ -372,3 +372,41 @@ C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema
 C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CopyComplete
 C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.dll
 C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.barcodes.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.commons.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.forms.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.io.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.kernel.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.layout.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.pdfa.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.sign.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.styledxmlparser.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.svg.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Options.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Newtonsoft.Json.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.ValueTuple.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.barcodes.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.commons.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.forms.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.io.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.kernel.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.layout.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.pdfa.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.sign.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.styledxmlparser.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.svg.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Options.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Newtonsoft.Json.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.ValueTuple.xml
