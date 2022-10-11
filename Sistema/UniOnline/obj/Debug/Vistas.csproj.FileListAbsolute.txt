@@ -437,13 +437,11 @@ D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug
 D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Informes.g.cs
 D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Informes.baml
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\MoonPdfLib.dll
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\PdfSharp.Charting.dll
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\PdfSharp.dll
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\itext.layout.dll
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\itext.kernel.dll
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\itext.io.dll
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\MouseKeyboardActivityMonitor.dll
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\itext.commons.dll
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Newtonsoft.Json.dll
@@ -680,3 +678,6 @@ D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_ModificarPerfil.g.cs
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\RecuperarContraseña.g.cs
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarDueño.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_ModificarPerfil.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\RecuperarContraseña.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarDueño.baml
