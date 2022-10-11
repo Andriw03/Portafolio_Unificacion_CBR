@@ -89,11 +89,11 @@ namespace UniOnline
             {
                 Usuario us = new Usuario();
                 us = us.LoginUsuario(txtRut.Text);
-                if (us.rut_usuario != string.Empty)
+                if (us.rut_usuario != string.Empty && us.contrasenna == txtPass.Password)
                 {
-                    if (us.id_tipoU == 2)
+                    if (us.id_tipoU == 2 )
                     {                        
-                        WPF_Informes dir = new WPF_Informes();
+                        WPF_MainDirector dir = new WPF_MainDirector();
                         this.Close();
                         dir.ShowDialog();
                         
@@ -133,7 +133,7 @@ namespace UniOnline
                 }
                 else
                 {
-                    MessageBox.Show("Usuario no existe","Error");
+                    MessageBox.Show("RUT o Contraseña Incorrectos","Error");
                 }
             }
             else
