@@ -81,7 +81,9 @@ namespace UniOnline.Trabajador
             {
                 WPF_VisorSolicitud solicitud = new WPF_VisorSolicitud();
                 solicitud.ObtenerSeguimiento = dataView[3].ToString();
+                this.Hide();
                 solicitud.ShowDialog();
+                this.Show();
             }
             catch (Exception ex)
             {
@@ -146,6 +148,11 @@ namespace UniOnline.Trabajador
             txtRut.Text = FormatearRut(txtRut.Text);
             txtRut.SelectionStart = txtRut.Text.Length;
             txtRut.SelectionLength = 0;
+        }
+
+        private void btn_Volver_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

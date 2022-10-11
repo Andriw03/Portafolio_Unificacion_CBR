@@ -72,6 +72,14 @@ namespace UniOnline.Trabajador {
         #line default
         #line hidden
         
+        
+        #line 85 "..\..\..\Trabajador\WPF_ConsultarTramite.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button btn_Volver;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -125,6 +133,15 @@ namespace UniOnline.Trabajador {
             return;
             case 5:
             this.txtNumeroSeguimiento = ((System.Windows.Controls.TextBox)(target));
+            return;
+            case 6:
+            this.btn_Volver = ((System.Windows.Controls.Button)(target));
+            
+            #line 85 "..\..\..\Trabajador\WPF_ConsultarTramite.xaml"
+            this.btn_Volver.Click += new System.Windows.RoutedEventHandler(this.btn_consultar_Click);
+            
+            #line default
+            #line hidden
             return;
             }
             this._contentLoaded = true;

@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Controlador;
+using MySql.Data.MySqlClient;
 using MessageBox = System.Windows.MessageBox;
 
 namespace UniOnline.Trabajador
@@ -105,24 +106,101 @@ namespace UniOnline.Trabajador
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            Cliente cli = new Cliente();
-            if (cli.ModificarSolicitud(lbNumeroSO.Text, cmbEstado.SelectedItem.ToString(),txtComentario.Text))
+            if(txtFileName.Text != string.Empty)
             {
-                MessageBox.Show("Solicitud Guardada con éxito");
+                Cliente cli = new Cliente();
+                if (Update(sender, e))
+                {
+                    if (cli.ModificarSolicitud(lbNumeroSO.Text, cmbEstado.SelectedItem.ToString(), txtComentario.Text))
+                    {
+
+                        MessageBox.Show("Solicitud Guardada con éxito");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al guardar la solicitud", "Error");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error al subir documento", "Error");
+                }
             }
             else
             {
-                MessageBox.Show("Error al guardar la solicitud","Error");
+                lbErrorNombre.Content = "Debe ingresar un nombre";
+                lbErrorNombre.Visibility = Visibility.Visible;
             }
+            
+            
         }
 
         private void btnBrowse_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog opendlg = new OpenFileDialog();
-            opendlg.Filter = "PDF Files |*.pdf||*.pdf";
-            opendlg.ShowDialog();
-            labelURL.Content = opendlg.FileName;
-            string nombreDoc = labelURL.Content.ToString();
-            txtFileName.Text = string.Join(" ", nombreDoc.Split(' ').Skip(0).Take(2).ToArray());        }
+            try
+            {
+                OpenFileDialog opendlg = new OpenFileDialog();
+                opendlg.Filter = "PDF Files |*.pdf||*.pdf";
+                opendlg.ShowDialog();
+                labelURL.Content = opendlg.FileName;
+                MessageBox.Show("Documento subido con éxito");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al subir el documento "+ ex.Message,"Error");
+            }
+            
+
+
+        }
+        private bool Update(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                //Checking if the label is empty    
+                if (labelURL.Content.ToString() == "URL") //For WPF and labelURL.Text for Windows Form    
+                {
+                    MessageBox.Show("Seleccione un archivo PDF para subir...", "", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                else
+                {
+                    Cliente cli = new Cliente();
+                    List<string> soli = new List<string>();
+                    soli = cli.Solicitud(lbNumeroSO.Text);
+                    int idSoli = Int32.Parse(soli[10]);
+                    //Streaming browse file and convert it into bytes    
+                    string Query = "INSERT INTO `UNIONLINE`.`DOCUMENTO` (`nombre_doc`, `doc`, `SOLICITUD_id_soli`, `TIPO_DOCUMENTO_id_tipodoc`) VALUES ('" + txtFileName.Text + "', @doc, " + idSoli + ", 2);";
+                    string URLFileName = labelURL.Content.ToString();
+                    byte[] GetPDFFileSize;
+                    FileStream stream = new FileStream(URLFileName, FileMode.Open, FileAccess.ReadWrite);
+                    BinaryReader breader = new BinaryReader(stream);
+                    GetPDFFileSize = new byte[stream.Length];
+                    GetPDFFileSize = breader.ReadBytes((int)stream.Length);
+                    stream.Close();
+                    //Mysql Update Codes    
+                    Conexion con = new Conexion();
+                    con.Conectar();
+                    MySqlCommand cmd = new MySqlCommand(Query, con.conex);
+                    var param2 = new MySqlParameter(@"doc", MySqlDbType.LongBlob, GetPDFFileSize.Length);
+                    param2.Value = GetPDFFileSize;
+                    cmd.Parameters.Add(param2);
+                    int InsertFiles = cmd.ExecuteNonQuery();
+                    if (InsertFiles > 0)
+                    {
+                        //Proceed ..     
+                        labelURL.Content = "URL";
+                    }
+                    con.conex.Close();
+                    
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
     }    
 }

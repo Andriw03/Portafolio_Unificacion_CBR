@@ -83,19 +83,25 @@ namespace UniOnline.Trabajador
         {
 
             WPF_Trabajador_Prop tprop = new WPF_Trabajador_Prop();
+            this.Hide();
             tprop.ShowDialog();
+            this.Show();
         }
 
         private void Button_Gestion_Tra(object sender, RoutedEventArgs e)
         {
             WPF_Trabajador_Tra ttra = new WPF_Trabajador_Tra();
+            this.Hide();
             ttra.ShowDialog();
+            this.Show();
         }
 
         private void Button_Consulta_Tra(object sender, RoutedEventArgs e)
         {
             WPF_ConsultarTramite consultarTramite = new WPF_ConsultarTramite();
+            this.Hide();
             consultarTramite.ShowDialog();
+            this.Show();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -116,7 +122,9 @@ namespace UniOnline.Trabajador
         {
             WPF_PerfilUsuario perfilUsuario = new WPF_PerfilUsuario();
             perfilUsuario.ObtenerUsuario = us;
+            this.Hide();
             perfilUsuario.ShowDialog();
+            this.Show();
         }
     }
 }
