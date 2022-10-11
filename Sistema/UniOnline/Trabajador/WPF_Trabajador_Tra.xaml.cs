@@ -218,6 +218,7 @@ namespace UniOnline.Trabajador
                             try
                             {
                                 dtgTramite.ItemsSource = tabla.DefaultView;
+                                
                             }
                             catch (Exception ex)
                             {
@@ -238,6 +239,7 @@ namespace UniOnline.Trabajador
                             try
                             {
                                 dtgTramite.ItemsSource = tabla.DefaultView;
+                                
                             }
                             catch (Exception ex)
                             {
@@ -278,8 +280,9 @@ namespace UniOnline.Trabajador
                     Tramite tram = new Tramite();
                     if (tram.ModificarEstado(tramid, estado))
                     {
+                        this.btnBuscarTra_Click(sender, e);
                         MessageBox.Show("Estado del trámite modificado con Éxito.");
-                        dtgTramite.Items.Refresh();
+                        
                     }
                     else
                     {
@@ -292,8 +295,9 @@ namespace UniOnline.Trabajador
                     Tramite tram = new Tramite();
                     if (tram.ModificarEstado(tramid, estado))
                     {
+                        this.btnBuscarTra_Click(sender, e);
                         MessageBox.Show("Estado del trámite modificado con Éxito.");
-                        dtgTramite.Items.Refresh();
+                        
                     }
                     else
                     {

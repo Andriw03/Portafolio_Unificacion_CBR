@@ -16,9 +16,9 @@
         <Rectangle Fill="#FF393E59" HorizontalAlignment="Left" Height="55" Margin="12,101,0,0" Stroke="Black" VerticalAlignment="Top" Width="134"/>
         <TextBlock x:Name="MyTime" HorizontalAlignment="Left" Margin="44,132,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="17" Foreground="#FFF0F2F2"/>
         <TextBlock x:Name="datelbl" HorizontalAlignment="Left" Margin="34,101,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="18" Foreground="#FFF0F2F2"/>
-        <Image HorizontalAlignment="Left" Height="202" Margin="340,0,0,181.4" VerticalAlignment="Bottom" Width="217" Source="/UniOnline;component/LogoCBR.png"/>
-        <Label x:Name="LabelSaludo" Content="" HorizontalAlignment="Left" Height="59" Margin="151,289,0,0" VerticalAlignment="Top" Width="614" FontSize="24" FontFamily="Segoe UI Emoji"/>
-        <Label x:Name="LabelMotivacion" Content="" HorizontalAlignment="Left" Height="59" Margin="104,367,0,0" VerticalAlignment="Top" Width="698" FontSize="24" FontFamily="Segoe UI Emoji"/>
+        <Image Margin="340,87,347,0" Source="/UniOnline;component/LogoCBR.png" Height="202" VerticalAlignment="Top"/>
+        <Label x:Name="LabelSaludo" Content="" Height="59" Margin="0,289,68,0" VerticalAlignment="Top" FontSize="24" FontFamily="Segoe UI Emoji" HorizontalAlignment="Center" Width="792"/>
+        <Label x:Name="LabelMotivacion" Content="" Height="59" Margin="44,367,18,0" VerticalAlignment="Top" FontSize="24" FontFamily="Segoe UI Emoji" HorizontalAlignment="Center" Width="842" />
         <Button x:Name="btnPerfil" Content="Perfil" HorizontalAlignment="Left" Margin="705,32,0,0" VerticalAlignment="Top" Width="60" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" FontFamily="Segoe UI Emoji" Click="btnPerfil_Click"/>
         <Button x:Name="btnCerrarSesion" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="786,32,0,0" VerticalAlignment="Top" Width="100" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16"  FontFamily="Segoe UI Emoji" Click="btnCerrarSesion_Click"/>
 

@@ -41,13 +41,11 @@
             <Image MinHeight="50" MinWidth="108" Source="/LogoCBR.png" Margin="21,10,21,0" VerticalAlignment="Top" Height="1451" Width="2731"/>
         </Viewbox>
 
-        <Viewbox  Width="Auto" Height="Auto" Stretch="Uniform" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"/>
-
-        <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" OpacityMask="Black" Margin="71,32,0.6,41.2" Grid.RowSpan="2">
+        <Viewbox Height="62" MaxHeight="50" MaxWidth="300" Stretch="Uniform" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" OpacityMask="Black" Margin="0,19,17.6,0" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Right" Width="293">
             <TextBox x:Name="txtRut"  MinHeight="23" MinWidth="165" TextWrapping="Wrap" Text="" Background="White" Foreground="#FF878787" KeyUp="txtRut_KeyUp"/>
         </Viewbox>
 
-        <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="4" Margin="96.8,67.4,85.6,16.8" Grid.RowSpan="2">
+        <Viewbox Height="Auto" Width="Auto"  MaxHeight="50" MaxWidth="150" Stretch="Uniform" Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="4" Margin="96.8,67.4,85.6,16.8" Grid.RowSpan="2">
             <Button x:Name="btn_consultar" Content="Consultar" MinHeight="20" MinWidth="75" Cursor="Hand" Click="btn_consultar_Click" Background="#FF393E59" BorderBrush="#FFF0F2F2" Foreground="#FF96ACAC" RenderTransformOrigin="1.218,1.218" Height="25" Width="59"/>
         </Viewbox>
 
@@ -74,13 +72,13 @@
 
 
         </Viewbox>
-        <Viewbox Height="Auto" Width="Auto" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="5" Grid.RowSpan="2" Margin="71,25,87.8,53.2">
+        <Viewbox Height="57" MaxHeight="50" MaxWidth="300" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="0,25,10.6,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="300">
             <TextBlock MinHeight="30" MinWidth="200" TextWrapping="Wrap" Foreground="#FF010326" FontSize="20" FontFamily="Segoe UI Historic" FontWeight="Bold" Text="Ingrese el rut del Cliente " Height="42" Width="242"/>
         </Viewbox>
-        <Viewbox Height="Auto" Width="Auto" Grid.Column="5" Grid.Row="3" Grid.ColumnSpan="4" Grid.RowSpan="2" Margin="109.4,25,48.6,53">
+        <Viewbox Height="57" MaxHeight="50" MaxWidth="300" Grid.Column="6" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="10,25,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="331">
             <TextBlock MinHeight="30" MinWidth="200" TextWrapping="Wrap" Foreground="#FF010326" FontSize="20" FontFamily="Segoe UI Historic" FontWeight="Bold" Text="Ingrese N° de Seguimiento" Height="42" Width="256"/>
         </Viewbox>
-        <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="4" OpacityMask="Black" Margin="122.2,32,73.6,41.2" Grid.RowSpan="2">
+        <Viewbox Height="62" MaxHeight="50" MaxWidth="300" Stretch="Uniform" Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="3" OpacityMask="Black" Margin="10,17,0,0" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="293">
             <TextBox x:Name="txtNumeroSeguimiento"  MinHeight="23" MinWidth="165" TextWrapping="Wrap" Text="" Background="White" Foreground="#FF878787"/>
         </Viewbox>
     </Grid>

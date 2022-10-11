@@ -58,7 +58,6 @@ namespace UniOnline.Trabajador
         //Llenado de campos
         private void LlenadoPropiedad(int id)
         {
-            MessageBox.Show(id.ToString());
             Propiedad prop = new Propiedad();
             DataTable tabla = prop.MostrarPropiedad(v_foja);
             Duenno duenno = new Duenno();

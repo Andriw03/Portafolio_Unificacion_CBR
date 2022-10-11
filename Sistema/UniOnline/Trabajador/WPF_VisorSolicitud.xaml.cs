@@ -115,5 +115,14 @@ namespace UniOnline.Trabajador
                 MessageBox.Show("Error al guardar la solicitud","Error");
             }
         }
+
+        private void btnBrowse_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog opendlg = new OpenFileDialog();
+            opendlg.Filter = "PDF Files |*.pdf||*.pdf";
+            opendlg.ShowDialog();
+            labelURL.Content = opendlg.FileName;
+            string nombreDoc = labelURL.Content.ToString();
+            txtFileName.Text = string.Join(" ", nombreDoc.Split(' ').Skip(0).Take(2).ToArray());        }
     }    
 }
