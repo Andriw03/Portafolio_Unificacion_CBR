@@ -11,7 +11,7 @@
         <Image HorizontalAlignment="Left" Height="191" Margin="360,92,0,0" VerticalAlignment="Top" Width="197" Source="LogoCBR.png" />
         <TextBlock HorizontalAlignment="Left" Margin="21,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="253" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="36"><Run Language="es-es" Text="CBRS de Chile."/></TextBlock>
         <Label Content="Rut" Margin="401,341,0,0" Foreground="#FF010326" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="31"/>
-        <TextBox x:Name="txtRut" Margin="437,346,0,0" TextWrapping="Wrap" Text="" Background="#FFF0F2F2" Foreground="#FF010326" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <TextBox x:Name="txtRut" Margin="437,346,0,0" TextWrapping="Wrap" Text="" Background="#FFF0F2F2" Foreground="#FF010326" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" KeyUp="txtRut_KeyUp"/>
         <Label Content="Contraseña" Margin="360,380,0,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="79"/>
         <TextBlock Margin="342,288,0,0" TextWrapping="Wrap" Foreground="#FF010326" FontSize="22" FontFamily="Segoe UI Historic" FontWeight="Bold" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250"><Run Language="es-es" Text="Ingrese sus credenciales"/></TextBlock>
         <Button x:Name="btnInicioSesion" Content="Iniciar sesión" Margin="493,433,0,0" Background="#FFF0F2F2" Foreground="#FF010326" BorderBrush="#FF010326" Click="btnInicioSesion_Click" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="99"/>

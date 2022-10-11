@@ -177,6 +177,9 @@ namespace UniOnline
             this.txtRut.Name = "txtRut";
             this.txtRut.Size = new System.Drawing.Size(284, 22);
             this.txtRut.TabIndex = 14;
+            this.txtRut.TextChanged += new System.EventHandler(this.txtRut_TextChanged);
+            this.txtRut.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRut_KeyPress);
+            this.txtRut.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRut_KeyUp);
             // 
             // Form_SolicitudModificar
             // 

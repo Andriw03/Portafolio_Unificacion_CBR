@@ -47,17 +47,14 @@
             <TextBlock Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="28" Height="35" MinWidth="265" Width="334"><Run Language="es-es" Text="CBRS de Chile"/></TextBlock>
         </Viewbox>
 
-        <Viewbox Height="Auto" Width="Auto" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="4" Grid.RowSpan="2">
-            <TextBlock MinHeight="30" MinWidth="300" TextWrapping="Wrap" Foreground="#FF010326" FontSize="20" FontFamily="Segoe UI Historic" FontWeight="Bold" Text="Ingrese el rut del Cliente o N° de seguimiento"></TextBlock>
+        <Viewbox Height="Auto" Width="Auto" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="3" Grid.RowSpan="3" Margin="113.2,13.2,31.6,12.6">
+            <TextBlock MinHeight="30" MinWidth="200" TextWrapping="Wrap" Foreground="#FF010326" FontSize="20" FontFamily="Segoe UI Historic" FontWeight="Bold" Text="Ingrese N° de seguimiento"></TextBlock>
         </Viewbox>
 
-        <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="2" OpacityMask="Black">
-            <TextBox x:Name="txt_buscar" LostFocus="txt_buscar_LostFocus" MinHeight="23" MinWidth="165" TextWrapping="Wrap" Background="White" Foreground="Black"/>
+        <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="3" OpacityMask="Black" Margin="94.2,13,31.6,12.2" Grid.RowSpan="2">
+            <TextBox x:Name="txtNumeroSeguimiento"  MinHeight="23" MinWidth="165" TextWrapping="Wrap" Text="" Background="White" Foreground="#FF878787"/>
         </Viewbox>
 
-        <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="2" OpacityMask="Black">
-            <TextBox x:Name="txtPlaceHolder" GotFocus="txtPlaceHolder_GotFocus" LostFocus="txtPlaceHolder_LostFocus" MinHeight="23" MinWidth="165" TextWrapping="Wrap" Text="Rut Cliente o N° Seguimiento" Background="White" Foreground="#FF878787"/>
-        </Viewbox>
 
         <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="3" Grid.Row="9" Grid.ColumnSpan="2">
             <Button x:Name="btn_consultar" Content="Consultar" MinHeight="20" MinWidth="75" Cursor="Hand" Click="btn_consultar_Click" Background="#FF393E59" BorderBrush="#FFF0F2F2" Foreground="#FF96ACAC"/>
@@ -98,6 +95,12 @@
                 <ImageBrush ImageSource="/UniOnline;component/perfil.png"/>
             </Button.Background>
         </Button>
+        <Viewbox Height="Auto" Width="Auto" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Grid.RowSpan="3" Margin="80,15.2,73.8,10.6">
+            <TextBlock MinHeight="30" MinWidth="200" TextWrapping="Wrap" Foreground="#FF010326" FontSize="20" FontFamily="Segoe UI Historic" FontWeight="Bold" Text="Ingrese el rut del Cliente" Width="237"/>
+        </Viewbox>
+        <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3" OpacityMask="Black" Margin="52,10,73.8,15.2" Grid.RowSpan="2">
+            <TextBox x:Name="txtRut"  MinHeight="23" MinWidth="165" TextWrapping="Wrap" Text="" Background="White" Foreground="#FF878787" KeyUp="txtRut_KeyUp"/>
+        </Viewbox>
 
     </Grid>
 

@@ -82,13 +82,21 @@ namespace Controlador
             }
             return this;
         }
-        public bool Formulario(string nombre, string telefono, string correo, string asunto, string detalle)
+        public bool Formulario(string nombre, string telefono, string correo, string asunto, string detalle, string rutUsuario)
         {
             try
             {
                 Conectar();
                 asunto = "Usuario CBR: " + asunto;
-                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`FORMULARIO` (`nombre_form`, `telefono`, `correo_form`, `asunto_form`, `detalle_form`) VALUES ('"+ nombre + "', '" + telefono + "', '" + correo + "', '" + asunto + "', '" + detalle + "'); ", conex);
+                int idUsuario = 0;
+                cmd = new MySqlCommand("SELECT id_usuario FROM UNIONLINE.USUARIO where rut_usuario = '"+ rutUsuario + "';");
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    idUsuario = Int32.Parse(rd["id_usuario"].ToString());
+                }
+                rd.Close();
+                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`FORMULARIO` (`nombre_form`, `telefono`, `correo_form`, `asunto_form`, `detalle_form`, `USUARIO_id_usuario`) VALUES ('" + nombre + "', '" + telefono + "', '" + correo + "', '" + asunto + "', '" + detalle + "', "+ idUsuario + "); ", conex);
                 cmd.ExecuteReader();
                 return true;
             }
@@ -104,7 +112,7 @@ namespace Controlador
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT id_soli, numero_seguimiento, SOLICITUD.estado, fecha_solicitud ,rut_usuario, Concat(UNIONLINE.USUARIO.primer_nombre, ' ' , UNIONLINE.USUARIO.primer_apellido) as nombre_solicitante, nombre_tramite, foja, descripcion, concat(nombre_calle,' ', numero_casa ,', ', nombre_comuna, ', ', nombre_region) as direccion_prop, Concat(UNIONLINE.DUENNO_PROP.primer_nombre, ' ' , UNIONLINE.DUENNO_PROP.primer_apellido) as nombre_duenno FROM UNIONLINE.SOLICITUD inner join UNIONLINE.USUARIO on UNIONLINE.SOLICITUD.USUARIO_id_usuario = UNIONLINE.USUARIO.id_usuario inner join UNIONLINE.TRAMITE on UNIONLINE.SOLICITUD.TRAMITE_id_tramite = UNIONLINE.TRAMITE.id_tramite inner join UNIONLINE.PROPIEDAD on UNIONLINE.SOLICITUD.PROPIEDAD_id_propiedad = UNIONLINE.PROPIEDAD.id_propiedad inner join UNIONLINE.DUENNO_PROP on UNIONLINE.PROPIEDAD.DUENNO_PROP_id_duenno = UNIONLINE.DUENNO_PROP.id_duenno inner join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas inner join UNIONLINE.DIRECCION on UNIONLINE.PROPIEDAD.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion inner join UNIONLINE.COMUNA on UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna  inner join UNIONLINE.PROVINCIA on UNIONLINE.COMUNA.PROVINCIA_id_provincia= UNIONLINE.PROVINCIA.id_provincia  inner join UNIONLINE.REGION on UNIONLINE.PROVINCIA.REGION_id_region = UNIONLINE.REGION.id_region where numero_seguimiento = '" + NumeroS + "'; ", conex);
+                cmd = new MySqlCommand("SELECT id_soli, numero_seguimiento, SOLICITUD.estado, fecha_solicitud ,rut_usuario, Concat(UNIONLINE.USUARIO.primer_nombre, ' ' , UNIONLINE.USUARIO.primer_apellido) as nombre_solicitante, nombre_tramite, foja, descripcion, concat(nombre_calle,' ', numero_casa ,', ', nombre_comuna, ', ', nombre_region) as direccion_prop, Concat(UNIONLINE.DUENNO_PROP.primer_nombre, ' ' , UNIONLINE.DUENNO_PROP.primer_apellido) as nombre_duenno, Comentario FROM UNIONLINE.SOLICITUD inner join UNIONLINE.USUARIO on UNIONLINE.SOLICITUD.USUARIO_id_usuario = UNIONLINE.USUARIO.id_usuario inner join UNIONLINE.TRAMITE on UNIONLINE.SOLICITUD.TRAMITE_id_tramite = UNIONLINE.TRAMITE.id_tramite inner join UNIONLINE.PROPIEDAD on UNIONLINE.SOLICITUD.PROPIEDAD_id_propiedad = UNIONLINE.PROPIEDAD.id_propiedad inner join UNIONLINE.DUENNO_PROP on UNIONLINE.PROPIEDAD.DUENNO_PROP_id_duenno = UNIONLINE.DUENNO_PROP.id_duenno inner join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas inner join UNIONLINE.DIRECCION on UNIONLINE.PROPIEDAD.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion inner join UNIONLINE.COMUNA on UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna  inner join UNIONLINE.PROVINCIA on UNIONLINE.COMUNA.PROVINCIA_id_provincia= UNIONLINE.PROVINCIA.id_provincia  inner join UNIONLINE.REGION on UNIONLINE.PROVINCIA.REGION_id_region = UNIONLINE.REGION.id_region where numero_seguimiento = '" + NumeroS + "'; ", conex);
                 rd = cmd.ExecuteReader();
                 while (rd.Read())
                 {
@@ -119,6 +127,7 @@ namespace Controlador
                     soli.Add(rd["direccion_prop"].ToString());
                     soli.Add(rd["nombre_duenno"].ToString());
                     soli.Add(rd["id_soli"].ToString());
+                    soli.Add(rd["Comentario"].ToString());
                 }
                 rd.Close();
                 return soli;
@@ -181,7 +190,30 @@ namespace Controlador
                 return null;
             }
         }
-
+        //Metodo que permite al trabajador modificar una solicitud
+        public bool ModificarSolicitud(string numeroSeguimiento, string estado, string comentario)
+        {
+            try
+            {
+                Conectar();
+                int idSoli = 0;
+                cmd = new MySqlCommand("SELECT id_soli FROM UNIONLINE.SOLICITUD where numero_seguimiento = '"+ numeroSeguimiento +"';", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read() == true)
+                {
+                    idSoli = Int32.Parse(rd["id_soli"].ToString());
+                }
+                rd.Close();
+                cmd = new MySqlCommand("UPDATE `UNIONLINE`.`SOLICITUD` SET `estado` = '"+ estado +"', `Comentario` ='"+comentario+"', WHERE `id_soli` = "+idSoli+" ;", conex);
+                rd = cmd.ExecuteReader();
+                rd.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
 
     }
 

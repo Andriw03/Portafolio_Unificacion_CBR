@@ -15,6 +15,7 @@ using Controlador;
 using System.Data.SqlClient;
 using System.Data;
 using System.Collections;
+using System.Security.Cryptography;
 
 namespace UniOnline.Director
 {

@@ -241,17 +241,9 @@ namespace UniOnline.Trabajador
             e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
         }
 
-
-        private void btnLimpiar_Click(object sender, RoutedEventArgs e)
-        {
-            txtFojaListar.Text = "";
-            txtNumListar.Text = "";
-            txtAnnoListar.Text = "";
-        }
-
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            if (txtFojaListar.Text != string.Empty && txtNumListar.Text != string.Empty && txtAnnoListar.Text != string.Empty)
+            if (txtFojaListar.Text != string.Empty )
             {
                 Propiedad prop = new Propiedad();
                 if (prop.ExistePropiedad(Int32.Parse(txtFojaListar.Text)))
@@ -328,6 +320,64 @@ namespace UniOnline.Trabajador
             WPF_EditarDueño edue = new WPF_EditarDueño();
             edue.ObtenerDuenno = due.BuscarDuenno(txtDueño.Text);
             edue.ShowDialog();
+        }
+        public static string FormatearRut(string rut)
+        {
+            string rutFormateado = string.Empty;
+
+            if (rut.Length == 0)
+            {
+                rutFormateado = "";
+            }
+            else
+            {
+                string rutTemporal;
+                string dv;
+                Int64 rutNumerico;
+
+                rut = rut.Replace("-", "").Replace(".", "");
+
+                if (rut.Length == 1)
+                {
+                    rutFormateado = rut;
+                }
+                else
+                {
+                    rutTemporal = rut.Substring(0, rut.Length - 1);
+                    dv = rut.Substring(rut.Length - 1, 1);
+
+                    //aqui convierto a un numero el RUT si ocurre un error lo deja en CERO
+                    if (!Int64.TryParse(rutTemporal, out rutNumerico))
+                    {
+                        rutNumerico = 0;
+                    }
+
+                    //este comando es el que formatea con los separadores de miles
+                    rutFormateado = rutNumerico.ToString("N0");
+
+                    if (rutFormateado.Equals("0"))
+                    {
+                        rutFormateado = string.Empty;
+                    }
+                    else
+                    {
+                        //si no hubo problemas con el formateo agrego el DV a la salida
+                        rutFormateado += "-" + dv;
+
+                        //y hago este replace por si el servidor tuviese configuracion anglosajona y reemplazo las comas por puntos
+                        rutFormateado = rutFormateado.Replace(",", ".");
+                    }
+                }
+            }
+
+            return rutFormateado;
+        }
+
+        private void txtDueño_KeyUp(object sender, KeyEventArgs e)
+        {
+            txtDueño.Text = FormatearRut(txtDueño.Text);
+            txtDueño.SelectionStart = txtDueño.Text.Length;
+            txtDueño.SelectionLength = 0;
         }
     }
 }

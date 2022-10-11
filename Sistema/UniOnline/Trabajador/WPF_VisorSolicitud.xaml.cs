@@ -68,6 +68,7 @@ namespace UniOnline.Trabajador
                 lbDescripcion.Text = soli[7];
                 lbNombreTramite.Text = soli[5];
                 lbNombreDuenno.Text = soli[9];
+                txtComentario.Text = soli[11];
                 List<string> doc = cli.Documento(Int32.Parse(soli[10]));
                 if (doc.Count != 0)
                 {
@@ -100,6 +101,19 @@ namespace UniOnline.Trabajador
         {
             WPF_VistaDoc vDoc = new WPF_VistaDoc();
             vDoc.ShowDialog();
+        }
+
+        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            Cliente cli = new Cliente();
+            if (cli.ModificarSolicitud(lbNumeroSO.Text, cmbEstado.SelectedItem.ToString(),txtComentario.Text))
+            {
+                MessageBox.Show("Solicitud Guardada con éxito");
+            }
+            else
+            {
+                MessageBox.Show("Error al guardar la solicitud","Error");
+            }
         }
     }    
 }

@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline.Trabajador"
         mc:Ignorable="d"
-        Title="CBR UniOnline" Height="800" Width="900"  WindowStartupLocation="CenterScreen">
+        Title="CBR UniOnline" Height="659.6" Width="900"  WindowStartupLocation="CenterScreen">
 
-    <Grid>
+    <Grid Margin="0,0,-0.4,0.6">
 
         <!-- Start Column and Row Definition-->
         <Grid.ColumnDefinitions>
@@ -38,24 +38,20 @@
         <Rectangle Height="87" Stroke="Black" VerticalAlignment="Top" Fill="#FF010623" Grid.ColumnSpan="10" Grid.RowSpan="3" Margin="0,0,-0.4,0"/>
         <TextBlock HorizontalAlignment="Left" Margin="0,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="189" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="30" Text="CBRS de Chile" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="2"/>
         <Viewbox Width="Auto" Stretch="Uniform" Grid.Column="3" Grid.Row="1" Grid.RowSpan="3" Margin="79,72,85.6,40.2" Grid.ColumnSpan="4">
-            <Image MinHeight="50" MinWidth="108" Source="/LogoCBR.png" Margin="21,10,21,0" VerticalAlignment="Top" Height="1451" Width="1950"/>
+            <Image MinHeight="50" MinWidth="108" Source="/LogoCBR.png" Margin="21,10,21,0" VerticalAlignment="Top" Height="1451" Width="2731"/>
         </Viewbox>
 
         <Viewbox  Width="Auto" Height="Auto" Stretch="Uniform" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"/>
 
-        <Viewbox Height="Auto" Width="Auto" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="6" Grid.RowSpan="3" Margin="71.4,58,32,35.4">
-            <TextBlock MinHeight="30" MinWidth="300" TextWrapping="Wrap" Foreground="#FF010326" FontSize="20" FontFamily="Segoe UI Historic" FontWeight="Bold" Text="Ingrese el rut del Cliente o N° de seguimiento" Height="42"></TextBlock>
+        <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" OpacityMask="Black" Margin="71,32,0.6,41.2" Grid.RowSpan="2">
+            <TextBox x:Name="txtRut"  MinHeight="23" MinWidth="165" TextWrapping="Wrap" Text="" Background="White" Foreground="#FF878787" KeyUp="txtRut_KeyUp"/>
         </Viewbox>
 
-        <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="4" OpacityMask="Black" Margin="44,67,27.6,6.4" Grid.RowSpan="2">
-            <TextBox x:Name="txtBusqueda"  MinHeight="23" MinWidth="165" TextWrapping="Wrap" Text="" Background="White" Foreground="#FF878787"/>
+        <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="4" Margin="96.8,67.4,85.6,16.8" Grid.RowSpan="2">
+            <Button x:Name="btn_consultar" Content="Consultar" MinHeight="20" MinWidth="75" Cursor="Hand" Click="btn_consultar_Click" Background="#FF393E59" BorderBrush="#FFF0F2F2" Foreground="#FF96ACAC" RenderTransformOrigin="1.218,1.218" Height="25" Width="59"/>
         </Viewbox>
 
-        <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="4" Margin="96,14,86.6,69.4" Grid.RowSpan="2">
-            <Button x:Name="btn_consultar" Content="Consultar" MinHeight="20" MinWidth="75" Cursor="Hand" Click="btn_consultar_Click" Background="#FF393E59" BorderBrush="#FFF0F2F2" Foreground="#FF96ACAC" RenderTransformOrigin="1.218,1.218"/>
-        </Viewbox>
-
-        <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="9" Grid.RowSpan="4" Margin="14,64.8,15.6,18">
+        <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="9" Grid.RowSpan="4" Margin="20,60,9.6,22.6">
             <DataGrid x:Name="dg_listartramite"  CanUserAddRows="False" HorizontalAlignment="Center" MinHeight="137" MinWidth="502" Width="575" Height="164" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Rut" Binding="{Binding Path = 'rut_usuario'}" Width="100" IsReadOnly="True" />
@@ -77,6 +73,15 @@
             </DataGrid>
 
 
+        </Viewbox>
+        <Viewbox Height="Auto" Width="Auto" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="5" Grid.RowSpan="2" Margin="71,25,87.8,53.2">
+            <TextBlock MinHeight="30" MinWidth="200" TextWrapping="Wrap" Foreground="#FF010326" FontSize="20" FontFamily="Segoe UI Historic" FontWeight="Bold" Text="Ingrese el rut del Cliente " Height="42" Width="242"/>
+        </Viewbox>
+        <Viewbox Height="Auto" Width="Auto" Grid.Column="5" Grid.Row="3" Grid.ColumnSpan="4" Grid.RowSpan="2" Margin="109.4,25,48.6,53">
+            <TextBlock MinHeight="30" MinWidth="200" TextWrapping="Wrap" Foreground="#FF010326" FontSize="20" FontFamily="Segoe UI Historic" FontWeight="Bold" Text="Ingrese N° de Seguimiento" Height="42" Width="256"/>
+        </Viewbox>
+        <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="4" OpacityMask="Black" Margin="122.2,32,73.6,41.2" Grid.RowSpan="2">
+            <TextBox x:Name="txtNumeroSeguimiento"  MinHeight="23" MinWidth="165" TextWrapping="Wrap" Text="" Background="White" Foreground="#FF878787"/>
         </Viewbox>
     </Grid>
 </Window>

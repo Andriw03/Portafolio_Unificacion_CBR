@@ -107,5 +107,63 @@ namespace UniOnline.Trabajador
             txtCorreo.Text = string.Empty;
             txtTelefono.Text = string.Empty;
         }
+        public static string FormatearRut(string rut)
+        {
+            string rutFormateado = string.Empty;
+
+            if (rut.Length == 0)
+            {
+                rutFormateado = "";
+            }
+            else
+            {
+                string rutTemporal;
+                string dv;
+                Int64 rutNumerico;
+
+                rut = rut.Replace("-", "").Replace(".", "");
+
+                if (rut.Length == 1)
+                {
+                    rutFormateado = rut;
+                }
+                else
+                {
+                    rutTemporal = rut.Substring(0, rut.Length - 1);
+                    dv = rut.Substring(rut.Length - 1, 1);
+
+                    //aqui convierto a un numero el RUT si ocurre un error lo deja en CERO
+                    if (!Int64.TryParse(rutTemporal, out rutNumerico))
+                    {
+                        rutNumerico = 0;
+                    }
+
+                    //este comando es el que formatea con los separadores de miles
+                    rutFormateado = rutNumerico.ToString("N0");
+
+                    if (rutFormateado.Equals("0"))
+                    {
+                        rutFormateado = string.Empty;
+                    }
+                    else
+                    {
+                        //si no hubo problemas con el formateo agrego el DV a la salida
+                        rutFormateado += "-" + dv;
+
+                        //y hago este replace por si el servidor tuviese configuracion anglosajona y reemplazo las comas por puntos
+                        rutFormateado = rutFormateado.Replace(",", ".");
+                    }
+                }
+            }
+
+            return rutFormateado;
+        }
+
+        private void txtRutDuenno_KeyUp(object sender, KeyEventArgs e)
+        {
+            txtRutDuenno.Text = FormatearRut(txtRutDuenno.Text);
+            txtRutDuenno.SelectionStart = txtRutDuenno.Text.Length;
+            txtRutDuenno.SelectionLength = 0;
+        }
     }
 }

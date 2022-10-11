@@ -7,21 +7,60 @@
         mc:Ignorable="d"
         Title="CBR UniOnline" Height="620" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="CanResize">
     <Window.Resources>
+        <!--Segoe UI Emoji-->
+        <SolidColorBrush x:Key="PrimaryBackColor" Color="#FF010623"/>
+        <SolidColorBrush x:Key="SecondaryBackColor" Color="#FF393E59"/>
+        <SolidColorBrush x:Key="PrimaryTabColor" Color="#6FBFBF"/>
+
+        <SolidColorBrush x:Key="PrimaryTextColor" Color="#FFF0F2F2"/>
+        <SolidColorBrush x:Key="SecondaryTextColor" Color="#FF82D9D9"/>
+
+        <SolidColorBrush x:Key="PrimaryGreyColor" Color="#BBC1D1"/>
+
+
         <Style x:Key="TabItemStyle" TargetType="TabItem">
-            <Setter Property = "Background" Value="#010326"/>
-            <Setter Property = "Foreground" Value="#F0F2F2"/>
-            <Setter Property = "Margin" Value = "0,0,5,0 " />
-            <Setter Property = "Width" Value = "100 "/>
-            <Setter Property = "Padding" Value = "10,5"/>
+            <Setter Property = "Background" Value="Transparent"/>
+            <Setter Property = "BorderBrush" Value="Transparent"/>
+            <Setter Property = "BorderThickness" Value="0"/>
+            <Setter Property = "Foreground" Value="{DynamicResource PrimaryTextColor}"/>
+            <Setter Property = "Margin" Value = "10,0,10,3" />
+            <Setter Property = "Width" Value = "150"/>
+            <Setter Property = "Padding" Value = "15"/>
+            <Setter Property = "FontWeight" Value = "500"/>
+            <Setter Property = "VerticalAlignment" Value = "Top"/>
+            <Setter Property = "HorizontalAlignment" Value = "Left"/>
             <Setter Property = "FontFamily" Value="Segoe UI Emoji"/>
+            <Setter Property = "Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Grid SnapsToDevicePixels="True">
+                            <Border CornerRadius="10" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}"
+                                    BorderBrush="{TemplateBinding BorderBrush}" Margin="{TemplateBinding Margin}"/>
+                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" SnapsToDevicePixels="True"
+                                              Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" ContentSource="Header" Width="{TemplateBinding Width}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property = "Background" Value="{DynamicResource SecondaryBackColor}"/>
+                                <Setter Property = "Foreground" Value="{DynamicResource PrimaryGreyColor}"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property = "Background" Value="{DynamicResource PrimaryBackColor}"/>
+                                <Setter Property = "Foreground" Value="{DynamicResource SecondaryTextColor}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
 
-    </Window.Resources>
-    <Grid>
 
-        <Rectangle HorizontalAlignment="Stretch" Width="Auto" MinHeight="100" MinWidth="800" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" Grid.RowSpan="3" Fill="#FF010326" Stroke="Black" Margin="0,0,-8,1"/>
+    </Window.Resources>
+    <Grid Background="{DynamicResource PrimaryBackColor}">
+
+
         <TabControl IsSynchronizedWithCurrentItem="True" Cursor="Arrow">
-            <TabItem Header="Agregar Propiedad" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="Auto" HorizontalAlignment="Left" Foreground="#FFFDFDFD" BorderBrush="#FF010326" Margin="270,0,-269.8,1">
+            <TabItem Header="Agregar Propiedad" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="219" HorizontalAlignment="Left" Margin="10,0,-31.4,-0.2" >
                 <Grid Background="#FFF0F2F2" Margin="0,5,0.4,-1.4">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="20"/>
@@ -95,7 +134,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Listar Propiedades" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="207" HorizontalAlignment="Right" Margin="0,0,-272,1" BorderBrush="#FF010326" Foreground="#FFFDFDFD">
+            <TabItem Header="Listar Propiedades" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="207" HorizontalAlignment="Right" Margin="0,0,-32.2,-0.2" >
                 <Grid Background="#FFF0F2F2">
 
                     <!-- Start Column and Row Definition-->
@@ -125,18 +164,11 @@
                     </Grid.RowDefinitions>
                     <!--End Column and Row Definition-->
 
-                    <Label Content="Buscar por Foja:" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBox x:Name="txtFojaListar" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="212" MaxLength="15" PreviewTextInput="txtFojaListar_PreviewTextInput"/>
+                    <Label Content="Buscar por Foja:" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtFojaListar" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="212" MaxLength="15" PreviewTextInput="txtFojaListar_PreviewTextInput"/>
                     <Button x:Name="btnBuscar" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2" Height="30" Width="100" Click="btnBuscar_Click" Background="#FF393E59" Foreground="#FFF0F2F2">
                         <TextBlock Text="Buscar" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     </Button>
-                    <Button x:Name="btnLimpiar" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Height="30" Width="100" Click="btnLimpiar_Click" Background="#FF393E59" Foreground="#FFF0F2F2">
-                        <TextBlock Text="Limpiar" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Button>
-                    <Label Content="Buscar por Número:" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="100.6,12,74.8,9.8" Width="187"/>
-                    <TextBox x:Name="txtNumListar" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="187" MaxLength="15" PreviewTextInput="txtNumListar_PreviewTextInput" Margin="100.6,0.2,74.8,0"/>
-                    <Label Content="Buscar por Año:" Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBox x:Name="txtAnnoListar" Grid.Column="7" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="212" MaxLength="15" PreviewTextInput="txtAnnoListar_PreviewTextInput"/>
                     <DataGrid x:Name="dtgPropiedad" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="8" Grid.RowSpan="5" AutoGenerateColumns="False" CanUserAddRows="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Foja" Binding="{Binding Path = 'foja'}" IsReadOnly="True"/>
@@ -168,6 +200,5 @@
             </TabItem>
 
         </TabControl>
-        <TextBlock Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="28" MinWidth="265" Margin="0,0,674.6,534.4"><Run Language="es-es" Text="CBRS de Chile"/></TextBlock>
     </Grid>
 </Window>

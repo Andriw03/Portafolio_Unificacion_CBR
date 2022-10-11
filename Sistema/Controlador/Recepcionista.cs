@@ -93,7 +93,7 @@ namespace Controlador
         }
 
 
-        public DataTable MostrarSolicitud(string rut, string nseg)
+        public DataTable MostrarSolicitud(string rut)
         {
             Conectar();
             DataTable tabla = new DataTable();
@@ -101,7 +101,7 @@ namespace Controlador
            
             try
             {
-                cmd = new MySqlCommand("SELECT rut_usuario, primer_nombre, primer_apellido, numero_seguimiento, estado FROM UNIONLINE.USUARIO join UNIONLINE.SOLICITUD on UNIONLINE.USUARIO.id_usuario = UNIONLINE.SOLICITUD.USUARIO_id_usuario where rut_usuario = '"+ rut +"' or numero_seguimiento = '"+ nseg +"'", conex);
+                cmd = new MySqlCommand("SELECT rut_usuario, primer_nombre, primer_apellido, numero_seguimiento, estado FROM UNIONLINE.USUARIO join UNIONLINE.SOLICITUD on UNIONLINE.USUARIO.id_usuario = UNIONLINE.SOLICITUD.USUARIO_id_usuario where rut_usuario = '"+ rut +"' or numero_seguimiento = '"+ rut +"'", conex);
                 MySqlDataAdapter ap = new MySqlDataAdapter(cmd);
                 ap.Fill(tabla);
                 cmd.Dispose();

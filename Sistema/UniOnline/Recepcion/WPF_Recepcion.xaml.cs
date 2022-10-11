@@ -62,66 +62,53 @@ namespace UniOnline.Recepcion
 
         private void btn_consultar_Click(object sender, RoutedEventArgs e)
         {
-            if (txt_buscar.Text != string.Empty)
+            if (txtRut.Text != string.Empty || txtNumeroSeguimiento.Text != string.Empty)
             {
-                Recepcionista recep = new Recepcionista();
-                if (recep.ExisteRut(txt_buscar.Text))
+                try
                 {
-                    DataTable tabla = recep.MostrarSolicitud( txt_buscar.Text,txt_buscar.Text);
-                    if (tabla != null)
+                    Recepcionista recep = new Recepcionista();
+                    if (txtRut.Text != string.Empty)
+                    {
+                        DataTable tabla = recep.MostrarSolicitud(txtRut.Text);
+                        if (tabla != null)
+                        {
+                            dg_listartramite.ItemsSource = tabla.DefaultView;
+                            dg_listartramite.Items.Refresh();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tabla sin registro", "Error");
+                        }
+
+                    }
+                    else if (txtNumeroSeguimiento.Text != string.Empty)
                     {
 
-                        dg_listartramite.ItemsSource = tabla.DefaultView;
-                        dg_listartramite.Items.Refresh();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Tabla sin registro", "Error");
+                        DataTable tabla = recep.MostrarSolicitud(txtNumeroSeguimiento.Text);
+                        if (tabla != null)
+                        {
+                            dg_listartramite.ItemsSource = tabla.DefaultView;
+                            dg_listartramite.Items.Refresh();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tabla sin registro", "Error");
+                        }
+
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Solicitud no encontrada", "Error");
+                    MessageBox.Show("Solicitud sin registro");
                 }
             }
             else
             {
-                MessageBox.Show("Debe llenar todos los campos para buscar", "Advertencia");
+                MessageBox.Show("Debe llenar al menos un valor", "Advertencia");
             }
-            
-        }
-
-        private void txtPlaceHolder_GotFocus(object sender, RoutedEventArgs e)
-        {
-            txtPlaceHolder.Visibility = System.Windows.Visibility.Collapsed;
-            txt_buscar.Visibility = System.Windows.Visibility.Visible;
-            txt_buscar.Focus();
 
         }
 
-        private void txt_buscar_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txt_buscar.Text))
-            {
-                txt_buscar.Visibility = System.Windows.Visibility.Collapsed;
-                txtPlaceHolder.Visibility = System.Windows.Visibility.Visible;
-            }
-        }
-
-        private void txtPlaceHolder_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txt_buscar.Text))
-            {
-                txtPlaceHolder.Visibility = System.Windows.Visibility.Collapsed;
-                txt_buscar.Visibility = System.Windows.Visibility.Visible;
-
-            }
-        }
-
-        private void txtPlaceHolder_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
@@ -149,7 +136,7 @@ namespace UniOnline.Recepcion
            
                 Detalles_Solicitud dSoli = new Detalles_Solicitud();
                 Recepcionista recep = new Recepcionista();
-                dSoli.ObtenerUsuarioRec = recep.ObtenerDatos(txt_buscar.Text, txt_buscar.Text);
+                dSoli.ObtenerUsuarioRec = recep.ObtenerDatos(txtRut.Text, txtNumeroSeguimiento.Text);
                 dSoli.ShowDialog();
            
         }
@@ -161,7 +148,65 @@ namespace UniOnline.Recepcion
             perfilUsuario.ShowDialog();
 
         }
+        public static string FormatearRut(string rut)
+        {
+            string rutFormateado = string.Empty;
+
+            if (rut.Length == 0)
+            {
+                rutFormateado = "";
+            }
+            else
+            {
+                string rutTemporal;
+                string dv;
+                Int64 rutNumerico;
+
+                rut = rut.Replace("-", "").Replace(".", "");
+
+                if (rut.Length == 1)
+                {
+                    rutFormateado = rut;
+                }
+                else
+                {
+                    rutTemporal = rut.Substring(0, rut.Length - 1);
+                    dv = rut.Substring(rut.Length - 1, 1);
+
+                    //aqui convierto a un numero el RUT si ocurre un error lo deja en CERO
+                    if (!Int64.TryParse(rutTemporal, out rutNumerico))
+                    {
+                        rutNumerico = 0;
+                    }
+
+                    //este comando es el que formatea con los separadores de miles
+                    rutFormateado = rutNumerico.ToString("N0");
+
+                    if (rutFormateado.Equals("0"))
+                    {
+                        rutFormateado = string.Empty;
+                    }
+                    else
+                    {
+                        //si no hubo problemas con el formateo agrego el DV a la salida
+                        rutFormateado += "-" + dv;
+
+                        //y hago este replace por si el servidor tuviese configuracion anglosajona y reemplazo las comas por puntos
+                        rutFormateado = rutFormateado.Replace(",", ".");
+                    }
+                }
+            }
+
+            return rutFormateado;
+        }
+
+        private void txtRut_KeyUp(object sender, KeyEventArgs e)
+        {
+            txtRut.Text = FormatearRut(txtRut.Text);
+            txtRut.SelectionStart = txtRut.Text.Length;
+            txtRut.SelectionLength = 0;
+        }
     }
-    }
+}
 
 
