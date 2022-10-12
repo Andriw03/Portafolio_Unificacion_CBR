@@ -24,6 +24,7 @@ using MySqlConnection = MySql.Data.MySqlClient.MySqlConnection;
 using MySqlDataReader = MySql.Data.MySqlClient.MySqlDataReader;
 using iText.IO.Image;
 using VerticalAlignment = iText.Layout.Properties.VerticalAlignment;
+using MySqlDataAdapter = MySql.Data.MySqlClient.MySqlDataAdapter;
 
 namespace Controlador
 {
@@ -40,6 +41,7 @@ namespace Controlador
         public string telefono { get; set; }
         public int id_cbr { get; set; }
         public int id_tipoU { get; set; }
+        public string detalle_form { get; set; }
 
         public Usuario()
         {
@@ -345,69 +347,36 @@ namespace Controlador
             doc.Close();
         }
 
-        //private static string ComputerMD5Hash(string input)
-        //{
-        //    StringBuilder stringBuilder = new StringBuilder();
-        //    byte[] textBytes = Encoding.ASCII.GetBytes(input);
-        //    using (MD5 md5 = MD5.Create())
-        //    {
-        //        byte[] computeHash = md5.ComputeHash(textBytes);
-        //        for(int i=0; i < computeHash.Length; i++)
-        //        {
-        //            stringBuilder.Append(computeHash[i].ToString("x2"));
-        //        }
-        //    }
-        //    return stringBuilder.ToString();
-        //}
-
-        //private static bool ValidarMD5Hash(string input, string hash)
-        //{
-        //    string tempHash = ComputerMD5Hash(input);
-        //    bool flag;
-        //    if (string.Compare(tempHash, hash) == 0)
-        //    {
-        //        flag = true;
-        //    }
-        //    else
-        //    {
-        //        flag = false;
-        //    }
-        //    return flag;
-        //}
-
-        public string Encrypt(string mensaje)
+        public DataTable MostrarFormulario()
         {
-            string hash = contrasenna;
-            byte[] data = UTF8Encoding.UTF8.GetBytes(mensaje);
+            Conectar();
+            DataTable tabla = new DataTable();
 
-            MD5 md5 = MD5.Create();
-            TripleDES tripleDES = TripleDES.Create();
 
-            tripleDES.Key = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
-            tripleDES.Mode = CipherMode.ECB;
+            try
+            {
+                cmd = new MySqlCommand("SELECT FORMULARIO.nombre_form, T_USUARIO.nombre_tipoU, FORMULARIO.correo_form, FORMULARIO.estado,FORMULARIO.asunto_form, FORMULARIO.detalle_form FROM UNIONLINE.FORMULARIO inner join UNIONLINE.USUARIO on UNIONLINE.FORMULARIO.USUARIO_id_usuario = UNIONLINE.USUARIO.id_usuario inner join UNIONLINE.T_USUARIO on UNIONLINE.USUARIO.T_USUARIO_id_tipoU = UNIONLINE.T_USUARIO.id_tipoU;", conex);
+                MySqlDataAdapter ap = new MySqlDataAdapter(cmd);
+                ap.Fill(tabla);
+                cmd.Dispose();
+                ap.Dispose();
+                return tabla;
 
-            ICryptoTransform transform = tripleDES.CreateEncryptor();
-            byte[] result = transform.TransformFinalBlock(data, 0, data.Length);
 
-            return Convert.ToBase64String(result);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+                return null;
+            }
         }
 
-        public string Decrypt(string MensajeEn)
+        public void Descripcion()
         {
-            string hash = contrasenna;
-            byte[] data = Convert.FromBase64String(MensajeEn);
-
-            MD5 md5 = MD5.Create();
-            TripleDES tripleDES = TripleDES.Create();
-
-            tripleDES.Key = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
-            tripleDES.Mode = CipherMode.ECB;
-
-            ICryptoTransform transform = tripleDES.CreateDecryptor();
-            byte[] result = transform.TransformFinalBlock(data, 0, data.Length);
-
-            return UTF8Encoding.UTF8.GetString(result);
+            cmd = new MySqlCommand("SELECT FORMULARIO.nombre_form, T_USUARIO.nombre_tipoU, FORMULARIO.correo_form, FORMULARIO.estado,FORMULARIO.asunto_form, FORMULARIO.detalle_form FROM UNIONLINE.FORMULARIO inner join UNIONLINE.USUARIO on UNIONLINE.FORMULARIO.USUARIO_id_usuario = UNIONLINE.USUARIO.id_usuario inner join UNIONLINE.T_USUARIO on UNIONLINE.USUARIO.T_USUARIO_id_tipoU = UNIONLINE.T_USUARIO.id_tipoU;", conex);
+            
         }
+
     }
 
 

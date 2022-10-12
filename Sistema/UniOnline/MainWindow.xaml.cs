@@ -93,7 +93,7 @@ namespace UniOnline
                 {
                     if (us.id_tipoU == 2 )
                     {                        
-                        WPF_MainDirector dir = new WPF_MainDirector();
+                        WPF_SolicitudesTrabajadores dir = new WPF_SolicitudesTrabajadores();
                         this.Close();
                         dir.ShowDialog();
                         

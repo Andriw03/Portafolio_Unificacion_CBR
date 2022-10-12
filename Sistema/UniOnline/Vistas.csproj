@@ -118,6 +118,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Director\WPF_Descripción.xaml.cs">
+      <DependentUpon>WPF_Descripción.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Director\WPF_Informes.xaml.cs">
       <DependentUpon>WPF_Informes.xaml</DependentUpon>
     </Compile>
@@ -127,11 +130,17 @@
     <Compile Include="Director\WPF_ModificarUsuario.xaml.cs">
       <DependentUpon>WPF_ModificarUsuario.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Director\WPF_SolicitudesTrabajadores.xaml.cs">
+      <DependentUpon>WPF_SolicitudesTrabajadores.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form_SolicitudModificar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_SolicitudModificar.Designer.cs">
       <DependentUpon>Form_SolicitudModificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Moderador\WPF_ChatWhatsApp.xaml.cs">
+      <DependentUpon>WPF_ChatWhatsApp.xaml</DependentUpon>
     </Compile>
     <Compile Include="Moderador\WPF_Moderador_Perfil.xaml.cs">
       <DependentUpon>WPF_Moderador_Perfil.xaml</DependentUpon>
@@ -187,6 +196,10 @@
     <Compile Include="WPF_PerfilUsuario.xaml.cs">
       <DependentUpon>WPF_PerfilUsuario.xaml</DependentUpon>
     </Compile>
+    <Page Include="Director\WPF_Descripción.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Director\WPF_Director.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -203,6 +216,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Director\WPF_SolicitudesTrabajadores.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -218,6 +235,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Moderador\WPF_ChatWhatsApp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Moderador\WPF_Moderador.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

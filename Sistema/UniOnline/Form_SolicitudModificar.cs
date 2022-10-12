@@ -16,6 +16,20 @@ namespace UniOnline
         public Form_SolicitudModificar()
         {
             InitializeComponent();
+            Conectar();
+        }
+
+        Conexion con = new Conexion();
+        private void Conectar()
+        {
+            if (con.Conectar())
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Error Conexión");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

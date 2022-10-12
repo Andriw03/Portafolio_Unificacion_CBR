@@ -89,14 +89,14 @@ namespace Controlador
                 Conectar();
                 asunto = "Usuario CBR: " + asunto;
                 int idUsuario = 0;
-                cmd = new MySqlCommand("SELECT id_usuario FROM UNIONLINE.USUARIO where rut_usuario = '" + rutUsuario + "';");
+                cmd = new MySqlCommand("SELECT id_usuario FROM UNIONLINE.USUARIO where rut_usuario = '" + rutUsuario + "';", conex);
                 rd = cmd.ExecuteReader();
                 while (rd.Read())
                 {
                     idUsuario = Int32.Parse(rd["id_usuario"].ToString());
                 }
                 rd.Close();
-                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`FORMULARIO` (`nombre_form`, `telefono`, `correo_form`, `asunto_form`, `detalle_form`, `USUARIO_id_usuario`) VALUES ('" + nombre + "', '" + telefono + "', '" + correo + "', '" + asunto + "', '" + detalle + "', " + idUsuario + "); ", conex);
+                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`FORMULARIO` (`nombre_form`, `telefono`, `correo_form`, `asunto_form`, `detalle_form`, `estado`,  `USUARIO_id_usuario`) VALUES ('" + nombre + "', '" + telefono + "', '" + correo + "', '" + asunto + "', '" + detalle + "', 'En Proceso', " + idUsuario + "); ", conex);
                 cmd.ExecuteReader();
                 return true;
             }

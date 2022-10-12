@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\
 UniOnline
 none
 false
 DEBUG;TRACE
-C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\App.xaml
-24-2117689841
-31949273122
-311939734859
-411804123959
-Director\WPF_Director.xaml;Director\WPF_Informes.xaml;Director\WPF_MainDirector.xaml;Director\WPF_ModificarUsuario.xaml;MainWindow.xaml;Moderador\WPF_Moderador.xaml;Moderador\WPF_Moderador_Perfil.xaml;Moderador\WPF_Moderador_Soporte.xaml;Moderador\WPF_Moderador_Soporte_Tickets.xaml;Moderador\WPF_ModificarPerfil.xaml;Recepcion\Detalles_Solicitud.xaml;Recepcion\WPF_MainRecepcion.xaml;Recepcion\WPF_Recepcion.xaml;RecuperarContraseña.xaml;Trabajador\WPF_ConsultarTramite.xaml;Trabajador\WPF_EditarDueño.xaml;Trabajador\WPF_EditarProp.xaml;Trabajador\WPF_Trabajador.xaml;Trabajador\WPF_Trabajador_Dueño.xaml;Trabajador\WPF_Trabajador_Prop.xaml;Trabajador\WPF_Trabajador_Tra.xaml;Trabajador\WPF_VisorSolicitud.xaml;Trabajador\WPF_VistaDoc.xaml;WPF_PerfilUsuario.xaml;
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\App.xaml
+27-1059165891
+3-1099352335
+34-440834490
+41-838028978
+Director\WPF_Descripción.xaml;Director\WPF_Director.xaml;Director\WPF_Informes.xaml;Director\WPF_MainDirector.xaml;Director\WPF_ModificarUsuario.xaml;Director\WPF_SolicitudesTrabajadores.xaml;MainWindow.xaml;Moderador\WPF_ChatWhatsApp.xaml;Moderador\WPF_Moderador.xaml;Moderador\WPF_Moderador_Perfil.xaml;Moderador\WPF_Moderador_Soporte.xaml;Moderador\WPF_Moderador_Soporte_Tickets.xaml;Moderador\WPF_ModificarPerfil.xaml;Recepcion\Detalles_Solicitud.xaml;Recepcion\WPF_MainRecepcion.xaml;Recepcion\WPF_Recepcion.xaml;RecuperarContraseña.xaml;Trabajador\WPF_ConsultarTramite.xaml;Trabajador\WPF_EditarDueño.xaml;Trabajador\WPF_EditarProp.xaml;Trabajador\WPF_Trabajador.xaml;Trabajador\WPF_Trabajador_Dueño.xaml;Trabajador\WPF_Trabajador_Prop.xaml;Trabajador\WPF_Trabajador_Tra.xaml;Trabajador\WPF_VisorSolicitud.xaml;Trabajador\WPF_VistaDoc.xaml;WPF_PerfilUsuario.xaml;
 
 True
 
