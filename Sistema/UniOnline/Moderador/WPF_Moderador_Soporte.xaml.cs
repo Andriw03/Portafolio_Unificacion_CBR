@@ -51,5 +51,20 @@ namespace UniOnline.Moderador
             WPF_Moderador_Soporte_Tickets wpfTicket = new WPF_Moderador_Soporte_Tickets();
             wpfTicket.ShowDialog();
         }
+
+        private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow ventana = new MainWindow();
+            this.Hide();
+            ventana.ShowDialog();
+            this.Close();
+        }
+
+        private void btnChat_Click(object sender, RoutedEventArgs e)
+        {
+            WPF_ChatWhatsApp wsp = new WPF_ChatWhatsApp();
+            wsp.ShowDialog();
+            
+        }
     }
 }

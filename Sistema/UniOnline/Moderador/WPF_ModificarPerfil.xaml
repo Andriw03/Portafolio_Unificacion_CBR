@@ -23,7 +23,7 @@
         <Label Content="Segundo Apellido:" HorizontalAlignment="Left" Margin="74,251,0,0" VerticalAlignment="Top"/>
         <Label Content="Correo:" HorizontalAlignment="Left" Margin="132,282,0,0" VerticalAlignment="Top"/>
         <Label Content="Teléfono:" HorizontalAlignment="Left" Margin="123,313,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnModificar"  Content="Modificar" HorizontalAlignment="Left" Margin="25,388,0,0" VerticalAlignment="Top" Width="92" Background="#FF393E59" Foreground="#FFF0F2F2" Height="35"/>
+        <Button x:Name="btnModificar"  Content="Modificar" HorizontalAlignment="Left" Margin="25,388,0,0" VerticalAlignment="Top" Width="92" Background="#FF393E59" Foreground="#FFF0F2F2" Height="35" Click="btnModificar_Click"/>
         <TextBox x:Name="txtPrimerNom" HorizontalAlignment="Left" Height="23" Margin="181,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>
         <TextBox x:Name="txtSegundoNom" HorizontalAlignment="Left" Height="23" Margin="181,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>
         <TextBox x:Name="txtPrimerApe" HorizontalAlignment="Left" Height="23" Margin="181,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>

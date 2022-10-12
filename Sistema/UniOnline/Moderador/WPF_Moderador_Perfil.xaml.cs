@@ -130,5 +130,13 @@ namespace UniOnline.Moderador
 
 
         }
+
+        private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow ventana = new MainWindow();
+            this.Hide();
+            ventana.ShowDialog();
+            this.Close();
+        }
     }
 }

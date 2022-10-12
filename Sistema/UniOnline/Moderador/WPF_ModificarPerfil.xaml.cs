@@ -23,6 +23,8 @@ namespace UniOnline.Moderador
     /// </summary>
     public partial class WPF_ModificarPerfil : Window
     {
+
+        DataTable dt = new DataTable();
         public WPF_ModificarPerfil()
         {
             InitializeComponent();
@@ -49,39 +51,71 @@ namespace UniOnline.Moderador
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            //string rut = txtRutCliente.Text;
-            //MySqlDataReader reader = null;
+            try
+            {
+                Cliente cli = new Cliente();
+                cli.BuscarCliente(txtRutCliente.Text);
 
-            //MySqlConnection con = new MySqlConnection("server=unificacion.cmvnu851mzxa.us-east-1.rds.amazonaws.com;user id=root;password=nohomo123;persistsecurityinfo=True;database=UNIONLINE");
-            //MySqlCommand cmd = new MySqlCommand("SELECT rut_usuario, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_electronico, telefono FROM UNIONLINE.USUARIO WHERE rut_usuario = '" + rut + "'");
-     
-            //try
-            //{
+                if (txtRutCliente.Text != cli.rut_usuario)
+                {
+                    txtPrimerNom.Text = cli.primer_nombre;
+                    txtSegundoNom.Text = cli.segundo_nombre;
+                    txtPrimerApe.Text = cli.primer_apellido;
+                    txtSegundoApe.Text = cli.segundo_apellido;
+                    txtCorreo.Text = cli.correo_electronico;
+                    txtTel.Text = cli.telefono.ToString();
+
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese rut valido");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnModificar_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Cliente cli = new Cliente();
+                Duenno due = new Duenno();
+                string mail = txtCorreo.Text;
+                if (!due.CorreoValido(mail) == true)
+                {
+                    MessageBox.Show("El formato correo es invalido");
+                }
+                else
+                {
+                    cli.correo_electronico = txtCorreo.Text;
+                    string texto = txtTel.Text;
+                    if(texto.Length <=8)
+                    {
+                        MessageBox.Show("El telefono debe tener al menos 9 digitos");
+                    }
+                    else
+                    {
+                        cli.ModificarCliente(txtRutCliente.Text, txtPrimerNom.Text, txtSegundoNom.Text, txtPrimerApe.Text, txtSegundoApe.Text, txtCorreo.Text, Int32.Parse(txtTel.Text));
+                        MessageBox.Show("Cliente modificado exitosamente");
+                        this.Close();
+                    }
+                }
                 
-            //    if (reader.HasRows)
-            //    {
-            //        while (reader.Read())
-            //        {
-            //            txtRutCliente.Text = reader.GetString(0);
-            //            txtPrimerNom.Text = reader.GetString(1);
-            //            txtSegundoNom.Text = reader.GetString(2);
-            //            txtPrimerApe.Text = reader.GetString(3);
-            //            txtSegundoApe.Text = reader.GetString(4);
-            //            txtCorreo.Text = reader.GetString(5);
-            //            txtTel.Text = reader.GetString(6);
-            //        }
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("No se encontro el cliente solicitado.");
-            //    }
-            //}
-            //catch(MySqlException ex)
-            //{
-            //    MessageBox.Show("Error al buscar " + ex.Message);
-            //}
+                
 
-            //con.Close();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
         }
     }
 }

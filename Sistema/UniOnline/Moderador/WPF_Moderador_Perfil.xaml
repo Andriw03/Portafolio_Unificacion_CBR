@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline.Moderador"
         mc:Ignorable="d"
-        Title="WPF_Moderador_Perfil" Height="484.04" Width="900">
+        Title="WPF_Moderador_Perfil" Height="500.54" Width="958.5">
     <Window.Resources>
 
         <Style x:Key="TextBlockStyle" TargetType="{x:Type TextBlock}">
@@ -25,12 +25,12 @@
 
     </Window.Resources>
     <Grid>
-        <Rectangle HorizontalAlignment="Center" Height="87" Stroke="Black" VerticalAlignment="Top" Width="892" Fill="#FF010623"/>
+        <Rectangle HorizontalAlignment="Center" Height="87" Stroke="Black" VerticalAlignment="Top" Width="950" Fill="#FF010623"/>
         <TextBlock HorizontalAlignment="Left" Margin="12,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="189" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="30" Text="CBRS de Chile"/>
         <Button x:Name="btnInicio" Content="Inicio" Margin="231,32,0,0" VerticalAlignment="Top" Width="51" HorizontalAlignment="Left" Background="#FF010623" Click="btnInicioMod" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
         <Button x:Name="btnPerfil" Content="Perfil Clientes" Margin="319,32,0,0" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" Background="#FF010623" Click="btnPerfilMod" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
         <Button x:Name="btnSoporte" Content="Soporte en Linea" Margin="451,32,0,0" VerticalAlignment="Top" Width="125" HorizontalAlignment="Left" Background="#FF010623" Click="btnSoporteMod" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
-        <DataGrid x:Name="datagridPerfil" HorizontalAlignment="Left" Height="299" Margin="10,144,0,0" VerticalAlignment="Top" Width="872" SelectionChanged="datagridPerfil_SelectionChanged" AutoGenerateColumns="False">
+        <DataGrid x:Name="datagridPerfil" HorizontalAlignment="Left" Height="240" Margin="162,217,0,0" VerticalAlignment="Top" Width="628" SelectionChanged="datagridPerfil_SelectionChanged" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="RUT Cliente" Binding="{Binding Path= 'rut_usuario'}" IsReadOnly="True" Width="Auto"/>
                 <DataGridTextColumn Header="Primer Nombre" Binding="{Binding Path= 'primer_nombre'}" IsReadOnly="True" Width="Auto"/>
@@ -39,17 +39,13 @@
                 <DataGridTextColumn Header="Segundo Apellido" Binding="{Binding Path= 'segundo_apellido'}" IsReadOnly="True" Width="Auto"/>
                 <DataGridTextColumn Header="Correo Electronico" Binding="{Binding Path= 'correo_electronico'}" IsReadOnly="True" Width="Auto"/>
                 <DataGridTextColumn Header="Telefono" Binding="{Binding Path= 'telefono'}" IsReadOnly="True" Width="Auto"/>
-                <DataGridTemplateColumn Header="Editar">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Name="btnEditar" Content="Editar" Click="btnEditar_Click" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnFillGrid" Content="Cargar Datos" HorizontalAlignment="Left" Margin="406,107,0,0" VerticalAlignment="Top" Width="244" Height="32" Click="btnFillGrid_Click"/>
-        <TextBlock FontFamily="Cambria" Text="Cargar Perfiles de Clientes" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource TextBlockStyle}" Margin="108,107,501,314" Width="283" Height="32"/>
+        <Button x:Name="btnFillGrid" Content="Cargar Datos" HorizontalAlignment="Left" Margin="594,132,0,0" VerticalAlignment="Top" Width="94" Height="32" Click="btnFillGrid_Click"/>
+        <TextBlock FontFamily="Cambria" Text="Cargar Perfiles de Clientes" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource TextBlockStyle}" Margin="268,132,396,306" Width="286" Height="32"/>
+        <Button x:Name="btnEditar" Content="Modificar Datos" HorizontalAlignment="Left" Margin="594,180,0,0" VerticalAlignment="Top" Width="94" Height="32" Click="btnEditar_Click" RenderTransformOrigin="0.394,0.562"/>
+        <TextBlock FontFamily="Cambria" Text="Modificar Perfil de Clientes" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource TextBlockStyle}" Margin="261,180,396,258" Width="293" Height="32"/>
+        <Button x:Name="btnCerrarSesion" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="813,32,0,0" VerticalAlignment="Top" Width="105" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16"  FontFamily="Segoe UI Emoji" Click="btnCerrarSesion_Click"/>
 
 
 

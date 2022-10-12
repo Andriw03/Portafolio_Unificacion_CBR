@@ -18,8 +18,6 @@ namespace Controlador
         public string segundo_nombre { get; set; }
         public string primer_apellido { get; set; }
         public string segundo_apellido { get; set; }
-        public string contrasenna { get; set; }
-        
         public string correo_electronico { get; set; }
         public int telefono { get; set; }
 
@@ -36,7 +34,6 @@ namespace Controlador
             primer_apellido = string.Empty;
             segundo_apellido = string.Empty;
             correo_electronico = string.Empty;
-            contrasenna = string.Empty;
             telefono = 0;
         }
 
@@ -57,16 +54,16 @@ namespace Controlador
             }
         }
 
-        public Cliente BuscarCliente(string id)
+        public bool BuscarCliente(string rut)
         {
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT * FROM UNIONLINE.USUARIO WHERE rut_usuario = '" + id + "' and T_USUARIO_id_tipoU = 5;");
+                cmd = new MySqlCommand("SELECT * FROM UNIONLINE.USUARIO WHERE rut_usuario = '" + rut + "';", conex);
                 rd = cmd.ExecuteReader();
                 while (rd.Read())
                 {
-                    rut_usuario = rd["rut_usuario"].ToString();
+                    //rut_usuario = rd["rut_usuario"].ToString();
                     primer_nombre = rd["primer_nombre"].ToString();
                     segundo_nombre = rd["segundo_nombre"].ToString();
                     primer_apellido = rd["primer_apellido"].ToString();
@@ -78,25 +75,17 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                return null;
+                return true;
             }
-            return this;
+            return false;
         }
-        public bool Formulario(string nombre, string telefono, string correo, string asunto, string detalle, string rutUsuario)
+        public bool Formulario(string nombre, string telefono, string correo, string asunto, string detalle)
         {
             try
             {
                 Conectar();
                 asunto = "Usuario CBR: " + asunto;
-                int idUsuario = 0;
-                cmd = new MySqlCommand("SELECT id_usuario FROM UNIONLINE.USUARIO where rut_usuario = '"+ rutUsuario + "';");
-                rd = cmd.ExecuteReader();
-                while (rd.Read())
-                {
-                    idUsuario = Int32.Parse(rd["id_usuario"].ToString());
-                }
-                rd.Close();
-                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`FORMULARIO` (`nombre_form`, `telefono`, `correo_form`, `asunto_form`, `detalle_form`, `USUARIO_id_usuario`) VALUES ('" + nombre + "', '" + telefono + "', '" + correo + "', '" + asunto + "', '" + detalle + "', "+ idUsuario + "); ", conex);
+                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`FORMULARIO` (`nombre_form`, `telefono`, `correo_form`, `asunto_form`, `detalle_form`) VALUES ('" + nombre + "', '" + telefono + "', '" + correo + "', '" + asunto + "', '" + detalle + "'); ", conex);
                 cmd.ExecuteReader();
                 return true;
             }
@@ -112,7 +101,7 @@ namespace Controlador
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT id_soli, numero_seguimiento, SOLICITUD.estado, fecha_solicitud ,rut_usuario, Concat(UNIONLINE.USUARIO.primer_nombre, ' ' , UNIONLINE.USUARIO.primer_apellido) as nombre_solicitante, nombre_tramite, foja, descripcion, concat(nombre_calle,' ', numero_casa ,', ', nombre_comuna, ', ', nombre_region) as direccion_prop, Concat(UNIONLINE.DUENNO_PROP.primer_nombre, ' ' , UNIONLINE.DUENNO_PROP.primer_apellido) as nombre_duenno, Comentario FROM UNIONLINE.SOLICITUD inner join UNIONLINE.USUARIO on UNIONLINE.SOLICITUD.USUARIO_id_usuario = UNIONLINE.USUARIO.id_usuario inner join UNIONLINE.TRAMITE on UNIONLINE.SOLICITUD.TRAMITE_id_tramite = UNIONLINE.TRAMITE.id_tramite inner join UNIONLINE.PROPIEDAD on UNIONLINE.SOLICITUD.PROPIEDAD_id_propiedad = UNIONLINE.PROPIEDAD.id_propiedad inner join UNIONLINE.DUENNO_PROP on UNIONLINE.PROPIEDAD.DUENNO_PROP_id_duenno = UNIONLINE.DUENNO_PROP.id_duenno inner join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas inner join UNIONLINE.DIRECCION on UNIONLINE.PROPIEDAD.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion inner join UNIONLINE.COMUNA on UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna  inner join UNIONLINE.PROVINCIA on UNIONLINE.COMUNA.PROVINCIA_id_provincia= UNIONLINE.PROVINCIA.id_provincia  inner join UNIONLINE.REGION on UNIONLINE.PROVINCIA.REGION_id_region = UNIONLINE.REGION.id_region where numero_seguimiento = '" + NumeroS + "'; ", conex);
+                cmd = new MySqlCommand("SELECT id_soli, numero_seguimiento, SOLICITUD.estado, fecha_solicitud ,rut_usuario, Concat(UNIONLINE.USUARIO.primer_nombre, ' ' , UNIONLINE.USUARIO.primer_apellido) as nombre_solicitante, nombre_tramite, foja, descripcion, concat(nombre_calle,' ', numero_casa ,', ', nombre_comuna, ', ', nombre_region) as direccion_prop, Concat(UNIONLINE.DUENNO_PROP.primer_nombre, ' ' , UNIONLINE.DUENNO_PROP.primer_apellido) as nombre_duenno FROM UNIONLINE.SOLICITUD inner join UNIONLINE.USUARIO on UNIONLINE.SOLICITUD.USUARIO_id_usuario = UNIONLINE.USUARIO.id_usuario inner join UNIONLINE.TRAMITE on UNIONLINE.SOLICITUD.TRAMITE_id_tramite = UNIONLINE.TRAMITE.id_tramite inner join UNIONLINE.PROPIEDAD on UNIONLINE.SOLICITUD.PROPIEDAD_id_propiedad = UNIONLINE.PROPIEDAD.id_propiedad inner join UNIONLINE.DUENNO_PROP on UNIONLINE.PROPIEDAD.DUENNO_PROP_id_duenno = UNIONLINE.DUENNO_PROP.id_duenno inner join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas inner join UNIONLINE.DIRECCION on UNIONLINE.PROPIEDAD.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion inner join UNIONLINE.COMUNA on UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna  inner join UNIONLINE.PROVINCIA on UNIONLINE.COMUNA.PROVINCIA_id_provincia= UNIONLINE.PROVINCIA.id_provincia  inner join UNIONLINE.REGION on UNIONLINE.PROVINCIA.REGION_id_region = UNIONLINE.REGION.id_region where numero_seguimiento = '" + NumeroS + "'; ", conex);
                 rd = cmd.ExecuteReader();
                 while (rd.Read())
                 {
@@ -127,7 +116,6 @@ namespace Controlador
                     soli.Add(rd["direccion_prop"].ToString());
                     soli.Add(rd["nombre_duenno"].ToString());
                     soli.Add(rd["id_soli"].ToString());
-                    soli.Add(rd["Comentario"].ToString());
                 }
                 rd.Close();
                 return soli;
@@ -160,62 +148,32 @@ namespace Controlador
                 MessageBox.Show("Error Buscar documento: " + ex.Message);
                 return null;
             }
-        }
+        } 
 
-
-        public Cliente RecuperarContraseña(string userRequesting)
-        {
-            Cliente cli = new Cliente();
-            try
-            {
-                Conectar();
-                cmd = new MySqlCommand("SELECT * FROM UNIONLINE.USUARIO WHERE correo_electronico = '" + userRequesting + "' ", conex);
-                rd = cmd.ExecuteReader();
-                while (rd.Read() == true)
-                {
-                    cli.primer_apellido = rd["primer_apellido"].ToString();
-                    cli.primer_nombre = rd["primer_nombre"].ToString();
-                    cli.contrasenna = rd["contrasenna"].ToString();
-                    cli.correo_electronico = rd["correo_electronico"].ToString();
-
-
-
-                }
-                rd.Close();
-                return cli;
-
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
-        //Metodo que permite al trabajador modificar una solicitud
-        public bool ModificarSolicitud(string numeroSeguimiento, string estado, string comentario)
+        public void ModificarCliente(string rutCliente, string primerNomCli, string segundoNomCli, string primerApeCli, string segundoApeCli, string correoCli, int telCli)
         {
             try
             {
                 Conectar();
-                int idSoli = 0;
-                cmd = new MySqlCommand("SELECT id_soli FROM UNIONLINE.SOLICITUD where numero_seguimiento = '"+ numeroSeguimiento +"';", conex);
+                int idUsuario = 0;
+                cmd = new MySqlCommand("SELECT id_usuario FROM UNIONLINE.USUARIO WHERE rut_usuario = '" + rutCliente + "';", conex);
                 rd = cmd.ExecuteReader();
-                while (rd.Read() == true)
+                while(rd.Read())
                 {
-                    idSoli = Int32.Parse(rd["id_soli"].ToString());
+                    idUsuario = Int32.Parse(rd["id_usuario"].ToString());
                 }
+
                 rd.Close();
-                cmd = new MySqlCommand("UPDATE `UNIONLINE`.`SOLICITUD` SET `estado` = '"+ estado +"', `Comentario` ='"+comentario+"' WHERE `id_soli` = "+idSoli+" ;", conex);
-                rd = cmd.ExecuteReader();
-                rd.Close();
-                return true;
+                cmd = new MySqlCommand("UPDATE `UNIONLINE`.`USUARIO` SET `primer_nombre` = '" + primerNomCli + "', `segundo_nombre` = '" + segundoNomCli + "', `primer_apellido` = '" + primerApeCli + "', `segundo_apellido` = '" + segundoApeCli + "', `correo_electronico` = '" + correoCli + "', `telefono` = '" + telCli + "' WHERE `id_usuario` = '" + idUsuario + "'; ", conex);
+                cmd.ExecuteNonQuery();
+                return;
+
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                return false;
             }
         }
-
 
     }
 
