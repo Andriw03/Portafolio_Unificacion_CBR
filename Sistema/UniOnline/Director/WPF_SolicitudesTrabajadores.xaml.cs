@@ -48,6 +48,8 @@ namespace UniOnline.Director
             //Usuario usu = new Usuario();
             //des.ObtenerFormulario = ;
             des.ShowDialog();
+
+           
         }
 
         private void Button_Inicio(object sender, RoutedEventArgs e)

@@ -373,8 +373,16 @@ namespace Controlador
 
         public void Descripcion()
         {
-            cmd = new MySqlCommand("SELECT FORMULARIO.nombre_form, T_USUARIO.nombre_tipoU, FORMULARIO.correo_form, FORMULARIO.estado,FORMULARIO.asunto_form, FORMULARIO.detalle_form FROM UNIONLINE.FORMULARIO inner join UNIONLINE.USUARIO on UNIONLINE.FORMULARIO.USUARIO_id_usuario = UNIONLINE.USUARIO.id_usuario inner join UNIONLINE.T_USUARIO on UNIONLINE.USUARIO.T_USUARIO_id_tipoU = UNIONLINE.T_USUARIO.id_tipoU;", conex);
-            
+            try
+            {
+                cmd = new MySqlCommand("SELECT FORMULARIO.nombre_form, T_USUARIO.nombre_tipoU, FORMULARIO.correo_form, FORMULARIO.estado,FORMULARIO.asunto_form, FORMULARIO.detalle_form FROM UNIONLINE.FORMULARIO inner join UNIONLINE.USUARIO on UNIONLINE.FORMULARIO.USUARIO_id_usuario = UNIONLINE.USUARIO.id_usuario inner join UNIONLINE.T_USUARIO on UNIONLINE.USUARIO.T_USUARIO_id_tipoU = UNIONLINE.T_USUARIO.id_tipoU;", conex);
+
+            }
+            catch
+            {
+                MessageBox.Show("a");
+            }
+
         }
 
     }
