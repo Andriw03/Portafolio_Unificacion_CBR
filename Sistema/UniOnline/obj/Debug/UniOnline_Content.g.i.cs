@@ -8,6 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("logocbr.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("packages/microsoft.web.webview2.1.0.1370.28/runtimes/win-x86/native/webview2loade" +
+    "r.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("packages/microsoft.web.webview2.1.0.1370.28/runtimes/win-x64/native/webview2loade" +
+    "r.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("packages/microsoft.web.webview2.1.0.1370.28/runtimes/win-arm64/native/webview2loa" +
+    "der.dll")]
 
 

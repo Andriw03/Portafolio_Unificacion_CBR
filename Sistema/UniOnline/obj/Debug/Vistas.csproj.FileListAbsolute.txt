@@ -687,3 +687,15 @@ D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Recu
 D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarDueño.baml
 C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\RecuperarContraseña.g.cs
 C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarDueño.g.cs
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Informes.g.cs
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_MainDirector.g.cs
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_ModificarUsuario.g.cs
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_ModificarPerfil.g.cs
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Recepcion\Detalles_Solicitud.g.cs
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Recepcion\WPF_MainRecepcion.g.cs
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\RecuperarContraseña.g.cs
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_ConsultarTramite.g.cs
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarDueño.g.cs
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_VisorSolicitud.g.cs
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_VistaDoc.g.cs
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\WPF_PerfilUsuario.g.cs
