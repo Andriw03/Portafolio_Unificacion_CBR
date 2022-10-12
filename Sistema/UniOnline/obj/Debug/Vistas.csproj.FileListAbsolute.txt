@@ -685,3 +685,5 @@ D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trab
 D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_ModificarPerfil.baml
 D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\RecuperarContraseña.baml
 D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarDueño.baml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\RecuperarContraseña.g.cs
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarDueño.g.cs
