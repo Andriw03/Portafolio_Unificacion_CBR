@@ -429,7 +429,27 @@ namespace Controlador
                 return false;
             }
         }
-
+        public List<string> LlenadoEstado(string rutUsuario)
+        {
+            List<string> registro = new List<string>();
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT concat(asunto_form, ', Estado: ', estado) form FROM UNIONLINE.FORMULARIO inner join UNIONLINE.USUARIO on UNIONLINE.FORMULARIO.USUARIO_id_usuario = UNIONLINE.USUARIO.id_usuario where rut_usuario = '"+rutUsuario+"';", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    registro.Add(rd["form"].ToString());
+                }
+                rd.Close();
+                return registro;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
     }
 
 

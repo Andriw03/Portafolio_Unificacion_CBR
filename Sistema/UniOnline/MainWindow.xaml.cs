@@ -87,13 +87,18 @@ namespace UniOnline
         {
             if(txtRut.Text != string.Empty && txtPass.Password!= string.Empty)
             {
+                Hashing ha = new Hashing();
                 Usuario us = new Usuario();
                 us = us.LoginUsuario(txtRut.Text);
-                if (us.rut_usuario != string.Empty && us.contrasenna == txtPass.Password)
+                
+               
+
+                if (us.rut_usuario != string.Empty && ha.Descrypt(us.contrasenna) == txtPass.Password)
                 {
+                    //ha.Descrypt(us.contrasenna);
                     if (us.id_tipoU == 2 )
                     {                        
-                        WPF_SolicitudesTrabajadores dir = new WPF_SolicitudesTrabajadores();
+                        WPF_MainDirector dir = new WPF_MainDirector();
                         this.Close();
                         dir.ShowDialog();
                         
