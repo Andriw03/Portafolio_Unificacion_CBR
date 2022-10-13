@@ -148,15 +148,27 @@ namespace UniOnline.Trabajador
             if (txtRutDueño.Text != string.Empty && txtFoja.Text != string.Empty && txtDescripcion.Text != string.Empty && txtDireccion.Text != string.Empty && cmbTipoProp.SelectedItem != null)
             {
                 Propiedad prop = new Propiedad();
-                if (prop.ModificarProp(txtDescripcion.Text,cmbTipoProp.SelectedIndex, txtRutDueño.Text, Int32.Parse(txtFoja.Text)))
+                MessageBoxResult result = MessageBox.Show("Seguro que desea modificar esta propiedad", "Modificar Propiedad", MessageBoxButton.YesNoCancel);
+                switch (result)
                 {
-                    MessageBox.Show("Propiedad Modificada con Éxito");
-                    this.Close();
+                    case MessageBoxResult.Yes:
+                        if (prop.ModificarProp(txtDescripcion.Text, cmbTipoProp.SelectedIndex, txtRutDueño.Text, Int32.Parse(txtFoja.Text)))
+                        {
+                            MessageBox.Show("Propiedad Modificada con Éxito");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error en modificar", "Error");
+                        }
+                        break;
+                    case MessageBoxResult.No:
+                        MessageBox.Show("Propiedad no modificada");
+                        break;
+                    case MessageBoxResult.Cancel:
+                        break;
                 }
-                else
-                {
-                    MessageBox.Show("Error en el Update","Error");
-                }
+                
             }
             else
             {
@@ -179,16 +191,29 @@ namespace UniOnline.Trabajador
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
+
             Propiedad prop = new Propiedad();
-            if (prop.EliminarProp(Int32.Parse(txtFoja.Text)))
+            MessageBoxResult result = MessageBox.Show("Seguro que desea modificar esta propiedad", "Modificar Propiedad", MessageBoxButton.YesNoCancel);
+            switch (result)
             {
-                MessageBox.Show("Propiedad Eliminada con Éxito");
-                this.Close();
+                case MessageBoxResult.Yes:
+                    if (prop.EliminarProp(Int32.Parse(txtFoja.Text)))
+                    {
+                        MessageBox.Show("Propiedad Eliminada con Éxito");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error en el Eliminar", "Error");
+                    }
+                    break;
+                case MessageBoxResult.No:
+                    MessageBox.Show("Propiedad no modificada");
+                    break;
+                case MessageBoxResult.Cancel:
+                    break;
             }
-            else
-            {
-                MessageBox.Show("Error en el Eliminar", "Error");
-            }
+            
         }
 
         private void btnModificarDuenno_Click(object sender, RoutedEventArgs e)

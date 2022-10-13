@@ -44,72 +44,97 @@ namespace UniOnline.Trabajador
         //Método para llenar el combobox tipo de propiedad
         private void LlenarCmbPropiedad()
         {
-            cmbTipoProp.Items.Clear();
-            cmbTipoProp.Items.Add("-------");
-            List<string> registro = con.Llenado("TIPO_PROPIEDAD", "nombre_tipoP");
-            if (registro != null)
+            try
             {
-                for (int i = 0; i < registro.Count(); i++)
+                cmbTipoProp.Items.Clear();
+                cmbTipoProp.Items.Add("-------");
+                List<string> registro = con.Llenado("TIPO_PROPIEDAD", "nombre_tipoP");
+                if (registro != null)
                 {
-                    cmbTipoProp.Items.Add(registro[i]);
+                    for (int i = 0; i < registro.Count(); i++)
+                    {
+                        cmbTipoProp.Items.Add(registro[i]);
+                    }
+                    cmbTipoProp.Items.Refresh();
                 }
-                cmbTipoProp.Items.Refresh();
+                else
+                {
+                    MessageBox.Show("Error Conexion TIPO_PROPIEDAD", "Error");
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Error", "Error Conexion TIPO_PROPIEDAD");
+                MessageBox.Show("Error Conexion TIPO_PROPIEDAD", "Error");
             }
+            
         }
         //Método para llenar el combobox Región 
         private void LlenarCmbRegion()
         {
-            cmbRegion.Items.Add("-------");
-            cmbProvincia.Items.Add("-------");
-            cmbComuna.Items.Add("-------");
-            List<string> registro = con.Llenado("REGION", "nombre_region");
-            if (registro != null)
+            try
             {
-                for (int i = 0; i < registro.Count(); i++)
+                cmbRegion.Items.Add("-------");
+                cmbProvincia.Items.Add("-------");
+                cmbComuna.Items.Add("-------");
+                List<string> registro = con.Llenado("REGION", "nombre_region");
+                if (registro != null)
                 {
-                    cmbRegion.Items.Add(registro[i]);
+                    for (int i = 0; i < registro.Count(); i++)
+                    {
+                        cmbRegion.Items.Add(registro[i]);
+                    }
+                    cmbRegion.Items.Refresh();
                 }
-                cmbRegion.Items.Refresh();
+                else
+                {
+                    MessageBox.Show("Error Conexion REGION", "Error");
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Error", "Error Conexion REGION");
+                MessageBox.Show("Error Conexion REGION", "Error");
             }
+            
         }
         //Método para llenar el combobox de Provincia
         private void cmbRegion_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            cmbComuna.Items.Clear();
-            cmbComuna.Items.Add("-------");
-            cmbProvincia.Items.Clear();
-            cmbProvincia.Items.Add("-------");
-            int RegionId = Convert.ToInt32(cmbRegion.SelectedIndex);
-            List<string> registro = con.LlenadoWhereInt("PROVINCIA", "nombre_provincia", "REGION_id_region", RegionId);
-            if (registro != null)
+            try
             {
-                for (int i = 0; i < registro.Count(); i++)
+                cmbComuna.Items.Clear();
+                cmbComuna.Items.Add("-------");
+                cmbProvincia.Items.Clear();
+                cmbProvincia.Items.Add("-------");
+                int RegionId = Convert.ToInt32(cmbRegion.SelectedIndex);
+                List<string> registro = con.LlenadoWhereInt("PROVINCIA", "nombre_provincia", "REGION_id_region", RegionId);
+                if (registro != null)
                 {
-                    cmbProvincia.Items.Add(registro[i]);
+                    for (int i = 0; i < registro.Count(); i++)
+                    {
+                        cmbProvincia.Items.Add(registro[i]);
+                    }
+                    cmbProvincia.Items.Refresh();
                 }
-                cmbProvincia.Items.Refresh();
+                else
+                {
+                    MessageBox.Show("Error Conexion Provincia", "Error");
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Error", "Error Conexion Provincia");
+                MessageBox.Show("Error Conexion Provincia", "Error");
             }
+            
 
         }
         //Método para llenar el combobox de Comuna
         private void cmbProvincia_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            cmbComuna.Items.Clear();
-            cmbComuna.Items.Add("-------");
             try
             {
+                cmbComuna.Items.Clear();
+            cmbComuna.Items.Add("-------");
+            
                 List<string> registro = con.LlenadoWhereString("COMUNA inner join UNIONLINE.PROVINCIA on UNIONLINE.COMUNA.PROVINCIA_id_provincia = PROVINCIA.id_provincia", "nombre_comuna", "PROVINCIA.nombre_provincia", cmbProvincia.SelectedItem.ToString());
                 if (registro != null)
                 {
@@ -121,12 +146,12 @@ namespace UniOnline.Trabajador
                 }
                 else
                 {
-                    MessageBox.Show("Error", "Error Conexion Comuna");
+                    MessageBox.Show("Error Conexion Comuna", "Error");
                 }
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error", "nose que pasa");
+                MessageBox.Show("Error Conexion Comuna", "Error");
             }
             
         }
