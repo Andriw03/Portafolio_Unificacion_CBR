@@ -142,7 +142,7 @@ namespace UniOnline.Director
                         MessageBox.Show("Seleccione un rol");
                     }
                     Hashing hash = new Hashing();
-                    if (usu.ModificarUsuario(txtBoxRUT.Text, txtBoxNombre.Text, txtBoxSNombre.Text, txtBoxApellido.Text, txtBoxSApellido.Text, txtBoxTelefono.Text, txtBoxCorreo.Text, hash.ToSHA512(txtBoxContra.Text), idTUser))
+                    if (usu.ModificarUsuario(txtBoxRUT.Text, txtBoxNombre.Text, txtBoxSNombre.Text, txtBoxApellido.Text, txtBoxSApellido.Text, txtBoxTelefono.Text, txtBoxCorreo.Text, hash.ToSHA256(txtBoxContra.Text), idTUser))
 
                     {
 
