@@ -44,9 +44,9 @@ namespace UniOnline.Director
 
         private void btnDetalles_Click(object sender, RoutedEventArgs e)
         {
+            DataRowView dataView = (DataRowView)((Button)e.Source).DataContext;
             Descripción des = new Descripción();
-            //Usuario usu = new Usuario();
-            //des.ObtenerFormulario = ;
+            des.ObtenerFormulario = dataView[0].ToString();
             des.ShowDialog();
 
            
