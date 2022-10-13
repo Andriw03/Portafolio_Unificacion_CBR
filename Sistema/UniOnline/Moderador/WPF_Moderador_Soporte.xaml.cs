@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Data;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using Controlador;
 
 namespace UniOnline.Moderador
 {
@@ -26,6 +27,8 @@ namespace UniOnline.Moderador
         {
             InitializeComponent();
         }
+
+        Usuario us = new Usuario();
 
         private void btnInicioMod(object sender, RoutedEventArgs e)
         {
@@ -65,6 +68,13 @@ namespace UniOnline.Moderador
             WPF_ChatWhatsApp wsp = new WPF_ChatWhatsApp();
             wsp.ShowDialog();
             
+        }
+
+        private void btnPerfilUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            WPF_PerfilUsuario perfilUsuario = new WPF_PerfilUsuario();
+            perfilUsuario.ObtenerUsuario = us;
+            perfilUsuario.ShowDialog();
         }
     }
 }

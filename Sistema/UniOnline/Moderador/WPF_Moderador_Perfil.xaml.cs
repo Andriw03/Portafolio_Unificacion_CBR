@@ -30,6 +30,7 @@ namespace UniOnline.Moderador
             
         }
 
+        Usuario us = new Usuario();
         
 
     
@@ -137,6 +138,13 @@ namespace UniOnline.Moderador
             this.Hide();
             ventana.ShowDialog();
             this.Close();
+        }
+
+        private void btnPerfilUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            WPF_PerfilUsuario perfilUsuario = new WPF_PerfilUsuario();
+            perfilUsuario.ObtenerUsuario = us;
+            perfilUsuario.ShowDialog();
         }
     }
 }

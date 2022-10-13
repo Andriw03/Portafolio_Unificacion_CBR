@@ -25,24 +25,9 @@ namespace UniOnline.Moderador
             Conectar();
         }
 
+
         Usuario us = new Usuario();
-        public Usuario ObtenerUsuario
-        {
-            get
-            {
-                return this.us;
-            }
-            set
-            {
-                this.us = value;
-                this.us = value;
-                string[] motivacion = { "Si tú sabes lo que vales, ve y consigue lo que mereces. Rocky Balboa.", "Por muy alta que sea una montaña, siempre hay un camino hacia la cima.", "El triunfo verdadero del hombre surge de las cenizas del error. Pablo Neruda.", "Lo único imposible es aquello que no intentas. Anónimo.", "El 80% del éxito se basa simplemente en insistir. Woody Allen.", "Cuanto más hacemos, más podemos hacer. William Hazlitt." };
-                Random rand = new Random();
-                int randN = rand.Next(0, 5);
-                LabelSaludo.Content = us.primer_nombre + " " + us.primer_apellido + " Recuerda:";
-                LabelMotivacion.Content = motivacion[randN];
-            }
-        }
+
 
         //Conexión BD
         Conexion con = new Conexion();
@@ -77,7 +62,7 @@ namespace UniOnline.Moderador
 
         private void btnInicioMod(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void btnPerfilMod(object sender, RoutedEventArgs e)
@@ -91,7 +76,7 @@ namespace UniOnline.Moderador
         {
             WPF_Moderador_Soporte wpfSoporte = new WPF_Moderador_Soporte();
             this.Close();
-            wpfSoporte.ShowDialog(); 
+            wpfSoporte.ShowDialog();
         }
 
         private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
@@ -108,5 +93,13 @@ namespace UniOnline.Moderador
             perfilUsuario.ObtenerUsuario = us;
             perfilUsuario.ShowDialog();
         }
+
+        private void LabelMotivacion_Initialized(object sender, EventArgs e)
+        {
+            Usuario us = new Usuario();
+            LabelSaludo.Content = us.primer_nombre + " " + us.primer_apellido + " Recuerda:";
+            LabelMotivacion.Content = "Si tú sabes lo que vales, ve y consigue lo que mereces. Rocky Balboa.";
+        }  
+       
     }
 }
