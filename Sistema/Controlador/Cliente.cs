@@ -62,7 +62,7 @@ namespace Controlador
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT * FROM UNIONLINE.USUARIO WHERE rut_usuario = '" + id + "' and T_USUARIO_id_tipoU = 5;");
+                cmd = new MySqlCommand("SELECT * FROM UNIONLINE.USUARIO WHERE rut_usuario = '" + id + "' and T_USUARIO_id_tipoU = 5;", conex);
                 rd = cmd.ExecuteReader();
                 while (rd.Read())
                 {

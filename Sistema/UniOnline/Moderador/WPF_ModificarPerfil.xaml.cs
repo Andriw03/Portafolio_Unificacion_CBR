@@ -56,7 +56,7 @@ namespace UniOnline.Moderador
                 Cliente cli = new Cliente();
                 cli.BuscarCliente(txtRutCliente.Text);
 
-                if (txtRutCliente.Text != cli.rut_usuario)
+                if (txtRutCliente.Text != string.Empty)
                 {
                     txtPrimerNom.Text = cli.primer_nombre;
                     txtSegundoNom.Text = cli.segundo_nombre;
@@ -64,6 +64,13 @@ namespace UniOnline.Moderador
                     txtSegundoApe.Text = cli.segundo_apellido;
                     txtCorreo.Text = cli.correo_electronico;
                     txtTel.Text = cli.telefono.ToString();
+
+                    //cli.primer_nombre = txtPrimerNom.Text;
+                    //cli.segundo_nombre = txtSegundoNom.Text;
+                    //cli.primer_apellido = txtPrimerApe.Text;
+                    //cli.segundo_apellido = txtSegundoApe.Text;
+                    //cli.correo_electronico = txtCorreo.Text;
+                    //cli.telefono = Int32.Parse(txtTel.Text);
 
                 }
                 else

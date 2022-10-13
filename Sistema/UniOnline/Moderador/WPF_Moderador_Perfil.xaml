@@ -30,7 +30,7 @@
         <Button x:Name="btnInicio" Content="Inicio" Margin="231,32,0,0" VerticalAlignment="Top" Width="51" HorizontalAlignment="Left" Background="#FF010623" Click="btnInicioMod" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
         <Button x:Name="btnPerfil" Content="Perfil Clientes" Margin="319,32,0,0" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" Background="#FF010623" Click="btnPerfilMod" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
         <Button x:Name="btnSoporte" Content="Soporte en Linea" Margin="451,32,0,0" VerticalAlignment="Top" Width="125" HorizontalAlignment="Left" Background="#FF010623" Click="btnSoporteMod" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
-        <DataGrid x:Name="datagridPerfil" HorizontalAlignment="Left" Height="240" Margin="162,217,0,0" VerticalAlignment="Top" Width="628" SelectionChanged="datagridPerfil_SelectionChanged" AutoGenerateColumns="False">
+        <DataGrid x:Name="datagridPerfil" HorizontalAlignment="Left" Height="240" Margin="86,217,0,0" VerticalAlignment="Top" Width="761" SelectionChanged="datagridPerfil_SelectionChanged" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="RUT Cliente" Binding="{Binding Path= 'rut_usuario'}" IsReadOnly="True" Width="Auto"/>
                 <DataGridTextColumn Header="Primer Nombre" Binding="{Binding Path= 'primer_nombre'}" IsReadOnly="True" Width="Auto"/>
