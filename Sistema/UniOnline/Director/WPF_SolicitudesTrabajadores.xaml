@@ -59,6 +59,7 @@
         <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="2" Grid.Row="11" Grid.ColumnSpan="4" Grid.RowSpan="5">
             <DataGrid x:Name="dg_listarFormulario"  AutoGenerateColumns="False" CanUserAddRows="False" HorizontalAlignment="Center" MinHeight="137" MinWidth="502" Width="595" SelectionChanged="dg_listartramite_SelectionChanged" >
                 <DataGrid.Columns>
+                    <DataGridTextColumn Header="Codigo" Binding="{Binding Path = 'id_formulario'}" Width="120" IsReadOnly="True" />
                     <DataGridTextColumn Header="Nombre Trabajador" Binding="{Binding Path = 'nombre_form'}" Width="120" IsReadOnly="True" />
                     <DataGridTextColumn Header="Cargo"  Binding="{Binding Path = 'nombre_tipoU'}" Width="80" IsReadOnly="True"/>
                     <DataGridTextColumn Header="Correo Electrónico" Binding="{Binding Path = 'correo_form'}" Width="130" IsReadOnly="True"/>

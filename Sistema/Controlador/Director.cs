@@ -307,11 +307,11 @@ namespace Controlador
                 }
                 rd.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
 
             documento.Add(tabla);
             documento.Close();
@@ -355,7 +355,7 @@ namespace Controlador
 
             try
             {
-                cmd = new MySqlCommand("SELECT FORMULARIO.nombre_form, T_USUARIO.nombre_tipoU, FORMULARIO.correo_form, FORMULARIO.estado,FORMULARIO.asunto_form, FORMULARIO.detalle_form FROM UNIONLINE.FORMULARIO inner join UNIONLINE.USUARIO on UNIONLINE.FORMULARIO.USUARIO_id_usuario = UNIONLINE.USUARIO.id_usuario inner join UNIONLINE.T_USUARIO on UNIONLINE.USUARIO.T_USUARIO_id_tipoU = UNIONLINE.T_USUARIO.id_tipoU;", conex);
+                cmd = new MySqlCommand("SELECT id_formulario, FORMULARIO.nombre_form, T_USUARIO.nombre_tipoU, FORMULARIO.correo_form, FORMULARIO.estado,FORMULARIO.asunto_form, FORMULARIO.detalle_form FROM UNIONLINE.FORMULARIO inner join UNIONLINE.USUARIO on UNIONLINE.FORMULARIO.USUARIO_id_usuario = UNIONLINE.USUARIO.id_usuario inner join UNIONLINE.T_USUARIO on UNIONLINE.USUARIO.T_USUARIO_id_tipoU = UNIONLINE.T_USUARIO.id_tipoU where FORMULARIO.estado = 'En Proceso';", conex);
                 MySqlDataAdapter ap = new MySqlDataAdapter(cmd);
                 ap.Fill(tabla);
                 cmd.Dispose();
@@ -371,18 +371,63 @@ namespace Controlador
             }
         }
 
-        public void Descripcion()
+        public List<string> Descripcion(string idFormulario)
+        {
+            List<string> formulario = new List<string>();
+            try
+            {
+                Conectar();
+                int idFor = Int32.Parse(idFormulario);
+                cmd = new MySqlCommand("SELECT  rut_usuario, concat(primer_nombre, ' ', primer_apellido) nombre_usuario ,asunto_form, detalle_form FROM UNIONLINE.FORMULARIO inner join UNIONLINE.USUARIO on UNIONLINE.FORMULARIO.USUARIO_id_usuario = UNIONLINE.USUARIO.id_usuario where id_formulario = " + idFor + ";", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    formulario.Add(rd["rut_usuario"].ToString());
+                    formulario.Add(rd["nombre_usuario"].ToString());
+                    formulario.Add(rd["asunto_form"].ToString());
+                    formulario.Add(rd["detalle_form"].ToString());
+                }
+                rd.Close();
+                return formulario;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+
+        }
+        public bool AprobarSolicitud(string idFormulario)
         {
             try
             {
-                cmd = new MySqlCommand("SELECT FORMULARIO.nombre_form, T_USUARIO.nombre_tipoU, FORMULARIO.correo_form, FORMULARIO.estado,FORMULARIO.asunto_form, FORMULARIO.detalle_form FROM UNIONLINE.FORMULARIO inner join UNIONLINE.USUARIO on UNIONLINE.FORMULARIO.USUARIO_id_usuario = UNIONLINE.USUARIO.id_usuario inner join UNIONLINE.T_USUARIO on UNIONLINE.USUARIO.T_USUARIO_id_tipoU = UNIONLINE.T_USUARIO.id_tipoU;", conex);
-
+                Conectar();
+                int idForm = Int32.Parse(idFormulario);
+                cmd = new MySqlCommand("UPDATE `UNIONLINE`.`FORMULARIO` SET `estado` = 'Aprobado' WHERE `id_formulario` = " + idForm + ";", conex);
+                cmd.ExecuteNonQuery();
+                return true;
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("a");
+                MessageBox.Show(ex.Message);
+                return false;
             }
-
+        }
+        public bool RechazarSolicitud(string idFormulario)
+        {
+            try
+            {
+                Conectar();
+                int idForm = Int32.Parse(idFormulario);
+                cmd = new MySqlCommand("UPDATE `UNIONLINE`.`FORMULARIO` SET `estado` = 'Rechazada' WHERE `id_formulario` = " + idForm + ";", conex);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
         }
 
     }
