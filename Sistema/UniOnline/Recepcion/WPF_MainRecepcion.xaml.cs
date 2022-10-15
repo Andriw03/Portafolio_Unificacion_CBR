@@ -86,6 +86,7 @@ namespace UniOnline.Recepcion
         {
             WPF_Recepcion mrec = new WPF_Recepcion();
             mrec.ObtenerUsuario = us;
+            this.Close();
             mrec.ShowDialog();
             
         }

@@ -4,8 +4,9 @@
     "\\Sistema",
     "\\Sistema\\Controlador",
     "\\Sistema\\UniOnline",
-    "\\Sistema\\UniOnline\\Moderador"
+    "\\Sistema\\UniOnline\\Moderador",
+    "\\Sistema\\UniOnline\\Trabajador"
   ],
-  "SelectedNode": "\\Sistema\\Controlador\\Director.cs",
+  "SelectedNode": "\\Sistema\\UniOnline\\Trabajador\\WPF_EditarProp.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

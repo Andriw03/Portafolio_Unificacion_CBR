@@ -25,7 +25,7 @@
             <TextBlock Margin="342,201,0,0" TextWrapping="Wrap" Foreground="#FF010326" FontSize="22" FontFamily="Segoe UI Historic" FontWeight="Bold" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250"><Run Language="es-es" Text="Ingrese sus credenciales"/></TextBlock>
             <Button x:Name="btnInicioSesion" Content="Iniciar sesión" Margin="493,353,0,0" Background="#FFF0F2F2" Foreground="#FF010326" BorderBrush="#FF010326" Click="btnInicioSesion_Click" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="99"/>
             <Button x:Name="btnOlvidarCon" Content="¿Olvidó su contraseña?" Margin="284,353,0,0" Foreground="#FF010326" BorderBrush="#FF010326" Background="#FFF0F2F2" Click="btnOlvidarCon_Click" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="125"/>
-            <PasswordBox x:Name="txtPass" Margin="414,300,0,0" Background="#FFF0F2F2" Foreground="#FF010326" RenderTransformOrigin="-0.364,0.553" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="116"/>
+            <PasswordBox x:Name="txtPass" Margin="414,300,0,0" Background="#FFF0F2F2" Foreground="#FF010326" RenderTransformOrigin="-0.364,0.553" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
         </Grid>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="253" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="36"><Run Language="es-es" Text="CBRS de Chile."/></TextBlock>
     </Grid>

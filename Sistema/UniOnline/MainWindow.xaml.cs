@@ -90,7 +90,7 @@ namespace UniOnline
                 Hashing ha = new Hashing();
                 Usuario us = new Usuario();
                 us = us.LoginUsuario(txtRut.Text);
-                
+                this.txtPass.Password = ha.Descrypt(us.contrasenna);
                
 
                 if (us.rut_usuario != string.Empty && ha.Descrypt(us.contrasenna) == txtPass.Password)

@@ -52,7 +52,7 @@
         </Viewbox>
 
         <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="3" OpacityMask="Black" Margin="94.2,13,31.6,12.2" Grid.RowSpan="2">
-            <TextBox x:Name="txtNumeroSeguimiento"  MinHeight="23" MinWidth="165" TextWrapping="Wrap" Text="" Background="White" Foreground="#FF878787"/>
+            <TextBox x:Name="txtNumeroSeguimiento"  MinHeight="23" MinWidth="165" TextWrapping="Wrap" Text="" Background="White" Foreground="#FF878787" TextChanged="txtNumeroSeguimiento_TextChanged"/>
         </Viewbox>
 
 

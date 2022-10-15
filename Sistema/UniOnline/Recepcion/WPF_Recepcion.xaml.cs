@@ -83,8 +83,10 @@ namespace UniOnline.Recepcion
                     }
                     else if (txtNumeroSeguimiento.Text != string.Empty)
                     {
+                        
 
                         DataTable tabla = recep.MostrarSolicitud(txtNumeroSeguimiento.Text);
+                        
                         if (tabla != null)
                         {
                             dg_listartramite.ItemsSource = tabla.DefaultView;
@@ -118,6 +120,7 @@ namespace UniOnline.Recepcion
         {
             WPF_MainRecepcion mrec = new WPF_MainRecepcion();
             mrec.ObtenerUsuario = us;
+            this.Close();
             mrec.ShowDialog();
             
         }
@@ -205,6 +208,11 @@ namespace UniOnline.Recepcion
             txtRut.Text = FormatearRut(txtRut.Text);
             txtRut.SelectionStart = txtRut.Text.Length;
             txtRut.SelectionLength = 0;
+        }
+
+        private void txtNumeroSeguimiento_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
         }
     }
 }

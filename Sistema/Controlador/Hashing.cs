@@ -27,19 +27,24 @@ namespace Controlador
     {
         Usuario us = new Usuario();
 
-        string hash = us.contrasenna;
-        byte[] data = Convert.FromBase64String(s);
-        SHA256 sha256 = SHA256.Create();
+        string resultado = string.Empty;
+        Byte[] desencriptar = Convert.FromBase64String(s);
 
-        TripleDES tripledes = TripleDES.Create();
-        tripledes.Key = sha256.ComputeHash(Encoding.UTF8.GetBytes(s));
-        tripledes.Mode = CipherMode.CBC;
-        tripledes.Padding = PaddingMode.PKCS7;
+        resultado = System.Text.Encoding.Unicode.GetString(desencriptar);
+        return resultado;
 
-        ICryptoTransform transform = tripledes.CreateDecryptor();
-        byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
 
-        return UTF8Encoding.UTF8.GetString(results);
+        //SHA256 sha256 = SHA256.Create();
+
+        //TripleDES tripledes = TripleDES.Create();
+        //tripledes.Key = sha256.ComputeHash(Encoding.UTF8.GetBytes(s));
+        //tripledes.Mode = CipherMode.CBC;
+        //tripledes.Padding = PaddingMode.PKCS7;
+
+        //ICryptoTransform transform = tripledes.CreateDecryptor();
+        //byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
+
+        //return UTF8Encoding.UTF8.GetString(results);
 
     }
     }
