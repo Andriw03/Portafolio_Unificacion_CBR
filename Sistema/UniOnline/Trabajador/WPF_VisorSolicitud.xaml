@@ -76,7 +76,7 @@
         <Label Content="Subir Tramite:" Grid.Column="6" HorizontalAlignment="Left" Height="30" Margin="37,31,0,0" Grid.Row="7" VerticalAlignment="Top" Width="95" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
         <Button x:Name="btnBrowse"  Content="Subir" Grid.Column="8" HorizontalAlignment="Left" Height="25" Margin="44,31,0,0" Grid.Row="7" VerticalAlignment="Top" Background="#FF010623" Foreground="#FFF0F2F2" Width="78" Grid.ColumnSpan="2" Click="btnBrowse_Click"/>
         <TextBox x:Name="txtFileName" Grid.Column="7" HorizontalAlignment="Left" Height="23" Margin="1.6,35,0,0" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Grid.ColumnSpan="2"/>
-        <Label x:Name="labelURL" Content="D:\Descargas\D.pdf" Grid.Column="7" HorizontalAlignment="Left" Height="36" Margin="23.6,10.2,0,0" Grid.Row="8" VerticalAlignment="Top" Width="108" RenderTransformOrigin="0.5,0.5" Visibility="Hidden" Grid.ColumnSpan="2"/>
+        <Label x:Name="labelURL" Content="" Grid.Column="7" HorizontalAlignment="Left" Height="36" Margin="23.6,10.2,0,0" Grid.Row="8" VerticalAlignment="Top" Width="108" RenderTransformOrigin="0.5,0.5" Visibility="Hidden" Grid.ColumnSpan="2"/>
         <Label x:Name="lbErrorNombre" Content="" Grid.Column="7" HorizontalAlignment="Left" Margin="1.6,0.2,0,0" Grid.Row="8" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="23" Width="154" FontSize="10" Foreground="Red" Visibility="Hidden"/>
 
 

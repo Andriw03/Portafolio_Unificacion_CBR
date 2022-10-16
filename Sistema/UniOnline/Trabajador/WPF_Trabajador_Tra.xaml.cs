@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -56,7 +57,7 @@ namespace UniOnline.Trabajador
             }
             else
             {
-                MessageBox.Show("Error Conexión");
+                MessageBox.Show("Error de Conexión.");
             }
         }
 
@@ -75,7 +76,7 @@ namespace UniOnline.Trabajador
             }
             else
             {
-                MessageBox.Show("Error Conexion T_TRAMITE", "Advertencia");
+                MessageBox.Show("Error Conexion T_TRAMITE.", "Advertencia");
             }
         }
 
@@ -314,6 +315,11 @@ namespace UniOnline.Trabajador
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void txtValorTra_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
         }
     }
 }

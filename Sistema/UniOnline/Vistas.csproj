@@ -80,6 +80,7 @@
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
@@ -169,6 +170,9 @@
     <Compile Include="Trabajador\WPF_ConsultarTramite.xaml.cs">
       <DependentUpon>WPF_ConsultarTramite.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Trabajador\WPF_DescargaArchivos.xaml.cs">
+      <DependentUpon>WPF_DescargaArchivos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Trabajador\WPF_EditarDueño.xaml.cs">
       <DependentUpon>WPF_EditarDueño.xaml</DependentUpon>
     </Compile>
@@ -189,9 +193,6 @@
     </Compile>
     <Compile Include="Trabajador\WPF_VisorSolicitud.xaml.cs">
       <DependentUpon>WPF_VisorSolicitud.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Trabajador\WPF_VistaDoc.xaml.cs">
-      <DependentUpon>WPF_VistaDoc.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF_PerfilUsuario.xaml.cs">
       <DependentUpon>WPF_PerfilUsuario.xaml</DependentUpon>
@@ -279,6 +280,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Trabajador\WPF_DescargaArchivos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Trabajador\WPF_EditarDueño.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -304,10 +309,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Trabajador\WPF_VisorSolicitud.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Trabajador\WPF_VistaDoc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -375,6 +376,9 @@
     <Resource Include="eliminar.png" />
     <Resource Include="modiicar.png" />
     <Resource Include="perfil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Trabajador\descargar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Web.WebView2.1.0.1370.28\build\Microsoft.Web.WebView2.targets" Condition="Exists('packages\Microsoft.Web.WebView2.1.0.1370.28\build\Microsoft.Web.WebView2.targets')" />

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -164,6 +165,11 @@ namespace UniOnline.Trabajador
             txtRutDuenno.Text = FormatearRut(txtRutDuenno.Text);
             txtRutDuenno.SelectionStart = txtRutDuenno.Text.Length;
             txtRutDuenno.SelectionLength = 0;
+        }
+
+        private void txtTelefono_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
         }
     }
 }

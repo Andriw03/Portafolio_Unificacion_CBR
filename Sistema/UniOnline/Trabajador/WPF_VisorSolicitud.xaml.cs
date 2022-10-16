@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Forms;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Controlador;
+﻿using Controlador;
 using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.IO;
+using System.IO.Compression;
+using System.Windows;
+using System.Windows.Forms;
 using MessageBox = System.Windows.MessageBox;
 
 namespace UniOnline.Trabajador
@@ -77,7 +69,7 @@ namespace UniOnline.Trabajador
                     btnVerDoc.Visibility = Visibility.Visible;
                     lbDocumento.Visibility = Visibility.Visible;
                     lbNombreDoc.Visibility = Visibility.Visible;
-                    lbNombreDoc.Text = "Hay " + (cant/2) +" Documentos";
+                    lbNombreDoc.Text = "Hay " + (cant / 2) + " Documentos.";
                 }
                 else
                 {
@@ -100,13 +92,89 @@ namespace UniOnline.Trabajador
 
         private void btnVerDoc_Click(object sender, RoutedEventArgs e)
         {
-            WPF_VistaDoc vDoc = new WPF_VistaDoc();
-            vDoc.ShowDialog();
+            //try
+            //{
+            //    Conexion con = new Conexion();
+
+            //    string sql = "SELECT nombre_doc, doc FROM UNIONLINE.DOCUMENTO inner join UNIONLINE.SOLICITUD on UNIONLINE.DOCUMENTO.SOLICITUD_id_soli = UNIONLINE.SOLICITUD.id_soli where numero_seguimiento = '" + nSeguimiento + "' and TIPO_DOCUMENTO_id_tipodoc = 1;";
+            //    con.Conectar();
+            //    MySqlDataAdapter adp = new MySqlDataAdapter(sql, con.conex);
+            //    DataTable dt = new DataTable();
+
+            //    adp.Fill(dt);
+
+            //    if (dt.Rows.Count != 0)
+            //    {
+            //        for (int i = 0; i < dt.Rows.Count; i++)
+            //        {
+            //            SaveFileDialog saveFileDialog1 = new SaveFileDialog { Title = "Descargar documento.." };
+            //            byte[] b = (byte[])dt.Rows[i]["doc"];
+            //            saveFileDialog1.FileName = dt.Rows[i]["nombre_doc"].ToString();
+            //            string filename = saveFileDialog1.FileName;
+            //            saveFileDialog1.Filter = "Archivos PDF (*.pdf)|*.pdf|Todos los archivos (*.*)|*.*";
+            //            saveFileDialog1.ShowDialog();
+            //            FileStream fs = new FileStream(filename, FileMode.Create);
+            //            fs.Write(b, 0, b.Length);
+            //            fs.Close();
+            //        }
+            //        MessageBox.Show("Documento/s descargado con exito.");
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Error.", "Advertencia");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error al descargar el documento." + ex.Message, "Advertencia");
+            //}
+
+            try
+            {
+                Conexion con = new Conexion();
+
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog { Title = "Descargar documento.." };
+                saveFileDialog1.Filter = "Archivos PDF (*.pdf)|*.pdf|Todos los archivos (*.*)|*.*";
+
+                string sql = "SELECT nombre_doc, doc FROM UNIONLINE.DOCUMENTO inner join UNIONLINE.SOLICITUD on UNIONLINE.DOCUMENTO.SOLICITUD_id_soli = UNIONLINE.SOLICITUD.id_soli where numero_seguimiento = '" + nSeguimiento + "' and TIPO_DOCUMENTO_id_tipodoc = 1;";
+                
+                con.Conectar();
+                MySqlDataAdapter adp = new MySqlDataAdapter(sql, con.conex);
+                DataTable dt = new DataTable();
+
+                adp.Fill(dt);
+
+                if (dt.Rows.Count != 0 && dt.Rows.Count < 2)
+                {
+                    byte[] b = (byte[])dt.Rows[0]["doc"];
+                    saveFileDialog1.FileName = dt.Rows[0]["nombre_doc"].ToString();
+                    string filename = saveFileDialog1.FileName;
+                    saveFileDialog1.ShowDialog();
+                    var saveFileDialogStream = saveFileDialog1.OpenFile();
+                    saveFileDialogStream.Write(b, 0, b.Length);
+                    MessageBox.Show("Documento descargado.");
+                }
+                else if (dt.Rows.Count > 1)
+                {
+                    WPF_DescargaArchivos da = new WPF_DescargaArchivos();
+                    da.ObtenerSeguimiento = nSeguimiento;
+                    da.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Error.", "Advertencia");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al descargar el documento. " + ex.Message, "Advertencia");
+            }
+
         }
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if(txtFileName.Text != string.Empty)
+            if (txtFileName.Text != string.Empty)
             {
                 Cliente cli = new Cliente();
                 if (Update(sender, e))
@@ -118,12 +186,12 @@ namespace UniOnline.Trabajador
                     }
                     else
                     {
-                        MessageBox.Show("Error al guardar la solicitud", "Error");
+                        MessageBox.Show("Error al guardar la solicitud", "Advertencia.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Error al subir documento", "Error");
+                    MessageBox.Show("Error al subir documento", "Advertencia.");
                 }
             }
             else
@@ -131,8 +199,8 @@ namespace UniOnline.Trabajador
                 lbErrorNombre.Content = "Debe ingresar un nombre";
                 lbErrorNombre.Visibility = Visibility.Visible;
             }
-            
-            
+
+
         }
 
         private void btnBrowse_Click(object sender, RoutedEventArgs e)
@@ -147,9 +215,9 @@ namespace UniOnline.Trabajador
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al subir el documento "+ ex.Message,"Error");
+                MessageBox.Show("Error al subir el documento " + ex.Message, "Error");
             }
-            
+
 
 
         }
@@ -191,7 +259,7 @@ namespace UniOnline.Trabajador
                         labelURL.Content = "URL";
                     }
                     con.conex.Close();
-                    
+
                 }
                 return true;
             }
@@ -202,5 +270,5 @@ namespace UniOnline.Trabajador
             }
         }
 
-    }    
+    }
 }

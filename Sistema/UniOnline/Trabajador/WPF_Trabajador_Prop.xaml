@@ -173,7 +173,7 @@
                     <Button x:Name="btnBuscar" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2" Height="30" Width="100" Click="btnBuscar_Click" Background="#FF393E59" Foreground="#FFF0F2F2">
                         <TextBlock Text="Buscar" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     </Button>
-                    <DataGrid x:Name="dtgPropiedad" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="8" Grid.RowSpan="5" AutoGenerateColumns="False" CanUserAddRows="False">
+                    <DataGrid x:Name="dtgPropiedad" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="8" Grid.RowSpan="5" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Foja" Binding="{Binding Path = 'foja'}" IsReadOnly="True"/>
                             <DataGridTextColumn Header="Tipo de Propiedad" Binding="{Binding Path = 'nombre_tipoP'}" IsReadOnly="True"/>
