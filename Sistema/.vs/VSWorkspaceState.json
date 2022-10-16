@@ -5,8 +5,9 @@
     "\\UniOnline",
     "\\UniOnline\\Director",
     "\\UniOnline\\Moderador",
+    "\\UniOnline\\Recepcion",
     "\\UniOnline\\Trabajador"
   ],
-  "SelectedNode": "\\UniOnline\\Director\\WPF_ModificarUsuario.xaml.cs",
+  "SelectedNode": "\\UniOnline\\Recepcion\\WPF_MainRecepcion.xaml.cs",
   "PreviewInSolutionExplorer": false
 }
