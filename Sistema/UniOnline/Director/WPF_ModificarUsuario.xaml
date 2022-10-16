@@ -36,6 +36,8 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
@@ -70,23 +72,23 @@
             <Label x:Name="lblRUT" Content="RUT Usuario." MinHeight="30" MinWidth="300" Foreground="#FF010326" FontSize="30"/>
         </Viewbox>
 
-        <Viewbox Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="1" Grid.RowSpan="3">
+        <Viewbox Grid.Column="1" Grid.Row="11" Grid.ColumnSpan="1" Grid.RowSpan="2">
             <Label x:Name="lblCorreo" Content="Correo Electrónico." MinHeight="30" MinWidth="300" Foreground="#FF010326" FontSize="30"/>
         </Viewbox>
 
-        <Viewbox Grid.Column="1" Grid.Row="11" Grid.ColumnSpan="1" Grid.RowSpan="3">
+        <Viewbox Grid.Column="4" Grid.Row="11" Grid.ColumnSpan="1" Grid.RowSpan="2">
             <Label x:Name="lblContraseña" Content="Contraseña." MinHeight="30" MinWidth="300" Foreground="#FF010326" FontSize="30"/>
         </Viewbox>
 
-        <Viewbox Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="3">
+        <Viewbox Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="3">
             <RadioButton x:Name="rdBtn_Recepcionista" Content="Recepcionista" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Width="100" Checked="rdBtn_Recepcionista_Checked" GroupName="roles"/>
         </Viewbox>
 
-        <Viewbox Grid.Column="4" Grid.Row="9" Grid.ColumnSpan="1" Grid.RowSpan="3">
+        <Viewbox Grid.Column="5" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="3">
             <RadioButton x:Name="rdBtn_Moderador" Content="Moderador" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Width="100" Checked="rdBtn_Recepcionista_Checked" GroupName="roles"/>
         </Viewbox>
 
-        <Viewbox Grid.Column="4" Grid.Row="10" Grid.ColumnSpan="1" Grid.RowSpan="3">
+        <Viewbox Grid.Column="5" Grid.Row="9" Grid.ColumnSpan="1" Grid.RowSpan="3">
             <RadioButton x:Name="rdBtn_Trabajador" Content="Trabajador" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Width="100" Checked="rdBtn_Recepcionista_Checked" GroupName="roles"/>
         </Viewbox>
 
@@ -100,7 +102,7 @@
 
         
         <Viewbox Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="1" Grid.RowSpan="1" HorizontalAlignment="Left">
-            <TextBox x:Name="txtBoxRUT" MinHeight="23" MinWidth="165" TextWrapping="Wrap" Background="White" Foreground="Black" FontSize="20" Width="200" Height="38" VerticalContentAlignment="Center" TextChanged="txtBoxRUT_TextChanged"/>
+            <TextBox x:Name="txtBoxRUT" MinHeight="23" MinWidth="165" TextWrapping="Wrap" Background="White" Foreground="Black" FontSize="20" Width="200" Height="38" VerticalContentAlignment="Center" TextChanged="txtBoxRUT_TextChanged" KeyUp="txtBoxRUT_KeyUp"/>
         </Viewbox>
 
         <Viewbox Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" Grid.RowSpan="1" HorizontalAlignment="Left">
@@ -114,17 +116,34 @@
         <Viewbox Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2" Grid.RowSpan="1" HorizontalAlignment="Left">
             <TextBox x:Name="txtBoxTelefono" MinHeight="23" MinWidth="165" TextWrapping="Wrap" Background="White" Foreground="Black" Width="268" Height="32" FontSize="15" VerticalContentAlignment="Center" TextChanged="txtBoxTelefono_TextChanged"/>
         </Viewbox>
-
-        <Viewbox Grid.Column="1" Grid.Row="11" Grid.ColumnSpan="3" Grid.RowSpan="1" HorizontalAlignment="Left">
-            <TextBox x:Name="txtBoxCorreo" MinHeight="23" MinWidth="165" TextWrapping="Wrap" Background="White" Foreground="Black" Width="350" Height="32" FontSize="15" VerticalContentAlignment="Center" TextChanged="txtBoxCorreo_TextChanged"/>
-        </Viewbox>
+            <Label Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="2" Height="30" VerticalAlignment="Top">
+                <Label.Content>
+                    <TextBlock x:Name="AdvertenciaTel" Text="" VerticalAlignment="Top" FontSize="13" Foreground="Red"/>
+                </Label.Content>
+            </Label>
 
         <Viewbox Grid.Column="1" Grid.Row="13" Grid.ColumnSpan="3" Grid.RowSpan="1" HorizontalAlignment="Left">
+            <TextBox x:Name="txtBoxCorreo" MinHeight="23" MinWidth="165" TextWrapping="Wrap" Background="White" Foreground="Black" Width="350" Height="32" FontSize="15" VerticalContentAlignment="Center" TextChanged="txtBoxCorreo_TextChanged"/>
+        </Viewbox>
+            <Label Grid.Column="1" Grid.Row="14" Grid.ColumnSpan="2" Height="30" VerticalAlignment="Top">
+                <Label.Content>
+                    <TextBlock x:Name="AdvertenciaCor" Text="" VerticalAlignment="Top" FontSize="13" Foreground="Red"/>
+                </Label.Content>
+            </Label>
+        <Viewbox Grid.Column="4" Grid.Row="13" Grid.ColumnSpan="3" Grid.RowSpan="1" HorizontalAlignment="Left">
             <TextBox x:Name="txtBoxContra" MinHeight="23" MinWidth="165" TextWrapping="Wrap" Background="White" Foreground="Black" Width="350" Height="32" FontSize="15" VerticalContentAlignment="Center" TextChanged="txtBoxContra_TextChanged"/>
         </Viewbox>
 
-        <Viewbox Grid.Column="1" Grid.Row="15" Grid.ColumnSpan="1" Grid.RowSpan="1">
+        <Viewbox Grid.Column="3" Grid.Row="16" Grid.ColumnSpan="1" Grid.RowSpan="1">
             <Button x:Name="btnModificar" Content="Actualizar Usuario" Width="119" Click="btnModificar_Click"/>
+        </Viewbox>
+
+        <Viewbox Grid.Column="1" Grid.Row="16" Grid.ColumnSpan="1" Grid.RowSpan="1">
+            <Button x:Name="btnRegistrar" Content="Registrar Usuario" Width="119" Click="btnRegistrar_Click" />
+        </Viewbox>
+
+        <Viewbox Grid.Column="5" Grid.Row="16" Grid.ColumnSpan="1" Grid.RowSpan="1">
+            <Button x:Name="btnEliminar" Content="Eliminar Usuario" Width="119" Click="btnEliminar_Click"  />
         </Viewbox>
 
         <Viewbox Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="1" Grid.RowSpan="1">

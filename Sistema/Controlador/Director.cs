@@ -25,6 +25,7 @@ using MySqlDataReader = MySql.Data.MySqlClient.MySqlDataReader;
 using iText.IO.Image;
 using VerticalAlignment = iText.Layout.Properties.VerticalAlignment;
 using MySqlDataAdapter = MySql.Data.MySqlClient.MySqlDataAdapter;
+using System.Text.RegularExpressions;
 
 namespace Controlador
 {
@@ -450,6 +451,38 @@ namespace Controlador
                 return null;
             }
         }
+
+        public bool CorreoValido(string correo)
+        {
+            Regex correoregex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", RegexOptions.IgnoreCase);
+
+            return correoregex.IsMatch(correo);
+        }
+
+        public bool eliminarUsuario(string RUTUsuario)
+        {
+            Conectar();
+            try
+            {
+                int idUser = 0;
+                cmd = new MySqlCommand("SELECT id_usuario FROM UNIONLINE.USUARIO WHERE rut_usuario = '" + RUTUsuario + "' ;", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    idUser = Int32.Parse(rd["id_usuario"].ToString());
+                }
+                rd.Close();
+                cmd = new MySqlCommand("DELETE FROM `UNIONLINE`.`USUARIO`WHERE id_usuario = " + idUser + ";", conex);
+                cmd.ExecuteReader();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
     }
 
 

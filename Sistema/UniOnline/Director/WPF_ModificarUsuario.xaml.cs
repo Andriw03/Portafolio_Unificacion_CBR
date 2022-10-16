@@ -160,5 +160,173 @@ namespace UniOnline.Director
                 }
             }
         }
+
+        private void btnRegistrar_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtBoxRUT.Text != string.Empty && txtBoxContra.Text != string.Empty && txtBoxNombre.Text != string.Empty && txtBoxApellido.Text != string.Empty && txtBoxSApellido.Text != string.Empty && txtBoxCorreo.Text != string.Empty && txtBoxTelefono.Text != string.Empty)
+            {
+                try
+                {
+                    Hashing hash = new Hashing();
+                    Usuario usu = new Usuario();
+                    if (!usu.ExisteUsuario(txtBoxRUT.Text))
+                    {
+                        usu.rut_usuario = txtBoxRUT.Text;
+                        usu.contrasenna = hash.ToSHA256(txtBoxContra.Text);
+                        usu.primer_nombre = txtBoxNombre.Text;
+                        usu.segundo_nombre = txtBoxSNombre.Text;
+                        usu.primer_apellido = txtBoxApellido.Text;
+                        usu.segundo_apellido = txtBoxSApellido.Text;
+                        usu.telefono = txtBoxTelefono.Text;
+                        usu.id_cbr = 1;
+
+
+                        string email = txtBoxCorreo.Text;
+                        if (!usu.CorreoValido(email) == true)
+                        {
+                            AdvertenciaCor.Text = "El formato del correo es invalido.";
+                        }
+                        else
+                        {
+                            AdvertenciaCor.Text = string.Empty;
+                            usu.correo_electronico = txtBoxCorreo.Text;
+                            string texto = txtBoxTelefono.Text;
+                            if (texto.Length <= 8)
+                            {
+                                AdvertenciaTel.Text = "Teléfono debe tener al menos 9 dígitos.";
+                            }
+                            else
+                            {
+
+                                AdvertenciaTel.Text = string.Empty;
+                                usu.telefono = txtBoxTelefono.Text;
+
+                                if (rdBtn_Recepcionista.IsChecked == true)
+                                {
+                                    usu.id_tipoU = 3;
+                                    MessageBox.Show(usu.Insertar(usu), "Mensaje");
+                                }
+                                else if (rdBtn_Trabajador.IsChecked == true)
+                                {
+                                    usu.id_tipoU = 4;
+                                    MessageBox.Show(usu.Insertar(usu), "Mensaje");
+                                }
+                                else if (rdBtn_Moderador.IsChecked == true)
+                                {
+                                    usu.id_tipoU = 6;
+                                    MessageBox.Show(usu.Insertar(usu), "Mensaje");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error");
+                                }
+                            }
+                        }
+                        
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error El Usuario ya se encuentra registrado");
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Error al ingresar el Usuario:" + ex.ToString());
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Error, debe ingresar los campos porfavor");
+            }
+        }
+
+        public static string FormatearRut(string rut)
+        {
+            string rutFormateado = string.Empty;
+
+            if (rut.Length == 0)
+            {
+                rutFormateado = "";
+            }
+            else
+            {
+                string rutTemporal;
+                string dv;
+                Int64 rutNumerico;
+
+                rut = rut.Replace("-", "").Replace(".", "");
+
+                if (rut.Length == 1)
+                {
+                    rutFormateado = rut;
+                }
+                else
+                {
+                    rutTemporal = rut.Substring(0, rut.Length - 1);
+                    dv = rut.Substring(rut.Length - 1, 1);
+
+                    //aqui convierto a un numero el RUT si ocurre un error lo deja en CERO
+                    if (!Int64.TryParse(rutTemporal, out rutNumerico))
+                    {
+                        rutNumerico = 0;
+                    }
+
+                    //este comando es el que formatea con los separadores de miles
+                    rutFormateado = rutNumerico.ToString("N0");
+
+                    if (rutFormateado.Equals("0"))
+                    {
+                        rutFormateado = string.Empty;
+                    }
+                    else
+                    {
+                        //si no hubo problemas con el formateo agrego el DV a la salida
+                        rutFormateado += "-" + dv;
+
+                        //y hago este replace por si el servidor tuviese configuracion anglosajona y reemplazo las comas por puntos
+                        rutFormateado = rutFormateado.Replace(",", ".");
+                    }
+                }
+            }
+
+            return rutFormateado;
+        }
+
+        
+
+        private void txtBoxRUT_KeyUp(object sender, KeyEventArgs e)
+        {
+            txtBoxRUT.Text = FormatearRut(txtBoxRUT.Text);
+            txtBoxRUT.SelectionStart = txtBoxRUT.Text.Length;
+            txtBoxRUT.SelectionLength = 0;
+        }
+
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            Usuario usu = new Usuario();
+            MessageBoxResult result = MessageBox.Show("Seguro que desea modificar este Usuario", "Modificar Usuario", MessageBoxButton.YesNoCancel);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    if (usu.eliminarUsuario(txtBoxRUT.Text))
+                    {
+                        MessageBox.Show("Propiedad Eliminada con Éxito");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error en el Eliminar", "Error");
+                    }
+                    break;
+                case MessageBoxResult.No:
+                    MessageBox.Show("Propiedad no modificada");
+                    break;
+                case MessageBoxResult.Cancel:
+                    break;
+            }
+        }
     }
 }
