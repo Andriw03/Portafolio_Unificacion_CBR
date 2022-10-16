@@ -24,14 +24,14 @@
 
         <Image MinHeight="50" MinWidth="108" Source="LogoCBR.png" Margin="-41,-58,362,-42" VerticalAlignment="Top" Height="367" Grid.ColumnSpan="2"/>
 
-        <TextBox x:Name="txtCorreo" HorizontalAlignment="Left" Height="29" Margin="135,81,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="524" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtCorreo" HorizontalAlignment="Left" Height="29" Margin="135,81,0,0" TextWrapping="Wrap" Text="" VerticalContentAlignment="Center" FontSize="15" VerticalAlignment="Top" Width="524" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="2"/>
         <Label x:Name="lblingresa" Content="Ingresa tu correo:" HorizontalAlignment="Left" Margin="304,29,0,0" VerticalAlignment="Top" Height="39" Width="143" FontSize="16" Grid.ColumnSpan="2"/>
         <Button x:Name="btnEnviar" Content="Enviar" HorizontalAlignment="Left" Margin="267,127,0,0" VerticalAlignment="Top" Width="188" Height="41" Click="btnEnviar_Click" Background="#FF393E59" BorderBrush="#FFF0F2F2" Foreground="#FF96ACAC" FontSize="16" Cursor="Hand" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtCodigo" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="34" Margin="135,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="524" Visibility="Hidden"/>
+        <TextBox x:Name="txtCodigo" Grid.ColumnSpan="2" VerticalContentAlignment="Center" FontSize="15" HorizontalAlignment="Left" Height="34" Margin="135,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="524" Visibility="Hidden"/>
         <Button x:Name="btnCodigo" Content="Enviar" HorizontalAlignment="Left" Margin="267,127,0,0" VerticalAlignment="Top" Width="188" Height="41" Click="btnCodigo_Click" Visibility="Hidden" Background="#FF393E59" BorderBrush="#FFF0F2F2" Foreground="#FF96ACAC" FontSize="16" Cursor="Hand" Grid.ColumnSpan="2"/>
         <Label x:Name="lbCodigo" Content="Ingrese su código:" HorizontalAlignment="Left" Margin="304,29,0,0" VerticalAlignment="Top" Height="39" Width="143" FontSize="16" Grid.ColumnSpan="2" Visibility="Hidden"/>
-        <Label x:Name="lbContrasenna" Content="Ingrese su nueva contraseña:" HorizontalAlignment="Left" Margin="304,29,0,0" VerticalAlignment="Top" Height="39" Width="143" FontSize="16" Grid.ColumnSpan="2" Visibility="Hidden"/>
-        <PasswordBox x:Name="pssContrasenna" HorizontalAlignment="Left" Height="29" Margin="135,81,0,158"  Grid.ColumnSpan="2" Width="524" Visibility="Hidden"/>
+        <Label x:Name="lbContrasenna" Content="Ingrese su nueva contraseña:" HorizontalAlignment="Left" Margin="304,29,0,0" VerticalAlignment="Top" Height="39" Width="230" FontSize="16" Grid.ColumnSpan="2" Visibility="Hidden"/>
+        <PasswordBox x:Name="pssContrasenna" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="15" Height="34" Margin="135,81,0,158"  Grid.ColumnSpan="2" Width="524" Visibility="Hidden"/>
         <Button x:Name="btnContrasenna" Content="Enviar" HorizontalAlignment="Left" Margin="267,127,0,0" VerticalAlignment="Top" Width="188" Height="41" Visibility="Hidden" Click="btnContrasenna_Click" Background="#FF393E59" BorderBrush="#FFF0F2F2" Foreground="#FF96ACAC" FontSize="16" Cursor="Hand" Grid.ColumnSpan="2"/>
 
     </Grid>
