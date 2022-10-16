@@ -90,7 +90,7 @@
             </Label.Content>
         </Label>
         <Label Content="Teléfono:" Grid.Column="1" Grid.Row="11" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalAlignment="Right" FontSize="15" Style="{DynamicResource LabelStyle}"/>
-        <TextBox Grid.Column="2" Grid.Row="11" Grid.ColumnSpan="2" x:Name="txtTelefono" MaxLength="50" Style="{DynamicResource TextBoxStyle}"/>
+        <TextBox Grid.Column="2" Grid.Row="11" Grid.ColumnSpan="2" x:Name="txtTelefono" MaxLength="50" Style="{DynamicResource TextBoxStyle}" PreviewTextInput="txtTelefono_PreviewTextInput"/>
         <Label Grid.Column="2" Grid.Row="12" Grid.ColumnSpan="2" Height="30" VerticalAlignment="Top">
             <Label.Content>
                 <TextBlock x:Name="AdvertenciaTel" Text="" VerticalAlignment="Top" FontSize="13" Foreground="Red"/>

@@ -85,7 +85,7 @@ namespace UniOnline
 
         private void btnInicioSesion_Click(object sender, RoutedEventArgs e)
         {
-            if(txtRut.Text != string.Empty && txtPass.Password!= string.Empty)
+            if (txtRut.Text != string.Empty && txtPass.Password != string.Empty)
             {
                 Hashing ha = new Hashing();
                 Usuario us = new Usuario();
@@ -95,35 +95,35 @@ namespace UniOnline
 
                 if (us.rut_usuario != string.Empty && ha.Descrypt(us.contrasenna) == txtPass.Password)
                 {
-                    //ha.Descrypt(us.contrasenna);
-                    if (us.id_tipoU == 2 )
-                    {                        
+                    if (us.id_tipoU == 2)
+                    {
                         WPF_MainDirector dir = new WPF_MainDirector();
                         this.Close();
                         dir.ShowDialog();
-                        
+
 
                     }
                     else if (us.id_tipoU == 3)
                     {
-                        
+
                         WPF_MainRecepcion rep = new WPF_MainRecepcion();
                         rep.ObtenerUsuario = us;
                         this.Close();
                         rep.ShowDialog();
-                        
+
                     }
-                    else if(us.id_tipoU == 4)
+                    else if (us.id_tipoU == 4)
                     {
-                        
+
                         WPF_Trabajador tra = new WPF_Trabajador();
                         tra.ObtenerUsuario = us;
                         this.Close();
                         tra.ShowDialog();
-                        
-                    }else if(us.id_tipoU == 6)
+
+                    }
+                    else if (us.id_tipoU == 6)
                     {
-                        
+
                         WPF_Moderador mod = new WPF_Moderador();
                         this.Close();
                         mod.ShowDialog();
@@ -131,19 +131,19 @@ namespace UniOnline
                     }
                     else
                     {
-                        MessageBox.Show("El Usuario no pertenece a este Conservador","Error");
+                        MessageBox.Show("El Usuario no pertenece a este Conservador", "Error");
                     }
 
-                    
+
                 }
                 else
                 {
-                    MessageBox.Show("RUT o Contraseña Incorrectos","Error");
+                    MessageBox.Show("RUT o Contraseña Incorrectos", "Error");
                 }
             }
             else
             {
-                MessageBox.Show("Rellene todos los campos","Advertencia");
+                MessageBox.Show("Rellene todos los campos", "Advertencia");
             }
         }
         public static string FormatearRut(string rut)
