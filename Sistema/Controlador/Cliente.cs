@@ -172,6 +172,7 @@ namespace Controlador
                 rd = cmd.ExecuteReader();
                 while (rd.Read() == true)
                 {
+                    cli.rut_usuario = rd["rut_usuario"].ToString();
                     cli.primer_apellido = rd["primer_apellido"].ToString();
                     cli.primer_nombre = rd["primer_nombre"].ToString();
                     cli.contrasenna = rd["contrasenna"].ToString();
@@ -229,7 +230,7 @@ namespace Controlador
                 rd.Close();
                 cmd = new MySqlCommand("UPDATE `UNIONLINE`.`USUARIO` SET `primer_nombre` = '" + primerNomCli + "', `segundo_nombre` = '" + segundoNomCli + "', `primer_apellido` = '" + primerApeCli + "', `segundo_apellido` = '" + segundoApeCli + "', `correo_electronico` = '" + correoCli + "', `telefono` = '" + telCli + "' WHERE `id_usuario` = '" + idUsuario + "'; ", conex);
                 cmd.ExecuteNonQuery();
-                return;
+                
 
             }
             catch(Exception ex)
@@ -237,7 +238,30 @@ namespace Controlador
                 MessageBox.Show(ex.Message);
             }
         }
-
+        public bool ModificarContraseña(string contrasenna, string rut)
+        {
+            try
+            {
+                Conectar();
+                int idUsuario =  0;
+                cmd = new MySqlCommand("SELECT * FROM UNIONLINE.USUARIO WHERE rut_usuario = '" + rut + "';", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    idUsuario = int.Parse(rd["id_usuario"].ToString());
+                }
+                rd.Close();
+                cmd = new MySqlCommand("UPDATE `UNIONLINE`.`USUARIO` SET `contrasenna` = '"+ contrasenna +"' WHERE `id_usuario` = "+idUsuario+";", conex);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            
+        }
     }
 
 
