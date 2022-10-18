@@ -1,6 +1,8 @@
 ﻿using Controlador;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,6 +72,23 @@ namespace UniOnline.Moderador
             WPF_Moderador_Perfil wpfPerfil = new WPF_Moderador_Perfil();
             this.Close();
             wpfPerfil.ShowDialog();
+            WPF_Moderador_Perfil wpfModPer = new WPF_Moderador_Perfil();
+            try
+            {
+                MySqlConnection con = new MySqlConnection("server=unificacion.cmvnu851mzxa.us-east-1.rds.amazonaws.com;user id=root;password=nohomo123;persistsecurityinfo=True;database=UNIONLINE");
+                MySqlCommand cmd = new MySqlCommand("SELECT rut_usuario, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_electronico, telefono FROM UNIONLINE.USUARIO WHERE T_USUARIO_id_tipoU = 5;", con);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                cmd.Dispose();
+                adapter.Dispose();
+                con.Close();
+                wpfModPer.datagridPerfil.ItemsSource = dt.DefaultView;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se encuentran datos");
+            }
         }
 
         private void btnSoporteMod(object sender, RoutedEventArgs e)
