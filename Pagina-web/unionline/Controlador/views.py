@@ -15,13 +15,10 @@ def desifrar (encry):
     return check_password_hash
 
 
-
-
 def inicio(request):
-    return render(request, 'Controlador/templates/inicio.html')
+    return render(request, 'templates/inicio.html')
 
 
 
 def login(request):
-
-    return render(request, 'Controlador/registration/login.html')
+    return render(request, 'Registration/login.html')
