@@ -1,0 +1,18 @@
+.formulario{
+    max-width: 50%;
+    padding: 1.3em;
+    margin: 0 auto;
+    font-weight: bold;
+    border-radius: 0.5em;
+    background-color: #F0F2F2;
+    margin-top:  0%;
+}
+.btn {
+    background-color: #F0F2F2;
+    border-color: #393E59;
+    color: #393E59;
+  }
+.btn:hover{
+    background-color: #393E59;
+    border: #393E59;
+}

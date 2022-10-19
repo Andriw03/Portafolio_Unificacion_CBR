@@ -1,0 +1,25 @@
+a{
+    color: #6FBFBF;
+}
+.buscador{
+    padding: 0 20%;
+    margin: 0 15%;
+}
+.btn {
+    background-color: #F0F2F2;
+    border-color: #393E59;
+    color: #393E59;
+
+  }
+.btn:hover{
+    background-color: #393E59;
+    border: #393E59;
+}
+.tabla{
+    padding: 2% 15%;
+}
+footer{
+    text-align: center;
+    padding:40px;
+
+}

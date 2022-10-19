@@ -27,7 +27,8 @@ SECRET_KEY = 'f-4nb%u$9n!dymsv=v2h4@frw(@vka6+2y#qd*sq8681=jk&d7'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+LOGIN_REDIRECT_URL= '/'
+LOGOUT_REDIRECT_URL='/'
 
 # Application definition
 
@@ -77,11 +78,14 @@ WSGI_APPLICATION = 'unionline.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'UNIONLINE',
+        'USER': 'root',
+        'PASSWORD': 'nohomo123',
+        'HOST': 'unificacion.cmvnu851mzxa.us-east-1.rds.amazonaws.com',
+        'PORT':3306
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
