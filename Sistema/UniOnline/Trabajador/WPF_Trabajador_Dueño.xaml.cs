@@ -46,7 +46,7 @@ namespace UniOnline.Trabajador
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (txtRutDuenno.Text != string.Empty && txtPrimerNombre.Text != string.Empty && txtSegundoNombre.Text != string.Empty && txtPrimerApellido.Text != string.Empty && txtSegundoApellido.Text != string.Empty && txtCorreo != null && txtTelefono != null )
+            if (txtRutDuenno.Text != string.Empty && txtPrimerNombre.Text != string.Empty && txtPrimerApellido.Text != string.Empty && txtSegundoApellido.Text != string.Empty && txtCorreo != null && txtTelefono != null )
             {
                 try
                 {
@@ -60,25 +60,25 @@ namespace UniOnline.Trabajador
                         due.SegundoApellido = txtSegundoApellido.Text;
 
                         string email = txtCorreo.Text;
-                        if (!due.CorreoValido(email) == true)
-                        {
-                            AdvertenciaCor.Text = "El formato del correo es invalido.";
-                        }
-                        else
+                        if (due.CorreoValido(email) == true)
                         {
                             AdvertenciaCor.Text = string.Empty;
                             due.CorreoElectronico = txtCorreo.Text;
                             string texto = txtTelefono.Text;
-                            if (texto.Length <= 8)
-                            {
-                                AdvertenciaTel.Text = "Teléfono debe tener al menos 9 dígitos.";
-                            }
-                            else
+                            if (texto.Length > 8)
                             {
                                 AdvertenciaTel.Text = string.Empty;
                                 due.Telefono = txtTelefono.Text;
                                 MessageBox.Show(due.Insertar(due), "Mensaje:");
                             }
+                            else
+                            {
+                                AdvertenciaTel.Text = "Teléfono debe tener al menos 9 dígitos.";
+                            }
+                        }
+                        else
+                        {
+                            AdvertenciaCor.Text = "El formato del correo es invalido.";
                         }
                     }
                     else
@@ -159,7 +159,6 @@ namespace UniOnline.Trabajador
 
             return rutFormateado;
         }
-
         private void txtRutDuenno_KeyUp(object sender, KeyEventArgs e)
         {
             txtRutDuenno.Text = FormatearRut(txtRutDuenno.Text);
@@ -171,5 +170,6 @@ namespace UniOnline.Trabajador
         {
             e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
         }
+
     }
 }

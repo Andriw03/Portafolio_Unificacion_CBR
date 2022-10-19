@@ -57,26 +57,18 @@ namespace UniOnline.Trabajador
 
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
-            if (txtPrimerNombre.Text != string.Empty && txtPrimerApellido.Text != string.Empty && txtSegundoNombre.Text != string.Empty && txtSegundoApellido.Text != string.Empty && txtCorreo.Text != string.Empty && txtTelefono.Text != string.Empty)
+            if (txtPrimerNombre.Text != string.Empty && txtPrimerApellido.Text != string.Empty && txtSegundoApellido.Text != string.Empty && txtCorreo.Text != string.Empty && txtTelefono.Text != string.Empty)
             {
                 try
                 {
                     Duenno duen = new Duenno();
                     string email = txtCorreo.Text;
-                    if (!duen.CorreoValido(email) == true)
-                    {
-                        AdvertenciaCor.Text = "El formato del correo es invalido.";
-                    }
-                    else
+                    if (duen.CorreoValido(email) == true)
                     {
                         AdvertenciaCor.Text = string.Empty;
                         duen.CorreoElectronico = txtCorreo.Text;
                         string texto = txtTelefono.Text;
                         if (texto.Length <= 8)
-                        {
-                            AdvertenciaTel.Text = "Teléfono debe tener al menos 9 dígitos.";
-                        }
-                        else
                         {
                             AdvertenciaTel.Text = string.Empty;
                             if (duen.ModificarDuenno(txtRutDuenno.Text, txtPrimerNombre.Text, txtSegundoNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text, txtCorreo.Text, txtTelefono.Text))
@@ -88,6 +80,14 @@ namespace UniOnline.Trabajador
                                 MessageBox.Show("Error al modificar el dueño.", "Error");
                             }
                         }
+                        else
+                        {
+                            AdvertenciaTel.Text = "Teléfono debe tener al menos 9 dígitos.";
+                        }
+                    }
+                    else
+                    {
+                        AdvertenciaCor.Text = "El formato del correo es invalido.";
                     }
                 }
                 catch(Exception ex)

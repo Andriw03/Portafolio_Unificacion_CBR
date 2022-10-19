@@ -73,7 +73,7 @@
 
         <TextBlock FontFamily="Cambria" Text="Ingresar Dueño" FontSize="25" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource TextBlockStyle}"/>
         <Label Content="RUT:" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalAlignment="Right" FontSize="15" Style="{DynamicResource LabelStyle}"/>
-        <TextBox Grid.Column="2" Grid.Row="3" x:Name="txtRutDuenno" MaxLength="15" Style="{DynamicResource TextBoxStyle}" BorderThickness="2"/>
+        <TextBox Grid.Column="2" Grid.Row="3" x:Name="txtRutDuenno" MaxLength="15" Style="{DynamicResource TextBoxStyle}" BorderThickness="2" KeyUp="txtRutDuenno_KeyUp"/>
         <Label Content="Primer nombre:" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalAlignment="Right" FontSize="15" Style="{DynamicResource LabelStyle}"/>
         <TextBox Grid.Column="2" Grid.Row="5" x:Name="txtPrimerNombre" MaxLength="45" Style="{DynamicResource TextBoxStyle}"/>
         <Label Content="Segundo nombre:" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalAlignment="Right" FontSize="15" Style="{DynamicResource LabelStyle}"/>

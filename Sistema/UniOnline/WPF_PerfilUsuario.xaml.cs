@@ -52,20 +52,20 @@ namespace UniOnline
             cmbEstado.Items.Clear();
             Usuario us = new Usuario();
             List<string> registro = us.LlenadoEstado(usuario.rut_usuario);
-            if (registro[0] != string.Empty)
-            {
-                for (int i = 0; i < registro.Count(); i++)
-                {
-                    cmbEstado.Items.Add(registro[i]);
-                }
-                cmbEstado.Items.Refresh();
-                labelasasd.Visibility = Visibility.Visible;
-                cmbEstado.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                MessageBox.Show("Error al cargar Estado Solicitud", "Error");
-            }
+            //if (registro[0] != string.Empty)
+            //{
+            //    for (int i = 0; i < registro.Count(); i++)
+            //    {
+            //        cmbEstado.Items.Add(registro[i]);
+            //    }
+            //    cmbEstado.Items.Refresh();
+            //    labelasasd.Visibility = Visibility.Visible;
+            //    cmbEstado.Visibility = Visibility.Visible;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Error al cargar Estado Solicitud", "Error");
+            //}
         }
 
         private void btnSolcitud_Click(object sender, RoutedEventArgs e)
