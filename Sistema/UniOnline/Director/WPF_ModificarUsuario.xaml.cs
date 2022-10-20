@@ -28,6 +28,40 @@ namespace UniOnline.Director
         public WPF_ModificarUsuario()
         {
             InitializeComponent();
+            Conectar();
+            LlenadoTipoU();
+        }
+
+        private void LlenadoTipoU()
+        {
+            cmbTipoU.Items.Clear();
+            cmbTipoU.Items.Add("-------");
+            List<string> registro = con.Llenado("T_USUARIO", "nombre_tipoU");
+            if (registro != null)
+            {
+                for (int i = 0; i < registro.Count(); i++)
+                {
+                    cmbTipoU.Items.Add(registro[i]);
+                }
+                cmbTipoU.Items.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Error Conexion T_TRAMITE.", "Advertencia");
+            }
+        }
+
+        Conexion con = new Conexion();
+        private void Conectar()
+        {
+            if (con.Conectar())
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Error de Conexión.");
+            }
         }
 
         private void rdBtn_Recepcionista_Checked(object sender, RoutedEventArgs e)
@@ -328,5 +362,7 @@ namespace UniOnline.Director
                     break;
             }
         }
+
+
     }
 }
