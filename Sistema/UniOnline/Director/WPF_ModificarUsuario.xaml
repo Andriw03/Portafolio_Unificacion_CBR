@@ -80,18 +80,6 @@
             <Label x:Name="lblContraseña" Content="Contraseña." MinHeight="30" MinWidth="300" Foreground="#FF010326" FontSize="30"/>
         </Viewbox>
 
-        <Viewbox Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="3">
-            <RadioButton x:Name="rdBtn_Recepcionista" Content="Recepcionista" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Width="100" Checked="rdBtn_Recepcionista_Checked" GroupName="roles"/>
-        </Viewbox>
-
-        <Viewbox Grid.Column="5" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="3">
-            <RadioButton x:Name="rdBtn_Moderador" Content="Moderador" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Width="100" Checked="rdBtn_Recepcionista_Checked" GroupName="roles"/>
-        </Viewbox>
-
-        <Viewbox Grid.Column="5" Grid.Row="9" Grid.ColumnSpan="1" Grid.RowSpan="3">
-            <RadioButton x:Name="rdBtn_Trabajador" Content="Trabajador" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Width="100" Checked="rdBtn_Recepcionista_Checked" GroupName="roles"/>
-        </Viewbox>
-
         <Viewbox Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="1" HorizontalAlignment="Left" >
             <TextBox x:Name="txtBoxNombre" MinHeight="23" MinWidth="165" TextWrapping="Wrap" Background="White" Foreground="Black" Width="268" Height="32" FontSize="15" HorizontalAlignment="Left" VerticalContentAlignment="Center" TextChanged="txtBoxNombre_TextChanged"/>
         </Viewbox>
@@ -151,7 +139,7 @@
         </Viewbox>
 
         <Viewbox Grid.Column="6" Grid.Row="9" Grid.ColumnSpan="1" MaxHeight="200">
-            <ComboBox x:Name="cmbTipoU" Text="AAAAAA" IsEditable="True" IsReadOnly="True" Focusable="False" Height="30" MinWidth="150" VerticalContentAlignment="Center"/>
+            <ComboBox x:Name="cmbTipoU" Text="" IsEditable="True" IsReadOnly="True" Focusable="False" Height="30" MinWidth="150" VerticalContentAlignment="Center" SelectionChanged="cmbTipoU_SelectionChanged" FontSize="15"/>
         </Viewbox>
         
     </Grid>

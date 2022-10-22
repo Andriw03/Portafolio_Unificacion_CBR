@@ -102,15 +102,15 @@ namespace UniOnline.Director
                     txtBoxContra.Text =usu.contrasenna;
                     if (usu.id_tipoU == 4)
                     {
-                        rdBtn_Trabajador.IsChecked = true;
+                        cmbTipoU.SelectedItem = "Trabajador";
                     }
                     else if (usu.id_tipoU == 3)
                     {
-                        rdBtn_Recepcionista.IsChecked = true;
+                        cmbTipoU.SelectedItem = "Recepcionista";
                     }
                     else if (usu.id_tipoU == 6)
                     {
-                        rdBtn_Moderador.IsChecked = true;
+                        cmbTipoU.SelectedItem = "Moderador";
                     }
                 }
                 else
@@ -159,15 +159,31 @@ namespace UniOnline.Director
                 {
                     Usuario usu = new Usuario();
                     int idTUser = 0;
-                    if ((bool)rdBtn_Recepcionista.IsChecked)
+                    //if ((bool)rdBtn_Recepcionista.IsChecked)
+                    //{
+                    //    idTUser = 3;
+                    //}
+                    //else if ((bool)rdBtn_Moderador.IsChecked)
+                    //{
+                    //    idTUser = 6;
+                    //}
+                    //else if ((bool)rdBtn_Trabajador.IsChecked)
+                    //{
+                    //    idTUser = 4;
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("Seleccione un rol");
+                    //}
+                    if (cmbTipoU.SelectedItem.ToString() == "Recepcionista")
                     {
                         idTUser = 3;
                     }
-                    else if ((bool)rdBtn_Moderador.IsChecked)
+                    else if (cmbTipoU.SelectedItem.ToString() == "Moderador")
                     {
                         idTUser = 6;
                     }
-                    else if ((bool)rdBtn_Trabajador.IsChecked)
+                    else if (cmbTipoU.SelectedItem.ToString() == "Trabajador")
                     {
                         idTUser = 4;
                     }
@@ -235,17 +251,17 @@ namespace UniOnline.Director
                                 AdvertenciaTel.Text = string.Empty;
                                 usu.telefono = txtBoxTelefono.Text;
 
-                                if (rdBtn_Recepcionista.IsChecked == true)
+                                if (cmbTipoU.SelectedItem.ToString() == "Recepcionista")
                                 {
                                     usu.id_tipoU = 3;
                                     MessageBox.Show(usu.Insertar(usu), "Mensaje");
                                 }
-                                else if (rdBtn_Trabajador.IsChecked == true)
+                                else if (cmbTipoU.SelectedItem.ToString() == "Trabajador")
                                 {
                                     usu.id_tipoU = 4;
                                     MessageBox.Show(usu.Insertar(usu), "Mensaje");
                                 }
-                                else if (rdBtn_Moderador.IsChecked == true)
+                                else if (cmbTipoU.SelectedItem.ToString() == "Moderador")
                                 {
                                     usu.id_tipoU = 6;
                                     MessageBox.Show(usu.Insertar(usu), "Mensaje");
@@ -363,6 +379,9 @@ namespace UniOnline.Director
             }
         }
 
+        private void cmbTipoU_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
+        }
     }
 }
