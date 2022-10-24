@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\
 UniOnline
 none
 false
 DEBUG;TRACE
-D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\App.xaml
-27-1573126229
-3-1099352335
-331297923876
-2061215884371
-Director\WPF_Descripción.xaml;Director\WPF_Director.xaml;Director\WPF_Informes.xaml;Director\WPF_MainDirector.xaml;Director\WPF_ModificarUsuario.xaml;Director\WPF_SolicitudesTrabajadores.xaml;MainWindow.xaml;Moderador\WPF_ChatWhatsApp.xaml;Moderador\WPF_Moderador.xaml;Moderador\WPF_Moderador_Perfil.xaml;Moderador\WPF_Moderador_Soporte.xaml;Moderador\WPF_Moderador_Soporte_Tickets.xaml;Moderador\WPF_ModificarPerfil.xaml;Recepcion\Detalles_Solicitud.xaml;Recepcion\WPF_MainRecepcion.xaml;Recepcion\WPF_Recepcion.xaml;RecuperarContraseña.xaml;Trabajador\WPF_ConsultarTramite.xaml;Trabajador\WPF_DescargaArchivos.xaml;Trabajador\WPF_EditarDueño.xaml;Trabajador\WPF_EditarProp.xaml;Trabajador\WPF_Trabajador.xaml;Trabajador\WPF_Trabajador_Dueño.xaml;Trabajador\WPF_Trabajador_Prop.xaml;Trabajador\WPF_Trabajador_Tra.xaml;Trabajador\WPF_VisorSolicitud.xaml;WPF_PerfilUsuario.xaml;
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\App.xaml
+28-2102374410
+3-1998245895
+34-1035484517
+206-294776033
+Director\WPF_Descripción.xaml;Director\WPF_Director.xaml;Director\WPF_Informes.xaml;Director\WPF_MainDirector.xaml;Director\WPF_ModificarUsuario.xaml;Director\WPF_SolicitudesTrabajadores.xaml;MainWindow.xaml;Moderador\WPF_ChatWhatsApp.xaml;Moderador\WPF_Moderador.xaml;Moderador\WPF_Moderador_Perfil.xaml;Moderador\WPF_Moderador_Soporte.xaml;Moderador\WPF_Moderador_Soporte_Tickets.xaml;Moderador\WPF_ModificarPerfil.xaml;Recepcion\Detalles_Solicitud.xaml;Recepcion\WPF_MainRecepcion.xaml;Recepcion\WPF_Recepcion.xaml;RecuperarContraseña.xaml;Trabajador\WPF_ConsultarTramite.xaml;Trabajador\WPF_DescargaArchivos.xaml;Trabajador\WPF_EditarDueño.xaml;Trabajador\WPF_EditarProp.xaml;Trabajador\WPF_EditarTra.xaml;Trabajador\WPF_Trabajador.xaml;Trabajador\WPF_Trabajador_Dueño.xaml;Trabajador\WPF_Trabajador_Prop.xaml;Trabajador\WPF_Trabajador_Tra.xaml;Trabajador\WPF_VisorSolicitud.xaml;WPF_PerfilUsuario.xaml;
 
 False
 

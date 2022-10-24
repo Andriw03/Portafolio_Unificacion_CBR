@@ -79,20 +79,27 @@
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
                         <RowDefinition Height="20"/>
                     </Grid.RowDefinitions>
 
-                    <Button x:Name="btnVolverTra" Content="Volver" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" Width="100" Click="btnVolverTra_Click" Background="#FF393E59" Foreground="#FFF0F2F2" Grid.Column="5" Grid.Row="6"/>
+                    <Button x:Name="btnVolverTra" Content="Volver" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" Width="100" Click="btnVolverTra_Click" Background="#FF393E59" Foreground="#FFF0F2F2" Grid.Column="5" Grid.Row="9"/>
                     <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="#FF010326" Width="244" FontWeight="Bold" FontSize="25" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3"><Run Text="Ingresa un Trámite"/></TextBlock>
                     <Label Content="Nombre del Trámite:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="txtNomTra" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Center" Width="450" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+                    <TextBox x:Name="txtNomTra" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Center" Width="500" Margin="0,15,0,0" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
                     <Label Content="Valor del Trámite:" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2"/>
+                    <Label x:Name="lblValor" Content="El valor mínimo de un Trámite es de $10.000 pesos" Foreground="Red" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden"/>
                     <TextBox x:Name="txtValorTra" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" MaxLength="15" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2" PreviewTextInput="txtValorTra_PreviewTextInput"/>
-                    <Label Content="Tipo de Trámite:" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"/>
-                    <ComboBox x:Name="cmbTipoTra" FontSize="15" Height="30" Width="290" IsEditable="True" Text="Seleccione un tipo de trámite" IsReadOnly="True" Focusable="False" VerticalContentAlignment="Center" HorizontalAlignment="Left" SelectionChanged="cmbTipoTra_SelectionChanged" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"/>
-                    <Label Content="Estado" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2"/>
-                    <ComboBox x:Name="cmbEstado" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2" FontSize="15" Height="30" VerticalContentAlignment="Center" Width="170" IsEditable="True" Text="Seleccione un estado" IsReadOnly="True" Focusable="False"/>
-                    <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="40" Width="100" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnGuardar_Click" Grid.Column="1" Grid.Row="6"/>
+                    <Label Content="Tipo de Trámite:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20"  Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"/>
+                    <ComboBox x:Name="cmbTipoTra" FontSize="15" Height="30" Width="290" IsEditable="True" Text="Seleccione un tipo de trámite" IsReadOnly="True" Focusable="False" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="cmbTipoTra_SelectionChanged" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2"/>
+                    <Label Content="Estado" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2"/>
+                    <ComboBox x:Name="cmbEstado" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="2" FontSize="15" Height="30" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="170" IsEditable="True" Text="Seleccione un estado" IsReadOnly="True" Focusable="False"/>
+                    <Label Foreground="#FF010326" Content="Descripción del Trámite:" FontSize="18" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtDescTra" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="5" VerticalAlignment="Top" Grid.RowSpan="2" Height="80"/>
+
+                    <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="40" Width="100" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnGuardar_Click" Grid.Column="1" Grid.Row="9"/>
 
                 </Grid>
             </TabItem>

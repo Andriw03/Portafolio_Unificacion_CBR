@@ -6,21 +6,7 @@
         xmlns:local="clr-namespace:UniOnline.Trabajador"
         mc:Ignorable="d"
         Title="WPF_EditarProp" Height="600" Width="900" WindowStartupLocation="CenterScreen">
-    <Window.Resources>
-        <Style x:Key="TabItemStyle" TargetType="TabItem">
-            <Setter Property = "Background" Value="#010326"/>
-            <Setter Property = "Foreground" Value="#F0F2F2"/>
-            <Setter Property = "Margin" Value = "0,0,5,0 " />
-            <Setter Property = "Width" Value = "100 "/>
-            <Setter Property = "Padding" Value = "10,5"/>
-            <Setter Property = "FontFamily" Value="Segoe UI Emoji"/>
-        </Style>
 
-        <Style x:Key="TabControlStyle" TargetType="TabControl">
-            <Setter Property = "Background" Value="#010326"/>
-        </Style>
-
-    </Window.Resources>
     <Grid x:Name="btnEliminarProp" Background="#FFF0F2F2" Margin="0,0,0,-1">
         <Rectangle HorizontalAlignment="Stretch" Width="Auto" MinHeight="80" MinWidth="800" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" Grid.RowSpan="3" Fill="#FF010326" Stroke="Black" Margin="0,0,-8,1"/>
         <Grid Background="#FFF0F2F2" Margin="0,60,-0.4,-0.6">
@@ -40,7 +26,6 @@
                 <RowDefinition Height="68"/>
                 <RowDefinition Height="67.2"/>
                 <RowDefinition Height="60"/>
-                <RowDefinition Height="30"/>
                 <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
             <Button x:Name="btnVolverProp" Content="Volver" HorizontalAlignment="Left" Margin="629.8,0,0,3" VerticalAlignment="Bottom" Width="102" Click="btnVolverProp_Click" Background="#FF393E59" Foreground="#FFF0F2F2" Grid.Column="2" RenderTransformOrigin="0.128,-0.385" Height="35" Grid.Row="8"/>
@@ -58,7 +43,7 @@
             <TextBox x:Name="txtRutDueño" VerticalContentAlignment="Center" FontSize="15" HorizontalAlignment="Left" Height="32" Margin="12,22.6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" MaxLength="15" IsEnabled="False" IsUndoEnabled="False" Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="1"/>
             <TextBox x:Name="txtNombreDueño" VerticalContentAlignment="Center" FontSize="15" HorizontalAlignment="Left" Height="32" Margin="196.8,22.6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" MaxLength="15" IsEnabled="False" IsUndoEnabled="False" Grid.Column="2" Grid.Row="4"/>
             <Label Content="Nombre Dueño:" HorizontalAlignment="Left" Margin="200.8,0.6,0,0" VerticalAlignment="Top" FontSize="15" Grid.Column="2" Height="33" Grid.Row="4" Width="126" />
-            <ComboBox x:Name="cmbTipoProp" Margin="485.8,22.6,0,5.8" FontSize="15" IsEditable="True" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbTipoProp_SelectionChanged" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="221"/>
+            <ComboBox x:Name="cmbTipoProp" Margin="485.8,22.6,0,5.8" FontSize="15" IsEditable="True" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbTipoProp_SelectionChanged" Grid.Row="4" Grid.Column="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="221" Height="32"/>
             <Label Content="Tipos de propiedad:" HorizontalAlignment="Left" Margin="485.8,0.6,0,0" VerticalAlignment="Top" FontSize="15" Height="28" Grid.Row="4" Width="146" Grid.Column="2"/>
             <Label Content="Foja:" HorizontalAlignment="Left" Margin="12,1.2,0,0" VerticalAlignment="Top" FontSize="15" Grid.Column="1" Height="30" Grid.Row="5" Width="41"/>
             <TextBox x:Name="txtFoja" VerticalContentAlignment="Center" FontSize="15" HorizontalAlignment="Left" Height="32" Margin="10,28.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="233" Grid.ColumnSpan="2" IsEnabled="False" Grid.Column="1" Grid.Row="5" />

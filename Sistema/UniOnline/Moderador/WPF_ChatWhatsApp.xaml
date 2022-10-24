@@ -8,8 +8,6 @@
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         Title="WPF_ChatWhatsApp" Height="450" Width="800">
     <DockPanel>
-        <wv2:WebView2 Name="webView"
-                  Source="https://web.whatsapp.com/"
-   />
+        <wv2:WebView2 Name="webView" Source="https://web.whatsapp.com/"/>
     </DockPanel>
 </Window>

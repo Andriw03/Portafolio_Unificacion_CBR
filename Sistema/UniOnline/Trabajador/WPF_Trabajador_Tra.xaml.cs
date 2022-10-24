@@ -46,6 +46,8 @@ namespace UniOnline.Trabajador
             txtNomTra.Text = string.Empty;
             txtValorTra.Text = string.Empty;
             cmbTipoTra.SelectedIndex = 0;
+            txtDescTra.Text = string.Empty;
+            cmbEstado.Text = "Seleccione un estado";
         }
 
         Conexion con = new Conexion();
@@ -92,7 +94,7 @@ namespace UniOnline.Trabajador
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (txtNomTra.Text != string.Empty && txtValorTra.Text != string.Empty && cmbEstado.SelectedItem != null && cmbTipoTra.SelectedItem != null)
+            if (txtNomTra.Text != string.Empty && txtValorTra.Text != string.Empty && cmbEstado.SelectedItem != null && cmbTipoTra.SelectedItem != null && txtDescTra.Text != string.Empty)
             {
                 try
                 {
@@ -100,24 +102,34 @@ namespace UniOnline.Trabajador
                     if (!Tra.ExisteTramite(txtNomTra.Text))
                     {
                         Tra.NombreTra = txtNomTra.Text;
-                        Tra.ValorTra = txtValorTra.Text;
-                        if (cmbEstado.SelectedIndex == 0)
+                        if (txtValorTra.Text.Length >= 5)
                         {
-                            Tra.Estado = "Vigente";
-                            Tra.TipoTramite = Int32.Parse(cmbTipoTra.SelectedIndex.ToString());
-                            MessageBox.Show(Tra.InsertarTramite(Tra), "Mensaje:");
-                            LimpiarTra();
-                        }
-                        else if (cmbEstado.SelectedIndex == 1)
-                        {
-                            Tra.Estado = "No vigente";
-                            Tra.TipoTramite = Int32.Parse(cmbTipoTra.SelectedIndex.ToString());
-                            MessageBox.Show(Tra.InsertarTramite(Tra), "Mensaje:");
-                            LimpiarTra();
+                            Tra.ValorTra = txtValorTra.Text;
+                            if (cmbEstado.SelectedIndex == 0)
+                            {
+                                Tra.Estado = "Vigente";
+                                Tra.TipoTramite = Int32.Parse(cmbTipoTra.SelectedIndex.ToString());
+                                Tra.Descripcion = txtDescTra.Text;
+                                MessageBox.Show(Tra.InsertarTramite(Tra), "Mensaje:");
+                                LimpiarTra();
+                            }
+                            else if (cmbEstado.SelectedIndex == 1)
+                            {
+                                Tra.Estado = "No vigente";
+                                Tra.TipoTramite = Int32.Parse(cmbTipoTra.SelectedIndex.ToString());
+                                Tra.Descripcion = txtDescTra.Text;
+                                MessageBox.Show(Tra.InsertarTramite(Tra), "Mensaje:");
+                                LimpiarTra();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El Trámite ya se encuentra registrado.", "Advertencia");
+                            }
+                            lblValor.Visibility = Visibility.Hidden;
                         }
                         else
                         {
-                            MessageBox.Show("El Trámite ya se encuentra registrado.", "Advertencia");
+                            lblValor.Visibility = Visibility.Visible;
                         }
                     }
                     else

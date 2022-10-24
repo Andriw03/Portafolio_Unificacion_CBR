@@ -15,6 +15,7 @@ namespace Controlador
         public string NombreTra { get; set; }
         public string ValorTra { get; set; }
         public string Estado { get; set; }
+        public string Descripcion { get; set; }
         public int TipoTramite { get; set; }
 
         public Tramite()
@@ -36,7 +37,7 @@ namespace Controlador
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`TRAMITE` (`nombre_tramite`, `valor_tramite`, `estado`, `T_TRAMITE_id_tipoT`) VALUES ('" + Tra.NombreTra + "', " + Tra.ValorTra + ",'" + Tra.Estado + "'," + Tra.TipoTramite + ");", conex);
+                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`TRAMITE` (`nombre_tramite`, `valor_tramite`, `estado`, `descripcion`, `T_TRAMITE_id_tipoT`) VALUES ('" + Tra.NombreTra + "', " + Tra.ValorTra + ",'" + Tra.Estado + "','" + Tra.Descripcion + "'," + Tra.TipoTramite + ");", conex);
                 cmd.ExecuteNonQuery();
                 salida = "Trámite agregado correctamente";
             }

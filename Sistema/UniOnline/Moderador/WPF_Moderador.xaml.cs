@@ -37,7 +37,7 @@ namespace UniOnline.Moderador
         {
             if (con.Conectar())
             {
-                MessageBox.Show("Vas bien");
+				
             }
             else
             {
