@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -8,11 +10,15 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Controlador;
+using MySql.Data.MySqlClient;
+using KeyEventArgs = System.Windows.Input.KeyEventArgs;
+using MessageBox = System.Windows.MessageBox;
 
 namespace UniOnline.Trabajador
 {
@@ -34,6 +40,7 @@ namespace UniOnline.Trabajador
             {
                 this.duenno = value;
                 this.duenno = value;
+                lblID.Content = duenno.duennoId;
                 txtRutDuenno.Text = duenno.RutDuenno;
                 txtPrimerNombre.Text = duenno.PrimerNombre;
                 txtPrimerApellido.Text = duenno.PrimerApellido;
@@ -68,12 +75,19 @@ namespace UniOnline.Trabajador
                         AdvertenciaCor.Text = string.Empty;
                         duen.CorreoElectronico = txtCorreo.Text;
                         string texto = txtTelefono.Text;
-                        if (texto.Length <= 8)
+                        if (texto.Length > 8)
                         {
                             AdvertenciaTel.Text = string.Empty;
                             if (duen.ModificarDuenno(txtRutDuenno.Text, txtPrimerNombre.Text, txtSegundoNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text, txtCorreo.Text, txtTelefono.Text))
                             {
-                                MessageBox.Show("Dueño Modificado con Éxito");
+                                if(Update(sender,e))
+                                {
+                                    MessageBox.Show("Dueño Modificado con Éxito");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error al modificar el dueño.", "Error");
+                                }
                             }
                             else
                             {
@@ -157,6 +171,125 @@ namespace UniOnline.Trabajador
             txtRutDuenno.Text = FormatearRut(txtRutDuenno.Text);
             txtRutDuenno.SelectionStart = txtRutDuenno.Text.Length;
             txtRutDuenno.SelectionLength = 0;
+        }
+
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            Duenno duen = new Duenno();
+            MessageBoxResult result = MessageBox.Show("Seguro que desea eliminar este dueño", "Eliminar Dueño", MessageBoxButton.YesNoCancel);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    if (duen.EliminarDuenno(txtRutDuenno.Text))
+                    {
+                        MessageBox.Show("Dueño Eliminado con Éxito");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al Eliminar", "Error");
+                    }
+                    break;
+                case MessageBoxResult.No:
+                    MessageBox.Show("Dueño no eliminado");
+                    break;
+                case MessageBoxResult.Cancel:
+                    break;
+            }
+        }
+
+        private void btnVerCarnet_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Conexion con = new Conexion();
+
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog { Title = "Descargar documento.." };
+                saveFileDialog1.Filter = "Archivos PDF (*.pdf)|*.pdf|Todos los archivos (*.*)|*.*";
+
+                string sql = "SELECT copia_carnet FROM UNIONLINE.DUENNO_PROP WHERE rut_duenno = '" + txtRutDuenno.Text + "';";
+
+                con.Conectar();
+                MySqlDataAdapter adp = new MySqlDataAdapter(sql, con.conex);
+                DataTable dt = new DataTable();
+
+                adp.Fill(dt);
+
+                byte[] b = (byte[])dt.Rows[0]["copia_carnet"];
+                saveFileDialog1.FileName = "COPIACARNET"+"_"+txtPrimerNombre.Text+"_"+txtPrimerApellido.Text+"_"+txtRutDuenno.Text;
+                string filename = saveFileDialog1.FileName;
+                if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    var saveFileDialogStream = saveFileDialog1.OpenFile();
+                    saveFileDialogStream.Write(b, 0, b.Length);
+                    MessageBox.Show("Documento descargado.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al descargar el documento. " + ex.Message, "Advertencia");
+            }
+        }
+
+        private void btnCarnet_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                OpenFileDialog opendlg = new OpenFileDialog();
+                opendlg.Filter = "PDF Files |*.pdf||*.pdf";
+                opendlg.ShowDialog();
+                lblURL.Content = opendlg.FileName;
+                MessageBox.Show("Documento subido con éxito");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al subir el documento " + ex.Message, "Error");
+            }
+        }
+
+        private bool Update(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                //Checking if the label is empty    
+                if (lblURL.Content.ToString() == "URL") //For WPF and labelURL.Text for Windows Form    
+                {
+                    MessageBox.Show("Seleccione un archivo PDF para subir...", "", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                else
+                {
+                    //Streaming browse file and convert it into bytes    
+                    string Query = "UPDATE `UNIONLINE`.`DUENNO_PROP` SET `copia_carnet` = @copia_carnet  WHERE `id_duenno` = " + lblID.Content + ";";
+                    string URLFileName = lblURL.Content.ToString();
+                    byte[] GetPDFFileSize;
+                    FileStream stream = new FileStream(URLFileName, FileMode.Open, FileAccess.ReadWrite);
+                    BinaryReader breader = new BinaryReader(stream);
+                    GetPDFFileSize = new byte[stream.Length];
+                    GetPDFFileSize = breader.ReadBytes((int)stream.Length);
+                    stream.Close();
+                    //Mysql Update Codes    
+                    Conexion con = new Conexion();
+                    con.Conectar();
+                    MySqlCommand cmd = new MySqlCommand(Query, con.conex);
+                    var param2 = new MySqlParameter(@"copia_carnet", MySqlDbType.LongBlob, GetPDFFileSize.Length);
+                    param2.Value = GetPDFFileSize;
+                    cmd.Parameters.Add(param2);
+                    int InsertFiles = cmd.ExecuteNonQuery();
+                    if (InsertFiles > 0)
+                    {
+                        //Proceed ..     
+                        lblURL.Content = "URL";
+                    }
+                    con.conex.Close();
+
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
         }
     }
 }

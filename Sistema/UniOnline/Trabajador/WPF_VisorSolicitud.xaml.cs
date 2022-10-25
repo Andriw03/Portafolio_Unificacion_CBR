@@ -217,9 +217,6 @@ namespace UniOnline.Trabajador
             {
                 MessageBox.Show("Error al subir el documento " + ex.Message, "Error");
             }
-
-
-
         }
         private bool Update(object sender, RoutedEventArgs e)
         {

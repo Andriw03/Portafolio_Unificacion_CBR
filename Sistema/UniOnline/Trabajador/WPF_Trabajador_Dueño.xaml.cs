@@ -8,11 +8,16 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
+using MessageBox = System.Windows.MessageBox;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Controlador;
+using KeyEventArgs = System.Windows.Input.KeyEventArgs;
+using System.IO;
+using MySql.Data.MySqlClient;
 
 namespace UniOnline.Trabajador
 {
@@ -69,7 +74,31 @@ namespace UniOnline.Trabajador
                             {
                                 AdvertenciaTel.Text = string.Empty;
                                 due.Telefono = txtTelefono.Text;
-                                MessageBox.Show(due.Insertar(due), "Mensaje:");
+                                string mensaje = due.Insertar(due);
+                                if (mensaje.Length <= 10)
+                                {
+                                    try
+                                    {
+                                        lblID.Content = mensaje;
+                                        if (Update(sender, e))
+                                        {
+                                            MessageBox.Show("Copia de la cedula de identidad guardada.");
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Error al guardar la copia de la cedula de identidad.");
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show("Error al ingresar la copia de la cedula de identidad:" + ex.ToString());
+                                    }
+                                    MessageBox.Show("Dueño agregado correctamente.");
+                                }
+                                else
+                                {
+                                    MessageBox.Show(mensaje, "Mensaje:");
+                                }
                             }
                             else
                             {
@@ -171,5 +200,64 @@ namespace UniOnline.Trabajador
             e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
         }
 
+        private void btnCarnet_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                OpenFileDialog opendlg = new OpenFileDialog();
+                opendlg.Filter = "PDF Files |*.pdf||*.pdf";
+                opendlg.ShowDialog();
+                lblURL.Content = opendlg.FileName;
+                MessageBox.Show("Documento subido con éxito");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al subir el documento " + ex.Message, "Error");
+            }
+        }
+        private bool Update(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                //Checking if the label is empty    
+                if (lblURL.Content.ToString() == "URL") //For WPF and labelURL.Text for Windows Form    
+                {
+                    MessageBox.Show("Seleccione un archivo PDF para subir...", "", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                else
+                {
+                    //Streaming browse file and convert it into bytes    
+                    string Query = "UPDATE `UNIONLINE`.`DUENNO_PROP` SET `copia_carnet` = @copia_carnet  WHERE `id_duenno` = "+ lblID.Content +";";
+                    string URLFileName = lblURL.Content.ToString();
+                    byte[] GetPDFFileSize;
+                    FileStream stream = new FileStream(URLFileName, FileMode.Open, FileAccess.ReadWrite);
+                    BinaryReader breader = new BinaryReader(stream);
+                    GetPDFFileSize = new byte[stream.Length];
+                    GetPDFFileSize = breader.ReadBytes((int)stream.Length);
+                    stream.Close();
+                    //Mysql Update Codes    
+                    Conexion con = new Conexion();
+                    con.Conectar();
+                    MySqlCommand cmd = new MySqlCommand(Query, con.conex);
+                    var param2 = new MySqlParameter(@"copia_carnet", MySqlDbType.LongBlob, GetPDFFileSize.Length);
+                    param2.Value = GetPDFFileSize;
+                    cmd.Parameters.Add(param2);
+                    int InsertFiles = cmd.ExecuteNonQuery();
+                    if (InsertFiles > 0)
+                    {
+                        //Proceed ..     
+                        lblURL.Content = "URL";
+                    }
+                    con.conex.Close();
+
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
     }
 }

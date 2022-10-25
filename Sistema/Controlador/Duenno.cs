@@ -105,7 +105,15 @@ namespace Controlador
                 Conectar();
                 cmd = new MySqlCommand("insert into DUENNO_PROP (`rut_duenno`,`primer_nombre`,`segundo_nombre`,`primer_apellido`,`segundo_apellido`,`correo_electronico`,`telefono`) values ('" + due.RutDuenno + "','" + due.PrimerNombre + "','" + due.SegundoNombre + "','" + due.PrimerApellido + "','" + due.SegundoApellido + "','" + due.CorreoElectronico + "'," + due.Telefono + ")", conex);
                 cmd.ExecuteNonQuery();
-                salida = "Dueño agregado correctamente";
+                string idDuenno = "";
+                cmd = new MySqlCommand("SELECT id_duenno FROM UNIONLINE.DUENNO_PROP where rut_duenno = '" + due.RutDuenno + "';", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    idDuenno = rd["id_duenno"].ToString();
+                }
+                rd.Close();
+                salida = idDuenno;
             }
             catch (Exception ex)
             {
@@ -165,5 +173,28 @@ namespace Controlador
             }
         }
 
+        public bool EliminarDuenno(string rutDuen)
+        {
+            Conectar();
+            try
+            {
+                int idDuenno = 0;
+                cmd = new MySqlCommand("SELECT id_duenno FROM UNIONLINE.DUENNO_PROP where rut_duenno = '" + rutDuen + "';", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    idDuenno = Int32.Parse(rd["id_duenno"].ToString());
+                }
+                rd.Close();
+                cmd = new MySqlCommand("DELETE FROM `UNIONLINE`.`DUENNO_PROP` WHERE id_duenno = " + idDuenno + ";", conex);
+                cmd.ExecuteReader();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
     }
 }
