@@ -1,7 +1,9 @@
 ﻿using Controlador;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,10 +11,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MessageBox = System.Windows.MessageBox;
 
 namespace UniOnline.Trabajador
 {
@@ -77,6 +81,7 @@ namespace UniOnline.Trabajador
                     txtRutEmpresa.Text = tabla.Rows[0]["rut_empresa"].ToString();
                     txtDescripcion.Text = tabla.Rows[0]["descripcion"].ToString();
                     txtDireccion.Text = tabla.Rows[0]["direccion_prop"].ToString();
+                    lblID.Content = tabla.Rows[0]["id_propiedad"].ToString();
 
                 }
                 catch (Exception ex)
@@ -148,12 +153,13 @@ namespace UniOnline.Trabajador
             if (txtRutDueño.Text != string.Empty && txtFoja.Text != string.Empty && txtDescripcion.Text != string.Empty && txtDireccion.Text != string.Empty && cmbTipoProp.SelectedItem != null)
             {
                 Propiedad prop = new Propiedad();
-                MessageBoxResult result = MessageBox.Show("Seguro que desea modificar esta propiedad", "Modificar Propiedad", MessageBoxButton.YesNoCancel);
+                MessageBoxResult result = MessageBox.Show("Seguro que desea modificar esta propiedad", "Modificar Propiedad", MessageBoxButton.YesNo);
                 switch (result)
                 {
                     case MessageBoxResult.Yes:
                         if (prop.ModificarProp(txtDescripcion.Text, cmbTipoProp.SelectedIndex, txtRutDueño.Text, Int32.Parse(txtFoja.Text)))
                         {
+                            Update(sender, e);
                             MessageBox.Show("Propiedad Modificada con Éxito");
                             this.Close();
                         }
@@ -164,8 +170,6 @@ namespace UniOnline.Trabajador
                         break;
                     case MessageBoxResult.No:
                         MessageBox.Show("Propiedad no modificada");
-                        break;
-                    case MessageBoxResult.Cancel:
                         break;
                 }
                 
@@ -193,7 +197,7 @@ namespace UniOnline.Trabajador
         {
 
             Propiedad prop = new Propiedad();
-            MessageBoxResult result = MessageBox.Show("Seguro que desea modificar esta propiedad", "Modificar Propiedad", MessageBoxButton.YesNoCancel);
+            MessageBoxResult result = MessageBox.Show("Seguro que desea modificar esta propiedad", "Modificar Propiedad", MessageBoxButton.YesNo);
             switch (result)
             {
                 case MessageBoxResult.Yes:
@@ -208,9 +212,6 @@ namespace UniOnline.Trabajador
                     }
                     break;
                 case MessageBoxResult.No:
-                    MessageBox.Show("Propiedad no modificada");
-                    break;
-                case MessageBoxResult.Cancel:
                     break;
             }
             
@@ -222,6 +223,102 @@ namespace UniOnline.Trabajador
             WPF_EditarDueño edue = new WPF_EditarDueño();
             edue.ObtenerDuenno = due.BuscarDuenno(txtDueño.Text);
             edue.ShowDialog();
+        }
+
+        private void btnVerDocu_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Conexion con = new Conexion();
+
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog { Title = "Descargar documento.." };
+                saveFileDialog1.Filter = "Archivos PDF (*.pdf)|*.pdf|Todos los archivos (*.*)|*.*";
+
+                string sql = "SELECT escritura FROM UNIONLINE.PROPIEDAD as prop inner join UNIONLINE.CLAS_PROP as cprop on prop.CLAS_PROP_id_clas = cprop.id_clas where cprop.foja = " + v_foja + ";";
+
+                con.Conectar();
+                MySqlDataAdapter adp = new MySqlDataAdapter(sql, con.conex);
+                DataTable dt = new DataTable();
+
+                adp.Fill(dt);
+
+                byte[] b = (byte[])dt.Rows[0]["escritura"];
+                saveFileDialog1.FileName = "ESCRITURA" + "_" + v_foja;
+                string filename = saveFileDialog1.FileName;
+                if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    var saveFileDialogStream = saveFileDialog1.OpenFile();
+                    saveFileDialogStream.Write(b, 0, b.Length);
+                    MessageBox.Show("Documento descargado.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al descargar el documento. " + ex.Message, "Advertencia");
+            }
+        }
+
+        private void btnDocu_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                OpenFileDialog opendlg = new OpenFileDialog();
+                opendlg.Filter = "PDF Files |*.pdf||*.pdf";
+                opendlg.ShowDialog();
+                lblURL.Content = opendlg.FileName;
+                if (lblURL.Content.ToString() != string.Empty)
+                {
+                    MessageBox.Show("Documento subido con éxito");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al subir el documento " + ex.Message, "Error");
+            }
+        }
+
+        private bool Update(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                //Checking if the label is empty    
+                if (lblURL.Content.ToString() == string.Empty) //For WPF and labelURL.Text for Windows Form    
+                {
+
+                }
+                else
+                {
+                    //Streaming browse file and convert it into bytes    
+                    string Query = "UPDATE `UNIONLINE`.`PROPIEDAD` SET `escritura` = @escritura WHERE `id_propiedad` = " + lblID.Content + " ;";
+                    string URLFileName = lblURL.Content.ToString();
+                    byte[] GetPDFFileSize;
+                    FileStream stream = new FileStream(URLFileName, FileMode.Open, FileAccess.ReadWrite);
+                    BinaryReader breader = new BinaryReader(stream);
+                    GetPDFFileSize = new byte[stream.Length];
+                    GetPDFFileSize = breader.ReadBytes((int)stream.Length);
+                    stream.Close();
+                    //Mysql Update Codes    
+                    Conexion con = new Conexion();
+                    con.Conectar();
+                    MySqlCommand cmd = new MySqlCommand(Query, con.conex);
+                    var param2 = new MySqlParameter(@"escritura", MySqlDbType.LongBlob, GetPDFFileSize.Length);
+                    param2.Value = GetPDFFileSize;
+                    cmd.Parameters.Add(param2);
+                    int InsertFiles = cmd.ExecuteNonQuery();
+                    if (InsertFiles > 0)
+                    {
+                        lblURL.Content = string.Empty;
+                    }
+                    con.conex.Close();
+
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al subir archivo. " + ex.Message);
+                return false;
+            }
         }
     }
 }

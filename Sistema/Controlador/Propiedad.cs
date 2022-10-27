@@ -29,7 +29,7 @@ namespace Controlador
             ClasPropiedad = 0;
             Duenno = 0;
         }
-        public string Insertar(Propiedad prop)
+        public string Insertar(Propiedad prop , int foja)
         {
             string salida;
             try
@@ -37,7 +37,15 @@ namespace Controlador
                 Conectar();
                 cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`PROPIEDAD` (`descripcion`, `DIRECCION_id_direccion`, `TIPO_PROPIEDAD_id_tipoP`, `CLAS_PROP_id_clas`, `DUENNO_PROP_id_duenno`) VALUES ('"+ prop.Descripcion +"', "+ prop.Direccion +", "+ prop.TipoPropiedad +", "+ prop.ClasPropiedad +", "+prop.Duenno+");", conex);
                 cmd.ExecuteNonQuery();
-                salida = "Propiedad agregada correctamente";
+                string idProp = ""; 
+                cmd = new MySqlCommand("SELECT id_propiedad FROM UNIONLINE.PROPIEDAD as prop inner join UNIONLINE.CLAS_PROP as cprop on prop.CLAS_PROP_id_clas = cprop.id_clas where cprop.foja = " + foja + ";", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    idProp = rd["id_propiedad"].ToString();
+                }
+                rd.Close();
+                salida = idProp;
             }
             catch (Exception ex)
             {
@@ -73,7 +81,7 @@ namespace Controlador
             
             try
             {
-                cmd = new MySqlCommand("SELECT foja, nombre_tipoP, concat(nombre_calle,' ', numero_casa ,', ', nombre_comuna, ', ', nombre_region) as direccion_prop, rut_duenno, concat(primer_nombre, ' ', primer_apellido) as nombre_duenno , correo_electronico, telefono, descripcion, razon_social, rut_empresa FROM UNIONLINE.PROPIEDAD join UNIONLINE.DIRECCION on UNIONLINE.PROPIEDAD.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas join UNIONLINE.DUENNO_PROP on UNIONLINE.PROPIEDAD.DUENNO_PROP_id_duenno = UNIONLINE.DUENNO_PROP.id_duenno join UNIONLINE.TIPO_PROPIEDAD on UNIONLINE.PROPIEDAD.TIPO_PROPIEDAD_id_tipoP = UNIONLINE.TIPO_PROPIEDAD.id_tipoP join UNIONLINE.COMUNA on UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna join UNIONLINE.PROVINCIA on UNIONLINE.COMUNA.PROVINCIA_id_provincia= UNIONLINE.PROVINCIA.id_provincia join UNIONLINE.REGION on UNIONLINE.PROVINCIA.REGION_id_region = UNIONLINE.REGION.id_region where foja = " + foja + " limit 1;", conex);
+                cmd = new MySqlCommand("SELECT foja, nombre_tipoP, concat(nombre_calle,' ', numero_casa ,', ', nombre_comuna, ', ', nombre_region) as direccion_prop, rut_duenno, concat(primer_nombre, ' ', primer_apellido) as nombre_duenno , correo_electronico, telefono, descripcion, razon_social, rut_empresa, id_propiedad FROM UNIONLINE.PROPIEDAD join UNIONLINE.DIRECCION on UNIONLINE.PROPIEDAD.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas join UNIONLINE.DUENNO_PROP on UNIONLINE.PROPIEDAD.DUENNO_PROP_id_duenno = UNIONLINE.DUENNO_PROP.id_duenno join UNIONLINE.TIPO_PROPIEDAD on UNIONLINE.PROPIEDAD.TIPO_PROPIEDAD_id_tipoP = UNIONLINE.TIPO_PROPIEDAD.id_tipoP join UNIONLINE.COMUNA on UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna join UNIONLINE.PROVINCIA on UNIONLINE.COMUNA.PROVINCIA_id_provincia= UNIONLINE.PROVINCIA.id_provincia join UNIONLINE.REGION on UNIONLINE.PROVINCIA.REGION_id_region = UNIONLINE.REGION.id_region where foja = " + foja + " limit 1;", conex);
                 MySqlDataAdapter ap = new MySqlDataAdapter(cmd);
                 ap.Fill(tabla);
                 cmd.Dispose();

@@ -16,6 +16,10 @@ using System.Text.RegularExpressions;
 using System.Data;
 using MessageBox = System.Windows.MessageBox;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
+using KeyEventArgs = System.Windows.Input.KeyEventArgs;
+using Button = System.Windows.Controls.Button;
+using System.IO;
 
 namespace UniOnline.Trabajador
 {
@@ -172,7 +176,7 @@ namespace UniOnline.Trabajador
                     if (!prop.ExistePropiedad(Int32.Parse(txtFoja.Text)))
                     {
                         prop.Descripcion = txtDescripcion.Text;
-                        DateTime fecha = DateTime.ParseExact((txtAnno.Text).ToString(), "yyyy", null);                                                                        
+                        DateTime fecha = DateTime.ParseExact(txtAnno.Text.ToString(), "yyyy", null);                                                                        
                         Duenno duenno = new Duenno();
                         duenno = duenno.BuscarDuenno(txtDueño.Text);
                         if (duenno != null)
@@ -181,7 +185,31 @@ namespace UniOnline.Trabajador
                             prop.TipoPropiedad = Int32.Parse(cmbTipoProp.SelectedIndex.ToString());
                             prop.ClasPropiedad = con.InsertClasProp(Int32.Parse(txtFoja.Text), Int32.Parse(txtNumero.Text), fecha.ToString("yyyy/MM/dd HH:mm:ss"), txtRazonSocial.Text, txtRutEmpresa.Text);
                             prop.Duenno = duenno.duennoId;
-                            MessageBox.Show(prop.Insertar(prop));
+                            string mensaje = prop.Insertar(prop, Int32.Parse(txtFoja.Text));
+                            if (mensaje.Length <= 10)
+                            {
+                                try
+                                {
+                                    lblID.Content = mensaje;
+                                    if (Update(sender, e))
+                                    {
+                                        MessageBox.Show("Escritura de la propiedad guardada.");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Error al ingresar la escritura de la propiedad.");
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("Error al ingresar la escritura de la propiedad:" + ex.ToString());
+                                }
+                                MessageBox.Show("Propiedad agregada correctamente.");
+                            }
+                            else
+                            {
+                                MessageBox.Show(mensaje, "Mensaje:");
+                            }
                         }
                         else
                         {
@@ -403,6 +431,69 @@ namespace UniOnline.Trabajador
             txtDueño.Text = FormatearRut(txtDueño.Text);
             txtDueño.SelectionStart = txtDueño.Text.Length;
             txtDueño.SelectionLength = 0;
+        }
+
+        private void btnEscritura_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                OpenFileDialog opendlg = new OpenFileDialog();
+                opendlg.Filter = "PDF Files |*.pdf||*.pdf";
+                opendlg.ShowDialog();
+                lblURL.Content = opendlg.FileName;
+                if (lblURL.Content.ToString() != string.Empty)
+                {
+                    MessageBox.Show("Documento subido con éxito");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al subir el documento " + ex.Message, "Error");
+            }
+        }
+
+        private bool Update(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                //Checking if the label is empty    
+                if (lblURL.Content.ToString() == string.Empty) //For WPF and labelURL.Text for Windows Form    
+                {
+
+                }
+                else
+                {
+                    //Streaming browse file and convert it into bytes    
+                    string Query = "UPDATE `UNIONLINE`.`PROPIEDAD` SET `escritura` = @escritura WHERE `id_propiedad` = " + lblID.Content + " ;";
+                    string URLFileName = lblURL.Content.ToString();
+                    byte[] GetPDFFileSize;
+                    FileStream stream = new FileStream(URLFileName, FileMode.Open, FileAccess.ReadWrite);
+                    BinaryReader breader = new BinaryReader(stream);
+                    GetPDFFileSize = new byte[stream.Length];
+                    GetPDFFileSize = breader.ReadBytes((int)stream.Length);
+                    stream.Close();
+                    //Mysql Update Codes    
+                    Conexion con = new Conexion();
+                    con.Conectar();
+                    MySqlCommand cmd = new MySqlCommand(Query, con.conex);
+                    var param2 = new MySqlParameter(@"escritura", MySqlDbType.LongBlob, GetPDFFileSize.Length);
+                    param2.Value = GetPDFFileSize;
+                    cmd.Parameters.Add(param2);
+                    int InsertFiles = cmd.ExecuteNonQuery();
+                    if (InsertFiles > 0)
+                    {
+                        lblURL.Content = string.Empty;
+                    }
+                    con.conex.Close();
+
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al subir archivo. " + ex.Message);
+                return false;
+            }
         }
     }
 }

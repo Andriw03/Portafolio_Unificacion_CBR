@@ -190,81 +190,89 @@ namespace Controlador
         }
         public void crearPDF()
         {
-            PdfWriter pdfWriter = new PdfWriter("Reporte.pdf");
-            PdfDocument pdf = new PdfDocument(pdfWriter);
-            Document documento = new Document(pdf, PageSize.LETTER);
-
-            documento.SetMargins(60, 10, 55, 10);
-
-            PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
-            PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
-
-            string[] columnas = { "ID Boleta", "Fecha Emisión", "Monto de Boleta", "Metodo de Pago", "Conservador Perteneciente" };
-
-            float[] tamanios = { 2, 4, 4, 3, 5 };
-            Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
-            tabla.SetWidth(UnitValue.CreatePercentValue(100));
-
-
-            foreach (string columna in columnas)
-            {
-                tabla.AddHeaderCell(new Cell().Add(new Paragraph(columna).SetFont(fontColumnas)));
-            }
             try
             {
-                Conectar();
-                cmd = new MySqlCommand("SELECT id_boleta, fecha_emision, monto_pago, T_PAGO.nombre_tipoP, CBR.nombre_cbr FROM UNIONLINE.B_PAGO INNER JOIN T_PAGO ON T_PAGO.id_tipoP = B_PAGO.tipo_pago INNER JOIN CBR ON CBR.id_cbr = B_PAGO.nombre_conservador;", conex);
-                cmd.ExecuteNonQuery();
-                rd = cmd.ExecuteReader();
+                PdfWriter pdfWriter = new PdfWriter("Reporte.pdf");
+                PdfDocument pdf = new PdfDocument(pdfWriter);
+                Document documento = new Document(pdf, PageSize.LETTER);
 
-                while (rd.Read())
+                documento.SetMargins(60, 10, 55, 10);
+
+                PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+                PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+
+                string[] columnas = { "ID Boleta", "Fecha Emisión", "Monto de Boleta", "Metodo de Pago", "Conservador Perteneciente" };
+
+                float[] tamanios = { 2, 4, 4, 3, 5 };
+                Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
+                tabla.SetWidth(UnitValue.CreatePercentValue(100));
+
+
+                foreach (string columna in columnas)
                 {
-                    tabla.AddCell(new Cell().Add(new Paragraph(rd["id_boleta"].ToString()).SetFont(fontContenido)));
-                    tabla.AddCell(new Cell().Add(new Paragraph(rd["fecha_emision"].ToString()).SetFont(fontContenido)));
-                    tabla.AddCell(new Cell().Add(new Paragraph(rd["monto_pago"].ToString()).SetFont(fontContenido)));
-                    tabla.AddCell(new Cell().Add(new Paragraph(rd["nombre_tipoP"].ToString()).SetFont(fontContenido)));
-                    tabla.AddCell(new Cell().Add(new Paragraph(rd["nombre_cbr"].ToString()).SetFont(fontContenido)));
+                    tabla.AddHeaderCell(new Cell().Add(new Paragraph(columna).SetFont(fontColumnas)));
                 }
-                rd.Close();
+                try
+                {
+                    Conectar();
+                    cmd = new MySqlCommand("SELECT id_boleta, fecha_emision, monto_pago, T_PAGO.nombre_tipoP, CBR.nombre_cbr FROM UNIONLINE.B_PAGO INNER JOIN T_PAGO ON T_PAGO.id_tipoP = B_PAGO.tipo_pago INNER JOIN CBR ON CBR.id_cbr = B_PAGO.nombre_conservador;", conex);
+                    cmd.ExecuteNonQuery();
+                    rd = cmd.ExecuteReader();
+
+                    while (rd.Read())
+                    {
+                        tabla.AddCell(new Cell().Add(new Paragraph(rd["id_boleta"].ToString()).SetFont(fontContenido)));
+                        tabla.AddCell(new Cell().Add(new Paragraph(rd["fecha_emision"].ToString()).SetFont(fontContenido)));
+                        tabla.AddCell(new Cell().Add(new Paragraph(rd["monto_pago"].ToString()).SetFont(fontContenido)));
+                        tabla.AddCell(new Cell().Add(new Paragraph(rd["nombre_tipoP"].ToString()).SetFont(fontContenido)));
+                        tabla.AddCell(new Cell().Add(new Paragraph(rd["nombre_cbr"].ToString()).SetFont(fontContenido)));
+                    }
+                    rd.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("");
+                }
+                Exception ex;
+
+                documento.Add(tabla);
+                documento.Close();
+
+                var logo = new iText.Layout.Element.Image(ImageDataFactory.Create("D:/Documentos/Github/Portafolio_Unificacion_CBR/Sistema/UniOnline/LogoCBR.png")).SetWidth(50);
+                var plogo = new Paragraph("").Add(logo);
+
+                var titulo = new Paragraph("Reporte de Ventas");
+                titulo.SetTextAlignment(TextAlignment.CENTER);
+                titulo.SetFontSize(12);
+
+                var dfecha = DateTime.Now.ToString("dd-MM-yyyy");
+                var dhora = DateTime.Now.ToString("hh:mm:ss");
+                var fecha = new Paragraph("Fecha: " + dfecha + "\nHora: " + dhora);
+                fecha.SetFontSize(12);
+
+                PdfDocument pdfDoc = new PdfDocument(new PdfReader("Reporte.pdf"), new PdfWriter("Reporte de Ventas.pdf"));
+                Document doc = new Document(pdfDoc);
+
+                int numeros = pdfDoc.GetNumberOfPages();
+
+                for (int i = 1; i <= numeros; i++)
+                {
+                    PdfPage pagina = pdfDoc.GetPage(i);
+
+                    float y = (pdfDoc.GetPage(i).GetPageSize().GetTop() - 15);
+                    doc.ShowTextAligned(plogo, 40, y, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
+                    doc.ShowTextAligned(titulo, 150, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
+                    doc.ShowTextAligned(fecha, 520, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
+
+                    doc.ShowTextAligned(new Paragraph(string.Format("Página {0} de {1}", i, numeros)), pdfDoc.GetPage(i).GetPageSize().GetWidth() / 2, pdfDoc.GetPage(i).GetPageSize().GetBottom() + 30, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
+                }
+                doc.Close();
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("");
+                MessageBox.Show(ex.Message);
             }
-            Exception ex;
-
-            documento.Add(tabla);
-            documento.Close();
-
-            var logo = new iText.Layout.Element.Image(ImageDataFactory.Create("D:/Documentos/Github/Portafolio_Unificacion_CBR/Sistema/UniOnline/LogoCBR.png")).SetWidth(50);
-            var plogo = new Paragraph("").Add(logo);
-
-            var titulo = new Paragraph("Reporte de Ventas");
-            titulo.SetTextAlignment(TextAlignment.CENTER);
-            titulo.SetFontSize(12);
-
-            var dfecha = DateTime.Now.ToString("dd-MM-yyyy");
-            var dhora = DateTime.Now.ToString("hh:mm:ss");
-            var fecha = new Paragraph("Fecha: " + dfecha + "\nHora: " + dhora);
-            fecha.SetFontSize(12);
-
-            PdfDocument pdfDoc = new PdfDocument(new PdfReader("Reporte.pdf"), new PdfWriter("Reporte de Ventas.pdf"));
-            Document doc = new Document(pdfDoc);
-
-            int numeros = pdfDoc.GetNumberOfPages();
-
-            for (int i = 1; i <= numeros; i++)
-            {
-                PdfPage pagina = pdfDoc.GetPage(i);
-
-                float y = (pdfDoc.GetPage(i).GetPageSize().GetTop() - 15);
-                doc.ShowTextAligned(plogo, 40, y, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
-                doc.ShowTextAligned(titulo, 150, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
-                doc.ShowTextAligned(fecha, 520, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
-
-                doc.ShowTextAligned(new Paragraph(string.Format("Página {0} de {1}", i, numeros)), pdfDoc.GetPage(i).GetPageSize().GetWidth() / 2, pdfDoc.GetPage(i).GetPageSize().GetBottom() + 30, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
-            }
-            doc.Close();
+            
         }
 
         public void CrearInformeUsuarios()

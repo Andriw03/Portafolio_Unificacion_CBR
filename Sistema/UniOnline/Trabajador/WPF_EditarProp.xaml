@@ -39,12 +39,12 @@
             </Button>
             <Button x:Name="btnAgregarDuenno" Content="Agregar dueño" HorizontalAlignment="Left" Margin="200.8,24.8,0,0" VerticalAlignment="Top" Width="138" Height="32" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnAgregarDuenno_Click" Grid.Column="2" Grid.Row="2"/>
             <Button x:Name="btnModificarDuenno" Content="Modificar dueño" HorizontalAlignment="Left" Width="138" Height="32" Grid.Column="2" Margin="391.8,24.8,0,0" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnModificarDuenno_Click" Grid.Row="2" VerticalAlignment="Top"/>
-            <Label Content="Rut Dueño:" HorizontalAlignment="Left" Margin="14,0.6,0,0" VerticalAlignment="Top" FontSize="15" Grid.Row="4" Grid.Column="1" Height="28" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" Width="85"/>
-            <TextBox x:Name="txtRutDueño" VerticalContentAlignment="Center" FontSize="15" HorizontalAlignment="Left" Height="32" Margin="12,22.6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" MaxLength="15" IsEnabled="False" IsUndoEnabled="False" Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="1"/>
-            <TextBox x:Name="txtNombreDueño" VerticalContentAlignment="Center" FontSize="15" HorizontalAlignment="Left" Height="32" Margin="196.8,22.6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" MaxLength="15" IsEnabled="False" IsUndoEnabled="False" Grid.Column="2" Grid.Row="4"/>
-            <Label Content="Nombre Dueño:" HorizontalAlignment="Left" Margin="200.8,0.6,0,0" VerticalAlignment="Top" FontSize="15" Grid.Column="2" Height="33" Grid.Row="4" Width="126" />
-            <ComboBox x:Name="cmbTipoProp" Margin="485.8,22.6,0,5.8" FontSize="15" IsEditable="True" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbTipoProp_SelectionChanged" Grid.Row="4" Grid.Column="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="221" Height="32"/>
-            <Label Content="Tipos de propiedad:" HorizontalAlignment="Left" Margin="485.8,0.6,0,0" VerticalAlignment="Top" FontSize="15" Height="28" Grid.Row="4" Width="146" Grid.Column="2"/>
+            <Label Content="Rut Dueño:" HorizontalAlignment="Left" Margin="14,0.6,0,0" VerticalAlignment="Top" FontSize="15" Grid.Row="4" Grid.Column="1" Height="28" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" Width="85" Visibility="Hidden"/>
+            <TextBox x:Name="txtRutDueño" VerticalContentAlignment="Center" FontSize="15" HorizontalAlignment="Left" Height="32" Margin="12,22.6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" MaxLength="15" IsEnabled="False" IsUndoEnabled="False" Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="1" Visibility="Hidden"/>
+            <TextBox x:Name="txtNombreDueño" VerticalContentAlignment="Center" FontSize="15" HorizontalAlignment="Left" Height="32" Margin="10,28.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" MaxLength="15" IsEnabled="False" IsUndoEnabled="False" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"/>
+            <Label Content="Nombre Dueño:" HorizontalAlignment="Left" Margin="10,0.6,0,0" VerticalAlignment="Top" FontSize="15" Grid.Column="1" Height="33" Grid.Row="4" Width="126" Grid.ColumnSpan="2"/>
+            <ComboBox x:Name="cmbTipoProp" Margin="196.8,27.2,0,0" FontSize="15" IsEditable="True" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbTipoProp_SelectionChanged" Grid.Row="4" Grid.Column="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="221" Height="32"/>
+            <Label Content="Tipos de propiedad:" HorizontalAlignment="Left" Margin="200.8,0.6,0,0" VerticalAlignment="Top" FontSize="15" Height="28" Grid.Row="4" Width="146" Grid.Column="2"/>
             <Label Content="Foja:" HorizontalAlignment="Left" Margin="12,1.2,0,0" VerticalAlignment="Top" FontSize="15" Grid.Column="1" Height="30" Grid.Row="5" Width="41"/>
             <TextBox x:Name="txtFoja" VerticalContentAlignment="Center" FontSize="15" HorizontalAlignment="Left" Height="32" Margin="10,28.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="233" Grid.ColumnSpan="2" IsEnabled="False" Grid.Column="1" Grid.Row="5" />
             <Label Content="Razón Social:" HorizontalAlignment="Left" Margin="196.8,1.2,0,0" VerticalAlignment="Top" FontSize="15" Grid.Column="2" RenderTransformOrigin="0.115,0.632" Height="30" Grid.Row="5" Width="98"/>
@@ -57,6 +57,11 @@
             <TextBox x:Name="txtDireccion" VerticalContentAlignment="Center" FontSize="15" HorizontalAlignment="Left" Height="32" Margin="10,27.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="816" Grid.ColumnSpan="2" IsEnabled="False" Grid.Row="7" Grid.Column="1" />
             <Button x:Name="btnModificar"  Content="Modificar" HorizontalAlignment="Left" Margin="6,0,0,3" VerticalAlignment="Bottom" Width="92" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnModificar_Click" Height="35" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2"/>
             <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="10.8,0,0,3" VerticalAlignment="Bottom" Width="100" Background="#FF393E59" Foreground="#FFF0F2F2" Height="35" Click="btnEliminar_Click" Grid.Column="2" Grid.Row="8"/>
+            <Label x:Name="lblURL" Visibility="Hidden" Content=""/>
+            <Label x:Name="lblID" Visibility="Hidden" Content=""/>
+            <Button x:Name="btnVerDocu" Content="Descargar escritura" Grid.Column="2" Grid.Row="4" Width="138" Height="32" HorizontalAlignment="Right" Margin="180,0" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnVerDocu_Click"/>
+            <Button x:Name="btnDocu" Content="Subir escritura" Grid.Column="2" Grid.Row="4" Width="138" Height="32" HorizontalAlignment="Right" Margin="20,0" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnDocu_Click"/>
+
         </Grid>
         <TextBlock Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="28" MinWidth="265" Margin="10,10,618.6,524.4"><Run Language="es-es" Text="CBRS de Chile"/></TextBlock>
     </Grid>

@@ -148,5 +148,84 @@ namespace Controlador
             }
         }
 
+        public bool CompararID(int idTramite)
+        {
+            bool comparar = false;
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT * FROM UNIONLINE.TRAMITE where id_tramite = " + idTramite + " and id_tramite not in (SELECT TRAMITE_id_tramite FROM UNIONLINE.SOLICITUD);", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    comparar = true;
+                }
+                rd.Close();
+                return comparar;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+                return comparar;
+            }
+        }
+
+        public Tramite BuscarTramite(int idTra)
+        {
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT * FROM UNIONLINE.TRAMITE where id_tramite = " + idTra + ";", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    NombreTra = rd["nombre_tramite"].ToString();
+                    ValorTra = rd["valor_tramite"].ToString();
+                    Estado = rd["estado"].ToString();
+                    Descripcion = rd["descripcion"].ToString();
+                    TipoTramite = Int32.Parse(rd["T_TRAMITE_id_tipoT"].ToString());
+                }
+                rd.Close();
+                return this;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
+        public bool EliminarTra(int idTram)
+        {
+            Conectar();
+            try
+            {
+                cmd = new MySqlCommand("DELETE FROM `UNIONLINE`.`TRAMITE` WHERE id_tramite = " + idTram + ";", conex);
+                cmd.ExecuteReader();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        public bool ModificarTra(int idTra, string NombreTra, string ValorTra, string Estado, string Descripcion, int TipoTra)
+        {
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("UPDATE `UNIONLINE`.`TRAMITE` SET `nombre_tramite` = '" + NombreTra + "', `valor_tramite` = '" + ValorTra + "', `estado` = '" + Estado + "', `descripcion` = '" + Descripcion + "', `T_TRAMITE_id_tipoT` = " + TipoTra + " WHERE `id_tramite` = " + idTra + "; ", conex);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
     }
 }

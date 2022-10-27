@@ -135,18 +135,27 @@
 
                     <Button x:Name="btnBuscarTra" Content="Buscar" Height="40" Width="100" Grid.Column="3" Grid.Row="3" Click="btnBuscarTra_Click" Background="#FF393E59" Foreground="#FFF0F2F2"/>
 
-                    <DataGrid x:Name="dtgTramite" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False" Width="762" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" Grid.RowSpan="3">
+                    <DataGrid x:Name="dtgTramite" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False" Width="830" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" Grid.RowSpan="3">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Width="38" FontSize="20" Binding="{Binding Path = 'id_tramite'}" IsReadOnly="True" Visibility="Hidden"/>
                             <DataGridTextColumn Header="Nombre" Width="250" FontSize="20" Binding="{Binding Path = 'nombre_tramite'}" IsReadOnly="True"/>
                             <DataGridTextColumn Header="Valor" Width="100" FontSize="20" Binding="{Binding Path = 'valor_tramite'}" IsReadOnly="True"/>
                             <DataGridTextColumn Header="Estado" Width="100" FontSize="20" Binding="{Binding Path= 'estado'}" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="Tipo" Width="250" FontSize="20" Binding="{Binding Path = 'nombre_tipoT'}" IsReadOnly="True"/>
-                            <DataGridTemplateColumn Header="Editar" Width="160">
+                            <DataGridTextColumn Header="Tipo" Width="200" FontSize="20" Binding="{Binding Path = 'nombre_tipoT'}" IsReadOnly="True"/>
+                            <DataGridTemplateColumn Header="Editar estado" Width="150">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Button x:Name="btnCamEstado" Background="#FF010326" Foreground="#FFF0F2F2" Click="btnCamEstado_Click">
                                             <TextBlock Text="Cambiar estado" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Modificar trámite" Width="150">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button x:Name="btnModificarTramite" Background="#FF010326" Foreground="#FFF0F2F2" Click="btnModificarTramite_Click" >
+                                            <TextBlock Text="Modificar" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </Button>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>

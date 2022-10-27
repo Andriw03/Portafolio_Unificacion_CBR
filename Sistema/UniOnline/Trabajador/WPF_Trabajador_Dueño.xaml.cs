@@ -208,7 +208,10 @@ namespace UniOnline.Trabajador
                 opendlg.Filter = "PDF Files |*.pdf||*.pdf";
                 opendlg.ShowDialog();
                 lblURL.Content = opendlg.FileName;
-                MessageBox.Show("Documento subido con éxito");
+                if (lblURL.Content.ToString() != string.Empty)
+                {
+                    MessageBox.Show("Documento subido con éxito");
+                }
             }
             catch (Exception ex)
             {

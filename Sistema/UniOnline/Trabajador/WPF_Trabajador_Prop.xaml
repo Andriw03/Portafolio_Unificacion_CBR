@@ -107,10 +107,11 @@
                     </Button>
                     <Button x:Name="btnAgregarDuenno" Content="Agregar dueño" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="138" Height="35" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnAgregarDuenno_Click" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="2" Margin="25.8,13,0,0"/>
                     <Button x:Name="btnModificarDuenno" Content="Modificar dueño" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="35" Width="150" Background="#FF393E59" Foreground="#FFF0F2F2" Grid.Column="6" Grid.Row="2" Grid.ColumnSpan="2" Click="btnModificarDuenno_Click" Visibility="Hidden" Margin="0.267,13,0,0"/>
-                    <Label Content="Rut Dueño:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="85" Grid.Column="1" Grid.Row="4"/>
-                    <TextBox x:Name="txtRutDueño" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" MaxLength="15" IsEnabled="False" IsUndoEnabled="False" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" Margin="0,28.8,0,0"/>
-                    <TextBox x:Name="txtNombreDueño" HorizontalAlignment="Left" TextWrapping="Wrap" Width="240" MaxLength="15" IsEnabled="False" IsUndoEnabled="False" Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="3" Margin="21.2,28.8,0,0" Height="32" VerticalAlignment="Top"/>
-                    <Label Content="Nombre Dueño:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="117" Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="2" Margin="21,0,0,0"/>
+                    <Label Content="Rut Dueño:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="85" Grid.Column="1" Grid.Row="4" Visibility="Hidden"/>
+                    <TextBox x:Name="txtRutDueño" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" MaxLength="15" IsEnabled="False" IsUndoEnabled="False" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" Margin="0,28.8,0,0" Visibility="Hidden"/>
+                    <TextBox x:Name="txtNombreDueño" HorizontalAlignment="Left" TextWrapping="Wrap" Width="240" MaxLength="15" IsEnabled="False" IsUndoEnabled="False" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" Margin="0,28.8,0,0" Height="32" VerticalAlignment="Top"/>
+                    <Button x:Name="btnEscritura" Content="Subir escritura" Background="#FF393E59" Foreground="#FFF0F2F2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2" Width="138" Height="35" Click="btnEscritura_Click"/>
+                    <Label Content="Nombre Dueño:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="117" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,0,0,0"/>
                     <ComboBox x:Name="cmbTipoProp" Height="32" Width="199" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" IsEditable="True" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbTipoProp_SelectionChanged" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="3" Margin="0,28.6,0,0"/>
                     <Label Content="Tipos de propiedad:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="142" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2"/>
                     <Label Content="Foja:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Grid.Column="3" Grid.Row="6"  Height="30" Width="40" Margin="42,0,0,0"/>
@@ -135,6 +136,8 @@
                     <TextBox x:Name="txtDireccion" TextWrapping="Wrap" Grid.Column="1" Grid.Row="14" Grid.ColumnSpan="9" Margin="0,28.8,8.533,0" Height="32" VerticalAlignment="Top"/>
                     <Button x:Name="btnGuardar"  Content="Guardar" VerticalAlignment="Bottom" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnGuardar_Click" Height="30" Grid.Column="1" Grid.Row="16" Margin="0,0,0,0.4" HorizontalAlignment="Left" Width="81"/>
                     <Button x:Name="btnLimpiarProp" Content="Limpiar" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnLimpiarProp_Click" Grid.Column="2" Grid.Row="16" Height="30" Margin="9.6,0,0,0.4"/>
+                    <Label x:Name="lblURL" Visibility="Hidden" Content=""/>
+                    <Label x:Name="lblID" Visibility="Hidden" Content=""/>
                 </Grid>
             </TabItem>
 

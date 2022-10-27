@@ -80,14 +80,8 @@ namespace UniOnline.Trabajador
                             AdvertenciaTel.Text = string.Empty;
                             if (duen.ModificarDuenno(txtRutDuenno.Text, txtPrimerNombre.Text, txtSegundoNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text, txtCorreo.Text, txtTelefono.Text))
                             {
-                                if(Update(sender,e))
-                                {
-                                    MessageBox.Show("Dueño Modificado con Éxito");
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Error al modificar el dueño.", "Error");
-                                }
+                                Update(sender, e);
+                                MessageBox.Show("Dueño Modificado con Éxito");
                             }
                             else
                             {
@@ -239,7 +233,10 @@ namespace UniOnline.Trabajador
                 opendlg.Filter = "PDF Files |*.pdf||*.pdf";
                 opendlg.ShowDialog();
                 lblURL.Content = opendlg.FileName;
-                MessageBox.Show("Documento subido con éxito");
+                if (lblURL.Content.ToString() != string.Empty)
+                {
+                    MessageBox.Show("Documento subido con éxito");
+                }
             }
             catch (Exception ex)
             {
@@ -252,9 +249,9 @@ namespace UniOnline.Trabajador
             try
             {
                 //Checking if the label is empty    
-                if (lblURL.Content.ToString() == "URL") //For WPF and labelURL.Text for Windows Form    
+                if (lblURL.Content.ToString() == string.Empty) //For WPF and labelURL.Text for Windows Form    
                 {
-                    MessageBox.Show("Seleccione un archivo PDF para subir...", "", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    
                 }
                 else
                 {
@@ -277,8 +274,7 @@ namespace UniOnline.Trabajador
                     int InsertFiles = cmd.ExecuteNonQuery();
                     if (InsertFiles > 0)
                     {
-                        //Proceed ..     
-                        lblURL.Content = "URL";
+                        lblURL.Content = string.Empty;
                     }
                     con.conex.Close();
 
@@ -287,7 +283,7 @@ namespace UniOnline.Trabajador
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error al subir archivo. " + ex.Message);
                 return false;
             }
         }

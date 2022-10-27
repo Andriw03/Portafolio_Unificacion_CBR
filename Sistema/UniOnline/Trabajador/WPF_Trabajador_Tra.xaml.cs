@@ -333,5 +333,29 @@ namespace UniOnline.Trabajador
         {
             e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
         }
+
+        private void btnModificarTramite_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Tramite tra = new Tramite();
+                DataRowView dataView = (DataRowView)((Button)e.Source).DataContext;
+                if (tra.CompararID(Int32.Parse(dataView[0].ToString())))
+                {
+                    WPF_EditarTra editarTra = new WPF_EditarTra();
+                    editarTra.ObtenerTra = Int32.Parse(dataView[0].ToString());
+                    editarTra.ShowDialog();
+                    this.btnBuscarTra_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Este trámite esta relacionado con una solicitud. No se puede editar.","Advertencia");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
