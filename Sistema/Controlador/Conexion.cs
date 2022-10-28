@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
@@ -38,6 +39,7 @@ namespace Controlador
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return false;
             }
             
@@ -59,6 +61,7 @@ namespace Controlador
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return null;
             }
         }

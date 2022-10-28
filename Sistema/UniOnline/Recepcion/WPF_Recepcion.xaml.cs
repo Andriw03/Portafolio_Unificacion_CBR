@@ -101,7 +101,7 @@ namespace UniOnline.Recepcion
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Solicitud sin registro");
+                    MessageBox.Show("Solicitud sin registro: " + ex.Message);
                 }
             }
             else

@@ -67,7 +67,7 @@ namespace UniOnline.Moderador
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se encuentran datos");
+                MessageBox.Show("No se encuentran datos: " + ex.Message);
             }
         }
 

@@ -47,6 +47,7 @@ namespace Controlador
 
             }
             catch (Exception ex) {
+                MessageBox.Show(ex.Message);
             }
             finally{
                 ms.Dispose();

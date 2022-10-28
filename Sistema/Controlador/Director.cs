@@ -10,9 +10,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using MySql.Data.MySqlClient;
-using MySqlConnector;
 using MySql.Data;
-using MySqlCommand = MySql.Data.MySqlClient.MySqlCommand;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Kernel.Geom;
@@ -20,11 +18,8 @@ using iText.Kernel.Font;
 using iText.IO.Font.Constants;
 using iText.Layout.Element;
 using iText.Layout.Properties;
-using MySqlConnection = MySql.Data.MySqlClient.MySqlConnection;
-using MySqlDataReader = MySql.Data.MySqlClient.MySqlDataReader;
 using iText.IO.Image;
 using VerticalAlignment = iText.Layout.Properties.VerticalAlignment;
-using MySqlDataAdapter = MySql.Data.MySqlClient.MySqlDataAdapter;
 using System.Text.RegularExpressions;
 
 namespace Controlador
@@ -95,6 +90,7 @@ namespace Controlador
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return true;
 
             }
@@ -157,6 +153,7 @@ namespace Controlador
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return null;
 
             }
@@ -229,16 +226,17 @@ namespace Controlador
                     }
                     rd.Close();
                 }
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("");
+                    MessageBox.Show(ex.Message);
+                    
                 }
-                Exception ex;
+                
 
                 documento.Add(tabla);
                 documento.Close();
 
-                var logo = new iText.Layout.Element.Image(ImageDataFactory.Create("D:/Documentos/Github/Portafolio_Unificacion_CBR/Sistema/UniOnline/LogoCBR.png")).SetWidth(50);
+                var logo = new iText.Layout.Element.Image(ImageDataFactory.Create(@"D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\LogoCBR.png")).SetWidth(50);
                 var plogo = new Paragraph("").Add(logo);
 
                 var titulo = new Paragraph("Reporte de Ventas");
@@ -325,7 +323,7 @@ namespace Controlador
             documento.Add(tabla);
             documento.Close();
 
-            var logo = new iText.Layout.Element.Image(ImageDataFactory.Create("D:/Documentos/Github/Portafolio_Unificacion_CBR/Sistema/UniOnline/LogoCBR.png")).SetWidth(50);
+            var logo = new iText.Layout.Element.Image(ImageDataFactory.Create(@"D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\LogoCBR.png")).SetWidth(50);
             var plogo = new Paragraph("").Add(logo);
 
             var titulo = new Paragraph("Reporte de Usuarios");

@@ -93,6 +93,7 @@ namespace Controlador
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return null;
 
             }
@@ -117,7 +118,7 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                salida = "Error al agregar el Dueño: " + ex.ToString();
+                salida = "Error al agregar el Dueño: " + ex.Message;
             }
             return salida;
         }
@@ -136,6 +137,7 @@ namespace Controlador
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return true;
 
             }

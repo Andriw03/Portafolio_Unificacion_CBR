@@ -575,10 +575,11 @@
             Summary description for CharSetMap.
             </summary>
         </member>
-        <member name="M:MySql.Data.MySqlClient.CharSetMap.GetEncoding(System.String)">
+        <member name="M:MySql.Data.MySqlClient.CharSetMap.GetEncoding(MySql.Data.Common.DBVersion,System.String)">
             <summary>
             Returns the text encoding for a given MySQL character set name
             </summary>
+            <param name="version">Version of the connection requesting the encoding</param>
             <param name="charSetName">Name of the character set to get the encoding for</param>
             <returns>Encoding object for the given character set name</returns>
         </member>
@@ -1194,6 +1195,11 @@
             Pings the server.
             </summary>
             <returns><c>true</c> if the ping was successful; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:MySql.Data.MySqlClient.MySqlConnection.OpenAsync(System.Threading.CancellationToken)">
+            <summary>
+            Executes the <see cref="M:MySql.Data.MySqlClient.MySqlConnection.Open"/> method as a Task.
+            </summary>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlConnection.Open">
             <summary>Opens a database connection with the property settings specified by the <see cref="P:MySql.Data.MySqlClient.MySqlConnection.ConnectionString"/>.</summary>
@@ -4127,13 +4133,10 @@
             </summary>
         </member>
         <member name="T:MySql.Data.MySqlClient.Memcached.BinaryClient">
-             <summary>
-             Implementation of memcached binary client protocol.
-             
-             -------- This class has been deprecated and will be removed in a future version ------
-            
-             </summary>
-             <remarks>According to http://code.google.com/p/memcached/wiki/BinaryProtocolRevamped </remarks>
+            <summary>
+            Implementation of memcached binary client protocol.
+            </summary>
+            <remarks>According to http://code.google.com/p/memcached/wiki/BinaryProtocolRevamped </remarks>
         </member>
         <member name="M:MySql.Data.MySqlClient.Memcached.BinaryClient.SendCommand(System.Byte,System.Byte,System.String,System.Object,System.TimeSpan,System.Boolean)">
             <summary>
@@ -4193,14 +4196,11 @@
             <returns></returns>
         </member>
         <member name="T:MySql.Data.MySqlClient.Memcached.Client">
-             <summary>
-             An interface of the client memcached protocol. This class is abstract for 
-             implementation of the Memcached client interface see <see cref="T:MySql.Data.MySqlClient.Memcached.TextClient"/> for the 
-             text protocol version and <see cref="T:MySql.Data.MySqlClient.Memcached.BinaryClient"/> for the binary protocol version.
-             
-             -------- This class has been deprecated and will be removed in a future version ------
-            
-             </summary>
+            <summary>
+            An interface of the client memcached protocol. This class is abstract for 
+            implementation of the Memcached client interface see <see cref="T:MySql.Data.MySqlClient.Memcached.TextClient"/> for the 
+            text protocol version and <see cref="T:MySql.Data.MySqlClient.Memcached.BinaryClient"/> for the binary protocol version.
+            </summary>
         </member>
         <member name="F:MySql.Data.MySqlClient.Memcached.Client.port">
             <summary>
@@ -4339,20 +4339,14 @@
             </summary>
         </member>
         <member name="T:MySql.Data.MySqlClient.Memcached.MemcachedException">
-             <summary>
-             The base exception class for all Memcached exceptions.
-             
-             -------- This class has been deprecated and will be removed in a future version ------
-            
-             </summary>
+            <summary>
+            The base exception class for all Memcached exceptions.
+            </summary>
         </member>
         <member name="T:MySql.Data.MySqlClient.Memcached.TextClient">
-             <summary>
-             Implementation of the Memcached text client protocol.
-             
-             -------- This class has been deprecated and will be removed in a future version ------
-            
-             </summary>
+            <summary>
+            Implementation of the Memcached text client protocol.
+            </summary>
         </member>
         <member name="M:MySql.Data.MySqlClient.Memcached.TextClient.SendCommand(System.String,System.String,System.Object,System.TimeSpan,System.UInt64)">
             <summary>
@@ -4993,16 +4987,6 @@
             Gets or sets a connection option.
             </summary>
             <param name="keyword">The keyword that identifies the connection option to modify.</param>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.TryGetValue(System.String,System.Object@)">
-            <summary>
-            Retrieves the value corresponding to the supplied key from this <see cref="T:MySql.Data.MySqlClient.MySqlConnectionStringBuilder"/>.
-            </summary>
-            <param name="keyword">The key of the item to retrieve.</param>
-            <param name="value">The value corresponding to the <paramref name="keyword"/>.</param>
-            <returns><see langword="true"/> if <paramref name="keyword"/> was found within the connection string; 
-            otherwise, <see langword="false"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="keyword"/> contains a null value.</exception>
         </member>
         <member name="T:MySql.Data.MySqlClient.ClientFlags">
             <summary>
@@ -8601,24 +8585,6 @@
             order they appeared in the SQL
             </remarks>
         </member>
-        <member name="M:MySql.Data.MySqlClient.ProcedureCache.SplitSchemaAndEntity(System.String,System.String@,System.String@)">
-            <summary>
-            Splits the schema and the entity from a syntactically correct "spName"; 
-            if there's no schema, then schema will be an empty string.
-            </summary>
-            <param name="spName">string to inspect.</param>
-            <param name="schema">The schema.</param>
-            <param name="entity">The entity.</param>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.ProcedureCache.ExtractDotIndex(System.String,System.Int32)">
-            <summary>
-            Obtains the dot index that separates the schema from the entity if there's one; 
-            otherwise, returns -1. It expects a syntactically correct "spName".
-            </summary>
-            <param name="spName">string to inspect.</param>
-            <param name="dotIndex">Value of the dot index.</param>
-            <returns>The dot index.</returns>
-        </member>
         <member name="T:MySql.Data.MySqlClient.ReplicationConfigurationElement">
             <summary>
             Defines a replication configurarion element in the configuration file.
@@ -8963,13 +8929,6 @@
             Summary description for StoredProcedure.
             </summary>
         </member>
-        <member name="M:MySql.Data.MySqlClient.StoredProcedure.IsSyntacticallyCorrect(System.String)">
-            <summary>
-            Verify if the string passed as argument is syntactically correct.
-            </summary>
-            <param name="spName">String to be analyzed</param>
-            <returns>true if is correct; otherwise, false.</returns>
-        </member>
         <member name="T:MySql.Data.MySqlClient.BaseTableCache">
             <summary>
             Defines the basic operations to be performed on the table cache.
@@ -9166,14 +9125,6 @@
              (after BeginTransaction has been called, but before Commit is
              called).
             </remarks>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.Utils.UnquoteString(System.String)">
-            <summary>
-            Removes the outer backticks and replace the double-backticks to single-backtick
-            of inside the quotedString.
-            </summary>
-            <param name="quotedString">The string to unquote.</param>
-            <returns></returns>
         </member>
         <member name="T:MySql.Data.MySqlClient.X.XDevAPI.Common.ColumnType">
             <summary>
@@ -12106,11 +12057,6 @@
               Looks up a localized string similar to Scheme &apos;{0}&apos; is not valid..
             </summary>
         </member>
-        <member name="P:MySql.Data.ResourcesX.DocPathNullOrEmpty">
-            <summary>
-              Looks up a localized string similar to The document path cannot be null or an empty string..
-            </summary>
-        </member>
         <member name="P:MySql.Data.ResourcesX.DuplicateUserDefinedAttribute">
             <summary>
               Looks up a localized string similar to Duplicate key &apos;{0}&apos; used in &quot;connection-attributes&quot;..
@@ -14587,16 +14533,6 @@
             Gets or sets a connection option.
             </summary>
             <param name="keyword">The keyword that identifies the connection option to modify.</param>
-        </member>
-        <member name="M:MySqlX.XDevAPI.MySqlXConnectionStringBuilder.TryGetValue(System.String,System.Object@)">
-            <summary>
-            Retrieves the value corresponding to the supplied key from this <see cref="T:MySqlX.XDevAPI.MySqlXConnectionStringBuilder"/>.
-            </summary>
-            <param name="keyword">The key of the item to retrieve.</param>
-            <param name="value">The value corresponding to the <paramref name="keyword"/>.</param>
-            <returns><see langword="true"/> if <paramref name="keyword"/> was found within the connection string; 
-            otherwise, <see langword="false"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="keyword"/> contains a null value.</exception>
         </member>
         <member name="T:MySqlX.XDevAPI.Relational.Column">
             <summary>

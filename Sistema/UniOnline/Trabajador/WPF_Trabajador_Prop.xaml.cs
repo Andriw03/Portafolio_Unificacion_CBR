@@ -155,7 +155,7 @@ namespace UniOnline.Trabajador
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error Conexion Comuna", "Error");
+                MessageBox.Show("Error Conexion Comuna: "+ ex.Message, "Error");
             }
             
         }

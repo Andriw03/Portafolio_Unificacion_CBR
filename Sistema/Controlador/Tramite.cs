@@ -61,6 +61,7 @@ namespace Controlador
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return true;
             }
         }
@@ -78,6 +79,7 @@ namespace Controlador
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return true;
             }
         }
