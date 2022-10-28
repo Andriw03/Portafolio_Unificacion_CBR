@@ -43,11 +43,22 @@
       </a>
 
     </header>
+
     <main>
         <form class="formulario" method="post">
             {% csrf_token %}
                 <h1>Registrate</h1>
             <div class="contenedor">
+                {% if messages %}
+                    <ul class="messages">
+                    {% for message in messages %}
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
                 <div class="input-contenedor">
                     <i class="fa-solid fa-user icon"></i>
                     <input type="text" name="RUT" placeholder="RUT">
@@ -55,7 +66,7 @@
 
                 <div class="input-contenedor">
                     <i class="fa-solid fa-user icon"></i>
-                    <input type="text" name="Nombre" placeholder="Nombre">
+                    <input type="text" name="Nombre" placeholder="Primer Nombre">
                 </div>
 
                 <div class="input-contenedor">
@@ -97,7 +108,7 @@
     </main>
     <footer>
         <p class="copyright">&copy Copyright Ministerio de Vivienda y Urbanismo - 2022</p>
-      </footer>
+    </footer>
 
 </body>
 </html>

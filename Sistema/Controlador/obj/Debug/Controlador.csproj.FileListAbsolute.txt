@@ -454,3 +454,9 @@ D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Common.Logging.xml
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.pdb
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.xml

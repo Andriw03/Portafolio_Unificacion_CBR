@@ -78,10 +78,6 @@ D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\ZstdNet.dll
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.layout.dll
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.kernel.dll
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.io.dll
-D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.commons.dll
-D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
-D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Logging.dll
-D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Controlador.pdb
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Controlador.dll.config
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Autofac.pdb
@@ -155,10 +151,6 @@ D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Windows.
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.layout.xml
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.kernel.xml
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.io.xml
-D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.commons.xml
-D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
-D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Logging.xml
-D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\de\PdfSharp.resources.dll
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\de\PdfSharp.Charting.resources.dll
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.AssemblyReference.cache
@@ -463,3 +455,10 @@ D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\De
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.Core.xml
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.pdb
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.Core.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\BouncyCastle.Crypto.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.Core.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.Core.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.xml

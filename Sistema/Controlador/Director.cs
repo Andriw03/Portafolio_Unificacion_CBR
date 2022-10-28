@@ -236,7 +236,7 @@ namespace Controlador
                 documento.Add(tabla);
                 documento.Close();
 
-                var logo = new iText.Layout.Element.Image(ImageDataFactory.Create(@"D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\LogoCBR.png")).SetWidth(50);
+                var logo = new iText.Layout.Element.Image(ImageDataFactory.Create(@"D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\LogoCBR.png")).SetWidth(50);
                 var plogo = new Paragraph("").Add(logo);
 
                 var titulo = new Paragraph("Reporte de Ventas");
@@ -323,7 +323,7 @@ namespace Controlador
             documento.Add(tabla);
             documento.Close();
 
-            var logo = new iText.Layout.Element.Image(ImageDataFactory.Create(@"D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\LogoCBR.png")).SetWidth(50);
+            var logo = new iText.Layout.Element.Image(ImageDataFactory.Create(@"D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\LogoCBR.png")).SetWidth(50);
             var plogo = new Paragraph("").Add(logo);
 
             var titulo = new Paragraph("Reporte de Usuarios");
