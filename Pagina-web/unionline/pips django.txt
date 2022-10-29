@@ -1,0 +1,4 @@
+pip install Werkzeug
+pip install passlib
+pip install crypthography
+python -m pip install mysql-connector-python

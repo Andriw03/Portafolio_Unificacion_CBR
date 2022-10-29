@@ -460,3 +460,9 @@ D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Loggin
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.xml
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.pdb
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.xml

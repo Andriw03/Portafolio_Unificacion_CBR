@@ -1,5 +1,9 @@
-﻿using System;
+﻿using Controlador;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,14 +11,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Threading;
-using Controlador;
-
+using MessageBox = System.Windows.MessageBox;
 
 namespace UniOnline.Director
 {
@@ -47,8 +49,25 @@ namespace UniOnline.Director
 
         private void btnInfoVentas_Click(object sender, RoutedEventArgs e)
         {
-            Usuario usu = new Usuario();
-            usu.crearPDF();
+            try
+            {
+                Usuario usu = new Usuario();
+
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog { Title = "Descargar documento.." };
+                saveFileDialog1.Filter = "Archivos PDF (*.pdf)|*.pdf|Todos los archivos (*.*)|*.*";
+
+                saveFileDialog1.FileName = "COPIACARNET";
+                string filename = saveFileDialog1.FileName;
+                if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    usu.crearPDF();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al descargar el documento. " + ex.Message, "Advertencia");
+            }
         }
 
         private void btnInfoUsers_Click(object sender, RoutedEventArgs e)

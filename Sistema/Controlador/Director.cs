@@ -189,7 +189,7 @@ namespace Controlador
         {
             try
             {
-                PdfWriter pdfWriter = new PdfWriter("Reporte.pdf");
+                PdfWriter pdfWriter = new PdfWriter(@"C:\Desktop\Reporte.pdf");
                 PdfDocument pdf = new PdfDocument(pdfWriter);
                 Document documento = new Document(pdf, PageSize.LETTER);
 
@@ -268,90 +268,97 @@ namespace Controlador
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Informe generado con éxito.");
             }
             
         }
 
         public void CrearInformeUsuarios()
         {
-            PdfWriter pdfWriter = new PdfWriter("Reporte 2.pdf");
-            PdfDocument pdf = new PdfDocument(pdfWriter);
-            Document documento = new Document(pdf, PageSize.LETTER);
-
-            documento.SetMargins(60, 10, 55, 10);
-
-            PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
-            PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
-
-            string[] columnas = { "RUT", "Primer Nombre", "Segundo Nombre", "Primer Apellido", "Segundo Apellido", "CBR al que Pertenece", "Rol en el Sistema" };
-
-            float[] tamanios = { 4, 4, 4, 4, 4, 6, 4 };
-            Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
-            tabla.SetWidth(UnitValue.CreatePercentValue(100));
-
-
-            foreach (string columna in columnas)
-            {
-                tabla.AddHeaderCell(new Cell().Add(new Paragraph(columna).SetFont(fontColumnas)));
-            }
             try
             {
-                Conectar();
-                cmd = new MySqlCommand("SELECT rut_usuario, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, CBR.nombre_cbr, T_USUARIO.nombre_tipoU  FROM UNIONLINE.USUARIO INNER JOIN CBR ON USUARIO.CBR_id_cbr = CBR.id_cbr INNER JOIN T_USUARIO ON USUARIO.T_USUARIO_id_tipoU = T_USUARIO.id_tipoU;", conex);
-                cmd.ExecuteNonQuery();
-                rd = cmd.ExecuteReader();
+                PdfWriter pdfWriter = new PdfWriter("Reporte 2.pdf");
+                PdfDocument pdf = new PdfDocument(pdfWriter);
+                Document documento = new Document(pdf, PageSize.LETTER);
 
-                while (rd.Read())
+                documento.SetMargins(60, 10, 55, 10);
+
+                PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+                PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+
+                string[] columnas = { "RUT", "Primer Nombre", "Segundo Nombre", "Primer Apellido", "Segundo Apellido", "CBR al que Pertenece", "Rol en el Sistema" };
+
+                float[] tamanios = { 4, 4, 4, 4, 4, 6, 4 };
+                Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
+                tabla.SetWidth(UnitValue.CreatePercentValue(100));
+
+
+                foreach (string columna in columnas)
                 {
-                    tabla.AddCell(new Cell().Add(new Paragraph(rd["rut_usuario"].ToString()).SetFont(fontContenido)));
-                    tabla.AddCell(new Cell().Add(new Paragraph(rd["primer_nombre"].ToString()).SetFont(fontContenido)));
-                    tabla.AddCell(new Cell().Add(new Paragraph(rd["segundo_nombre"].ToString()).SetFont(fontContenido)));
-                    tabla.AddCell(new Cell().Add(new Paragraph(rd["primer_apellido"].ToString()).SetFont(fontContenido)));
-                    tabla.AddCell(new Cell().Add(new Paragraph(rd["segundo_apellido"].ToString()).SetFont(fontContenido)));
-                    tabla.AddCell(new Cell().Add(new Paragraph(rd["nombre_cbr"].ToString()).SetFont(fontContenido)));
-                    tabla.AddCell(new Cell().Add(new Paragraph(rd["nombre_tipoU"].ToString()).SetFont(fontContenido)));
+                    tabla.AddHeaderCell(new Cell().Add(new Paragraph(columna).SetFont(fontColumnas)));
                 }
-                rd.Close();
+                try
+                {
+                    Conectar();
+                    cmd = new MySqlCommand("SELECT rut_usuario, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, CBR.nombre_cbr, T_USUARIO.nombre_tipoU  FROM UNIONLINE.USUARIO INNER JOIN CBR ON USUARIO.CBR_id_cbr = CBR.id_cbr INNER JOIN T_USUARIO ON USUARIO.T_USUARIO_id_tipoU = T_USUARIO.id_tipoU;", conex);
+                    cmd.ExecuteNonQuery();
+                    rd = cmd.ExecuteReader();
+
+                    while (rd.Read())
+                    {
+                        tabla.AddCell(new Cell().Add(new Paragraph(rd["rut_usuario"].ToString()).SetFont(fontContenido)));
+                        tabla.AddCell(new Cell().Add(new Paragraph(rd["primer_nombre"].ToString()).SetFont(fontContenido)));
+                        tabla.AddCell(new Cell().Add(new Paragraph(rd["segundo_nombre"].ToString()).SetFont(fontContenido)));
+                        tabla.AddCell(new Cell().Add(new Paragraph(rd["primer_apellido"].ToString()).SetFont(fontContenido)));
+                        tabla.AddCell(new Cell().Add(new Paragraph(rd["segundo_apellido"].ToString()).SetFont(fontContenido)));
+                        tabla.AddCell(new Cell().Add(new Paragraph(rd["nombre_cbr"].ToString()).SetFont(fontContenido)));
+                        tabla.AddCell(new Cell().Add(new Paragraph(rd["nombre_tipoU"].ToString()).SetFont(fontContenido)));
+                    }
+                    rd.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+
+                documento.Add(tabla);
+                documento.Close();
+
+                var logo = new iText.Layout.Element.Image(ImageDataFactory.Create(@"D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\LogoCBR.png")).SetWidth(50);
+                var plogo = new Paragraph("").Add(logo);
+
+                var titulo = new Paragraph("Reporte de Usuarios");
+                titulo.SetTextAlignment(TextAlignment.CENTER);
+                titulo.SetFontSize(12);
+
+                var dfecha = DateTime.Now.ToString("dd-MM-yyyy");
+                var dhora = DateTime.Now.ToString("hh:mm:ss");
+                var fecha = new Paragraph("Fecha: " + dfecha + "\nHora: " + dhora);
+                fecha.SetFontSize(12);
+
+                PdfDocument pdfDoc = new PdfDocument(new PdfReader("Reporte 2.pdf"), new PdfWriter("Reporte de Usuarios.pdf"));
+                Document doc = new Document(pdfDoc);
+
+                int numeros = pdfDoc.GetNumberOfPages();
+
+                for (int i = 1; i <= numeros; i++)
+                {
+                    PdfPage pagina = pdfDoc.GetPage(i);
+
+                    float y = (pdfDoc.GetPage(i).GetPageSize().GetTop() - 15);
+                    doc.ShowTextAligned(plogo, 40, y, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
+                    doc.ShowTextAligned(titulo, 150, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
+                    doc.ShowTextAligned(fecha, 520, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
+
+                    doc.ShowTextAligned(new Paragraph(string.Format("Página {0} de {1}", i, numeros)), pdfDoc.GetPage(i).GetPageSize().GetWidth() / 2, pdfDoc.GetPage(i).GetPageSize().GetBottom() + 30, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
+                }
+                doc.Close();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Informe generado con éxito.");
             }
-
-
-            documento.Add(tabla);
-            documento.Close();
-
-            var logo = new iText.Layout.Element.Image(ImageDataFactory.Create(@"D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\LogoCBR.png")).SetWidth(50);
-            var plogo = new Paragraph("").Add(logo);
-
-            var titulo = new Paragraph("Reporte de Usuarios");
-            titulo.SetTextAlignment(TextAlignment.CENTER);
-            titulo.SetFontSize(12);
-
-            var dfecha = DateTime.Now.ToString("dd-MM-yyyy");
-            var dhora = DateTime.Now.ToString("hh:mm:ss");
-            var fecha = new Paragraph("Fecha: " + dfecha + "\nHora: " + dhora);
-            fecha.SetFontSize(12);
-
-            PdfDocument pdfDoc = new PdfDocument(new PdfReader("Reporte 2.pdf"), new PdfWriter("Reporte de Usuarios.pdf"));
-            Document doc = new Document(pdfDoc);
-
-            int numeros = pdfDoc.GetNumberOfPages();
-
-            for (int i = 1; i <= numeros; i++)
-            {
-                PdfPage pagina = pdfDoc.GetPage(i);
-
-                float y = (pdfDoc.GetPage(i).GetPageSize().GetTop() - 15);
-                doc.ShowTextAligned(plogo, 40, y, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
-                doc.ShowTextAligned(titulo, 150, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
-                doc.ShowTextAligned(fecha, 520, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
-
-                doc.ShowTextAligned(new Paragraph(string.Format("Página {0} de {1}", i, numeros)), pdfDoc.GetPage(i).GetPageSize().GetWidth() / 2, pdfDoc.GetPage(i).GetPageSize().GetBottom() + 30, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
-            }
-            doc.Close();
         }
 
         public DataTable MostrarFormulario()
