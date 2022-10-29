@@ -1,3 +1,4 @@
+from webbrowser import get
 from django.shortcuts import render, redirect
 from django.contrib import auth, messages
 from . models import Cbr, Usuario, TUsuario
@@ -5,7 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from werkzeug.security import generate_password_hash, check_password_hash
 import mysql.connector as mysql
-
+from rut_chile import rut_chile
 
 def cifrar(contrasenna):
     encry = generate_password_hash(contrasenna, 'sha256')
@@ -64,3 +65,13 @@ def crearCuenta(request):
             
         
     return render(request, 'registration/registrar.html')
+
+
+
+def perfil(request):
+   
+   if request.method==('GET'):
+    usuario = Usuario()
+    usuario.primer_nombre= request.GET.get('')
+
+    return render(request, 'templates/perfil-cliente.html')

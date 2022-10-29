@@ -27,7 +27,7 @@ SECRET_KEY = 'f-4nb%u$9n!dymsv=v2h4@frw(@vka6+2y#qd*sq8681=jk&d7'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-LOGIN_REDIRECT_URL= '/'
+LOGIN_REDIRECT_URL= '/perfil'
 LOGOUT_REDIRECT_URL='/'
 
 # Application definition
