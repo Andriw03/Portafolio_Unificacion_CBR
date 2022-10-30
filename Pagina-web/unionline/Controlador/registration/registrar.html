@@ -29,6 +29,12 @@
   <link rel="stylesheet" href="static/css/registrar.css">
   <!-- CSS only -->
   <script src="https://kit.fontawesome.com/33be0875fa.js" crossorigin="anonymous"></script>
+
+  <!-- JS only -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.js" ></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/css/inputmask.min.css" rel="stylesheet"/>
   
 </head>
  
@@ -61,7 +67,7 @@
                 {% endif %}
                 <div class="input-contenedor">
                     <i class="fa-solid fa-user icon"></i>
-                    <input type="text" name="RUT" placeholder="RUT">
+                    <input type="text" name="rut" id="rut" onkeyup="mascara(this,formatoRUT)" placeholder="RUT">
                 </div>
 
                 <div class="input-contenedor">
@@ -109,6 +115,46 @@
     <footer>
         <p class="copyright">&copy Copyright Ministerio de Vivienda y Urbanismo - 2022</p>
     </footer>
+
+    <script>
+        // oír los cambios en la caja de texto e ir dando formato al RUT
+document.addEventListener('input', (e) => {
+  const rut = document.getElementById('rut');
+
+  if (e.target === rut) {
+    let rutFormateado = darFormatoRUT(rut.value);
+    rut.value = rutFormateado;
+  }
+});
+
+// dar formato XX.XXX.XXX-X
+function darFormatoRUT(rut) {
+  // dejar solo números y letras 'k'
+  const rutLimpio = rut.replace(/[^0-9kK]/g, '');
+
+  // asilar el cuerpo del dígito verificador
+  const cuerpo = rutLimpio.slice(0, -1);
+  const dv = rutLimpio.slice(-1).toUpperCase();
+
+  if (rutLimpio.length < 2) return rutLimpio;
+
+  // colocar los separadores de miles al cuerpo
+  let cuerpoFormatoMiles = cuerpo
+    .toString()
+    .split('')
+    .reverse()
+    .join('')
+    .replace(/(?=\d*\.?)(\d{3})/g, '$1.');
+
+  cuerpoFormatoMiles = cuerpoFormatoMiles
+    .split('')
+    .reverse()
+    .join('')
+    .replace(/^[\.]/, '');
+
+  return `${cuerpoFormatoMiles}-${dv}`;
+}
+    </script>
 
 </body>
 </html>
