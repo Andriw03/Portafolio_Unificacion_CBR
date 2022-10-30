@@ -1,3 +1,4 @@
+from tkinter import EXCEPTION
 from webbrowser import get
 from django.shortcuts import render, redirect
 from django.contrib import auth, messages
@@ -20,22 +21,25 @@ def desifrar (encry):
     return check_password_hash
 
 def inicio(request):
+    print("otaku no se que pasa")
     return render(request, 'templates/inicio.html')
 
-def login(request):
+def iniciar_sesion(request):
+    
     if request.method == 'POST':
-        rut = request.POST.get('usuario')
-        ##usuario = rut_chile.format_rut_with_dots(rut)
-        #contraseña = request.POST.get('password')
-        usuario = "19.447.409-1"
-        contraseña = "andres123"
-        userLogin = authenticate(request,username=usuario, password=contraseña)
+        rut = request.POST.get('rut')
+        contraseña = request.POST.get('password')
+        userLogin = authenticate(request,username=rut, password=contraseña)
         #valida que tipo de usuario se está iniciando sesión
         try:
             if userLogin is not None:
                 login(request, userLogin)
                 userA = request.user
+                
                 return redirect(to="perfil")
+            else:
+                mensaje = 'Error, usuario no encontrado'
+                messages.error(request, mensaje)
                 """
                 try:
                     if Usuario.objects.get(userD=userA):
@@ -45,11 +49,11 @@ def login(request):
                     if Usuario.objects.get(userD=userA):
                         return redirect(to="Paciente")
                 """
-        except:
-            messages.add_message(request, messages.INFO, 'Error')
+        except ValueError:
+            messages.error(request, ValueError )
            
                 
-    return render(request, 'Registration/login.html')
+    return render(request, 'registration\iniciar_sesion.html')
 
 def crearCuenta(request):
 
@@ -77,6 +81,9 @@ def crearCuenta(request):
         user.email = usuario.correo_electronico
         user.set_password(request.POST.get('Contraseña'))
         user.username = usuario.rut_usuario
+        user.first_name = request.POST.get('Nombre')
+        user.last_name = request.POST.get('Primer_Apellido')
+        
 
         if usuario.rut_usuario == "" or usuario.primer_nombre == "" or usuario.segundo_nombre == "" or usuario.primer_apellido == "" or usuario.segundo_apellido == "" or usuario.telefono == "" or usuario.correo_electronico == "" or usuario.contrasenna == "":
             messages.warning(request, 'Los campos no pueden quedar vacios.')

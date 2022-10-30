@@ -44,55 +44,18 @@
       <a href="{% url 'inicio' %}" class="logo d-flex align-items-center me-auto me-lg-0">
         <h1>CBRS de Chile<span>.</span></h1>
       </a>
-
     </header>
     <main>
-        <form class="formulario" id="formulario-login" enctype="multipart/formdata" method="POST">
+
+        <form class="formulario" action="" id="formulario-login" enctype="multipart/formdata" method="POST">
           {% csrf_token %}
+
             <h1>Iniciar Sesión</h1>
             <div class="contenedor">
                 <div class="input-contenedor">
                     <i class="fa-solid fa-user icon"></i>
                     <input type="text" onkeyup="mascara(this,formatoRUT)" name="rut" id="rut" placeholder="Rut" maxlength="12">
-                    <script>
-                      // oír los cambios en la caja de texto e ir dando formato al RUT
-document.addEventListener('input', (e) => {
-  const rut = document.getElementById('rut');
-
-  if (e.target === rut) {
-    let rutFormateado = darFormatoRUT(rut.value);
-    rut.value = rutFormateado;
-  }
-});
-
-// dar formato XX.XXX.XXX-X
-function darFormatoRUT(rut) {
-  // dejar solo números y letras 'k'
-  const rutLimpio = rut.replace(/[^0-9kK]/g, '');
-
-  // asilar el cuerpo del dígito verificador
-  const cuerpo = rutLimpio.slice(0, -1);
-  const dv = rutLimpio.slice(-1).toUpperCase();
-
-  if (rutLimpio.length < 2) return rutLimpio;
-
-  // colocar los separadores de miles al cuerpo
-  let cuerpoFormatoMiles = cuerpo
-    .toString()
-    .split('')
-    .reverse()
-    .join('')
-    .replace(/(?=\d*\.?)(\d{3})/g, '$1.');
-
-  cuerpoFormatoMiles = cuerpoFormatoMiles
-    .split('')
-    .reverse()
-    .join('')
-    .replace(/^[\.]/, '');
-
-  return `${cuerpoFormatoMiles}-${dv}`;
-}
-                    </script>
+                    
                   </div>
 
                 <div class="input-contenedor">
@@ -103,14 +66,65 @@ function darFormatoRUT(rut) {
                 <div>
                     <input type="submit" value="Iniciar Sesión" class="button">
                 </div>
-            </div>
-        </form>
+            
 
+        </form>
+        <div class="mensaje">
+          {% if messages %}
+          <ul class="messages">
+          {% for message in messages %}
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  {{ message }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+          {% endfor %}
+          </ul>
+      {% endif %}
+        </div>
+      </div>
     </main>
     <footer>
         <p class="copyright">&copy Copyright Ministerio de Vivienda y Urbanismo - 2022</p>
       </footer>
 
 </body>
+<script>
+  // oír los cambios en la caja de texto e ir dando formato al RUT
+document.addEventListener('input', (e) => {
+const rut = document.getElementById('rut');
 
+if (e.target === rut) {
+let rutFormateado = darFormatoRUT(rut.value);
+rut.value = rutFormateado;
+}
+});
+
+// dar formato XX.XXX.XXX-X
+function darFormatoRUT(rut) {
+// dejar solo números y letras 'k'
+const rutLimpio = rut.replace(/[^0-9kK]/g, '');
+
+// asilar el cuerpo del dígito verificador
+const cuerpo = rutLimpio.slice(0, -1);
+const dv = rutLimpio.slice(-1).toUpperCase();
+
+if (rutLimpio.length < 2) return rutLimpio;
+
+// colocar los separadores de miles al cuerpo
+let cuerpoFormatoMiles = cuerpo
+.toString()
+.split('')
+.reverse()
+.join('')
+.replace(/(?=\d*\.?)(\d{3})/g, '$1.');
+
+cuerpoFormatoMiles = cuerpoFormatoMiles
+.split('')
+.reverse()
+.join('')
+.replace(/^[\.]/, '');
+
+return `${cuerpoFormatoMiles}-${dv}`;
+}
+</script>
 </html>
