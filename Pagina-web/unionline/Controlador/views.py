@@ -6,7 +6,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from werkzeug.security import generate_password_hash, check_password_hash
 import mysql.connector as mysql
+from django.contrib.auth import authenticate, login
 from rut_chile import rut_chile
+
 
 def cifrar(contrasenna):
     encry = generate_password_hash(contrasenna, 'sha256')
@@ -21,6 +23,32 @@ def inicio(request):
     return render(request, 'templates/inicio.html')
 
 def login(request):
+    if request.method == 'POST':
+        rut = request.POST.get('usuario')
+        ##usuario = rut_chile.format_rut_with_dots(rut)
+        #contraseña = request.POST.get('password')
+        usuario = "19.447.409-1"
+        contraseña = "andres123"
+        userLogin = authenticate(request,username=usuario, password=contraseña)
+        #valida que tipo de usuario se está iniciando sesión
+        try:
+            if userLogin is not None:
+                login(request, userLogin)
+                userA = request.user
+                return redirect(to="perfil")
+                """
+                try:
+                    if Usuario.objects.get(userD=userA):
+                        return redirect(to="kine")
+                   
+                except:
+                    if Usuario.objects.get(userD=userA):
+                        return redirect(to="Paciente")
+                """
+        except:
+            messages.add_message(request, messages.INFO, 'Error')
+           
+                
     return render(request, 'Registration/login.html')
 
 def crearCuenta(request):
