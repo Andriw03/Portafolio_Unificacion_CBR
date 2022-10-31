@@ -105,16 +105,8 @@ def crearCuenta(request):
 
 def perfil(request):
    
-   
+   if request.method==('GET'):
+    usuario = Usuario()
+    usuario.primer_nombre= request.GET.get('')
 
     return render(request, 'templates/perfil-cliente.html')
-
-
-def paginaPrinc(request):
-
-
-<<<<<<< Updated upstream
-    return render(request, 'templates/perfil-cliente.html')
-=======
-    return render (request,'templates/pagina-principal.html' )
->>>>>>> Stashed changes
