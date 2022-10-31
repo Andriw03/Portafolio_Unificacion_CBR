@@ -57,6 +57,7 @@ a:hover {
   text-decoration: none;
 }
 
+
 h1,
 h2,
 h3,
@@ -1714,4 +1715,10 @@ footer {
 
 .footer .credits a {
   color: #fff;
+}
+
+.carousel-inner img {
+ 
+  width: 50%; /* Set width to 100% */
+  margin: auto;
 }

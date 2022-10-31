@@ -113,8 +113,8 @@ def perfil(request):
 def paginaPrinc(request):
 
 
-<<<<<<< Updated upstream
-    return render(request, 'templates/perfil-cliente.html')
-=======
-    return render (request,'templates/pagina-principal.html' )
->>>>>>> Stashed changes
+
+    return render(request, 'templates/pagina-principal.html')
+
+ 
+
