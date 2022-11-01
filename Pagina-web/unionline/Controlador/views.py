@@ -116,5 +116,9 @@ def paginaPrinc(request):
 
     return render(request, 'templates/pagina-principal.html')
 
+def consultas(request):
+
+    return render(request, 'templates/consultas.html')
+
  
 
