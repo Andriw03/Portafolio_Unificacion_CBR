@@ -49,20 +49,11 @@ namespace UniOnline.Director
 
         private void btnInfoVentas_Click(object sender, RoutedEventArgs e)
         {
+
             try
             {
                 Usuario usu = new Usuario();
-
-                SaveFileDialog saveFileDialog1 = new SaveFileDialog { Title = "Descargar documento.." };
-                saveFileDialog1.Filter = "Archivos PDF (*.pdf)|*.pdf|Todos los archivos (*.*)|*.*";
-
-                saveFileDialog1.FileName = "COPIACARNET";
-                string filename = saveFileDialog1.FileName;
-                if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    usu.crearPDF();
-
-                }
+                usu.crearPDF();
             }
             catch (Exception ex)
             {

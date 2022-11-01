@@ -189,7 +189,8 @@ namespace Controlador
         {
             try
             {
-                PdfWriter pdfWriter = new PdfWriter(@"C:\Desktop\Reporte.pdf");
+                
+                PdfWriter pdfWriter = new PdfWriter("Reporte.pdf");
                 PdfDocument pdf = new PdfDocument(pdfWriter);
                 Document documento = new Document(pdf, PageSize.LETTER);
 
@@ -236,7 +237,7 @@ namespace Controlador
                 documento.Add(tabla);
                 documento.Close();
 
-                var logo = new iText.Layout.Element.Image(ImageDataFactory.Create(@"D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\LogoCBR.png")).SetWidth(50);
+                var logo = new Image(ImageDataFactory.Create(@"D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\LogoCBR.png")).SetWidth(50);
                 var plogo = new Paragraph("").Add(logo);
 
                 var titulo = new Paragraph("Reporte de Ventas");
@@ -248,7 +249,7 @@ namespace Controlador
                 var fecha = new Paragraph("Fecha: " + dfecha + "\nHora: " + dhora);
                 fecha.SetFontSize(12);
 
-                PdfDocument pdfDoc = new PdfDocument(new PdfReader("Reporte.pdf"), new PdfWriter("Reporte de Ventas.pdf"));
+                PdfDocument pdfDoc = new PdfDocument(new PdfReader("Reporte.pdf"), new PdfWriter(@"C:\Reportes\Reporte de Ventas.pdf"));
                 Document doc = new Document(pdfDoc);
 
                 int numeros = pdfDoc.GetNumberOfPages();
@@ -257,7 +258,7 @@ namespace Controlador
                 {
                     PdfPage pagina = pdfDoc.GetPage(i);
 
-                    float y = (pdfDoc.GetPage(i).GetPageSize().GetTop() - 15);
+                    float y = pdfDoc.GetPage(i).GetPageSize().GetTop() - 15;
                     doc.ShowTextAligned(plogo, 40, y, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
                     doc.ShowTextAligned(titulo, 150, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
                     doc.ShowTextAligned(fecha, 520, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
@@ -266,7 +267,7 @@ namespace Controlador
                 }
                 doc.Close();
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Informe generado con éxito.");
             }
@@ -325,7 +326,7 @@ namespace Controlador
                 documento.Add(tabla);
                 documento.Close();
 
-                var logo = new iText.Layout.Element.Image(ImageDataFactory.Create(@"D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\LogoCBR.png")).SetWidth(50);
+                var logo = new iText.Layout.Element.Image(ImageDataFactory.Create(@"D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\LogoCBR.png")).SetWidth(50);
                 var plogo = new Paragraph("").Add(logo);
 
                 var titulo = new Paragraph("Reporte de Usuarios");
@@ -337,7 +338,7 @@ namespace Controlador
                 var fecha = new Paragraph("Fecha: " + dfecha + "\nHora: " + dhora);
                 fecha.SetFontSize(12);
 
-                PdfDocument pdfDoc = new PdfDocument(new PdfReader("Reporte 2.pdf"), new PdfWriter("Reporte de Usuarios.pdf"));
+                PdfDocument pdfDoc = new PdfDocument(new PdfReader("Reporte 2.pdf"), new PdfWriter(@"C:\Reportes\Reporte de Usuarios.pdf"));
                 Document doc = new Document(pdfDoc);
 
                 int numeros = pdfDoc.GetNumberOfPages();
