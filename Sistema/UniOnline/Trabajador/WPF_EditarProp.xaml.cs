@@ -157,7 +157,7 @@ namespace UniOnline.Trabajador
                 switch (result)
                 {
                     case MessageBoxResult.Yes:
-                        if (prop.ModificarProp(txtDescripcion.Text, cmbTipoProp.SelectedIndex, txtRutDueño.Text, Int32.Parse(txtFoja.Text)))
+                        if (prop.ModificarProp(txtDescripcion.Text, cmbTipoProp.SelectedIndex, txtRutDueño.Text, Int32.Parse(txtFoja.Text),txtRutEmpresa.Text,txtRazonSocial.Text))
                         {
                             Update(sender, e);
                             MessageBox.Show("Propiedad Modificada con Éxito");

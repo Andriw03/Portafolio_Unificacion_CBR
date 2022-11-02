@@ -93,7 +93,7 @@ namespace Controlador
                 return null;
             }
         }
-        public bool ModificarProp(string descripcion, int tipoPropiedad, string rutDuenno, int foja)
+        public bool ModificarProp(string descripcion, int tipoPropiedad, string rutDuenno, int foja, string rutEmpresa, string razonSocial)
         {
             try
             {
@@ -108,15 +108,20 @@ namespace Controlador
                 }
                 rd.Close();
                 int idPropiedad = 0;
-                cmd = new MySqlCommand("SELECT id_propiedad FROM UNIONLINE.PROPIEDAD inner join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas where foja = "+ foja +";", conex);
+                int idClas = 0;
+                cmd = new MySqlCommand("SELECT * FROM UNIONLINE.PROPIEDAD inner join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas where foja = "+ foja +";", conex);
                 rd = cmd.ExecuteReader();
                 while (rd.Read())
                 {
                     idPropiedad = Int32.Parse(rd["id_propiedad"].ToString());
+                    idClas = Int32.Parse(rd["id_clas"].ToString());
                 }
                 rd.Close();
                 cmd = new MySqlCommand("UPDATE `UNIONLINE`.`PROPIEDAD` SET `descripcion` = '"+ descripcion +"', `TIPO_PROPIEDAD_id_tipoP` = " + tipoPropiedad + ", `DUENNO_PROP_id_duenno` = " + idDuenno + " WHERE `id_propiedad` = "+ idPropiedad +";", conex);
                 cmd.ExecuteNonQuery();
+                cmd = new MySqlCommand("UPDATE `UNIONLINE`.`CLAS_PROP` SET `razon_social` = '"+ razonSocial +"', `rut_empresa` = '"+ rutEmpresa +"' WHERE `id_clas` = "+ idClas +";", conex);
+                cmd.ExecuteNonQuery();
+
                 return true;
             }
             catch(Exception ex)
