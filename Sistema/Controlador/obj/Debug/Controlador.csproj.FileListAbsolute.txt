@@ -447,7 +447,6 @@ C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Contro
 C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Primitives.xml
 C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Newtonsoft.Json.xml
 C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.ValueTuple.xml
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.AssemblyReference.cache
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.dll
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Common.Logging.dll
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Common.Logging.pdb
