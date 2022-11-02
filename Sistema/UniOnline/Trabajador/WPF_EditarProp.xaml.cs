@@ -69,7 +69,7 @@ namespace UniOnline.Trabajador
             {
                 try
                 {
-                    txtDueño.Text = tabla.Rows[0]["rut_duenno"].ToString();                    
+                    txtDueño.Text = tabla.Rows[0]["rut_duenno"].ToString();
                     duenno = duenno.BuscarDuenno(txtDueño.Text);
                     txtRutDueño.Text = duenno.RutDuenno;
                     txtNombreDueño.Text = duenno.PrimerNombre + ' ' + duenno.PrimerApellido;

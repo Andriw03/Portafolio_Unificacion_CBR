@@ -34,5 +34,6 @@
         <PasswordBox x:Name="pssContrasenna" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="15" Height="34" Margin="135,81,0,158"  Grid.ColumnSpan="2" Width="524" Visibility="Hidden"/>
         <Button x:Name="btnContrasenna" Content="Enviar" HorizontalAlignment="Left" Margin="267,127,0,0" VerticalAlignment="Top" Width="188" Height="41" Visibility="Hidden" Click="btnContrasenna_Click" Background="#FF393E59" BorderBrush="#FFF0F2F2" Foreground="#FF96ACAC" FontSize="16" Cursor="Hand" Grid.ColumnSpan="2"/>
 
+        <Button x:Name="btnVolver" Content="Volver" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,9.6" Width="75" Height="30" Background="#FF393E59" BorderBrush="#FFF0F2F2" Foreground="#FF96ACAC" Grid.Column="1" Click="btnVolver_Click"/>
     </Grid>
 </Window>

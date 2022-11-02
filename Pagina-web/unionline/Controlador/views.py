@@ -21,7 +21,6 @@ def desifrar (encry):
     return check_password_hash
 
 def inicio(request):
-    print("otaku no se que pasa")
     return render(request, 'templates/inicio.html')
 
 def iniciar_sesion(request):

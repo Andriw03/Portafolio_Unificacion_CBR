@@ -98,7 +98,7 @@
 
                     <Button x:Name="btnVolverProp" Content="Volver" Click="btnVolverProp_Click" Background="#FF393E59" Foreground="#FFF0F2F2" Grid.Column="9" Grid.Row="16" Grid.ColumnSpan="2" Margin="19.067,0,0,0" HorizontalAlignment="Left" Width="75" Height="30" VerticalAlignment="Top"/>
                     <TextBlock TextWrapping="Wrap" Foreground="#FF010326" FontWeight="Bold" FontSize="25" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="3" Margin="9.8,0.2,9.133,0" Grid.RowSpan="2" Height="33" VerticalAlignment="Top"><Run Text="Ingresa una Propiedad"/></TextBlock>
-                    <Label Content="Buscar Dueño:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Width="142" Height="30" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
+                    <Label Content="Buscar Dueño:" FontFamily="Segoe UI Emoji" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Width="142" Height="30" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
                     <TextBox x:Name="txtDueño" HorizontalAlignment="Left" TextWrapping="Wrap" Width="199" MaxLength="15" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Margin="0,29,0,0" Grid.RowSpan="2" Height="32" VerticalAlignment="Top" KeyUp="txtDueño_KeyUp"/>
                     <Button x:Name="btnBuscarDueño" Content="" VerticalAlignment="Bottom" Height="35" Click="btnBuscarDueño_Click" Grid.Column="3" Grid.Row="2" BorderBrush="{x:Null}" Margin="29.2,13,29.2,0">
                         <Button.Background>

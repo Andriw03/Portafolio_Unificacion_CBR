@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline.Trabajador"
         mc:Ignorable="d"
-        Title="WPF_EditarTra" Height="550" Width="800" WindowStartupLocation="CenterScreen">
+        Title="CBR UniOnline" Height="550" Width="800" WindowStartupLocation="CenterScreen">
     
     <Grid Background="#FFF0F2F2">
         <Rectangle Fill="#FF010326" Height="60" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>

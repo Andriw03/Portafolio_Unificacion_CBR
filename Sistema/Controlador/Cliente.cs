@@ -140,6 +140,36 @@ namespace Controlador
                 return null;
             }
         }
+
+        public bool AgregarSolicitud(int IdUsu, int IdProp, int IdTra)
+        {
+            bool salida = false;
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`SOLICITUD` (`fecha_solicitud`, `fecha_cierre`, `estado`, `numero_seguimiento`, `Comentario`, `USUARIO_id_usuario`, `PROPIEDAD_id_propiedad`, `TRAMITE_id_tramite`) VALUES (SYSDATE(), '0000-00-00 00:00:00', 'En Proceso', 'SO-000', '', "+ IdUsu + ", " + IdProp + ", " + IdTra + ");", conex);
+                cmd.ExecuteNonQuery();
+                string idSoli = "";
+                cmd = new MySqlCommand("SELECT id_soli FROM UNIONLINE.SOLICITUD where numero_seguimiento = 'SO-000';", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    idSoli = rd["id_soli"].ToString();
+                }
+                rd.Close();
+                string Nseg = "SO-000" + idSoli;
+                cmd = new MySqlCommand("UPDATE `UNIONLINE`.`SOLICITUD` SET `numero_seguimiento` = '"+ Nseg +"' WHERE `id_soli` = "+ idSoli +" ;", conex);
+                cmd.ExecuteNonQuery();
+                salida = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                salida = false;
+            }
+            return salida;
+        }
+
         public List<string> Documento(int id)
         {
             List<string> doc = new List<string>();

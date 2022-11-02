@@ -388,6 +388,9 @@
     <Compile Include="Trabajador\WPF_EditarTra.xaml.cs">
       <DependentUpon>WPF_EditarTra.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Trabajador\WPF_Solicitudes.xaml.cs">
+      <DependentUpon>WPF_Solicitudes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Trabajador\WPF_Trabajador.xaml.cs">
       <DependentUpon>WPF_Trabajador.xaml</DependentUpon>
     </Compile>
@@ -502,6 +505,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Trabajador\WPF_EditarTra.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Trabajador\WPF_Solicitudes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -32,34 +32,6 @@ namespace UniOnline
             InitializeComponent();
             Conectar();
         }
-      
-      
-        Cliente cli = new Cliente();
-        MasterMailServer mailService = new MasterMailServer();
-        public Cliente passRecov
-        {
-            get
-            {
-                return this.cli;
-            }
-            set
-            {
-                this.cli = value;
-                this.cli = value;
-
-
-                MasterMailServer mailService = new MasterMailServer();
-
-                mailService.sendMail(
-                subject: "SYSTEM: Restauración de Contraseña ",
-                body: "Hola " + cli.primer_nombre + " " + cli.primer_apellido + " has pedido recuperar tu contraseña, la cual es: "
-                + cli.contrasenna + " ,pero recuerda que recomendamos que cambies tu contrseña lo antes posible. Atte. Soporte CBR.",
-                recipientMail: cli.correo_electronico
-
-                );
-
-            }
-        }
 
         //Conexión BD
         private void Conectar()
@@ -78,9 +50,9 @@ namespace UniOnline
         private void btnOlvidarCon_Click(object sender, RoutedEventArgs e)
         {
             RecuperarContraseña mod = new RecuperarContraseña();
-            this.Close();
+            this.Hide();
             mod.ShowDialog();
-
+            this.Show();
         }
 
         private void btnInicioSesion_Click(object sender, RoutedEventArgs e)
@@ -131,19 +103,19 @@ namespace UniOnline
                     }
                     else
                     {
-                        MessageBox.Show("El Usuario no pertenece a este Conservador", "Error");
+                        MessageBox.Show("El Usuario no pertenece a este Conservador.", "Error");
                     }
 
 
                 }
                 else
                 {
-                    MessageBox.Show("RUT o Contraseña Incorrectos", "Error");
+                    MessageBox.Show("RUT o Contraseña Incorrectos.", "Error");
                 }
             }
             else
             {
-                MessageBox.Show("Rellene todos los campos", "Advertencia");
+                MessageBox.Show("Rellene todos los campos.", "Advertencia");
             }
         }
         public static string FormatearRut(string rut)

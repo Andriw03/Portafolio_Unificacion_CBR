@@ -170,5 +170,10 @@ namespace UniOnline
                 MessageBox.Show(ex.Message, "Error");
             }
         }
+
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

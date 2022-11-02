@@ -126,5 +126,13 @@ namespace UniOnline.Trabajador
             perfilUsuario.ShowDialog();
             this.Show();
         }
+
+        private void btnSolicitudes_Click(object sender, RoutedEventArgs e)
+        {
+            WPF_Solicitudes solis = new WPF_Solicitudes();
+            this.Hide();
+            solis.ShowDialog();
+            this.Show();
+        }
     }
 }

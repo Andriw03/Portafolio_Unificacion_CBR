@@ -101,7 +101,7 @@ namespace Controlador
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT id_usuario, rut_usuario, contrasenna, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_electronico, telefono, CBR_id_cbr, T_USUARIO_id_tipoU FROM UNIONLINE.USUARIO where rut_usuario = '" + rut + "';", conex);
+                cmd = new MySqlCommand("SELECT id_usuario, rut_usuario, contrasenna, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_electronico, telefono, CBR_id_cbr, T_USUARIO_id_tipoU FROM UNIONLINE.USUARIO where rut_usuario = '" + rut + "' and T_USUARIO_id_tipoU not in (1,5);", conex);
                 rd = cmd.ExecuteReader();
                 while (rd.Read())
                 {
@@ -494,6 +494,39 @@ namespace Controlador
             {
                 MessageBox.Show(ex.Message);
                 return false;
+            }
+        }
+
+        public Usuario BuscarUsuarioCliente(string rut)
+        {
+            try
+            {
+
+                Conectar();
+                cmd = new MySqlCommand("SELECT * FROM `UNIONLINE`.`USUARIO` where rut_usuario =  '" + rut + "' and T_USUARIO_id_tipoU = 5;", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    id_usuario = Int32.Parse(rd["id_usuario"].ToString());
+                    rut_usuario = rd["rut_usuario"].ToString();
+                    contrasenna = rd["contrasenna"].ToString();
+                    primer_nombre = rd["primer_nombre"].ToString();
+                    segundo_nombre = rd["segundo_nombre"].ToString();
+                    primer_apellido = rd["primer_apellido"].ToString();
+                    segundo_apellido = rd["segundo_apellido"].ToString();
+                    correo_electronico = rd["correo_electronico"].ToString();
+                    telefono = rd["telefono"].ToString();
+                    id_tipoU = Int32.Parse(rd["T_USUARIO_id_tipoU"].ToString());
+
+                }
+                rd.Close();
+                return this;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+
             }
         }
 
