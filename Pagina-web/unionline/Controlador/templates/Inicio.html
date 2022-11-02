@@ -6,15 +6,13 @@
   <link rel="stylesheet" href="static/css/styles_inicio.css">
 </head>
 <main>
-  <div class="inicio">
     <div class="px-4 py-5  text-center">
-      <img class="d-block mx-auto mb-4" src="{% static 'imagenes\LogoCBR.png' %}" alt="A" width="25%" height="25%">
+      <img class="d-block mx-auto mb-4" src="{% static 'imagenes\LogoCBR.png' %}" alt="A" width="15%" height="15%">
       <h1 class="display-5 fw-bold">Elige tu conservador</h1>
       <br>
       <div class="buscador">
         <div class="input-group">
-          
-          <select class="form-select form-select-lg mb-3" aria-label="Default select example">
+            <select class="form-select form-select-lg mb-3" aria-label="Default select example">
             <option selected>Seleccione una region...</option>
             {% for r in region %}
             <option value="">{{r.nombre_region}}</option>
@@ -33,7 +31,7 @@
             {% for c in comuna %}
             <option value="">{{c.nombre_comuna}}</option>
             {% endfor %}
-          </select>
+          </select> 
         </div>
         <select class="form-select form-select-lg mb-3" aria-label="Default select example">
           <option selected>Seleccione un conservador...</option>
@@ -49,7 +47,6 @@
           <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Seleccionar</button>
         </div>
       </div>
-    </div>
     <div class="whatsapp">
         <a href="https://wa.me/+56946411039?text=¡Otakuuuuuuuuu!" class="btn-wsp" target="_blank">
             <i class="fa fa-whatsapp icono"></i>
