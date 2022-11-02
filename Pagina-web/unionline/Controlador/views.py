@@ -2,7 +2,7 @@ from tkinter import EXCEPTION
 from webbrowser import get
 from django.shortcuts import render, redirect
 from django.contrib import auth, messages
-from . models import Cbr, Usuario, TUsuario
+from . models import Cbr, ClasProp, DuennoProp, Usuario, TUsuario,Comuna,Region,Provincia
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -21,7 +21,21 @@ def desifrar (encry):
     return check_password_hash
 
 def inicio(request):
+<<<<<<< Updated upstream
     return render(request, 'templates/inicio.html')
+=======
+    comuna = Comuna.objects.all()
+    region = Region.objects.all()
+    cbr = Cbr.objects.all()
+    provincia = Provincia.objects.all()
+    data={
+        'comuna': comuna,
+        'region': region,
+        'cbr' : cbr,
+        'provincia': provincia
+    }
+    return render(request, 'templates/inicio.html',data)
+>>>>>>> Stashed changes
 
 def iniciar_sesion(request):
     
@@ -116,8 +130,17 @@ def paginaPrinc(request):
     return render(request, 'templates/pagina-principal.html')
 
 def consultas(request):
+    duenno = DuennoProp.objects.all()
+    prop= ClasProp.objects.all()
 
-    return render(request, 'templates/consultas.html')
+    data={
+        'duenno' : duenno,
+        'prop' : prop
+
+    }
+
+
+    return render(request, 'templates/consultasProp.html', data)
 
  
 

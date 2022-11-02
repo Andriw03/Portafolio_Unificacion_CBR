@@ -13,31 +13,33 @@
       <br>
       <div class="buscador">
         <div class="input-group">
+          
           <select class="form-select form-select-lg mb-3" aria-label="Default select example">
-            <option selected>Región</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option selected>Seleccione una region...</option>
+            {% for r in region %}
+            <option value="">{{r.nombre_region}}</option>
+            {% endfor %}
           </select>
+          
           <br>
           <select class="form-select form-select-lg mb-3" aria-label="Default select example">
-            <option selected>Provincia</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option selected>Seleccione una provincia...</option>
+            {% for p in provincia %}
+            <option value="">{{p.nombre_provincia}}</option>
+            {% endfor %}
           </select>
           <select class="form-select form-select-lg mb-3" aria-label="Default select example">
-            <option selected>Comuna</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option selected>Seleccione una comuna...</option>
+            {% for c in comuna %}
+            <option value="">{{c.nombre_comuna}}</option>
+            {% endfor %}
           </select>
         </div>
         <select class="form-select form-select-lg mb-3" aria-label="Default select example">
-          <option selected>Conservador</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option selected>Seleccione un conservador...</option>
+          {% for cb in cbr %}
+          <option value="">{{cb.nombre_cbr}}</option>
+          {% endfor %}
         </select>
         <br>
       </div>
