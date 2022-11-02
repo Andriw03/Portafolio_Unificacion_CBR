@@ -25,30 +25,18 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">{{tramite.nombre_tramite}}</th>
-                    <th>{{solicitud.numero_seguimiento}}</th>
-                    <th>  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                         {{solicitud.estado}}</th>
+                    
+                    <th scope="row">{{usuario.tramite.nombre_tramite}}</th>
+                    <th>{{usuario.solicitud.numero_seguimiento}}</th>
+                    <th>  {{usuario.solicitud.estado}}</th>
+                   
                     <th>
                      <a href=""><i class="bi bi-search"></i></a> </th>
-                  </tr>
-                  <tr>
-                    <th scope="row">Copia con Vigencia o Dominio Vigente</th>
-                    <th>23423423423</th>
-                    <th>  <i class="bi bi-x-circle"></i>
-                        Rechazado</th>
-                    <th><a href=""><i class="bi bi-search"></i></a></th>
-                  </tr>
-                  <tr>
-                    <th scope="row">Copia con Vigencia o Dominio Vigente</th>
-                    <th>23523523342</th>
-                    <th>  <i class="bi bi-check2-circle"></i>
-                        Aprobado</th>
-                    <th><a href=""><i class="bi bi-search"></i></a></th>
                   </tr>
                 </tbody>
               </table>
               {%else%}
+              {%endif%}
         </div>
         </div> 
       </div>

@@ -1,6 +1,6 @@
 from tkinter import EXCEPTION
 from webbrowser import get
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import auth, messages
 from . models import Cbr, ClasProp, DuennoProp, Usuario, TUsuario,Comuna,Region,Provincia,Solicitud,Tramite
 from django.contrib.auth.models import User
@@ -116,11 +116,19 @@ def crearCuenta(request):
 
 @login_required
 def perfil(request):
+    userC = User
+    userC = request.user
+    usuario = get_object_or_404(Usuario, rut_usuario=userC , t_usuario_id_tipou = 5)
     solicitud=Solicitud.objects.all()
     tramite= Tramite.objects.all()
+    
+    
     data ={
+        
+        'usuario':usuario,
         'solicitud' : solicitud,
         'tramite' : tramite
+        
     }
     
 
