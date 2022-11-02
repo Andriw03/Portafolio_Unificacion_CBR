@@ -12,6 +12,7 @@
         <br>
         
         <div>
+          {% if user.is_authenticated %}
           <div class="tabla">
             <table class="table table-striped">
                 <thead  class="table-dark">
@@ -24,10 +25,10 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">Copia con Vigencia o Dominio Vigente</th>
-                    <th>2938547192</th>
+                    <th scope="row">{{tramite.nombre_tramite}}</th>
+                    <th>{{solicitud.numero_seguimiento}}</th>
                     <th>  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                        En Proceso</th>
+                         {{solicitud.estado}}</th>
                     <th>
                      <a href=""><i class="bi bi-search"></i></a> </th>
                   </tr>
@@ -47,6 +48,7 @@
                   </tr>
                 </tbody>
               </table>
+              {%else%}
         </div>
         </div> 
       </div>

@@ -2,13 +2,14 @@ from tkinter import EXCEPTION
 from webbrowser import get
 from django.shortcuts import render, redirect
 from django.contrib import auth, messages
-from . models import Cbr, ClasProp, DuennoProp, Usuario, TUsuario,Comuna,Region,Provincia
+from . models import Cbr, ClasProp, DuennoProp, Usuario, TUsuario,Comuna,Region,Provincia,Solicitud,Tramite
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from werkzeug.security import generate_password_hash, check_password_hash
 import mysql.connector as mysql
 from django.contrib.auth import authenticate, login
 from rut_chile import rut_chile
+from django.contrib.auth.decorators import login_required
 
 
 def cifrar(contrasenna):
@@ -113,12 +114,17 @@ def crearCuenta(request):
     return render(request, 'registration/registrar.html')
 
 
-
+@login_required
 def perfil(request):
-   
-   
+    solicitud=Solicitud.objects.all()
+    tramite= Tramite.objects.all()
+    data ={
+        'solicitud' : solicitud,
+        'tramite' : tramite
+    }
+    
 
-    return render(request, 'templates/perfil-cliente.html')
+    return render(request, 'templates/perfil-cliente.html',data)
 
 
 def paginaPrinc(request):
