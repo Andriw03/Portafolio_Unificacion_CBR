@@ -194,7 +194,6 @@ namespace UniOnline.Trabajador
             {
                 cmbTramiteS.Items.Clear();
                 cmbTramiteS.Items.Add("-------");
-                cmbTramiteS.SelectedIndex = 0;
                 txtValorTra.Text = string.Empty;
                 int TramiteID = Convert.ToInt32(cmbTipoTraS.SelectedIndex);
                 List<string> registro = con.LlenadoWhereInt("TRAMITE", "nombre_tramite", "T_TRAMITE_id_tipoT", TramiteID);
@@ -250,7 +249,7 @@ namespace UniOnline.Trabajador
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Conexion Trámite." + ex.Message, "Error");
+                //MessageBox.Show("Error Conexion Trámite." + ex.Message, "Error");
             }
         }
 

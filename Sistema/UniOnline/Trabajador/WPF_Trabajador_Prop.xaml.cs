@@ -137,7 +137,7 @@ namespace UniOnline.Trabajador
             try
             {
                 cmbComuna.Items.Clear();
-            cmbComuna.Items.Add("-------");
+                cmbComuna.Items.Add("-------");
             
                 List<string> registro = con.LlenadoWhereString("COMUNA inner join UNIONLINE.PROVINCIA on UNIONLINE.COMUNA.PROVINCIA_id_provincia = PROVINCIA.id_provincia", "nombre_comuna", "PROVINCIA.nombre_provincia", cmbProvincia.SelectedItem.ToString());
                 if (registro != null)
@@ -155,7 +155,7 @@ namespace UniOnline.Trabajador
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error Conexion Comuna: "+ ex.Message, "Error");
+                //MessageBox.Show("Error Conexion Comuna: "+ ex.Message, "Error");
             }
             
         }
