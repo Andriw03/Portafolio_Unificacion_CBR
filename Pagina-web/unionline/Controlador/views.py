@@ -21,9 +21,7 @@ def desifrar (encry):
     return check_password_hash
 
 def inicio(request):
-<<<<<<< Updated upstream
-    return render(request, 'templates/inicio.html')
-=======
+
     comuna = Comuna.objects.all()
     region = Region.objects.all()
     cbr = Cbr.objects.all()
@@ -35,7 +33,7 @@ def inicio(request):
         'provincia': provincia
     }
     return render(request, 'templates/inicio.html',data)
->>>>>>> Stashed changes
+
 
 def iniciar_sesion(request):
     
