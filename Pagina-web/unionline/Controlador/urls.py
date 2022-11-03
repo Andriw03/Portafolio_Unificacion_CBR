@@ -17,4 +17,4 @@ urlpatterns = [
     path('formulario', formularioUser, name ='formulario'),
     path('conservador', conservador, name='conservador' )
 
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
