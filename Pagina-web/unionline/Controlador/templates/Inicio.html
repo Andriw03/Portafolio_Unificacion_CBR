@@ -3,7 +3,7 @@
 {% block content %}
 <head>
   <title>Inicio</title>
-  <link rel="stylesheet" href="static/css/styles_inicio.css">
+  <link rel="stylesheet" href="{% static 'css\styles_inicio.css' %}">
 </head>
 <main>
     <div class="px-4 py-5  text-center">
@@ -58,9 +58,9 @@
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
           </svg></button>
         </form>
+     
         </div>
-      </div>
-    </div>
+      
       <div class="mensaje">
         {% if messages %}
         <ul class="messages">
@@ -73,23 +73,26 @@
         </ul>
     {% endif %}
       </div>
-      <div class="col-lg-6 mx-auto">
+      <br>
+      <div class="col-lg-12 mx-auto">
         <select class="form-select form-select-lg mb-3" aria-label="Default select example">
           <option selected>Seleccione un conservador...</option>
           {% for cb in cbr %}
-          <option value="">{{cb.nombre_cbr}}</option>
-          {% endfor %}
+          <option value="{{cb.pk}}">{{cb.nombre_cbr}}</option>
+          
         </select>
-          <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Seleccionar</button>
+        <a href="{% url 'home' id=cb.pk %}"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Seleccionar</button></a> 
+          
+          
         </div>
-      </div>
+        {% endfor %}
     <div class="whatsapp">
-        <a href="https://wa.me/+56946411039?text=¡Otakuuuuuuuuu!" class="btn-wsp" target="_blank">
+        <a href="https://wa.me/+56946411039?text=Buenas, tengo una consulta" class="btn-wsp" target="_blank">
             <i class="fa fa-whatsapp icono"></i>
         </a>
     </div>
-  
-  
+  </div>
+<br><br><br><br><br>
 </main>
 
     {% endblock %}

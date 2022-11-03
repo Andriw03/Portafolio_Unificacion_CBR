@@ -3,6 +3,12 @@
     margin: 0 25%;
     
 }
+.nav{
+    flex-wrap: nowrap !important;
+}
+a{
+    text-decoration: none;
+}
 
 .btn {
     background-color: #F0F2F2;
@@ -14,6 +20,7 @@
     border: #393E59;
 }
 footer{
+    position: fixed; bottom: 0; width: 100%;
     background-color: #1E4D40;
     text-align: center;
     padding:40px;

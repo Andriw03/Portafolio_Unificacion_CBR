@@ -2,7 +2,7 @@ from tkinter import EXCEPTION
 from webbrowser import get
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import auth, messages
-from . models import Cbr, ClasProp, DuennoProp, Usuario, TUsuario,Comuna,Region,Provincia,Solicitud,Tramite, Direccion
+from . models import Cbr, ClasProp, DuennoProp, Usuario, TUsuario,Comuna,Region,Provincia,Solicitud,Tramite, Direccion, TTramite
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -17,21 +17,12 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView
 from django.db.models import Q
 
-
-
-
-
-
-def cifrar(contrasenna):
-    encry = generate_password_hash(contrasenna, 'sha256')
-    return encry
-
-def desifrar (encry):
-    
-    check_password_hash(encry,Usuario.contrasenna)
-    return check_password_hash
+def listar_tramites():
+    tramites = TTramite.objects.all()
+    return tramites
 
 def inicio(request):
+    tramites = listar_tramites()
     region = Region.objects.all()
     comuna = ''
     cbr = ''
@@ -52,6 +43,7 @@ def inicio(request):
             cbr = Cbr.objects.raw('SELECT * FROM UNIONLINE.CBR join UNIONLINE.DIRECCION on UNIONLINE.CBR.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion join UNIONLINE.COMUNA on UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna  where id_comuna = %s',[request.POST.get('cmbComuna')])
    
     data={
+        'tramites':tramites,
         'comuna': comuna,
         'region': region,
         'cbr' : cbr,
@@ -140,18 +132,7 @@ def crearCuenta(request):
 
 @login_required
 def perfil(request):
-    """userC = Usuario
-    userC = request.user
-    usuario = Usuario.objects.filter(Q(rut_usuario=userC), Q(t_usuario_id_tipou = 5) )
-    solicitud=Solicitud.objects.all()
-    tramite= Tramite.objects.all()
-    data ={
-        
-        'usuario': usuario,
-        'solicitud' : solicitud,
-        'tramite' : tramite
-        
-    }"""
+    tramites = listar_tramites()
     usuariocbr = Usuario()
     usuariocli = User()
     usuariocli = request.user
@@ -164,22 +145,31 @@ def perfil(request):
             
     data={
         'cliente': cliente,
-        'tramite': tramite
+        'tramite': tramite,
+        'tramites': tramites
         }
     return render(request, 'templates/perfil-cliente.html', data)
 
 
-def paginaPrinc(request):
 
-
-
-    return render(request, 'templates/pagina-principal.html')
+def paginaPrinc(request,id):
+    tramites = listar_tramites()
+    cbr = Cbr.objects.raw('SELECT * FROM UNIONLINE.CBR join UNIONLINE.HOR_ATENCION on UNIONLINE.CBR.HOR_ATENCION_id_horario = UNIONLINE.HOR_ATENCION.id_horario where id_cbr = %s;',[id])
+    #cbr = Cbr.objects.raw('SELECT * FROM UNIONLINE.CBR join UNIONLINE.HOR_ATENCION on UNIONLINE.CBR.HOR_ATENCION_id_horario = UNIONLINE.HOR_ATENCION.id_horario where id_cbr = 1;')
+    data ={
+        'tramites':tramites,
+        'Cbr':cbr
+        
+    }
+    return render(request, 'templates/pagina-principal.html',data)
 
 def consultas(request):
+    tramites = listar_tramites()
     duenno = DuennoProp.objects.all()
     prop= ClasProp.objects.all()
 
     data={
+        'tramites':tramites,
         'duenno' : duenno,
         'prop' : prop
 
@@ -200,4 +190,6 @@ def procesar_formulario(request):
     return render(request, 'templates/formulario.html', {"form":form, "mensaje": 'OK'})
 
 
-    
+def conservador(request):
+
+    return render(request, 'templates/conservador.html')
