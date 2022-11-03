@@ -465,3 +465,4 @@ D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Co
 D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.xml
 D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.pdb
 D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.AssemblyReference.cache

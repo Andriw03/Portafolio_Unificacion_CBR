@@ -136,25 +136,25 @@ namespace Controlador
             try
             {
                 int idFoja = 0;
-                cmd = new MySqlCommand("SELECT id_clas FROM UNIONLINE.CLAS_PROP where foja = "+ foja +" ;", conex);
-                rd = cmd.ExecuteReader();
-                while (rd.Read())
-                {
-                    idFoja = Int32.Parse(rd["id_clas"].ToString());
-                }
-                rd.Close();
                 int idPropiedad = 0;
-                cmd = new MySqlCommand("SELECT id_propiedad FROM UNIONLINE.PROPIEDAD inner join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas where foja = " + foja + ";", conex);
+                int idDireccion = 0;
+                cmd = new MySqlCommand("SELECT * FROM UNIONLINE.PROPIEDAD inner join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas where foja = "+ foja +";", conex);
                 rd = cmd.ExecuteReader();
                 while (rd.Read())
                 {
+                    idFoja = Int32.Parse(rd["CLAS_PROP_id_clas"].ToString());
                     idPropiedad = Int32.Parse(rd["id_propiedad"].ToString());
+                    idDireccion = Int32.Parse(rd["DIRECCION_id_direccion"].ToString());
+
                 }
                 rd.Close();
                 cmd = new MySqlCommand("DELETE FROM `UNIONLINE`.`PROPIEDAD` WHERE id_propiedad = "+ idPropiedad +"; ",conex);
-                cmd.ExecuteReader();
-                cmd = new MySqlCommand("DELETE FROM `UNIONLINE`.`CLAS_PROP` WHERE foja = "+ idFoja +";", conex);
-                cmd.ExecuteReader();
+                cmd.ExecuteNonQuery();
+                cmd = new MySqlCommand("DELETE FROM `UNIONLINE`.`CLAS_PROP` WHERE id_clas = "+ idFoja +";", conex);
+                cmd.ExecuteNonQuery();
+                cmd = new MySqlCommand("DELETE FROM `UNIONLINE`.`DIRECCION` WHERE id_direccion = "+ idDireccion +";", conex);
+                cmd.ExecuteNonQuery();
+                
                 return true;
             }
             catch (Exception ex)
