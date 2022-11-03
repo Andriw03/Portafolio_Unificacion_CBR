@@ -249,7 +249,7 @@ namespace Controlador
                 var fecha = new Paragraph("Fecha: " + dfecha + "\nHora: " + dhora);
                 fecha.SetFontSize(12);
 
-                PdfDocument pdfDoc = new PdfDocument(new PdfReader("Reporte.pdf"), new PdfWriter(@"C:\Reportes\Reporte de Ventas.pdf"));
+                PdfDocument pdfDoc = new PdfDocument(new PdfReader("Reporte.pdf"), new PdfWriter(@"C:\Reportes\Reporte de Ventas "+dfecha+".pdf"));
                 Document doc = new Document(pdfDoc);
 
                 int numeros = pdfDoc.GetNumberOfPages();
@@ -338,7 +338,7 @@ namespace Controlador
                 var fecha = new Paragraph("Fecha: " + dfecha + "\nHora: " + dhora);
                 fecha.SetFontSize(12);
 
-                PdfDocument pdfDoc = new PdfDocument(new PdfReader("Reporte 2.pdf"), new PdfWriter(@"C:\Reportes\Reporte de Usuarios.pdf"));
+                PdfDocument pdfDoc = new PdfDocument(new PdfReader("Reporte 2.pdf"), new PdfWriter(@"C:\Reportes\Reporte de Usuarios " + dfecha + ".pdf"));
                 Document doc = new Document(pdfDoc);
 
                 int numeros = pdfDoc.GetNumberOfPages();

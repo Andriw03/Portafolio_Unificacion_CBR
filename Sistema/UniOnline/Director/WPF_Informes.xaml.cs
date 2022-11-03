@@ -54,6 +54,7 @@ namespace UniOnline.Director
             {
                 Usuario usu = new Usuario();
                 usu.crearPDF();
+                MessageBox.Show("Informe generado con éxito.");
             }
             catch (Exception ex)
             {
@@ -63,8 +64,17 @@ namespace UniOnline.Director
 
         private void btnInfoUsers_Click(object sender, RoutedEventArgs e)
         {
-            Usuario usu = new Usuario();
-            usu.CrearInformeUsuarios();
+            try
+            {
+                Usuario usu = new Usuario();
+                usu.CrearInformeUsuarios();
+                MessageBox.Show("Informe generado con éxito.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al descargar el documento. " + ex.Message, "Advertencia");
+            }
+            
         }
     }
 }

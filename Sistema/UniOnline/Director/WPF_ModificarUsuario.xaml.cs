@@ -357,13 +357,13 @@ namespace UniOnline.Director
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
             Usuario usu = new Usuario();
-            MessageBoxResult result = MessageBox.Show("Seguro que desea modificar este Usuario", "Modificar Usuario", MessageBoxButton.YesNoCancel);
+            MessageBoxResult result = MessageBox.Show("Seguro que desea modificar este Usuario", "Modificar Usuario", MessageBoxButton.YesNo);
             switch (result)
             {
                 case MessageBoxResult.Yes:
                     if (usu.eliminarUsuario(txtBoxRUT.Text))
                     {
-                        MessageBox.Show("Propiedad Eliminada con Éxito");
+                        MessageBox.Show("Usuario Eliminado con Éxito");
                         this.Close();
                     }
                     else
@@ -372,10 +372,9 @@ namespace UniOnline.Director
                     }
                     break;
                 case MessageBoxResult.No:
-                    MessageBox.Show("Propiedad no modificada");
+                    MessageBox.Show("Usuario no eliminado");
                     break;
-                case MessageBoxResult.Cancel:
-                    break;
+                
             }
         }
 
