@@ -140,7 +140,7 @@ def crearCuenta(request):
 
 @login_required
 def perfil(request):
-    userC = Usuario
+    """userC = Usuario
     userC = request.user
     usuario = Usuario.objects.filter(Q(rut_usuario=userC), Q(t_usuario_id_tipou = 5) )
     solicitud=Solicitud.objects.all()
@@ -151,9 +151,23 @@ def perfil(request):
         'solicitud' : solicitud,
         'tramite' : tramite
         
-    }
-    
-    return render(request, 'templates/perfil-cliente.html',data)
+    }"""
+    usuario = Usuario.objects.all()
+    usuario = request.user
+    cliente = ''
+    tramite = ''
+    provincia = ''
+    mensaje = 'oli' 
+    if request.method == 'POST':
+        if 'pUsuario' in request.POST:           
+            cliente = Usuario.objects.filter(Q(usuario_id_usuario=request.usuario))
+            tramite = Solicitud.objects.raw('SELECT numero_seguimiento, SOLICITUD.estado, nombre_tramite FROM SOLICITUD join TRAMITE on SOLICITUD.TRAMITE_id_tramite = TRAMITE.id_tramite WHERE USUARIO_id_usuario  = %s', [cliente.id_usuario])
+            
+    data={
+        'cliente': cliente,
+        'tramite': tramite
+        }
+    return render(request, 'templates/perfil-cliente.html')
 
 
 def paginaPrinc(request):
