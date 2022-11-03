@@ -152,22 +152,21 @@ def perfil(request):
         'tramite' : tramite
         
     }"""
-    usuario = Usuario.objects.all()
-    usuario = request.user
-    cliente = ''
-    tramite = ''
-    provincia = ''
-    mensaje = 'oli' 
-    if request.method == 'POST':
-        if 'pUsuario' in request.POST:           
-            cliente = Usuario.objects.filter(Q(usuario_id_usuario=request.usuario))
-            tramite = Solicitud.objects.raw('SELECT numero_seguimiento, SOLICITUD.estado, nombre_tramite FROM SOLICITUD join TRAMITE on SOLICITUD.TRAMITE_id_tramite = TRAMITE.id_tramite WHERE USUARIO_id_usuario  = %s', [cliente.id_usuario])
+    usuariocbr = Usuario()
+    usuariocli = User()
+    usuariocli = request.user
+    
+    cliente = usuariocbr
+    tramite = '' 
+
+    cliente = get_object_or_404(Usuario, rut_usuario=usuariocli.username, t_usuario_id_tipou=5)
+    tramite = Solicitud.objects.raw('SELECT * FROM UNIONLINE.SOLICITUD join UNIONLINE.TRAMITE on SOLICITUD.TRAMITE_id_tramite = TRAMITE.id_tramite join UNIONLINE.USUARIO on SOLICITUD.USUARIO_id_usuario = USUARIO.id_usuario WHERE USUARIO.rut_usuario = %s',[cliente.rut_usuario])
             
     data={
         'cliente': cliente,
         'tramite': tramite
         }
-    return render(request, 'templates/perfil-cliente.html')
+    return render(request, 'templates/perfil-cliente.html', data)
 
 
 def paginaPrinc(request):
