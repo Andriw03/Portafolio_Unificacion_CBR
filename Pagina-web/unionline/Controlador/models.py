@@ -124,7 +124,7 @@ class EstadoPago(models.Model):
         unique_together = (('id_estado', 'car_compra_id_carrito', 'tipo_pago_id_tipop'),)
 
 
-class Formulario(models.Model):
+class FormFormulario(models.Model):
     id_formulario = models.AutoField(primary_key=True)
     nombre_form = models.CharField(max_length=45)
     telefono = models.CharField(max_length=45)

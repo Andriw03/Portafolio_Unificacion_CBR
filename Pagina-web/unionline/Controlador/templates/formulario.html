@@ -78,14 +78,20 @@
     </div>
   </header><!-- End Header -->
 
-<form class="row g-3" style="margin-left: 60px;margin-right: 60px;margin-bottom: 60px;margin-top: 100px;">
+  <div class="container">
+    {% if messages %}
+      <div class="row">
+          {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}" role="alert">
+              <p>{{ message }}</p>
+          </div>
+          {% endfor %}
+      </div>
+    {% endif %}
+
+<form method="post" action="" class="row g-3" style="margin-left: 60px;margin-right: 60px;margin-bottom: 60px;margin-top: 100px;">
   <h1>Formulario de consultas</h1>
   {% csrf_token %}
-  {% if mensaje %}
-    <div class="alert alert-success" role="alert">
-      A simple success alert—check it out!
-    </div>
-  {% endif %}
     <div class="col-md-4">
       <label for="validationDefault01" class="form-label">Nombre y Apellido</label>
       <input type="text" class="form-control" id="validationDefault01" value=" " required>
@@ -127,4 +133,3 @@
         <i class="fa fa-whatsapp icono"></i>
     </a>
 </div>
-  <!-- FIN DEL FORMULARIO DE DONACION Y/O SUBSCRIPCIÓN-->

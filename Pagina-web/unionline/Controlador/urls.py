@@ -1,6 +1,6 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
-from .views import inicio, iniciar_sesion, crearCuenta, perfil
+from .views import inicio, iniciar_sesion, crearCuenta, perfil, formularioUser
 from .views import inicio, crearCuenta, perfil, paginaPrinc, consultas, formularioUser, conservador
 from django.conf.urls.static import static
 from django.conf import settings

@@ -16,6 +16,7 @@ from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView
 from django.db.models import Q
+from .forms import FormFormularioForm
 
 def listar_tramites():
     tramites = TTramite.objects.all()
@@ -182,10 +183,13 @@ def formularioUser(request):
     return render(request, 'templates/formulario.html')
 
 def procesar_formulario(request):
-    form = formularioUser()
+    form = FormFormularioForm()
     if form.is_valid():
         form.save()
-        form = formularioUser()
+        messages.success(request, 'Formulario insertado correctamente.')
+        form = FormFormularioForm()
+    else:
+        messages.error(request, 'Error al insertar formulario. Revise los datos.')
 
     return render(request, 'templates/formulario.html', {"form":form, "mensaje": 'OK'})
 
