@@ -116,21 +116,19 @@ def crearCuenta(request):
 
 @login_required
 def perfil(request):
-    userC = User
+    userC = Usuario
     userC = request.user
-    usuario = get_object_or_404(Usuario, rut_usuario=userC , t_usuario_id_tipou = 5)
+    usuario = get_object_or_404(Usuario, rut_usuario=userC, t_usuario_id_tipou = 5 )
     solicitud=Solicitud.objects.all()
     tramite= Tramite.objects.all()
-    
-    
     data ={
         
-        'usuario':usuario,
+        'usuario': usuario,
         'solicitud' : solicitud,
         'tramite' : tramite
         
     }
-    
+
 
     return render(request, 'templates/perfil-cliente.html',data)
 

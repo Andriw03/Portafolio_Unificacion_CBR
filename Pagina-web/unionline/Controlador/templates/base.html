@@ -70,6 +70,7 @@
                     Bienvenido {{user.first_name}} {{user.last_name}}
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a href="{% url 'perfil' %}" class="nav-link px-2 tdropdown-item" style="color: black;" class="Cerrar-Sesion">Perfil</a></li>
                     <li><a href="{% url 'logout' %}" class="nav-link px-2 tdropdown-item" style="color: black;" class="Cerrar-Sesion">Cerrar Sesión</a></li>  
                 </ul>
                 

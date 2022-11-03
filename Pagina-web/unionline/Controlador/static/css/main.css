@@ -72,10 +72,6 @@ h6 {
 /*--------------------------------------------------------------
 # Sections & Section Header
 --------------------------------------------------------------*/
-section {
-  overflow: hidden;
-  padding: 80px 0;
-}
 
 .section-bg {
   background-color: #BBE5DA;
@@ -92,7 +88,7 @@ section {
   font-weight: 400;
   margin: 0;
   padding: 0;
-  color: #7f7f90;
+  color: #3e3e66;
   text-transform: uppercase;
   font-family: var(--font-default);
 }
@@ -117,11 +113,7 @@ section {
   margin-top: 90px;
 }
 
-@media (max-width: 575px) {
-  .breadcrumbs {
-    margin-top: 70px;
-  }
-}
+
 
 .breadcrumbs h2 {
   font-size: 24px;
@@ -278,11 +270,11 @@ section {
 # Header
 --------------------------------------------------------------*/
 .header {
-  background: #fff;
+  background: rgb(69, 53, 114);
   transition: all 0.5s;
   z-index: 997;
   height: 90px;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid rgb(95, 83, 133);
 }
 
 @media (max-width: 575px) {
@@ -292,8 +284,8 @@ section {
 }
 
 .header.sticked {
-  border-color: #fff;
-  border-color: #eee;
+  border-color: rgb(69, 62, 128);
+  border-color: rgb(57, 49, 103);
 }
 
 .header .logo img {
@@ -304,7 +296,7 @@ section {
 .header .logo h1 {
   font-size: 28px;
   font-weight: 700;
-  color: #000;
+  color: rgb(32, 31, 90);
   margin: 0;
   font-family: var(--font-secondary);
 }
@@ -316,7 +308,7 @@ section {
 .header .btn-book-a-table,
 .header .btn-book-a-table:focus {
   font-size: 14px;
-  color: #fff;
+  color: rgb(51, 66, 119);
   background: var(--color-primary);
   padding: 8px 20px;
   margin-left: 30px;
@@ -326,8 +318,8 @@ section {
 
 .header .btn-book-a-table:hover,
 .header .btn-book-a-table:focus:hover {
-  color: #fff;
-  background: rgba(206, 18, 18, 0.8);
+  color: rgb(68, 65, 110);
+  background: rgba(61, 62, 126, 0.8);
 }
 
 section {
@@ -418,7 +410,7 @@ section {
     z-index: 99;
     opacity: 0;
     visibility: hidden;
-    background: #fff;
+    background: rgb(43, 39, 64);
     box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
     transition: 0.3s;
     border-radius: 4px;
@@ -465,7 +457,7 @@ section {
   }
 }
 
-@media (min-width: 1280px) and (max-width: 1366px) {
+@media (min-width: 200px) and (max-width: 1366px) {
   .navbar .dropdown .dropdown ul {
     left: -90%;
   }
@@ -475,7 +467,7 @@ section {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 300px) {
 
   .mobile-nav-show,
   .mobile-nav-hide {
