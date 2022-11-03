@@ -10,11 +10,15 @@ import mysql.connector as mysql
 from django.contrib.auth import authenticate, login
 from rut_chile import rut_chile
 from django.contrib.auth.decorators import login_required
+
 from django.http import JsonResponse
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView
 from django.db.models import Q
+
+
+
 
 
 
@@ -133,7 +137,7 @@ def crearCuenta(request):
 def perfil(request):
     userC = Usuario
     userC = request.user
-    usuario = get_object_or_404(Usuario, rut_usuario=userC, t_usuario_id_tipou = 5 )
+    usuario = Usuario.objects.filter(Q(rut_usuario=userC), Q(t_usuario_id_tipou = 5) )
     solicitud=Solicitud.objects.all()
     tramite= Tramite.objects.all()
     data ={
@@ -143,8 +147,7 @@ def perfil(request):
         'tramite' : tramite
         
     }
-
-
+    
     return render(request, 'templates/perfil-cliente.html',data)
 
 
