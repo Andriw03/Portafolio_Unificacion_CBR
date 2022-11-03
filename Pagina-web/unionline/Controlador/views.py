@@ -2,7 +2,7 @@ from tkinter import EXCEPTION
 from webbrowser import get
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import auth, messages
-from . models import Cbr, ClasProp, DuennoProp, Usuario, TUsuario,Comuna,Region,Provincia,Solicitud,Tramite
+from . models import Cbr, ClasProp, DuennoProp, Usuario, TUsuario,Comuna,Region,Provincia,Solicitud,Tramite, Direccion
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -38,13 +38,18 @@ def inicio(request):
     provincia = ''
     mensaje = 'oli' 
     if request.method == 'POST':
-        messages.error(request, mensaje)
-        if 'pRegion' in request.POST:
-            provincia = Provincia.objects.filter(Q(REGION_id_region=request.POST.get('cmbRegion')))
-            comuna = Comuna.objects.all()
-            cbr = Cbr.objects.all()
-        
-    
+        if 'pRegion' in request.POST:           
+            provincia = Provincia.objects.filter(Q(region_id_region_id=request.POST.get('cmbRegion')))
+            direcion = Direccion()
+            comunaID = Comuna()
+            comunaID = Comuna.objects.filter()
+            cbr = Cbr.objects.raw('SELECT * FROM UNIONLINE.CBR join UNIONLINE.DIRECCION on UNIONLINE.CBR.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion join UNIONLINE.COMUNA on UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna join UNIONLINE.PROVINCIA on UNIONLINE.COMUNA.PROVINCIA_id_provincia = UNIONLINE.PROVINCIA.id_PROVINCIA  where REGION_id_region = %s',[request.POST.get('cmbRegion')])
+        elif 'pProvincia' in request.POST:          
+            comuna = Comuna.objects.filter(Q(provincia_id_provincia=request.POST.get('cmbProvincia')))
+            cbr = Cbr.objects.raw('SELECT * FROM UNIONLINE.CBR join UNIONLINE.DIRECCION on UNIONLINE.CBR.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion join UNIONLINE.COMUNA on UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna join UNIONLINE.PROVINCIA on UNIONLINE.COMUNA.PROVINCIA_id_provincia = UNIONLINE.PROVINCIA.id_PROVINCIA  where id_provincia = %s',[request.POST.get('cmbProvincia')])
+        elif 'pComuna' in request.POST:           
+            ##provincia = Provincia.objects.filter(Q(region_id_region_id=request.POST.get('cmbRegion')))
+            cbr = Cbr.objects.raw('SELECT * FROM UNIONLINE.CBR join UNIONLINE.DIRECCION on UNIONLINE.CBR.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion join UNIONLINE.COMUNA on UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna  where id_comuna = %s',[request.POST.get('cmbComuna')])
    
     data={
         'comuna': comuna,
@@ -66,7 +71,6 @@ def iniciar_sesion(request):
             if userLogin is not None:
                 login(request, userLogin)
                 userA = request.user
-                
                 return redirect(to="perfil")
             else:
                 mensaje = 'Error, usuario no encontrado'
@@ -92,7 +96,7 @@ def crearCuenta(request):
         usuario = Usuario()
         cbr = Cbr()
         tipoU = TUsuario()
-        usuario.rut_usuario = request.POST.get('RUT')
+        usuario.rut_usuario = request.POST.get('rut')
         usuario.primer_nombre = request.POST.get('Nombre')
         usuario.segundo_nombre = request.POST.get('Segundo_Nombre')
         usuario.primer_apellido = request.POST.get('Primer_Apellido')
@@ -111,7 +115,7 @@ def crearCuenta(request):
         user = User()
         user.email = usuario.correo_electronico
         user.set_password(request.POST.get('Contraseña'))
-        user.username = usuario.rut_usuario
+        user.username = request.POST.get('rut')
         user.first_name = request.POST.get('Nombre')
         user.last_name = request.POST.get('Primer_Apellido')
         
@@ -121,13 +125,14 @@ def crearCuenta(request):
             return redirect('registrarse')
         else:
             try:
-                user.save()
+                user.save()   
                 usuario.contrasenna = user.password
                 usuario.save()
                 messages.success(request, "Cuenta Creada Correctamente")
-                return redirect(to="login")
-            except:
-                messages.success(request, "No se ha podido guardar el usuario")
+                return redirect(to="iniciar_sesion")
+            except Exception as e:
+                mensaje = "No se ha podido guardar el usuario: " + str(e)
+                messages.warning(request, mensaje)
             
         
     return render(request, 'registration/registrar.html')

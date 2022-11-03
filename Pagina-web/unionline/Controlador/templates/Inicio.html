@@ -10,6 +10,7 @@
       <img class="d-block mx-auto mb-4" src="{% static 'imagenes\LogoCBR.png' %}" alt="A" width="15%" height="15%">
       <h1 class="display-5 fw-bold">Elige tu conservador</h1>
       <br>
+
       <div class="buscador">
         <form action="" id="formRegion" enctype="multipart/formdata" method="POST" name="pRegion">
           {% csrf_token %}
@@ -20,7 +21,7 @@
               <option value="{{r.pk}}">{{r.nombre_region}}</option>
               {% endfor %}
             </select>
-            <button class="btn btn-outline-secondary" id="formRegion" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <button class="btn btn-outline-secondary"  id="formRegion" name="pRegion" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
             </svg></button>
           
@@ -37,11 +38,11 @@
             <option value="{{p.pk}}">{{p.nombre_provincia}}</option>
             {% endfor %}
           </select>
-          <button class="btn btn-outline-secondary" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <button class="btn btn-outline-secondary" name="pProvincia" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
           </svg></button>
         </form>
-        </div>
+        
 
         <form action="" method="POST" name="pComuna">
           {% csrf_token %}
@@ -52,14 +53,14 @@
             <option value="{{c.pk}}">{{c.nombre_comuna}}</option>
             {% endfor %}
           </select>
-          <button class="btn btn-outline-secondary" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <button class="btn btn-outline-secondary" name="pComuna" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
           </svg></button>
         </form>
         </div>
         <br>
       </div>
-      
+    </div>
       <div class="mensaje">
         {% if messages %}
         <ul class="messages">
@@ -74,6 +75,12 @@
       </div>
       <br>
       <div class="col-lg-6 mx-auto">
+        <select class="form-select form-select-lg mb-3" aria-label="Default select example">
+          <option selected>Seleccione un conservador...</option>
+          {% for cb in cbr %}
+          <option value="">{{cb.nombre_cbr}}</option>
+          {% endfor %}
+        </select>
           <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Seleccionar</button>
         </div>
       </div>
