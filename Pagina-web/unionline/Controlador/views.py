@@ -10,6 +10,12 @@ import mysql.connector as mysql
 from django.contrib.auth import authenticate, login
 from rut_chile import rut_chile
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
+from django.views.generic import TemplateView
+from django.db.models import Q
+
 
 
 def cifrar(contrasenna):
@@ -22,11 +28,20 @@ def desifrar (encry):
     return check_password_hash
 
 def inicio(request):
-
-    comuna = Comuna.objects.all()
     region = Region.objects.all()
-    cbr = Cbr.objects.all()
-    provincia = Provincia.objects.all()
+    comuna = ''
+    cbr = ''
+    provincia = ''
+    mensaje = 'oli' 
+    if request.method == 'POST':
+        messages.error(request, mensaje)
+        if 'pRegion' in request.POST:
+            provincia = Provincia.objects.filter(Q(REGION_id_region=request.POST.get('cmbRegion')))
+            comuna = Comuna.objects.all()
+            cbr = Cbr.objects.all()
+        
+    
+   
     data={
         'comuna': comuna,
         'region': region,
@@ -152,5 +167,5 @@ def consultas(request):
 
     return render(request, 'templates/consultasProp.html', data)
 
- 
 
+    
