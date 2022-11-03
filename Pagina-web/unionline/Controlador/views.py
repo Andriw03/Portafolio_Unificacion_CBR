@@ -170,5 +170,16 @@ def consultas(request):
 
     return render(request, 'templates/consultasProp.html', data)
 
+def formularioUser(request):
+    return render(request, 'templates/formulario.html')
+
+def procesar_formulario(request):
+    form = formularioUser()
+    if form.is_valid():
+        form.save()
+        form = formularioUser()
+
+    return render(request, 'templates/formulario.html', {"form":form, "mensaje": 'OK'})
+
 
     
