@@ -164,19 +164,20 @@ def paginaPrinc(request,id):
     return render(request, 'templates/pagina-principal.html',data)
 
 def consultas(request):
-    tramites = listar_tramites()
-    duenno = DuennoProp.objects.all()
-    prop= ClasProp.objects.all()
+    queryset= request.GET.get("buscar_anno","buscar_foja","buscar_rut")
+    clas=ClasProp.objects.all()
+    duenno=DuennoProp.objects.all()
+    if queryset:
+        clas= ClasProp.objects.filter(
+            Q(anno__icontains = queryset)|
+            Q(foja__icontains = queryset)
+    ).distinct
+        duenno = DuennoProp.objects.filter(
+            Q(rut_duenno__icontains = queryset)
 
-    data={
-        'tramites':tramites,
-        'duenno' : duenno,
-        'prop' : prop
-
-    }
-
-
-    return render(request, 'templates/consultasProp.html', data)
+        ).distinct
+         
+    return render(request, 'templates/consultasProp.html')
 
 def formularioUser(request):
     return render(request, 'templates/formulario.html')
