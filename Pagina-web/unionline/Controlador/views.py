@@ -28,7 +28,6 @@ def inicio(request):
     comuna = ''
     cbr = ''
     provincia = ''
-    mensaje = 'oli' 
     if request.method == 'POST':
         if 'pRegion' in request.POST:           
             provincia = Provincia.objects.filter(Q(region_id_region_id=request.POST.get('cmbRegion')))
