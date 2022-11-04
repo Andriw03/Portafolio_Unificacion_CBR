@@ -91,7 +91,7 @@ namespace Controlador
 
             try
             {
-                cmd = new MySqlCommand("SELECT tra.id_tramite, tra.nombre_tramite, tra.valor_tramite, tra.estado, titra.nombre_tipoT FROM UNIONLINE.TRAMITE AS tra INNER JOIN UNIONLINE.T_TRAMITE AS titra ON tra.T_TRAMITE_id_tipoT = titra.id_tipoT WHERE tra.T_TRAMITE_id_tipoT = " + tipo + ";", conex);
+                cmd = new MySqlCommand("SELECT tra.id_tramite, tra.nombre_tramite, tra.valor_tramite, tra.estado, tra.descripcion, titra.nombre_tipoT FROM UNIONLINE.TRAMITE AS tra INNER JOIN UNIONLINE.T_TRAMITE AS titra ON tra.T_TRAMITE_id_tipoT = titra.id_tipoT WHERE tra.T_TRAMITE_id_tipoT = " + tipo + ";", conex);
                 MySqlDataAdapter ap = new MySqlDataAdapter(cmd);
                 ap.Fill(tabla);
                 cmd.Dispose();

@@ -141,6 +141,7 @@
                             <DataGridTextColumn Header="Nombre" Width="250" FontSize="20" Binding="{Binding Path = 'nombre_tramite'}" IsReadOnly="True"/>
                             <DataGridTextColumn Header="Valor" Width="100" FontSize="20" Binding="{Binding Path = 'valor_tramite'}" IsReadOnly="True"/>
                             <DataGridTextColumn Header="Estado" Width="100" FontSize="20" Binding="{Binding Path= 'estado'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Descripción" Width="250" FontSize="20" Binding="{Binding Path= 'descripcion'}" IsReadOnly="True"/>
                             <DataGridTextColumn Header="Tipo" Width="200" FontSize="20" Binding="{Binding Path = 'nombre_tipoT'}" IsReadOnly="True"/>
                             <DataGridTemplateColumn Header="Editar estado" Width="150">
                                 <DataGridTemplateColumn.CellTemplate>
