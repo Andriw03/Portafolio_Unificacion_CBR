@@ -2,64 +2,86 @@
 {% load static %}
 {% block content %}
 
-<main>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+<head>
+  <title>Perfil</title>
+  <link rel="stylesheet" href="static/css/perfil-cliente.css">
+</head>
+  <Main>
+    <div class="px-4 py-5  text-center">
+      <img class="d-block mx-auto mb-4" src="{% static 'imagenes\LogoCBR.png' %}" alt="" width="15%" height="15%">
+      <h3 class="display-5 fw-bold">Búsqueda de Dueño de Propiedad</h3>
+      <br>
+      
+      <div>
+<Main>
+
 
 
 <div class = "container">
   <div class = "row">
-    <div class ="d-grid gap-2 col-sm-3 mx-auto search">
+    
+    <div class ="d-grid gap-2 col-sm-6 mx-auto search">
       <form method = "get">
         <div id ="custom-search-input">
           <div class="input-group col-sm-3">
-            <input type="text" class="form-control" placeholder="Año" name="buscar_anno">
-            <span class="input-group-list">
-              <i class="icon icon-search"></i>
-              
-            </span>
+            <input type="text" class="form-control" placeholder="Rut con puntos y guión / Nombre y Apellido" name="buscar_rut" value="{{request.GET.buscar_rut}}">
           </div>
         </div>
-      </form>
-    </div>
-    <div class ="d-grid gap-2 col-sm-3 mx-auto search">
-      <form method = "get">
-        <div id ="custom-search-input">
-          <div class="input-group col-sm-3">
-            <input type="text" class="form-control" placeholder="Foja" name="buscar_foja">
-          </div>
-        </div>
-      </form>
-    </div>
+    
     <br>
     
-    <div class ="d-grid gap-2 col-sm-3 mx-auto search">
-      <form method = "get">
-        <div id ="custom-search-input">
-          <div class="input-group col-sm-3">
-            <input type="text" class="form-control" placeholder="Rut" name="buscar_rut">
-            <span class="input-group-list">
-              <i class="icon icon-search"></i>
-            </span>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-<br>
-<br>
-<br>
-<div class="d-grid gap-2 col-4 mx-auto">
-  <button class="btn btn-info" type="button">Buscar</button>
-</div>
     
+<div class="d-grid gap-2 col-8 mx-auto">
+  <button class="btn btn-default" type="submit">Buscar</button>
+</div>
+</form>
+</div>
 
+<br>
+<br>
+<br>
+<div class="tabla">
+  <table name= "tabla-historial"class="table table-striped">
+    <thead  class="table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Rut Dueño</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Foja</th>
+        <th scope="col">Número</th>
+        <th scope="col">Año</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+       {% if duenno %}
+        {% for d in duenno %}
+        <td>{{d.rut_duenno}}</td>
+        <td>{{d.primer_nombre}}</td>
+        <td>{{d.primer_apellido}}</td>
+        {% endfor %}
 
-</main>
+        {% for c in class %}
+        <td>{{c.foja}</td>
+        <td>{{c.numero}}</td>
+        <td>{{c.anno}}</td>
+        {% endfor %}
+      {% else %}
+        <div class="alert alert-danger" >No se encuentran registros.</div>  
+     {% endif %}
+      </tr>
+    </tbody>
+  </table>
+</div>
+</Main>
+<div class="whatsapp">
+  <a href="https://wa.me/+56946411039?text=Buenas, tengo una consulta" class="btn-wsp" target="_blank">
+      <i class="fa fa-whatsapp icono"></i>
+  </a>
+</div>
+<footer>
+  <p class="copyright">&copy Copyright Ministerio de Vivienda y Urbanismo - 2022</p>
+</footer>
 {% endblock %}
