@@ -164,21 +164,14 @@ def paginaPrinc(request,id):
     return render(request, 'templates/pagina-principal.html',data)
 
 def consultas(request):
-    queryset= request.GET.get("buscar_rut")
-    clas=ClasProp.objects.all()
-    duenno=DuennoProp.objects.all()
-    if queryset:
-        duenno= DuennoProp.objects.filter(
-            Q(rut_duenno__icontains = queryset)|
-            Q(primer_nombre__icontains = queryset)
-        ).distinct()
-    
-    data={
-        'clas' : clas,
-        'duenno' : duenno
-    }
-        
-    return render(request, 'templates/consultasProp.html',data)
+    duenno=''
+    if request.method == 'POST':
+        if request.POST.get("rut") != "":
+            queryset= request.POST.get("rut")
+            duenno= DuennoProp.objects.raw('SELECT * FROM UNIONLINE.PROPIEDAD join UNIONLINE.DIRECCION on UNIONLINE.PROPIEDAD.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas join UNIONLINE.DUENNO_PROP on UNIONLINE.PROPIEDAD.DUENNO_PROP_id_duenno = UNIONLINE.DUENNO_PROP.id_duenno join UNIONLINE.TIPO_PROPIEDAD on UNIONLINE.PROPIEDAD.TIPO_PROPIEDAD_id_tipoP = UNIONLINE.TIPO_PROPIEDAD.id_tipoP join UNIONLINE.COMUNA on UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna join UNIONLINE.PROVINCIA on UNIONLINE.COMUNA.PROVINCIA_id_provincia= UNIONLINE.PROVINCIA.id_provincia join UNIONLINE.REGION on UNIONLINE.PROVINCIA.REGION_id_region = UNIONLINE.REGION.id_region where rut_duenno ="%s";' ,[queryset] )
+        else:
+            messages.warning(request, "El campo no puede quedar vacío.")
+    return render(request, 'templates/consultasProp.html',{'duenno':duenno})
 
 def formularioUser(request):
     return render(request, 'templates/formulario.html')
