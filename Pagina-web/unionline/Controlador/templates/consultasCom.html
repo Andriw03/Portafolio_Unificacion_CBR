@@ -9,7 +9,7 @@
   <Main>
     <div class="px-4 py-5  text-center">
       <img class="d-block mx-auto mb-4" src="{% static 'imagenes\LogoCBR.png' %}" alt="" width="15%" height="15%">
-      <h3 class="display-5 fw-bold">Búsqueda de Dueño de Propiedad</h3>
+      <h3 class="display-5 fw-bold">Búsqueda de Dueño de Comercio</h3>
       <br>
       
       <div>
@@ -46,8 +46,8 @@
     <thead  class="table-dark">
     <thead>
       <tr>
-        <th scope="col">Rut Dueño</th>
-        <th scope="col">Nombre</th>
+        <th scope="col">Rut Empresa</th>
+        <th scope="col">Razón Social</th>
         <th scope="col">Foja</th>
         <th scope="col">Número</th>
         <th scope="col">Año</th>
@@ -56,13 +56,13 @@
     </thead>
     <tbody>
       
-        {% for d in duenno %}
+        {% for c in clas %}
       <tr>
-        <td>{{d.rut_duenno}}</td>
-        <td>{{d.nombre_duenno}}</td>
-        <td>{{d.foja}}</td>
-        <td>{{d.numero}}</td>
-        <td>{{d.anno}}</td>
+        <td>{{c.rut_empresa}}</td>
+        <td>{{c.razon_social}}</td>
+        <td>{{c.foja}}</td>
+        <td>{{c.numero}}</td>
+        <td>{{c.anno}}</td>
       </tr>
       {% endfor %}
     </tbody>
