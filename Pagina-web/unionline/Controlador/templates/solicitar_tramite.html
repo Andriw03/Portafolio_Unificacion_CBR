@@ -1,0 +1,33 @@
+{% extends 'templates\base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <title>Solicitar trámite</title>
+    <!--- CSS --->
+    <link rel="stylesheet" href="{% static 'css\listar.css' %}">
+
+</head>
+<br><br><br><br><br>
+<main>
+    <div class="container text-center">
+        <div class="row">
+            {% for t in tramite %}
+            <div class="col-lg-12">
+                <p>{{t.nombre_tramite}}</p>
+            </div>
+            {% endfor %}
+            <form class="formulario" action="" enctype="multipart/formdata" method="post">
+                <br>
+                {% csrf_token %}
+                <input type="text" placeholder="Foja:">
+                <br><br>
+                <div>
+                    <button type="submit" class="btn btn-primary">Solicitar</button>
+                </div>
+                <br>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

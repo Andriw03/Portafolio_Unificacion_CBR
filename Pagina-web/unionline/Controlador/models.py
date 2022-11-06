@@ -233,6 +233,7 @@ class Tramite(models.Model):
     nombre_tramite = models.CharField(max_length=100)
     valor_tramite = models.CharField(max_length=45)
     estado = models.CharField(max_length=45)
+    descripcion = models.CharField(max_length=250)
     t_tramite_id_tipot = models.ForeignKey('TTramite', models.DO_NOTHING, db_column='T_TRAMITE_id_tipoT')  # Field name made lowercase.
 
     class Meta:

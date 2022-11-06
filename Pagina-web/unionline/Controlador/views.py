@@ -129,7 +129,6 @@ def crearCuenta(request):
         
     return render(request, 'registration/registrar.html')
 
-
 @login_required
 def perfil(request):
     tramites = listar_tramites()
@@ -191,3 +190,19 @@ def procesar_formulario(request):
 def conservador(request):
 
     return render(request, 'templates/conservador.html')
+
+def listar_tra(request):
+    tramite = Tramite.objects.all()
+    data={
+        'tramite': tramite,
+        }
+    return render(request, 'templates/listar_tramite.html', data)
+
+def solicitar_tra(request, id):
+
+    tramite = Tramite.objects.raw('SELECT * FROM UNIONLINE.TRAMITE WHERE id_tramite = %s',[id])
+    data={
+        'tramite': tramite,
+        }
+
+    return render(request, 'templates/solicitar_tramite.html', data)
