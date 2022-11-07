@@ -397,3 +397,51 @@ def eliminar_carrito(request, id_solicitud, id_car):
     solicitud = get_object_or_404(Solicitud, pk = id_solicitud)
     solicitud.delete()
     return redirect(to="perfil")
+
+def inicioadmin(request):
+    return render(request, 'templates/inicio_admin.html')
+
+def regDirector(request):
+    if request.method == 'POST':
+        usuario = Usuario()
+        cbr = Cbr()
+        tipoU = TUsuario()
+        usuario.rut_usuario = request.POST.get('rut')
+        usuario.primer_nombre = request.POST.get('Nombre')
+        usuario.segundo_nombre = request.POST.get('Segundo_Nombre')
+        usuario.primer_apellido = request.POST.get('Primer_Apellido')
+        usuario.segundo_apellido = request.POST.get('Segundo_Apellido')
+        usuario.telefono = request.POST.get('Telefono')
+        usuario.correo_electronico = request.POST.get('Correo')
+        usuario.contrasenna = request.POST.get('Contraseña')
+
+        cbr.id_cbr = 1
+
+        tipoU.id_tipou = 2
+
+        usuario.cbr_id_cbr = cbr
+        usuario.t_usuario_id_tipou = tipoU
+
+        user = User()
+        user.email = usuario.correo_electronico
+        user.set_password(request.POST.get('Contraseña'))
+        user.username = request.POST.get('rut')
+        user.first_name = request.POST.get('Nombre')
+        user.last_name = request.POST.get('Primer_Apellido')
+        
+
+        if usuario.rut_usuario == "" or usuario.primer_nombre == "" or usuario.segundo_nombre == "" or usuario.primer_apellido == "" or usuario.segundo_apellido == "" or usuario.telefono == "" or usuario.correo_electronico == "" or usuario.contrasenna == "":
+            messages.warning(request, 'Los campos no pueden quedar vacios.')
+            return redirect('registrarse')
+        else:
+            try:
+                user.save()   
+                usuario.contrasenna = user.password
+                usuario.save()
+                messages.success(request, "Cuenta Creada Correctamente")
+                return redirect(to="iniciar_sesion")
+            except Exception as e:
+                mensaje = "No se ha podido guardar el usuario: " + str(e)
+                messages.warning(request, mensaje)
+            
+    return render(request, 'registration/registrar_usuarios.html')

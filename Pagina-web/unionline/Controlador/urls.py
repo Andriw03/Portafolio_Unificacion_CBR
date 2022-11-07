@@ -1,8 +1,8 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
-from .views import inicio, iniciar_sesion, crearCuenta, perfil, formularioUser
-from .views import inicio, crearCuenta, perfil, paginaPrinc, consultasCom, formularioUser, conservador, listar_tra, solicitar_tra, eliminar_carrito
-from .views import inicio, crearCuenta, perfil, paginaPrinc, consultasProp, formularioUser, conservador, consultasCom
+from .views import inicio, iniciar_sesion, crearCuenta, perfil, formularioUser, inicioadmin, regDirector
+from .views import inicio, crearCuenta, perfil, paginaPrinc, consultasCom, formularioUser, conservador, listar_tra, solicitar_tra, eliminar_carrito, inicioadmin, regDirector
+from .views import inicio, crearCuenta, perfil, paginaPrinc, consultasProp, formularioUser, conservador, consultasCom, inicioadmin, regDirector
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -18,6 +18,8 @@ urlpatterns = [
     path('formulario', formularioUser, name ='formulario'),
     path('conservador', conservador, name='conservador' ),
     path('consultorC', consultasCom, name='consultorC' ),
+    path('inicioadmin', inicioadmin, name='inicioadmin' ),
+    path('regDirector', regDirector, name='regDirector' ),
     path(r'^listar/(?P<id>\d+)/$', listar_tra, name='listar'),
     path(r'^solicitar/(?P<id>\d+)/$', solicitar_tra, name='solicitar'),
     path(r'^eliminar_carrito/(?P<id_solicitud>\d+)/(?P<id_car>\d+)/$', eliminar_carrito, name="eliminar_carrito")
