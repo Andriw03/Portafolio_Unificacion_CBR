@@ -133,7 +133,14 @@
                         
                         <hr>
                         <!-- Precio total -->
-                        <p class="text-right">Total: ${{valor}}</p>
+                              <p class="text-right">Total: ${{valor}}</p>
+<br>        
+                              <a href="{% url 'carrito_pagar' %}">
+                                <button type="button" class="btn btn-outline-danger">Ir al carrito</button>
+
+                              </a>
+                      
+                        
                         <br>
                     </aside>
         </div>

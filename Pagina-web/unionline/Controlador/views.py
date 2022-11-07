@@ -445,3 +445,26 @@ def regDirector(request):
                 messages.warning(request, mensaje)
             
     return render(request, 'registration/registrar_usuarios.html')
+
+def carrito_pagar(request):
+    #agregar a todas las ventanas de cliente
+    tramites = listar_tramites()
+    usu = request.user
+    list_carrito = listar_carrito(usu.username)
+    valor=0
+    can_carrito = 0
+    for i in list_carrito:
+        valor += int(i.valor_tramite)
+        can_carrito += 1
+    miles_translator = str.maketrans(".,", ",.")
+    valor = "{:,}".format(valor).translate(miles_translator)
+    ######
+    data={
+
+    'carrito': list_carrito,
+    'tramites': tramites,
+    'valor': valor,
+    'can_carrito': can_carrito,
+    }
+
+    return render(request, 'templates/carrito_pagar.html', data)
