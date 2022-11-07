@@ -334,10 +334,10 @@ def solicitar_tra(request, id):
     #agregar a todas las ventanas de cliente
     tramites = listar_tramites()
     usu = request.user
-    carrito = listar_carrito(usu.username)
+    list_carrito = listar_carrito(usu.username)
     valor=0
     can_carrito = 0
-    for i in carrito:
+    for i in list_carrito:
         valor += int(i.valor_tramite)
         can_carrito += 1
     miles_translator = str.maketrans(".,", ",.")
@@ -383,9 +383,9 @@ def solicitar_tra(request, id):
     data={
         'tramite': tramite,
         'prop' : propiedad,
-        'carrito':carrito,
-        'tramites':tramites,
-        'valor':valor,
+        'carrito': list_carrito,
+        'tramites': tramites,
+        'valor': valor,
         'can_carrito': can_carrito,
         }
 
