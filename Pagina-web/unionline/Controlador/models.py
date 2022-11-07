@@ -15,7 +15,8 @@ class BPago(models.Model):
 
 class CarCompra(models.Model):
     id_carrito = models.AutoField(primary_key=True)
-    solicitud_id_soli = models.ForeignKey('Solicitud', models.DO_NOTHING, db_column='SOLICITUD_id_soli')  # Field name made lowercase.
+    estado = models.IntegerField()
+    solicitud_id_soli = models.ForeignKey('Solicitud',on_delete=models.CASCADE, db_column='SOLICITUD_id_soli')  # Field name made lowercase.
 
     class Meta:
         managed = False

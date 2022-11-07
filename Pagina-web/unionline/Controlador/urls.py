@@ -1,7 +1,7 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from .views import inicio, iniciar_sesion, crearCuenta, perfil, formularioUser
-from .views import inicio, crearCuenta, perfil, paginaPrinc, consultas, formularioUser, conservador, listar_tra, solicitar_tra
+from .views import inicio, crearCuenta, perfil, paginaPrinc, consultasCom, formularioUser, conservador, listar_tra, solicitar_tra, eliminar_carrito
 from .views import inicio, crearCuenta, perfil, paginaPrinc, consultasProp, formularioUser, conservador, consultasCom
 from django.conf.urls.static import static
 from django.conf import settings
@@ -20,5 +20,6 @@ urlpatterns = [
     path('consultorC', consultasCom, name='consultorC' ),
     path(r'^listar/(?P<id>\d+)/$', listar_tra, name='listar'),
     path(r'^solicitar/(?P<id>\d+)/$', solicitar_tra, name='solicitar'),
+    path(r'^eliminar_carrito/(?P<id_solicitud>\d+)/(?P<id_car>\d+)/$', eliminar_carrito, name="eliminar_carrito")
 
 ]

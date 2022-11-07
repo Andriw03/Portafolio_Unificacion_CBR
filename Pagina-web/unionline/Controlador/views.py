@@ -2,7 +2,7 @@ from tkinter import EXCEPTION
 from webbrowser import get
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import auth, messages
-from . models import Cbr, ClasProp, DuennoProp, Usuario, TUsuario,Comuna,Region,Provincia,Solicitud,Tramite, Direccion, TTramite, Propiedad
+from . models import Cbr, ClasProp, DuennoProp, Usuario, TUsuario,Comuna,Region,Provincia,Solicitud,Tramite, Direccion, TTramite, Propiedad, CarCompra
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -18,12 +18,28 @@ from django.views.generic import TemplateView
 from django.db.models import Q
 from .forms import FormFormularioForm
 
+def listar_carrito(rut):
+    carrito = CarCompra.objects.raw("SELECT id_carrito, id_soli, id_tramite, nombre_tramite, valor_tramite FROM UNIONLINE.CAR_COMPRA inner join UNIONLINE.SOLICITUD on SOLICITUD_id_soli = id_soli inner join UNIONLINE.TRAMITE on TRAMITE_id_tramite = id_tramite inner join UNIONLINE.USUARIO on USUARIO_id_usuario = id_usuario where CAR_COMPRA.estado = 0 and rut_usuario = %s;",[rut])
+    valor = 0
+    return carrito
 def listar_tramites():
     tramites = TTramite.objects.all()
     return tramites
 
 def inicio(request):
+    #agregar a todas las ventanas de cliente
     tramites = listar_tramites()
+    usu = request.user
+    carrito = listar_carrito(usu.username)
+    valor=0
+    can_carrito = 0
+    for i in carrito:
+        valor += int(i.valor_tramite)
+        can_carrito += 1
+    miles_translator = str.maketrans(".,", ",.")
+    valor = "{:,}".format(valor).translate(miles_translator)
+    
+    ######
     region = Region.objects.all()
     comuna = ''
     cbr = ''
@@ -47,7 +63,12 @@ def inicio(request):
         'comuna': comuna,
         'region': region,
         'cbr' : cbr,
-        'provincia': provincia
+        'provincia': provincia,
+        'can_carrito': can_carrito,
+        'carrito':carrito,
+        'tramites':tramites,
+        'valor':valor,
+        
     }
     return render(request, 'templates/inicio.html',data)
 
@@ -129,9 +150,21 @@ def crearCuenta(request):
         
     return render(request, 'registration/registrar.html')
 
-@login_required
+@login_required(login_url='/iniciar_sesion')
 def perfil(request):
+    #agregar a todas las ventanas de cliente
     tramites = listar_tramites()
+    usu = request.user
+    carrito = listar_carrito(usu.username)
+    valor=0
+    can_carrito = 0
+    for i in carrito:
+        valor += int(i.valor_tramite)
+        can_carrito += 1
+    miles_translator = str.maketrans(".,", ",.")
+    valor = "{:,}".format(valor).translate(miles_translator)
+    
+    ######
     usuariocbr = Usuario()
     usuariocli = User()
     usuariocli = request.user
@@ -145,25 +178,55 @@ def perfil(request):
     data={
         'cliente': cliente,
         'tramite': tramite,
-        'tramites': tramites
+        'tramites': tramites,
+        'carrito':carrito,
+        'valor':valor,
+        'can_carrito': can_carrito,
         }
     return render(request, 'templates/perfil-cliente.html', data)
 
 
 
 def paginaPrinc(request,id):
+    #agregar a todas las ventanas de cliente
     tramites = listar_tramites()
+    usu = request.user
+    carrito = listar_carrito(usu.username)
+    valor=0
+    can_carrito = 0
+    for i in carrito:
+        valor += int(i.valor_tramite)
+        can_carrito += 1
+    miles_translator = str.maketrans(".,", ",.")
+    valor = "{:,}".format(valor).translate(miles_translator)
+    ######
     cbr = Cbr.objects.raw('SELECT * FROM UNIONLINE.CBR join UNIONLINE.HOR_ATENCION on UNIONLINE.CBR.HOR_ATENCION_id_horario = UNIONLINE.HOR_ATENCION.id_horario where id_cbr = %s;',[id])
     #cbr = Cbr.objects.raw('SELECT * FROM UNIONLINE.CBR join UNIONLINE.HOR_ATENCION on UNIONLINE.CBR.HOR_ATENCION_id_horario = UNIONLINE.HOR_ATENCION.id_horario where id_cbr = 1;')
     data ={
         'tramites':tramites,
-        'Cbr':cbr
+        'Cbr':cbr,
+        'carrito':carrito,
+        'valor':valor,
+        'can_carrito': can_carrito,
         
     }
     return render(request, 'templates/pagina-principal.html',data)
 
 
 def consultasCom(request):
+     #agregar a todas las ventanas de cliente
+    tramites = listar_tramites()
+    usu = request.user
+    carrito = listar_carrito(usu.username)
+    valor=0
+    can_carrito = 0
+    for i in carrito:
+        valor += int(i.valor_tramite)
+        can_carrito += 1
+    miles_translator = str.maketrans(".,", ",.")
+    valor = "{:,}".format(valor).translate(miles_translator)
+    
+    ######
     queryset=request.POST.get("rut")
     clas= ''
     if queryset:
@@ -174,11 +237,31 @@ def consultasCom(request):
             Q(numero__icontains = queryset)|
             Q(anno__icontains = queryset)
         ).distinct()
+    data ={
+        'tramites':tramites,
+        'clas': clas,
+        'carrito':carrito,
+        'valor':valor,
+        'can_carrito': can_carrito,
         
-    return render(request, 'templates/consultasCom.html' , {'clas': clas})
+    }
+    return render(request, 'templates/consultasCom.html' , data)
 
 
 def consultasProp(request):
+     #agregar a todas las ventanas de cliente
+    tramites = listar_tramites()
+    usu = request.user
+    carrito = listar_carrito(usu.username)
+    valor=0
+    can_carrito = 0
+    for i in carrito:
+        valor += int(i.valor_tramite)
+        can_carrito += 1
+    miles_translator = str.maketrans(".,", ",.")
+    valor = "{:,}".format(valor).translate(miles_translator)
+    
+    ######
     duenno=''
     if request.method == 'POST':
         if request.POST.get("rut") != '':
@@ -186,7 +269,15 @@ def consultasProp(request):
             duenno= DuennoProp.objects.raw('SELECT * FROM UNIONLINE.PROPIEDAD join UNIONLINE.DIRECCION on UNIONLINE.PROPIEDAD.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas join UNIONLINE.DUENNO_PROP on UNIONLINE.PROPIEDAD.DUENNO_PROP_id_duenno = UNIONLINE.DUENNO_PROP.id_duenno join UNIONLINE.TIPO_PROPIEDAD on UNIONLINE.PROPIEDAD.TIPO_PROPIEDAD_id_tipoP = UNIONLINE.TIPO_PROPIEDAD.id_tipoP join UNIONLINE.COMUNA on UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna join UNIONLINE.PROVINCIA on UNIONLINE.COMUNA.PROVINCIA_id_provincia= UNIONLINE.PROVINCIA.id_provincia join UNIONLINE.REGION on UNIONLINE.PROVINCIA.REGION_id_region = UNIONLINE.REGION.id_region ="%s";' ,[queryset] )
         else:
             messages.warning(request, "El campo no puede quedar vacío.")
-    return render(request, 'templates/consultasProp.html',{'duenno':duenno})
+    data ={
+        'tramites':tramites,
+        'duenno':duenno,
+        'carrito':carrito,
+        'valor':valor,
+        'can_carrito': can_carrito,
+        
+    }
+    return render(request, 'templates/consultasProp.html',data)
 
 def formularioUser(request):
     return render(request, 'templates/formulario.html')
@@ -208,17 +299,50 @@ def conservador(request):
     return render(request, 'templates/conservador.html')
 
 def listar_tra(request, id):
+    #agregar a todas las ventanas de cliente
     tramites = listar_tramites()
-    tramite = Tramite.objects.raw("SELECT * FROM UNIONLINE.TRAMITE where T_TRAMITE_id_tipoT = %s;", [id])
+    usu = request.user
+    carrito = listar_carrito(usu.username)
+    valor=0
+    can_carrito = 0
+    for i in carrito:
+        valor += int(i.valor_tramite)
+        can_carrito += 1
+    miles_translator = str.maketrans(".,", ",.")
+    valor = "{:,}".format(valor).translate(miles_translator)
+    ######
+    tramite = Tramite.objects.raw("SELECT * FROM UNIONLINE.TRAMITE where estado = 'Vigente' and T_TRAMITE_id_tipoT = %s;", [id])
+    usu = request.user
+    carrito = listar_carrito(usu.username)
+    valor=0
+    for i in carrito:
+        valor += int(i.valor_tramite)
+    miles_translator = str.maketrans(".,", ",.")
+    valor = "{:,}".format(valor).translate(miles_translator)
     data={
         'tramite': tramite,
         'tramites':tramites,
+        'valor': valor,
+        'id_tramite':id,
+        'carrito':carrito,
+        'can_carrito': can_carrito,
         }
     return render(request, 'templates/listar_tramite.html', data)
 
-@login_required
+@login_required(login_url='/iniciar_sesion')
 def solicitar_tra(request, id):
+    #agregar a todas las ventanas de cliente
     tramites = listar_tramites()
+    usu = request.user
+    carrito = listar_carrito(usu.username)
+    valor=0
+    can_carrito = 0
+    for i in carrito:
+        valor += int(i.valor_tramite)
+        can_carrito += 1
+    miles_translator = str.maketrans(".,", ",.")
+    valor = "{:,}".format(valor).translate(miles_translator)
+    ######
     tramite = Tramite.objects.raw('SELECT * FROM UNIONLINE.TRAMITE WHERE id_tramite = %s',[id])
     foja_prop = 828
     propiedad = Propiedad.objects.raw("SELECT id_propiedad, descripcion, id_clas, foja, numero, YEAR(anno) as fecha FROM UNIONLINE.PROPIEDAD inner join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas where foja = %s;",[foja_prop])
@@ -247,15 +371,29 @@ def solicitar_tra(request, id):
                 id_solicitud = "SO-000" + str(editar_solicitud.pk)
                 editar_solicitud.numero_seguimiento = id_solicitud
                 editar_solicitud.save()
+                carrito = CarCompra()
+                carrito.solicitud_id_soli = editar_solicitud
+                carrito.estado = 0
+                carrito.save()
                 messages.success(request, "Solicitud generada correctamente")
-            except ValueError:
-                messages.error(request, ValueError )
+            except Exception as e:
+                messages.error(request, str(e) )
 
     
     data={
         'tramite': tramite,
-        'tramites':tramites,
         'prop' : propiedad,
+        'carrito':carrito,
+        'tramites':tramites,
+        'valor':valor,
+        'can_carrito': can_carrito,
         }
 
     return render(request, 'templates/solicitar_tramite.html', data)
+
+def eliminar_carrito(request, id_solicitud, id_car):
+    carrito = get_object_or_404(CarCompra, pk = id_car)
+    carrito.delete()
+    solicitud = get_object_or_404(Solicitud, pk = id_solicitud)
+    solicitud.delete()
+    return redirect(to="perfil")
