@@ -8,10 +8,11 @@
 </head>
 <br><br><br><br><br><br><br><br>
 <main>
-    <div class="container text-center">
+    <div class="container">
         <div class="row">
-            {% for t in tramite %}
-            <div class="col">
+            <!-- Elementos generados a partir del JSON -->
+            <main id="items" class="col-sm-8 row">
+                {% for t in tramite %}
                 <div class="card" style="width: 15rem;">
                     <div class="card-body">
                         <h5 class="card-title">{{t.nombre_tramite}}</h5>
@@ -23,8 +24,18 @@
                         <a href="{% url 'solicitar' id=t.pk %}" class="card-link">Solicitar</a>
                     </div>
                 </div>
-            </div>
             {% endfor %}
+            </main>
+            <!-- Carrito -->
+            <aside class="col-sm-4">
+                <h2>Carrito</h2>
+                <!-- Elementos del carrito -->
+                <ul id="carrito" class="list-group"></ul>
+                <hr>
+                <!-- Precio total -->
+                <p class="text-right">Total: <span id="total"></span>$</p>
+                <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+            </aside>
         </div>
     </div>
 </main>

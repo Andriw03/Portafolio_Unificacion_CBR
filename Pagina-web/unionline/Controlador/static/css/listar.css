@@ -11,10 +11,11 @@ footer{
 }
 
 .formulario{
-    margin-top: 50px;
+    margin: 10% 10% 10% 25%;
     padding: 3px;
-    margin-bottom: 50px;
     background: rgb(255, 255, 255);
     border: 2mm;
+    border-radius: 10px;
+    max-width: 50%;
 }
 

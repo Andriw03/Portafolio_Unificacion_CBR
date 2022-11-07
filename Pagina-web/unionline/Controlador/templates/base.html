@@ -48,7 +48,7 @@
               <li class="dropdown"><a href="#"><span>Trámites en línea</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                 <ul>
                   {% for t in tramites.all %}
-                    <li><a href="#">{{ t.nombre_tipot }}</a></li>
+                    <li><a href="{% url 'listar' id=t.pk %}">{{ t.nombre_tipot }}</a></li>
                   {% endfor %}
                 </ul>
               </li>
@@ -89,7 +89,7 @@
                     {% endblock %}
     </main>
     
-    
+    <br><br><br><br><br><br>
 </body>
 
 <footer>

@@ -17,9 +17,8 @@ urlpatterns = [
     path('consultorP', consultasProp, name ='consultorP'),
     path('formulario', formularioUser, name ='formulario'),
     path('conservador', conservador, name='conservador' ),
-    path('listar', listar_tra, name='listar'),
+    path('consultorC', consultasCom, name='consultorC' ),
+    path(r'^listar/(?P<id>\d+)/$', listar_tra, name='listar'),
     path(r'^solicitar/(?P<id>\d+)/$', solicitar_tra, name='solicitar'),
-    path('consultorC', consultasCom, name='consultorC' )
-
 
 ]

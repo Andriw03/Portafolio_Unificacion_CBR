@@ -2,7 +2,7 @@ from tkinter import EXCEPTION
 from webbrowser import get
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import auth, messages
-from . models import Cbr, ClasProp, DuennoProp, Usuario, TUsuario,Comuna,Region,Provincia,Solicitud,Tramite, Direccion, TTramite
+from . models import Cbr, ClasProp, DuennoProp, Usuario, TUsuario,Comuna,Region,Provincia,Solicitud,Tramite, Direccion, TTramite, Propiedad
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -10,7 +10,7 @@ import mysql.connector as mysql
 from django.contrib.auth import authenticate, login
 from rut_chile import rut_chile
 from django.contrib.auth.decorators import login_required
-
+from datetime import datetime
 from django.http import JsonResponse
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
@@ -207,18 +207,55 @@ def conservador(request):
 
     return render(request, 'templates/conservador.html')
 
-def listar_tra(request):
-    tramite = Tramite.objects.all()
+def listar_tra(request, id):
+    tramites = listar_tramites()
+    tramite = Tramite.objects.raw("SELECT * FROM UNIONLINE.TRAMITE where T_TRAMITE_id_tipoT = %s;", [id])
     data={
         'tramite': tramite,
+        'tramites':tramites,
         }
     return render(request, 'templates/listar_tramite.html', data)
 
+@login_required
 def solicitar_tra(request, id):
-
+    tramites = listar_tramites()
     tramite = Tramite.objects.raw('SELECT * FROM UNIONLINE.TRAMITE WHERE id_tramite = %s',[id])
+    foja_prop = 828
+    propiedad = Propiedad.objects.raw("SELECT id_propiedad, descripcion, id_clas, foja, numero, YEAR(anno) as fecha FROM UNIONLINE.PROPIEDAD inner join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas where foja = %s;",[foja_prop])
+    if request.method == 'POST':
+        if 'solicitar' in request.POST:    
+            try:       
+                solicitud = Solicitud()
+                now = datetime.now()
+                solicitud.fecha_solicitud = now.strftime("%Y-%m-%d %H:%M:%S")
+                solicitud.estado = "En Proceso"
+                solicitud.numero_seguimiento = "SO-21"
+                solicitud.comentario = ""
+                usu = request.user
+                usuario = Usuario.objects.raw("SELECT * FROM UNIONLINE.USUARIO where T_USUARIO_id_tipoU = 5 and rut_usuario = %s;",[usu.username]) 
+                for i in usuario:
+                    id_usuario = i.id_usuario
+                    break
+                solicitud.usuario_id_usuario = get_object_or_404(Usuario,pk= id_usuario )
+                clas_prop = get_object_or_404(ClasProp,foja = foja_prop)
+                id_prop = get_object_or_404(Propiedad,clas_prop_id_clas=clas_prop )
+                solicitud.propiedad_id_propiedad = id_prop
+                id_tramite = get_object_or_404(Tramite, id_tramite = id)
+                solicitud.tramite_id_tramite = id_tramite
+                solicitud.save()
+                editar_solicitud = get_object_or_404(Solicitud,numero_seguimiento = "SO-21")
+                id_solicitud = "SO-000" + str(editar_solicitud.pk)
+                editar_solicitud.numero_seguimiento = id_solicitud
+                editar_solicitud.save()
+                messages.success(request, "Solicitud generada correctamente")
+            except ValueError:
+                messages.error(request, ValueError )
+
+    
     data={
         'tramite': tramite,
+        'tramites':tramites,
+        'prop' : propiedad,
         }
 
     return render(request, 'templates/solicitar_tramite.html', data)
