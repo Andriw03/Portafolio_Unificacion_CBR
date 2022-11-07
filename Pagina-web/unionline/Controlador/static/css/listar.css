@@ -1,13 +1,22 @@
 footer{
     position: fixed; bottom: 0; width: 100%;
-    background-color: #1E4D40;
+    background-color: #010326;
     text-align: center;
     padding:40px;
     color: white;
 }
 
+.container{
+    display: flex; 
+    flex-flow: row wrap;
+    flex-direction: row;
+} 
+
 .card{
-    margin: 50px;
+    margin: 40px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.4);
+    flex: 0 0 100%;
+    align-items: stretch;
 }
 
 .formulario{
