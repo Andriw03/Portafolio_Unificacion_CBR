@@ -115,7 +115,6 @@ class Error(models.Model):
 
 class EstadoPago(models.Model):
     id_estado = models.AutoField(primary_key=True)
-    estado = models.IntegerField()
     car_compra_id_carrito = models.ForeignKey(CarCompra, models.DO_NOTHING, db_column='CAR_COMPRA_id_carrito')  # Field name made lowercase.
     tipo_pago_id_tipop = models.ForeignKey('TipoPago', models.DO_NOTHING, db_column='TIPO_PAGO_id_tipoP')  # Field name made lowercase.
 

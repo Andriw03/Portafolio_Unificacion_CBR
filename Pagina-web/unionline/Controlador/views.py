@@ -1,14 +1,17 @@
+import random
 from tkinter import EXCEPTION
+from urllib import response
 from webbrowser import get
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import auth, messages
-from . models import Cbr, ClasProp, DuennoProp, Usuario, TUsuario,Comuna,Region,Provincia,Solicitud,Tramite, Direccion, TTramite, Propiedad, CarCompra
+from . models import Cbr, ClasProp, DuennoProp, EstadoPago, TipoPago, Usuario, TUsuario,Comuna,Region,Provincia,Solicitud,Tramite, Direccion, TTramite, Propiedad, CarCompra
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from werkzeug.security import generate_password_hash, check_password_hash
 import mysql.connector as mysql
 from django.contrib.auth import authenticate, login
 from rut_chile import rut_chile
+from datetime import datetime as dt
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
 from django.http import JsonResponse
@@ -17,6 +20,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView
 from django.db.models import Q
 from .forms import FormFormularioForm
+from transbank.error.transbank_error import TransbankError
+from transbank.webpay.webpay_plus.transaction import Transaction
 
 def listar_carrito(rut):
     carrito = CarCompra.objects.raw("SELECT id_carrito, id_soli, id_tramite, nombre_tramite, valor_tramite FROM UNIONLINE.CAR_COMPRA inner join UNIONLINE.SOLICITUD on SOLICITUD_id_soli = id_soli inner join UNIONLINE.TRAMITE on TRAMITE_id_tramite = id_tramite inner join UNIONLINE.USUARIO on USUARIO_id_usuario = id_usuario where CAR_COMPRA.estado = 0 and rut_usuario = %s;",[rut])
@@ -468,3 +473,96 @@ def carrito_pagar(request):
     }
 
     return render(request, 'templates/carrito_pagar.html', data)
+#De aquí empieza transbank y muere todo
+
+#transferencia
+def transferencia(request):
+    return render (request, 'templates/transferencia.html')
+
+#web pay 
+global devolver_token
+def devolver_token(): 
+    return response.token
+
+#crear transaccion
+def voucher(request):
+    token_recibido= devolver_token()
+    return render(request, 'Web_pay_plus/commit.html')
+    
+def webpay_plus_create(request):
+    buy_order=""
+    session_id=""
+    amount=0
+    user = request.user
+    carrito_llenar = listar_carrito(user.username)
+    total=0
+    for i in carrito_llenar:
+       total += int(i.valor_tramite)
+    if request.method == 'GET':
+        print("Webpay Plus Transaction.create")
+        buy_order = "RB" + str(random.randrange(1000000, 99999999))
+        session_id = str(random.randrange(1000000, 99999999))
+        amount = total
+        
+    return_url= "http://transbank-rest-demo.herokuapp.com/webpay_plus/commit"
+
+    create_request = {
+        "buy_order": buy_order,
+        "session_id": session_id,
+        "amount": amount,
+        "return_url": return_url
+    }
+
+    response = Transaction.create(buy_order, session_id, amount, return_url)
+
+    tpago = get_object_or_404(TipoPago, pk=1)
+    for i in carrito_llenar:
+        car = get_object_or_404(CarCompra, pk=i.id_carrito)
+        #car.estado = 1
+        car.save()
+        estado_pago = EstadoPago()
+        estado_pago.car_compra_id_carrito = car
+        estado_pago.tipo_pago_id_tipop = tpago
+        estado_pago.save()
+    token=response.token
+    data = {
+        'token1':token
+    }
+
+    print(response)
+
+    return render(request,'Web_pay_plus/create.html', data )
+
+#commit de la compra
+def webpay_plus_commit(request):
+    if request.method == 'POST':
+        token = request.form.get("token_ws")
+        print("commit for token_ws: {}".format(token))
+
+        response = Transaction.commit(token=token)
+        print("response: {}".format(response))
+    
+        return render(request,'Web_pay_plus/commit.html', token=token, response=response)
+
+#transaccion creada
+
+def show_create(request):
+    if request.method==('GET'):
+         return render(request,'transaccion_completa/create.html')
+
+#mandar transaccion creada
+def send_create(request):
+    if request.method==('POST'):
+
+        buy_order = request.form.get('buy_order')
+        session_id = request.form.get('session_id')
+        amount = request.form.get('amount')
+        card_number = request.form.get('card_number')
+        cvv = request.form.get('cvv')
+        card_expiration_date = request.form.get('card_expiration_date')
+        resp = Transaction.create(
+            buy_order=buy_order, session_id=session_id, amount=amount,
+            card_number=card_number, cvv=cvv, card_expiration_date=card_expiration_date
+        )
+
+        return render(request,'transaccion_completa/created.html', resp=resp, req=request.form.values, dt=dt)

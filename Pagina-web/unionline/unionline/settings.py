@@ -31,6 +31,15 @@ ALLOWED_HOSTS = []
 
 LOGOUT_REDIRECT_URL='/'
 
+WEBPAY_COMMERCE_CODE = '597020000541'
+#webpay normal
+WEBPAY_WSDL = 'https://webpay3gint.transbank.cl/WSWebpayTransaction/cxf/WSWebpayService?wsdl'
+WEBPAY_URL_FINAL = '/' + '/core/pagos/webpay/final/'
+WEBPAY_OUR_PRIVATE_KEY = '/' + '/certs/ourprivatekey.pem'
+WEBPAY_OUR_PUBLIC_CERT = '/' + '/certs/ourpublicert.pem'
+WEBPAY_CERT = '/' + '/certs/webpaycert.pem'
+WEBPAY_SERVICES_WSDL = 'https://webpay3gint.transbank.cl/WSWebpayTransaction/cxf/WSCommerceIntegrationService?wsdl'
+
 # Application definition
 
 INSTALLED_APPS = [

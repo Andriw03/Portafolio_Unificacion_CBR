@@ -1,0 +1,62 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Crear Transaccion</title>
+    {% include 'include/header.html' %}
+</head>
+
+<body class="container">
+   
+    </nav>
+
+    <br>
+    <br>
+    <br>
+    
+    <h3>ATENCIÓN!!,ESTÁ SALIENDO DE NUESTRA WEB.</h3>
+    {{ amount }}
+    {{ response }}
+    <br>
+
+    <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-border text-secondary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-border text-success" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-border text-danger" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-border text-warning" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-border text-info" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-border text-light" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-border text-dark" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+
+<br>
+   
+<br>
+
+
+<form action="https://webpay3gint.transbank.cl/webpayserver/initTransaction" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="token_ws" value="{{token1}}"/>
+    <input type="submit" value="Ir a Webpay" class="btn btn-primary"/>
+ </form>
+
+
+<br>
+
+<a href="{% url 'carrito_pagar' %}">&laquo; volver a nuestra tienda.</a>
+</body>
+</html>
