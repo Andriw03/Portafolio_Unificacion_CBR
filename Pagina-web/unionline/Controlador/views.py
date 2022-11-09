@@ -408,49 +408,60 @@ def inicioadmin(request):
 
 def regDirector(request):
     if request.method == 'POST':
-        usuario = Usuario()
-        cbr = Cbr()
-        tipoU = TUsuario()
-        usuario.rut_usuario = request.POST.get('rut')
-        usuario.primer_nombre = request.POST.get('Nombre')
-        usuario.segundo_nombre = request.POST.get('Segundo_Nombre')
-        usuario.primer_apellido = request.POST.get('Primer_Apellido')
-        usuario.segundo_apellido = request.POST.get('Segundo_Apellido')
-        usuario.telefono = request.POST.get('Telefono')
-        usuario.correo_electronico = request.POST.get('Correo')
-        usuario.contrasenna = request.POST.get('Contraseña')
+            usuario = Usuario()
+            cbr = Cbr()
+            tipoU = TUsuario()
+            usuario.rut_usuario = request.POST.get('rut')
+            usuario.primer_nombre = request.POST.get('Nombre')
+            usuario.segundo_nombre = request.POST.get('Segundo_Nombre')
+            usuario.primer_apellido = request.POST.get('Primer_Apellido')
+            usuario.segundo_apellido = request.POST.get('Segundo_Apellido')
+            usuario.telefono = request.POST.get('Telefono')
+            usuario.correo_electronico = request.POST.get('Correo')
+            usuario.contrasenna = request.POST.get('Contraseña')
 
-        cbr.id_cbr = 1
+            cbr.id_cbr = 1
 
-        tipoU.id_tipou = 2
+            tipoU.id_tipou = 2
 
-        usuario.cbr_id_cbr = cbr
-        usuario.t_usuario_id_tipou = tipoU
+            usuario.cbr_id_cbr = cbr
+            usuario.t_usuario_id_tipou = tipoU
 
-        user = User()
-        user.email = usuario.correo_electronico
-        user.set_password(request.POST.get('Contraseña'))
-        user.username = request.POST.get('rut')
-        user.first_name = request.POST.get('Nombre')
-        user.last_name = request.POST.get('Primer_Apellido')
-        
-
-        if usuario.rut_usuario == "" or usuario.primer_nombre == "" or usuario.segundo_nombre == "" or usuario.primer_apellido == "" or usuario.segundo_apellido == "" or usuario.telefono == "" or usuario.correo_electronico == "" or usuario.contrasenna == "":
-            messages.warning(request, 'Los campos no pueden quedar vacios.')
-            return redirect('registrarse')
-        else:
-            try:
-                user.save()   
-                usuario.contrasenna = user.password
-                usuario.save()
-                messages.success(request, "Cuenta Creada Correctamente")
-                return redirect(to="iniciar_sesion")
-            except Exception as e:
-                mensaje = "No se ha podido guardar el usuario: " + str(e)
-                messages.warning(request, mensaje)
+            user = User()
+            user.email = usuario.correo_electronico
+            user.set_password(request.POST.get('Contraseña'))
+            user.username = request.POST.get('rut')
+            user.first_name = request.POST.get('Nombre')
+            user.last_name = request.POST.get('Primer_Apellido')
             
+
+            if usuario.rut_usuario == "" or usuario.primer_nombre == "" or usuario.segundo_nombre == "" or usuario.primer_apellido == "" or usuario.segundo_apellido == "" or usuario.telefono == "" or usuario.correo_electronico == "" or usuario.contrasenna == "":
+                messages.warning(request, 'Los campos no pueden quedar vacios.')
+                return redirect('registrarse')
+            else:
+                try:
+                    user.save()   
+                    usuario.contrasenna = user.password
+                    usuario.save()
+                    messages.success(request, "Cuenta Creada Correctamente")
+                    return redirect(to="iniciar_sesion")
+                except Exception as e:
+                    mensaje = "No se ha podido guardar el usuario: " + str(e)
+                    messages.warning(request, mensaje)
+
+        
     return render(request, 'registration/registrar_usuarios.html')
-@login_required(login_url='/iniciar_sesion')
+
+def listarDirector (request):
+    #tuser = get_object_or_404(TUsuario, pk = id_tipoU)
+    #tuser = TUsuario.objects.filter(id_tipoU = 2)
+    user = Usuario.objects.filter(t_usuario_id_tipou = 2)
+    #user = Usuario.objects.raw("SELECT rut_usuario, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, telefono, correo_electronico FROM UNIONLINE.USUARIO where T_USUARIO_id_tipoU = %s;",[tuser])
+    #tuser = TUsuario.objects.all()
+    #usuario = Usuario.objects.raw("SELECT * FROM UNIONLINE.USUARIO where T_USUARIO_id_tipoU = 5 and rut_usuario = %s;",[])
+    return render(request, 'templates/listar_usuarios.html',{"Usuario": user})
+
+
 def carrito_pagar(request):
     #agregar a todas las ventanas de cliente
     tramites = listar_tramites()

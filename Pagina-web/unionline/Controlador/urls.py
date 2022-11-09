@@ -1,7 +1,7 @@
 from django.urls import path
-from django.conf.urls import include, url
+from django.urls import re_path as url
 from django.contrib.auth import views as auth_views
-from .views import inicio, iniciar_sesion, crearCuenta, perfil, formularioUser, inicioadmin, regDirector, show_create, transferencia, webpay_plus_commit, webpay_plus_create
+from .views import inicio, iniciar_sesion, crearCuenta, perfil, formularioUser, inicioadmin, regDirector, show_create, transferencia, webpay_plus_commit, webpay_plus_create, listarDirector
 from .views import inicio, crearCuenta, perfil, paginaPrinc, consultasCom, formularioUser, conservador, listar_tra, solicitar_tra, eliminar_carrito, inicioadmin, regDirector,carrito_pagar
 from .views import inicio, crearCuenta, perfil, paginaPrinc, consultasProp, formularioUser, conservador, consultasCom, inicioadmin, regDirector
 from django.conf.urls.static import static
@@ -21,6 +21,7 @@ urlpatterns = [
     path('consultorC', consultasCom, name='consultorC' ),
     path('inicioadmin', inicioadmin, name='inicioadmin' ),
     path('regDirector', regDirector, name='regDirector' ),
+    path('listarDirector', listarDirector, name='listarDirector' ),
     path(r'^listar/(?P<id>\d+)/$', listar_tra, name='listar'),
     path(r'^solicitar/(?P<id>\d+)/$', solicitar_tra, name='solicitar'),
     path(r'^eliminar_carrito/(?P<id_solicitud>\d+)/(?P<id_car>\d+)/$', eliminar_carrito, name="eliminar_carrito"),
@@ -29,5 +30,4 @@ urlpatterns = [
     url(r'^commit/$', webpay_plus_commit, name="commit"),
     url(r'^create_2/$', show_create, name="create_2"),
     url(r'^transferencia/$', transferencia, name="transferencia")
-
 ]
