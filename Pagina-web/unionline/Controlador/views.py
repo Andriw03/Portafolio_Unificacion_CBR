@@ -504,7 +504,6 @@ def webpay_plus_create(request):
         session_id = str(random.randrange(1000000, 99999999))
         amount = total
     return_url = "http://transbank-rest-demo.herokuapp.com/webpay_plus/commit"
-    #return_url= "http://127.0.0.1:8000/commit/"
 
     create_request = {
         "buy_order": buy_order,
@@ -514,7 +513,6 @@ def webpay_plus_create(request):
     }
     tx = Transaction()
     response = tx.create(buy_order, session_id, amount, return_url)
-    #response = Transaction.create(buy_order, session_id, amount, return_url)
 
     tpago = get_object_or_404(TipoPago, pk=1)
     for i in carrito_llenar:

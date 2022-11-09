@@ -27,15 +27,15 @@
 :root {
   scroll-behavior: smooth;
 }
+
 footer{
-  position: static !important;
-  bottom: 0; 
-  width: 100%;
-  background-color: #1E4D40;
+  position: fixed; bottom: 0; width: 100%;
+  background-color: #010326;
   text-align: center;
   padding:40px;
   color: white;
 }
+
 @media (min-width: 1280px) {
   .navbar {
     padding: 0;
@@ -395,10 +395,4 @@ h6 {
 }
 
 
-footer{
-  position: fixed; bottom: 0; width: 100%;
-  background-color: #010326;
-  text-align: center;
-  padding:40px;
-  color: white;
-}
+
