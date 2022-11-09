@@ -450,7 +450,7 @@ def regDirector(request):
                 messages.warning(request, mensaje)
             
     return render(request, 'registration/registrar_usuarios.html')
-
+@login_required(login_url='/iniciar_sesion')
 def carrito_pagar(request):
     #agregar a todas las ventanas de cliente
     tramites = listar_tramites()
@@ -503,8 +503,8 @@ def webpay_plus_create(request):
         buy_order = "RB" + str(random.randrange(1000000, 99999999))
         session_id = str(random.randrange(1000000, 99999999))
         amount = total
-        
-    return_url= "http://transbank-rest-demo.herokuapp.com/webpay_plus/commit"
+    return_url = "http://transbank-rest-demo.herokuapp.com/webpay_plus/commit"
+    #return_url= "http://127.0.0.1:8000/commit/"
 
     create_request = {
         "buy_order": buy_order,
@@ -512,8 +512,9 @@ def webpay_plus_create(request):
         "amount": amount,
         "return_url": return_url
     }
-
-    response = Transaction.create(buy_order, session_id, amount, return_url)
+    tx = Transaction()
+    response = tx.create(buy_order, session_id, amount, return_url)
+    #response = Transaction.create(buy_order, session_id, amount, return_url)
 
     tpago = get_object_or_404(TipoPago, pk=1)
     for i in carrito_llenar:
@@ -524,7 +525,7 @@ def webpay_plus_create(request):
         estado_pago.car_compra_id_carrito = car
         estado_pago.tipo_pago_id_tipop = tpago
         estado_pago.save()
-    token=response.token
+    token=response['token']
     data = {
         'token1':token
     }
@@ -535,6 +536,8 @@ def webpay_plus_create(request):
 
 #commit de la compra
 def webpay_plus_commit(request):
+    token=''
+    response=''
     if request.method == 'POST':
         token = request.form.get("token_ws")
         print("commit for token_ws: {}".format(token))
@@ -542,13 +545,13 @@ def webpay_plus_commit(request):
         response = Transaction.commit(token=token)
         print("response: {}".format(response))
     
-        return render(request,'Web_pay_plus/commit.html', token=token, response=response)
+    return render(request,'Web_pay_plus/commit.html',)
 
 #transaccion creada
 
 def show_create(request):
-    if request.method==('GET'):
-         return render(request,'transaccion_completa/create.html')
+    ##if request.method==('GET'):
+    return render(request,'transaccion_completa/create.html')
 
 #mandar transaccion creada
 def send_create(request):
@@ -565,4 +568,4 @@ def send_create(request):
             card_number=card_number, cvv=cvv, card_expiration_date=card_expiration_date
         )
 
-        return render(request,'transaccion_completa/created.html', resp=resp, req=request.form.values, dt=dt)
+    return render(request,'transaccion_completa/created.html', resp=resp, req=request.form.values, dt=dt)
