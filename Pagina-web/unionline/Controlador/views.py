@@ -461,7 +461,7 @@ def listarDirector (request):
     #usuario = Usuario.objects.raw("SELECT * FROM UNIONLINE.USUARIO where T_USUARIO_id_tipoU = 5 and rut_usuario = %s;",[])
     return render(request, 'templates/listar_usuarios.html',{"Usuario": user})
 
-
+@login_required(login_url='/iniciar_sesion')
 def carrito_pagar(request):
     #agregar a todas las ventanas de cliente
     tramites = listar_tramites()
@@ -499,7 +499,7 @@ def devolver_token():
 def voucher(request):
     token_recibido= devolver_token()
     return render(request, 'Web_pay_plus/commit.html')
-    
+
 def webpay_plus_create(request):
     buy_order=""
     session_id=""
@@ -514,7 +514,8 @@ def webpay_plus_create(request):
         buy_order = "RB" + str(random.randrange(1000000, 99999999))
         session_id = str(random.randrange(1000000, 99999999))
         amount = total
-    return_url = "http://transbank-rest-demo.herokuapp.com/webpay_plus/commit"
+    #return_url = "http://transbank-rest-demo.herokuapp.com/webpay_plus/commit"
+    return_url= "http://127.0.0.1:8000/commit/"
 
     create_request = {
         "buy_order": buy_order,
@@ -540,21 +541,23 @@ def webpay_plus_create(request):
     }
 
     print(response)
-
+    
     return render(request,'Web_pay_plus/create.html', data )
 
 #commit de la compra
-def webpay_plus_commit(request):
-    token=''
-    response=''
-    if request.method == 'POST':
-        token = request.form.get("token_ws")
-        print("commit for token_ws: {}".format(token))
 
-        response = Transaction.commit(token=token)
-        print("response: {}".format(response))
-    
-    return render(request,'Web_pay_plus/commit.html',)
+def webpay_plus_commit(request):
+    token = request.GET.get("token_ws")
+    print(str(token))
+
+    print("estamos en el commit----dentro del POST")
+    token = request.POST.get("token_ws")
+    print("commit for token_ws: {}".format(token))
+
+    response = Transaction.commit(token=token)
+    print("response: {}".format(response))
+    return render(request,'Web_pay_plus/commit.html',token=token, response=response)
+
 
 #transaccion creada
 
