@@ -55,11 +55,17 @@
                     {% endfor %}
                     </ul>
                 {% endif %}
+              
+              {% for r in rut %} 
                 <div class="input-contenedor">
-                    <i class="fa-solid fa-user icon"></i>
-                    <input type="text" name="rut" id="rut" onkeyup="mascara(this,formatoRUT)" placeholder="RUT">
-                </div>
 
+                    <i class="fa-solid fa-user icon"></i>
+                   
+                    <input type="text" name="rut" id="rut" onkeyup="mascara(this,formatoRUT)" placeholder="RUT">
+                  
+                    
+                </div>
+              {% endfor %}
                 <div class="input-contenedor">
                     <i class="fa-solid fa-user icon"></i>
                     <input type="text" name="Nombre" placeholder="Primer Nombre">
@@ -96,8 +102,13 @@
                 </div>
 
                 <div>
-                    <input type="submit" value="Registrarse" class="button">
+                    <input type="submit" name="registrar" value="Registrar Usuario" class="button">
+                    
                 </div>
+                    <input type="submit" name="buscar" value="Editar y Eliminar Usuario" class="button">
+                <div>
+                  
+              </div>
             </div>
         </form>
             
