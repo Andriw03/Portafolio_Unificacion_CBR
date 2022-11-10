@@ -28,6 +28,7 @@ SECRET_KEY = 'f-4nb%u$9n!dymsv=v2h4@frw(@vka6+2y#qd*sq8681=jk&d7'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
 
 LOGOUT_REDIRECT_URL='/'
 

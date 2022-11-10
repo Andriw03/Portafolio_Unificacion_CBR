@@ -12,14 +12,14 @@ import mysql.connector as mysql
 from django.contrib.auth import authenticate, login
 from rut_chile import rut_chile
 from datetime import datetime as dt
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 from datetime import datetime
 from django.http import JsonResponse
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView
 from django.db.models import Q
-from .forms import FormFormularioForm
+from .forms import FormFormularioForm, CbrForm
 from transbank.error.transbank_error import TransbankError
 from transbank.webpay.webpay_plus.transaction import Transaction
 
@@ -86,10 +86,13 @@ def iniciar_sesion(request):
         userLogin = authenticate(request,username=rut, password=contraseña)
         #valida que tipo de usuario se está iniciando sesión
         try:
+            
             if userLogin is not None:
                 login(request, userLogin)
                 userA = request.user
+                
                 return redirect(to="perfil")
+                
             else:
                 mensaje = 'Error, usuario no encontrado'
                 messages.error(request, mensaje)
@@ -403,8 +406,54 @@ def eliminar_carrito(request, id_solicitud, id_car):
     solicitud.delete()
     return redirect(to="perfil")
 
+
+
 def inicioadmin(request):
     return render(request, 'templates/inicio_admin.html')
+
+def agregar_cbr (request):
+    
+    
+    data={
+        'form':CbrForm()
+
+    }
+    if request.method == 'POST':
+        formulario = CbrForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "CBR guardado correctamente"
+        else:
+            data["form"]= formulario
+
+    return render(request, 'templates/agregar_cbr.html', data)
+
+def listar_cbr (request):
+    cbr = Cbr.objects.raw("SELECT CBR.id_cbr, CBR.nombre_cbr, CBR.correo_cbr, CBR.telefono, concat(DIRECCION.nombre_calle, ' ', DIRECCION.numero_casa) AS DIR_CBR , concat(HOR_ATENCION.dias_atencion ,' ', HOR_ATENCION.horario_apertura ,'-', HOR_ATENCION.horario_cierre) AS HORARIOS FROM UNIONLINE.CBR JOIN UNIONLINE.DIRECCION ON CBR.DIRECCION_id_direccion = DIRECCION.id_direccion JOIN HOR_ATENCION ON CBR.HOR_ATENCION_id_horario = HOR_ATENCION.id_horario " )
+    data={
+        'cbr' : cbr
+    }
+    return render(request, 'templates/listar_cbr.html' , data)
+
+def modificar_cbr(request,id):
+    cbr = get_object_or_404(Cbr, id_cbr = id)
+    data={
+        'form':CbrForm(instance=cbr)
+    }
+    if request.method == 'POST':
+        formulario = CbrForm(data=request.POST, instance=cbr)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request,"Modificado con éxito")
+            return redirect(to="listarCbr")
+        data["form"] = formulario
+    return render(request,'templates/modificar_cbr.html', data)
+
+def eliminar_cbr(request,id):
+    cbr = get_object_or_404(Cbr, id_cbr = id)
+    cbr.delete()
+    messages.success(request, "Eliminado correctamente")
+    return redirect(to="listarCbr")
 
 def regDirector(request):
     if request.method == 'POST':

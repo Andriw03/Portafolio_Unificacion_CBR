@@ -29,6 +29,8 @@
   <link rel="stylesheet" href="{% static 'css/reset.css' %}">
   <!-- CSS only -->
   <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+  <!--sweet alert-->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -81,10 +83,13 @@
                 </span>
               </button>
               {% else %}
+
+              
               <a class="btn-book-a-table" href="{% url 'registrarse' %}">Crear Cuenta</a>
               <a class="btn-book-a-table" href="{% url 'iniciar_sesion' %}">Iniciar Sesión</a>
               <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
               <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+             
               {% endif %}
           </nav><!-- .navbar -->
     
@@ -145,7 +150,11 @@
                     </aside>
         </div>
       </div>
-      
+                    {% if messages %}
+                      {% for m in messages %}
+                        {{m}}
+                      {% endfor %}
+                    {% endif %}
                     {% block content %} 
                     {% endblock %}
     </main>
