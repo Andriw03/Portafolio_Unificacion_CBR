@@ -45,9 +45,8 @@
     
           <nav id="navbar" class="navbar">
             <ul>
-              <li><a href="#hero">Inicio</a></li>
-              <li><a href="#about">Misión</a></li>
-              <li><a href="#menu">Contacto</a></li>
+              <li><a href="{% url 'inicio' %}">Inicio</a></li>
+              <li><a href="{% url 'formulario' %}">Contacto</a></li>
               <li class="dropdown"><a href="#"><span>Trámites en línea</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                 <ul>
                   {% for t in tramites.all %}

@@ -274,7 +274,7 @@ def consultasProp(request):
     if request.method == 'POST':
         if request.POST.get("rut") != '':
             queryset= request.POST.get("rut")
-            duenno= DuennoProp.objects.raw('SELECT  DUENNO_PROP.rut_duenno, CLAS_PROP.foja, CLAS_PROP.numero, CLAS_PROP.anno, concat(DUENNO_PROP.primer_nombre,' ', DUENNO_PROP.primer_apellido) AS nombre FROM UNIONLINE.PROPIEDAD JOIN DUENNO_PROP ON PROPIEDAD.DUENNO_PROP_id_duenno = DUENNO_PROP.id_duenno JOIN CLAS_PROP ON PROPIEDAD.CLAS_PROP_id_clas = CLAS_PROP.id_clas WHERE rut_duenno ="%s";' ,[queryset] )
+            duenno= DuennoProp.objects.raw('SELECT PROPIEDAD.id_propiedad, CLAS_PROP.id_clas, DUENNO_PROP.id_duenno, DUENNO_PROP.rut_duenno, CLAS_PROP.foja, CLAS_PROP.numero, YEAR(CLAS_PROP.anno) as fecha, concat(DUENNO_PROP.primer_nombre," ", DUENNO_PROP.primer_apellido) AS nombre FROM UNIONLINE.PROPIEDAD JOIN DUENNO_PROP ON PROPIEDAD.DUENNO_PROP_id_duenno = DUENNO_PROP.id_duenno JOIN CLAS_PROP ON PROPIEDAD.CLAS_PROP_id_clas = CLAS_PROP.id_clas WHERE rut_duenno = %s;' ,[queryset] )
         else:
             messages.warning(request, "El campo no puede quedar vacío.")
     data ={
