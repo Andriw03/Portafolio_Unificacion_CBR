@@ -274,7 +274,7 @@ def consultasProp(request):
     if request.method == 'POST':
         if request.POST.get("rut") != '':
             queryset= request.POST.get("rut")
-            duenno= DuennoProp.objects.raw('SELECT * FROM UNIONLINE.PROPIEDAD join UNIONLINE.DIRECCION on UNIONLINE.PROPIEDAD.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas join UNIONLINE.DUENNO_PROP on UNIONLINE.PROPIEDAD.DUENNO_PROP_id_duenno = UNIONLINE.DUENNO_PROP.id_duenno join UNIONLINE.TIPO_PROPIEDAD on UNIONLINE.PROPIEDAD.TIPO_PROPIEDAD_id_tipoP = UNIONLINE.TIPO_PROPIEDAD.id_tipoP join UNIONLINE.COMUNA on UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna join UNIONLINE.PROVINCIA on UNIONLINE.COMUNA.PROVINCIA_id_provincia= UNIONLINE.PROVINCIA.id_provincia join UNIONLINE.REGION on UNIONLINE.PROVINCIA.REGION_id_region = UNIONLINE.REGION.id_region ="%s";' ,[queryset] )
+            duenno= DuennoProp.objects.raw('SELECT  DUENNO_PROP.rut_duenno, CLAS_PROP.foja, CLAS_PROP.numero, CLAS_PROP.anno, concat(DUENNO_PROP.primer_nombre,' ', DUENNO_PROP.primer_apellido) AS nombre FROM UNIONLINE.PROPIEDAD JOIN DUENNO_PROP ON PROPIEDAD.DUENNO_PROP_id_duenno = DUENNO_PROP.id_duenno JOIN CLAS_PROP ON PROPIEDAD.CLAS_PROP_id_clas = CLAS_PROP.id_clas WHERE rut_duenno ="%s";' ,[queryset] )
         else:
             messages.warning(request, "El campo no puede quedar vacío.")
     data ={

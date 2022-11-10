@@ -3,7 +3,7 @@ from django.urls import re_path as url
 from django.contrib.auth import views as auth_views
 from .views import inicio, iniciar_sesion, crearCuenta, perfil, formularioUser, inicioadmin, regDirector, show_create, transferencia, webpay_plus_commit, webpay_plus_create, listarDirector
 from .views import inicio, crearCuenta, perfil, paginaPrinc, consultasCom, formularioUser, conservador, listar_tra, solicitar_tra, eliminar_carrito, inicioadmin, regDirector,carrito_pagar
-from .views import inicio, crearCuenta, perfil, paginaPrinc, consultasProp, formularioUser, conservador, consultasCom, inicioadmin, regDirector,agregar_cbr, listar_cbr,modificar_cbr, eliminar_cbr
+from .views import inicio, crearCuenta, perfil, paginaPrinc, consultasProp, formularioUser, conservador, consultasCom, inicioadmin, regDirector,agregar_cbr, listar_cbr, modificar_cbr, eliminar_cbr
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -29,7 +29,6 @@ urlpatterns = [
     url(r'^create/$', webpay_plus_create, name="create"),
     url(r'^commit/$', webpay_plus_commit, name="commit"),
     url(r'^create_2/$', show_create, name="create_2"),
-    url(r'^transferencia/$', transferencia, name="transferencia")
     url(r'^transferencia/$', transferencia, name="transferencia"),
     path('agregarCbr', agregar_cbr, name='agregarCbr' ),
     path('listarCbr', listar_cbr, name='listarCbr' ),
