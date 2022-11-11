@@ -16,14 +16,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
   <!-- Template Main CSS File -->
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
   <link rel="stylesheet" href="{% static 'css/reset.css' %}">
@@ -35,67 +27,89 @@
 
 <body>
     
-    <header id="header" class="header fixed-top d-flex align-items-center">
-      
-        <div class="container d-flex align-items-center justify-content-between">
-    
-          <a href="{% url 'inicio' %}" class="logo d-flex align-items-center me-auto me-lg-0">
-            <h1>CBRS de Chile<span>.</span></h1>
-          </a>
-    
-          <nav id="navbar" class="navbar">
-            <ul>
-              <li><a href="{% url 'inicio' %}">Inicio</a></li>
-              <li><a href="{% url 'formulario' %}">Contacto</a></li>
-              <li class="dropdown"><a href="#"><span>Trámites en línea</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  {% for t in tramites.all %}
-                    <li><a href="{% url 'listar' id=t.pk %}">{{ t.nombre_tipot }}</a></li>
-                  {% endfor %}
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>Consultas en línea</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="{% url 'consultorP'%}">Indice de Propiedades</a></li>
-                  <li><a href="{% url 'consultorC'%}">Indice de Comercio</a></li>
-                </ul>
-              </li>
-            </ul>
-            {% if user.is_authenticated %}
-            <div class="dropdown">
-                <button class="btn dropdown-toggle text-white" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    Bienvenido {{user.first_name}} {{user.last_name}}
+    <header>
+      <div class="arriba">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+              <a href="{% url 'inicio' %}" class="navbar-brand">
+                <h1>CBRS de Chile<span>.</span></h1>
+              </a>
+                
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a href="{% url 'perfil' %}" class="nav-link px-2 tdropdown-item" style="color: black;" class="Cerrar-Sesion">Perfil</a></li>
-                    <li><a href="{% url 'logout' %}" class="nav-link px-2 tdropdown-item" style="color: black;" class="Cerrar-Sesion">Cerrar Sesión</a></li>  
-                </ul>
-                  
-              </div>
-              <button type="button" class="btn btn-light position-relative" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
-                  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
-                </svg>
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                  {{can_carrito}}
-                  <span class="visually-hidden">unread messages</span>
-                </span>
-              </button>
-              {% else %}
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="{% url 'inicio' %}" class="nav-item nav-link">Inicio</a>
+                        <a href="{% url 'formulario' %}" class="nav-item nav-link">Contacto</a>
+                        <div class="dropdown">
+                          <a href="#" class="nav-item nav-link" data-bs-toggle="dropdown" aria-expanded="false" > <span>Trámites en línea</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                       
+                          <ul class="dropdown-menu">
+                            {% for t in tramites.all %}
+                              <li><a href="{% url 'listar' id=t.pk %}" class="dropdown-item nav-item nav-link">{{ t.nombre_tipot }}</a></li>
+                            {% endfor %}
+                          </ul>
+                      </div>
+                      <div class="dropdown">
+                        <a href="#" class="nav-item nav-link" data-bs-toggle="dropdown" aria-expanded="false" > <span>Consultas en línea</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                     
+                        <ul class="dropdown-menu">
 
-              
-              <a class="btn-book-a-table" href="{% url 'registrarse' %}">Crear Cuenta</a>
-              <a class="btn-book-a-table" href="{% url 'iniciar_sesion' %}">Iniciar Sesión</a>
-              <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-              <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-             
-              {% endif %}
-          </nav><!-- .navbar -->
+                          <li><a href="{% url 'consultorP'%}" class="dropdown-item nav-item nav-link">Indice de Propiedades</a></li>
+                          <li><a href="{% url 'consultorC'%}" class="dropdown-item nav-item nav-link">Indice de Comercio</a></li>
+
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="navbar-nav ms-auto">
+                      {% if user.is_authenticated %}
+                      <div class="dropdown">
+                          <button class="btn dropdown-toggle text-white" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                              Bienvenido {{user.first_name}} {{user.last_name}}
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a href="{% url 'perfil' %}" class="nav-link px-2 tdropdown-item" style="color: black;" class="Cerrar-Sesion">Perfil</a></li>
+                              <li><a href="{% url 'logout' %}" class="nav-link px-2 tdropdown-item" style="color: black;" class="Cerrar-Sesion">Cerrar Sesión</a></li>  
+                          </ul>
+                            
+                        </div>
+                        <button type="button" class="btn btn-light position-relative" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                          </svg>
+                          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {{can_carrito}}
+                            <span class="visually-hidden">unread messages</span>
+                          </span>
+                        </button>
+                        {% else %}
+                        
+                        <div class="btn-group dropstart">
+                          <a href="#" class="nav-item nav-link" data-bs-toggle="dropdown" aria-expanded="false" > <span><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                          </svg></span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                       
+                          <ul class="dropdown-menu">
+  
+                            <li><a href="{% url 'registrarse' %}" class="dropdown-item nav-item nav-link">Registrarse</a></li>
+                            <li><a href="{% url 'iniciar_sesion' %}" class="dropdown-item nav-item nav-link">Iniciar Sesión</a></li>
+  
+                          </ul>
+                        </div>
+                        
+                       
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
     
          
     
-        </div>
-      </header><!-- End Header -->
+    </header><!-- End Header -->
     <br><br>
     <main>
       <br>
@@ -149,11 +163,20 @@
                     </aside>
         </div>
       </div>
-                    {% if messages %}
-                      {% for m in messages %}
-                        {{m}}
-                      {% endfor %}
-                    {% endif %}
+      <div class="mensaje">
+        {% if messages %}
+          <ul class="messages">
+            {% for message in messages %}
+              <div class="container-fluid p-0">
+                <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+                  {{ message }}
+                </div>
+              </div>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+
                     {% block content %} 
                     {% endblock %}
     </main>
