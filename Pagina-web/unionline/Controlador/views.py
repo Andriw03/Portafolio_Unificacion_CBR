@@ -575,15 +575,7 @@ def webpay_plus_create(request):
     tx = Transaction()
     response = tx.create(buy_order, session_id, amount, return_url)
 
-    tpago = get_object_or_404(TipoPago, pk=1)
-    for i in carrito_llenar:
-        car = get_object_or_404(CarCompra, pk=i.id_carrito)
-        #car.estado = 1
-        car.save()
-        estado_pago = EstadoPago()
-        estado_pago.car_compra_id_carrito = car
-        estado_pago.tipo_pago_id_tipop = tpago
-        estado_pago.save()
+    
     token=response['token']
     data = {
         'token1':token
@@ -597,15 +589,43 @@ def webpay_plus_create(request):
 
 def webpay_plus_commit(request):
     token = request.GET.get("token_ws")
-    print(str(token))
-
-    print("estamos en el commit----dentro del POST")
-    token = request.POST.get("token_ws")
-    print("commit for token_ws: {}".format(token))
-
-    response = Transaction.commit(token=token)
+    tx = Transaction()
+    response = tx.commit(token=token)
+    monto = response['amount']
+    status = response['status']
+    buy_order = response['buy_order']
+    card_detail = response['card_detail']
+    card_number = card_detail['card_number']
+    date = response['transaction_date']
+    date = date.replace("T", " ")
+    date = date[:-5]
     print("response: {}".format(response))
-    return render(request,'Web_pay_plus/commit.html',token=token, response=response)
+    user = request.user
+    carrito_llenar = listar_carrito(user.username)
+    if status == "AUTHORIZED":
+        tpago = get_object_or_404(TipoPago, pk=1)
+        for i in carrito_llenar:
+            car = get_object_or_404(CarCompra, pk=i.id_carrito)
+            car.estado = 1
+            car.save()
+            estado_pago = EstadoPago()
+            estado_pago.car_compra_id_carrito = car
+            estado_pago.tipo_pago_id_tipop = tpago
+            estado_pago.save()
+            solicitud = get_object_or_404(Solicitud, pk = car.solicitud_id_soli)
+            now = datetime.now()
+            solicitud.fecha_solicitud = now.strftime("%Y-%m-%d %H:%M:%S")
+            solicitud.save()
+    data = {
+        'token':token, 
+        'response':response,
+        'monto': monto,
+        'status': status,
+        'buy_order': buy_order,
+        'card_number': card_number,
+        'date': date,
+    }
+    return render(request,'Web_pay_plus/commit.html',data)
 
 
 #transaccion creada
