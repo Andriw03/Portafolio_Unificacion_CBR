@@ -22,6 +22,7 @@ from django.db.models import Q
 from .forms import FormFormularioForm
 from transbank.error.transbank_error import TransbankError
 from transbank.webpay.webpay_plus.transaction import Transaction
+from django.contrib.auth.decorators import user_passes_test
 
 def listar_carrito(rut):
     carrito = CarCompra.objects.raw("SELECT id_carrito, id_soli, id_tramite, nombre_tramite, valor_tramite FROM UNIONLINE.CAR_COMPRA inner join UNIONLINE.SOLICITUD on SOLICITUD_id_soli = id_soli inner join UNIONLINE.TRAMITE on TRAMITE_id_tramite = id_tramite inner join UNIONLINE.USUARIO on USUARIO_id_usuario = id_usuario where CAR_COMPRA.estado = 0 and rut_usuario = %s;",[rut])
@@ -30,6 +31,7 @@ def listar_carrito(rut):
 def listar_tramites():
     tramites = TTramite.objects.all()
     return tramites
+
 
 def inicio(request):
     #agregar a todas las ventanas de cliente
@@ -43,8 +45,10 @@ def inicio(request):
         can_carrito += 1
     miles_translator = str.maketrans(".,", ",.")
     valor = "{:,}".format(valor).translate(miles_translator)
-    
+    if usu.groups.filter(name='Admin').exists():
+        return redirect(to="inicioadmin")
     ######
+    usu
     region = Region.objects.all()
     comuna = ''
     cbr = ''
@@ -79,7 +83,7 @@ def inicio(request):
 
 
 def iniciar_sesion(request):
-    
+
     if request.method == 'POST':
         rut = request.POST.get('rut')
         contraseña = request.POST.get('password')
@@ -90,8 +94,19 @@ def iniciar_sesion(request):
             if userLogin is not None:
                 login(request, userLogin)
                 userA = request.user
+                us = Usuario.objects.raw("SELECT * FROM UNIONLINE.USUARIO where rut_usuario = %s;",[rut])  
+                tCliente= get_object_or_404(TUsuario, pk=5)
+                tAdmin= get_object_or_404(TUsuario, pk=1)
+                for i in us:
+                   
+                    if i.t_usuario_id_tipou == tCliente:
+                        print("uwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwu")
+                        return redirect(to="perfil")
+                        
+                    elif i.t_usuario_id_tipou == tAdmin:
+
+                        return redirect(to="inicioadmin")
                 
-                return redirect(to="perfil")
                 
             else:
                 mensaje = 'Error, usuario no encontrado'
@@ -147,6 +162,7 @@ def crearCuenta(request):
         else:
             try:
                 user.save()   
+                user.groups.add('Cliente')
                 usuario.contrasenna = user.password
                 usuario.save()
                 messages.success(request, "Cuenta Creada Correctamente")
@@ -405,10 +421,11 @@ def eliminar_carrito(request, id_solicitud, id_car):
     return redirect(to="perfil")
 
 
-
+@login_required(login_url='/iniciar_sesion')
 def inicioadmin(request):
     return render(request, 'templates/inicio_admin.html')
 
+@login_required(login_url='/iniciar_sesion')
 def agregar_cbr (request):
     comuna = Comuna.objects.all()
     cbr = ''
@@ -456,6 +473,7 @@ def agregar_cbr (request):
 
     return render(request, 'templates/agregar_cbr.html',data)
 
+@login_required(login_url='/iniciar_sesion')
 def listar_cbr (request):
     cbr = Cbr.objects.raw("SELECT CBR.id_cbr, CBR.nombre_cbr, CBR.correo_cbr, CBR.telefono, concat(DIRECCION.nombre_calle, ' ', DIRECCION.numero_casa) AS DIR_CBR , concat(HOR_ATENCION.dias_atencion ,' ', HOR_ATENCION.horario_apertura ,'-', HOR_ATENCION.horario_cierre) AS HORARIOS FROM UNIONLINE.CBR JOIN UNIONLINE.DIRECCION ON CBR.DIRECCION_id_direccion = DIRECCION.id_direccion JOIN HOR_ATENCION ON CBR.HOR_ATENCION_id_horario = HOR_ATENCION.id_horario " )
     data={
@@ -463,6 +481,7 @@ def listar_cbr (request):
     }
     return render(request, 'templates/listar_cbr.html' , data)
 
+@login_required(login_url='/iniciar_sesion')
 def modificar_cbr(request,id):
     cbr = get_object_or_404(Cbr, id_cbr = id)
     data={
@@ -477,12 +496,14 @@ def modificar_cbr(request,id):
         data["form"] = formulario
     return render(request,'templates/modificar_cbr.html', data)
 
+@login_required(login_url='/iniciar_sesion')
 def eliminar_cbr(request,id):
     cbr = get_object_or_404(Cbr, id_cbr = id)
     cbr.delete()
     messages.success(request, "Eliminado correctamente")
     return redirect(to="listarCbr")
 
+@login_required(login_url='/iniciar_sesion')
 def regDirector(request):
     if request.method == 'POST':
             usuario = Usuario()
@@ -504,21 +525,15 @@ def regDirector(request):
             usuario.cbr_id_cbr = cbr
             usuario.t_usuario_id_tipou = tipoU
 
-            user = User()
-            user.email = usuario.correo_electronico
-            user.set_password(request.POST.get('Contraseña'))
-            user.username = request.POST.get('rut')
-            user.first_name = request.POST.get('Nombre')
-            user.last_name = request.POST.get('Primer_Apellido')
+            
             
 
             if usuario.rut_usuario == "" or usuario.primer_nombre == "" or usuario.segundo_nombre == "" or usuario.primer_apellido == "" or usuario.segundo_apellido == "" or usuario.telefono == "" or usuario.correo_electronico == "" or usuario.contrasenna == "":
                 messages.warning(request, 'Los campos no pueden quedar vacios.')
                 return redirect('registrarse')
             else:
-                try:
-                    user.save()   
-                    usuario.contrasenna = user.password
+                try: 
+                    usuario.contrasenna = request.POST.get('Contraseña')
                     usuario.save()
                     messages.success(request, "Cuenta Creada Correctamente")
                     return redirect(to="iniciar_sesion")
@@ -529,6 +544,7 @@ def regDirector(request):
         
     return render(request, 'registration/registrar_usuarios.html')
 
+@login_required(login_url='/iniciar_sesion')
 def listarDirector (request):
     #tuser = get_object_or_404(TUsuario, pk = id_tipoU)
     #tuser = TUsuario.objects.filter(id_tipoU = 2)
@@ -538,12 +554,14 @@ def listarDirector (request):
     #usuario = Usuario.objects.raw("SELECT * FROM UNIONLINE.USUARIO where T_USUARIO_id_tipoU = 5 and rut_usuario = %s;",[])
     return render(request, 'templates/listar_usuarios.html',{"Usuario": user})
 
+@login_required(login_url='/iniciar_sesion')
 def Eliminardirector (request, id):
     director=Usuario.objects.get(id_usuario = id)
     director.delete()
 
     return redirect('listarDirector')
 
+@login_required(login_url='/iniciar_sesion')
 def EditarDirector (request, id):
     director=Usuario.objects.get(id_usuario = id)
     
@@ -553,7 +571,7 @@ def EditarDirector (request, id):
 
     return render(request, "editar_director.html", data)
 
-
+@login_required(login_url='/iniciar_sesion')
 def ediciondirector (request):
         #usuario.primer_nombre = request.POST.get('Nombre')
     id = int(request.POST['id'])
