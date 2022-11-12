@@ -18,26 +18,75 @@
                 <h3 class="display-6 fw-bold">Editar CBR</h3>
                 <br>
                 <br>
-            <form  action="" method = "POST">
-              {% csrf_token %}
-              
-              <div class="form-group">
-                <div class="col-md-2  mx-auto">
-                
-                    {{form}}
-            </div>
-        </div>
-          
-          <br>
-          
-          
-      <div class="d-flex justify-content-center">
-        <input type="submit" value="Cancelar" class="btn btn-secondary">
-        <input type="submit" value="Editar" class="btn btn-primary">
+                <form class="formulario" method="post">
+                  {% csrf_token %}
+                      
+                  <div class="contenedor">
+                  {% for c in cbr %}
+                      <div class="input-contenedor">
+                          <input type="text" name="nombre_cbr"  value = "{{c.nombre_cbr}}"   placeholder="Nombre CBR">
+                      </div>
+      
+                      <div class="input-contenedor">
+                          <input type="email" name="correo_cbr" value = "{{c.correo_cbr}}" placeholder="Correo CBR">
+                      </div>
+      
+                      <div class="input-contenedor">
+                          <input type="tel" name="telefono"  value = "{{c.telefono}}" placeholder="Telefono CBR">
+                      </div>
+      
 
-      </div>
-      </form>
-      {{mensaje}}
+                      <!--PASARLE EL HORARIO DE ATENCION-->
+                      <div class="input-contenedor">
+                        <select class="form-select" name="cmbHorario" id="inputGroupSelect04" aria-label="Example select with button addon">
+                          <option selected>Seleccione un horario...</option>
+                          
+                            {% if c.id_horario %}
+                          <option value="{{c.pk}}">Lunes a Viernes de 08:00 a 15:00 hrs</option>
+                            {% endif %}
+                          
+                        </select>
+                        
+                        
+                        
+                      </div>
+                      
+      
+                      <div class="input-contenedor">
+                  
+                          <input type="text" value = "{{c.nombre_calle}}" name="calle" placeholder="Calle">
+                      </div>
+      
+                      <div class="input-contenedor">
+                          
+                          <input type="text" name="numero_lugar" value = " {{c.numero_casa}}" placeholder="# Numeración">
+                      </div>
+                      <!--COMUNA, REGION Y BLABLABLA CON FOR-->
+                  
+              
+                        <div class="input-group">
+                          <select class="form-select" name="cmbComuna" id="inputGroupSelect04" aria-label="Example select with button addon">
+                            <option selected>Seleccione una comuna...</option>
+                            {% for c in comuna %}
+                            <option value="{{c.pk}}">{{c.nombre_comuna}}</option>
+                            {% endfor %}
+                            {% endfor %}
+                          </select>
+                      </div>
+      
+                  </div>
+             
+                  
+          </main>
+        
+        
+    <div class="d-flex justify-content-center">
+      <input type="submit" value="Cancelar" class="btn btn-secondary">
+      <input  type="submit" value="Editar" class="btn btn-primary">
+
+    </div>
+    </form>
+    {{message}}
       </div>
     </div>
     </div>

@@ -454,7 +454,7 @@ def agregar_cbr (request):
         else:
             try:
                 cbr.save()   
-                messages.success(request, "Cuenta Creada Correctamente")
+                messages.success(request, "CBR creado correctamente")
                 return redirect(to="agregarCbr")
             except Exception as e:
                 mensaje = "No se ha podido guardar el cbr: " + str(e)
@@ -483,17 +483,43 @@ def listar_cbr (request):
 
 @login_required(login_url='/iniciar_sesion')
 def modificar_cbr(request,id):
-    cbr = get_object_or_404(Cbr, id_cbr = id)
+    comuna = Comuna.objects.all()
+    cbr = Cbr.objects.raw ("SELECT * FROM UNIONLINE.CBR JOIN UNIONLINE.DIRECCION ON UNIONLINE.CBR.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion JOIN UNIONLINE.HOR_ATENCION ON UNIONLINE.CBR.HOR_ATENCION_id_horario = UNIONLINE.HOR_ATENCION.id_horario JOIN UNIONLINE.COMUNA ON UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna where UNIONLINE.CBR.id_cbr = %s;" ,[id])
+    
+
     data={
-        'form':CbrForm(instance=cbr)
+        'cbr':cbr,
+        'comuna': comuna,
     }
+    
     if request.method == 'POST':
-        formulario = CbrForm(data=request.POST, instance=cbr)
-        if formulario.is_valid():
-            formulario.save()
-            messages.success(request,"Modificado con éxito")
-            return redirect(to="listarCbr")
-        data["form"] = formulario
+        
+        cbr=Cbr()
+        dir = Direccion()
+        horario= get_object_or_404(HorAtencion, pk= request.POST.get ('cmbHorario'))
+        cbr.nombre_cbr=request.POST.get('nombre_cbr')
+        cbr.correo_cbr= request.POST.get('correo_cbr')
+        cbr.telefono = request.POST.get('telefono')
+        cbr.hor_atencion_id_horario = horario
+        dir.nombre_calle = request.POST.get('calle')
+        dir.numero_casa = request.POST.get ('numero_lugar')
+        comuna = get_object_or_404(Comuna, pk= request.POST.get ('cmbComuna'))
+        cbr.direccion_id_direccion = dir
+        dir.comuna_id_comuna = comuna
+        dir.save()
+        
+        
+        if cbr.nombre_cbr == "" or cbr.correo_cbr == "" or cbr.telefono == "" or cbr.hor_atencion_id_horario == "" or dir.nombre_calle == "" or dir.numero_casa == "":
+            messages.warning(request, 'Los campos no pueden quedar vacios.')
+            return redirect('registrarse')
+        else:
+            try:
+                cbr.save()   
+                messages.success(request, "CBR Modificado Correctamente")
+                return redirect(to="modificarCbr")
+            except Exception as e:
+                mensaje = "No se ha podido guardar el cbr: " + str(e)
+                messages.warning(request, mensaje)
     return render(request,'templates/modificar_cbr.html', data)
 
 @login_required(login_url='/iniciar_sesion')

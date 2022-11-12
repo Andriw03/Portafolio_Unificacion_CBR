@@ -12,7 +12,7 @@
       <div>
 <Main>
     
-    <div class = "container p-5 my-5 border">
+    <div class = "container p-5 my-7 border">
           <div class ="card ">
             <div class ="card-body ">
                 <h3 class="display-6 fw-bold">Agregar nuevo CBR</h3>
@@ -40,7 +40,7 @@
 
                         <!--PASARLE EL HORARIO DE ATENCION-->
                         <div class="input-contenedor">
-                          <select class="form-select" name="cmbHorario" id="inputGroupSelect04" aria-label="Example select with button addon">
+                          <select class="selectpicker show-tick"  data-width= "200px" name="cmbHorario" id="inputGroupSelect04" aria-label="Example select with button addon">
                             <option selected>Seleccione un horario...</option>
                             {% for a in aten %}
                               {% if a.id_horario %}
@@ -67,7 +67,7 @@
                     
                 
                           <div class="input-group">
-                            <select class="form-select" name="cmbComuna" id="inputGroupSelect04" aria-label="Example select with button addon">
+                            <select class="selectpicker show-tick"  data-width= "200px" name="cmbComuna" id="inputGroupSelect04" aria-label="Example select with button addon">
                               <option selected>Seleccione una comuna...</option>
                               {% for c in comuna %}
                               <option value="{{c.pk}}">{{c.nombre_comuna}}</option>
@@ -87,7 +87,8 @@
 
       </div>
       </form>
-      {{mensaje}}
+      {{message}}
+      
       </div>
     </div>
     </div>
