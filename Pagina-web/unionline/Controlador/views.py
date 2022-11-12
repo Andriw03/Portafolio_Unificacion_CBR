@@ -510,6 +510,52 @@ def listarDirector (request):
     #usuario = Usuario.objects.raw("SELECT * FROM UNIONLINE.USUARIO where T_USUARIO_id_tipoU = 5 and rut_usuario = %s;",[])
     return render(request, 'templates/listar_usuarios.html',{"Usuario": user})
 
+def Eliminardirector (request, id):
+    director=Usuario.objects.get(id_usuario = id)
+    director.delete()
+
+    return redirect('listarDirector')
+
+def EditarDirector (request, id):
+    director=Usuario.objects.get(id_usuario = id)
+    
+    data = {
+        'director' : director
+    }
+
+    return render(request, "editar_director.html", data)
+
+
+def ediciondirector (request):
+        #usuario.primer_nombre = request.POST.get('Nombre')
+    id = int(request.POST['id'])
+    nombre = request.POST['Nombre']
+        #usuario.segundo_nombre = request.POST.get('Segundo_Nombre')
+    sdo_nombre = request.POST['Segundo_Nombre']
+        #usuario.primer_apellido = request.POST.get('Primer_Apellido')
+    apellido = request.POST['Primer_Apellido']
+        #usuario.segundo_apellido = request.POST.get('Segundo_Apellido')
+    sdoapellido = request.POST['Segundo_Apellido']
+        #usuario.telefono = request.POST.get('Telefono')
+    fono = request.POST['Telefono']
+        #usuario.correo_electronico = request.POST.get('Correo')
+    email = request.POST['Correo']
+        #usuario.contrasenna = request.POST.get('Contraseña')
+    pwd = request.POST['c']
+    #director = get_object_or_404(Usuario, id_usuario = id)
+    director=Usuario.objects.get(id_usuario = id)
+    director.primer_nombre = nombre
+    director.segundo_nombre = sdo_nombre
+    director.primer_apellido = apellido
+    director.segundo_apellido = sdoapellido
+    director.telefono = fono
+    director.correo_electronico = email
+    director.contrasenna = pwd
+
+    director.save()
+
+    return redirect('listarDirector')
+
 @login_required(login_url='/iniciar_sesion')
 def carrito_pagar(request):
     #agregar a todas las ventanas de cliente

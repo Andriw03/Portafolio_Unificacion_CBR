@@ -1,3 +1,6 @@
+{% extends 'templates\base.html' %}
+{% load static %}
+{% block content %}
 <html lang="es">
   <head>
     <meta charset="utf-8">
@@ -25,7 +28,7 @@
   <!-- Template Main CSS File -->
   <link rel="stylesheet" href="static/css/reset.css">
   <link rel="stylesheet" href="static/css/main.css">
-  <link rel="stylesheet" href="static/css/registrar_admin.css">
+  <link rel="stylesheet" href="static/css/editar_director.css">
 </head>
  
 <body>
@@ -41,9 +44,10 @@
     </header>
 
     <main>
-        <form class="formulario" method="post">
+        <form class="formulario" action="/ediciondirector/" method="post">
             {% csrf_token %}
-                <h1>Registrar Directores</h1>
+            
+                <h1>Editar Directores</h1>
             <div class="contenedor">
                 {% if messages %}
                     <ul class="messages">
@@ -56,49 +60,50 @@
                     </ul>
                 {% endif %}
             
-                <div class="input-contenedor">
+                <!--<div class="input-contenedor">
 
                     <i class="fa-solid fa-user icon"></i>
                    
                     <input type="text" name="rut" id="rut" onkeyup="mascara(this,formatoRUT)" placeholder="RUT">
-                </div>
+                </div>-->
+                <input type="hidden" name="id" value="{{director.id_usuario}}">
                 <div class="input-contenedor">
                     <i class="fa-solid fa-user icon"></i>
-                    <input type="text" name="Nombre" placeholder="Primer Nombre">
-                </div>
-
-                <div class="input-contenedor">
-                    <i class="fa-solid fa-user icon"></i>
-                    <input type="text" name="Segundo_Nombre" placeholder="Segundo Nombre">
+                    <input type="text" name="Nombre" value="{{director.primer_nombre}}" placeholder="Primer Nombre">
                 </div>
 
                 <div class="input-contenedor">
                     <i class="fa-solid fa-user icon"></i>
-                    <input type="text" name="Primer_Apellido" placeholder="Primer Apellido">
+                    <input type="text" name="Segundo_Nombre" value="{{director.segundo_nombre}}" placeholder="Segundo Nombre">
                 </div>
 
                 <div class="input-contenedor">
                     <i class="fa-solid fa-user icon"></i>
-                    <input type="text" name="Segundo_Apellido" placeholder="Segundo Apellido">
+                    <input type="text" name="Primer_Apellido" value="{{director.primer_apellido}}" placeholder="Primer Apellido">
+                </div>
+
+                <div class="input-contenedor">
+                    <i class="fa-solid fa-user icon"></i>
+                    <input type="text" name="Segundo_Apellido" value="{{director.segundo_apellido}}" placeholder="Segundo Apellido">
                 </div>
 
                 <div class="input-contenedor">
                     <i class="fa-solid fa-phone icon"></i>
-                    <input type="tel" name="Telefono" placeholder="Teléfono">
+                    <input type="tel" name="Telefono" value="{{director.telefono}}" placeholder="Teléfono">
                 </div>
 
                 <div class="input-contenedor">
                     <i class="fa-solid fa-envelope icon"></i>
-                    <input type="email" name="Correo" placeholder="Coreo Electrónico">
+                    <input type="email" name="Correo" value="{{director.correo_electronico}}" placeholder="Coreo Electrónico">
                 </div>
 
                 <div class="input-contenedor">
                     <i class="fa-solid fa-lock icon"></i>
-                    <input type="password" name="Contraseña" placeholder="Contraseña">
+                    <input type="password" name="c" value="{{director.contrasenna}}" placeholder="Contraseña">
                 </div>
 
                 <div>
-                    <input type="submit" name="registrar" value="Registrar Usuario" class="button">
+                    <input type="submit" name="registrar" value="Editar Usuario" class="button">
                     
                   
               </div>
@@ -151,4 +156,5 @@ function darFormatoRUT(rut) {
     </script>
 
 </body>
+{% endblock %}
 </html>
