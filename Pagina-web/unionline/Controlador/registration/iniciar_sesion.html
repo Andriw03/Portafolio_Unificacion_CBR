@@ -24,40 +24,39 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link rel="stylesheet" href="/static/css/reset.css">
+  <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
   <link rel="stylesheet" href="/static/css/styles_recepcion.css">
-  <link rel="stylesheet" href="/static/css/main.css">
-  <link rel="stylesheet" href="/static/css/login.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" ></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.js" ></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.js" ></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/css/inputmask.min.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.js" ></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/css/inputmask.min.css" rel="stylesheet"/>
   <!-- CSS only -->
   <script src="https://kit.fontawesome.com/33be0875fa.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="{% static 'css\login.css' %}">
 </head>
  
 <body>
-  <header id="header" class="header fixed-top d-flex align-items-center">
-
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <a href="{% url 'inicio' %}" class="logo d-flex align-items-center me-auto me-lg-0">
-        <h1>CBRS de Chile<span>.</span></h1>
-      </a>
-    </header>
+  <header>
+    <div class="arriba">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a href="{% url 'inicio' %}" class="navbar-brand">
+            CBRS de Chile.
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
     <main>
 
         <form class="formulario" action="" id="formulario-login" enctype="multipart/formdata" method="POST">
           {% csrf_token %}
-
             <h1>Iniciar Sesión</h1>
             <div class="contenedor">
                 <div class="input-contenedor">
                     <i class="fa-solid fa-user icon"></i>
                     <input type="text" onkeyup="mascara(this,formatoRUT)" name="rut" id="rut" placeholder="Rut" maxlength="12">
-                    
-                  </div>
+                </div>
 
                 <div class="input-contenedor">
                     <i class="fa-solid fa-lock icon"></i>
@@ -80,11 +79,10 @@
           </ul>
       {% endif %}
         </div>
-      </div>
     </main>
     <footer>
-        <p class="copyright">&copy Copyright Ministerio de Vivienda y Urbanismo - 2022</p>
-      </footer>
+      <p class="copyright">&copy Copyright Ministerio de Vivienda y Urbanismo - 2022</p>
+    </footer>
 
 </body>
 <script>
