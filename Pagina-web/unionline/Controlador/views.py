@@ -4,7 +4,7 @@ from urllib import response
 from webbrowser import get
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import auth, messages
-from . models import Cbr, ClasProp, DuennoProp, EstadoPago, TipoPago, Usuario, TUsuario,Comuna,Region,Provincia,Solicitud,Tramite, Direccion, TTramite, Propiedad, CarCompra
+from . models import Cbr, ClasProp, DuennoProp, EstadoPago, TipoPago, Usuario, TUsuario,Comuna,Region,Provincia,Solicitud,Tramite, Direccion, TTramite, Propiedad, CarCompra, HorAtencion
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -19,7 +19,7 @@ from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView
 from django.db.models import Q
-from .forms import FormFormularioForm, CbrForm
+from .forms import FormFormularioForm
 from transbank.error.transbank_error import TransbankError
 from transbank.webpay.webpay_plus.transaction import Transaction
 
@@ -235,16 +235,14 @@ def consultasCom(request):
     valor = "{:,}".format(valor).translate(miles_translator)
     
     ######
-    queryset=request.POST.get("rut")
+    
     clas= ''
-    if queryset:
-        clas= ClasProp.objects.filter(
-            Q(rut_empresa__icontains = queryset) |
-            Q(razon_social__icontains = queryset)|
-            Q(foja__icontains = queryset)|
-            Q(numero__icontains = queryset)|
-            Q(anno__icontains = queryset)
-        ).distinct()
+    if request.method == 'POST':
+        if request.POST.get("rut") != '':
+            queryset= request.POST.get("rut")
+            clas= ClasProp.objects.raw('SELECT CLAS_PROP.id_clas, CLAS_PROP.foja, CLAS_PROP.numero, CLAS_PROP.razon_social, CLAS_PROP.rut_empresa ,YEAR(CLAS_PROP.anno) as fecha FROM UNIONLINE.CLAS_PROP WHERE rut_empresa = %s;' ,[queryset] )
+        else:
+            messages.warning(request, "El campo no puede quedar vacío.")
     data ={
         'tramites':tramites,
         'clas': clas,
@@ -412,21 +410,51 @@ def inicioadmin(request):
     return render(request, 'templates/inicio_admin.html')
 
 def agregar_cbr (request):
-    
-    
-    data={
-        'form':CbrForm()
-
-    }
+    comuna = Comuna.objects.all()
+    cbr = ''
+    provincia = ''
+    aten = HorAtencion.objects.all()
     if request.method == 'POST':
-        formulario = CbrForm(data=request.POST)
-        if formulario.is_valid():
-            formulario.save()
-            data["mensaje"] = "CBR guardado correctamente"
+        
+        cbr=Cbr()
+        dir = Direccion()
+        horario= get_object_or_404(HorAtencion, pk= request.POST.get ('cmbHorario'))
+        cbr.nombre_cbr=request.POST.get('nombre_cbr')
+        cbr.correo_cbr= request.POST.get('correo_cbr')
+        cbr.telefono = request.POST.get('telefono')
+        cbr.hor_atencion_id_horario = horario
+        dir.nombre_calle = request.POST.get('calle')
+        dir.numero_casa = request.POST.get ('numero_lugar')
+        comuna = get_object_or_404(Comuna, pk= request.POST.get ('cmbComuna'))
+        cbr.direccion_id_direccion = dir
+        dir.comuna_id_comuna = comuna
+        dir.save()
+        
+        
+        if cbr.nombre_cbr == "" or cbr.correo_cbr == "" or cbr.telefono == "" or cbr.hor_atencion_id_horario == "" or dir.nombre_calle == "" or dir.numero_casa == "":
+            messages.warning(request, 'Los campos no pueden quedar vacios.')
+            return redirect('registrarse')
         else:
-            data["form"]= formulario
+            try:
+                cbr.save()   
+                messages.success(request, "Cuenta Creada Correctamente")
+                return redirect(to="agregarCbr")
+            except Exception as e:
+                mensaje = "No se ha podido guardar el cbr: " + str(e)
+                messages.warning(request, mensaje)
+    
 
-    return render(request, 'templates/agregar_cbr.html', data)
+
+    data={
+        'comuna': comuna,
+        'cbr' : cbr,
+        'provincia': provincia,
+        'aten': aten,
+    
+    }
+
+
+    return render(request, 'templates/agregar_cbr.html',data)
 
 def listar_cbr (request):
     cbr = Cbr.objects.raw("SELECT CBR.id_cbr, CBR.nombre_cbr, CBR.correo_cbr, CBR.telefono, concat(DIRECCION.nombre_calle, ' ', DIRECCION.numero_casa) AS DIR_CBR , concat(HOR_ATENCION.dias_atencion ,' ', HOR_ATENCION.horario_apertura ,'-', HOR_ATENCION.horario_cierre) AS HORARIOS FROM UNIONLINE.CBR JOIN UNIONLINE.DIRECCION ON CBR.DIRECCION_id_direccion = DIRECCION.id_direccion JOIN HOR_ATENCION ON CBR.HOR_ATENCION_id_horario = HOR_ATENCION.id_horario " )

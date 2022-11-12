@@ -18,17 +18,67 @@
                 <h3 class="display-6 fw-bold">Agregar nuevo CBR</h3>
                 <br>
                 <br>
-            <form  action="" method = "POST">
-              {% csrf_token %}
-              
-              <div class="form-group">
-                <div class="col-md-2  mx-auto">
+            
+             
+                <form class="formulario" method="post">
+                    {% csrf_token %}
+                        
+                    <div class="contenedor">
+                    
+                        <div class="input-contenedor">
+                            <input type="text" name="nombre_cbr"  placeholder="Nombre CBR">
+                        </div>
+        
+                        <div class="input-contenedor">
+                            <input type="email" name="correo_cbr" placeholder="Correo CBR">
+                        </div>
+        
+                        <div class="input-contenedor">
+                            <input type="tel" name="telefono" placeholder="Telefono CBR">
+                        </div>
+        
+
+                        <!--PASARLE EL HORARIO DE ATENCION-->
+                        <div class="input-contenedor">
+                          <select class="form-select" name="cmbHorario" id="inputGroupSelect04" aria-label="Example select with button addon">
+                            <option selected>Seleccione un horario...</option>
+                            {% for a in aten %}
+                              {% if a.id_horario %}
+                            <option value="{{a.pk}}">Lunes a Viernes de 08:00 a 15:00 hrs</option>
+                              {% endif %}
+                            {% endfor %}
+                          </select>
+                          
+                          
+                          
+                        </div>
+                        
+        
+                        <div class="input-contenedor">
+                    
+                            <input type="text" name="calle" placeholder="Calle">
+                        </div>
+        
+                        <div class="input-contenedor">
+                            
+                            <input type="text" name="numero_lugar" placeholder="# Numeración">
+                        </div>
+                        <!--COMUNA, REGION Y BLABLABLA CON FOR-->
+                    
                 
-                    {{form}}
-            </div>
-        </div>
-          
-          <br>
+                          <div class="input-group">
+                            <select class="form-select" name="cmbComuna" id="inputGroupSelect04" aria-label="Example select with button addon">
+                              <option selected>Seleccione una comuna...</option>
+                              {% for c in comuna %}
+                              <option value="{{c.pk}}">{{c.nombre_comuna}}</option>
+                              {% endfor %}
+                            </select>
+                        </div>
+        
+                    </div>
+               
+                    
+            </main>
           
           
       <div class="d-flex justify-content-center">
