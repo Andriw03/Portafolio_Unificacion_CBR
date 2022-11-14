@@ -1,10 +1,11 @@
-{% extends 'templates\base.html' %}
+{% extends 'templates\base_admin.html' %}
 {% load static %}
 {% block content %}
 
 <head>
   <title>Agregar CBR</title>
-  <link rel="stylesheet" href="static/css/perfil-cliente.css">
+  <link rel="stylesheet" href="{% static 'css/agregar_cbr.css' %}">
+  
 </head>
   <Main>
     <div class="px-4 py-5  text-center">
@@ -12,93 +13,75 @@
       <div>
 <Main>
     
-    <div class = "container p-5 my-7 border">
-          <div class ="card ">
-            <div class ="card-body ">
-                <h3 class="display-6 fw-bold">Agregar nuevo CBR</h3>
-                <br>
-                <br>
+<div class = "container_main">
+  <div class ="card ">
+      <div class ="card-body ">
+          <h3 class="display-6 fw-bold">Agregar nuevo CBR</h3>
+        <form class="formulario" method="post">
+        {% csrf_token %}
+                          
+        <div class="contenedor">
+                      
+          <div class="input-contenedor">
+              <input type="text" name="nombre_cbr"  placeholder="Nombre CBR">
+          </div>
             
-             
-                <form class="formulario" method="post">
-                    {% csrf_token %}
-                        
-                    <div class="contenedor">
-                    
-                        <div class="input-contenedor">
-                            <input type="text" name="nombre_cbr"  placeholder="Nombre CBR">
-                        </div>
-        
-                        <div class="input-contenedor">
-                            <input type="email" name="correo_cbr" placeholder="Correo CBR">
-                        </div>
-        
-                        <div class="input-contenedor">
-                            <input type="tel" name="telefono" placeholder="Telefono CBR">
-                        </div>
-        
+          <div class="input-contenedor">
+              <input type="email" name="correo_cbr" placeholder="Correo CBR">
+          </div>
+            
+          <div class="input-contenedor">
+              <input type="tel" name="telefono" placeholder="Telefono CBR">
+        </div>
+          
 
-                        <!--PASARLE EL HORARIO DE ATENCION-->
-                        <div class="input-contenedor">
-                          <select class="selectpicker show-tick"  data-width= "200px" name="cmbHorario" id="inputGroupSelect04" aria-label="Example select with button addon">
-                            <option selected>Seleccione un horario...</option>
-                            {% for a in aten %}
-                              {% if a.id_horario %}
-                            <option value="{{a.pk}}">Lunes a Viernes de 08:00 a 15:00 hrs</option>
-                              {% endif %}
-                            {% endfor %}
-                          </select>
-                          
-                          
-                          
-                        </div>
+        <!--PASARLE EL HORARIO DE ATENCION-->
+        <div class="input-group">
+          <select class="selectpicker show-tick" name="cmbHorario" id="inputGroupSelect04">
+            <option selected>Seleccione un horario...</option>
+            {% for a in aten %}
+              {% if a.id_horario %}
+            <option value="{{a.pk}}">Lunes a Viernes de 08:00 a 15:00 hrs</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+        </div>
                         
         
-                        <div class="input-contenedor">
-                    
-                            <input type="text" name="calle" placeholder="Calle">
-                        </div>
-        
-                        <div class="input-contenedor">
-                            
-                            <input type="text" name="numero_lugar" placeholder="# Numeración">
-                        </div>
-                        <!--COMUNA, REGION Y BLABLABLA CON FOR-->
-                    
-                
-                          <div class="input-group">
-                            <select class="selectpicker show-tick"  data-width= "200px" name="cmbComuna" id="inputGroupSelect04" aria-label="Example select with button addon">
-                              <option selected>Seleccione una comuna...</option>
-                              {% for c in comuna %}
-                              <option value="{{c.pk}}">{{c.nombre_comuna}}</option>
-                              {% endfor %}
-                            </select>
-                        </div>
-        
-                    </div>
+        <div class="input-contenedor">
+                      
+            <input type="text" name="calle" placeholder="Calle">
+        </div>
+          
+        <div class="input-contenedor">
+                              
+            <input type="text" name="numero_lugar" placeholder="# Numeración">
+        </div>
+        <!--COMUNA, REGION Y BLABLABLA CON FOR-->
+                      
+        <div class="input-group">
+          <select class="selectpicker show-tick"  name="cmbComuna" id="inputGroupSelect04">
+            <option selected>Seleccione una comuna...</option>
+            {% for c in comuna %}
+              <option value="{{c.pk}}">{{c.nombre_comuna}}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+    </div> 
+</div>
                
                     
-            </main>
-          
-          
-      <div class="d-flex justify-content-center">
-        <input type="submit" value="Cancelar" class="btn btn-secondary">
+</Main>  
+    <div class="d-flex justify-content-center">
+      <input type="submit" value="Cancelar" class="btn btn-secondary">
         <input type="submit" value="Guardar" class="btn btn-primary">
-
-      </div>
-      </form>
-      {{message}}
-      
-      </div>
-    </div>
-    </div>
     </div>
 
-
-
-</div>
-
+    </form>
+    {{message}}
 </Main>
+
 <div class="whatsapp">
   <a href="https://wa.me/+56946411039?text=Buenas, tengo una consulta" class="btn-wsp" target="_blank">
       <i class="fa fa-whatsapp icono"></i>
