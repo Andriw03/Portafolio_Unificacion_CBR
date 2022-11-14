@@ -115,6 +115,7 @@ class Error(models.Model):
 
 class EstadoPago(models.Model):
     id_estado = models.AutoField(primary_key=True)
+    n_boleta = models.CharField(max_length=45)
     car_compra_id_carrito = models.ForeignKey(CarCompra, models.DO_NOTHING, db_column='CAR_COMPRA_id_carrito')  # Field name made lowercase.
     tipo_pago_id_tipop = models.ForeignKey('TipoPago', models.DO_NOTHING, db_column='TIPO_PAGO_id_tipoP')  # Field name made lowercase.
 
@@ -235,6 +236,7 @@ class Tramite(models.Model):
     estado = models.CharField(max_length=45)
     descripcion = models.CharField(max_length=250)
     t_tramite_id_tipot = models.ForeignKey('TTramite', models.DO_NOTHING, db_column='T_TRAMITE_id_tipoT')  # Field name made lowercase.
+    t_documento = models.CharField(max_length=250)
 
     class Meta:
         managed = False
