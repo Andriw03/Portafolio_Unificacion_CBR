@@ -15,7 +15,5 @@
         <Label x:Name="labelTelefono" Content="Label" HorizontalAlignment="Left" Height="54" Margin="42,300,0,0" VerticalAlignment="Top" Width="800" FontFamily="Segoe UI Emoji" FontSize="16"/>
         <Button x:Name="btnSolcitud" Content="Solicitud Modificar Perfil" HorizontalAlignment="Left" Margin="42,496,0,0" VerticalAlignment="Top" Width="195" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" FontFamily="Segoe UI Emoji" Height="50" Click="btnSolcitud_Click"/>
         <Button x:Name="btnVolver" Content="Volver" HorizontalAlignment="Left" Margin="755,496,0,0" VerticalAlignment="Top" Width="103" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" FontFamily="Segoe UI Emoji" Height="50" Click="btnVolver_Click"/>
-        <Label x:Name="labelasasd" Content="Estado Solicitudes:" Visibility="Hidden" HorizontalAlignment="Left" Height="34" Margin="45,359,0,0" VerticalAlignment="Top" Width="147" FontFamily="Segoe UI Emoji" FontSize="16"/>
-        <ComboBox x:Name="cmbEstado" HorizontalAlignment="Left" Visibility="Hidden" Margin="218,359,0,0" VerticalAlignment="Top" Width="459" Height="33"/>
     </Grid>
 </Window>

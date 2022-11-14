@@ -39,7 +39,6 @@ namespace UniOnline
                 labelRut.Content = "Rut: " + usuario.rut_usuario;
                 labelCorreo.Content = "Correo Electronico: " + usuario.correo_electronico;
                 labelTelefono.Content = "Telefono: " + usuario.telefono;
-                Llenado();
             }
         }
 
@@ -47,36 +46,13 @@ namespace UniOnline
         {
             this.Close();
         }
-        public void Llenado()
-        {
-            cmbEstado.Items.Clear();
-            Usuario us = new Usuario();
-            List<string> registro = us.LlenadoEstado(usuario.rut_usuario);
-            //if (registro[0] != string.Empty)
-            //{
-            //    for (int i = 0; i < registro.Count(); i++)
-            //    {
-            //        cmbEstado.Items.Add(registro[i]);
-            //    }
-            //    cmbEstado.Items.Refresh();
-            //    labelasasd.Visibility = Visibility.Visible;
-            //    cmbEstado.Visibility = Visibility.Visible;
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Error al cargar Estado Solicitud", "Error");
-            //}
-        }
 
         private void btnSolcitud_Click(object sender, RoutedEventArgs e)
         {
             Form_SolicitudModificar modificar = new Form_SolicitudModificar();
             
-            labelasasd.Visibility = Visibility.Visible;
-            cmbEstado.Visibility = Visibility.Visible;
             modificar.ShowDialog();
         }
-        
     }
 
 }

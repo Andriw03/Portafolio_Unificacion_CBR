@@ -138,6 +138,10 @@
             <Button x:Name="btnBuscarRUT" Content="Buscar Usuario" Width="119" Click="btnBuscarRUT_Click"/>
         </Viewbox>
 
+        <Viewbox Grid.Column="5" Grid.Row="9">
+            <Label Content="Tipo de usuario:" HorizontalAlignment="Right" MinHeight="30" Foreground="#FF010326" FontSize="30"/>
+        </Viewbox>
+        
         <Viewbox Grid.Column="6" Grid.Row="9" Grid.ColumnSpan="1" MaxHeight="200">
             <ComboBox x:Name="cmbTipoU" Text="" IsEditable="True" IsReadOnly="True" Focusable="False" Height="30" MinWidth="150" VerticalContentAlignment="Center" SelectionChanged="cmbTipoU_SelectionChanged" FontSize="15"/>
         </Viewbox>

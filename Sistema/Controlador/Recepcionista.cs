@@ -101,7 +101,7 @@ namespace Controlador
            
             try
             {
-                cmd = new MySqlCommand("SELECT rut_usuario, primer_nombre, primer_apellido, numero_seguimiento, estado FROM UNIONLINE.USUARIO join UNIONLINE.SOLICITUD on UNIONLINE.USUARIO.id_usuario = UNIONLINE.SOLICITUD.USUARIO_id_usuario where rut_usuario = '"+ rut +"' or numero_seguimiento = '"+ rut +"'", conex);
+                cmd = new MySqlCommand("SELECT rut_usuario, primer_nombre, primer_apellido, numero_seguimiento, SOLICITUD.estado FROM UNIONLINE.USUARIO join UNIONLINE.SOLICITUD on UNIONLINE.USUARIO.id_usuario = UNIONLINE.SOLICITUD.USUARIO_id_usuario inner join UNIONLINE.CAR_COMPRA on UNIONLINE.SOLICITUD.id_soli = UNIONLINE.CAR_COMPRA.SOLICITUD_id_soli where CAR_COMPRA.estado = 1 and rut_usuario = '" + rut + "' or numero_seguimiento = '" + rut + "';", conex);
                 MySqlDataAdapter ap = new MySqlDataAdapter(cmd);
                 ap.Fill(tabla);
                 cmd.Dispose();

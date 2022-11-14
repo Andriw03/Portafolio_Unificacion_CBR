@@ -41,7 +41,10 @@ namespace UniOnline.Director
             {
                 for (int i = 0; i < registro.Count(); i++)
                 {
-                    cmbTipoU.Items.Add(registro[i]);
+                    if (registro[i] == "Recepcionista" || registro[i] == "Trabajador" || registro[i] == "Moderador")
+                    {
+                        cmbTipoU.Items.Add(registro[i]);
+                    }
                 }
                 cmbTipoU.Items.Refresh();
             }
@@ -159,22 +162,6 @@ namespace UniOnline.Director
                 {
                     Usuario usu = new Usuario();
                     int idTUser = 0;
-                    //if ((bool)rdBtn_Recepcionista.IsChecked)
-                    //{
-                    //    idTUser = 3;
-                    //}
-                    //else if ((bool)rdBtn_Moderador.IsChecked)
-                    //{
-                    //    idTUser = 6;
-                    //}
-                    //else if ((bool)rdBtn_Trabajador.IsChecked)
-                    //{
-                    //    idTUser = 4;
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("Seleccione un rol");
-                    //}
                     if (cmbTipoU.SelectedItem.ToString() == "Recepcionista")
                     {
                         idTUser = 3;

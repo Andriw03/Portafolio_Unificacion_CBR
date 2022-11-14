@@ -38,7 +38,7 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <Rectangle HorizontalAlignment="Stretch" Width="Auto" MinHeight="80" MinWidth="800" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" Grid.RowSpan="3" Fill="#FF010326" Stroke="Black" Margin="0,0,-8,1"/>
+        <Rectangle HorizontalAlignment="Stretch" Width="Auto" MinHeight="80" MinWidth="800" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" Grid.RowSpan="3" Fill="#FF010326" Stroke="Black"/>
         <Viewbox Width="Auto" Stretch="Uniform" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="3" Margin="0,26,0,0">
             <Image MinHeight="50" MinWidth="108" Source="/LogoCBR.png" Margin="21,10,21,0" VerticalAlignment="Top"/>
         </Viewbox>
@@ -52,7 +52,7 @@
         </Viewbox>
 
         <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="3" OpacityMask="Black" Margin="94.2,13,31.6,12.2" Grid.RowSpan="2">
-            <TextBox x:Name="txtNumeroSeguimiento"  MinHeight="23" MinWidth="165" TextWrapping="Wrap" Text="" Background="White" Foreground="#FF878787" TextChanged="txtNumeroSeguimiento_TextChanged"/>
+            <TextBox x:Name="txtNumeroSeguimiento"  MinHeight="23" MinWidth="165" TextWrapping="Wrap" VerticalContentAlignment="Center" Background="White" Foreground="#FF878787" TextChanged="txtNumeroSeguimiento_TextChanged"/>
         </Viewbox>
 
 
@@ -68,7 +68,7 @@
                     <DataGridTextColumn Header="Apellido" Binding="{Binding Path = 'primer_apellido'}" Width="130" IsReadOnly="True"/>
                     <DataGridTextColumn Header="N° Seguimiento" Binding="{Binding Path = 'numero_seguimiento'}" IsReadOnly="True"/>
                     <DataGridTextColumn Header="Estado" Binding="{Binding Path = 'estado'}" Width="100" IsReadOnly="True"/>
-                    <DataGridTemplateColumn Header="Detalles">
+                    <DataGridTemplateColumn Header="Detalles" Width="70">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button x:Name="btnDetalles" Foreground="#FFF0F2F2" Click="btnDetalles_Click" BorderBrush="{x:Null}">
@@ -90,16 +90,12 @@
         <Button x:Name="btnCerrarSesion" Content="Cerrar Sesión" Grid.Column="6" HorizontalAlignment="Left" Margin="50,0,0,0" Width="75" Click="btnCerrarSesion_Click" Background="#FF010623" Foreground="#FFF0F2F2" BorderBrush="#FF010623" Grid.Row="1"/>
         <Label x:Name="lblBienvenidoRec" Content="" Grid.Column="3" HorizontalAlignment="Left" Margin="124,19,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="151" Foreground="#FFEEEEEE" Grid.RowSpan="2"/>
         <Label x:Name="lblB" Content="Bienvenid@:" Grid.Column="3" HorizontalAlignment="Left" Margin="44,19,0,0" VerticalAlignment="Top" Width="80" Height="27" Foreground="#FFEEEEEE" Grid.RowSpan="2"/>
-        <Button x:Name="btnPerfil" Content="" Grid.Column="6" HorizontalAlignment="Left" Height="37" Margin="8,19,0,0" Grid.RowSpan="3" VerticalAlignment="Top" Width="37" Cursor="Hand" BorderBrush="{x:Null}" Click="btnPerfil_Click" Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/UniOnline;component/perfil.png"/>
-            </Button.Background>
-        </Button>
+        <Button x:Name="btnPerfil" Content="Perfil" HorizontalAlignment="Right" VerticalAlignment="Top" Width="60" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" FontFamily="Segoe UI Emoji" Grid.Column="5" Grid.Row="1" Click="btnPerfil_Click"/>
         <Viewbox Height="Auto" Width="Auto" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Grid.RowSpan="3" Margin="80,15.2,73.8,10.6">
             <TextBlock MinHeight="30" MinWidth="200" TextWrapping="Wrap" Foreground="#FF010326" FontSize="20" FontFamily="Segoe UI Historic" FontWeight="Bold" Text="Ingrese el rut del Cliente" Width="237"/>
         </Viewbox>
         <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3" OpacityMask="Black" Margin="52,10,73.8,15.2" Grid.RowSpan="2">
-            <TextBox x:Name="txtRut"  MinHeight="23" MinWidth="165" TextWrapping="Wrap" Text="" Background="White" Foreground="#FF878787" KeyUp="txtRut_KeyUp"/>
+            <TextBox x:Name="txtRut"  MinHeight="23" MinWidth="165" TextWrapping="Wrap" Background="White" Foreground="#FF878787" VerticalContentAlignment="Center" KeyUp="txtRut_KeyUp"/>
         </Viewbox>
 
     </Grid>
