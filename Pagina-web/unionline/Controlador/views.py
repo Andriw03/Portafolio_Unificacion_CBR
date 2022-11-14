@@ -100,7 +100,7 @@ def iniciar_sesion(request):
                 for i in us:
                    
                     if i.t_usuario_id_tipou == tCliente:
-                        print("uwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwu")
+
                         return redirect(to="perfil")
                         
                     elif i.t_usuario_id_tipou == tAdmin:
@@ -413,6 +413,7 @@ def solicitar_tra(request, id):
 
     return render(request, 'templates/solicitar_tramite.html', data)
 
+@login_required(login_url='/iniciar_sesion')
 def eliminar_carrito(request, id_solicitud, id_car):
     carrito = get_object_or_404(CarCompra, pk = id_car)
     carrito.delete()
