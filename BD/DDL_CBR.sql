@@ -5,6 +5,9 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+-- -----------------------------------------------------
 -- Schema UNIONLINE
 -- -----------------------------------------------------
 
@@ -24,6 +27,7 @@ CREATE TABLE IF NOT EXISTS `UNIONLINE`.`B_PAGO` (
   `fecha_emision` DATETIME NOT NULL,
   `monto_pago` INT NOT NULL,
   `tipo_pago` INT NOT NULL,
+  `orden_pago` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_boleta`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 7
@@ -439,6 +443,7 @@ DROP TABLE IF EXISTS `UNIONLINE`.`ESTADO_PAGO` ;
 
 CREATE TABLE IF NOT EXISTS `UNIONLINE`.`ESTADO_PAGO` (
   `id_estado` INT NOT NULL AUTO_INCREMENT,
+  `n_boleta` VARCHAR(45) NOT NULL,
   `CAR_COMPRA_id_carrito` INT NOT NULL,
   `TIPO_PAGO_id_tipoP` INT NOT NULL,
   PRIMARY KEY (`id_estado`, `CAR_COMPRA_id_carrito`, `TIPO_PAGO_id_tipoP`),
@@ -727,13 +732,17 @@ DELIMITER $$
 USE `UNIONLINE`$$
 DROP TRIGGER IF EXISTS `UNIONLINE`.`ESTADO_PAGO_AFTER_INSERT` $$
 USE `UNIONLINE`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `UNIONLINE`.`ESTADO_PAGO_AFTER_INSERT` AFTER INSERT ON `ESTADO_PAGO` FOR EACH ROW
+CREATE
+DEFINER=`root`@`%`
+TRIGGER `UNIONLINE`.`ESTADO_PAGO_AFTER_INSERT`
+AFTER INSERT ON `UNIONLINE`.`ESTADO_PAGO`
+FOR EACH ROW
 BEGIN
 declare var_monto INTEGER; 
 declare tipoP varchar(50);
 SELECT nombre_tipoP into tipoP FROM UNIONLINE.ESTADO_PAGO inner join UNIONLINE.TIPO_PAGO on UNIONLINE.ESTADO_PAGO.TIPO_PAGO_id_tipoP = UNIONLINE.TIPO_PAGO.id_tipoP where id_estado = NEW.id_estado;
 set var_monto = FN_AGREGAR_BOLETA (NEW.id_estado);
-INSERT INTO  `UNIONLINE`. `B_PAGO` (`fecha_emision`,`monto_pago`,`tipo_pago`) VALUES (now(),monto_total,tipoP);
+INSERT INTO  `UNIONLINE`. `B_PAGO` (`fecha_emision`,`monto_pago`,`tipo_pago`,`orden_pago`) VALUES (now(),monto_total,tipoP,new.n_boleta);
 UPDATE `UNIONLINE`.`CAR_COMPRA` SET `estado` = 1 WHERE `id_carrito` = NEW.CAR_COMPRA_id_carrito;
 END$$
 
