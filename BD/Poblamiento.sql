@@ -1,9 +1,14 @@
-INSERT INTO `UNIONLINE`.`T_PAGO` (`id_tipoP`, `nombre_tipoP`) VALUES 
+INSERT INTO `UNIONLINE`.`TIPO_PAGO` (`id_tipoP`, `nombre_tipoP`) VALUES 
 (1, "Redcompra"),
 (2, "Efectivo");
 
 INSERT INTO `UNIONLINE`.`HOR_ATENCION` (`id_horario`, `dias_atencion`, `horario_apertura`, `horario_cierre`) VALUES
 (1, "Lunes a Viernes", "08:00", "15:00");
+
+INSERT INTO `UNIONLINE`. `TIPO_PROPIEDAD` (`id_tipoP`,`nombre_tipoP`)
+VALUES
+	(1,'Residencial'),
+	(2,'Comercial');
 
 INSERT INTO `UNIONLINE`.`T_TRAMITE` (`id_tipoT`, `nombre_tipoT`, `TIPO_PROPIEDAD_id_tipoP`) VALUES
 (1, "Copias y Certificados.", 1), 
@@ -20,10 +25,7 @@ VALUES
 	(5,'Cliente'),
 	(6,'Moderador');
 
-INSERT INTO `UNIONLINE`. `TIPO_PROPIEDAD` (`id_tipoP`,`nombre_tipoP`)
-VALUES
-	(1,'Residencial'),
-	(2,'Comercial');
+
 
 INSERT INTO `UNIONLINE`. `REGION` (`id_region`,`nombre_region`)
 VALUES
@@ -451,5 +453,3 @@ VALUES
 	(344,'Timaukel',55),
 	(345,'Cabo de Hornos',56),
 	(346,'Antártica',56);
-
-	
