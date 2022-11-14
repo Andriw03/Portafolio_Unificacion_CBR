@@ -728,6 +728,7 @@ def webpay_plus_commit(request):
             estado_pago = EstadoPago()
             estado_pago.car_compra_id_carrito = car
             estado_pago.tipo_pago_id_tipop = tpago
+            estado_pago.n_boleta = buy_order
             estado_pago.save()
             solicitud = get_object_or_404(Solicitud, pk = car.solicitud_id_soli)
             now = datetime.now()
