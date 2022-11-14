@@ -724,8 +724,6 @@ def webpay_plus_commit(request):
         tpago = get_object_or_404(TipoPago, pk=1)
         for i in carrito_llenar:
             car = get_object_or_404(CarCompra, pk=i.id_carrito)
-            car.estado = 1
-            car.save()
             estado_pago = EstadoPago()
             estado_pago.car_compra_id_carrito = car
             estado_pago.tipo_pago_id_tipop = tpago
