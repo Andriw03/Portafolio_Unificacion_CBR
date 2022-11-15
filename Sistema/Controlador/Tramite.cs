@@ -17,6 +17,7 @@ namespace Controlador
         public string Estado { get; set; }
         public string Descripcion { get; set; }
         public int TipoTramite { get; set; }
+        public string Doc { get; set; }
 
         public Tramite()
         {
@@ -29,6 +30,7 @@ namespace Controlador
             ValorTra = string.Empty;
             Estado = string.Empty;
             TipoTramite = 0;
+            Doc = string.Empty;
         }
 
         public string InsertarTramite(Tramite Tra)
@@ -37,7 +39,7 @@ namespace Controlador
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`TRAMITE` (`nombre_tramite`, `valor_tramite`, `estado`, `descripcion`, `T_TRAMITE_id_tipoT`) VALUES ('" + Tra.NombreTra + "', " + Tra.ValorTra + ",'" + Tra.Estado + "','" + Tra.Descripcion + "'," + Tra.TipoTramite + ");", conex);
+                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`TRAMITE` (`nombre_tramite`, `valor_tramite`, `estado`, `descripcion`, `T_TRAMITE_id_tipoT`, `t_documento`) VALUES ('" + Tra.NombreTra + "', " + Tra.ValorTra + ",'" + Tra.Estado + "','" + Tra.Descripcion + "'," + Tra.TipoTramite + ", '" + Tra.Doc + "');", conex);
                 cmd.ExecuteNonQuery();
                 salida = "Trámite agregado correctamente";
             }
@@ -91,7 +93,7 @@ namespace Controlador
 
             try
             {
-                cmd = new MySqlCommand("SELECT tra.id_tramite, tra.nombre_tramite, tra.valor_tramite, tra.estado, tra.descripcion, titra.nombre_tipoT FROM UNIONLINE.TRAMITE AS tra INNER JOIN UNIONLINE.T_TRAMITE AS titra ON tra.T_TRAMITE_id_tipoT = titra.id_tipoT WHERE tra.T_TRAMITE_id_tipoT = " + tipo + ";", conex);
+                cmd = new MySqlCommand("SELECT tra.id_tramite, tra.nombre_tramite, tra.valor_tramite, tra.estado, tra.descripcion, titra.nombre_tipoT, tra.t_documento FROM UNIONLINE.TRAMITE AS tra INNER JOIN UNIONLINE.T_TRAMITE AS titra ON tra.T_TRAMITE_id_tipoT = titra.id_tipoT WHERE tra.T_TRAMITE_id_tipoT = " + tipo + ";", conex);
                 MySqlDataAdapter ap = new MySqlDataAdapter(cmd);
                 ap.Fill(tabla);
                 cmd.Dispose();
@@ -112,7 +114,7 @@ namespace Controlador
 
             try
             {
-                cmd = new MySqlCommand("SELECT tra.id_tramite, tra.nombre_tramite, tra.valor_tramite, tra.estado, titra.nombre_tipoT FROM UNIONLINE.TRAMITE AS tra INNER JOIN UNIONLINE.T_TRAMITE AS titra ON tra.T_TRAMITE_id_tipoT = titra.id_tipoT WHERE tra.T_TRAMITE_id_tipoT = " + tipot +" AND estado = '" + estadot +"';", conex);
+                cmd = new MySqlCommand("SELECT tra.id_tramite, tra.nombre_tramite, tra.valor_tramite, tra.estado, tra.descripcion, titra.nombre_tipoT, tra.t_documento FROM UNIONLINE.TRAMITE AS tra INNER JOIN UNIONLINE.T_TRAMITE AS titra ON tra.T_TRAMITE_id_tipoT = titra.id_tipoT WHERE tra.T_TRAMITE_id_tipoT = " + tipot +" AND estado = '" + estadot +"';", conex);
                 MySqlDataAdapter ap = new MySqlDataAdapter(cmd);
                 ap.Fill(testado);
                 cmd.Dispose();
@@ -186,6 +188,7 @@ namespace Controlador
                     Estado = rd["estado"].ToString();
                     Descripcion = rd["descripcion"].ToString();
                     TipoTramite = Int32.Parse(rd["T_TRAMITE_id_tipoT"].ToString());
+                    Doc = rd["t_documento"].ToString();
                 }
                 rd.Close();
                 return this;
@@ -213,12 +216,12 @@ namespace Controlador
             }
         }
 
-        public bool ModificarTra(int idTra, string NombreTra, string ValorTra, string Estado, string Descripcion, int TipoTra)
+        public bool ModificarTra(int idTra, string NombreTra, string ValorTra, string Estado, string Descripcion, int TipoTra, string Doc)
         {
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("UPDATE `UNIONLINE`.`TRAMITE` SET `nombre_tramite` = '" + NombreTra + "', `valor_tramite` = '" + ValorTra + "', `estado` = '" + Estado + "', `descripcion` = '" + Descripcion + "', `T_TRAMITE_id_tipoT` = " + TipoTra + " WHERE `id_tramite` = " + idTra + "; ", conex);
+                cmd = new MySqlCommand("UPDATE `UNIONLINE`.`TRAMITE` SET `nombre_tramite` = '" + NombreTra + "', `valor_tramite` = '" + ValorTra + "', `estado` = '" + Estado + "', `descripcion` = '" + Descripcion + "', `T_TRAMITE_id_tipoT` = " + TipoTra + ", `t_documento` = '" + Doc + "' WHERE `id_tramite` = " + idTra + "; ", conex);
                 cmd.ExecuteNonQuery();
                 return true;
             }

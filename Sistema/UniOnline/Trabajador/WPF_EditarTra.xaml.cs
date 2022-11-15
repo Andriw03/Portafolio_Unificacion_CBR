@@ -27,6 +27,7 @@ namespace UniOnline.Trabajador
             Conectar();
             LlenadoEstado();
             LLenarTipo();
+            LlenarCmbDoc();
         }
 
         Conexion con = new Conexion();
@@ -66,6 +67,12 @@ namespace UniOnline.Trabajador
             cmbEstado.Items.Add("Vigente");
             cmbEstado.Items.Add("No vigente");
         }
+        private void LlenarCmbDoc()
+        {
+            cmbDoc.Items.Add("No aplica.");
+            cmbDoc.Items.Add("Copia de cédula de identidad.");
+            cmbDoc.Items.Add("Copia de cédula de identidad y Escritura de propiedad.");
+        }
 
         int idTra = 0;
         public int ObtenerTra
@@ -86,6 +93,7 @@ namespace UniOnline.Trabajador
                 txtValorTra.Text = tram.ValorTra;
                 txtDescTram.Text = tram.Descripcion;
                 cmbEstado.SelectedItem = tram.Estado;
+                cmbDoc.SelectedItem = tram.Doc;
                 cmbTipoTram.SelectedIndex = tram.TipoTramite;
 
             }
@@ -134,7 +142,8 @@ namespace UniOnline.Trabajador
                             Tra.Estado = "Vigente";
                             Tra.TipoTramite = Int32.Parse(cmbTipoTram.SelectedIndex.ToString());
                             Tra.Descripcion = txtDescTram.Text;
-                            if (Tra.ModificarTra(idTra, Tra.NombreTra, Tra.ValorTra, Tra.Estado, Tra.Descripcion, Tra.TipoTramite))
+                            Tra.Doc = cmbDoc.SelectedItem.ToString();
+                            if (Tra.ModificarTra(idTra, Tra.NombreTra, Tra.ValorTra, Tra.Estado, Tra.Descripcion, Tra.TipoTramite, Tra.Doc))
                             {
                                 MessageBox.Show("Trámite modificado.");
                             }
@@ -148,7 +157,8 @@ namespace UniOnline.Trabajador
                             Tra.Estado = "No vigente";
                             Tra.TipoTramite = Int32.Parse(cmbTipoTram.SelectedIndex.ToString());
                             Tra.Descripcion = txtDescTram.Text;
-                            if (Tra.ModificarTra(idTra, Tra.NombreTra, Tra.ValorTra, Tra.Estado, Tra.Descripcion, Tra.TipoTramite))
+                            Tra.Doc = cmbDoc.SelectedItem.ToString();
+                            if (Tra.ModificarTra(idTra, Tra.NombreTra, Tra.ValorTra, Tra.Estado, Tra.Descripcion, Tra.TipoTramite, Tra.Doc))
                             {
                                 MessageBox.Show("Trámite modificado.");
                             }

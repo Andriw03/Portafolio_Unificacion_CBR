@@ -28,6 +28,14 @@ namespace UniOnline.Trabajador
             LlenadoEstadoListar();
             LlenarCmbTramite();
             LlenarCmbListar();
+            LlenarCmbDoc();
+        }
+
+        private void LlenarCmbDoc()
+        {
+            cmbDoc.Items.Add("No aplica.");
+            cmbDoc.Items.Add("Copia de cédula de identidad.");
+            cmbDoc.Items.Add("Copia de cédula de identidad y Escritura de propiedad.");
         }
 
         private void LlenadoEstado()
@@ -110,6 +118,7 @@ namespace UniOnline.Trabajador
                                 Tra.Estado = "Vigente";
                                 Tra.TipoTramite = Int32.Parse(cmbTipoTra.SelectedIndex.ToString());
                                 Tra.Descripcion = txtDescTra.Text;
+                                Tra.Doc = cmbDoc.SelectedItem.ToString();
                                 MessageBox.Show(Tra.InsertarTramite(Tra), "Mensaje:");
                                 LimpiarTra();
                             }
@@ -118,6 +127,7 @@ namespace UniOnline.Trabajador
                                 Tra.Estado = "No vigente";
                                 Tra.TipoTramite = Int32.Parse(cmbTipoTra.SelectedIndex.ToString());
                                 Tra.Descripcion = txtDescTra.Text;
+                                Tra.Doc = cmbDoc.SelectedItem.ToString();
                                 MessageBox.Show(Tra.InsertarTramite(Tra), "Mensaje:");
                                 LimpiarTra();
                             }
@@ -285,32 +295,40 @@ namespace UniOnline.Trabajador
             DataRowView dataView = (DataRowView)((Button)e.Source).DataContext;
             try
             {
+                Tramite tra = new Tramite();
                 int tramid = Int32.Parse(dataView[0].ToString());
-                string estado = dataView[3].ToString();
-                if (estado == "Vigente")
+                if (tra.CompararID(tramid))
                 {
-                    estado = "No vigente";
-                    Tramite tram = new Tramite();
-                    if (tram.ModificarEstado(tramid, estado))
+                    string estado = dataView[3].ToString();
+                    if (estado == "Vigente")
                     {
-                        this.btnBuscarTra_Click(sender, e);
-                        MessageBox.Show("Estado del trámite modificado con Éxito.");
-                        
+                        estado = "No vigente";
+                        Tramite tram = new Tramite();
+                        if (tram.ModificarEstado(tramid, estado))
+                        {
+                            this.btnBuscarTra_Click(sender, e);
+                            MessageBox.Show("Estado del trámite modificado con Éxito.");
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al modificar el estado del trámite.", "Advertencia");
+                        }
                     }
-                    else
+                    else if (estado == "No vigente")
                     {
-                        MessageBox.Show("Error al modificar el estado del trámite.", "Advertencia");
-                    }
-                }
-                else if (estado == "No vigente")
-                {
-                    estado = "Vigente";
-                    Tramite tram = new Tramite();
-                    if (tram.ModificarEstado(tramid, estado))
-                    {
-                        this.btnBuscarTra_Click(sender, e);
-                        MessageBox.Show("Estado del trámite modificado con Éxito.");
-                        
+                        estado = "Vigente";
+                        Tramite tram = new Tramite();
+                        if (tram.ModificarEstado(tramid, estado))
+                        {
+                            this.btnBuscarTra_Click(sender, e);
+                            MessageBox.Show("Estado del trámite modificado con Éxito.");
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al modificar el estado del trámite.", "Advertencia");
+                        }
                     }
                     else
                     {
@@ -319,8 +337,9 @@ namespace UniOnline.Trabajador
                 }
                 else
                 {
-                    MessageBox.Show("Error al modificar el estado del trámite.", "Advertencia");
+                    MessageBox.Show("Este trámite esta relacionado con una solicitud. No se puede editar.", "Advertencia");
                 }
+                
             }
             catch (Exception ex)
             {
