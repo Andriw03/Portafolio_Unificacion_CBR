@@ -20,7 +20,7 @@ a{
     border: #393E59;
 }
 footer{
-    position: fixed; bottom: 0; width: 100%;
+    position: static; bottom: 0; width: 100%;
     background-color: #1E4D40;
     text-align: center;
     padding:40px;

@@ -101,7 +101,10 @@ def inicio(request):
         elif 'pComuna' in request.POST:           
             ##provincia = Provincia.objects.filter(Q(region_id_region_id=request.POST.get('cmbRegion')))
             cbr = Cbr.objects.raw('SELECT * FROM UNIONLINE.CBR join UNIONLINE.DIRECCION on UNIONLINE.CBR.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion join UNIONLINE.COMUNA on UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna  where id_comuna = %s',[request.POST.get('cmbComuna')])
-   
+        elif 'pCBR' in request.POST: 
+            id_cbr = request.POST.get('cmbCBR')
+            print(id_cbr)
+            return redirect('home', id=id_cbr)
     data={
         'tramites':tramites,
         'comuna': comuna,
@@ -197,7 +200,7 @@ def crearCuenta(request):
         else:
             try:
                 user.save()   
-                user.groups.add('Cliente')
+                user.groups.add(2)
                 usuario.contrasenna = user.password
                 usuario.save()
                 messages.success(request, "Cuenta Creada Correctamente")
@@ -401,11 +404,20 @@ def solicitar_tra(request, id):
     valor = "{:,}".format(valor).translate(miles_translator)
     ######
     tramite = Tramite.objects.raw('SELECT * FROM UNIONLINE.TRAMITE WHERE id_tramite = %s',[id])
-    foja_prop = 828
-    propiedad = Propiedad.objects.raw("SELECT id_propiedad, descripcion, id_clas, foja, numero, YEAR(anno) as fecha FROM UNIONLINE.PROPIEDAD inner join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas where foja = %s;",[foja_prop])
+    id_doc = 0
+    propiedad = ''
+    for i in tramite:
+        if i.t_documento == "Copia de cédula de identidad.":
+            id_doc = 1
+        elif i.t_documento == "Escritura de propiedad.":
+            id_doc = 2
+        elif i.t_documento == "Copia de cédula de identidad y Escritura de propiedad.":
+            id_doc = 3
+
     if request.method == 'POST':
-        if 'solicitar' in request.POST:    
-            try:       
+        if 'solicitar' in request.POST:
+            try:   
+
                 solicitud = Solicitud()
                 now = datetime.now()
                 solicitud.fecha_solicitud = now.strftime("%Y-%m-%d %H:%M:%S")
@@ -436,6 +448,12 @@ def solicitar_tra(request, id):
             except Exception as e:
                 messages.error(request, str(e) )
 
+        elif 'buscarFoja' in request.POST:
+            try:
+                foja_prop = request.POST.get("foja")
+                propiedad = Propiedad.objects.raw("SELECT id_propiedad, descripcion, id_clas, foja, numero, YEAR(anno) as fecha FROM UNIONLINE.PROPIEDAD inner join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas where foja = %s;",[foja_prop])
+            except Exception as e:
+                messages.error(request, str(e) )
     
     data={
         'tramite': tramite,
@@ -444,6 +462,7 @@ def solicitar_tra(request, id):
         'tramites': tramites,
         'valor': valor,
         'can_carrito': can_carrito,
+        'id_doc' : id_doc,
         }
 
     return render(request, 'templates/solicitar_tramite.html', data)

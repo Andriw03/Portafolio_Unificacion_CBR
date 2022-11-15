@@ -67,15 +67,21 @@
       
       <br>
       <div class="col-lg-12 mx-auto">
-        <select class="form-select form-select-lg mb-3" aria-label="Default select example">
+        <form action="" method="POST" name="pCBR">
+          {% csrf_token %}
+        <select name="cmbCBR" class="form-select form-select-lg mb-3" aria-label="Default select example">
           <option selected>Seleccione un conservador...</option>
           {% for cb in cbr %}
-          <option value="{{cb.pk}}">{{cb.nombre_cbr}}</option>
+          <option value="{{cb.pk}}">{{cb.nombre_cbr}} </option>
+          {% endfor %}
           
         </select>
-        <a href="{% url 'home' id=cb.pk %}"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Seleccionar</button></a> 
-          
-        {% endfor %}
+        
+          <button name="pCBR" type="submit" class="btn btn-primary btn-lg px-4 gap-3">Seleccionar</button>
+        </form>
+        
+        
+        
       </div>
       
   </div>

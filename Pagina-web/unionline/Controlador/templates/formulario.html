@@ -4,11 +4,15 @@
 
   <head>
     <title>Formulario de contacto</title>
-    <link rel="stylesheet" href="static/css/main.css">
-    <link rel="stylesheet" href="static/css/formulario.css">
-    <link rel="stylesheet" href="static/css/reset.css">
-  </head>
 
+    <link rel="stylesheet" href="static/css/formulario.css">
+
+  </head>
+  <div class="whatsapp">
+    <a href="https://wa.me/+56946411039?text=Buenas, tengo una consulta" class="btn-wsp" target="_blank">
+        <i class="fa fa-whatsapp icono"></i>
+    </a>
+  </div>
   <div class="container">
     {% if messages %}
       <div class="row">
@@ -59,10 +63,5 @@
         </div>
       </form>
 
-    <div class="whatsapp">
-      <a href="https://wa.me/+56946411039?text=Buenas, tengo una consulta" class="btn-wsp" target="_blank">
-          <i class="fa fa-whatsapp icono"></i>
-      </a>
-    </div>
   </div>
 {% endblock %}
