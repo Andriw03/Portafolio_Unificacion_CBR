@@ -1,56 +1,12 @@
-{% extends 'templates\base.html' %}
+{% extends 'templates\base_admin.html' %}
 {% load static %}
 {% block content %}
 <!DOCTYPE html>
 <html lang="es">
+<head>
+  <link rel="stylesheet" href="static/css/perfil-cliente.css">
+</head>
 <body>
-    <header id="header" class="header fixed-top d-flex align-items-center">
-
-        <div class="container d-flex align-items-center justify-content-between">
-    
-          <a href="{% url 'inicio' %}" class="logo d-flex align-items-center me-auto me-lg-0">
-            <h1>CBRS de Chile<span>.</span></h1>
-          </a>
-    
-          <nav id="navbar" class="navbar">
-            <ul>
-              <li><a href="#hero">Inicio</a></li>
-              <li><a href="#about">Misión</a></li>
-              <li><a href="#menu">Contacto</a></li>
-              
-            </ul>
-            {% if user.is_authenticated %}
-            <div class="dropdown">
-                <button class="btn dropdown-toggle text-white" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    Bienvenido {{user.first_name}} {{user.last_name}}
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a href="{% url 'perfil' %}" class="nav-link px-2 tdropdown-item" style="color: black;" class="Cerrar-Sesion">Perfil</a></li>
-                    <li><a href="{% url 'logout' %}" class="nav-link px-2 tdropdown-item" style="color: black;" class="Cerrar-Sesion">Cerrar Sesión</a></li>  
-                </ul>
-                  
-              </div>
-              <button type="button" class="btn btn-light position-relative" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
-                  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
-                </svg>
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                  {{can_carrito}}
-                  <span class="visually-hidden">unread messages</span>
-                </span>
-              </button>
-              {% else %}
-              <a class="btn-book-a-table" href="{% url 'registrarse' %}">Crear Cuenta</a>
-              <a class="btn-book-a-table" href="{% url 'iniciar_sesion' %}">Iniciar Sesión</a>
-              <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-              <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-              {% endif %}
-          </nav><!-- .navbar -->
-    
-         
-    
-        </div>
-      </header><!-- End Header -->
     <div class="container py-4 letter aria-label">
         <div class="row">
             <div class="col-md-10">
@@ -88,7 +44,7 @@
             </div>
         </div>
     </div>
-    
+<br><br><br><br><br><br><br><br><br><br>   
 </body>
 
 {% endblock %}

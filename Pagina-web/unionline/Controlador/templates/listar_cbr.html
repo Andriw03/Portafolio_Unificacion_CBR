@@ -1,4 +1,4 @@
-{% extends 'templates\base.html' %}
+{% extends 'templates\base_admin.html' %}
 {% load static %}
 {% block content %}
 
@@ -39,8 +39,10 @@
         <td>{{c.HORARIOS}}</td>
         <td>{{c.DIR_CBR}}</td>
         <td> 
-          <a href="{% url 'modificarCbr' c.id_cbr %}" class = "btn btn-info"> Modificar</a>
-          <a href="{% url 'eliminarCbr' c.id_cbr %}" class = "btn btn-danger"> Eliminar</a>
+          <a href="{% url 'modificarCbr' c.id_cbr %}" class="btn btn-sm btn-block btn-info">Editar</a>
+        </td>
+        <td>
+          <a href="{% url 'eliminarCbr' c.id_cbr %}" class="btn btn-sm btn-block btn-danger">Eliminar</a>
         </td>
       </tr>
       {% endfor %}

@@ -33,6 +33,9 @@ input[type="password"]{
     padding: 10px;
     border: none;
 }
+a{
+    color: white;
+}
 .input-contenedor{
     margin-bottom: 15px;
     
@@ -52,15 +55,13 @@ input[type="password"]{
     border-radius: 5px;
     cursor: pointer;
 }
-footer{
-    position: fixed; bottom: 0; width: 100%;
-    background-color: #1E4D40;
-    text-align: center;
-    padding:40px;
-    color: white;
-}
+
 .button:hover{
     background: #010326;
+}
+
+a{
+    color: #6FBFBF;
 }
 @media (min-width:768px) 
 {
