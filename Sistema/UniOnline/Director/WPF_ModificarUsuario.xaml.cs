@@ -102,7 +102,7 @@ namespace UniOnline.Director
                     txtBoxSApellido.Text = usu.segundo_apellido;
                     txtBoxTelefono.Text = usu.telefono;
                     txtBoxCorreo.Text = usu.correo_electronico;
-                    txtBoxContra.Text =usu.contrasenna;
+                    txtBoxContra.Password =usu.contrasenna;
                     if (usu.id_tipoU == 4)
                     {
                         cmbTipoU.SelectedItem = "Trabajador";
@@ -158,7 +158,7 @@ namespace UniOnline.Director
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
             {
-                if (txtBoxRUT.Text != string.Empty && txtBoxContra.Text != string.Empty && txtBoxNombre.Text != string.Empty && txtBoxSNombre.Text != string.Empty && txtBoxApellido.Text != string.Empty && txtBoxSApellido.Text != string.Empty && txtBoxCorreo.Text != string.Empty && txtBoxTelefono.Text != string.Empty)
+                if (txtBoxRUT.Text != string.Empty && txtBoxContra.Password != string.Empty && txtBoxNombre.Text != string.Empty && txtBoxSNombre.Text != string.Empty && txtBoxApellido.Text != string.Empty && txtBoxSApellido.Text != string.Empty && txtBoxCorreo.Text != string.Empty && txtBoxTelefono.Text != string.Empty)
                 {
                     Usuario usu = new Usuario();
                     int idTUser = 0;
@@ -179,7 +179,7 @@ namespace UniOnline.Director
                         MessageBox.Show("Seleccione un rol");
                     }
                     Hashing hash = new Hashing();
-                    if (usu.ModificarUsuario(txtBoxRUT.Text, txtBoxNombre.Text, txtBoxSNombre.Text, txtBoxApellido.Text, txtBoxSApellido.Text, txtBoxTelefono.Text, txtBoxCorreo.Text, hash.ToSHA256(txtBoxContra.Text), idTUser))
+                    if (usu.ModificarUsuario(txtBoxRUT.Text, txtBoxNombre.Text, txtBoxSNombre.Text, txtBoxApellido.Text, txtBoxSApellido.Text, txtBoxTelefono.Text, txtBoxCorreo.Text, hash.ToSHA256(txtBoxContra.Password), idTUser))
 
                     {
 
@@ -200,7 +200,7 @@ namespace UniOnline.Director
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
-            if (txtBoxRUT.Text != string.Empty && txtBoxContra.Text != string.Empty && txtBoxNombre.Text != string.Empty && txtBoxApellido.Text != string.Empty && txtBoxSApellido.Text != string.Empty && txtBoxCorreo.Text != string.Empty && txtBoxTelefono.Text != string.Empty)
+            if (txtBoxRUT.Text != string.Empty && txtBoxContra.Password != string.Empty && txtBoxNombre.Text != string.Empty && txtBoxApellido.Text != string.Empty && txtBoxSApellido.Text != string.Empty && txtBoxCorreo.Text != string.Empty && txtBoxTelefono.Text != string.Empty)
             {
                 try
                 {
@@ -209,7 +209,7 @@ namespace UniOnline.Director
                     if (!usu.ExisteUsuario(txtBoxRUT.Text))
                     {
                         usu.rut_usuario = txtBoxRUT.Text;
-                        usu.contrasenna = hash.ToSHA256(txtBoxContra.Text);
+                        usu.contrasenna = hash.ToSHA256(txtBoxContra.Password);
                         usu.primer_nombre = txtBoxNombre.Text;
                         usu.segundo_nombre = txtBoxSNombre.Text;
                         usu.primer_apellido = txtBoxApellido.Text;
