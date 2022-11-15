@@ -24,12 +24,47 @@ from transbank.error.transbank_error import TransbankError
 from transbank.webpay.webpay_plus.transaction import Transaction
 from django.contrib.auth.decorators import user_passes_test
 
+'''
+def llenarCbr():
+    replacements = (
+        ("á", "a"),
+        ("é", "e"),
+        ("í", "i"),
+        ("ó", "o"),
+        ("ú", "u"),
+    )
+    
+    comuna = Comuna.objects.all()
+    color=( ['rojo', 'amarillo', 'verde', 'azul', 'marrón', 'negro'])
+    for i in comuna:
+        cbr = Cbr()
+        direccion = Direccion()
+        idComuna = get_object_or_404(Comuna, pk = i.id_comuna)
+        direccion.nombre_calle = str(random.choice(color)) + " con " + str(random.choice(color))
+        direccion.numero_casa = int(random.randrange(10, 2000, 2))
+        direccion.comuna_id_comuna = idComuna
+        direccion.save()
+        cbr.nombre_cbr = "CBR "+ str(i.nombre_comuna)
+        comuna_correo = str(i.nombre_comuna).replace(" ","")
+        comuna_correo = comuna_correo.lower()
+        cbr.correo_cbr = "cbr_" + comuna_correo +"@gmail.com"
+        for a,b in replacements:
+            cbr.correo_cbr = cbr.correo_cbr.replace(a,b)
+        cbr.telefono = str(random.randint(900000000, 999999999))
+        atencion = get_object_or_404(HorAtencion, pk=1)
+        cbr.hor_atencion_id_horario = atencion
+        cbr.direccion_id_direccion = direccion
+        
+        cbr.save()
+    '''
+
 def listar_carrito(rut):
     carrito = CarCompra.objects.raw("SELECT id_carrito, id_soli, id_tramite, nombre_tramite, valor_tramite FROM UNIONLINE.CAR_COMPRA inner join UNIONLINE.SOLICITUD on SOLICITUD_id_soli = id_soli inner join UNIONLINE.TRAMITE on TRAMITE_id_tramite = id_tramite inner join UNIONLINE.USUARIO on USUARIO_id_usuario = id_usuario where CAR_COMPRA.estado = 0 and rut_usuario = %s;",[rut])
     valor = 0
     return carrito
 def listar_tramites():
     tramites = TTramite.objects.all()
+    #llenarCbr()
     return tramites
 
 
