@@ -11,10 +11,11 @@ VALUES
 	(2,'Comercial');
 
 INSERT INTO `UNIONLINE`.`T_TRAMITE` (`id_tipoT`, `nombre_tipoT`, `TIPO_PROPIEDAD_id_tipoP`) VALUES
-(1, "Copias y Certificados.", 1), 
-(2, "Copias y Certificados.", 2),
-(3, "Inscripciones, Alzamiento y Cancelación.", 1), 
-(4, "Inscripciones, Alzamiento y Cancelación.", 2);
+(1, "Inscripciones, alzamiento y cancelación.", 1), 
+(2, "Inscripción de Constitución, Modificación, Poder y Revocación.", 2),
+(3, "Copias y Certificados.", 1), 
+(4, "Copias de Inscripción y Certificados.", 2),
+(5, "Notas Marginales.", 2);
 
 INSERT INTO `UNIONLINE`. `T_USUARIO` (`id_tipoU`,`nombre_tipoU`)
 VALUES
