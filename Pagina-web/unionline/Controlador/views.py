@@ -248,6 +248,45 @@ def perfil(request):
     return render(request, 'templates/perfil-cliente.html', data)
 
 
+def EditarCliente (request):
+    # cliente=Usuario.objects.get(id_usuario = id)
+    
+    data = {
+        'cliente' : Usuario
+    }
+
+    return render(request, "editarCliente.html", data)
+
+def edicionCliente (request):
+        #usuario.primer_nombre = request.POST.get('Nombre')
+    id = int(request.POST['id'])
+    primer_nombre = request.POST['Nombre']
+        #usuario.segundo_nombre = request.POST.get('Segundo_Nombre')
+    sdo_nombre = request.POST['Segundo_Nombre']
+        #usuario.primer_apellido = request.POST.get('Primer_Apellido')
+    apellido = request.POST['Primer_Apellido']
+        #usuario.segundo_apellido = request.POST.get('Segundo_Apellido')
+    sdoapellido = request.POST['Segundo_Apellido']
+        #usuario.telefono = request.POST.get('Telefono')
+    fono = request.POST['Telefono']
+        #usuario.correo_electronico = request.POST.get('Correo')
+    email = request.POST['Correo']
+        #usuario.contrasenna = request.POST.get('Contraseña')
+    pwd = request.POST['c']
+    #cliente = get_object_or_404(Usuario, id_usuario = id)
+    Usuario=Usuario.objects.get(id_usuario = id)
+    Usuario.primer_nombre = nombre
+    Usuario.segundo_nombre = sdo_nombre
+    Usuario.primer_apellido = apellido
+    Usuario.segundo_apellido = sdoapellido
+    Usuario.telefono = fono
+    Usuario.correo_electronico = email
+    Usuario.contrasenna = pwd
+
+    Usuario.save()
+
+    return redirect('perfil')
+
 
 def paginaPrinc(request,id):
     #agregar a todas las ventanas de cliente

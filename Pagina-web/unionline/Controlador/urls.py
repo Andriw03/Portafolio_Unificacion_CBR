@@ -1,9 +1,9 @@
 from django.urls import path
 from django.urls import re_path as url
 from django.contrib.auth import views as auth_views
-from .views import inicio, iniciar_sesion, crearCuenta, perfil, formularioUser, inicioadmin, regDirector, show_create, transferencia, webpay_plus_commit, webpay_plus_create, listarDirector, Eliminardirector, EditarDirector,ediciondirector
-from .views import inicio, crearCuenta, perfil, paginaPrinc, consultasCom, formularioUser, conservador, listar_tra, solicitar_tra, eliminar_carrito, inicioadmin, regDirector,carrito_pagar, EditarDirector, ediciondirector
-from .views import inicio, crearCuenta, perfil, paginaPrinc, consultasProp, formularioUser, conservador, consultasCom, inicioadmin, regDirector,agregar_cbr, listar_cbr, modificar_cbr, eliminar_cbr, EditarDirector, ediciondirector
+from .views import inicio, iniciar_sesion, crearCuenta, perfil, formularioUser, inicioadmin, regDirector, show_create, transferencia, webpay_plus_commit, webpay_plus_create, listarDirector, Eliminardirector, EditarDirector,ediciondirector, EditarCliente, edicionCliente
+from .views import inicio, crearCuenta, perfil, paginaPrinc, consultasCom, formularioUser, conservador, listar_tra, solicitar_tra, eliminar_carrito, inicioadmin, regDirector,carrito_pagar, EditarDirector, ediciondirector, EditarCliente, edicionCliente
+from .views import inicio, crearCuenta, perfil, paginaPrinc, consultasProp, formularioUser, conservador, consultasCom, inicioadmin, regDirector,agregar_cbr, listar_cbr, modificar_cbr, eliminar_cbr, EditarDirector, ediciondirector, EditarCliente, edicionCliente
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -13,6 +13,7 @@ urlpatterns = [
     path('iniciar_sesion', iniciar_sesion, name='iniciar_sesion'),
     path('registrarse', crearCuenta, name ='registrarse'),
     path('perfil', perfil, name ='perfil'),
+    path('editarCliente/', EditarCliente, name='editarCliente' ),
     path(r'^(?P<id>\d+)/$', paginaPrinc, name ='home'),
     #path('home', paginaPrinc, name ='home'),
     path('consultorP', consultasProp, name ='consultorP'),
@@ -37,6 +38,6 @@ urlpatterns = [
     path('listarCbr', listar_cbr, name='listarCbr' ),
     path('modificarCbr/<id>/', modificar_cbr, name='modificarCbr' ),
     path('eliminarCbr/<id>/', eliminar_cbr, name='eliminarCbr' ),
-
+    
 
 ]
