@@ -474,6 +474,7 @@ def solicitar_tra(request, id):
                     id_usuario = i.id_usuario
                     break
                 solicitud.usuario_id_usuario = get_object_or_404(Usuario,pk= id_usuario )
+                foja_prop = request.POST.get("foja")
                 clas_prop = get_object_or_404(ClasProp,foja = foja_prop)
                 id_prop = get_object_or_404(Propiedad,clas_prop_id_clas=clas_prop )
                 solicitud.propiedad_id_propiedad = id_prop

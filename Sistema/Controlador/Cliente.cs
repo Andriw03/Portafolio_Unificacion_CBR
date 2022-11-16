@@ -160,6 +160,8 @@ namespace Controlador
                 string Nseg = "SO-000" + idSoli;
                 cmd = new MySqlCommand("UPDATE `UNIONLINE`.`SOLICITUD` SET `numero_seguimiento` = '"+ Nseg +"' WHERE `id_soli` = "+ idSoli +" ;", conex);
                 cmd.ExecuteNonQuery();
+                cmd = new MySqlCommand("INSERT INTO `UNIONLINE`.`CAR_COMPRA` (`estado`,`SOLICITUD_id_soli`) VALUES( 1, " + idSoli + ");", conex);
+                cmd.ExecuteNonQuery();
                 salida = true;
             }
             catch (Exception ex)
@@ -295,6 +297,30 @@ namespace Controlador
             }
             
         }
+
+        public string CorreoUsu(string rut)
+        {
+            string salida;
+            try
+            {
+                Conectar();
+                string correo = "";
+                cmd = new MySqlCommand("SELECT correo_electronico FROM UNIONLINE.USUARIO where rut_usuario = '" + rut + "';", conex);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    correo = rd["correo_electronico"].ToString();
+                }
+                rd.Close();
+                salida = correo;
+            }
+            catch (Exception ex)
+            {
+                salida = "Error al agregar el Dueño: " + ex.Message;
+            }
+            return salida;
+        }
+
     }
 
 
