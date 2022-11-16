@@ -1,28 +1,33 @@
 import random
+from datetime import datetime
+from datetime import datetime as dt
 from tkinter import EXCEPTION
 from urllib import response
 from webbrowser import get
-from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib import auth, messages
-from . models import Cbr, ClasProp, DuennoProp, EstadoPago, TipoPago, Usuario, TUsuario,Comuna,Region,Provincia,Solicitud,Tramite, Direccion, TTramite, Propiedad, CarCompra, HorAtencion
-from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
-from werkzeug.security import generate_password_hash, check_password_hash
+
 import mysql.connector as mysql
+from django.contrib import auth, messages
 from django.contrib.auth import authenticate, login
-from rut_chile import rut_chile
-from datetime import datetime as dt
-from django.contrib.auth.decorators import login_required, permission_required
-from datetime import datetime
+from django.contrib.auth.decorators import (login_required,
+                                            permission_required,
+                                            user_passes_test)
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from django.db.models import Q
 from django.http import JsonResponse
+from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView
-from django.db.models import Q
-from .forms import FormFormularioForm
+from rut_chile import rut_chile
 from transbank.error.transbank_error import TransbankError
 from transbank.webpay.webpay_plus.transaction import Transaction
-from django.contrib.auth.decorators import user_passes_test
+from werkzeug.security import check_password_hash, generate_password_hash
+
+from .forms import FormFormularioForm
+from .models import (CarCompra, Cbr, ClasProp, Comuna, Direccion, DuennoProp,
+                     EstadoPago, HorAtencion, Propiedad, Provincia, Region,
+                     Solicitud, TipoPago, Tramite, TTramite, TUsuario, Usuario)
 
 '''
 def llenarCbr():
@@ -275,7 +280,7 @@ def edicionCliente (request):
     pwd = request.POST['c']
     #cliente = get_object_or_404(Usuario, id_usuario = id)
     Usuario=Usuario.objects.get(id_usuario = id)
-    Usuario.primer_nombre = nombre
+    Usuario.primer_nombre = primer_nombre
     Usuario.segundo_nombre = sdo_nombre
     Usuario.primer_apellido = apellido
     Usuario.segundo_apellido = sdoapellido

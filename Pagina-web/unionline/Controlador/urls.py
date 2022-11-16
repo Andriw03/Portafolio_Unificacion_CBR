@@ -1,6 +1,9 @@
-from django.urls import path
+from django.urls import path, include, re_path
+from django.urls import path, include,re_path
 from django.urls import re_path as url
+from django.contrib import admin
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 from .views import inicio, iniciar_sesion, crearCuenta, perfil, formularioUser, inicioadmin, regDirector, show_create, transferencia, webpay_plus_commit, webpay_plus_create, listarDirector, Eliminardirector, EditarDirector,ediciondirector, EditarCliente, edicionCliente
 from .views import inicio, crearCuenta, perfil, paginaPrinc, consultasCom, formularioUser, conservador, listar_tra, solicitar_tra, eliminar_carrito, inicioadmin, regDirector,carrito_pagar, EditarDirector, ediciondirector, EditarCliente, edicionCliente
 from .views import inicio, crearCuenta, perfil, paginaPrinc, consultasProp, formularioUser, conservador, consultasCom, inicioadmin, regDirector,agregar_cbr, listar_cbr, modificar_cbr, eliminar_cbr, EditarDirector, ediciondirector, EditarCliente, edicionCliente
@@ -38,6 +41,13 @@ urlpatterns = [
     path('listarCbr', listar_cbr, name='listarCbr' ),
     path('modificarCbr/<id>/', modificar_cbr, name='modificarCbr' ),
     path('eliminarCbr/<id>/', eliminar_cbr, name='eliminarCbr' ),
-    
+    #url(r'^reset/password_reset', PasswordResetView.as_view, {'template_name': 'registration/password_reset_form.html','email_tamplate_name': 'registration/password_reset_email.html'}, name='password_reset'),
+    #url(r'^reset/password_reset_done', password_reset_done, {'template_name': 'registration/password_reset_done.html'}, name='password_reset_done' ),
+    #url(r'^reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>.+)/$', password_reset_confirm, {'template_name': 'registration/password_reset_confirm.html'}, name='password_reset_confirm'),
+    #url(r'^reset/done', password_reset_complete, {'template_name': 'registration/password_reset_complete.html'}, name='password_reset_complete'),
+    path('reset/password_reset', PasswordResetView.as_view(template_name='registration/password_reset_forms.html', email_template_name="registration/password_reset_email.html"), name = 'password_reset'),
+    path('reset/password_reset_done', PasswordResetDoneView.as_view(template_name='registration/password_reset_done.html'), name = 'password_reset_done'),
+    re_path(r'^reset/(?P<uidb64>[0-9A-za-z_\-]+)/(?P<token>.+)/$', PasswordResetConfirmView.as_view(template_name='registration/password_reset_confirm.html'), name = 'password_reset_confirm'),
+    path('reset/done',PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html') , name = 'password_reset_complete'),
 
 ]

@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.urls import path, include,re_path
+from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
+
 
 urlpatterns = [
     path('', include('Controlador.urls')),
