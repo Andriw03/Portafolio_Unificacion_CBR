@@ -262,6 +262,7 @@ namespace UniOnline.Trabajador
                     Cliente cli = new Cliente();
                     if (cli.AgregarSolicitud(Int32.Parse(lblCliente.Content.ToString()), Int32.Parse(lblProp.Content.ToString()), Int32.Parse(lblTra.Content.ToString())))
                     {
+
                         MessageBox.Show("Solicitud ingresada correctamente.");
                     }
                     else

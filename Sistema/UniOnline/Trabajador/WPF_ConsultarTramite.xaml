@@ -42,7 +42,7 @@
         </Viewbox>
 
         <Viewbox Height="62" MaxHeight="50" MaxWidth="300" Stretch="Uniform" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" OpacityMask="Black" Margin="0,19,17.6,0" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Right" Width="293">
-            <TextBox x:Name="txtRut"  MinHeight="23" MinWidth="165" TextWrapping="Wrap" Text="" Background="White" Foreground="#FF878787" KeyUp="txtRut_KeyUp"/>
+            <TextBox x:Name="txtRut"  MinHeight="23" MinWidth="165" TextWrapping="Wrap" VerticalContentAlignment="Center" Background="White" Foreground="#FF878787" KeyUp="txtRut_KeyUp"/>
         </Viewbox>
 
         <Viewbox Height="Auto" Width="Auto"  MaxHeight="50" MaxWidth="150" Stretch="Uniform" Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="4" Margin="96.8,67.4,85.6,16.8" Grid.RowSpan="2">
@@ -79,7 +79,7 @@
             <TextBlock MinHeight="30" MinWidth="200" TextWrapping="Wrap" Foreground="#FF010326" FontSize="20" FontFamily="Segoe UI Historic" FontWeight="Bold" Text="Ingrese N° de Seguimiento" Height="42" Width="256"/>
         </Viewbox>
         <Viewbox Height="62" MaxHeight="50" MaxWidth="300" Stretch="Uniform" Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="3" OpacityMask="Black" Margin="10,17,0,0" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="293">
-            <TextBox x:Name="txtNumeroSeguimiento"  MinHeight="23" MinWidth="165" TextWrapping="Wrap" Text="" Background="White" Foreground="#FF878787"/>
+            <TextBox x:Name="txtNumeroSeguimiento"  MinHeight="23" MinWidth="165" TextWrapping="Wrap" VerticalContentAlignment="Center" Background="White" Foreground="#FF878787"/>
         </Viewbox>
         <Viewbox Height="Auto" Width="Auto"  MaxHeight="50" MaxWidth="150" Stretch="Uniform" Grid.Column="6" Grid.Row="8" Grid.ColumnSpan="3" Margin="119,67.4,62.6,16.8" Grid.RowSpan="2">
             <Button x:Name="btn_Volver" Content="Volver" MinHeight="20" MinWidth="75" Cursor="Hand"  Background="#FF393E59" BorderBrush="#FFF0F2F2" Foreground="#FF96ACAC" RenderTransformOrigin="1.218,1.218" Height="25" Width="59" Click="btn_Volver_Click"/>

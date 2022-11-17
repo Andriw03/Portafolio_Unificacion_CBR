@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.IO.Compression;
+using System.Net;
+using System.Net.Mail;
 using System.Windows;
 using System.Windows.Forms;
 using MessageBox = System.Windows.MessageBox;
@@ -92,42 +94,6 @@ namespace UniOnline.Trabajador
 
         private void btnVerDoc_Click(object sender, RoutedEventArgs e)
         {
-            //try
-            //{
-            //    Conexion con = new Conexion();
-
-            //    string sql = "SELECT nombre_doc, doc FROM UNIONLINE.DOCUMENTO inner join UNIONLINE.SOLICITUD on UNIONLINE.DOCUMENTO.SOLICITUD_id_soli = UNIONLINE.SOLICITUD.id_soli where numero_seguimiento = '" + nSeguimiento + "' and TIPO_DOCUMENTO_id_tipodoc = 1;";
-            //    con.Conectar();
-            //    MySqlDataAdapter adp = new MySqlDataAdapter(sql, con.conex);
-            //    DataTable dt = new DataTable();
-
-            //    adp.Fill(dt);
-
-            //    if (dt.Rows.Count != 0)
-            //    {
-            //        for (int i = 0; i < dt.Rows.Count; i++)
-            //        {
-            //            SaveFileDialog saveFileDialog1 = new SaveFileDialog { Title = "Descargar documento.." };
-            //            byte[] b = (byte[])dt.Rows[i]["doc"];
-            //            saveFileDialog1.FileName = dt.Rows[i]["nombre_doc"].ToString();
-            //            string filename = saveFileDialog1.FileName;
-            //            saveFileDialog1.Filter = "Archivos PDF (*.pdf)|*.pdf|Todos los archivos (*.*)|*.*";
-            //            saveFileDialog1.ShowDialog();
-            //            FileStream fs = new FileStream(filename, FileMode.Create);
-            //            fs.Write(b, 0, b.Length);
-            //            fs.Close();
-            //        }
-            //        MessageBox.Show("Documento/s descargado con exito.");
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Error.", "Advertencia");
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error al descargar el documento." + ex.Message, "Advertencia");
-            //}
 
             try
             {
@@ -196,7 +162,7 @@ namespace UniOnline.Trabajador
             }
             else
             {
-                lbErrorNombre.Content = "Debe ingresar un nombre";
+                lbErrorNombre.Content = "Debe elegir un archivo.";
                 lbErrorNombre.Visibility = Visibility.Visible;
             }
 
@@ -267,5 +233,47 @@ namespace UniOnline.Trabajador
             }
         }
 
+        private void btnEnviarCorreo_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Cliente cli = new Cliente();
+                lblCorreoDuenno.Content = cli.CorreoUsu(lbRutSolicitante.Text);
+
+                MailMessage mail = new MailMessage();
+
+                mail.From = new MailAddress("soportecbr@outlook.com");
+                mail.To.Add(lblCorreoDuenno.Content.ToString());
+                mail.Subject = "Copia de Trámite solicitado";
+                mail.Body = "Pruebita xd.";
+
+                System.Net.Mail.Attachment attachment;
+                attachment = new System.Net.Mail.Attachment(labelURL.Content.ToString());
+
+                mail.Attachments.Add(attachment);
+
+                var client = new SmtpClient("smtp-mail.outlook.com", 587)
+                {
+                    Credentials = new NetworkCredential("soportecbr@outlook.com", "nohomo123"),
+                    EnableSsl = true
+                };
+
+                try
+                {
+                    client.Send(mail);
+                    MessageBox.Show("Se ha enviado un código a su correo, si no lo encuentra revise la bandeja de SPAM.");
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
