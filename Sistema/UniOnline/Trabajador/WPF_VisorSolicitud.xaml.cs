@@ -147,8 +147,14 @@ namespace UniOnline.Trabajador
                 {
                     if (cli.ModificarSolicitud(lbNumeroSO.Text, cmbEstado.SelectedItem.ToString(), txtComentario.Text))
                     {
-
-                        MessageBox.Show("Solicitud Guardada con éxito");
+                        if (cmbEstado.SelectedItem.ToString() == "Aprobado")
+                        {
+                            btnEnviarCorreo_Click(sender, e);
+                        }
+                        else
+                        {
+                            labelURL.Content = "URL";
+                        }
                     }
                     else
                     {
@@ -216,11 +222,6 @@ namespace UniOnline.Trabajador
                     param2.Value = GetPDFFileSize;
                     cmd.Parameters.Add(param2);
                     int InsertFiles = cmd.ExecuteNonQuery();
-                    if (InsertFiles > 0)
-                    {
-                        //Proceed ..     
-                        labelURL.Content = "URL";
-                    }
                     con.conex.Close();
 
                 }
@@ -245,7 +246,7 @@ namespace UniOnline.Trabajador
                 mail.From = new MailAddress("soportecbr@outlook.com");
                 mail.To.Add(lblCorreoDuenno.Content.ToString());
                 mail.Subject = "Copia de Trámite solicitado";
-                mail.Body = "Pruebita xd.";
+                mail.Body = "Estimado cliente: "+ lbNombreSolicitante.Text + ". \nJunto con saludar se adjunta el trámite solicitado: "+ lbNombreTramite.Text + "\nSaludos.";
 
                 System.Net.Mail.Attachment attachment;
                 attachment = new System.Net.Mail.Attachment(labelURL.Content.ToString());
@@ -261,8 +262,8 @@ namespace UniOnline.Trabajador
                 try
                 {
                     client.Send(mail);
-                    MessageBox.Show("Se ha enviado un código a su correo, si no lo encuentra revise la bandeja de SPAM.");
-
+                    MessageBox.Show("Se ha enviado una copia del trámite al cliente "+ lbNombreSolicitante.Text + ". \nSi no lo encuentra en la bandeja principal que revise la bandeja de SPAM.", "Correo enviado");
+                    labelURL.Content = "URL";
                 }
                 catch (Exception ex)
                 {
