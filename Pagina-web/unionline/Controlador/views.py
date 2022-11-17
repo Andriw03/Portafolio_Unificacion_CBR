@@ -247,7 +247,7 @@ def perfil(request):
         }
     return render(request, 'templates/perfil-cliente.html', data)
 
-
+@login_required(login_url='/iniciar_sesion')
 def EditarCliente (request):
     # cliente=Usuario.objects.get(id_usuario = id)
     
@@ -257,6 +257,7 @@ def EditarCliente (request):
 
     return render(request, "editarCliente.html", data)
 
+@login_required(login_url='/iniciar_sesion')
 def edicionCliente (request):
         #usuario.primer_nombre = request.POST.get('Nombre')
     id = int(request.POST['id'])
@@ -274,16 +275,16 @@ def edicionCliente (request):
         #usuario.contrasenna = request.POST.get('Contraseña')
     pwd = request.POST['c']
     #cliente = get_object_or_404(Usuario, id_usuario = id)
-    Usuario=Usuario.objects.get(id_usuario = id)
-    Usuario.primer_nombre = nombre
-    Usuario.segundo_nombre = sdo_nombre
-    Usuario.primer_apellido = apellido
-    Usuario.segundo_apellido = sdoapellido
-    Usuario.telefono = fono
-    Usuario.correo_electronico = email
-    Usuario.contrasenna = pwd
+    cliente=Usuario.objects.get(id_usuario = id)
+    cliente.primer_nombre = nombre
+    cliente.segundo_nombre = sdo_nombre
+    cliente.primer_apellido = apellido
+    cliente.segundo_apellido = sdoapellido
+    cliente.telefono = fono
+    cliente.correo_electronico = email
+    cliente.contrasenna = pwd
 
-    Usuario.save()
+    cliente.save()
 
     return redirect('perfil')
 
