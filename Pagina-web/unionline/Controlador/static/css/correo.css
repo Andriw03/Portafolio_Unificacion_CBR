@@ -22,6 +22,21 @@ form{
     margin-bottom: 200px;
 }
 
+.nuevacontra{
+    width: auto;
+    align-items: center;
+    margin-bottom: 5px;
+    justify-items: auto;
+    padding: 15px;
+    box-sizing: border-box;
+    align-content: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+
 footer{
     margin-top: 100px;
     position: static; bottom: 0; width: 100%;
