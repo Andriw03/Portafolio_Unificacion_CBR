@@ -11,9 +11,10 @@ body{
 .contenedor{
     width: 100%;
     padding: 15px;
+    
 }
 .formulario{
-    margin-top: 150px;
+    margin-top: 100px;
     padding: 3px;
     margin-bottom: 140px;
     background: white;
@@ -38,7 +39,6 @@ a{
 }
 .input-contenedor{
     margin-bottom: 15px;
-    
 }
 .icon{
     min-width: 50px;
@@ -67,9 +67,19 @@ footer{
 }
 
 a{
-    color: #6FBFBF;
+    border: none;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    background: #393E59;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
+a{
+    color: #6FBFBF;
+}
 
 @media (min-width:768px) 
 {

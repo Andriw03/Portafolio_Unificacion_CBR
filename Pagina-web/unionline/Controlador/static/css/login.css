@@ -48,7 +48,7 @@ input[type="password"]{
       border: none;
 }
 .input-contenedor{
-    margin-bottom: 15px; 
+    margin-bottom: 140px; 
 }
 .icon{
     min-width: 50px;
@@ -68,6 +68,7 @@ input[type="password"]{
 .button:hover{
     background: #010326;
 }
+
 @media (min-width:768px) 
 {
     .formulario{
