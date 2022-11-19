@@ -27,7 +27,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from .forms import FormFormularioForm
 from .models import (CarCompra, Cbr, ClasProp, Comuna, Direccion, DuennoProp,
                      EstadoPago, HorAtencion, Propiedad, Provincia, Region,
-                     Solicitud, TipoPago, Tramite, TTramite, TUsuario, Usuario, Documento)
+                     Solicitud, TipoPago, Tramite, TTramite, TUsuario, Usuario, Documento,TipoDocumento, Documento)
 
 '''
 def llenarCbr():
@@ -240,7 +240,7 @@ def perfil(request):
     tramite = '' 
 
     cliente = get_object_or_404(Usuario, rut_usuario=usuariocli.username, t_usuario_id_tipou=5)
-    tramite = Solicitud.objects.raw('SELECT * FROM UNIONLINE.SOLICITUD join UNIONLINE.TRAMITE on SOLICITUD.TRAMITE_id_tramite = TRAMITE.id_tramite join UNIONLINE.USUARIO on SOLICITUD.USUARIO_id_usuario = USUARIO.id_usuario WHERE USUARIO.rut_usuario = %s',[cliente.rut_usuario])
+    tramite = Solicitud.objects.raw('SELECT id_carrito, id_soli,id_tramite, id_usuario, nombre_tramite, numero_seguimiento, SOLICITUD.estado as estado, valor_tramite, correo_electronico FROM UNIONLINE.SOLICITUD inner join UNIONLINE.CAR_COMPRA on UNIONLINE.SOLICITUD.id_soli = UNIONLINE.CAR_COMPRA.SOLICITUD_id_soli join UNIONLINE.TRAMITE on SOLICITUD.TRAMITE_id_tramite = TRAMITE.id_tramite join UNIONLINE.USUARIO on SOLICITUD.USUARIO_id_usuario = USUARIO.id_usuario where CAR_COMPRA.estado = 1 and USUARIO.rut_usuario = %s',[cliente.rut_usuario])
     documento = Documento.objects.raw ('SELECT UNIONLINE.USUARIO.id_usuario, UNIONLINE.DOCUMENTO.doc, UNIONLINE.DOCUMENTO.id_documento, UNIONLINE.DOCUMENTO.nombre_doc FROM UNIONLINE.USUARIO JOIN UNIONLINE.SOLICITUD ON UNIONLINE.USUARIO.id_usuario = UNIONLINE.SOLICITUD.USUARIO_id_usuario JOIN UNIONLINE.DOCUMENTO ON UNIONLINE.SOLICITUD.id_soli = UNIONLINE.DOCUMENTO.SOLICITUD_id_soli')        
     
     data={
@@ -477,6 +477,7 @@ def solicitar_tra(request, id):
                     id_usuario = i.id_usuario
                     break
                 solicitud.usuario_id_usuario = get_object_or_404(Usuario,pk= id_usuario )
+                print("se caera aqui??  " + request.POST.get("foja"))
                 foja_prop = request.POST.get("foja")
                 clas_prop = get_object_or_404(ClasProp,foja = foja_prop)
                 id_prop = get_object_or_404(Propiedad,clas_prop_id_clas=clas_prop )
@@ -484,6 +485,35 @@ def solicitar_tra(request, id):
                 id_tramite = get_object_or_404(Tramite, id_tramite = id)
                 solicitud.tramite_id_tramite = id_tramite
                 solicitud.save()
+                tip_doc = get_object_or_404(TipoDocumento, pk = 1)
+                rut = str(usu.username).replace(".","").replace("-","")
+                for i in tramite:
+                    doc = Documento()
+                    doc2 = Documento()
+                    if i.t_documento == "Copia de cédula de identidad.":
+                        doc.nombre_doc = "Copia_Carnet_" + rut
+                        doc.doc = request.POST.get("copiaCedula")
+                        doc.solicitud_id_soli = solicitud
+                        doc.tipo_documento_id_tipodoc = tip_doc
+                        doc.save()
+                    elif i.t_documento == "Escritura de propiedad.":
+                        doc.nombre_doc = "Escritura_propiedad_" + rut
+                        doc.doc = request.POST.get("escritura")
+                        doc.solicitud_id_soli = solicitud
+                        doc.tipo_documento_id_tipodoc = tip_doc
+                        doc.save()
+                    elif i.t_documento == "Copia de cédula de identidad y Escritura de propiedad.":
+                        doc.nombre_doc = "Copia_Carnet_" + rut
+                        doc.doc = request.POST.get("copiaCedula")
+                        doc.solicitud_id_soli = solicitud
+                        doc.tipo_documento_id_tipodoc = tip_doc
+                        doc.save()
+                        doc2.nombre_doc = "Escritura_propiedad_" + rut
+                        doc2.doc = request.POST.get("escritura")
+                        doc2.solicitud_id_soli = solicitud
+                        doc2.tipo_documento_id_tipodoc = tip_doc
+                        doc2.save()
+                               
                 editar_solicitud = get_object_or_404(Solicitud,numero_seguimiento = "SO-21")
                 id_solicitud = "SO-000" + str(editar_solicitud.pk)
                 editar_solicitud.numero_seguimiento = id_solicitud
@@ -517,6 +547,10 @@ def solicitar_tra(request, id):
 
 @login_required(login_url='/iniciar_sesion')
 def eliminar_carrito(request, id_solicitud, id_car):
+    doc = Documento.objects.raw("SELECT * FROM UNIONLINE.DOCUMENTO where SOLICITUD_id_soli = %s;",[id_solicitud])
+    for i in doc:
+        drop_doc = get_object_or_404(Documento, pk = i.id_documento)
+        drop_doc.delete()
     carrito = get_object_or_404(CarCompra, pk = id_car)
     carrito.delete()
     solicitud = get_object_or_404(Solicitud, pk = id_solicitud)
@@ -794,8 +828,9 @@ def webpay_plus_create(request):
         "return_url": return_url
     }
     tx = Transaction()
+    print("antes de crear")
     response = tx.create(buy_order, session_id, amount, return_url)
-
+    print("despues de crear")
     
     token=response['token']
     data = {
@@ -832,7 +867,8 @@ def webpay_plus_commit(request):
             estado_pago.tipo_pago_id_tipop = tpago
             estado_pago.n_boleta = buy_order
             estado_pago.save()
-            solicitud = get_object_or_404(Solicitud, pk = car.solicitud_id_soli)
+            soli = car.solicitud_id_soli
+            solicitud = get_object_or_404(Solicitud, pk = soli.id_soli)
             now = datetime.now()
             solicitud.fecha_solicitud = now.strftime("%Y-%m-%d %H:%M:%S")
             solicitud.save()
