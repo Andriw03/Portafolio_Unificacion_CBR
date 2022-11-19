@@ -27,7 +27,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from .forms import FormFormularioForm
 from .models import (CarCompra, Cbr, ClasProp, Comuna, Direccion, DuennoProp,
                      EstadoPago, HorAtencion, Propiedad, Provincia, Region,
-                     Solicitud, TipoPago, Tramite, TTramite, TUsuario, Usuario)
+                     Solicitud, TipoPago, Tramite, TTramite, TUsuario, Usuario, Documento)
 
 '''
 def llenarCbr():
@@ -241,7 +241,8 @@ def perfil(request):
 
     cliente = get_object_or_404(Usuario, rut_usuario=usuariocli.username, t_usuario_id_tipou=5)
     tramite = Solicitud.objects.raw('SELECT * FROM UNIONLINE.SOLICITUD join UNIONLINE.TRAMITE on SOLICITUD.TRAMITE_id_tramite = TRAMITE.id_tramite join UNIONLINE.USUARIO on SOLICITUD.USUARIO_id_usuario = USUARIO.id_usuario WHERE USUARIO.rut_usuario = %s',[cliente.rut_usuario])
-            
+    documento = Documento.objects.raw ('SELECT UNIONLINE.USUARIO.id_usuario, UNIONLINE.DOCUMENTO.doc, UNIONLINE.DOCUMENTO.id_documento, UNIONLINE.DOCUMENTO.nombre_doc FROM UNIONLINE.USUARIO JOIN UNIONLINE.SOLICITUD ON UNIONLINE.USUARIO.id_usuario = UNIONLINE.SOLICITUD.USUARIO_id_usuario JOIN UNIONLINE.DOCUMENTO ON UNIONLINE.SOLICITUD.id_soli = UNIONLINE.DOCUMENTO.SOLICITUD_id_soli')        
+    
     data={
         'cliente': cliente,
         'tramite': tramite,
@@ -249,6 +250,7 @@ def perfil(request):
         'carrito':carrito,
         'valor':valor,
         'can_carrito': can_carrito,
+        'documento' : documento,
         }
     return render(request, 'templates/perfil-cliente.html', data)
 
