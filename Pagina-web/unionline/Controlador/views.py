@@ -4,8 +4,7 @@ from datetime import datetime as dt
 from tkinter import EXCEPTION
 from urllib import response
 from webbrowser import get
-
-import mysql.connector as mysql
+import mysql.connector
 from django.contrib import auth, messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import (login_required,
@@ -23,7 +22,6 @@ from rut_chile import rut_chile
 from transbank.error.transbank_error import TransbankError
 from transbank.webpay.webpay_plus.transaction import Transaction
 from werkzeug.security import check_password_hash, generate_password_hash
-
 from .forms import FormFormularioForm
 from .models import (CarCompra, Cbr, ClasProp, Comuna, Direccion, DuennoProp,
                      EstadoPago, HorAtencion, Propiedad, Provincia, Region,
@@ -436,6 +434,41 @@ def listar_tra(request, id):
         }
     return render(request, 'templates/listar_tramite.html', data)
 
+def convertToBinaryData(filename):
+    # Convert digital data to binary format
+    with open(filename, 'rb') as file:
+        binaryData = file.read()
+    return binaryData
+def insertBLOB(nombre_doc, doc, id_soli):
+    print("Inserting BLOB into python_employee table")
+    try:
+        connection = mysql.connector.connect(host='unificacion.cmvnu851mzxa.us-east-1.rds.amazonaws.com',
+                                             database='UNIONLINE',
+                                             user='root',
+                                             password='nohomo123')
+
+        cursor = connection.cursor()
+        sql_insert_blob_query = """ INSERT INTO `UNIONLINE`.`DOCUMENTO`
+                          (`nombre_doc`, `doc`, `SOLICITUD_id_soli`, `TIPO_DOCUMENTO_id_tipodoc`) VALUES (%s,%s,%s,1)"""
+
+        documento = convertToBinaryData(doc)
+        # Convert data into tuple format
+        insert_blob_tuple = (nombre_doc, doc, id_soli)
+        result = cursor.execute(sql_insert_blob_query, insert_blob_tuple)
+        connection.commit()
+        print("Funiono mi rey", result)
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+            print("MySQL connection is closed")
+
+    except mysql.connector.Error as error:
+        print("Failed inserting BLOB data into MySQL table {}".format(error))
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+            print("MySQL connection is closed")
+    
 @login_required(login_url='/iniciar_sesion')
 def solicitar_tra(request, id):
     #agregar a todas las ventanas de cliente
@@ -485,34 +518,29 @@ def solicitar_tra(request, id):
                 id_tramite = get_object_or_404(Tramite, id_tramite = id)
                 solicitud.tramite_id_tramite = id_tramite
                 solicitud.save()
-                tip_doc = get_object_or_404(TipoDocumento, pk = 1)
                 rut = str(usu.username).replace(".","").replace("-","")
                 for i in tramite:
-                    doc = Documento()
-                    doc2 = Documento()
                     if i.t_documento == "Copia de cédula de identidad.":
-                        doc.nombre_doc = "Copia_Carnet_" + rut
-                        doc.doc = request.POST.get("copiaCedula")
-                        doc.solicitud_id_soli = solicitud
-                        doc.tipo_documento_id_tipodoc = tip_doc
-                        doc.save()
+                        nombre_doc = "Copia_Carnet_" + rut
+                        doc = request.POST.get("copiaCedula")
+                        solicitud_id_soli = solicitud
+                        insertBLOB(nombre_doc,doc,solicitud_id_soli)
                     elif i.t_documento == "Escritura de propiedad.":
-                        doc.nombre_doc = "Escritura_propiedad_" + rut
-                        doc.doc = request.POST.get("escritura")
-                        doc.solicitud_id_soli = solicitud
-                        doc.tipo_documento_id_tipodoc = tip_doc
-                        doc.save()
+                        nombre_doc = "Escritura_propiedad_" + rut
+                        doc = request.POST.get("escritura")
+                        solicitud_id_soli = solicitud
+                        insertBLOB(nombre_doc,doc,solicitud_id_soli)
+                        
                     elif i.t_documento == "Copia de cédula de identidad y Escritura de propiedad.":
-                        doc.nombre_doc = "Copia_Carnet_" + rut
-                        doc.doc = request.POST.get("copiaCedula")
-                        doc.solicitud_id_soli = solicitud
-                        doc.tipo_documento_id_tipodoc = tip_doc
-                        doc.save()
-                        doc2.nombre_doc = "Escritura_propiedad_" + rut
-                        doc2.doc = request.POST.get("escritura")
-                        doc2.solicitud_id_soli = solicitud
-                        doc2.tipo_documento_id_tipodoc = tip_doc
-                        doc2.save()
+                        nombre_doc = "Copia_Carnet_" + rut
+                        doc = request.POST.get("copiaCedula")
+                        solicitud_id_soli = solicitud
+                        insertBLOB(nombre_doc,doc,solicitud_id_soli)
+
+                        nombre_doc = "Escritura_propiedad_" + rut
+                        doc = request.POST.get("escritura")
+                        solicitud_id_soli = solicitud
+                        insertBLOB(nombre_doc,doc,solicitud_id_soli)
                                
                 editar_solicitud = get_object_or_404(Solicitud,numero_seguimiento = "SO-21")
                 id_solicitud = "SO-000" + str(editar_solicitud.pk)
@@ -524,7 +552,7 @@ def solicitar_tra(request, id):
                 carrito.save()
                 messages.success(request, "Solicitud generada correctamente")
             except Exception as e:
-                messages.error(request, str(e) )
+                messages.error(request, "Error al crear la solicitud: " + str(e) )
 
         elif 'buscarFoja' in request.POST:
             try:
@@ -532,6 +560,10 @@ def solicitar_tra(request, id):
                 propiedad = Propiedad.objects.raw("SELECT id_propiedad, descripcion, id_clas, foja, numero, YEAR(anno) as fecha FROM UNIONLINE.PROPIEDAD inner join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas where foja = %s;",[foja_prop])
             except Exception as e:
                 messages.error(request, str(e) )
+        elif 'prueba' in request.POST:
+            variable = request.POST.get("escritura")
+            
+            print(str(variable))
     
     data={
         'tramite': tramite,
