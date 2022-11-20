@@ -5,3 +5,4 @@ python -m pip install mysql-connector-python
 pip install mysqlclient
 pip install rut_chile
 pip install transbank-sdk
+pip install --pre xhtml2pdf

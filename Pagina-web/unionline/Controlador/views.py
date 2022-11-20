@@ -1,5 +1,12 @@
 import os
 import random
+from django.template.loader import get_template
+from xhtml2pdf import pisa
+from django.views.generic import View
+from io import BytesIO
+from django.http import HttpResponse
+from django.conf import settings
+from django.core.mail import EmailMultiAlternatives
 from datetime import datetime
 from datetime import datetime as dt
 from tkinter import EXCEPTION
@@ -216,6 +223,22 @@ def crearCuenta(request):
         
     return render(request, 'registration/registrar.html')
 
+def send_mail(mail):
+    documento=Documento.objects.all()
+    context = {'mail': mail}
+    template = get_template('documento_correo.html')
+    content = template.render(context)
+    email = EmailMultiAlternatives(
+        'Envío de Trámite',
+        'Cbr',
+        settings.EMAIL_HOST_USER,
+        [mail]
+
+    )
+    
+    email.attach_alternative(content, 'text/html')
+    email.send()
+
 @login_required(login_url='/iniciar_sesion')
 def perfil(request):
     #agregar a todas las ventanas de cliente
@@ -240,7 +263,7 @@ def perfil(request):
 
     cliente = get_object_or_404(Usuario, rut_usuario=usuariocli.username, t_usuario_id_tipou=5)
     tramite = Solicitud.objects.raw('SELECT id_carrito, id_soli,id_tramite, id_usuario, nombre_tramite, numero_seguimiento, SOLICITUD.estado as estado, valor_tramite, correo_electronico FROM UNIONLINE.SOLICITUD inner join UNIONLINE.CAR_COMPRA on UNIONLINE.SOLICITUD.id_soli = UNIONLINE.CAR_COMPRA.SOLICITUD_id_soli join UNIONLINE.TRAMITE on SOLICITUD.TRAMITE_id_tramite = TRAMITE.id_tramite join UNIONLINE.USUARIO on SOLICITUD.USUARIO_id_usuario = USUARIO.id_usuario where CAR_COMPRA.estado = 1 and USUARIO.rut_usuario = %s',[cliente.rut_usuario])
-    documento = Documento.objects.raw ('SELECT UNIONLINE.USUARIO.id_usuario, UNIONLINE.DOCUMENTO.doc, UNIONLINE.DOCUMENTO.id_documento, UNIONLINE.DOCUMENTO.nombre_doc FROM UNIONLINE.USUARIO JOIN UNIONLINE.SOLICITUD ON UNIONLINE.USUARIO.id_usuario = UNIONLINE.SOLICITUD.USUARIO_id_usuario JOIN UNIONLINE.DOCUMENTO ON UNIONLINE.SOLICITUD.id_soli = UNIONLINE.DOCUMENTO.SOLICITUD_id_soli')        
+    documento = Documento.objects.raw ('SELECT UNIONLINE.USUARIO.id_usuario, UNIONLINE.DOCUMENTO.doc, UNIONLINE.DOCUMENTO.id_documento, UNIONLINE.DOCUMENTO.nombre_doc FROM UNIONLINE.USUARIO JOIN UNIONLINE.SOLICITUD ON UNIONLINE.USUARIO.id_usuario = UNIONLINE.SOLICITUD.USUARIO_id_usuario JOIN UNIONLINE.DOCUMENTO ON UNIONLINE.SOLICITUD.id_soli = UNIONLINE.DOCUMENTO.SOLICITUD_id_soli where DOCUMENTO.TIPO_DOCUMENTO_id_tipodoc =2')         
     
     data={
         'cliente': cliente,
@@ -251,6 +274,12 @@ def perfil(request):
         'can_carrito': can_carrito,
         'documento' : documento,
         }
+    if request.method =='POST':
+        mail = request.POST.get('mail')
+        send_mail(mail)
+        messages.success(request, 'Correo enviado.')
+    else: 
+        messages.warning(request, 'Imposible enviar el correo.')
     return render(request, 'templates/perfil-cliente.html', data)
 
 @login_required(login_url='/iniciar_sesion')
