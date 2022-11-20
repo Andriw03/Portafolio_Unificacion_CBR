@@ -1,3 +1,4 @@
+import os
 import random
 from datetime import datetime
 from datetime import datetime as dt
@@ -453,7 +454,7 @@ def insertBLOB(nombre_doc, doc, id_soli):
 
         documento = convertToBinaryData(doc)
         # Convert data into tuple format
-        insert_blob_tuple = (nombre_doc, doc, id_soli)
+        insert_blob_tuple = (nombre_doc, documento, id_soli)
         result = cursor.execute(sql_insert_blob_query, insert_blob_tuple)
         connection.commit()
         print("Funiono mi rey", result)
@@ -469,6 +470,11 @@ def insertBLOB(nombre_doc, doc, id_soli):
             connection.close()
             print("MySQL connection is closed")
     
+def findfile(name, path):
+    for dirpath, dirname, filename in os.walk(path):
+        if name in filename:
+            return os.path.join(dirpath, name)
+
 @login_required(login_url='/iniciar_sesion')
 def solicitar_tra(request, id):
     #agregar a todas las ventanas de cliente
@@ -521,25 +527,33 @@ def solicitar_tra(request, id):
                 rut = str(usu.username).replace(".","").replace("-","")
                 for i in tramite:
                     if i.t_documento == "Copia de cédula de identidad.":
+                        variable = request.POST.get("copiaCedula")
+                        variable2 = findfile(variable, "C:/")
                         nombre_doc = "Copia_Carnet_" + rut
-                        doc = request.POST.get("copiaCedula")
-                        solicitud_id_soli = solicitud
+                        doc = variable2
+                        solicitud_id_soli = solicitud.id_soli
                         insertBLOB(nombre_doc,doc,solicitud_id_soli)
                     elif i.t_documento == "Escritura de propiedad.":
+                        variable = request.POST.get("escritura")
+                        variable2 = findfile(variable, "C:/")
                         nombre_doc = "Escritura_propiedad_" + rut
-                        doc = request.POST.get("escritura")
-                        solicitud_id_soli = solicitud
+                        doc = variable2
+                        solicitud_id_soli = solicitud.id_soli
                         insertBLOB(nombre_doc,doc,solicitud_id_soli)
                         
                     elif i.t_documento == "Copia de cédula de identidad y Escritura de propiedad.":
+                        variable = request.POST.get("copiaCedula")
+                        variable2 = findfile(variable, "C:/")
                         nombre_doc = "Copia_Carnet_" + rut
-                        doc = request.POST.get("copiaCedula")
-                        solicitud_id_soli = solicitud
+                        doc = variable2
+                        solicitud_id_soli = solicitud.id_soli
                         insertBLOB(nombre_doc,doc,solicitud_id_soli)
 
+                        variable = request.POST.get("escritura")
+                        variable2 = findfile(variable, "C:/")
                         nombre_doc = "Escritura_propiedad_" + rut
-                        doc = request.POST.get("escritura")
-                        solicitud_id_soli = solicitud
+                        doc = variable2
+                        solicitud_id_soli = solicitud.id_soli
                         insertBLOB(nombre_doc,doc,solicitud_id_soli)
                                
                 editar_solicitud = get_object_or_404(Solicitud,numero_seguimiento = "SO-21")
@@ -562,8 +576,9 @@ def solicitar_tra(request, id):
                 messages.error(request, str(e) )
         elif 'prueba' in request.POST:
             variable = request.POST.get("escritura")
-            
+            variable2 = findfile(variable, "C:/")
             print(str(variable))
+            print(str(variable2))
     
     data={
         'tramite': tramite,
