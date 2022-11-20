@@ -46,7 +46,6 @@ namespace UniOnline.Director
         }
 
 
-
         private void btnInfoVentas_Click(object sender, RoutedEventArgs e)
         {
 

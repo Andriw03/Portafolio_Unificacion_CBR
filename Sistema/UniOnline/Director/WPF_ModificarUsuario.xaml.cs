@@ -149,9 +149,40 @@ namespace UniOnline.Director
 
         }
 
-        private void txtBoxContra_TextChanged(object sender, TextChangedEventArgs e)
+        private bool FormatocOntraseña(string password)
         {
+            bool mayuscula = false, minuscula = false, numero = false, caraespecial = false;
+            for (int i = 0; i < password.Length; i++)
+            {
+                if (Char.IsUpper(password, i))
+                {
+                    mayuscula = true;
+                }
+                else if (Char.IsLower(password, i))
+                {
+                    minuscula = true;
+                }
+                else if (Char.IsDigit(password, i))
+                {
+                    numero = true;
+                }
+                else
+                {
+                    caraespecial = true;
+                }
+            }
+            if (mayuscula && minuscula && numero && caraespecial && password.Length >= 8)
+            {
+                return true;
+            }
+            return false;
+        }
 
+        private void txtBoxContra_TextChanged(object sender, EventArgs e)
+        {
+            if (FormatocOntraseña(txtBoxContra.ToString()))
+                btnRegistrar.IsEnabled = true;
+            else btnRegistrar.IsEnabled = false;
         }
 
 
@@ -369,5 +400,7 @@ namespace UniOnline.Director
         {
 
         }
+
+
     }
 }
