@@ -224,24 +224,59 @@ def crearCuenta(request):
         
     return render(request, 'registration/registrar.html')
 
+def write_file(data, filename):
+    # Convert binary data to proper format and write it on Hard Disk
+    with open(filename, 'wb') as file:
+        file.write(data)
+
+
+def readBLOB(emp_id, bioData):
+    try:
+        connection = mysql.connector.connect(host='unificacion.cmvnu851mzxa.us-east-1.rds.amazonaws.com',
+                                        database='UNIONLINE',
+                                        user='root',
+                                        password='nohomo123')
+
+        cursor = connection.cursor()
+        sql_fetch_blob_query = """SELECT * FROM UNIONLINE.DOCUMENTO where id_documento = %s"""
+
+        cursor.execute(sql_fetch_blob_query, (emp_id,))
+        record = cursor.fetchall()
+        for row in record:
+            print("Id = ", row[0], )
+            print("Name = ", row[1])
+            file = row[2]
+
+            write_file(file, bioData)
+
+    except mysql.connector.Error as error:
+        print("Failed to read BLOB data from MySQL table {}".format(error))
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+            print("MySQL connection is closed")
+
 def send_mail(id,correo):
     
     documento= get_object_or_404(Documento , pk=id)
     context = {'correo': correo}
     template = get_template('documento_correo.html')
     content = template.render(context)
-    nombreDoc= documento.nombre_doc + '.txt'
-    #file = open (documento.doc,"r",encoding="ISO-8859-1", errors= "replace")
-    #for line in open (nombreDoc,"rb").readlines():
-        #file.write(line)
-    #file.close()
+    nombreDoc= documento.nombre_doc + '.pdf'
+
+    #readBLOB(id, nombreDoc)
+
     doc = documento.doc
+    #docu = doc.encode(encoding='utf-8')
+    # file = open(docu,"wb")
+    # for line in open (nombreDoc,"rb").readlines():
+    #     file.write(line)
+    # file.close()
+    
     with open (nombreDoc, "wb") as p:
-        decoderDoc=base64.decodebytes(doc)
-        p.write(decoderDoc) 
+        #decoderDoc=base64.standard_b64decode(doc)
+        p.write(doc) 
         
-    
-    
     
     email = EmailMultiAlternatives(
         'Envío de Trámite',
@@ -250,15 +285,8 @@ def send_mail(id,correo):
         [correo]
 
     )
-   
     #email.attach_alternative(content, 'text/html')
     #email.send()
-    
-    
-    
-
-    
-
     
 
 @login_required(login_url='/iniciar_sesion')
@@ -624,12 +652,7 @@ def solicitar_tra(request, id):
                 foja_prop = request.POST.get("foja")
                 propiedad = Propiedad.objects.raw("SELECT id_propiedad, descripcion, id_clas, foja, numero, YEAR(anno) as fecha FROM UNIONLINE.PROPIEDAD inner join UNIONLINE.CLAS_PROP on UNIONLINE.PROPIEDAD.CLAS_PROP_id_clas = UNIONLINE.CLAS_PROP.id_clas where foja = %s;",[foja_prop])
             except Exception as e:
-                messages.error(request, str(e) )
-        elif 'prueba' in request.POST:
-            variable = request.POST.get("escritura")
-            variable2 = findfile(variable, "C:/")
-            print(str(variable))
-            print(str(variable2))
+                messages.error(request, str(e))
     
     data={
         'tramite': tramite,
