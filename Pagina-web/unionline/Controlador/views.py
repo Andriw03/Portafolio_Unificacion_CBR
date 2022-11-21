@@ -1,5 +1,6 @@
 import os
 import random
+import base64
 from django.template.loader import get_template
 from xhtml2pdf import pisa
 from django.views.generic import View
@@ -223,21 +224,42 @@ def crearCuenta(request):
         
     return render(request, 'registration/registrar.html')
 
-def send_mail(mail):
-    documento=Documento.objects.all()
-    context = {'mail': mail}
+def send_mail(id,correo):
+    
+    documento= get_object_or_404(Documento , pk=id)
+    context = {'correo': correo}
     template = get_template('documento_correo.html')
     content = template.render(context)
+    nombreDoc= documento.nombre_doc + '.txt'
+    #file = open (documento.doc,"r",encoding="ISO-8859-1", errors= "replace")
+    #for line in open (nombreDoc,"rb").readlines():
+        #file.write(line)
+    #file.close()
+    doc = documento.doc
+    with open (nombreDoc, "wb") as p:
+        decoderDoc=base64.decodebytes(doc)
+        p.write(decoderDoc) 
+        
+    
+    
+    
     email = EmailMultiAlternatives(
         'Envío de Trámite',
         'Cbr',
         settings.EMAIL_HOST_USER,
-        [mail]
+        [correo]
 
     )
+   
+    #email.attach_alternative(content, 'text/html')
+    #email.send()
     
-    email.attach_alternative(content, 'text/html')
-    email.send()
+    
+    
+
+    
+
+    
 
 @login_required(login_url='/iniciar_sesion')
 def perfil(request):
@@ -275,8 +297,8 @@ def perfil(request):
         'documento' : documento,
         }
     if request.method =='POST':
-        mail = request.POST.get('mail')
-        send_mail(mail)
+        id = request.POST.get('mail')
+        send_mail(id,usu.email)
         messages.success(request, 'Correo enviado.')
     else: 
         messages.warning(request, 'Imposible enviar el correo.')

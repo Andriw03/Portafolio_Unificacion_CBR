@@ -56,7 +56,7 @@
                                                       <form method = 'POST'>
                                                         {% csrf_token %}
                                                         Enviar por mail:  <div>
-                                                          <input type="submit" name="mail" value="{{t.correo_electronico}}"  class="button">
+                                                          <input type="submit" name="mail" value="{{d.pk}}"  class="button">
                                                                           </div>
                                                       </form>
                                                       {% endif %} 
