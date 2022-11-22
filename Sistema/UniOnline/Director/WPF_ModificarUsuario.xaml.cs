@@ -149,29 +149,29 @@ namespace UniOnline.Director
 
         }
 
-        private bool FormatocOntraseña(string password)
+        private bool AlgoritmoContraseñaSegura(string pass)
         {
-            bool mayuscula = false, minuscula = false, numero = false, caraespecial = false;
-            for (int i = 0; i < password.Length; i++)
+            bool mayuscula = false, minuscula = false, numero = false, caracespecial = false;
+            for (int i = 0; i < pass.Length; i++)
             {
-                if (Char.IsUpper(password, i))
+                if (char.IsUpper(pass, i))
                 {
                     mayuscula = true;
                 }
-                else if (Char.IsLower(password, i))
+                else if (char.IsLower(pass, i))
                 {
                     minuscula = true;
                 }
-                else if (Char.IsDigit(password, i))
+                else if (Char.IsDigit(pass, i))
                 {
                     numero = true;
                 }
                 else
                 {
-                    caraespecial = true;
+                    caracespecial = true;
                 }
             }
-            if (mayuscula && minuscula && numero && caraespecial && password.Length >= 8)
+            if (mayuscula && minuscula && numero && caracespecial && pass.Length >= 8)
             {
                 return true;
             }
@@ -180,9 +180,15 @@ namespace UniOnline.Director
 
         private void txtBoxContra_TextChanged(object sender, EventArgs e)
         {
-            if (FormatocOntraseña(txtBoxContra.ToString()))
+            if (AlgoritmoContraseñaSegura(txtBoxContra.Password))
+            {
                 btnRegistrar.IsEnabled = true;
-            else btnRegistrar.IsEnabled = false;
+            }
+             
+            else
+            { 
+                btnRegistrar.IsEnabled = false;
+            }
         }
 
 
