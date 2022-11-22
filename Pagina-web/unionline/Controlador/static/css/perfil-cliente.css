@@ -6,9 +6,10 @@
 .btn:hover{
     background-color: #393E59;
     border: #393E59;
+    color:#FFF
 }
 a{
-    color: #6FBFBF;
+    color: #393E59;
 }
 .tabla{
     padding: 2% 15%;

@@ -61,17 +61,18 @@
 
                         </ul>
                       </div>
+                      
                     </div>
                     <div class="navbar-nav ms-auto">
                       {% if user.is_authenticated %}
+                      <a href="{% url 'perfil' %}" name="historial" class="nav-link px-2 dropdown-item">Historial Solicitudes</a>
                       <div class="dropdown">
                           <button class="btn dropdown-toggle text-white" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                               Bienvenido {{user.first_name}} {{user.last_name}}
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a href="{% url 'perfil' %}" class="nav-link px-2 dropdown-item">Perfil</a></li>
-                              <li><a href="{% url 'editarCliente' %}" class="nav-link px-2 dropdown-item">Editar Perfil</a></li>  
-                              <li><a href="{% url 'logout' %}" class="nav-link px-2 dropdown-item">Cerrar Sesión</a></li>  
+                            <li><a href="{% url 'editarCliente' %}" class="nav-link px-2 dropdown-item">Editar Perfil</a></li>  
+                            <li><a href="{% url 'logout' %}" class="nav-link px-2 dropdown-item">Cerrar Sesión</a></li>  
                           </ul>
                             
                         </div>
@@ -183,7 +184,12 @@
     </main>
     
     <br><br><br><br><br><br>
-
+    <div class="whatsapp">
+      <img src="https://www.pngplay.com/wp-content/uploads/12/Anime-Profile-Pictures-Transparent-Free-PNG.png" alt="" width="10%" height="10%">
+      <a href="https://wa.me/+56946411039?text=Buenas, tengo una consulta" class="btn-wsp" target="_blank">
+         <i class="fa fa-whatsapp icono"></i>
+      </a>
+  </div>
 </body>
 
 <footer>

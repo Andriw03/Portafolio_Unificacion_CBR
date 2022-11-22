@@ -224,37 +224,6 @@ def crearCuenta(request):
         
     return render(request, 'registration/registrar.html')
 
-def write_file(data, filename):
-    # Convert binary data to proper format and write it on Hard Disk
-    with open(filename, 'wb') as file:
-        file.write(data)
-
-
-def readBLOB(emp_id, bioData):
-    try:
-        connection = mysql.connector.connect(host='unificacion.cmvnu851mzxa.us-east-1.rds.amazonaws.com',
-                                        database='UNIONLINE',
-                                        user='root',
-                                        password='nohomo123')
-
-        cursor = connection.cursor()
-        sql_fetch_blob_query = """SELECT * FROM UNIONLINE.DOCUMENTO where id_documento = %s"""
-
-        cursor.execute(sql_fetch_blob_query, (emp_id,))
-        record = cursor.fetchall()
-        for row in record:
-            print("Id = ", row[0], )
-            print("Name = ", row[1])
-            file = row[2]
-
-            write_file(file, bioData)
-
-    except mysql.connector.Error as error:
-        print("Failed to read BLOB data from MySQL table {}".format(error))
-        if connection.is_connected():
-            cursor.close()
-            connection.close()
-            print("MySQL connection is closed")
 
 def send_mail(id,correo):
     
@@ -324,14 +293,16 @@ def perfil(request):
         'can_carrito': can_carrito,
         'documento' : documento,
         }
-    if request.method =='POST':
-        id = request.POST.get('mail')
-        send_mail(id,usu.email)
-        messages.success(request, 'Correo enviado.')
-    else: 
-        messages.warning(request, 'Imposible enviar el correo.')
     return render(request, 'templates/perfil-cliente.html', data)
 
+@login_required(login_url='/iniciar_sesion')
+def detalle_solicitud(request,id):
+    print(id)
+    data={
+
+        }
+
+    return render(request, 'templates\detalle_solicitud.html', data)
 @login_required(login_url='/iniciar_sesion')
 def EditarCliente (request):
     # cliente=Usuario.objects.get(id_usuario = id)
@@ -491,8 +462,8 @@ def procesar_formulario(request):
     formu = get_object_or_404(FormFormulario, id_formulario = formu.id)
     
     formu.nombre_form = nombre_form
-    formu.telefono = fono
-    formu.correo_electronico = email
+    #formu.telefono = fono
+    #formu.correo_electronico = email
     formu.asunto = asunto
     formu.detalle = detalle
     # usucliente.contrasenna = pwd

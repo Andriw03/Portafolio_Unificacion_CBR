@@ -30,46 +30,13 @@
                       <td>{{t.numero_seguimiento}}</td>
                       <td>{{t.estado}}</td>
                       <td>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                          Detalles
+                        <button type="submit" name="solicitud" class="btn btn-primary" >
+                         <a href="{% url 'detalle_solicitud' id=t.id_soli %}">Detalles</a> 
                         </button>
 
 
                       </td>
-                    </tr>
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                              <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                  <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Detalle solicitud: {{t.numero_seguimiento}}</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                  </div>
-                                                  <div class="modal-body">
-                                                    Valor: ${{t.valor_tramite}} <br><br>
-                    
-                                                      {% for d in documento %}
-                                                      
-                                                      {% if t.estado == "Aprobado" %}
-                                                      Descargar Trámite: <a href="{{d.doc}}" download="{{d.nombre_doc}} ">Descargar</a> <br><br>
-                                                      <form method = 'POST'>
-                                                        {% csrf_token %}
-                                                        Enviar por mail:  <div>
-                                                          <input type="submit" name="mail" value="{{d.pk}}"  class="button">
-                                                                          </div>
-                                                      </form>
-                                                      {% endif %} 
-                                                  {% endfor %}
-                                                  </div>
-                                                  <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-
-                    
+                    </tr>                                                           
                   {% endfor %}
                 </tbody>
             </table>
@@ -77,10 +44,6 @@
         </div> 
       </div>
     </Main>
-    <div class="whatsapp">
-      <a href="https://wa.me/+56946411039?text=Buenas, tengo una consulta" class="btn-wsp" target="_blank">
-          <i class="fa fa-whatsapp icono"></i>
-      </a>
-  </div>
+
     
   {% endblock %}

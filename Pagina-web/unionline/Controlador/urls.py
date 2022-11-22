@@ -4,9 +4,8 @@ from django.urls import re_path as url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
-from .views import inicio, iniciar_sesion, crearCuenta, perfil, formularioUser, inicioadmin, regDirector, show_create, transferencia, webpay_plus_commit, webpay_plus_create, listarDirector, Eliminardirector, EditarDirector,ediciondirector, EditarCliente, edicionCliente, procesar_formulario
-from .views import inicio, crearCuenta, perfil, paginaPrinc, consultasCom, formularioUser, conservador, listar_tra, solicitar_tra, eliminar_carrito, inicioadmin, regDirector,carrito_pagar, EditarDirector, ediciondirector, EditarCliente, edicionCliente, procesar_formulario
-from .views import inicio, crearCuenta, perfil, paginaPrinc, consultasProp, formularioUser, conservador, consultasCom, inicioadmin, regDirector,agregar_cbr, listar_cbr, modificar_cbr, eliminar_cbr, EditarDirector, ediciondirector, EditarCliente, edicionCliente, procesar_formulario
+from .views import agregar_cbr, carrito_pagar, conservador, consultasCom, consultasProp, detalle_solicitud, eliminar_carrito, eliminar_cbr, inicio, iniciar_sesion, crearCuenta, listar_cbr, listar_tramites, modificar_cbr, paginaPrinc, perfil, formularioUser, inicioadmin, regDirector, show_create, solicitar_tra, transferencia, webpay_plus_commit, webpay_plus_create, listarDirector, Eliminardirector, EditarDirector,ediciondirector, EditarCliente, edicionCliente, procesar_formulario
+
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -16,6 +15,7 @@ urlpatterns = [
     path('iniciar_sesion', iniciar_sesion, name='iniciar_sesion'),
     path('registrarse', crearCuenta, name ='registrarse'),
     path('perfil', perfil, name ='perfil'),
+    path(r'^listar_solicitud/(?P<id>\d+)/$', detalle_solicitud, name='detalle_solicitud'),
     path('editarCliente/', EditarCliente, name='editarCliente' ),
     path('edicionCliente/', edicionCliente, name='edicionCliente'),
     path(r'^(?P<id>\d+)/$', paginaPrinc, name ='home'),
@@ -31,7 +31,7 @@ urlpatterns = [
     path('Eliminardirector/<int:id>/', Eliminardirector, name='Eliminardirector' ),
     path('EditarDirector/<int:id>/', EditarDirector, name='EditarDirector' ),
     path('ediciondirector/', ediciondirector, name='ediciondirector'),
-    path(r'^listar/(?P<id>\d+)/$', listar_tra, name='listar'),
+    path(r'^listar/(?P<id>\d+)/$', listar_tramites, name='listar'),
     path(r'^solicitar/(?P<id>\d+)/$', solicitar_tra, name='solicitar'),
     path(r'^eliminar_carrito/(?P<id_solicitud>\d+)/(?P<id_car>\d+)/$', eliminar_carrito, name="eliminar_carrito"),
     path('carrito_pagar',carrito_pagar, name='carrito_pagar'),
