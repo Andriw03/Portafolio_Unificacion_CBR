@@ -33,7 +33,7 @@ from transbank.webpay.webpay_plus.transaction import Transaction
 from werkzeug.security import check_password_hash, generate_password_hash
 from .forms import FormFormularioForm
 from .models import (CarCompra, Cbr, ClasProp, Comuna, Direccion, DuennoProp,
-                     EstadoPago, HorAtencion, Propiedad, Provincia, Region,
+                     EstadoPago, HorAtencion, Propiedad, Provincia, Region, FormFormulario,
                      Solicitud, TipoPago, Tramite, TTramite, TUsuario, Usuario, Documento,TipoDocumento, Documento)
 
 '''
@@ -469,15 +469,50 @@ def formularioUser(request):
     return render(request, 'templates/formulario.html')
 
 def procesar_formulario(request):
-    form = FormFormularioForm()
-    if form.is_valid():
-        form.save()
-        messages.success(request, 'Formulario insertado correctamente.')
-        form = FormFormularioForm()
-    else:
-        messages.error(request, 'Error al insertar formulario. Revise los datos.')
+    # form = FormFormularioForm()
+    form = FormFormulario()
+    formu = request.form
 
-    return render(request, 'templates/formulario.html', {"form":form, "mensaje": 'OK'})
+    #usuario.primer_nombre = request.POST.get('Nombre')
+    # id = int(request.POST['id'])
+    nombre_form = request.POST['Nombre Formulario']
+    #     #usuario.segundo_nombre = request.POST.get('Segundo_Nombre')
+    telefono = request.POST['Segundo_Nombre']
+    #     #usuario.primer_apellido = request.POST.get('Primer_Apellido')
+    correo_form = request.POST['Primer_Apellido']
+    #     #usuario.segundo_apellido = request.POST.get('Segundo_Apellido')
+    asunto = request.POST['Segundo_Apellido']
+        #usuario.telefono = request.POST.get('Telefono')
+    detalle = request.POST['Telefono']
+        #usuario.correo_electronico = request.POST.get('Correo')
+    
+        #usuario.contrasenna = request.POST.get('Contraseña')
+        
+    formu = get_object_or_404(FormFormulario, id_formulario = formu.id)
+    
+    formu.nombre_form = nombre_form
+    formu.telefono = fono
+    formu.correo_electronico = email
+    formu.asunto = asunto
+    formu.detalle = detalle
+    # usucliente.contrasenna = pwd
+
+    formu.save()
+
+    return redirect('inicio')
+
+
+
+
+
+    # if form.is_valid():
+    #     form.save()
+    #     messages.success(request, 'Formulario insertado correctamente.')
+    #     form = FormFormularioForm()
+    # else:
+    #     messages.error(request, 'Error al insertar formulario. Revise los datos.')
+
+    # return render(request, 'templates/formulario.html', {"form":form, "mensaje": 'OK'})
 
 
 def conservador(request):
