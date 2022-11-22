@@ -2,7 +2,7 @@ import os
 import random
 import base64
 from django.template.loader import get_template
-from xhtml2pdf import pisa
+# from xhtml2pdf import pisa
 from django.views.generic import View
 from io import BytesIO
 from django.http import HttpResponse
@@ -344,32 +344,33 @@ def EditarCliente (request):
 
 @login_required(login_url='/iniciar_sesion')
 def edicionCliente (request):
+    usu = request.user
         #usuario.primer_nombre = request.POST.get('Nombre')
-    id = int(request.POST['id'])
-    primer_nombre = request.POST['Nombre']
-        #usuario.segundo_nombre = request.POST.get('Segundo_Nombre')
-    sdo_nombre = request.POST['Segundo_Nombre']
-        #usuario.primer_apellido = request.POST.get('Primer_Apellido')
-    apellido = request.POST['Primer_Apellido']
-        #usuario.segundo_apellido = request.POST.get('Segundo_Apellido')
-    sdoapellido = request.POST['Segundo_Apellido']
+    # id = int(request.POST['id'])
+    # primer_nombre = request.POST['Nombre']
+    #     #usuario.segundo_nombre = request.POST.get('Segundo_Nombre')
+    # sdo_nombre = request.POST['Segundo_Nombre']
+    #     #usuario.primer_apellido = request.POST.get('Primer_Apellido')
+    # apellido = request.POST['Primer_Apellido']
+    #     #usuario.segundo_apellido = request.POST.get('Segundo_Apellido')
+    # sdoapellido = request.POST['Segundo_Apellido']
         #usuario.telefono = request.POST.get('Telefono')
     fono = request.POST['Telefono']
         #usuario.correo_electronico = request.POST.get('Correo')
     email = request.POST['Correo']
         #usuario.contrasenna = request.POST.get('Contraseña')
-    pwd = request.POST['c']
-    #cliente = get_object_or_404(Usuario, id_usuario = id)
-    Usuario=Usuario.objects.get(id_usuario = id)
-    Usuario.primer_nombre = primer_nombre
-    Usuario.segundo_nombre = sdo_nombre
-    Usuario.primer_apellido = apellido
-    Usuario.segundo_apellido = sdoapellido
-    Usuario.telefono = fono
-    Usuario.correo_electronico = email
-    Usuario.contrasenna = pwd
+    # pwd = request.POST['c']
+    usucliente = get_object_or_404(Usuario, rut_usuario = usu.username)
+    # Usuario=Usuario.objects.get(id_usuario = id)
+    # usucliente.primer_nombre = primer_nombre
+    # usucliente.segundo_nombre = sdo_nombre
+    # usucliente.primer_apellido = apellido
+    # usucliente.segundo_apellido = sdoapellido
+    usucliente.telefono = fono
+    usucliente.correo_electronico = email
+    # usucliente.contrasenna = pwd
 
-    Usuario.save()
+    usucliente.save()
 
     return redirect('perfil')
 

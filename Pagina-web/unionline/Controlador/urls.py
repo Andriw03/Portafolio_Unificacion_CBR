@@ -17,6 +17,7 @@ urlpatterns = [
     path('registrarse', crearCuenta, name ='registrarse'),
     path('perfil', perfil, name ='perfil'),
     path('editarCliente/', EditarCliente, name='editarCliente' ),
+    path('edicionCliente/', edicionCliente, name='edicionCliente'),
     path(r'^(?P<id>\d+)/$', paginaPrinc, name ='home'),
     #path('home', paginaPrinc, name ='home'),
     path('consultorP', consultasProp, name ='consultorP'),

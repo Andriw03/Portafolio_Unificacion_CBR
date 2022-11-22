@@ -5,6 +5,8 @@
     <title>Formulario de contacto</title>
 
     <link rel="stylesheet" href="static/css/formulario.css">
+        <!-- <link rel="stylesheet" href="{% static 'css/registrar_admin.css' %}"> -->
+        <link rel="stylesheet" href="{% static 'css\styles_inicio.css' %}">
 
   </head>
   
@@ -19,8 +21,8 @@
       </div>
     {% endif %}
 
-    <form class="formulario" method="post" action="procesar_formulario" class="row g-3" style="margin-left: 60px;margin-right: 60px;margin-bottom: 60px;margin-top: 100px;">
-      <h1>Formulario de consultas</h1>
+    <form class="formulario" method="post" action="procesar_formulario" class="row g-3" style="margin-left: 60px;margin-right: 60px;margin-bottom: 60px;margin-top: 10px;">
+      <!-- <h1>Formulario de consultas</h1> -->
       {% csrf_token %}
         <div class="col-md-4">
           <label for="validationDefault01" class="form-label">Nombre y Apellido</label>
@@ -47,7 +49,7 @@
         <div class="boton">
         <div class="col-12">
           <button class="btn btn-outline-success" type="submit"> <b>Enviar</b></button>
-          <button class="btn btn-outline-success" type="button" onclick="resetform()"> <b>Limpiar</b></button>
+          <!-- <button class="btn btn-outline-success" type="button" onclick="resetform()"> <b>Limpiar</b></button> -->
         </div>
         <script>
           function resetform() {
