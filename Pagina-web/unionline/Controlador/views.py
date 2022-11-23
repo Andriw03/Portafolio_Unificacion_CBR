@@ -224,38 +224,25 @@ def crearCuenta(request):
         
     return render(request, 'registration/registrar.html')
 
-
-def send_mail(id,correo):
+@login_required(login_url='/iniciar_sesion')
+def descargar_doc(request, id):
+    documento= Documento.objects.raw("SELECT * FROM UNIONLINE.DOCUMENTO where TIPO_DOCUMENTO_id_tipodoc = 2 and SOLICITUD_id_soli = %s", [id])
+    try:
+        for i in documento:
+            nombreDoc= i.nombre_doc + '.pdf'
+            path = R"C:\Users\$USERNAME\Downloads"
+            ruta = os.path.expandvars(path) 
+            ruta = ruta + "/"+nombreDoc
+            print(ruta)
+            doc = i.doc
+            with open (ruta, "wb") as p:
+                p.write(doc) 
+            messages.success(request, "Documento Descargado")
+    except Exception as e:
+        mensaje = "Error al descargar documento, contacte a un moderador: " + str(e)
+        messages.warning(request, mensaje)
+    return redirect(to="detalle_solicitud", id=id)
     
-    documento= get_object_or_404(Documento , pk=id)
-    context = {'correo': correo}
-    template = get_template('documento_correo.html')
-    content = template.render(context)
-    nombreDoc= documento.nombre_doc + '.pdf'
-
-    #readBLOB(id, nombreDoc)
-
-    doc = documento.doc
-    #docu = doc.encode(encoding='utf-8')
-    # file = open(docu,"wb")
-    # for line in open (nombreDoc,"rb").readlines():
-    #     file.write(line)
-    # file.close()
-    
-    with open (nombreDoc, "wb") as p:
-        #decoderDoc=base64.standard_b64decode(doc)
-        p.write(doc) 
-        
-    
-    email = EmailMultiAlternatives(
-        'Envío de Trámite',
-        'Cbr',
-        settings.EMAIL_HOST_USER,
-        [correo]
-
-    )
-    #email.attach_alternative(content, 'text/html')
-    #email.send()
     
 
 @login_required(login_url='/iniciar_sesion')
@@ -294,11 +281,116 @@ def perfil(request):
         'documento' : documento,
         }
     return render(request, 'templates/perfil-cliente.html', data)
+def UpdateBlob(doc, id_doc):
+    print("Updating BLOB into python_employee table")
+    try:
+        connection = mysql.connector.connect(host='unificacion.cmvnu851mzxa.us-east-1.rds.amazonaws.com',
+                                             database='UNIONLINE',
+                                             user='root',
+                                             password='nohomo123')
+
+        cursor = connection.cursor()
+        sql_insert_blob_query = """ UPDATE `UNIONLINE`.`DOCUMENTO` SET `doc` = %s WHERE `id_documento` = %s """
+
+        documento = convertToBinaryData(doc)
+        # Convert data into tuple format
+        insert_blob_tuple = (documento, id_doc)
+        result = cursor.execute(sql_insert_blob_query, insert_blob_tuple)
+        connection.commit()
+        print("Funiono mi rey", result)
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+            print("MySQL connection is closed")
+
+    except mysql.connector.Error as error:
+        print("Failed update BLOB data into MySQL table {}".format(error))
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+            print("MySQL connection is closed")
+
 
 @login_required(login_url='/iniciar_sesion')
 def detalle_solicitud(request,id):
-    print(id)
+    #agregar a todas las ventanas de cliente
+    tramites = listar_tramites()
+    usu = request.user
+    carrito = listar_carrito(usu.username)
+    valor=0
+    can_carrito = 0
+    for i in carrito:
+        valor += int(i.valor_tramite)
+        can_carrito += 1
+    miles_translator = str.maketrans(".,", ",.")
+    valor = "{:,}".format(valor).translate(miles_translator)
+    
+    ######
+    id_doc = 0
+    documento = Documento()
+    soli = Solicitud.objects.raw("SELECT id_carrito, id_soli,id_tramite, id_usuario, nombre_tramite, numero_seguimiento, SOLICITUD.estado as estado, valor_tramite, correo_electronico, comentario, t_documento   FROM UNIONLINE.SOLICITUD inner join UNIONLINE.CAR_COMPRA on UNIONLINE.SOLICITUD.id_soli = UNIONLINE.CAR_COMPRA.SOLICITUD_id_soli join UNIONLINE.TRAMITE on SOLICITUD.TRAMITE_id_tramite = TRAMITE.id_tramite join UNIONLINE.USUARIO on SOLICITUD.USUARIO_id_usuario = USUARIO.id_usuario where id_soli = %s",[id])
+    for i in soli:
+        documento = Documento.objects.raw("SELECT * FROM UNIONLINE.DOCUMENTO where SOLICITUD_id_soli = %s", [i.id_soli])
+        if i.t_documento == "Copia de cédula de identidad.":
+            id_doc = 1
+        elif i.t_documento == "Escritura de propiedad.":
+            id_doc = 2
+        elif i.t_documento == "Copia de cédula de identidad y Escritura de propiedad.":
+            id_doc = 3
+    
+    
+    rut = str(usu.username).replace(".","").replace("-","")
+    if request.method == 'POST':
+        if id_doc == 1:
+            id_documento = 0
+            for i in documento:
+                id_documento = i.id_documento
+            variable = request.POST.get("copiaCedula")
+            variable2 = findfile(variable, "C:/")
+            nombre_doc = "Copia_Carnet_" + rut
+            doc = variable2
+            UpdateBlob(nombre_doc,doc,id_documento)
+            messages.success(request, "Solicitud generada correctamente")
+        elif id_doc == 2:
+            id_documento = 0
+            for i in documento:
+                id_documento = i.id_documento
+            variable = request.POST.get("escritura")
+            variable2 = findfile(variable, "C:/")
+            nombre_doc = "Escritura_propiedad_" + rut
+            doc = variable2
+            UpdateBlob(nombre_doc,doc,id_documento)
+            messages.success(request, "Solicitud generada correctamente")
+            
+        elif id_doc == 3:
+            print("Entro al elif")
+            nombre_doc = "Copia_Carnet_" + rut
+            nombre_doc1 = "Escritura_propiedad_" + rut
+            print(documento)
+            for i in documento:
+                id_documento = i.id_documento
+                if i.nombre_doc == nombre_doc:
+                    print("Primer if")
+                    variable = request.POST.get("copiaCedula")
+                    variable2 = findfile(variable, "C:/")
+                    doc = variable2
+                    UpdateBlob(doc,id_documento)
+                    
+                elif i.nombre_doc == nombre_doc1:
+                    print("Segundo if")
+                    variable = request.POST.get("escritura")
+                    variable2 = findfile(variable, "C:/")
+                    doc = variable2
+                    UpdateBlob(doc,id_documento)
+            messages.success(request, "Solicitud generada correctamente")
+
     data={
+        'tramites': tramites,
+        'carrito':carrito,
+        'valor':valor,
+        'can_carrito': can_carrito,
+        'soli':soli,
+        'id_doc':id_doc,
 
         }
 

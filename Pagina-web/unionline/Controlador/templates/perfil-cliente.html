@@ -30,10 +30,11 @@
                       <td>{{t.numero_seguimiento}}</td>
                       <td>{{t.estado}}</td>
                       <td>
+                        <a href="{% url 'detalle_solicitud' id=t.id_soli %}">
                         <button type="submit" name="solicitud" class="btn btn-primary" >
-                         <a href="{% url 'detalle_solicitud' id=t.id_soli %}">Detalles</a> 
+                         Detalles
                         </button>
-
+                      </a> 
 
                       </td>
                     </tr>                                                           

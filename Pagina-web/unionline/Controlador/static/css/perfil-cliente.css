@@ -14,6 +14,14 @@ a{
 .tabla{
     padding: 2% 15%;
 }
+.formulario {
+    margin: 10% 10% 10% 25%;
+    padding: 3px;
+    background: rgb(255, 255, 255);
+    border: 2mm;
+    border-radius: 10px;
+    max-width: 50%;
+}
 footer{
     position: static; bottom: 0; width: 100%;
     background-color: #1E4D40;

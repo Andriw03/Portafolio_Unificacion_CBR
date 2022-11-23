@@ -4,7 +4,7 @@ from django.urls import re_path as url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
-from .views import agregar_cbr, carrito_pagar, conservador, consultasCom, consultasProp, detalle_solicitud, eliminar_carrito, eliminar_cbr, inicio, iniciar_sesion, crearCuenta, listar_cbr, listar_tramites, modificar_cbr, paginaPrinc, perfil, formularioUser, inicioadmin, regDirector, show_create, solicitar_tra, transferencia, webpay_plus_commit, webpay_plus_create, listarDirector, Eliminardirector, EditarDirector,ediciondirector, EditarCliente, edicionCliente, procesar_formulario
+from .views import agregar_cbr, carrito_pagar, conservador, consultasCom, consultasProp, descargar_doc, detalle_solicitud, eliminar_carrito, eliminar_cbr, inicio, iniciar_sesion, crearCuenta, listar_cbr, listar_tra, listar_tramites, modificar_cbr, paginaPrinc, perfil, formularioUser, inicioadmin, regDirector, show_create, solicitar_tra, transferencia, webpay_plus_commit, webpay_plus_create, listarDirector, Eliminardirector, EditarDirector,ediciondirector, EditarCliente, edicionCliente, procesar_formulario
 
 from django.conf.urls.static import static
 from django.conf import settings
@@ -29,9 +29,10 @@ urlpatterns = [
     path('regDirector', regDirector, name='regDirector' ),
     path('listarDirector', listarDirector, name='listarDirector' ),
     path('Eliminardirector/<int:id>/', Eliminardirector, name='Eliminardirector' ),
+    path('Descargar/Documento/<int:id>/',descargar_doc, name='DescargarDocumento'),
     path('EditarDirector/<int:id>/', EditarDirector, name='EditarDirector' ),
     path('ediciondirector/', ediciondirector, name='ediciondirector'),
-    path(r'^listar/(?P<id>\d+)/$', listar_tramites, name='listar'),
+    path(r'^listar/(?P<id>\d+)/$', listar_tra, name='listar'),
     path(r'^solicitar/(?P<id>\d+)/$', solicitar_tra, name='solicitar'),
     path(r'^eliminar_carrito/(?P<id_solicitud>\d+)/(?P<id_car>\d+)/$', eliminar_carrito, name="eliminar_carrito"),
     path('carrito_pagar',carrito_pagar, name='carrito_pagar'),
