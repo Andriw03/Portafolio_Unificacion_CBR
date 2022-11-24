@@ -422,7 +422,7 @@ def edicionCliente (request):
         #usuario.correo_electronico = request.POST.get('Correo')
     email = request.POST['Correo']
         #usuario.contrasenna = request.POST.get('Contraseña')
-    # pwd = request.POST['c']
+    pwd = request.POST['c']
     usucliente = get_object_or_404(Usuario, rut_usuario = usu.username)
     # Usuario=Usuario.objects.get(id_usuario = id)
     # usucliente.primer_nombre = primer_nombre
@@ -431,7 +431,7 @@ def edicionCliente (request):
     # usucliente.segundo_apellido = sdoapellido
     usucliente.telefono = fono
     usucliente.correo_electronico = email
-    # usucliente.contrasenna = pwd
+    usucliente.contrasenna = pwd
 
     usucliente.save()
 
