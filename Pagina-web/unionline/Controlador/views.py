@@ -415,16 +415,16 @@ def edicionCliente (request):
     # sdo_nombre = request.POST['Segundo_Nombre']
     #     #usuario.primer_apellido = request.POST.get('Primer_Apellido')
     # apellido = request.POST['Primer_Apellido']
-    #     #usuario.segundo_apellido = request.POST.get('Segundo_Apellido')
+    # #     #usuario.segundo_apellido = request.POST.get('Segundo_Apellido')
     # sdoapellido = request.POST['Segundo_Apellido']
-        #usuario.telefono = request.POST.get('Telefono')
+    # usuario.telefono = request.POST.get('Telefono')
     fono = request.POST['Telefono']
         #usuario.correo_electronico = request.POST.get('Correo')
     email = request.POST['Correo']
         #usuario.contrasenna = request.POST.get('Contraseña')
     pwd = request.POST['c']
     usucliente = get_object_or_404(Usuario, rut_usuario = usu.username)
-    # Usuario=Usuario.objects.get(id_usuario = id)
+    # Usuario=Usuario.objects.get(rut_usuario = usu.username)
     # usucliente.primer_nombre = primer_nombre
     # usucliente.segundo_nombre = sdo_nombre
     # usucliente.primer_apellido = apellido
@@ -532,37 +532,38 @@ def formularioUser(request):
     return render(request, 'templates/formulario.html')
 
 def procesar_formulario(request):
-    # form = FormFormularioForm()
-    form = FormFormulario()
-    formu = request.form
 
-    #usuario.primer_nombre = request.POST.get('Nombre')
-    # id = int(request.POST['id'])
-    nombre_form = request.POST['Nombre Formulario']
-    #     #usuario.segundo_nombre = request.POST.get('Segundo_Nombre')
-    telefono = request.POST['Segundo_Nombre']
-    #     #usuario.primer_apellido = request.POST.get('Primer_Apellido')
-    correo_form = request.POST['Primer_Apellido']
-    #     #usuario.segundo_apellido = request.POST.get('Segundo_Apellido')
-    asunto = request.POST['Segundo_Apellido']
-        #usuario.telefono = request.POST.get('Telefono')
-    detalle = request.POST['Telefono']
-        #usuario.correo_electronico = request.POST.get('Correo')
+    form = FormFormularioForm()
+    # form = FormFormulario()
+    # formu = request.form
+
+    # #usuario.primer_nombre = request.POST.get('Nombre')
+    # # id = int(request.POST['id'])
+    # nombre_form = request.POST['Nombre Formulario']
+    # #     #usuario.segundo_nombre = request.POST.get('Segundo_Nombre')
+    # telefono = request.POST['Segundo_Nombre']
+    # #     #usuario.primer_apellido = request.POST.get('Primer_Apellido')
+    # correo_form = request.POST['Primer_Apellido']
+    # #     #usuario.segundo_apellido = request.POST.get('Segundo_Apellido')
+    # asunto = request.POST['Segundo_Apellido']
+    #     #usuario.telefono = request.POST.get('Telefono')
+    # detalle = request.POST['Telefono']
+    #     #usuario.correo_electronico = request.POST.get('Correo')
     
-        #usuario.contrasenna = request.POST.get('Contraseña')
+    #     #usuario.contrasenna = request.POST.get('Contraseña')
         
-    formu = get_object_or_404(FormFormulario, id_formulario = formu.id)
+    # formu = get_object_or_404(FormFormulario, id_formulario = formu.id)
     
-    formu.nombre_form = nombre_form
-    #formu.telefono = fono
-    #formu.correo_electronico = email
-    formu.asunto = asunto
-    formu.detalle = detalle
-    # usucliente.contrasenna = pwd
+    # formu.nombre_form = nombre_form
+    # #formu.telefono = fono
+    # #formu.correo_electronico = email
+    # formu.asunto = asunto
+    # formu.detalle = detalle
+    # # usucliente.contrasenna = pwd
 
-    formu.save()
+    # formu.save()
 
-    return redirect('inicio')
+    # return redirect('inicio')
 
 
 
