@@ -32,9 +32,38 @@ from transbank.error.transbank_error import TransbankError
 from transbank.webpay.webpay_plus.transaction import Transaction
 from werkzeug.security import check_password_hash, generate_password_hash
 from .forms import FormFormularioForm
+import smtplib
 from .models import (CarCompra, Cbr, ClasProp, Comuna, Direccion, DuennoProp,
                      EstadoPago, HorAtencion, Propiedad, Provincia, Region, FormFormulario,
                      Solicitud, TipoPago, Tramite, TTramite, TUsuario, Usuario, Documento,TipoDocumento, Documento)
+
+def enviarCorreDirector(id):
+    dic = get_object_or_404(Usuario, pk=id)
+    asunto = "Cuenta Creada UNIONLINE" 
+    mensaje = """Estimado """+ dic.primer_nombre + " "+ dic.primer_apellido +""":
+    Junto con saludar, informo que su cuenta como Director fue creada exitosamente. Al ingresar a la plataforma debera restablecer la contraseña.
+    
+    ________________________________________________________
+    
+    Conservador De Bienes Raíces Chile
+    Gobierno de Chile
+    Ministerio de Vivienda y Urbanismo | Gobierno de Chile 
+    """
+    mail = dic.correo_electronico
+    email = EmailMultiAlternatives(
+        asunto,
+        mensaje,
+        settings.EMAIL_HOST_USER,
+        [mail]
+
+    )
+    try: 
+        email.send()
+        
+    except Exception as e: 
+        print ("Error: el mensaje no pudo enviarse: " + str(e))
+        
+    
 
 '''
 def llenarCbr():
