@@ -80,7 +80,15 @@
                     <input type="password" name="Contraseña" placeholder="Contraseña">
                 </div>
 
+                <input list="brow" class="form-select" name="cmbCBR">
+                <datalist id="brow">
+                  {% for c in conservador %}
+                  <option value="{{c.nombre_cbr}}"></option>
+                  {% endfor %}
+                </datalist>
+
                 <div>
+                  <br>
                   <input type="submit" name="registrar" value="Registrar Director" class="button">
                 </div>
 
@@ -129,5 +137,5 @@ function darFormatoRUT(rut) {
     </script>
 
 </body>
-</html>
 {% endblock %}
+</html>

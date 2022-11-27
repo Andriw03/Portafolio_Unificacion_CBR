@@ -918,6 +918,8 @@ def eliminar_cbr(request,id):
 
 @login_required(login_url='/iniciar_sesion')
 def regDirector(request):
+    conservador = Cbr.objects.all()
+
     if request.method == 'POST':
             usuario = Usuario()
             cbr = Cbr()
@@ -931,7 +933,7 @@ def regDirector(request):
             usuario.correo_electronico = request.POST.get('Correo')
             usuario.contrasenna = request.POST.get('Contraseña')
 
-            cbr.id_cbr = 1
+            cbr = get_object_or_404(Cbr, nombre_cbr = request.POST.get('cmbCBR'))
 
             tipoU.id_tipou = 2
 
@@ -939,8 +941,6 @@ def regDirector(request):
             usuario.t_usuario_id_tipou = tipoU
 
             
-            
-
             if usuario.rut_usuario == "" or usuario.primer_nombre == "" or usuario.segundo_nombre == "" or usuario.primer_apellido == "" or usuario.segundo_apellido == "" or usuario.telefono == "" or usuario.correo_electronico == "" or usuario.contrasenna == "":
                 messages.warning(request, 'Los campos no pueden quedar vacios.')
                 return redirect('registrarse')
@@ -948,14 +948,17 @@ def regDirector(request):
                 try: 
                     usuario.contrasenna = request.POST.get('Contraseña')
                     usuario.save()
+                    enviarCorreDirector(usuario.pk)
                     messages.success(request, "Cuenta Creada Correctamente")
                     return redirect(to="iniciar_sesion")
                 except Exception as e:
                     mensaje = "No se ha podido guardar el usuario: " + str(e)
                     messages.warning(request, mensaje)
-
+    data = {
+        'conservador' : conservador,
+    }
         
-    return render(request, 'registration/registrar_usuarios.html')
+    return render(request, 'registration/registrar_usuarios.html', data)
 
 @login_required(login_url='/iniciar_sesion')
 def listarDirector (request):
