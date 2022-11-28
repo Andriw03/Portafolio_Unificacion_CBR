@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
 
+
 <head>
   <title>Agregar CBR</title>
   <link rel="stylesheet" href="static/css/perfil-cliente.css">
@@ -20,7 +21,7 @@
                 <br>
                 <form class="formulario" method="post">
                   {% csrf_token %}
-                      
+                  
                   <div class="contenedor">
                   {% for c in cbr %}
                       <div class="input-contenedor">
@@ -40,10 +41,11 @@
                       <div class="input-contenedor">
                         <select class="form-select" name="cmbHorario" id="inputGroupSelect04" aria-label="Example select with button addon">
                           <option selected>Seleccione un horario...</option>
-                          
-                            {% if c.id_horario %}
-                          <option value="{{c.pk}}">Lunes a Viernes de 08:00 a 15:00 hrs</option>
+                          {% for h in horario %}
+                            {% if h.id_horario %}
+                          <option value="{{h.pk}}">Lunes a Viernes de 08:00 a 15:00 hrs</option>
                             {% endif %}
+                          {% endfor %}
                           
                         </select>
                         
@@ -70,22 +72,26 @@
                             {% for c in comuna %}
                             <option value="{{c.pk}}">{{c.nombre_comuna}}</option>
                             {% endfor %}
-                            {% endfor %}
+                          {% endfor %}  
+                        
                           </select>
                       </div>
       
                   </div>
-             
+                  
                   
           </main>
         
-        
+          
     <div class="d-flex justify-content-center">
       <input type="submit" value="Cancelar" class="btn btn-secondary">
       <input  type="submit" value="Editar" class="btn btn-primary">
 
     </div>
     </form>
+
+   
+    
     {{message}}
       </div>
     </div>

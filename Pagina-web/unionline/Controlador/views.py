@@ -1,6 +1,8 @@
 import os
 import random
+from django.core.paginator import Paginator
 import base64
+from django.http import Http404
 from django.template.loader import get_template
 # from xhtml2pdf import pisa
 from django.views.generic import View
@@ -863,50 +865,59 @@ def agregar_cbr (request):
 @login_required(login_url='/iniciar_sesion')
 def listar_cbr (request):
     cbr = Cbr.objects.raw("SELECT CBR.id_cbr, CBR.nombre_cbr, CBR.correo_cbr, CBR.telefono, concat(DIRECCION.nombre_calle, ' ', DIRECCION.numero_casa) AS DIR_CBR , concat(HOR_ATENCION.dias_atencion ,' ', HOR_ATENCION.horario_apertura ,'-', HOR_ATENCION.horario_cierre) AS HORARIOS FROM UNIONLINE.CBR JOIN UNIONLINE.DIRECCION ON CBR.DIRECCION_id_direccion = DIRECCION.id_direccion JOIN HOR_ATENCION ON CBR.HOR_ATENCION_id_horario = HOR_ATENCION.id_horario " )
+    
+
+
     data={
-        'cbr' : cbr
+        'cbr' : cbr,
+        
     }
     return render(request, 'templates/listar_cbr.html' , data)
 
 @login_required(login_url='/iniciar_sesion')
 def modificar_cbr(request,id):
     comuna = Comuna.objects.all()
-    cbr = Cbr.objects.raw ("SELECT * FROM UNIONLINE.CBR JOIN UNIONLINE.DIRECCION ON UNIONLINE.CBR.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion JOIN UNIONLINE.HOR_ATENCION ON UNIONLINE.CBR.HOR_ATENCION_id_horario = UNIONLINE.HOR_ATENCION.id_horario JOIN UNIONLINE.COMUNA ON UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna where UNIONLINE.CBR.id_cbr = %s;" ,[id])
-    
+    cbr = Cbr.objects.raw ("SELECT * FROM UNIONLINE.CBR JOIN UNIONLINE.DIRECCION ON UNIONLINE.CBR.DIRECCION_id_direccion = UNIONLINE.DIRECCION.id_direccion JOIN UNIONLINE.HOR_ATENCION ON UNIONLINE.CBR.HOR_ATENCION_id_horario = UNIONLINE.HOR_ATENCION.id_horario JOIN UNIONLINE.COMUNA ON UNIONLINE.DIRECCION.COMUNA_id_comuna = UNIONLINE.COMUNA.id_comuna where UNIONLINE.CBR.id_cbr = %s" ,[id])
+    horario = HorAtencion.objects.all()
 
     data={
         'cbr':cbr,
         'comuna': comuna,
+        'horario' : horario,
     }
     
     if request.method == 'POST':
         
-        cbr=Cbr()
+        cbr=Cbr.objects.get(id_cbr = id)
         dir = Direccion()
-        horario= get_object_or_404(HorAtencion, pk= request.POST.get ('cmbHorario'))
+        horario= get_object_or_404(HorAtencion, pk= request.POST.get('cmbHorario'))
         cbr.nombre_cbr=request.POST.get('nombre_cbr')
         cbr.correo_cbr= request.POST.get('correo_cbr')
         cbr.telefono = request.POST.get('telefono')
         cbr.hor_atencion_id_horario = horario
         dir.nombre_calle = request.POST.get('calle')
         dir.numero_casa = request.POST.get ('numero_lugar')
-        comuna = get_object_or_404(Comuna, pk= request.POST.get ('cmbComuna'))
+        comuna = get_object_or_404(Comuna, pk= request.POST.get('cmbComuna'))
         cbr.direccion_id_direccion = dir
         dir.comuna_id_comuna = comuna
         dir.save()
         
         
-        if cbr.nombre_cbr == "" or cbr.correo_cbr == "" or cbr.telefono == "" or cbr.hor_atencion_id_horario == "" or dir.nombre_calle == "" or dir.numero_casa == "":
-            messages.warning(request, 'Los campos no pueden quedar vacios.')
-            return redirect('registrarse')
-        else:
-            try:
-                cbr.save()   
+        if cbr.nombre_cbr != "" and cbr.correo_cbr != "" and cbr.telefono != "" and cbr.hor_atencion_id_horario != "" and dir.nombre_calle != "" and dir.numero_casa != "":
+            try:  
+                cbr.save() 
                 messages.success(request, "CBR Modificado Correctamente")
                 return redirect(to="modificarCbr")
             except Exception as e:
-                mensaje = "No se ha podido guardar el cbr: " + str(e)
+                mensaje = "No se ha podido modificar el cbr: " + str(e)
                 messages.warning(request, mensaje)
+            
+            
+        else:
+             messages.warning(request, 'Los campos no pueden quedar vacios.')  
+               
+                
+            
     return render(request,'templates/modificar_cbr.html', data)
 
 @login_required(login_url='/iniciar_sesion')

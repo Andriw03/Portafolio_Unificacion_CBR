@@ -1,9 +1,10 @@
 {% extends 'templates\base_admin.html' %}
 {% load static %}
 {% block content %}
-<html lang="es">
-    <link rel="stylesheet" href="{% static 'css/registrar_admin.css' %}">
-<body>
+<head> 
+  <link rel="stylesheet" href="{% static 'css/registrar_admin.css' %}">
+</head>
+    
     <main>
         <form class="formulario" method="post">
             {% csrf_token %}
@@ -136,6 +137,6 @@ function darFormatoRUT(rut) {
 }
     </script>
 
-</body>
+
 {% endblock %}
-</html>
+
