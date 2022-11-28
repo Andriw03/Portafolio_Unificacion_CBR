@@ -4,7 +4,6 @@
 <html lang="es">
 <head>
   <link rel="stylesheet" href="{% static 'css/registrar_admin.css' %}">
-  <link rel="stylesheet" href="static/css/perfil-cliente.css">
 </head>
 
 <body>
@@ -13,7 +12,7 @@
         <form class="formulario" action="/ediciondirector/" method="post">
             {% csrf_token %}
             
-                <h1>Editar Directores</h1>
+                <h2>Editar Directores</h2>
             <div class="contenedor">
                 {% if messages %}
                     <ul class="messages">
@@ -91,9 +90,6 @@
         </form>
             
     </main>
-    <footer>
-        <p class="copyright">&copy Copyright Ministerio de Vivienda y Urbanismo - 2022</p>
-    </footer>
 
     <script>
         // oír los cambios en la caja de texto e ir dando formato al RUT

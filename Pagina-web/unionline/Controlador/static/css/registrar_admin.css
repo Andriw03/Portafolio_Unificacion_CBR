@@ -22,9 +22,17 @@ body{
 h1{
     padding: 10px;
     text-align: center;
-    color: #1A2537;
+    color: white;
     font-size: 30px;
 }
+
+h2{
+    padding: 10px;
+    text-align: center;
+    color: #010326;
+    font-size: 30px;
+}
+
 input[type="text"],
 input[type="tel"],
 input[type="email"],
@@ -50,10 +58,10 @@ a{
     width: 100%;
     color: white;
     font-size: 20px;
-    background: #393E59;
     padding: 15px 20px;
     border-radius: 5px;
     cursor: pointer;
+    background: #010326;
 }
 footer{
     position: static; bottom: 0; width: 100%;
@@ -66,20 +74,6 @@ footer{
     background: #010326;
 }
 
-a{
-    border: none;
-    width: 100%;
-    color: white;
-    font-size: 20px;
-    background: #393E59;
-    padding: 15px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-a{
-    color: #6FBFBF;
-}
 
 @media (min-width:768px) 
 {

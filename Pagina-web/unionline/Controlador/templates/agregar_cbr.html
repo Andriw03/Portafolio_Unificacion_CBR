@@ -24,21 +24,21 @@
         <div class="contenedor">
                       
           <div class="input-contenedor">
-              <input type="text" name="nombre_cbr"  placeholder="Nombre CBR">
+              <input type="text" name="nombre_cbr" placeholder="Nombre CBR"  style="width: 400px">
           </div>
             
           <div class="input-contenedor">
-              <input type="email" name="correo_cbr" placeholder="Correo CBR">
+              <input type="email" name="correo_cbr" placeholder="Correo CBR" style="width: 400px">
           </div>
             
           <div class="input-contenedor">
-              <input type="tel" name="telefono" placeholder="Telefono CBR">
+              <input type="tel" name="telefono" placeholder="Telefono CBR"  style="width: 400px">
         </div>
           
 
         <!--PASARLE EL HORARIO DE ATENCION-->
         <div class="input-group">
-          <select class="selectpicker show-tick" name="cmbHorario" id="inputGroupSelect04">
+          <select class="selectpicker show-tick" name="cmbHorario" id="inputGroupSelect04" style="width: 410px">
             <option selected>Seleccione un horario...</option>
             {% for a in aten %}
               {% if a.id_horario %}
@@ -51,17 +51,17 @@
         
         <div class="input-contenedor">
                       
-            <input type="text" name="calle" placeholder="Calle">
+            <input type="text" name="calle" placeholder="Calle" style="width: 400px">
         </div>
           
         <div class="input-contenedor">
                               
-            <input type="text" name="numero_lugar" placeholder="# Numeración">
+            <input type="text" name="numero_lugar" placeholder="# Numeración" style="width: 400px">
         </div>
         <!--COMUNA, REGION Y BLABLABLA CON FOR-->
                       
-        <div class="input-group">
-          <select class="selectpicker show-tick"  name="cmbComuna" id="inputGroupSelect04">
+        <div class="input-group" >
+          <select class="selectpicker show-tick"  name="cmbComuna" id="inputGroupSelect04" style="width: 410px">
             <option selected>Seleccione una comuna...</option>
             {% for c in comuna %}
               <option value="{{c.pk}}">{{c.nombre_comuna}}</option>
