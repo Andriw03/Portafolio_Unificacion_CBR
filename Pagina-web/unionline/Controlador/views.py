@@ -429,16 +429,29 @@ def detalle_solicitud(request,id):
 @login_required(login_url='/iniciar_sesion')
 def EditarCliente (request):
     # cliente=Usuario.objects.get(id_usuario = id)
-    
+    usu = request.user
+    usuario = Usuario.objects.raw("SELECT * FROM UNIONLINE.USUARIO where T_USUARIO_id_tipoU = 5 and rut_usuario = %s;",[usu.username]) 
+    id_usuario = 0
+    for i in usuario:
+        id_usuario = i.id_usuario
+        break
+    print(id_usuario)
+    usuario = get_object_or_404(Usuario, pk = id_usuario)
     data = {
-        'cliente' : Usuario
+        'cliente' : usuario
     }
 
     return render(request, "editarCliente.html", data)
 
 @login_required(login_url='/iniciar_sesion')
 def edicionCliente (request):
+    
     usu = request.user
+    usuario = get_object_or_404(Usuario, pk = id_usuario)
+
+    
+
+    # usuario = Usuario()
         #usuario.primer_nombre = request.POST.get('Nombre')
     # id = int(request.POST['id'])
     # primer_nombre = request.POST['Nombre']
@@ -449,25 +462,23 @@ def edicionCliente (request):
     # #     #usuario.segundo_apellido = request.POST.get('Segundo_Apellido')
     # sdoapellido = request.POST['Segundo_Apellido']
     # usuario.telefono = request.POST.get('Telefono')
-    fono = request.POST['Telefono']
+    fono = request.POST.get('Telefono')
         #usuario.correo_electronico = request.POST.get('Correo')
-    email = request.POST['Correo']
+    usu.email = request.POST['Correo']
         #usuario.contrasenna = request.POST.get('Contraseña')
-    pwd = request.POST['c']
+    usu.set_password = request.POST['c']
+
+    usu.save()
     usucliente = get_object_or_404(Usuario, rut_usuario = usu.username)
-    # Usuario=Usuario.objects.get(rut_usuario = usu.username)
-    # usucliente.primer_nombre = primer_nombre
-    # usucliente.segundo_nombre = sdo_nombre
-    # usucliente.primer_apellido = apellido
-    # usucliente.segundo_apellido = sdoapellido
+
     usucliente.telefono = fono
-    usucliente.correo_electronico = email
-    usucliente.contrasenna = pwd
+    usucliente.correo_electronico = usu.email
+    usucliente.contrasenna = usu.password
 
     usucliente.save()
 
     return redirect('perfil')
-
+    
 
 def paginaPrinc(request,id):
     #agregar a todas las ventanas de cliente
@@ -564,50 +575,24 @@ def formularioUser(request):
 
 def procesar_formulario(request):
 
-    form = FormFormularioForm()
-    # form = FormFormulario()
-    # formu = request.form
-
-    # #usuario.primer_nombre = request.POST.get('Nombre')
-    # # id = int(request.POST['id'])
-    # nombre_form = request.POST['Nombre Formulario']
-    # #     #usuario.segundo_nombre = request.POST.get('Segundo_Nombre')
-    # telefono = request.POST['Segundo_Nombre']
-    # #     #usuario.primer_apellido = request.POST.get('Primer_Apellido')
-    # correo_form = request.POST['Primer_Apellido']
-    # #     #usuario.segundo_apellido = request.POST.get('Segundo_Apellido')
-    # asunto = request.POST['Segundo_Apellido']
-    #     #usuario.telefono = request.POST.get('Telefono')
-    # detalle = request.POST['Telefono']
-    #     #usuario.correo_electronico = request.POST.get('Correo')
-    
-    #     #usuario.contrasenna = request.POST.get('Contraseña')
-        
-    # formu = get_object_or_404(FormFormulario, id_formulario = formu.id)
-    
-    # formu.nombre_form = nombre_form
-    # #formu.telefono = fono
-    # #formu.correo_electronico = email
-    # formu.asunto = asunto
-    # formu.detalle = detalle
-    # # usucliente.contrasenna = pwd
-
-    # formu.save()
-
-    # return redirect('inicio')
-
-
-
-
-
-    # if form.is_valid():
-    #     form.save()
-    #     messages.success(request, 'Formulario insertado correctamente.')
-    #     form = FormFormularioForm()
-    # else:
-    #     messages.error(request, 'Error al insertar formulario. Revise los datos.')
-
-    # return render(request, 'templates/formulario.html', {"form":form, "mensaje": 'OK'})
+    if request.method == 'POST':
+        try:
+            form = FormFormulario()
+            usu = get_object_or_404(Usuario, pk = 1)
+            usuario = Usuario()
+            form.nombre_form = request.POST.get('Nombre_Formulario')
+            form.correo_form = request.POST.get('email')
+            form.telefono = request.POST.get('telefono')
+            form.asunto_form = request.POST.get('asunto')
+            form.detalle_form = request.POST.get('detalle')
+            form.estado = "Pendiente"
+            form.usuario_id_usuario = usu
+            form.save()
+            messages.success(request, "Formulario enviado correctamente")
+        except Exception as e:
+                mensaje = "No se ha podido guardar el formulario: " + str(e)
+                messages.warning(request, mensaje)
+    return render (request, 'templates/formulario.html')
 
 
 def conservador(request):
