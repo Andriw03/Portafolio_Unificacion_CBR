@@ -704,3 +704,7 @@ D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\De
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.CopyComplete
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\UniOnline.exe
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\UniOnline.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\UniOnline.exe.manifest
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\UniOnline.application
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.exe.manifest
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.application

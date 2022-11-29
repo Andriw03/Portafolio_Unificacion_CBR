@@ -447,7 +447,7 @@ def EditarCliente (request):
 def edicionCliente (request):
     
     usu = request.user
-    usuario = get_object_or_404(Usuario, pk = id_usuario)
+    #usuario = get_object_or_404(Usuario, pk = id_usuario)
 
     
 

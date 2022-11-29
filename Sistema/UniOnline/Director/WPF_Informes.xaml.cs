@@ -66,7 +66,7 @@ namespace UniOnline.Director
             try
             {
                 Usuario usu = new Usuario();
-                usu.CrearInformeUsuarios();
+                usu.crearPDFTramites();
                 MessageBox.Show("Informe generado con éxito.");
             }
             catch (Exception ex)

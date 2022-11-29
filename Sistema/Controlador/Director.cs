@@ -274,11 +274,13 @@ namespace Controlador
             
         }
 
-        public void CrearInformeUsuarios()
+
+        public void crearPDFTramites()
         {
             try
             {
-                PdfWriter pdfWriter = new PdfWriter("Reporte 2.pdf");
+
+                PdfWriter pdfWriter = new PdfWriter("Reporte.pdf");
                 PdfDocument pdf = new PdfDocument(pdfWriter);
                 Document documento = new Document(pdf, PageSize.LETTER);
 
@@ -287,9 +289,9 @@ namespace Controlador
                 PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
                 PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
 
-                string[] columnas = { "RUT", "Primer Nombre", "Segundo Nombre", "Primer Apellido", "Segundo Apellido", "CBR al que Pertenece", "Rol en el Sistema" };
+                string[] columnas = { "ID Solicitud", "Fecha Emisión", "Nombre Trámite" };
 
-                float[] tamanios = { 4, 4, 4, 4, 4, 6, 4 };
+                float[] tamanios = { 2, 4, 4 };
                 Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
                 tabla.SetWidth(UnitValue.CreatePercentValue(100));
 
@@ -301,35 +303,33 @@ namespace Controlador
                 try
                 {
                     Conectar();
-                    cmd = new MySqlCommand("SELECT rut_usuario, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, CBR.nombre_cbr, T_USUARIO.nombre_tipoU  FROM UNIONLINE.USUARIO INNER JOIN CBR ON USUARIO.CBR_id_cbr = CBR.id_cbr INNER JOIN T_USUARIO ON USUARIO.T_USUARIO_id_tipoU = T_USUARIO.id_tipoU;", conex);
+                    cmd = new MySqlCommand("SELECT distinct id_soli, fecha_solicitud , nombre_tramite FROM UNIONLINE.SOLICITUD join TRAMITE ON TRAMITE_id_tramite = SOLICITUD.TRAMITE_id_tramite group by id_soli;", conex);
                     cmd.ExecuteNonQuery();
                     rd = cmd.ExecuteReader();
 
                     while (rd.Read())
                     {
-                        tabla.AddCell(new Cell().Add(new Paragraph(rd["rut_usuario"].ToString()).SetFont(fontContenido)));
-                        tabla.AddCell(new Cell().Add(new Paragraph(rd["primer_nombre"].ToString()).SetFont(fontContenido)));
-                        tabla.AddCell(new Cell().Add(new Paragraph(rd["segundo_nombre"].ToString()).SetFont(fontContenido)));
-                        tabla.AddCell(new Cell().Add(new Paragraph(rd["primer_apellido"].ToString()).SetFont(fontContenido)));
-                        tabla.AddCell(new Cell().Add(new Paragraph(rd["segundo_apellido"].ToString()).SetFont(fontContenido)));
-                        tabla.AddCell(new Cell().Add(new Paragraph(rd["nombre_cbr"].ToString()).SetFont(fontContenido)));
-                        tabla.AddCell(new Cell().Add(new Paragraph(rd["nombre_tipoU"].ToString()).SetFont(fontContenido)));
+                        tabla.AddCell(new Cell().Add(new Paragraph(rd["id_soli"].ToString()).SetFont(fontContenido)));
+                        tabla.AddCell(new Cell().Add(new Paragraph(rd["fecha_solicitud"].ToString()).SetFont(fontContenido)));
+                        tabla.AddCell(new Cell().Add(new Paragraph(rd["nombre_tramite"].ToString()).SetFont(fontContenido)));
+                       
                     }
                     rd.Close();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+
                 }
 
 
                 documento.Add(tabla);
                 documento.Close();
 
-                var logo = new iText.Layout.Element.Image(ImageDataFactory.Create(@"D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\LogoCBR.png")).SetWidth(50);
+                var logo = new Image(ImageDataFactory.Create(@"D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\LogoCBR.png")).SetWidth(50);
                 var plogo = new Paragraph("").Add(logo);
 
-                var titulo = new Paragraph("Reporte de Usuarios");
+                var titulo = new Paragraph("Reporte de Trámites");
                 titulo.SetTextAlignment(TextAlignment.CENTER);
                 titulo.SetFontSize(12);
 
@@ -338,7 +338,7 @@ namespace Controlador
                 var fecha = new Paragraph("Fecha: " + dfecha + "\nHora: " + dhora);
                 fecha.SetFontSize(12);
 
-                PdfDocument pdfDoc = new PdfDocument(new PdfReader("Reporte 2.pdf"), new PdfWriter(@"C:\Reportes\Reporte de Usuarios " + dfecha + ".pdf"));
+                PdfDocument pdfDoc = new PdfDocument(new PdfReader("Reporte.pdf"), new PdfWriter(@"C:\Reportes\Reporte de Trámites " + dfecha + ".pdf"));
                 Document doc = new Document(pdfDoc);
 
                 int numeros = pdfDoc.GetNumberOfPages();
@@ -347,7 +347,7 @@ namespace Controlador
                 {
                     PdfPage pagina = pdfDoc.GetPage(i);
 
-                    float y = (pdfDoc.GetPage(i).GetPageSize().GetTop() - 15);
+                    float y = pdfDoc.GetPage(i).GetPageSize().GetTop() - 15;
                     doc.ShowTextAligned(plogo, 40, y, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
                     doc.ShowTextAligned(titulo, 150, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
                     doc.ShowTextAligned(fecha, 520, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
@@ -360,7 +360,10 @@ namespace Controlador
             {
                 MessageBox.Show("Informe generado con éxito.");
             }
+
         }
+
+
 
         public DataTable MostrarFormulario()
         {

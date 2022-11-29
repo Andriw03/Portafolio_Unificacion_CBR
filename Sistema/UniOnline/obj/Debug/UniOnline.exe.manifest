@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Controlador.dll" size="62976">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Controlador.dll" size="62464">
       <assemblyIdentity name="Controlador" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ydP6GbEaPx+8b9sf4XtPKl3WCZYUKP9I1IKYfvIzkjQ=</dsig:DigestValue>
+        <dsig:DigestValue>sIOfOAhPDLIwqMlM3y/o4bBgV+Lsyutrbbj8FF2NseY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -974,7 +974,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yZWHlkX2/mNonGH5Cuu6QvVkR/Acj7EGot4r+Vnj9gw=</dsig:DigestValue>
+        <dsig:DigestValue>Xfw6VLrECdW6Zb5Otm1xHuI4ejcX0cnsdpWc8Ypda+Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
