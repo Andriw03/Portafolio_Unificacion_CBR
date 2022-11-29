@@ -118,7 +118,7 @@
                     <TextBox x:Name="txtFoja" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="150" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="6" Margin="42,0,90,0"/>
                     <TextBox x:Name="txtNumero" HorizontalAlignment="Left" TextWrapping="Wrap" Width="198" Grid.Column="5" Grid.ColumnSpan="3" Grid.Row="6" Margin="31.667,28.6,0,0" Height="32" VerticalAlignment="Top"/>
                     <Label Content="Número:" VerticalAlignment="Top" FontSize="15" Height="30" Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="2" Margin="27.4,2,94.133,0" Grid.RowSpan="2"/>
-                    <TextBox x:Name="txtAnno" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="90" Grid.Column="8" Grid.Row="6" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txtAnno" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="90" Grid.Column="8" Grid.Row="6" Grid.ColumnSpan="2" MaxLength="4" PreviewTextInput="txtAnno_PreviewTextInput"/>
                     <Label Content="Año" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="37" Grid.Column="8" Grid.Row="6"/>
                     <Label Content="Razón Social:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="96" Grid.Column="1" Grid.Row="8"/>
                     <TextBox x:Name="txtRazonSocial" HorizontalAlignment="Left" TextWrapping="Wrap" Width="412" IsEnabled="False" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="5" Margin="0,28,0,0" Height="32" VerticalAlignment="Top"/>

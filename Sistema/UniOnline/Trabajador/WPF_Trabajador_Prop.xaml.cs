@@ -31,6 +31,7 @@ namespace UniOnline.Trabajador
             Conectar();
             LlenarCmbPropiedad();
             LlenarCmbRegion();
+            
         }
         //Conexión BD
         Conexion con = new Conexion();
@@ -168,7 +169,7 @@ namespace UniOnline.Trabajador
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (txtRutDueño.Text != string.Empty && txtAnno.Text != string.Empty && txtFoja.Text != string.Empty && txtNumero.Text != string.Empty && txtDescripcion.Text != string.Empty && txtDireccion.Text != string.Empty && cmbTipoProp.SelectedItem != null && cmbRegion.SelectedItem != null && cmbRegion.SelectedItem != null && cmbComuna.SelectedItem != null)
+            if (txtRutDueño.Text != string.Empty && txtAnno.Text != string.Empty && txtFoja.Text != string.Empty && txtNumero.Text != string.Empty && txtDescripcion.Text != string.Empty && txtDireccion.Text != string.Empty && cmbTipoProp.SelectedItem != null && cmbRegion.SelectedItem != null && cmbRegion.SelectedItem != null && cmbComuna.SelectedItem != null && lblURL.Content.ToString() != string.Empty)
             {
                 try
                 {
@@ -494,6 +495,11 @@ namespace UniOnline.Trabajador
                 MessageBox.Show("Error al subir archivo. " + ex.Message);
                 return false;
             }
+        }
+
+        private void txtAnno_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
         }
     }
 }

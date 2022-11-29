@@ -249,6 +249,7 @@ namespace UniOnline.Trabajador
                 {
                     var saveFileDialogStream = saveFileDialog1.OpenFile();
                     saveFileDialogStream.Write(b, 0, b.Length);
+                    saveFileDialogStream.Close();
                     MessageBox.Show("Documento descargado.");
                 }
             }
