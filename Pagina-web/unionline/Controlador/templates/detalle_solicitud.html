@@ -52,9 +52,9 @@
         {% else %}
 
         <hr>
-        <p class="card-text"><a href="{% url 'DescargarDocumento' id=s.id_soli %}" class="btn btn-primary">
-            Descargue su tramite aqui
-        </a></p>
+        <a href="{% url 'DescargarDocumento' id=s.id_soli %}" class="btn">
+            Descargue su trámite aquí
+        </a>
         {% endif %}
         </div>
         </div>

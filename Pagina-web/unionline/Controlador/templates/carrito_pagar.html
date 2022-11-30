@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
   <br><br><br>
+  <img class="d-block mx-auto mb-4" src="{% static 'imagenes\LogoCBR.png' %}" alt="A" width="15%" height="15%">
   <div class="container">
     <br><br>
     <div class="card">
@@ -38,7 +39,7 @@
         <!-- Precio total -->
         <p class="text-right">Total: ${{valor}}</p>
         <br>
-        <a class="btn btn-primary" href="{% url 'create' %}" role="button">Pagar</a>
+        <a class="btn" href="{% url 'create' %}" role="button">Pagar</a>
       
         
         <br>

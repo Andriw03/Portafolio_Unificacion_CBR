@@ -3,17 +3,19 @@
 {% block content %}
 <html lang="es">
 <head>
-  <link rel="stylesheet" href="{% static 'css/editar_director.css' %}">
-  <link rel="stylesheet" href="static/css/perfil-cliente.css">
+  <link rel="stylesheet" href="{% static 'css/editarCliente.css' %}">
+
   <link rel="stylesheet" href="{% static 'css\styles_inicio.css' %}">
-  <!-- <link rel="stylesheet" href="static/css/formulario.css"> -->
   
 </head>
 <main>
   <main>
     <form class="formulario" action="/edicionCliente/" method="post">
         {% csrf_token %}
-            <h1>Editar Datos de Perfil</h1>
+        <div class="titulo">
+          <h1>Editar Datos de Perfil</h1>
+        </div>
+            
         <div class="contenedor">
             {% if messages %}
                 <ul class="messages">

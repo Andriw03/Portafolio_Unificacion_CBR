@@ -18,7 +18,7 @@ body{
     margin-bottom: 140px;
     background: white;
 }
-h1{
+.titulo{
     padding: 10px;
     text-align: center;
     color: #1A2537;
@@ -52,6 +52,7 @@ input[type="password"]{
     padding: 15px 20px;
     border-radius: 5px;
     cursor: pointer;
+    background-color: #1A2537;
 }
 footer{
     position: static; bottom: 0; width: 100%;
@@ -61,7 +62,7 @@ footer{
     color: white;
 }
 .button:hover{
-    background: #010326;
+    background: #999;
 }
 @media (min-width:768px) 
 {

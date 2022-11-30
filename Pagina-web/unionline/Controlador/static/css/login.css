@@ -63,9 +63,7 @@ input[type="password"]{
     padding: 15px 20px;
     border-radius: 5px;
     cursor: pointer;
-}
-.button:hover{
-    background: #010326;
+    background-color: #1A2537;
 }
 
 @media (min-width:768px) 
