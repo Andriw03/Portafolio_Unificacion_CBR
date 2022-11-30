@@ -26,6 +26,6 @@
         <Button x:Name="btnChat" Grid.ColumnSpan="1" Content="Chat Directo" FontSize="20" Background="#FF393E59" Foreground="#FFF0F2F2" Style="{DynamicResource BtnStyle}" Click="btnChat_Click" Margin="534,350,207,69"/>
         <Label Content="Chat Directo:&#xD;&#xA;Aquí se puede contactar directamente&#xD;&#xA;con el cliente, a través de un chat." HorizontalAlignment="Left" Margin="505.461,273,0,0" Width="225.539" Height="57.436" VerticalAlignment="Top" UseLayoutRounding="False" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsHitTestVisible="False" FontWeight="Bold"/>
         <Button x:Name="btnCerrarSesion" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="763,32,0,0" VerticalAlignment="Top" Width="105" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16"  FontFamily="Segoe UI Emoji" Click="btnCerrarSesion_Click"/>
-        <Button x:Name="btnPerfilUsuario" Content="Perfil" HorizontalAlignment="Left" Margin="699,32,0,0" VerticalAlignment="Top" Width="60" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" FontFamily="Segoe UI Emoji" Click="btnPerfilUsuario_Click"/>
+        <!--<Button x:Name="btnPerfilUsuario" Content="Perfil" HorizontalAlignment="Left" Margin="699,32,0,0" VerticalAlignment="Top" Width="60" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" FontFamily="Segoe UI Emoji" Click="btnPerfilUsuario_Click"/>-->
     </Grid>
 </Window>

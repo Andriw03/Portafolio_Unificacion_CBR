@@ -27,13 +27,13 @@
                 <DataGridTextColumn Header="Correo" Binding="{Binding Path= 'correo_form'}" IsReadOnly="True" Width="Auto"/>
                 <DataGridTextColumn Header="Asunto" Binding="{Binding Path= 'asunto_form'}" IsReadOnly="True" Width="Auto"/>
                 <DataGridTextColumn Header="Detalle" Binding="{Binding Path= 'detalle_form'}" IsReadOnly="True" Width="Auto"/>
-                <DataGridTemplateColumn Header="Ver Detalle">
+                <!--<DataGridTemplateColumn Header="Ver Detalle">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Name="btnDetalle" Content="Detalle"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                </DataGridTemplateColumn>-->
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnCargaForm" Content="Cargar Formularios" FontSize="20" Background="#FF393E59" Foreground="#FFF0F2F2" Style="{DynamicResource BtnStyle}" Click="btnCargaForm_Click" Margin="10,287,6,26"/>

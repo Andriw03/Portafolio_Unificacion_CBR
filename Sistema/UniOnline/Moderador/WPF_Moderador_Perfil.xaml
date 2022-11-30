@@ -46,7 +46,7 @@
         <Button x:Name="btnEditar" Content="Modificar Datos" HorizontalAlignment="Left" Margin="594,180,0,0" VerticalAlignment="Top" Width="94" Height="32" Click="btnEditar_Click" RenderTransformOrigin="0.394,0.562"/>
         <TextBlock FontFamily="Cambria" Text="Modificar Perfil de Clientes" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource TextBlockStyle}" Margin="261,180,396,258" Width="293" Height="32"/>
         <Button x:Name="btnCerrarSesion" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="813,32,0,0" VerticalAlignment="Top" Width="105" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16"  FontFamily="Segoe UI Emoji" Click="btnCerrarSesion_Click"/>
-        <Button x:Name="btnPerfilUsuario" Content="Perfil" HorizontalAlignment="Left" Margin="732,32,0,0" VerticalAlignment="Top" Width="60" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" FontFamily="Segoe UI Emoji" Click="btnPerfilUsuario_Click"/>
+        <!--<Button x:Name="btnPerfilUsuario" Content="Perfil" HorizontalAlignment="Left" Margin="732,32,0,0" VerticalAlignment="Top" Width="60" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" FontFamily="Segoe UI Emoji" Click="btnPerfilUsuario_Click"/>-->
 
 
 
