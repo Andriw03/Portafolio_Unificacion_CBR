@@ -19,14 +19,8 @@ body{
     margin-bottom: 140px;
     background: white;
 }
-h1{
-    padding: 10px;
-    text-align: center;
-    color: white;
-    font-size: 30px;
-}
 
-h2{
+.titulo{
     padding: 10px;
     text-align: center;
     color: #010326;
@@ -71,7 +65,7 @@ footer{
     color: white;
 }
 .button:hover{
-    background: #010326;
+    background: #999;
 }
 
 

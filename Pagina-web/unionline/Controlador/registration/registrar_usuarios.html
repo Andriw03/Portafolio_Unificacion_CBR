@@ -8,7 +8,10 @@
     <main>
         <form class="formulario" method="post">
             {% csrf_token %}
-                <h2>Registrar Directores</h2>
+            <div class="titulo">
+              <h2>Registrar Directores</h2>
+            </div>
+                
             <div class="contenedor">
               <div class="mensaje">
                 {% if messages %}
