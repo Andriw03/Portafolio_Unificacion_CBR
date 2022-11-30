@@ -4,7 +4,7 @@
 
 
 <head>
-  <title>Agregar CBR</title>
+  <title>Editar cbr</title>
   <link rel="stylesheet" href="static/css/perfil-cliente.css">
 </head>
   <Main>
@@ -67,14 +67,15 @@
                   
               
                         <div class="input-group">
-                          <select class="form-select" name="cmbComuna" id="inputGroupSelect04" aria-label="Example select with button addon">
-                            <option selected>Seleccione una comuna...</option>
-                            {% for c in comuna %}
-                            <option value="{{c.pk}}">{{c.nombre_comuna}}</option>
-                            {% endfor %}
-                          {% endfor %}  
+                          <input list="brow" class="form-select" name="cmbComuna">
+                        <datalist id="brow">
+                        {% for c in comuna %}
+                      <option value="{{c.nombre_comuna}}"></option>
+                        {% endfor %}
+                        </datalist>
+                           
                         
-                          </select>
+                         {% endfor %} 
                       </div>
       
                   </div>
