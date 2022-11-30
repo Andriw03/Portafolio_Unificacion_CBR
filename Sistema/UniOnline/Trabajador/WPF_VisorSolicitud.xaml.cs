@@ -118,6 +118,7 @@ namespace UniOnline.Trabajador
                     saveFileDialog1.ShowDialog();
                     var saveFileDialogStream = saveFileDialog1.OpenFile();
                     saveFileDialogStream.Write(b, 0, b.Length);
+                    saveFileDialogStream.Close();
                     MessageBox.Show("Documento descargado.");
                 }
                 else if (dt.Rows.Count > 1)
@@ -171,8 +172,6 @@ namespace UniOnline.Trabajador
                 lbErrorNombre.Content = "Debe elegir un archivo.";
                 lbErrorNombre.Visibility = Visibility.Visible;
             }
-
-
         }
 
         private void btnBrowse_Click(object sender, RoutedEventArgs e)
@@ -183,6 +182,7 @@ namespace UniOnline.Trabajador
                 opendlg.Filter = "PDF Files |*.pdf||*.pdf";
                 opendlg.ShowDialog();
                 labelURL.Content = opendlg.FileName;
+                txtFileName.Text = opendlg.SafeFileName;
                 MessageBox.Show("Documento subido con éxito");
             }
             catch (Exception ex)
@@ -223,7 +223,6 @@ namespace UniOnline.Trabajador
                     cmd.Parameters.Add(param2);
                     int InsertFiles = cmd.ExecuteNonQuery();
                     con.conex.Close();
-
                 }
                 return true;
             }
@@ -246,7 +245,7 @@ namespace UniOnline.Trabajador
                 mail.From = new MailAddress("soportecbr@outlook.com");
                 mail.To.Add(lblCorreoDuenno.Content.ToString());
                 mail.Subject = "Copia de Trámite solicitado";
-                mail.Body = "Estimado cliente: "+ lbNombreSolicitante.Text + ". \nJunto con saludar se adjunta el trámite solicitado: "+ lbNombreTramite.Text + "\nSaludos.";
+                mail.Body = "Estimado cliente: "+ lbNombreSolicitante.Text + ". \nJunto con saludar se adjunta el trámite solicitado: "+ lbNombreTramite.Text + "\nSaludos. \n\n\n\n________________________________________________________\nConservador De Bienes Raíces Chile\nGobierno de Chile\nMinisterio de Vivienda y Urbanismo | Gobierno de Chile";
 
                 System.Net.Mail.Attachment attachment;
                 attachment = new System.Net.Mail.Attachment(labelURL.Content.ToString());

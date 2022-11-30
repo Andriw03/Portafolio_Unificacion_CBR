@@ -422,10 +422,10 @@ def detalle_solicitud(request,id):
         'can_carrito': can_carrito,
         'soli':soli,
         'id_doc':id_doc,
-
         }
 
     return render(request, 'templates\detalle_solicitud.html', data)
+
 @login_required(login_url='/iniciar_sesion')
 def EditarCliente (request):
     # cliente=Usuario.objects.get(id_usuario = id)

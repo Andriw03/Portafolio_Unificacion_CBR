@@ -3,13 +3,13 @@
 {% block content %}
 <head>
     <title>Detalle</title>
-    <link rel="stylesheet" href="static/css/perfil-cliente.css">
-    
 </head>
 <main>
-    {% for s in soli%}
+    <img class="d-block mx-auto mb-4" src="{% static 'imagenes\LogoCBR.png' %}" alt="A" width="15%" height="15%">
+    <div class="container">
+      {% for s in soli%}
     <div class="formulario">
-    <div class="card">
+      <div class="card">
         <div class="card-body text-center">
           <h5 class="card-title">Solicitud Para el Trámite: {{s.nombre_tramite}}</h5>
           <hr>
@@ -25,7 +25,6 @@
             <form class="formulario" action="" enctype="multipart/formdata" method="post">
                 {% csrf_token %}
           {% if id_doc == 1 %}
-                  
                   <br>
                   <div class="mb-3">
                     <label for="copiaCedula" class="form-label"> Copia de Cédula de identidad</label>
@@ -47,7 +46,6 @@
                 <label for="escritura" class="form-label"> Escritura de propiedad</label>
                     <input type="file" class="form-control" name="escritura" id="escritura" accept=".pdf" required>
               </div>
-              
               {% endif %}
               <button type="submit" name="solicitar" class="btn btn-primary">Solicitar Nuevamente</button>
             </form>
@@ -59,10 +57,9 @@
         </a></p>
         {% endif %}
         </div>
-      </div>
-    {% endfor %}
-</div>
+        </div>
+      {% endfor %}
+    </div>
+    </div>
 </main>
-
-    
 {% endblock %}

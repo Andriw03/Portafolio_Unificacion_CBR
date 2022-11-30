@@ -214,13 +214,13 @@ namespace UniOnline.Trabajador
                         }
                         else
                         {
-                            MessageBox.Show("Dueño no existe", "Error");
+                            MessageBox.Show("Dueño no existe.", "Error");
                         }
                                                                                                
                     }
                     else
                     {
-                        MessageBox.Show("Ya existe una propiedad con esta Foja", "Advertencia");
+                        MessageBox.Show("Ya existe una propiedad con esta Foja.", "Advertencia");
                     }
                 }catch (Exception ex)
                 {
@@ -229,7 +229,7 @@ namespace UniOnline.Trabajador
             }
             else
             {
-                MessageBox.Show("Debe llenar todos los campos","Advertencia");
+                MessageBox.Show("Debe llenar todos los campos.","Advertencia");
             }
         }
 

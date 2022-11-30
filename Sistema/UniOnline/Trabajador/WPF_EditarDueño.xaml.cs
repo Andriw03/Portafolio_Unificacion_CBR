@@ -170,7 +170,7 @@ namespace UniOnline.Trabajador
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
             Duenno duen = new Duenno();
-            MessageBoxResult result = MessageBox.Show("Seguro que desea eliminar este dueño", "Eliminar Dueño", MessageBoxButton.YesNoCancel);
+            MessageBoxResult result = MessageBox.Show("Seguro que desea eliminar este dueño", "Eliminar Dueño", MessageBoxButton.YesNo);
             switch (result)
             {
                 case MessageBoxResult.Yes:
@@ -186,8 +186,6 @@ namespace UniOnline.Trabajador
                     break;
                 case MessageBoxResult.No:
                     MessageBox.Show("Dueño no eliminado");
-                    break;
-                case MessageBoxResult.Cancel:
                     break;
             }
         }
@@ -216,6 +214,7 @@ namespace UniOnline.Trabajador
                 {
                     var saveFileDialogStream = saveFileDialog1.OpenFile();
                     saveFileDialogStream.Write(b, 0, b.Length);
+                    saveFileDialogStream.Close();
                     MessageBox.Show("Documento descargado.");
                 }
             }

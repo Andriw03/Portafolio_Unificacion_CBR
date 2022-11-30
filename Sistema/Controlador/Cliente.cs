@@ -237,7 +237,7 @@ namespace Controlador
                     idSoli = Int32.Parse(rd["id_soli"].ToString());
                 }
                 rd.Close();
-                cmd = new MySqlCommand("UPDATE `UNIONLINE`.`SOLICITUD` SET `estado` = '" + estado + "', `Comentario` ='" + comentario + "' WHERE `id_soli` = " + idSoli + " ;", conex);
+                cmd = new MySqlCommand("UPDATE `UNIONLINE`.`SOLICITUD` SET `fecha_cierre` = SYSDATE(), `estado` = '" + estado + "', `Comentario` ='" + comentario + "' WHERE `id_soli` = " + idSoli + " ;", conex);
                 rd = cmd.ExecuteReader();
                 rd.Close();
                 return true;
