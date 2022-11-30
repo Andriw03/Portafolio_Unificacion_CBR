@@ -11,20 +11,21 @@ body{
 .contenedor{
     width: 100%;
     padding: 15px;
+    
 }
 .formulario{
-    margin-top: 150px;
+    margin-top: 100px;
     padding: 3px;
     margin-bottom: 140px;
     background: white;
 }
-h1{
+
+.titulo{
     padding: 10px;
     text-align: center;
-    color: #1A2537;
+    color: #010326;
     font-size: 30px;
 }
-
 
 input[type="text"],
 input[type="tel"],
@@ -35,9 +36,11 @@ input[type="password"]{
     padding: 10px;
     border: none;
 }
+a{
+    color: white;
+}
 .input-contenedor{
     margin-bottom: 15px;
-    
 }
 .icon{
     min-width: 50px;
@@ -52,6 +55,7 @@ input[type="password"]{
     padding: 15px 20px;
     border-radius: 5px;
     cursor: pointer;
+    background: #010326;
 }
 footer{
     position: static; bottom: 0; width: 100%;
@@ -61,8 +65,10 @@ footer{
     color: white;
 }
 .button:hover{
-    background: #010326;
+    background: #999;
 }
+
+
 @media (min-width:768px) 
 {
     .formulario{
