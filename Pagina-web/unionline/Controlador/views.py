@@ -368,6 +368,7 @@ def detalle_solicitud(request,id):
             id_doc = 2
         elif i.t_documento == "Copia de cédula de identidad y Escritura de propiedad.":
             id_doc = 3
+
     
     
     rut = str(usu.username).replace(".","").replace("-","")
@@ -414,6 +415,7 @@ def detalle_solicitud(request,id):
                     doc = variable2
                     UpdateBlob(doc,id_documento)
             messages.success(request, "Solicitud generada correctamente")
+        
 
     data={
         'tramites': tramites,
@@ -493,7 +495,7 @@ def paginaPrinc(request,id):
     miles_translator = str.maketrans(".,", ",.")
     valor = "{:,}".format(valor).translate(miles_translator)
     ######
-    cbr = Cbr.objects.raw('SELECT * FROM UNIONLINE.CBR join UNIONLINE.HOR_ATENCION on UNIONLINE.CBR.HOR_ATENCION_id_horario = UNIONLINE.HOR_ATENCION.id_horario where id_cbr = %s;',[id])
+    cbr = Cbr.objects.raw('SELECT id_cbr, nombre_cbr, correo_cbr, dias_atencion, horario_apertura, horario_cierre, concat(nombre_calle," ",numero_casa, ", ", nombre_comuna, ", ", nombre_region) as direccion FROM UNIONLINE.CBR join UNIONLINE.HOR_ATENCION on UNIONLINE.CBR.HOR_ATENCION_id_horario = UNIONLINE.HOR_ATENCION.id_horario join UNIONLINE.DIRECCION on UNIONLINE.DIRECCION.id_direccion = UNIONLINE.CBR.DIRECCION_id_direccion join UNIONLINE.COMUNA on UNIONLINE.COMUNA.id_comuna = UNIONLINE.DIRECCION.COMUNA_id_comuna join UNIONLINE.PROVINCIA on UNIONLINE.PROVINCIA.id_provincia = UNIONLINE.COMUNA.PROVINCIA_id_provincia join UNIONLINE.REGION on UNIONLINE.REGION.id_region = UNIONLINE.PROVINCIA.REGION_id_region where id_cbr = %s;',[id])
     #cbr = Cbr.objects.raw('SELECT * FROM UNIONLINE.CBR join UNIONLINE.HOR_ATENCION on UNIONLINE.CBR.HOR_ATENCION_id_horario = UNIONLINE.HOR_ATENCION.id_horario where id_cbr = 1;')
     data ={
         'tramites':tramites,
@@ -694,6 +696,8 @@ def solicitar_tra(request, id):
             id_doc = 2
         elif i.t_documento == "Copia de cédula de identidad y Escritura de propiedad.":
             id_doc = 3
+        elif i.t_documento == "No aplica.":
+            id_doc = 4
 
     if request.method == 'POST':
         if 'solicitar' in request.POST:
@@ -892,7 +896,7 @@ def modificar_cbr(request,id):
             try:  
                 cbr.save() 
                 messages.success(request, "CBR Modificado Correctamente")
-                return redirect(to="modificarCbr")
+                return redirect(to="listarCbr")
             except Exception as e:
                 mensaje = "No se ha podido modificar el cbr: " + str(e)
                 messages.warning(request, mensaje)

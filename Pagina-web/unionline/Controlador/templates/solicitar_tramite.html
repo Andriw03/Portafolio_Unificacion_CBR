@@ -47,12 +47,13 @@
                     </tbody>
                   </table>
                 <div>
+
+              
                   {% if prop != '' %}
-                  <h2>Ingrese los documentos solicitados.</h2>
-                  <h5>Solo permite archivos PDF</h5>
                   
                   {% if id_doc == 1 %}
-                  
+                  <h2>Ingrese los documentos solicitados.</h2>
+                  <h5>Solo permite archivos PDF</h5>
                   <br>
                       <div class="mb-3">
                         <label for="copiaCedula" class="form-label"> Copia de Cédula de identidad</label>
@@ -60,12 +61,16 @@
                       </div>
                   {% endif %}
                   {% if id_doc == 2 %}
+                  <h2>Ingrese los documentos solicitados.</h2>
+                  <h5>Solo permite archivos PDF</h5>
                   <div class="mb-3">
                     <label for="escritura" class="form-label"> Escritura de propiedad</label>
                     <input type="file" class="form-control" name="escritura" id="escritura" accept=".pdf" required>
                   </div>
               {% endif %}
               {% if id_doc == 3 %}
+              <h2>Ingrese los documentos solicitados.</h2>
+                  <h5>Solo permite archivos PDF</h5>
                   <br>
               <div class="mb-3">
                 <label for="copiaCedula" class="form-label"> Copia de Cédula de identidad</label>
@@ -81,6 +86,7 @@
                 <button type="submit" name="solicitar" class="btn btn-primary">Solicitar</button>
                 <br>
                 {% endif %}
+                
             </form>
             {% for message in messages %}
 <div class="container-fluid p-0">

@@ -49,12 +49,13 @@
               {% endif %}
               <button type="submit" name="solicitar" class="btn btn-primary">Solicitar Nuevamente</button>
             </form>
-        {% else %}
+        {% elif s.estado == "Aprobado" %}
 
         <hr>
-        <a href="{% url 'DescargarDocumento' id=s.id_soli %}" class="btn">
-            Descargue su trámite aquí
-        </a>
+        <p class="card-text"><a href="{% url 'DescargarDocumento' id=s.id_soli %}" class="btn btn-primary">
+            Descargue su tramite aquí
+        </a></p>
+        {% else %}
         {% endif %}
         </div>
         </div>
