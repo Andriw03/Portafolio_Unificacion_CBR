@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline.Recepcion"
         mc:Ignorable="d"
-        Title="CBR UniOnline" Height="450" Width="800" MinHeight="450" MinWidth="800" WindowStartupLocation="CenterScreen" ResizeMode="CanResize">
+        Title="CBR UniOnline" Height="450" Width="800" MinHeight="450" MinWidth="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="White">
 
         <Grid.ColumnDefinitions>

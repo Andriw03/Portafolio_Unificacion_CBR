@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline.Moderador"
         mc:Ignorable="d"
-        Title="WPF_Moderador_Soporte" Height="484.04" Width="900">
+        Title="WPF_Moderador_Soporte" Height="484.04" Width="900" ResizeMode="NoResize">
     <Window.Resources>
 
         <Style x:Key="BtnStyle" TargetType="{x:Type Button}">

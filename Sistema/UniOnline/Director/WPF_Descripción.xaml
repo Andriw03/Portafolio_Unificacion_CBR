@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline.Recepcion"
         mc:Ignorable="d"
-        Title="Detalles_Solicitud" Height="300" Width="500">
+        Title="Detalles_Solicitud" Height="300" Width="500" ResizeMode="NoResize">
     <Grid HorizontalAlignment="Left" Width="490" Margin="0,0,0,0.4">
         <Image Margin="205,10,200,188" Source="/UniOnline;component/LogoCBR.png"/>
 

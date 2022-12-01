@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline.Trabajador"
         mc:Ignorable="d"
-        Title="CBR UniOnline" Height="500" Width="1010" Closing="Window_Closing" WindowStartupLocation="CenterScreen" ResizeMode="CanResize">
+        Title="CBR UniOnline" Height="500" Width="1010" Closing="Window_Closing" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Rectangle HorizontalAlignment="Stretch" Height="87" Stroke="Black" VerticalAlignment="Top" Width="Auto" MinWidth="892" Fill="#FF010623"/>
         <TextBlock HorizontalAlignment="Left" Margin="12,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="189" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="30" Text="CBRS de Chile"/>

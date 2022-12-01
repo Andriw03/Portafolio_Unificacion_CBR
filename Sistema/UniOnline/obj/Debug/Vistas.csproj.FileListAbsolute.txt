@@ -466,6 +466,10 @@ D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_
 D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Solicitudes.baml
 D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Solicitudes.g.cs
 D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Solicitudes.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\UniOnline.exe.manifest
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\UniOnline.application
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.exe.manifest
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.application
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
@@ -704,7 +708,3 @@ D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\De
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.CopyComplete
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\UniOnline.exe
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\UniOnline.pdb
-D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\UniOnline.exe.manifest
-D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\UniOnline.application
-D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.exe.manifest
-D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.application

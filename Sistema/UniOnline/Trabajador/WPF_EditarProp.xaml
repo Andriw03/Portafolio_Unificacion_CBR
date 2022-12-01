@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline.Trabajador"
         mc:Ignorable="d"
-        Title="CBR UniOnline" Height="600" Width="900" WindowStartupLocation="CenterScreen">
+        Title="CBR UniOnline" Height="600" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
 
     <Grid x:Name="btnEliminarProp" Background="#FFF0F2F2">
         <Rectangle HorizontalAlignment="Stretch" Width="Auto" MinHeight="85" MinWidth="800" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" Grid.RowSpan="3" Fill="#FF010326" Stroke="Black" Margin="0,0,-8,1"/>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline"
         mc:Ignorable="d"
-        Title="UniOnline" Height="600" Width="900" WindowStartupLocation="CenterScreen">
+        Title="UniOnline" Height="600" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Rectangle Height="87" Stroke="Black" VerticalAlignment="Top" Fill="#FF010326" Margin="0,0,-0.4,0" HorizontalAlignment="Left" Width="894"/>
         <TextBlock HorizontalAlignment="Left" Margin="21,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="253" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="36"><Run Language="es-es" Text="CBRS de Chile."/></TextBlock>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline.Moderador"
         mc:Ignorable="d"
-        Title="WPF_ModificarPerfil" Height="485" Width="480">
+        Title="WPF_ModificarPerfil" Height="485" Width="480" ResizeMode="NoResize">
     <Window.Resources>
 
         <Style x:Key="TextBlockStyle" TargetType="{x:Type TextBlock}">

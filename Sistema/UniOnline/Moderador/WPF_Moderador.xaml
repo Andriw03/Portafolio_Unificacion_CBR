@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline.Moderador"
         mc:Ignorable="d"
-        Title="WPF_Moderador" Height="484.04" Width="900">
+        Title="WPF_Moderador" Height="484.04" Width="900" ResizeMode="NoResize">
     <Grid>
         <Rectangle HorizontalAlignment="Center" Height="87" Stroke="Black" VerticalAlignment="Top" Width="892" Fill="#FF010623"/>
         <TextBlock HorizontalAlignment="Left" Margin="12,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="189" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="30" Text="CBRS de Chile"/>

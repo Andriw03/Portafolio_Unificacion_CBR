@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline.Recepcion"
         mc:Ignorable="d"
-        Title="Detalles_Solicitud" Height="413" Width="605">
+        Title="Detalles_Solicitud" Height="413" Width="605" ResizeMode="NoResize">
     <Grid HorizontalAlignment="Left" Width="587">
         <Image HorizontalAlignment="Left" Height="86" Margin="239,0,0,296" VerticalAlignment="Bottom" Width="105" Source="/UniOnline;component/LogoCBR.png"/>
         <Label x:Name="lblNombreCompleto" Content="Label" HorizontalAlignment="Left" Margin="19,91,0,0" VerticalAlignment="Top" Width="558"/>

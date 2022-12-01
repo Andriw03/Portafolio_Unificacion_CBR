@@ -461,7 +461,6 @@ D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\System.ValueTuple.xml
-D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.AssemblyReference.cache
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CoreCompileInputs.cache
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CopyComplete
 D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\obj\Debug\Controlador.dll

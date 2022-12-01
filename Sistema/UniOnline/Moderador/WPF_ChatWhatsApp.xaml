@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:UniOnline.Moderador"
         mc:Ignorable="d"
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
-        Title="WPF_ChatWhatsApp" Height="450" Width="800">
+        Title="WPF_ChatWhatsApp" Height="450" Width="800" ResizeMode="NoResize">
     <DockPanel>
         <wv2:WebView2 Name="webView" Source="https://web.whatsapp.com/"/>
     </DockPanel>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniOnline.Moderador"
         mc:Ignorable="d"
-        Title="WPF_Moderador_Soporte_Tickets" Height="385.126" Width="649.998">
+        Title="WPF_Moderador_Soporte_Tickets" Height="385.126" Width="649.998" ResizeMode="NoResize">
     <Window.Resources>
 
         <Style x:Key="BtnStyle" TargetType="{x:Type Button}">
