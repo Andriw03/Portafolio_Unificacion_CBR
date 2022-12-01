@@ -328,7 +328,7 @@ def UpdateBlob(doc, id_doc):
         insert_blob_tuple = (documento, id_doc)
         result = cursor.execute(sql_insert_blob_query, insert_blob_tuple)
         connection.commit()
-        print("Funiono mi rey", result)
+        
         if connection.is_connected():
             cursor.close()
             connection.close()
@@ -360,7 +360,9 @@ def detalle_solicitud(request,id):
     id_doc = 0
     documento = Documento()
     soli = Solicitud.objects.raw("SELECT id_carrito, id_soli,id_tramite, id_usuario, nombre_tramite, numero_seguimiento, SOLICITUD.estado as estado, valor_tramite, correo_electronico, comentario, t_documento   FROM UNIONLINE.SOLICITUD inner join UNIONLINE.CAR_COMPRA on UNIONLINE.SOLICITUD.id_soli = UNIONLINE.CAR_COMPRA.SOLICITUD_id_soli join UNIONLINE.TRAMITE on SOLICITUD.TRAMITE_id_tramite = TRAMITE.id_tramite join UNIONLINE.USUARIO on SOLICITUD.USUARIO_id_usuario = USUARIO.id_usuario where id_soli = %s",[id])
+    id_soli = 0
     for i in soli:
+        id_soli = i.id_soli
         documento = Documento.objects.raw("SELECT * FROM UNIONLINE.DOCUMENTO where SOLICITUD_id_soli = %s", [i.id_soli])
         if i.t_documento == "Copia de cédula de identidad.":
             id_doc = 1
@@ -381,7 +383,11 @@ def detalle_solicitud(request,id):
             variable2 = findfile(variable, "C:/")
             nombre_doc = "Copia_Carnet_" + rut
             doc = variable2
-            UpdateBlob(nombre_doc,doc,id_documento)
+            UpdateBlob(doc,id_documento)
+            if id_soli != 0:
+                solicitud = get_object_or_404(Solicitud,pk= id_soli)
+                solicitud.estado = "En Proceso"
+                solicitud.save()
             messages.success(request, "Solicitud generada correctamente")
         elif id_doc == 2:
             id_documento = 0
@@ -391,7 +397,11 @@ def detalle_solicitud(request,id):
             variable2 = findfile(variable, "C:/")
             nombre_doc = "Escritura_propiedad_" + rut
             doc = variable2
-            UpdateBlob(nombre_doc,doc,id_documento)
+            UpdateBlob(doc,id_documento)
+            if id_soli != 0:
+                solicitud = get_object_or_404(Solicitud,pk= id_soli)
+                solicitud.estado = "En Proceso"
+                solicitud.save()
             messages.success(request, "Solicitud generada correctamente")
             
         elif id_doc == 3:
@@ -414,6 +424,10 @@ def detalle_solicitud(request,id):
                     variable2 = findfile(variable, "C:/")
                     doc = variable2
                     UpdateBlob(doc,id_documento)
+            if id_soli != 0:
+                solicitud = get_object_or_404(Solicitud,pk= id_soli)
+                solicitud.estado = "En Proceso"
+                solicitud.save()
             messages.success(request, "Solicitud generada correctamente")
         
 

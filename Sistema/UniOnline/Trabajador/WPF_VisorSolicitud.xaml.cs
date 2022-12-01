@@ -141,37 +141,50 @@ namespace UniOnline.Trabajador
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (txtFileName.Text != string.Empty)
+            if(cmbEstado.SelectedItem.ToString() == "Aprobado")
             {
-                Cliente cli = new Cliente();
-                if (Update(sender, e))
+                if (txtFileName.Text != string.Empty)
                 {
+                    Cliente cli = new Cliente();
                     if (cli.ModificarSolicitud(lbNumeroSO.Text, cmbEstado.SelectedItem.ToString(), txtComentario.Text))
                     {
-                        if (cmbEstado.SelectedItem.ToString() == "Aprobado")
+
+                        if (Update(sender, e))
                         {
-                            btnEnviarCorreo_Click(sender, e);
+                            if (cmbEstado.SelectedItem.ToString() == "Aprobado")
+                            {
+                                btnEnviarCorreo_Click(sender, e);
+                            }
+                            else
+                            {
+                                labelURL.Content = "URL";
+                            }
                         }
                         else
                         {
-                            labelURL.Content = "URL";
+                            MessageBox.Show("Error al guardar la solicitud", "Advertencia.");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Error al guardar la solicitud", "Advertencia.");
+                        MessageBox.Show("Error al subir documento", "Advertencia.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Error al subir documento", "Advertencia.");
+                    lbErrorNombre.Content = "Debe elegir un archivo.";
+                    lbErrorNombre.Visibility = Visibility.Visible;
                 }
             }
             else
             {
-                lbErrorNombre.Content = "Debe elegir un archivo.";
-                lbErrorNombre.Visibility = Visibility.Visible;
+                Cliente cli = new Cliente();
+                if (cli.ModificarSolicitud(lbNumeroSO.Text, cmbEstado.SelectedItem.ToString(), txtComentario.Text))
+                {
+                    MessageBox.Show("Solicitud Modificada Correctamente.");
+                }
             }
+            
         }
 
         private void btnBrowse_Click(object sender, RoutedEventArgs e)

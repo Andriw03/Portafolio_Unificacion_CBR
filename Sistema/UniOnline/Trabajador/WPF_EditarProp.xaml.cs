@@ -224,7 +224,57 @@ namespace UniOnline.Trabajador
             edue.ObtenerDuenno = due.BuscarDuenno(txtDueño.Text);
             edue.ShowDialog();
         }
+        public static string FormatearRut(string rut)
+        {
+            string rutFormateado = string.Empty;
 
+            if (rut.Length == 0)
+            {
+                rutFormateado = "";
+            }
+            else
+            {
+                string rutTemporal;
+                string dv;
+                Int64 rutNumerico;
+
+                rut = rut.Replace("-", "").Replace(".", "");
+
+                if (rut.Length == 1)
+                {
+                    rutFormateado = rut;
+                }
+                else
+                {
+                    rutTemporal = rut.Substring(0, rut.Length - 1);
+                    dv = rut.Substring(rut.Length - 1, 1);
+
+                    //aqui convierto a un numero el RUT si ocurre un error lo deja en CERO
+                    if (!Int64.TryParse(rutTemporal, out rutNumerico))
+                    {
+                        rutNumerico = 0;
+                    }
+
+                    //este comando es el que formatea con los separadores de miles
+                    rutFormateado = rutNumerico.ToString("N0");
+
+                    if (rutFormateado.Equals("0"))
+                    {
+                        rutFormateado = string.Empty;
+                    }
+                    else
+                    {
+                        //si no hubo problemas con el formateo agrego el DV a la salida
+                        rutFormateado += "-" + dv;
+
+                        //y hago este replace por si el servidor tuviese configuracion anglosajona y reemplazo las comas por puntos
+                        rutFormateado = rutFormateado.Replace(",", ".");
+                    }
+                }
+            }
+
+            return rutFormateado;
+        }
         private void btnVerDocu_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -320,6 +370,14 @@ namespace UniOnline.Trabajador
                 MessageBox.Show("Error al subir archivo. " + ex.Message);
                 return false;
             }
+        }
+
+        private void txtRutEmpresa_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+
+            txtRutEmpresa.Text = FormatearRut(txtRutEmpresa.Text);
+            txtRutEmpresa.SelectionStart = txtRutEmpresa.Text.Length;
+            txtRutEmpresa.SelectionLength = 0;
         }
     }
 }

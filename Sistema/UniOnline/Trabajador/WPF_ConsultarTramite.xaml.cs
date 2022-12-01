@@ -24,6 +24,22 @@ namespace UniOnline.Trabajador
         public WPF_ConsultarTramite()
         {
             InitializeComponent();
+            llenarTabla();
+        }
+
+        private void llenarTabla()
+        {
+            Recepcionista recep = new Recepcionista();
+            DataTable tabla = recep.MostrarTodasSolicitud(txtRut.Text);
+            if (tabla != null)
+            {
+                dg_listartramite.ItemsSource = tabla.DefaultView;
+                dg_listartramite.Items.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Tabla sin registro", "Error");
+            }
         }
 
         private void btn_consultar_Click(object sender, RoutedEventArgs e)

@@ -92,6 +92,29 @@ namespace Controlador
             }
         }
 
+        public DataTable MostrarTodasSolicitud(string rut)
+        {
+            Conectar();
+            DataTable tabla = new DataTable();
+
+
+            try
+            {
+                cmd = new MySqlCommand("SELECT rut_usuario, primer_nombre, primer_apellido, numero_seguimiento, SOLICITUD.estado FROM UNIONLINE.USUARIO join UNIONLINE.SOLICITUD on UNIONLINE.USUARIO.id_usuario = UNIONLINE.SOLICITUD.USUARIO_id_usuario inner join UNIONLINE.CAR_COMPRA on UNIONLINE.SOLICITUD.id_soli = UNIONLINE.CAR_COMPRA.SOLICITUD_id_soli where SOLICITUD.estado = 'En Proceso';", conex);
+                MySqlDataAdapter ap = new MySqlDataAdapter(cmd);
+                ap.Fill(tabla);
+                cmd.Dispose();
+                ap.Dispose();
+                return tabla;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+                return null;
+            }
+        }
 
         public DataTable MostrarSolicitud(string rut)
         {
