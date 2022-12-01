@@ -1,20 +1,11 @@
 import os
 import random
-from django.core.paginator import Paginator
-import base64
-from django.http import Http404
-from django.template.loader import get_template
-# from xhtml2pdf import pisa
-from django.views.generic import View
-from io import BytesIO
-from django.http import HttpResponse
 from django.conf import settings
 from django.core.mail import EmailMultiAlternatives
 from datetime import datetime
 from datetime import datetime as dt
 from tkinter import EXCEPTION
 from urllib import response
-from webbrowser import get
 import mysql.connector
 from django.contrib import auth, messages
 from django.contrib.auth import authenticate, login
@@ -24,21 +15,13 @@ from django.contrib.auth.decorators import (login_required,
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.db.models import Q
-from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
-from django.utils.decorators import method_decorator
-from django.views.decorators.csrf import csrf_exempt
-from django.views.generic import TemplateView
-from rut_chile import rut_chile
-from transbank.error.transbank_error import TransbankError
 from transbank.webpay.webpay_plus.transaction import Transaction
-from werkzeug.security import check_password_hash, generate_password_hash
-from .forms import FormFormularioForm
-import smtplib
 from .models import (CarCompra, Cbr, ClasProp, Comuna, Direccion, DuennoProp,
                      EstadoPago, HorAtencion, Propiedad, Provincia, Region, FormFormulario,
-                     Solicitud, TipoPago, Tramite, TTramite, TUsuario, Usuario, Documento,TipoDocumento, Documento)
+                     Solicitud, TipoPago, Tramite, TTramite, TUsuario, Usuario, Documento, Documento)
 
+#Método que permite  enviar un correo a usuario director cuando su cuenta es creada, con parametro id del director
 def enviarCorreDirector(id):
     dic = get_object_or_404(Usuario, pk=id)
     asunto = "Cuenta Creada UNIONLINE" 
@@ -68,6 +51,7 @@ def enviarCorreDirector(id):
     
 
 '''
+#método para ingresar un CBR por comuna
 def llenarCbr():
     replacements = (
         ("á", "a"),
@@ -100,17 +84,19 @@ def llenarCbr():
         
         cbr.save()
     '''
-
+#Método para listar el carrito de compra del usuario registrado
 def listar_carrito(rut):
     carrito = CarCompra.objects.raw("SELECT id_carrito, id_soli, id_tramite, nombre_tramite, valor_tramite FROM UNIONLINE.CAR_COMPRA inner join UNIONLINE.SOLICITUD on SOLICITUD_id_soli = id_soli inner join UNIONLINE.TRAMITE on TRAMITE_id_tramite = id_tramite inner join UNIONLINE.USUARIO on USUARIO_id_usuario = id_usuario where CAR_COMPRA.estado = 0 and rut_usuario = %s;",[rut])
     valor = 0
     return carrito
+
+#Método para listar los tipos de tramite en el nav  
 def listar_tramites():
     tramites = TTramite.objects.all()
     #llenarCbr()
     return tramites
 
-
+#view inicio
 def inicio(request):
     #agregar a todas las ventanas de cliente
     tramites = listar_tramites()
@@ -131,6 +117,7 @@ def inicio(request):
     comuna = ''
     cbr = ''
     provincia = ''
+    #Método POST para buscar CBR
     if request.method == 'POST':
         if 'pRegion' in request.POST:           
             provincia = Provincia.objects.filter(Q(region_id_region_id=request.POST.get('cmbRegion')))
@@ -255,6 +242,7 @@ def crearCuenta(request):
         
     return render(request, 'registration/registrar.html')
 
+#Método para descargar documento con el id de solicitud como parametro
 @login_required(login_url='/iniciar_sesion')
 def descargar_doc(request, id):
     documento= Documento.objects.raw("SELECT * FROM UNIONLINE.DOCUMENTO where TIPO_DOCUMENTO_id_tipodoc = 2 and SOLICITUD_id_soli = %s", [id])
@@ -312,6 +300,8 @@ def perfil(request):
         'documento' : documento,
         }
     return render(request, 'templates/perfil-cliente.html', data)
+
+#Método metodo para actualizar un documento en la BD, con parametro doc = documento.pdf, id_doc = id del documento que se quiere actualizar
 def UpdateBlob(doc, id_doc):
     print("Updating BLOB into python_employee table")
     try:
@@ -646,11 +636,14 @@ def listar_tra(request, id):
         }
     return render(request, 'templates/listar_tramite.html', data)
 
+#Método para convertir un documento.pdf a binary 
 def convertToBinaryData(filename):
     # Convert digital data to binary format
     with open(filename, 'rb') as file:
         binaryData = file.read()
     return binaryData
+
+#Método para insertar un documento en la BD, con parametros nombre del documento, documento.pdf y id de la solicitud    
 def insertBLOB(nombre_doc, doc, id_soli):
     print("Inserting BLOB into python_employee table")
     try:
@@ -680,11 +673,13 @@ def insertBLOB(nombre_doc, doc, id_soli):
             cursor.close()
             connection.close()
             print("MySQL connection is closed")
-    
+
+#Método para buscar la ruta de un archivo    
 def findfile(name, path):
     for dirpath, dirname, filename in os.walk(path):
         if name in filename:
             return os.path.join(dirpath, name)
+
 
 @login_required(login_url='/iniciar_sesion')
 def solicitar_tra(request, id):
