@@ -36,17 +36,25 @@
 </head>
 <body>
   <header id="header" class="header fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
-      <a href="{% url 'inicio' %}" class="logo d-flex align-items-center me-auto me-lg-0">
-        <h1>CBRS de Chile<span>.</span></h1>
-      </a>
+    <div class="arriba">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a href="{% url 'inicio' %}" class="navbar-brand">
+            CBRS de Chile.
+          </a>
+        </div>
+      </nav>
+    </div>
   </header>
-  <br><br><br>
+  <br><br><br><br><br>
+  
   {% if status == "AUTHORIZED" %}
+  <br><br><br><br><br><br>
   <div class="container">
     <br><br>
     <div class="card" style="width: 18rem;">
         <div id="imprimible"  class="card-body">
+          <img class="d-block mx-auto mb-4" src="{% static 'imagenes\LogoCBR.png' %}" alt="A" width="75%" height="75%">
           <h5 class="card-title">Transacción Exitosa</h5>
           <h6 class="card-subtitle mb-2 text-muted">CBRS Online/ Pago de solicitudes</h6>
           <br>
@@ -71,6 +79,7 @@
         <br><br>
         <div class="card" style="width: 18rem;">
             <div  class="card-body">
+              <img class="d-block mx-auto mb-4" src="{% static 'imagenes\LogoCBR.png' %}" alt="A" width="25%" height="25%">
               <h5 class="card-title alert alert-danger">Transacción Fallida</h5>
               <h6 class="card-subtitle mb-2 text-muted">CBRS Online/ Pago de solicitudes</h6>
               <br>
@@ -89,7 +98,7 @@
       </div>
     {% endif %}
 </body>
-
+<br><br><br><br>
 <footer>
     <p class="copyright">&copy Copyright Ministerio de Vivienda y Urbanismo - 2022</p>
   </footer>
