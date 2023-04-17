@@ -1,0 +1,115 @@
+{% extends 'templates\base_admin.html' %}
+{% load static %}
+{% block content %}
+
+
+<head>
+  <title>Editar cbr</title>
+  <link rel="stylesheet" href="static/css/perfil-cliente.css">
+</head>
+  <Main>
+    <div class="px-4 py-5  text-center">
+      <img class="d-block mx-auto mb-4" src="{% static 'imagenes\LogoCBR.png' %}" alt="" width="15%" height="15%">
+      <div>
+<Main>
+    
+    <div class = "container p-5 my-5 border">
+          <div class ="card ">
+            <div class ="card-body ">
+                <h3 class="display-6 fw-bold">Editar CBR</h3>
+                <br>
+                <br>
+                <form class="formulario" method="post">
+                  {% csrf_token %}
+                  
+                  <div class="contenedor">
+                  {% for c in cbr %}
+                      <div class="input-contenedor">
+                          <input type="text" name="nombre_cbr"  value = "{{c.nombre_cbr}}"   placeholder="Nombre CBR">
+                      </div>
+      
+                      <div class="input-contenedor">
+                          <input type="email" name="correo_cbr" value = "{{c.correo_cbr}}" placeholder="Correo CBR">
+                      </div>
+      
+                      <div class="input-contenedor">
+                          <input type="tel" name="telefono"  value = "{{c.telefono}}" placeholder="Telefono CBR">
+                      </div>
+      
+
+                      <!--PASARLE EL HORARIO DE ATENCION-->
+                      <div class="input-contenedor">
+                        <select class="form-select" name="cmbHorario" id="inputGroupSelect04" aria-label="Example select with button addon">
+                          <option selected>Seleccione un horario...</option>
+                          {% for h in horario %}
+                            {% if h.id_horario %}
+                          <option value="{{h.pk}}">Lunes a Viernes de 08:00 a 15:00 hrs</option>
+                            {% endif %}
+                          {% endfor %}
+                          
+                        </select>
+                        
+                        
+                        
+                      </div>
+                      
+      
+                      <div class="input-contenedor">
+                  
+                          <input type="text" value = "{{c.nombre_calle}}" name="calle" placeholder="Calle">
+                      </div>
+      
+                      <div class="input-contenedor">
+                          
+                          <input type="text" name="numero_lugar" value = " {{c.numero_casa}}" placeholder="# Numeración">
+                      </div>
+                      <!--COMUNA, REGION Y BLABLABLA CON FOR-->
+                  
+              
+                        <div class="input-group">
+                          <input list="brow" class="form-select" name="cmbComuna">
+                        <datalist id="brow">
+                        {% for c in comuna %}
+                      <option value="{{c.nombre_comuna}}"></option>
+                        {% endfor %}
+                        </datalist>
+                           
+                        
+                         {% endfor %} 
+                      </div>
+      
+                  </div>
+                  
+                  
+          </main>
+        
+          
+    <div class="d-flex justify-content-center">
+      <input  type="submit" value="Editar" class="btn">
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <a href="{% url 'inicioadmin' %}" class="btn">Volver al inicio</a>
+    </div>
+
+    </form>
+
+   
+    
+    {{message}}
+      </div>
+    </div>
+    </div>
+    </div>
+
+
+
+</div>
+
+</Main>
+<div class="whatsapp">
+  <a href="https://wa.me/+56946411039?text=Buenas, tengo una consulta" class="btn-wsp" target="_blank">
+      <i class="fa fa-whatsapp icono"></i>
+  </a>
+</div>
+{% endblock %}

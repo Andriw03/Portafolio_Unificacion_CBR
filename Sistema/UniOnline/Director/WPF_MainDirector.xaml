@@ -1,0 +1,23 @@
+﻿<Window x:Class="UniOnline.Director.WPF_MainDirector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniOnline.Trabajador"
+        mc:Ignorable="d"
+        Title="CBR UniOnline" Height="574.737" Width="1057.895" Closing="Window_Closing" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Rectangle HorizontalAlignment="Center" Height="87" Stroke="Black" VerticalAlignment="Top" Width="1052" Fill="#FF010623"/>
+        <TextBlock HorizontalAlignment="Left" Margin="12,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="189" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="30" Text="CBRS de Chile"/>
+        <Button x:Name="btnInicio" Content="Inicio" Margin="266,32,0,0" VerticalAlignment="Top" Width="51" HorizontalAlignment="Left" Background="#FF010623" Click="btnInicio_Click" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
+        <Button x:Name="btnGestionUsuario" Content="Gestión de Usuarios" HorizontalAlignment="Left" Margin="425,32,0,0" VerticalAlignment="Top" Width="160" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" Click="btnGestionUsuario_Click" />
+        <Button x:Name="btnGestionInforme" Content="Generar Informes" HorizontalAlignment="Left" Margin="677,32,0,0" VerticalAlignment="Top" Width="205" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" Click="btnGestionInforme_Click" />
+        <Button x:Name="btnCerrarSesion" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="933,32,0,0" VerticalAlignment="Top" Width="96" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16"  FontFamily="Segoe UI Emoji" Click="btnCerrarSesion_Click" />
+        <Rectangle Fill="#FF393E59" HorizontalAlignment="Left" Height="55" Margin="12,101,0,0" Stroke="Black" VerticalAlignment="Top" Width="134"/>
+        <TextBlock x:Name="MyTime" HorizontalAlignment="Left" Margin="44,132,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="17" Foreground="#FFF0F2F2"/>
+        <TextBlock x:Name="datelbl" HorizontalAlignment="Left" Margin="34,101,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="18" Foreground="#FFF0F2F2"/>
+        <Image HorizontalAlignment="Left" Height="202" Margin="425,0,0,212" VerticalAlignment="Bottom" Width="217" Source="/UniOnline;component/LogoCBR.png"/>
+        <Label x:Name="LblSaludo" Content="" HorizontalAlignment="Left" Height="59" Margin="151,289,0,0" VerticalAlignment="Top" Width="731" FontSize="24" FontFamily="Segoe UI Emoji"/>
+        <Label x:Name="LblMotivacion" Content="" HorizontalAlignment="Left" Height="59" Margin="104,367,0,0" VerticalAlignment="Top" Width="778" FontSize="24" FontFamily="Segoe UI Emoji"/>
+    </Grid>
+</Window>

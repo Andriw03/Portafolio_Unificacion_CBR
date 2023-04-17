@@ -1,0 +1,710 @@
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\UniOnline.exe.config
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\UniOnline.exe
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\UniOnline.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Autofac.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Azure.Core.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\BouncyCastle.Crypto.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Controlador.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Google.Protobuf.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\JetBrains.Annotations.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\K4os.Compression.LZ4.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\K4os.Hash.xxHash.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\log4net.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\MailKit.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Expression.Interactions.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Options.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Graph.Core.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Graph.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Identity.Client.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.VisualStudio.Interop.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Web.WebView2.Core.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\MimeKit.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\MySql.Data.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Newtonsoft.Json.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\nunit.framework.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\PdfSharp.Charting.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\PdfSharp.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Core.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Data.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.MarkupBuilder.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.OmniLog.Abstractions.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.OmniLog.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.OneTo1.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Quickey.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Translucent.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Translucent.mailto.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Utilities.Autofac.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Utilities.JsonNet.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\stdole.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Buffers.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.CodeDom.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Collections.Immutable.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.ComponentModel.Annotations.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Memory.Data.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Memory.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Net.Http.WinHttpHandler.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Numerics.Vectors.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Security.AccessControl.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Security.Permissions.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Security.Principal.Windows.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Text.Encodings.Web.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Text.Json.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.ValueTuple.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Windows.Interactivity.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Ubiety.Dns.Core.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\ZstdNet.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.layout.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.kernel.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.io.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Controlador.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Controlador.dll.config
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Autofac.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Autofac.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Azure.Core.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Google.Protobuf.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Google.Protobuf.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\JetBrains.Annotations.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\K4os.Compression.LZ4.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\K4os.Hash.xxHash.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\log4net.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\MailKit.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Expression.Interactions.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Options.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Graph.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Graph.Core.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Identity.Client.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.VisualStudio.Interop.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Web.WebView2.Core.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\MimeKit.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\MySql.Data.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Newtonsoft.Json.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\nunit.framework.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\PdfSharp.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\PdfSharp.Charting.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Core.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Data.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.MarkupBuilder.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.OmniLog.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.OmniLog.Abstractions.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.OneTo1.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Quickey.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Translucent.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Translucent.mailto.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Utilities.Autofac.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Utilities.JsonNet.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\stdole.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Buffers.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.CodeDom.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Collections.Immutable.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Memory.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Memory.Data.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Net.Http.WinHttpHandler.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Numerics.Vectors.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Security.AccessControl.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Security.Permissions.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Security.Principal.Windows.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Text.Encodings.Web.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Text.Json.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.ValueTuple.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Windows.Interactivity.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.layout.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.kernel.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.io.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\de\PdfSharp.resources.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\de\PdfSharp.Charting.resources.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.AssemblyReference.cache
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.ResolveComReference.cache
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Descripción.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Director.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Informes.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_MainDirector.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_ModificarUsuario.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_SolicitudesTrabajadores.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\MainWindow.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_ChatWhatsApp.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Perfil.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte_Tickets.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_ModificarPerfil.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Recepcion\Detalles_Solicitud.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Recepcion\WPF_MainRecepcion.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Recepcion\WPF_Recepcion.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\RecuperarContraseña.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_ConsultarTramite.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_DescargaArchivos.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarDueño.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarProp.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Dueño.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Prop.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Tra.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_VisorSolicitud.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\WPF_PerfilUsuario.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\App.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline_Content.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline_MarkupCompile.cache
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline_MarkupCompile.lref
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Descripción.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Director.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Informes.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_MainDirector.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_ModificarUsuario.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_SolicitudesTrabajadores.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\MainWindow.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_ChatWhatsApp.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Perfil.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte_Tickets.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_ModificarPerfil.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Recepcion\Detalles_Solicitud.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Recepcion\WPF_MainRecepcion.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Recepcion\WPF_Recepcion.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\RecuperarContraseña.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_ConsultarTramite.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_DescargaArchivos.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarDueño.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarProp.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Dueño.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Prop.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Tra.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_VisorSolicitud.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\WPF_PerfilUsuario.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.g.resources
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.Form_SolicitudModificar.resources
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.Properties.Resources.resources
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.GenerateResource.cache
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.CoreCompileInputs.cache
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.CopyComplete
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.exe
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarTra.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarTra.baml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.Core.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\BouncyCastle.Crypto.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.Core.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.Core.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\UniOnline.exe.config
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\UniOnline.exe
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\UniOnline.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Autofac.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Azure.Core.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\BouncyCastle.Crypto.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Controlador.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Google.Protobuf.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\JetBrains.Annotations.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\K4os.Compression.LZ4.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\K4os.Hash.xxHash.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\log4net.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\MailKit.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Expression.Interactions.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Options.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Graph.Core.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Graph.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Identity.Client.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.VisualStudio.Interop.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Web.WebView2.Core.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\MimeKit.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\MySql.Data.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Newtonsoft.Json.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\nunit.framework.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\PdfSharp.Charting.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\PdfSharp.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Core.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Data.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.MarkupBuilder.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.OmniLog.Abstractions.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.OmniLog.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.OneTo1.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Quickey.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Translucent.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Translucent.mailto.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Utilities.Autofac.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Utilities.JsonNet.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\stdole.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Buffers.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.CodeDom.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Collections.Immutable.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.ComponentModel.Annotations.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Memory.Data.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Memory.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Net.Http.WinHttpHandler.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Numerics.Vectors.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Security.AccessControl.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Security.Permissions.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Security.Principal.Windows.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Text.Encodings.Web.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Text.Json.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.ValueTuple.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Windows.Interactivity.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Ubiety.Dns.Core.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\ZstdNet.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.layout.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.kernel.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.io.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.Core.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Controlador.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Controlador.dll.config
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Autofac.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Autofac.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Azure.Core.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\BouncyCastle.Crypto.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Google.Protobuf.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Google.Protobuf.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\JetBrains.Annotations.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\K4os.Compression.LZ4.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\K4os.Hash.xxHash.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\log4net.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\MailKit.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Expression.Interactions.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Options.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Graph.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Graph.Core.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Identity.Client.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.VisualStudio.Interop.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Web.WebView2.Core.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\MimeKit.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\MySql.Data.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Newtonsoft.Json.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\nunit.framework.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\PdfSharp.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\PdfSharp.Charting.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Core.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Data.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.MarkupBuilder.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.OmniLog.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.OmniLog.Abstractions.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.OneTo1.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Quickey.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Translucent.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Translucent.mailto.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Utilities.Autofac.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Reusable.Utilities.JsonNet.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\stdole.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Buffers.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.CodeDom.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Collections.Immutable.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Memory.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Memory.Data.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Net.Http.WinHttpHandler.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Numerics.Vectors.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Security.AccessControl.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Security.Permissions.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Security.Principal.Windows.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Text.Encodings.Web.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Text.Json.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.ValueTuple.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\System.Windows.Interactivity.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.layout.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.kernel.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\itext.io.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.Core.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.Core.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\de\PdfSharp.resources.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\de\PdfSharp.Charting.resources.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.AssemblyReference.cache
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.ResolveComReference.cache
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Descripción.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Director.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Informes.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_MainDirector.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_ModificarUsuario.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_SolicitudesTrabajadores.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\MainWindow.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_ChatWhatsApp.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Perfil.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte_Tickets.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_ModificarPerfil.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Recepcion\Detalles_Solicitud.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Recepcion\WPF_MainRecepcion.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Recepcion\WPF_Recepcion.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\RecuperarContraseña.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_ConsultarTramite.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_DescargaArchivos.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarDueño.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarProp.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarTra.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Dueño.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Prop.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Tra.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_VisorSolicitud.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\WPF_PerfilUsuario.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\App.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline_Content.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline_MarkupCompile.cache
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline_MarkupCompile.lref
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Descripción.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Director.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Informes.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_MainDirector.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_ModificarUsuario.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_SolicitudesTrabajadores.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\MainWindow.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_ChatWhatsApp.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Perfil.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte_Tickets.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_ModificarPerfil.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Recepcion\Detalles_Solicitud.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Recepcion\WPF_MainRecepcion.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Recepcion\WPF_Recepcion.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\RecuperarContraseña.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_ConsultarTramite.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_DescargaArchivos.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarDueño.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarProp.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarTra.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Dueño.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Prop.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Tra.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_VisorSolicitud.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\WPF_PerfilUsuario.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.g.resources
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.Form_SolicitudModificar.resources
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.Properties.Resources.resources
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.GenerateResource.cache
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.CoreCompileInputs.cache
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.CopyComplete
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.exe
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Solicitudes.g.cs
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Solicitudes.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Solicitudes.g.cs
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Solicitudes.baml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\UniOnline.exe.manifest
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\bin\Debug\UniOnline.application
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.exe.manifest
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\UniOnline\obj\Debug\UniOnline.application
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\UniOnline.exe.config
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\UniOnline.exe.manifest
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\UniOnline.application
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\UniOnline.exe
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\UniOnline.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Autofac.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Azure.Core.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\BouncyCastle.Crypto.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Controlador.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Google.Protobuf.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\JetBrains.Annotations.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\K4os.Compression.LZ4.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\K4os.Hash.xxHash.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\log4net.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\MailKit.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Expression.Interactions.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Options.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Graph.Core.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Graph.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Identity.Client.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.VisualStudio.Interop.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Web.WebView2.Core.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\MimeKit.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\MySql.Data.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Newtonsoft.Json.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\nunit.framework.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\PdfSharp.Charting.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\PdfSharp.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.Core.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.Data.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.MarkupBuilder.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.OmniLog.Abstractions.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.OmniLog.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.OneTo1.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.Quickey.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.Translucent.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.Translucent.mailto.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.Utilities.Autofac.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.Utilities.JsonNet.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\stdole.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Buffers.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.CodeDom.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Collections.Immutable.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.ComponentModel.Annotations.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Memory.Data.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Memory.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Net.Http.WinHttpHandler.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Numerics.Vectors.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Security.AccessControl.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Security.Permissions.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Security.Principal.Windows.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Text.Encodings.Web.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Text.Json.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.ValueTuple.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Windows.Interactivity.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Ubiety.Dns.Core.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\ZstdNet.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\itext.layout.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\itext.kernel.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\itext.io.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.Core.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Controlador.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Controlador.dll.config
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Autofac.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Autofac.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Azure.Core.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\BouncyCastle.Crypto.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Google.Protobuf.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Google.Protobuf.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\JetBrains.Annotations.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\K4os.Compression.LZ4.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\K4os.Hash.xxHash.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\log4net.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\MailKit.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Expression.Interactions.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Options.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Graph.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Graph.Core.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Identity.Client.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.VisualStudio.Interop.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Web.WebView2.Core.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\MimeKit.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\MySql.Data.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Newtonsoft.Json.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\nunit.framework.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\PdfSharp.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\PdfSharp.Charting.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.Core.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.Data.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.MarkupBuilder.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.OmniLog.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.OmniLog.Abstractions.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.OneTo1.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.Quickey.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.Translucent.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.Translucent.mailto.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.Utilities.Autofac.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Reusable.Utilities.JsonNet.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\stdole.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Buffers.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.CodeDom.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Collections.Immutable.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Memory.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Memory.Data.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Net.Http.WinHttpHandler.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Numerics.Vectors.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Security.AccessControl.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Security.Permissions.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Security.Principal.Windows.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Text.Encodings.Web.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Text.Json.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.ValueTuple.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\System.Windows.Interactivity.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\itext.layout.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\itext.kernel.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\itext.io.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.Core.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.Core.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\Common.Logging.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\de\PdfSharp.resources.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\bin\Debug\de\PdfSharp.Charting.resources.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.AssemblyReference.cache
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.ResolveComReference.cache
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Descripción.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Director.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Informes.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_MainDirector.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_ModificarUsuario.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_SolicitudesTrabajadores.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\MainWindow.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_ChatWhatsApp.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Perfil.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte_Tickets.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_ModificarPerfil.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Recepcion\Detalles_Solicitud.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Recepcion\WPF_MainRecepcion.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Recepcion\WPF_Recepcion.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\RecuperarContraseña.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_ConsultarTramite.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_DescargaArchivos.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarDueño.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarProp.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarTra.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Solicitudes.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Dueño.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Prop.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Tra.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_VisorSolicitud.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\WPF_PerfilUsuario.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\App.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\UniOnline_Content.g.cs
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\UniOnline_MarkupCompile.cache
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\UniOnline_MarkupCompile.lref
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Descripción.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Director.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_Informes.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_MainDirector.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_ModificarUsuario.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Director\WPF_SolicitudesTrabajadores.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\MainWindow.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_ChatWhatsApp.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Perfil.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_Moderador_Soporte_Tickets.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Moderador\WPF_ModificarPerfil.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Recepcion\Detalles_Solicitud.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Recepcion\WPF_MainRecepcion.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Recepcion\WPF_Recepcion.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\RecuperarContraseña.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_ConsultarTramite.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_DescargaArchivos.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarDueño.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarProp.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_EditarTra.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Solicitudes.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Dueño.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Prop.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_Trabajador_Tra.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Trabajador\WPF_VisorSolicitud.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\WPF_PerfilUsuario.baml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\UniOnline.g.resources
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\UniOnline.Form_SolicitudModificar.resources
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\UniOnline.Properties.Resources.resources
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.GenerateResource.cache
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.CoreCompileInputs.cache
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\UniOnline.exe.manifest
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\UniOnline.application
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\Vistas.csproj.CopyComplete
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\UniOnline.exe
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\UniOnline\obj\Debug\UniOnline.pdb

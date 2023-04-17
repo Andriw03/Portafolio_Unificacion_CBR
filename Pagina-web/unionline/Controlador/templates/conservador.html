@@ -1,0 +1,29 @@
+{% extends 'templates\base_admin.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <title>Conservador</title>
+    <link rel="stylesheet" href="\static\css\conservador.css">
+</head>
+<br><br><br>
+<div class="container text-center">
+
+
+    <div class="row justify-content-around">
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Informacion CBR</h5>
+                  <h4 class="card-text">Correo</h4>
+                  <h4 class="card-text">Telefono</h4>
+                  <h4 class="card-text">Horario de atencion</h4>
+                </div>
+              </div>
+        </div>
+        <div class="col-9">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13409.831293113766!2d-71.22802325!3d-32.8331278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689cdff11eee74b%3A0x2df15b2caa630fbf!2sCondominio%20veracruz!5e0!3m2!1ses!2scl!4v1667499302591!5m2!1ses!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+<br><br><br>
+{% endblock %}

@@ -1,0 +1,28 @@
+﻿<Window x:Class="UniOnline.Trabajador.WPF_DescargaArchivos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniOnline.Trabajador"
+        mc:Ignorable="d"
+        Title="CBR UniOnline" Height="200" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <DataGrid x:Name="dtgDescargar" Height="100" Width="377" AutoGenerateColumns="False" CanUserAddRows="False" IsEnabled="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Path='id_documento'}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Nombre documento" Binding="{Binding Path='nombre_doc'}" Width="300"/>
+                <DataGridTemplateColumn Header="Descargar" Width="75">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnDescargar" Foreground="#FFF0F2F2" Click="btnDescargar_Click">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="descargar.png" Stretch="Uniform"/>
+                                </Button.Background>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

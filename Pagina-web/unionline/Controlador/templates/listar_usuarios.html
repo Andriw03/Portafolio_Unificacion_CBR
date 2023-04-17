@@ -1,0 +1,52 @@
+{% extends 'templates\base_admin.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="static/css/perfil-cliente.css">
+</head>
+<body>
+    <img class="d-block mx-auto mb-4" src="{% static 'imagenes\LogoCBR.png' %}" alt="" width="15%" height="15%">
+    <div class="container py-4 letter aria-label">
+        <div class="row">
+            <div class="col-md-10">
+                <br><br><br><br>
+                <h2>Listado de Directores</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <th>RUT</th>
+                            <th>Nombre</th>
+                            <th>Segundo Nombre</th>
+                            <th>Apellido</th>
+                            <th>Segundo Apellido</th>
+                            <th>Teléfono</th>
+                            <th>Correo Electrónico</th>
+                            <th>Opciones</th>
+                        </thead>
+                        <tbody>
+                            {% for u in Usuario %}
+                            <tr>
+                                <td>{{ u.rut_usuario }}</td>
+                                <td>{{ u.primer_nombre }}</td>
+                                <td>{{ u.segundo_nombre }}</td>
+                                <td>{{ u.primer_apellido }}</td>
+                                <td>{{ u.segundo_apellido }}</td>
+                                <td>{{ u.telefono }}</td>
+                                <td>{{ u.correo_electronico }}</td>
+                                <td><a href="EditarDirector/{{ u.id_usuario }}" class="btn btn-sm btn-block btn-info">Editar</a></td>
+                                <td><a href="Eliminardirector/{{ u.id_usuario }}" class="btn btn-sm btn-block btn-danger">Eliminar</a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+<br><br><br><br><br><br><br><br><br><br>   
+</body>
+
+{% endblock %}
+</html>

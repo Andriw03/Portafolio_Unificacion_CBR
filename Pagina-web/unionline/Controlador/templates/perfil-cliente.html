@@ -1,0 +1,50 @@
+{% extends 'templates\base.html' %}
+{% load static %}
+{% block content %}
+  <head>
+    <title>Perfil</title>
+    <link rel="stylesheet" href="static/css/perfil-cliente.css">
+</head>
+    <Main>
+      <div class="px-4 py-5  text-center">
+        <img class="d-block mx-auto mb-4" src="{% static 'imagenes\LogoCBR.png' %}" alt="" width="15%" height="15%">
+        <h3 class="display-5 fw-bold">Historial de trámites</h3>
+        <br>
+        
+        <div>
+          
+          <div class="tabla">
+            <table name= "tabla-historial"class="table table-striped">
+                <thead  class="table-dark">
+                  <tr>
+                    <th scope="col">Nombre del trámite</th>
+                    <th scope="col">N° Seguimiento</th>
+                    <th scope="col">Estado solicitud</th>
+                    <th scope="col">Detalle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for t in tramite %}
+                    <tr>
+                      <td>{{t.nombre_tramite}}</td>
+                      <td>{{t.numero_seguimiento}}</td>
+                      <td>{{t.estado}}</td>
+                      <td>
+                      <a href="{% url 'detalle_solicitud' id=t.id_soli %}">
+                        <button type="submit" name="solicitud" class="btn btn-primary" >
+                         Detalles
+                        </button>
+                      </a> 
+
+                      </td>
+                    </tr>                                                           
+                  {% endfor %}
+                </tbody>
+            </table>
+          </div>
+        </div> 
+      </div>
+    </Main>
+
+    
+  {% endblock %}

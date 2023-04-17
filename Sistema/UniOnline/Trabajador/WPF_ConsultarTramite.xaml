@@ -1,0 +1,88 @@
+﻿<Window x:Class="UniOnline.Trabajador.WPF_ConsultarTramite"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniOnline.Trabajador"
+        mc:Ignorable="d"
+        Title="CBR UniOnline" Height="659.6" Width="900"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+
+    <Grid Margin="0,0,-0.4,0.6">
+
+        <!-- Start Column and Row Definition-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--End Column and Row Definition-->
+        <Rectangle Height="87" Stroke="Black" VerticalAlignment="Top" Fill="#FF010623" Grid.ColumnSpan="10" Grid.RowSpan="3" Margin="0,0,-0.4,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="0,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="189" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="30" Text="CBRS de Chile" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="2"/>
+        <Viewbox Width="Auto" Stretch="Uniform" Grid.Column="3" Grid.Row="1" Grid.RowSpan="3" Margin="79,72,85.6,40.2" Grid.ColumnSpan="4">
+            <Image MinHeight="50" MinWidth="108" Source="/LogoCBR.png" Margin="21,10,21,0" VerticalAlignment="Top" Height="1451" Width="2731"/>
+        </Viewbox>
+
+        <Viewbox Height="62" MaxHeight="50" MaxWidth="300" Stretch="Uniform" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" OpacityMask="Black" Margin="0,19,17.6,0" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Right" Width="293">
+            <TextBox x:Name="txtRut"  MinHeight="23" MinWidth="165" TextWrapping="Wrap" VerticalContentAlignment="Center" Background="White" Foreground="#FF878787" KeyUp="txtRut_KeyUp"/>
+        </Viewbox>
+
+        <Viewbox Height="Auto" Width="Auto"  MaxHeight="50" MaxWidth="150" Stretch="Uniform" Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="4" Margin="96.8,67.4,85.6,16.8" Grid.RowSpan="2">
+            <Button x:Name="btn_consultar" Content="Consultar" MinHeight="20" MinWidth="75" Cursor="Hand" Click="btn_consultar_Click" Background="#FF393E59" BorderBrush="#FFF0F2F2" Foreground="#FF96ACAC" RenderTransformOrigin="1.218,1.218" Height="25" Width="59"/>
+        </Viewbox>
+
+        <Viewbox Height="Auto" Width="Auto" Stretch="Uniform" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="9" Grid.RowSpan="4" Margin="20,60,9.6,22.6">
+            <DataGrid x:Name="dg_listartramite"  CanUserAddRows="False" HorizontalAlignment="Center" MinHeight="137" MinWidth="502" Width="575" Height="164" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Rut" Binding="{Binding Path = 'rut_usuario'}" Width="100" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Nombre"  Binding="{Binding Path = 'primer_nombre'}" Width="100" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Apellido" Binding="{Binding Path = 'primer_apellido'}" Width="130" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="N° Seguimiento" Binding="{Binding Path = 'numero_seguimiento'}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Estado" Binding="{Binding Path = 'estado'}" Width="100" IsReadOnly="True"/>
+                    <DataGridTemplateColumn Header="Revisar">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="btnEditar" Background="#FF010326" Foreground="#FFF0F2F2" Click="btnEditar_Click">
+                                    <TextBlock Text="Revisar" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+        </Viewbox>
+        <Viewbox Height="57" MaxHeight="50" MaxWidth="300" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="0,25,10.6,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="300">
+            <TextBlock MinHeight="30" MinWidth="200" TextWrapping="Wrap" Foreground="#FF010326" FontSize="20" FontFamily="Segoe UI Historic" FontWeight="Bold" Text="Ingrese el rut del Cliente " Height="42" Width="242"/>
+        </Viewbox>
+        <Viewbox Height="57" MaxHeight="50" MaxWidth="300" Grid.Column="6" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="10,25,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="331">
+            <TextBlock MinHeight="30" MinWidth="200" TextWrapping="Wrap" Foreground="#FF010326" FontSize="20" FontFamily="Segoe UI Historic" FontWeight="Bold" Text="Ingrese N° de Seguimiento" Height="42" Width="256"/>
+        </Viewbox>
+        <Viewbox Height="62" MaxHeight="50" MaxWidth="300" Stretch="Uniform" Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="3" OpacityMask="Black" Margin="10,17,0,0" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="293">
+            <TextBox x:Name="txtNumeroSeguimiento"  MinHeight="23" MinWidth="165" TextWrapping="Wrap" VerticalContentAlignment="Center" Background="White" Foreground="#FF878787"/>
+        </Viewbox>
+        <Viewbox Height="Auto" Width="Auto"  MaxHeight="50" MaxWidth="150" Stretch="Uniform" Grid.Column="6" Grid.Row="8" Grid.ColumnSpan="3" Margin="119,67.4,62.6,16.8" Grid.RowSpan="2">
+            <Button x:Name="btn_Volver" Content="Volver" MinHeight="20" MinWidth="75" Cursor="Hand"  Background="#FF393E59" BorderBrush="#FFF0F2F2" Foreground="#FF96ACAC" RenderTransformOrigin="1.218,1.218" Height="25" Width="59" Click="btn_Volver_Click"/>
+        </Viewbox>
+    </Grid>
+</Window>

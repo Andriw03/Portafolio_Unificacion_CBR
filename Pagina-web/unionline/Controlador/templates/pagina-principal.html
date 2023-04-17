@@ -1,0 +1,87 @@
+{% extends 'templates\base.html' %}
+{% load static %}
+{% block content %}
+<head>
+  <title>Home</title>
+
+  <link rel="stylesheet" href="{% static 'css\styles_inicio.css' %}">
+</head>
+    
+  <main>
+    <br><br><br><br>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="container text-center">
+            <img class="rounded mx-auto d-block" src="{% static 'imagenes\LogoCBR.png' %}" alt="A" style="max-width: 100px;">
+            {% for c in Cbr %}
+            <div class="card w-75 rounded mx-auto d-block"  >
+              <div class="card-body">
+                <h3 class="card-title fst-italic">Informacion CBR: {{c.nombre_cbr}}</h5>
+                <br>
+                <h4 class="card-text fst-italic "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                </svg> Correo</h4>
+                <h3>{{c.correo_cbr}}</h3>
+                <br>
+                <h4 class="card-text fst-italic"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                </svg> Telefono</h4>
+                <h3>{{c.telefono}}</h3>
+                <br>
+                <h4 class="card-text fst-italic"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                </svg> Horario de atencion</h4>
+                <h3>{{c.dias_atencion}}</h3>
+                <h3>Desde las {{c.horario_apertura}} hasta {{c.horario_cierre}}</h3>
+                <br>
+                <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+                  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+                  <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+                </svg> Direccion: {{c.direccion}}</h3>
+                {% endfor %}
+              </div>
+              
+            </div>
+        </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'imagenes\imagen_bienvenida.jpg' %}" alt="Bienvenida CBR" class="rounded mx-auto d-block" style="max-width: 500px;">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'imagenes\imagen_info2.jpg' %}"alt="Recuerda" class="rounded mx-auto d-block" style="max-width: 500px;">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+<!-- tramites -->
+
+
+
+
+
+
+      <div class="whatsapp">
+        <a href="https://wa.me/+56946411039?text=Buenas, tengo una consulta" class="btn-wsp" target="_blank">
+            <i class="fa fa-whatsapp icono"></i>
+        </a>
+    </div>
+    <br><br><br><br><br>
+  </main>    
+
+ 
+    
+
+
+
+
+  {% endblock %}

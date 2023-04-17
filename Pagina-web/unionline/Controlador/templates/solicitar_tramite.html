@@ -1,0 +1,105 @@
+{% extends 'templates\base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <title>Solicitar trámite</title>
+    <!--- CSS --->
+    <link rel="stylesheet" href="{% static 'css\listar.css' %}">
+
+</head>
+<br><br><br><br><br>
+<main>
+    <div class="container text-center">
+        <div class="row">
+            {% for t in tramite %}
+            <div class="col-lg-12">
+                <p>{{t.nombre_tramite}}</p>
+
+            </div>
+            {% endfor %}
+            <form class="formulario" action="" enctype="multipart/formdata" method="post">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <input type="text" name="foja" class="form-control" placeholder="Foja:" aria-label="Recipient's username" aria-describedby="button-addon2" required>
+                    <button class="btn btn-outline-secondary" name="buscarFoja" type="submit" id="button-addon2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg></button>
+                  </div>
+                <br><br>
+                <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">Foja</th>
+                        <th scope="col">Año</th>
+                        <th scope="col">Número</th>
+                        <th scope="col">Descripción</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        {% for t in prop %}
+                            <tr>
+                                <th scope="row">{{t.foja}}</th>
+                                <td>{{t.fecha}}</td>
+                                <td>{{t.numero}}</td>
+                                <td>{{t.descripcion}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                  </table>
+                <div>
+
+              
+                  {% if prop != '' %}
+                  
+                  {% if id_doc == 1 %}
+                  <h2>Ingrese los documentos solicitados.</h2>
+                  <h5>Solo permite archivos PDF</h5>
+                  <br>
+                      <div class="mb-3">
+                        <label for="copiaCedula" class="form-label"> Copia de Cédula de identidad</label>
+                        <input type="file" class="form-control" name="copiaCedula" id="copiaCedula" accept=".pdf" required>
+                      </div>
+                  {% endif %}
+                  {% if id_doc == 2 %}
+                  <h2>Ingrese los documentos solicitados.</h2>
+                  <h5>Solo permite archivos PDF</h5>
+                  <div class="mb-3">
+                    <label for="escritura" class="form-label"> Escritura de propiedad</label>
+                    <input type="file" class="form-control" name="escritura" id="escritura" accept=".pdf" required>
+                  </div>
+              {% endif %}
+              {% if id_doc == 3 %}
+              <h2>Ingrese los documentos solicitados.</h2>
+                  <h5>Solo permite archivos PDF</h5>
+                  <br>
+              <div class="mb-3">
+                <label for="copiaCedula" class="form-label"> Copia de Cédula de identidad</label>
+                <input type="file" class="form-control" name="copiaCedula" id="copiaCedula" accept=".pdf" required>
+                <br>
+                <label for="escritura" class="form-label"> Escritura de propiedad</label>
+                    <input type="file" class="form-control" name="escritura" id="escritura" accept=".pdf" required>
+              </div>
+              
+              {% endif %}
+                   
+                </div>
+                <button type="submit" name="solicitar" class="btn btn-primary">Solicitar</button>
+                <br>
+                {% endif %}
+                
+            </form>
+            {% for message in messages %}
+<div class="container-fluid p-0">
+  <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+    {{ message }}
+  </div>
+</div>
+{% endfor %}
+
+<br><br><br><br><br><br><br><br><br><br>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}

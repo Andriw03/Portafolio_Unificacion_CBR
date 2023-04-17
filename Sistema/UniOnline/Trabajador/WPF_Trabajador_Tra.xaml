@@ -1,0 +1,176 @@
+﻿<Window x:Class="UniOnline.Trabajador.WPF_Trabajador_Tra"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniOnline.Trabajador"
+        mc:Ignorable="d"
+        Title="CBR UniOline" Height="600" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <!--Segoe UI Emoji-->
+        <SolidColorBrush x:Key="PrimaryBackColor" Color="#FF010623"/>
+        <SolidColorBrush x:Key="SecondaryBackColor" Color="#FF393E59"/>
+        <SolidColorBrush x:Key="PrimaryTabColor" Color="#6FBFBF"/>
+
+        <SolidColorBrush x:Key="PrimaryTextColor" Color="#FFF0F2F2"/>
+        <SolidColorBrush x:Key="SecondaryTextColor" Color="#FF82D9D9"/>
+
+        <SolidColorBrush x:Key="PrimaryGreyColor" Color="#BBC1D1"/>
+
+
+        <Style x:Key="TabItemStyle" TargetType="TabItem">
+            <Setter Property = "Background" Value="Transparent"/>
+            <Setter Property = "BorderBrush" Value="Transparent"/>
+            <Setter Property = "BorderThickness" Value="0"/>
+            <Setter Property = "Foreground" Value="{DynamicResource PrimaryTextColor}"/>
+            <Setter Property = "Margin" Value = "10,0,10,3" />
+            <Setter Property = "Width" Value = "150"/>
+            <Setter Property = "Padding" Value = "15"/>
+            <Setter Property = "FontWeight" Value = "500"/>
+            <Setter Property = "VerticalAlignment" Value = "Top"/>
+            <Setter Property = "HorizontalAlignment" Value = "Left"/>
+            <Setter Property = "FontFamily" Value="Segoe UI Emoji"/>
+            <Setter Property = "Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Grid SnapsToDevicePixels="True">
+                            <Border CornerRadius="10" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}"
+                                    BorderBrush="{TemplateBinding BorderBrush}" Margin="{TemplateBinding Padding}"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True"
+                                              Margin="{TemplateBinding Margin}" RecognizesAccessKey="True" ContentSource="Header"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property = "Background" Value="{DynamicResource SecondaryBackColor}"/>
+                                <Setter Property = "Foreground" Value="{DynamicResource PrimaryGreyColor}"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property = "Background" Value="{DynamicResource PrimaryBackColor}"/>
+                                <Setter Property = "Foreground" Value="{DynamicResource SecondaryTextColor}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="#FF010623">
+
+        <TabControl>
+            <TabItem Header="Agregar Trámite" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="Auto" HorizontalAlignment="Center">
+                <Grid Background="#FFF0F2F2">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+
+                    <Button x:Name="btnVolverTra" Content="Volver" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" Width="100" Click="btnVolverTra_Click" Background="#FF393E59" Foreground="#FFF0F2F2" Grid.Column="5" Grid.Row="9"/>
+                    <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="#FF010326" Width="244" FontWeight="Bold" FontSize="25" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3"><Run Text="Ingresa un Trámite"/></TextBlock>
+                    <Label Content="Nombre del Trámite:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txtNomTra" HorizontalAlignment="Left" Height="50" FontSize="17" TextWrapping="Wrap" VerticalAlignment="Center" Width="500" Margin="0,15,0,0" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+                    <Label Content="Valor del Trámite:" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2"/>
+                    <Label x:Name="lblValor" Content="El valor mínimo de un Trámite es de $10.000 pesos" Foreground="Red" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden"/>
+                    <TextBox x:Name="txtValorTra" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" MaxLength="15" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2" PreviewTextInput="txtValorTra_PreviewTextInput"/>
+                    <Label Content="Tipo de Trámite:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20"  Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"/>
+                    <ComboBox x:Name="cmbTipoTra" FontSize="15" Height="30" Width="290" IsEditable="True" Text="Seleccione un tipo de trámite" IsReadOnly="True" Focusable="False" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="cmbTipoTra_SelectionChanged" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2"/>
+                    <Label Content="Estado:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Grid.Column="3" Grid.Row="4"/>
+                    <ComboBox x:Name="cmbEstado" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="3" FontSize="15" Height="30" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="170" IsEditable="True" Text="Seleccione un estado" IsReadOnly="True" Focusable="False"/>
+                    <Label Content="Documento:" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2"/>
+                    <ComboBox x:Name="cmbDoc" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="2" FontSize="15" Height="30" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="310" IsEditable="True" Text="Seleccione un documento" IsReadOnly="True" Focusable="False"/>
+                    <Label Foreground="#FF010326" Content="Descripción del Trámite:" FontSize="18" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtDescTra" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="5" FontSize="17" VerticalAlignment="Top" Grid.RowSpan="2" TextWrapping="Wrap" Height="80"/>
+
+                    <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="40" Width="100" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnGuardar_Click" Grid.Column="1" Grid.Row="9"/>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Listar Trámites" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="Auto" HorizontalAlignment="Center">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Width="350" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Foreground="#FF010326" FontSize="25" TextWrapping="Wrap" FontWeight="Bold"><Run Text="Seleccione un tipo de Trámite"/></TextBlock>
+
+                    <ComboBox x:Name="cmbListarTra" FontSize="15" Height="30" Width="290" IsEditable="True" VerticalContentAlignment="Center" Text="Seleccione un tipo de trámite" IsReadOnly="True" Focusable="False" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" SelectionChanged="cmbListarTra_SelectionChanged"/>
+
+                    <ComboBox x:Name="cmbEstadoListar" FontSize="15" Height="30" Width="170" IsEditable="True" Text="Seleccione un estado" IsReadOnly="True" Focusable="False" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" VerticalContentAlignment="Center" SelectionChanged="cmbEstadoListar_SelectionChanged" Visibility="Hidden"/>
+
+                    <Button x:Name="btnBuscarTra" Content="Buscar" Height="40" Width="100" Grid.Column="3" Grid.Row="3" Click="btnBuscarTra_Click" Background="#FF393E59" Foreground="#FFF0F2F2"/>
+
+                    <DataGrid x:Name="dtgTramite" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False" Width="830" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" Grid.RowSpan="3">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Width="38" FontSize="20" Binding="{Binding Path = 'id_tramite'}" IsReadOnly="True" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Nombre" Width="250" FontSize="20" Binding="{Binding Path = 'nombre_tramite'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Valor" Width="100" FontSize="20" Binding="{Binding Path = 'valor_tramite'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Estado" Width="100" FontSize="20" Binding="{Binding Path= 'estado'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Descripción" Width="250" FontSize="20" Binding="{Binding Path= 'descripcion'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Tipo" Width="200" FontSize="20" Binding="{Binding Path = 'nombre_tipoT'}" IsReadOnly="True"/>
+                            <DataGridTemplateColumn Header="Editar estado" Width="150">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button x:Name="btnCamEstado" Background="#FF010326" Foreground="#FFF0F2F2" Click="btnCamEstado_Click">
+                                            <TextBlock Text="Cambiar estado" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Modificar trámite" Width="150">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button x:Name="btnModificarTramite" Background="#FF010326" Foreground="#FFF0F2F2" Click="btnModificarTramite_Click" >
+                                            <TextBlock Text="Modificar" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Button x:Name="btnListarVol" Content="Volver" Height="40" Width="100" Grid.Column="5" Grid.Row="7" Click="btnListarVol_Click" Background="#FF393E59" Foreground="#FFF0F2F2" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Window>

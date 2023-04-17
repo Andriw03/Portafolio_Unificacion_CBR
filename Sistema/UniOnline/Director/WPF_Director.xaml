@@ -1,0 +1,36 @@
+﻿<Window x:Class="UniOnline.Director.WPF_Director"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniOnline.Director"
+        mc:Ignorable="d"
+        Title="CBR UniOnline" Height="525.803" Width="900" ResizeMode="NoResize">
+    <Grid RenderTransformOrigin="0.499,0.5">
+        <Rectangle HorizontalAlignment="Center" Height="87" Stroke="Black" VerticalAlignment="Top" Width="892" Fill="#FF010623"/>
+        <TextBlock HorizontalAlignment="Left" Margin="12,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="189" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="30" Text="CBRS de Chile"/>
+        <Button x:Name="btnInicio" Content="Inicio" Margin="231,32,0,0" VerticalAlignment="Top" Width="51" HorizontalAlignment="Left" Background="#FF010623" Click="Button_Inicio" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
+        <Label Content="Bienvenido" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="728,30,0,0" Width="154" Foreground="#FFF0F2F2" FontSize="15"/>
+        <TextBlock x:Name="txtBlFormulario" HorizontalAlignment="Left" Height="46" Margin="251,91,0,0" TextWrapping="Wrap" Text="Formulario de Registro de Usuarios" VerticalAlignment="Top" Width="380" FontSize="24" TextDecorations="{x:Null}"/>
+        <Label x:Name="lblNombre" Content="Primer Nombre." HorizontalAlignment="Left" Height="28" Margin="199,138,0,0" VerticalAlignment="Top" Width="136" FontWeight="Bold"/>
+        <Label x:Name="lblSNombre" Content="Segundo Nombre." HorizontalAlignment="Left" Height="28" Margin="464,138,0,0" VerticalAlignment="Top" Width="136" FontWeight="Bold"/>
+        <TextBox x:Name="txtBoxNombre" HorizontalAlignment="Left" Height="20" Margin="197,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="txtBoxSNombre" HorizontalAlignment="Left" Height="20" Margin="464,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TextChanged="txtBoxSNombre_TextChanged"/>
+        <Label x:Name="lblApellido" Content="Primer Apellido." HorizontalAlignment="Left" Height="28" Margin="199,195,0,0" VerticalAlignment="Top" Width="136" FontWeight="Bold"/>
+        <Label x:Name="lblSApellido" Content="Segundo Apellido." HorizontalAlignment="Left" Height="28" Margin="464,195,0,0" VerticalAlignment="Top" Width="136" FontWeight="Bold"/>
+        <TextBox x:Name="txtBoxApellido" HorizontalAlignment="Left" Height="20" Margin="197,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="txtBoxSApellido" HorizontalAlignment="Left" Height="20" Margin="464,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TextChanged="txtBoxSApellido_TextChanged"/>
+        <Label x:Name="lblRUT" Content="RUT de Usuario." HorizontalAlignment="Left" Height="28" Margin="199,246,0,0" VerticalAlignment="Top" Width="136" FontWeight="Bold"/>
+        <Label x:Name="lblTelefono" Content="Teléfono de Contacto." HorizontalAlignment="Left" Height="28" Margin="464,246,0,0" VerticalAlignment="Top" Width="136" FontWeight="Bold"/>
+        <TextBox x:Name="txtBoxRUT" HorizontalAlignment="Left" Height="20" Margin="197,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="txtBoxTelefono" HorizontalAlignment="Left" Height="20" Margin="464,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228"/>
+        <Label x:Name="lblCorreo" Content="Correo Electrónico." HorizontalAlignment="Left" Height="28" Margin="200,303,0,0" VerticalAlignment="Top" Width="136" FontWeight="Bold"/>
+        <TextBox x:Name="txtBoxCorreo" HorizontalAlignment="Left" Height="20" Margin="199,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="493" TextChanged="TextBox_TextChanged"/>
+        <Label x:Name="lblContraseña" Content="Contraseña." HorizontalAlignment="Left" Height="28" Margin="199,358,0,0" VerticalAlignment="Top" Width="136" FontWeight="Bold"/>
+        <TextBox x:Name="txtBoxContra" HorizontalAlignment="Left" Height="20" Margin="198,386,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="493" TextChanged="TextBox_TextChanged"/>
+        <RadioButton x:Name="rdBtn_Recepcionista" Content="Recepcionista." HorizontalAlignment="Left" Margin="197,411,0,0" VerticalAlignment="Top" Click="rdBtn_Recepcionista_Click"/>
+        <RadioButton x:Name="rdBtn_Trabajador" Content="Trabajador." HorizontalAlignment="Left" Margin="331,411,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rdBtn_Moderador" Content="Moderador." HorizontalAlignment="Left" Margin="464,411,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnRegistrarUser" Content="Registrar Usuario" HorizontalAlignment="Left" Height="23" Margin="197,449,0,0" VerticalAlignment="Top" Width="135" Click="btnRegistrarUser_Click"/>
+    </Grid>
+</Window>

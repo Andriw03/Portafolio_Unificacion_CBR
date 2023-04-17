@@ -1,0 +1,66 @@
+{% extends 'templates\base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <title>Detalle</title>
+</head>
+<main>
+    <img class="d-block mx-auto mb-4" src="{% static 'imagenes\LogoCBR.png' %}" alt="A" width="15%" height="15%">
+    <div class="container">
+      {% for s in soli%}
+    <div class="formulario">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Solicitud Para el Trámite: {{s.nombre_tramite}}</h5>
+          <hr>
+          <h6 class="card-subtitle mb-2 text-uppercase">Detalle</h6>
+          <hr>
+          <p class="card-text">Numero de seguimiento: {{s.numero_seguimiento}}</p>
+          <p class="card-text">Estado: {{s.estado}}</p>
+          {% if s.estado == "Rechazado" %}
+          <p class="card-text">Comentario: {{s.comentario}}</p>
+          <hr>
+          <p class="card-text">Puede solicitar nuevamente el tramite.</p>
+          <p class="card-text">Si tiene alguna duda puede contactarnos directamente presionando el icono de WhatsApp. </p>
+            <form class="formulario" action="" enctype="multipart/formdata" method="post">
+                {% csrf_token %}
+          {% if id_doc == 1 %}
+                  <br>
+                  <div class="mb-3">
+                    <label for="copiaCedula" class="form-label"> Copia de Cédula de identidad</label>
+                    <input type="file" class="form-control" name="copiaCedula" id="copiaCedula" accept=".pdf" required>
+                  </div>
+                  {% endif %}
+                  {% if id_doc == 2 %}
+                  <div class="mb-3">
+                    <label for="escritura" class="form-label"> Escritura de propiedad</label>
+                    <input type="file" class="form-control" name="escritura" id="escritura" accept=".pdf" required>
+                  </div>
+              {% endif %}
+              {% if id_doc == 3 %}
+                  <br>
+              <div class="mb-3">
+                <label for="copiaCedula" class="form-label"> Copia de Cédula de identidad</label>
+                <input type="file" class="form-control" name="copiaCedula" id="copiaCedula" accept=".pdf" required>
+                <br>
+                <label for="escritura" class="form-label"> Escritura de propiedad</label>
+                    <input type="file" class="form-control" name="escritura" id="escritura" accept=".pdf" required>
+              </div>
+              {% endif %}
+              <button type="submit" name="solicitar" class="btn btn-primary">Solicitar Nuevamente</button>
+            </form>
+        {% elif s.estado == "Aprobado" %}
+
+        <hr>
+        <p class="card-text"><a href="{% url 'DescargarDocumento' id=s.id_soli %}" class="btn btn-primary">
+            Descargue su tramite aquí
+        </a></p>
+        {% else %}
+        {% endif %}
+        </div>
+        </div>
+      {% endfor %}
+    </div>
+    </div>
+</main>
+{% endblock %}

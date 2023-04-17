@@ -1,0 +1,39 @@
+﻿<Window x:Class="UniOnline.Moderador.WPF_ModificarPerfil"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniOnline.Moderador"
+        mc:Ignorable="d"
+        Title="WPF_ModificarPerfil" Height="485" Width="480" ResizeMode="NoResize">
+    <Window.Resources>
+
+        <Style x:Key="TextBlockStyle" TargetType="{x:Type TextBlock}">
+
+            <Setter Property="FontFamily" Value="Cambria"/>
+
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Rectangle HorizontalAlignment="Center" Height="87" Stroke="Black" VerticalAlignment="Top" Width="472" Fill="#FF010623"/>
+        <TextBlock HorizontalAlignment="Left" Margin="12,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="189" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="30" Text="CBRS de Chile"/>
+        <Label Content="Primer Apellido:" HorizontalAlignment="Left" Margin="87,220,0,0" VerticalAlignment="Top"/>
+        <Label Content="Segundo Nombre:" HorizontalAlignment="Left" Margin="74,189,0,0" VerticalAlignment="Top"/>
+        <Label Content="Primer Nombre:" HorizontalAlignment="Left" Margin="87,161,0,0" VerticalAlignment="Top"/>
+        <Label Content="Segundo Apellido:" HorizontalAlignment="Left" Margin="74,251,0,0" VerticalAlignment="Top"/>
+        <Label Content="Correo:" HorizontalAlignment="Left" Margin="132,282,0,0" VerticalAlignment="Top"/>
+        <Label Content="Teléfono:" HorizontalAlignment="Left" Margin="123,313,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnModificar"  Content="Modificar" HorizontalAlignment="Left" Margin="25,388,0,0" VerticalAlignment="Top" Width="92" Background="#FF393E59" Foreground="#FFF0F2F2" Height="35" Click="btnModificar_Click"/>
+        <TextBox x:Name="txtPrimerNom" HorizontalAlignment="Left" Height="23" Margin="181,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>
+        <TextBox x:Name="txtSegundoNom" HorizontalAlignment="Left" Height="23" Margin="181,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>
+        <TextBox x:Name="txtPrimerApe" HorizontalAlignment="Left" Height="23" Margin="181,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>
+        <TextBox x:Name="txtSegundoApe" HorizontalAlignment="Left" Height="23" Margin="181,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>
+        <TextBox x:Name="txtCorreo" HorizontalAlignment="Left" Height="23" Margin="181,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>
+        <TextBox x:Name="txtTel" HorizontalAlignment="Left" Height="23" Margin="181,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>
+        <Button x:Name="btnCancelar"  Content="Cancelar" HorizontalAlignment="Left" Margin="359,388,0,0" VerticalAlignment="Top" Width="92" Background="#FF393E59" Foreground="#FFF0F2F2" Height="35" Click="btnCancelar_Click"/>
+        <TextBlock FontFamily="Cambria" Text="Ingrese RUT de Cliente." FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource TextBlockStyle}" Margin="25,118,296,309" Width="151" Height="27"/>
+        <TextBox x:Name="txtRutCliente" HorizontalAlignment="Left" Height="23" Margin="181,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" KeyUp="txtRutCliente_KeyUp"/>
+        <Button x:Name="btnBuscar"  Content="Buscar" HorizontalAlignment="Left" Margin="359,110,0,0" VerticalAlignment="Top" Width="92" Background="#FF393E59" Foreground="#FFF0F2F2" Height="35" Click="btnBuscar_Click"/>
+
+    </Grid>
+</Window>

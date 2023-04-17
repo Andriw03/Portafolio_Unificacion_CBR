@@ -1,0 +1,38 @@
+body{
+  background-color: #F0F2F2;
+}
+footer{
+  position: static; 
+  bottom: 0 !important; 
+  width: 100% !important;
+  background-color: #010326 !important;
+  text-align: center !important;
+  padding:40px !important;
+  color: white !important;
+}
+header{
+  background-color: #010326;
+  padding-top: 40px;
+  color: #F0F2F2;
+  margin-top: 0px;
+  min-height: 50px;
+}
+.navbar{
+  padding-top: 20px !important;
+  --bs-navbar-color: #F0F2F2 !important; 
+  --bs-navbar-hover-color: rgba(145, 140, 140, 0.7);
+  font-size: 110%;
+}
+.navbar-toggler-icon{
+  background-color: #F0F2F2 !important;
+}
+.navbar-brand{
+  color: #F0F2F2 !important;
+  font-size: 200% !important;
+}
+.nav-item{
+  color: #010326, !important;
+}
+.dropdown-menu{
+  --bs-dropdown-bg: #010326;
+}

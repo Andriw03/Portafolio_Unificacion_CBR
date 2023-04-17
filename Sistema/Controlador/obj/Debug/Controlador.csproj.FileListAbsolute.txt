@@ -1,0 +1,468 @@
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Controlador.dll.config
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Controlador.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Controlador.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\BouncyCastle.Crypto.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Hash.xxHash.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySql.Data.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySqlConnector.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Buffers.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Memory.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Numerics.Vectors.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Ubiety.Dns.Core.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\ZstdNet.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\BouncyCastle.Crypto.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Hash.xxHash.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySql.Data.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySqlConnector.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Buffers.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Memory.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Numerics.Vectors.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.AssemblyReference.cache
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CoreCompileInputs.cache
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CopyComplete
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Controlador.dll.config
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Controlador.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Controlador.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\BouncyCastle.Crypto.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Hash.xxHash.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySql.Data.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySqlConnector.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Buffers.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Memory.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Numerics.Vectors.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Ubiety.Dns.Core.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\ZstdNet.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\BouncyCastle.Crypto.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Hash.xxHash.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySql.Data.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySqlConnector.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Buffers.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Memory.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Numerics.Vectors.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.AssemblyReference.cache
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CoreCompileInputs.cache
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CopyComplete
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.pdb
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Controlador.dll.config
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Controlador.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Controlador.pdb
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\BouncyCastle.Crypto.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Hash.xxHash.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySql.Data.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySqlConnector.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Buffers.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Memory.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Numerics.Vectors.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Ubiety.Dns.Core.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\ZstdNet.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\BouncyCastle.Crypto.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.pdb
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Hash.xxHash.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySql.Data.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySqlConnector.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Buffers.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Memory.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Numerics.Vectors.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.AssemblyReference.cache
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CoreCompileInputs.cache
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CopyComplete
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.pdb
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Controlador.dll.config
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Controlador.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Controlador.pdb
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySql.Data.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySqlConnector.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Buffers.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Memory.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\ZstdNet.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.pdb
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySql.Data.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySqlConnector.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Buffers.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Memory.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.AssemblyReference.cache
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CoreCompileInputs.cache
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CopyComplete
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.barcodes.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.commons.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.forms.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.io.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.kernel.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.layout.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.pdfa.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.sign.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.styledxmlparser.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.svg.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Options.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Newtonsoft.Json.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.ValueTuple.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.barcodes.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.commons.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.forms.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.io.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.kernel.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.layout.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.pdfa.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.sign.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.styledxmlparser.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.svg.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Options.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Newtonsoft.Json.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.ValueTuple.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.barcodes.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.commons.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.forms.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.io.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.kernel.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.layout.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.pdfa.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.sign.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.styledxmlparser.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.svg.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Options.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Newtonsoft.Json.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.ValueTuple.dll
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.barcodes.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.commons.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.forms.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.io.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.kernel.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.layout.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.pdfa.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.sign.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.styledxmlparser.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.svg.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Options.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Newtonsoft.Json.xml
+D:\Informatica\PORTAFOLIO\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.ValueTuple.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Controlador.dll.config
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Controlador.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Controlador.pdb
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.barcodes.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.commons.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.forms.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.io.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.kernel.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.layout.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.pdfa.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.sign.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.styledxmlparser.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.svg.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySql.Data.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySqlConnector.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Buffers.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Memory.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.ValueTuple.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\ZstdNet.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.pdb
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.barcodes.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.commons.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.forms.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.io.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.kernel.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.layout.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.pdfa.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.sign.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.styledxmlparser.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.svg.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySql.Data.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\MySqlConnector.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Buffers.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Memory.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.ValueTuple.xml
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.AssemblyReference.cache
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CoreCompileInputs.cache
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CopyComplete
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.dll
+C:\Users\Ignacio Cabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\obj\Debug\Controlador.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.barcodes.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.commons.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.forms.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.io.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.kernel.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.layout.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.pdfa.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.sign.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.styledxmlparser.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.svg.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Options.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Newtonsoft.Json.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.ValueTuple.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.barcodes.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.commons.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.forms.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.io.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.kernel.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.layout.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.pdfa.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.sign.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.styledxmlparser.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.svg.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Options.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Newtonsoft.Json.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.ValueTuple.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.barcodes.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.commons.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.forms.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.io.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.kernel.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.layout.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.pdfa.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.sign.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.styledxmlparser.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.svg.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Newtonsoft.Json.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.ValueTuple.dll
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.barcodes.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.commons.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.forms.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.io.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.kernel.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.layout.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.pdfa.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.sign.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.styledxmlparser.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\itext.svg.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Newtonsoft.Json.xml
+C:\Users\icabrera\Documents\Portafolio\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\System.ValueTuple.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.dll
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.xml
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.pdb
+D:\kagada\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.dll
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.xml
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.pdb
+D:\Documentos\Github\Portafolio_Unificacion_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Controlador.dll.config
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Controlador.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Controlador.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\BouncyCastle.Crypto.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Common.Logging.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.barcodes.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.commons.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.forms.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.io.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.kernel.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.layout.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.pdfa.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.sign.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.styledxmlparser.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.svg.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\K4os.Hash.xxHash.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Options.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\MySql.Data.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\MySqlConnector.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Newtonsoft.Json.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\System.Buffers.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\System.Memory.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\System.Numerics.Vectors.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\System.ValueTuple.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Ubiety.Dns.Core.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\ZstdNet.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\BouncyCastle.Crypto.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Common.Logging.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Common.Logging.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Common.Logging.Core.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.pdb
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Google.Protobuf.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.barcodes.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.commons.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.forms.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.io.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.kernel.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.layout.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.pdfa.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.sign.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.styledxmlparser.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\itext.svg.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\K4os.Hash.xxHash.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Options.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\MySql.Data.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\MySqlConnector.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\Newtonsoft.Json.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\System.Buffers.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\System.Memory.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\System.Numerics.Vectors.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\bin\Debug\System.ValueTuple.xml
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.AssemblyReference.cache
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CoreCompileInputs.cache
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\obj\Debug\Controlador.csproj.CopyComplete
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\obj\Debug\Controlador.dll
+D:\Mis cosas\Duoc\Portafolio\Portafolio_Unificaci-n_CBR\Sistema\Controlador\obj\Debug\Controlador.pdb

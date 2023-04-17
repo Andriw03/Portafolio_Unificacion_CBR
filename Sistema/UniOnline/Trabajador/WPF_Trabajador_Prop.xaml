@@ -1,0 +1,211 @@
+﻿<Window x:Class="UniOnline.Trabajador.WPF_Trabajador_Prop"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniOnline.Trabajador"
+        mc:Ignorable="d"
+        Title="CBR UniOnline" Height="650" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <!--Segoe UI Emoji-->
+        <SolidColorBrush x:Key="PrimaryBackColor" Color="#FF010623"/>
+        <SolidColorBrush x:Key="SecondaryBackColor" Color="#FF393E59"/>
+        <SolidColorBrush x:Key="PrimaryTabColor" Color="#6FBFBF"/>
+
+        <SolidColorBrush x:Key="PrimaryTextColor" Color="#FFF0F2F2"/>
+        <SolidColorBrush x:Key="SecondaryTextColor" Color="#FF82D9D9"/>
+
+        <SolidColorBrush x:Key="PrimaryGreyColor" Color="#BBC1D1"/>
+
+
+        <Style x:Key="TabItemStyle" TargetType="TabItem">
+            <Setter Property = "Background" Value="Transparent"/>
+            <Setter Property = "BorderBrush" Value="Transparent"/>
+            <Setter Property = "BorderThickness" Value="0"/>
+            <Setter Property = "Foreground" Value="{DynamicResource PrimaryTextColor}"/>
+            <Setter Property = "Margin" Value = "10,0,10,3" />
+            <Setter Property = "Width" Value = "150"/>
+            <Setter Property = "Padding" Value = "15"/>
+            <Setter Property = "FontWeight" Value = "500"/>
+            <Setter Property = "VerticalAlignment" Value = "Top"/>
+            <Setter Property = "HorizontalAlignment" Value = "Left"/>
+            <Setter Property = "FontFamily" Value="Segoe UI Emoji"/>
+            <Setter Property = "Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Grid SnapsToDevicePixels="True">
+                            <Border CornerRadius="10" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}"
+                                    BorderBrush="{TemplateBinding BorderBrush}" Margin="{TemplateBinding Margin}"/>
+                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" SnapsToDevicePixels="True"
+                                              Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" ContentSource="Header" Width="{TemplateBinding Width}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property = "Background" Value="{DynamicResource SecondaryBackColor}"/>
+                                <Setter Property = "Foreground" Value="{DynamicResource PrimaryGreyColor}"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property = "Background" Value="{DynamicResource PrimaryBackColor}"/>
+                                <Setter Property = "Foreground" Value="{DynamicResource SecondaryTextColor}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+    </Window.Resources>
+    <Grid Background="{DynamicResource PrimaryBackColor}">
+
+
+        <TabControl IsSynchronizedWithCurrentItem="True" Cursor="Arrow">
+            <TabItem Header="Agregar Propiedad" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="219" HorizontalAlignment="Left" Margin="10,0,-31.4,-0.2" >
+                <Grid Background="#FFF0F2F2" Margin="0,-2,0,-1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="2" MaxHeight="10"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="2" MaxHeight="10"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="2" MaxHeight="10"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="2" MaxHeight="10"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="2" MaxHeight="10"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="2" MaxHeight="10"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="10" MaxHeight="10"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+
+                    <Button x:Name="btnVolverProp" Content="Volver" Click="btnVolverProp_Click" Background="#FF393E59" Foreground="#FFF0F2F2" Grid.Column="9" Grid.Row="16" Grid.ColumnSpan="2" Margin="19.067,0,0,0" HorizontalAlignment="Left" Width="75" Height="30" VerticalAlignment="Top"/>
+                    <TextBlock TextWrapping="Wrap" Foreground="#FF010326" FontWeight="Bold" FontSize="25" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="3" Margin="9.8,0.2,9.133,0" Grid.RowSpan="2" Height="33" VerticalAlignment="Top"><Run Text="Ingresa una Propiedad"/></TextBlock>
+                    <Label Content="Buscar Dueño:" FontFamily="Segoe UI Emoji" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Width="142" Height="30" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txtDueño" HorizontalAlignment="Left" TextWrapping="Wrap" Width="199" MaxLength="15" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Margin="0,29,0,0" Grid.RowSpan="2" Height="32" VerticalAlignment="Top" KeyUp="txtDueño_KeyUp"/>
+                    <Button x:Name="btnBuscarDueño" Content="" VerticalAlignment="Bottom" Height="35" Click="btnBuscarDueño_Click" Grid.Column="3" Grid.Row="2" BorderBrush="{x:Null}" Margin="29.2,13,29.2,0">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/UniOnline;component/buscar.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="btnAgregarDuenno" Content="Agregar dueño" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="138" Height="35" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnAgregarDuenno_Click" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="2" Margin="25.8,13,0,0"/>
+                    <Button x:Name="btnModificarDuenno" Content="Modificar dueño" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="35" Width="150" Background="#FF393E59" Foreground="#FFF0F2F2" Grid.Column="6" Grid.Row="2" Grid.ColumnSpan="2" Click="btnModificarDuenno_Click" Visibility="Hidden" Margin="0.267,13,0,0"/>
+                    <Label Content="Rut Dueño:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="85" Grid.Column="1" Grid.Row="4" Visibility="Hidden"/>
+                    <TextBox x:Name="txtRutDueño" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" MaxLength="15" IsEnabled="False" IsUndoEnabled="False" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" Margin="0,28.8,0,0" Visibility="Hidden"/>
+                    <TextBox x:Name="txtNombreDueño" HorizontalAlignment="Left" TextWrapping="Wrap" Width="240" MaxLength="15" IsEnabled="False" IsUndoEnabled="False" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" Margin="0,28.8,0,0" Height="32" VerticalAlignment="Top"/>
+                    <Button x:Name="btnEscritura" Content="Subir escritura" Background="#FF393E59" Foreground="#FFF0F2F2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2" Width="138" Height="35" Click="btnEscritura_Click"/>
+                    <Label Content="Nombre Dueño:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="117" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,0,0,0"/>
+                    <ComboBox x:Name="cmbTipoProp" Height="32" Width="199" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" IsEditable="True" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbTipoProp_SelectionChanged" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="3" Margin="0,28.6,0,0"/>
+                    <Label Content="Tipos de propiedad:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="142" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2"/>
+                    <Label Content="Foja:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Grid.Column="3" Grid.Row="6"  Height="30" Width="40" Margin="42,0,0,0"/>
+                    <TextBox x:Name="txtFoja" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="150" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="6" Margin="42,0,90,0"/>
+                    <TextBox x:Name="txtNumero" HorizontalAlignment="Left" TextWrapping="Wrap" Width="198" Grid.Column="5" Grid.ColumnSpan="3" Grid.Row="6" Margin="31.667,28.6,0,0" Height="32" VerticalAlignment="Top"/>
+                    <Label Content="Número:" VerticalAlignment="Top" FontSize="15" Height="30" Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="2" Margin="27.4,2,94.133,0" Grid.RowSpan="2"/>
+                    <TextBox x:Name="txtAnno" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="90" Grid.Column="8" Grid.Row="6" Grid.ColumnSpan="2" MaxLength="4" PreviewTextInput="txtAnno_PreviewTextInput"/>
+                    <Label Content="Año" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="37" Grid.Column="8" Grid.Row="6"/>
+                    <Label Content="Razón Social:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="96" Grid.Column="1" Grid.Row="8"/>
+                    <TextBox x:Name="txtRazonSocial" HorizontalAlignment="Left" TextWrapping="Wrap" Width="412" IsEnabled="False" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="5" Margin="0,28,0,0" Height="32" VerticalAlignment="Top"/>
+                    <Label Content="Rut Empresa:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Grid.Column="6" Grid.Row="8" Height="30" Width="96"/>
+                    <TextBox x:Name="txtRutEmpresa" HorizontalAlignment="Left" TextWrapping="Wrap" Width="198" MaxLength="15" IsEnabled="False" Grid.Column="6" Grid.Row="8" Grid.ColumnSpan="3" Margin="0.267,28,0,0" Height="32" VerticalAlignment="Top"/>
+                    <Label Content="Descripción:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="91" Grid.Column="1" Grid.Row="10"/>
+                    <TextBox x:Name="txtDescripcion" TextWrapping="Wrap" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="9" Margin="0,28.4,8.533,0" Grid.RowSpan="2" Height="32" VerticalAlignment="Top"/>
+                    <Label Content="Región" VerticalAlignment="Top" FontSize="15" Height="30" Grid.Column="1" Grid.Row="11" Margin="0,1.4,0,0" Grid.RowSpan="2" HorizontalAlignment="Left" Width="56"/>
+                    <ComboBox x:Name="cmbRegion" FontSize="15" IsEditable="True" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbRegion_SelectionChanged" Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2" Margin="0,27.8,0,0" HorizontalAlignment="Left" Width="185" Height="32" VerticalAlignment="Top"/>
+                    <Label Content="Provincia" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Height="30" Width="70" Grid.Column="3" Grid.Row="11" Grid.ColumnSpan="2" Margin="59.2,1.4,0,0" Grid.RowSpan="2"/>
+                    <ComboBox x:Name="cmbProvincia" FontSize="15" IsEditable="True" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbProvincia_SelectionChanged" Grid.Column="3" Grid.Row="12" Grid.ColumnSpan="3" Margin="59.2,27.8,0,0" HorizontalAlignment="Left" Width="189" Height="32" VerticalAlignment="Top"/>
+                    <Label Content="Comuna" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Grid.Column="6" Grid.Row="12" Height="30" Width="66"/>
+                    <ComboBox x:Name="cmbComuna" FontSize="15" IsEditable="True" Text="Seleccione" IsReadOnly="True" Focusable="False" SelectionChanged="cmbComuna_SelectionChanged" Grid.Column="6" Grid.Row="12" Grid.ColumnSpan="3" Margin="0.267,27.8,0,0" HorizontalAlignment="Left" Width="189" Height="32" VerticalAlignment="Top"/>
+                    <Label Content="Dirección" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="15" Height="30" Width="72" Grid.Column="1" Grid.Row="14" Margin="0,0,22.4,29.6"/>
+                    <TextBox x:Name="txtDireccion" TextWrapping="Wrap" Grid.Column="1" Grid.Row="14" Grid.ColumnSpan="9" Margin="0,28.8,8.533,0" Height="32" VerticalAlignment="Top"/>
+                    <Button x:Name="btnGuardar"  Content="Guardar" VerticalAlignment="Bottom" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnGuardar_Click" Height="30" Grid.Column="1" Grid.Row="16" Margin="0,0,0,0.4" HorizontalAlignment="Left" Width="81"/>
+                    <Button x:Name="btnLimpiarProp" Content="Limpiar" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnLimpiarProp_Click" Grid.Column="2" Grid.Row="16" Height="30" Margin="9.6,0,0,0.4"/>
+                    <Label x:Name="lblURL" Visibility="Hidden" Content=""/>
+                    <Label x:Name="lblID" Visibility="Hidden" Content=""/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Listar Propiedades" FontSize="20" Style="{DynamicResource TabItemStyle}" Width="207" HorizontalAlignment="Right" Margin="0,0,-32.2,-0.2" >
+                <Grid Background="#FFF0F2F2">
+
+                    <!-- Start Column and Row Definition-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <!--End Column and Row Definition-->
+
+                    <Label Content="Buscar por Foja:" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtFojaListar" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" Height="32" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="212" MaxLength="15" PreviewTextInput="txtFojaListar_PreviewTextInput"/>
+                    <Button x:Name="btnBuscar" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2" Height="30" Width="100" Click="btnBuscar_Click" Background="#FF393E59" Foreground="#FFF0F2F2">
+                        <TextBlock Text="Buscar" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Button>
+                    <DataGrid x:Name="dtgPropiedad" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="8" Grid.RowSpan="5" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Foja" Binding="{Binding Path = 'foja'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Tipo de Propiedad" Binding="{Binding Path = 'nombre_tipoP'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Dirección" Binding="{Binding Path = 'direccion_prop'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Rut Dueño" Binding="{Binding Path = 'rut_duenno'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Nombre Dueño" Binding="{Binding Path = 'nombre_duenno'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Correo Electrónico" Binding="{Binding Path = 'correo_electronico'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Teléfono" Binding="{Binding Path = 'telefono'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Descripción" Binding="{Binding Path = 'descripcion'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Razon social" Binding="{Binding Path = 'razon_social'}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Rut Empresa" Binding="{Binding Path = 'rut_empresa'}" IsReadOnly="True"/>
+                            <DataGridTemplateColumn Header="Editar">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button x:Name="btnEditar" Background="#FF010326" Foreground="#FFF0F2F2" Click="btnEditar_Click">
+                                            <TextBlock Text="Editar" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Button x:Name="btnVolverProp2" Content="Volver" Grid.Column="8" Grid.Row="9" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="75" Click="btnVolverProp_Click" Background="#FF393E59" Foreground="#FFF0F2F2"/>
+
+                </Grid>
+
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Window>

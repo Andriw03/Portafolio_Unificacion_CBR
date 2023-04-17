@@ -1,0 +1,33 @@
+{% extends 'templates\base_admin.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Administrador</title>
+  <link rel="stylesheet" href="static/css/perfil-cliente.css">
+</head>
+  <Main>
+    <div class="px-4 py-5  text-center">
+      <img class="d-block mx-auto mb-4" src="{% static 'imagenes\LogoCBR.png' %}" alt="" width="15%" height="15%">
+      <h3 class="display-5 fw-bold">Bienvenido Administrador</h3>
+      <br>
+      
+    <div>
+<Main>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <a href="{% url 'agregarCbr' %}" class = "btn btn-light"> Agregar Nuevo CBR</a>
+    <a href="{% url 'listarCbr' %}" class = "btn btn-light"> Listar CBRS</a>
+    <a href="{% url 'regDirector' %}" class = "btn btn-light"> Agregar Nuevo Director de CBR</a>
+    <a href="{% url 'listarDirector' %}" class = "btn btn-light"> Listar Directores de CBRS</a>
+    
+  </div>
+
+</Main>
+<div class="whatsapp">
+  <a href="https://wa.me/+56946411039?text=Buenas, tengo una consulta" class="btn-wsp" target="_blank">
+      <i class="fa fa-whatsapp icono"></i>
+  </a>
+</div>
+{% endblock %}

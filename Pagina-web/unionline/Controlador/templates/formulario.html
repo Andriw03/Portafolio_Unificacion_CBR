@@ -1,0 +1,70 @@
+{% extends 'templates\base.html' %}
+{% load static %}
+{% block content %}
+  <head>
+    <title>Formulario de contacto</title>
+
+    <link rel="stylesheet" href="static/css/formulario.css">
+        <!-- <link rel="stylesheet" href="{% static 'css/registrar_admin.css' %}"> -->
+        <link rel="stylesheet" href="{% static 'css\styles_inicio.css' %}">
+
+  </head>
+  
+  <div class="container">
+    {% if messages %}
+      <div class="row">
+          {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}" role="alert">
+              <p>{{ message }}</p>
+          </div>
+          {% endfor %}
+      </div>
+    {% endif %}
+
+    <form class="formulario" method="post" action="procesar_formulario" class="row g-3" style="margin-left: 60px;margin-right: 60px;margin-bottom: 60px;margin-top: 10px;">
+      <!-- <h1>Formulario de consultas</h1> -->
+      {% csrf_token %}
+        <div class="col-md-4">
+          <label for="validationDefault01" class="form-label">Nombre y Apellido</label>
+          <input name="Nombre_Formulario" type="text" class="form-control" id="validationDefault01" value=" " required>
+        </div>
+        <div class="col-md-4">
+          <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+          <input name = "email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">Nunca compartiremos tus datos</div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationDefault03" class="form-label">Telefono</label>
+          <input name = "telefono" type="text" class="form-control" id="validationDefault03" required>
+          <div id="telHelp" class="form-text">(9 Digitos)</div>
+        </div>
+        <div class="form-group">
+          <label for="validationDefault04">Asunto Consulta.</label>
+          <textarea name="asunto" class="form-control" id="validationDefault04" rows="1"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="validationDefault04">Consulta.</label>
+            <textarea name="detalle" class="form-control" id="validationDefault04" rows="4"></textarea>
+          </div>
+        <div class="boton">
+        <div class="col-12">
+          <button class="btn btn-outline-success" type="submit"> <b>Enviar</b></button>
+          <!-- <button class="btn btn-outline-success" type="button" onclick="resetform()"> <b>Limpiar</b></button> -->
+        </div>
+        <script>
+          function resetform() {
+          $("form select").each(function() { this.selectedIndex = 0 });
+          $("form input[type=text] , form textarea").each(function() { this.value = '' });
+          }
+        </script>
+        </div>
+      </form>
+
+      <div class="whatsapp">
+        <a href="https://wa.me/+56946411039?text=Buenas, tengo una consulta" class="btn-wsp" target="_blank">
+            <i class="fa fa-whatsapp icono"></i>
+        </a>
+      </div>
+      
+  </div>
+{% endblock %}

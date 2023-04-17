@@ -1,0 +1,31 @@
+﻿<Window x:Class="UniOnline.Moderador.WPF_Moderador_Soporte"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniOnline.Moderador"
+        mc:Ignorable="d"
+        Title="WPF_Moderador_Soporte" Height="484.04" Width="900" ResizeMode="NoResize">
+    <Window.Resources>
+
+        <Style x:Key="BtnStyle" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="Cambria"/>
+        </Style>
+
+    </Window.Resources>
+    <Grid HorizontalAlignment="Left" Width="892">
+        <Rectangle HorizontalAlignment="Center" Height="87" Stroke="Black" VerticalAlignment="Top" Width="892" Fill="#FF010623"/>
+        <TextBlock HorizontalAlignment="Left" Margin="12,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="189" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="30" Text="CBRS de Chile"/>
+        <Button x:Name="btnInicio" Content="Inicio" Margin="231,32,0,0" VerticalAlignment="Top" Width="51" HorizontalAlignment="Left" Background="#FF010623" Click="btnInicioMod" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
+        <Button x:Name="btnPerfil" Content="Perfil Clientes" Margin="319,32,0,0" VerticalAlignment="Top" Width="100" HorizontalAlignment="Left" Background="#FF010623" Click="btnPerfilMod" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
+        <Button x:Name="btnSoporte" Content="Soporte en Linea" Margin="451,32,0,0" VerticalAlignment="Top" Width="125" HorizontalAlignment="Left" Background="#FF010623" Click="btnSoporteMod" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623"/>
+        <Image Margin="169,141,572,185" Source="/UniOnline;component/pngegg (1).png" Stretch="Fill"/>
+        <Label Content="Tickets de Soporte: &#xD;&#xA;Aquí se muestran todos los tickets de&#xD;&#xA;soporte realizados por los clientes." HorizontalAlignment="Left" Margin="136.963,273,0,0" Width="220.018" Height="57.436" VerticalAlignment="Top" UseLayoutRounding="False" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsHitTestVisible="False" FontWeight="Bold"/>
+        <Button x:Name="btnVerTicket" Grid.ColumnSpan="1" Content="Ver Tickets" FontSize="20" Background="#FF393E59" Foreground="#FFF0F2F2" Style="{DynamicResource BtnStyle}" Click="btnVerTicket_Click" Margin="169,350,572,69"/>
+        <Image Margin="534,141,207,185" Source="/UniOnline;component/pngegg (2).png" Stretch="Fill"/>
+        <Button x:Name="btnChat" Grid.ColumnSpan="1" Content="Chat Directo" FontSize="20" Background="#FF393E59" Foreground="#FFF0F2F2" Style="{DynamicResource BtnStyle}" Click="btnChat_Click" Margin="534,350,207,69"/>
+        <Label Content="Chat Directo:&#xD;&#xA;Aquí se puede contactar directamente&#xD;&#xA;con el cliente, a través de un chat." HorizontalAlignment="Left" Margin="505.461,273,0,0" Width="225.539" Height="57.436" VerticalAlignment="Top" UseLayoutRounding="False" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsHitTestVisible="False" FontWeight="Bold"/>
+        <Button x:Name="btnCerrarSesion" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="763,32,0,0" VerticalAlignment="Top" Width="105" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16"  FontFamily="Segoe UI Emoji" Click="btnCerrarSesion_Click"/>
+        <!--<Button x:Name="btnPerfilUsuario" Content="Perfil" HorizontalAlignment="Left" Margin="699,32,0,0" VerticalAlignment="Top" Width="60" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" FontFamily="Segoe UI Emoji" Click="btnPerfilUsuario_Click"/>-->
+    </Grid>
+</Window>

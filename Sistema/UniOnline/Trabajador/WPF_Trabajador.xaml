@@ -1,0 +1,27 @@
+﻿<Window x:Class="UniOnline.Trabajador.WPF_Trabajador"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniOnline.Trabajador"
+        mc:Ignorable="d"
+        Title="CBR UniOnline" Height="500" Width="1010" Closing="Window_Closing" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Rectangle HorizontalAlignment="Stretch" Height="87" Stroke="Black" VerticalAlignment="Top" Width="Auto" MinWidth="892" Fill="#FF010623"/>
+        <TextBlock HorizontalAlignment="Left" Margin="12,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="189" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="30" Text="CBRS de Chile"/>
+        <Button x:Name="btnInicio" Content="Inicio" Margin="231,32,0,0" VerticalAlignment="Top" Width="51" HorizontalAlignment="Left" Background="#FF010623" Click="Button_Inicio" FontSize="16" Foreground="#FFF0F2F2" BorderBrush="#FF010623" FontFamily="Segoe UI Emoji"/>
+        <Button x:Name="btnGestionProp" Content="Gestión Propiedad" HorizontalAlignment="Left" Margin="287,32,0,0" VerticalAlignment="Top" Width="142" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" Click="Button_Gestion_Prop" FontFamily="Segoe UI Emoji"/>
+        <Button x:Name="btnGestionTra" Content="Gestión Trámites" HorizontalAlignment="Left" Margin="434,32,0,0" VerticalAlignment="Top" Width="123" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" Click="Button_Gestion_Tra" FontFamily="Segoe UI Emoji"/>
+        <Button x:Name="btnConsultaTra" Content="Consultar Solicitud" HorizontalAlignment="Left" Margin="562,32,0,0" VerticalAlignment="Top" Width="138" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" Click="Button_Consulta_Tra" FontFamily="Segoe UI Emoji"/>
+        <Rectangle Fill="#FF393E59" HorizontalAlignment="Left" Height="55" Margin="12,101,0,0" Stroke="Black" VerticalAlignment="Top" Width="134"/>
+        <TextBlock x:Name="MyTime" HorizontalAlignment="Left" Margin="44,132,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="17" Foreground="#FFF0F2F2"/>
+        <TextBlock x:Name="datelbl" HorizontalAlignment="Left" Margin="34,101,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="18" Foreground="#FFF0F2F2"/>
+        <Image Margin="340,87,347,0" Source="/UniOnline;component/LogoCBR.png" Height="202" VerticalAlignment="Top"/>
+        <Label x:Name="LabelSaludo" Content="" Height="59" Margin="0,289,68,0" VerticalAlignment="Top" FontSize="24" FontFamily="Segoe UI Emoji" HorizontalAlignment="Center" Width="792"/>
+        <Label x:Name="LabelMotivacion" Content="" Height="59" Margin="44,367,18,0" VerticalAlignment="Top" FontSize="24" FontFamily="Segoe UI Emoji" HorizontalAlignment="Center" Width="842" />
+        <Button x:Name="btnSolicitudes" Content="Solicitud" HorizontalAlignment="Left" Margin="710,32,0,0" VerticalAlignment="Top" Width="65" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" FontFamily="Segoe UI Emoji" Click="btnSolicitudes_Click"/>
+        <Button x:Name="btnPerfil" Content="Perfil" HorizontalAlignment="Left" Margin="785,32,0,0" VerticalAlignment="Top" Width="60" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16" FontFamily="Segoe UI Emoji" Click="btnPerfil_Click"/>
+        <Button x:Name="btnCerrarSesion" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="856,32,0,0" VerticalAlignment="Top" Width="100" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" FontSize="16"  FontFamily="Segoe UI Emoji" Click="btnCerrarSesion_Click"/>
+
+    </Grid>
+</Window>

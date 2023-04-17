@@ -1,0 +1,63 @@
+﻿<Window x:Class="UniOnline.Recepcion.WPF_MainRecepcion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniOnline.Recepcion"
+        mc:Ignorable="d"
+        Title="WPF_MainRecepcion" Height="450" Width="1075" MinHeight="450" MinWidth="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="*" MinHeight="20"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Rectangle HorizontalAlignment="Stretch" Width="Auto" MinHeight="80" MinWidth="800" Grid.Column="0" Grid.Row="0" Fill="#FF010326" Stroke="Black"/>
+
+        <Viewbox  Width="Auto" Height="Auto" Stretch="Uniform" Margin="20,20,522,373">
+            <TextBlock Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="28" Height="35" MinWidth="265" Width="334"><Run Language="es-es" Text="CBRS de Chile"/></TextBlock>
+        </Viewbox>
+        <Rectangle HorizontalAlignment="Stretch" Width="Auto" MinHeight="80" MinWidth="800" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" Grid.RowSpan="4" Fill="#FF010326" Stroke="Black" Margin="0,0,-8,22"/>
+        <TextBlock HorizontalAlignment="Left" Margin="12,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="189" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="30" Text="CBRS de Chile" Grid.ColumnSpan="3" Grid.RowSpan="4"/>
+        <Rectangle Fill="#FF393E59" HorizontalAlignment="Left" Height="92" Margin="12,12.5,0,0" Stroke="Black" VerticalAlignment="Top" Width="204" Grid.ColumnSpan="3" Grid.Row="4" Grid.RowSpan="5"/>
+        <TextBlock x:Name="MyTime" HorizontalAlignment="Left" Margin="51,10.5,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="17" Foreground="#FFF0F2F2" Grid.Column="1" Grid.Row="5" Grid.RowSpan="2"/>
+        <TextBlock x:Name="datelbl" HorizontalAlignment="Left" Margin="38,12.5,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="18" Foreground="#FFF0F2F2" Grid.Column="1" Grid.Row="4" Grid.RowSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="164" Margin="112,18.5,0,0" VerticalAlignment="Top" Width="189" Source="/UniOnline;component/LogoCBR.png" Grid.Column="3" Grid.Row="3" Grid.RowSpan="8" Grid.ColumnSpan="2"/>
+        <Label x:Name="LabelSaludo" Content="" HorizontalAlignment="Center" Height="54" Margin="116,0,76,0" VerticalAlignment="Top" Width="492" FontSize="24" FontFamily="Segoe UI Emoji" Grid.ColumnSpan="4" Grid.Column="2" Grid.Row="10" Grid.RowSpan="3"/>
+        <Label x:Name="LabelMotivacion" Content="" HorizontalAlignment="Center" Height="54" Margin="10,2,10,0" VerticalAlignment="Top" Width="1007" FontSize="24" FontFamily="Segoe UI Emoji" Grid.ColumnSpan="6" Grid.Column="1" Grid.Row="12" Grid.RowSpan="3"/>
+        <Button x:Name="btnRevisarSoli" Content="Revisar Solicitud" Grid.Column="2" HorizontalAlignment="Left" Margin="84,12,0,0" Grid.Row="1" VerticalAlignment="Top" Width="129" Background="#FF010623" BorderBrush="#FF010623" Foreground="#FFF0F2F2" Height="25" Grid.RowSpan="2" Click="btnRevisarSoli_Click" FontSize="16" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnCerrarSesion" Content="Cerrar Sesión" Grid.Column="6" HorizontalAlignment="Left" Margin="50,10,0,0" VerticalAlignment="Top" Width="100" Height="29" Grid.RowSpan="2" Click="btnCerrarSesion_Click" Background="#FF010623" Foreground="#FFF0F2F2" BorderBrush="#FF010623" Grid.Row="1" Cursor="Hand" FontSize="14"/>
+        <Label x:Name="lblBienvenidoRec" Content="" Grid.Column="4" HorizontalAlignment="Left" Margin="19,13,0,0" VerticalAlignment="Top" Width="152" Foreground="#FFEEEEEE" Grid.RowSpan="2" Grid.Row="1"/>
+        <Label x:Name="lblB" Content="Bienvenid@:" Grid.Column="3" HorizontalAlignment="Left" Margin="112,13,0,0" VerticalAlignment="Top" Width="80" Height="27" Foreground="#FFEEEEEE" Grid.RowSpan="2" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <Button x:Name="btnPerfil" Content="" Grid.Column="6" HorizontalAlignment="Left" Height="37" Margin="8,2,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="37" Cursor="Hand" Grid.Row="1" BorderBrush="{x:Null}" Click="btnPerfil_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/UniOnline;component/perfil.png"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>

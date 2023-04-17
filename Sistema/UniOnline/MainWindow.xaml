@@ -1,0 +1,33 @@
+﻿<Window x:Class="UniOnline.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniOnline"
+        mc:Ignorable="d"
+        Title="UniOnline" Height="600" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Rectangle Height="87" Stroke="Black" VerticalAlignment="Top" Fill="#FF010326" Margin="0,0,-0.4,0"/>
+
+        <Grid HorizontalAlignment="Center" Height="477" Margin="0,92,0,0" VerticalAlignment="Top" Width="891" RenderTransformOrigin="0.5,0.5" >
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.183"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Image HorizontalAlignment="Left" Height="191" Margin="378,10,0,0" VerticalAlignment="Top" Width="197" Source="LogoCBR.png" RenderTransformOrigin="-0.217,0.261" />
+            <Label Content="Rut" Margin="378,253,0,0" Foreground="#FF010326" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="31"/>
+            <TextBox x:Name="txtRut" Margin="414,259,0,0" TextWrapping="Wrap" Text="" Background="#FFF0F2F2" Foreground="#FF010326" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" KeyUp="txtRut_KeyUp"/>
+            <Label Content="Contraseña" Margin="342,295,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="79" RenderTransformOrigin="0.454,-1.091"/>
+            <PasswordBox x:Name="txtPass" Margin="414,300,0,0" Background="#FFF0F2F2" Foreground="#FF010326" RenderTransformOrigin="-0.364,0.553" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+            <TextBlock Margin="342,201,0,0" TextWrapping="Wrap" Foreground="#FF010326" FontSize="22" FontFamily="Segoe UI Historic" FontWeight="Bold" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250"><Run Language="es-es" Text="Ingrese sus credenciales"/></TextBlock>
+            <Button x:Name="btnInicioSesion" Content="Iniciar sesión" Margin="493,353,0,0" Background="#FFF0F2F2" Foreground="#FF010326" BorderBrush="#FF010326" Click="btnInicioSesion_Click" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="99"/>
+            <Button x:Name="btnOlvidarCon" Content="¿Olvidó su contraseña?" Margin="284,353,0,0" Foreground="#FF010326" BorderBrush="#FF010326" Background="#FFF0F2F2" Click="btnOlvidarCon_Click" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="125"/>
+            
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="253" Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="36"><Run Language="es-es" Text="CBRS de Chile."/></TextBlock>
+    </Grid>
+</Window>

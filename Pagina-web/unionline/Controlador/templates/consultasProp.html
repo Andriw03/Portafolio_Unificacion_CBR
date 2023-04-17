@@ -1,0 +1,123 @@
+{% extends 'templates\base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+  <title>Consultas Propiedad</title>
+  <link rel="stylesheet" href="static/css/perfil-cliente.css">
+</head>
+  <Main>
+    <div class="px-4 py-5  text-center">
+      <img class="d-block mx-auto mb-4" src="{% static 'imagenes\LogoCBR.png' %}" alt="" width="15%" height="15%">
+      <h3 class="display-5 fw-bold">Búsqueda de Dueño de Propiedad</h3>
+      <br>
+      
+      <div>
+<Main>
+
+
+
+<div class = "container">
+  <div class = "row">
+    
+    <div class ="d-grid gap-2 col-sm-6 mx-auto search">
+      <form method = "POST">
+        {% csrf_token %}
+        <div id ="custom-search-input">
+          <div class="input-group col-sm-3">
+            <input type="text" class="form-control" maxlength="12" onkeyup="mascara(this,formatoRUT)" placeholder="Ingresar Rut" name="rut" id="rut"  value="{{request.GET.rut}}">
+          </div>
+        </div>
+    
+    <br>
+    
+    
+<div class="d-grid gap-2 col-8 mx-auto">
+  <button class="btn btn-default" type="submit">Buscar</button>
+</div>
+</form>
+</div>
+
+<br>
+<br>
+<br>
+<div class="tabla">
+  <table name= "tabla-historial"class="table table-striped">
+    <thead  class="table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Rut Dueño</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Foja</th>
+        <th scope="col">Número</th>
+        <th scope="col">Año</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      
+        {% for d in duenno %}
+      <tr>
+        <td>{{d.rut_duenno}}</td>
+        <td>{{d.nombre}}</td>
+        <td>{{d.foja}}</td>
+        <td>{{d.numero}}</td>
+        <td>{{d.fecha}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<br>
+<br>
+<br>
+
+</Main>
+<div class="whatsapp">
+  <a href="https://wa.me/+56946411039?text=Buenas, tengo una consulta" class="btn-wsp" target="_blank">
+      <i class="fa fa-whatsapp icono"></i>
+  </a>
+</div>
+
+<script>
+  // oír los cambios en la caja de texto e ir dando formato al RUT
+document.addEventListener('input', (e) => {
+const rut = document.getElementById('rut');
+
+if (e.target === rut) {
+let rutFormateado = darFormatoRUT(rut.value);
+rut.value = rutFormateado;
+}
+});
+
+// dar formato XX.XXX.XXX-X
+function darFormatoRUT(rut) {
+// dejar solo números y letras 'k'
+const rutLimpio = rut.replace(/[^0-9kK]/g, '');
+
+// asilar el cuerpo del dígito verificador
+const cuerpo = rutLimpio.slice(0, -1);
+const dv = rutLimpio.slice(-1).toUpperCase();
+
+if (rutLimpio.length < 2) return rutLimpio;
+
+// colocar los separadores de miles al cuerpo
+let cuerpoFormatoMiles = cuerpo
+.toString()
+.split('')
+.reverse()
+.join('')
+.replace(/(?=\d*\.?)(\d{3})/g, '$1.');
+
+cuerpoFormatoMiles = cuerpoFormatoMiles
+.split('')
+.reverse()
+.join('')
+.replace(/^[\.]/, '');
+
+return `${cuerpoFormatoMiles}-${dv}`;
+}
+</script>
+
+{% endblock %}

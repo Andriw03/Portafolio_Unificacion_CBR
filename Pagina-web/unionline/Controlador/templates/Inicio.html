@@ -1,0 +1,93 @@
+{% extends 'templates\base.html' %}
+{% load static %}
+{% block content %}
+<head>
+  <title>Inicio</title>
+  <link rel="stylesheet" href="{% static 'css\styles_inicio.css' %}">
+</head>
+<main>
+    <div class="px-4 py-5  text-center">
+      <img class="d-block mx-auto mb-4" src="{% static 'imagenes\LogoCBR.png' %}" alt="A" width="15%" height="15%">
+      <h1 class="display-5 fw-bold">Elige tu conservador</h1>
+      <br>
+
+      <div class="whatsapp">
+        <a href="https://wa.me/+56946411039?text=Buenas, tengo una consulta" class="btn-wsp" target="_blank">
+            <i class="fa fa-whatsapp icono"></i>
+        </a>
+      </div>
+
+      <div class="buscador">
+        <form action="" id="formRegion" enctype="multipart/formdata" method="POST" name="pRegion">
+          {% csrf_token %}
+          <div class="input-group">
+            <select class="form-select" name="cmbRegion" id="inputGroupSelect04" aria-label="Example select with button addon">
+              <option selected>Seleccione una region...</option>
+              {% for r in region %}
+              <option value="{{r.pk}}">{{r.nombre_region}}</option>
+              {% endfor %}
+            </select>
+            <button class="btn btn-outline-secondary"  id="formRegion" name="pRegion" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg></button>
+          </div>
+        </form>
+
+        <form action="" method="POST" name="pProvincia">
+          {% csrf_token %}
+          <div class="input-group">
+            <select class="form-select" name="cmbProvincia" id="inputGroupSelect04" aria-label="Example select with button addon">
+              <option selected>Seleccione una provincia...</option>
+              {% for p in provincia %}
+                <option value="{{p.pk}}">{{p.nombre_provincia}}</option>
+              {% endfor %}
+            </select>
+            <button class="btn btn-outline-secondary" name="pProvincia" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg></button>
+          </div>
+        </form>
+      
+
+        <form action="" method="POST" name="pComuna">
+          {% csrf_token %}
+        <div class="input-group">
+          <select class="form-select" name="cmbComuna" id="inputGroupSelect04" aria-label="Example select with button addon">
+            <option selected>Seleccione una comuna...</option>
+            {% for c in comuna %}
+            <option value="{{c.pk}}">{{c.nombre_comuna}}</option>
+            {% endfor %}
+          </select>
+          <button class="btn btn-outline-secondary" name="pComuna" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg></button>
+        </form>
+     
+      </div>
+      
+      <br>
+      <div class="col-lg-12 mx-auto">
+        <form action="" method="POST" name="pCBR">
+          {% csrf_token %}
+        <select name="cmbCBR" class="form-select form-select-lg mb-3" aria-label="Default select example">
+          <option selected>Seleccione un conservador...</option>
+          {% for cb in cbr %}
+          <option value="{{cb.pk}}">{{cb.nombre_cbr}} </option>
+          {% endfor %}
+          
+        </select>
+        
+          <button name="pCBR" type="submit" class="btn btn-primary btn-lg px-4 gap-3">Seleccionar</button>
+        </form>
+        
+        
+      </div>
+      
+  </div>
+
+
+<br><br><br><br><br>
+
+</main>
+
+    {% endblock %}

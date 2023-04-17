@@ -1,0 +1,60 @@
+.btn {
+    background-color: transparent;
+    border-color: #393E59;
+    color: #393E59;
+  }
+.btn:hover{
+    background-color: #393E59;
+    border: #393E59;
+    color:#FFF
+}
+
+
+a{
+    color: #393E59;
+}
+.tabla{
+    padding: 2% 15%;
+}
+.formulario {
+    margin: 10% 10% 10% 25%;
+    padding: 3px;
+    background: rgb(255, 255, 255);
+    border: 2mm;
+    border-radius: 10px;
+    max-width: 50%;
+}
+footer{
+    position: static; bottom: 0; width: 100%;
+    background-color: #1E4D40;
+    text-align: center;
+    padding:40px;
+    color: white;
+}
+.btn-wsp{
+    position:fixed;
+    width:60px;
+    height:60px;
+    line-height: 63px;
+    bottom:25px;
+    right:25px;
+    background:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:35px;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+    z-index:100;
+    transition: all 300ms ease;
+}
+.btn-wsp:hover{
+    background: #20ba5a;
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+    .btn-wsp{
+        width:63px;
+        height:63px;
+        line-height: 66px;
+	}
+}
+

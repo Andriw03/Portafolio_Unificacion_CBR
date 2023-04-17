@@ -1,0 +1,95 @@
+{% extends 'templates\base_admin.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+  <title>Agregar CBR</title>
+  <link rel="stylesheet" href="{% static 'css/agregar_cbr.css' %}">
+  <link rel="stylesheet" href="static/css/perfil-cliente.css">
+  
+</head>
+  <Main>
+    <div class="px-4 py-5  text-center">
+      <img class="d-block mx-auto mb-4" src="{% static 'imagenes\LogoCBR.png' %}" alt="" width="15%" height="15%">
+      <div>
+<Main>
+    
+<div class = "container_main">
+  <div class ="card ">
+      <div class ="card-body ">
+          <h3 class="display-6 fw-bold">Agregar nuevo CBR</h3>
+        <form class="formulario" method="post">
+        {% csrf_token %}
+                          
+        <div class="contenedor">
+                      
+          <div class="input-contenedor">
+              <input type="text" name="nombre_cbr" placeholder="Nombre CBR"  style="width: 400px">
+          </div>
+            
+          <div class="input-contenedor">
+              <input type="email" name="correo_cbr" placeholder="Correo CBR" style="width: 400px">
+          </div>
+            
+          <div class="input-contenedor">
+              <input type="tel" name="telefono" placeholder="Telefono CBR"  style="width: 400px">
+        </div>
+          
+
+        <!--PASARLE EL HORARIO DE ATENCION-->
+        <div class="input-group">
+          <select class="selectpicker show-tick" name="cmbHorario" id="inputGroupSelect04" style="width: 410px">
+            <option selected>Seleccione un horario...</option>
+            {% for a in aten %}
+              {% if a.id_horario %}
+            <option value="{{a.pk}}">Lunes a Viernes de 08:00 a 15:00 hrs</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+                        
+        
+        <div class="input-contenedor">
+                      
+            <input type="text" name="calle" placeholder="Calle" style="width: 400px">
+        </div>
+          
+        <div class="input-contenedor">
+                              
+            <input type="text" name="numero_lugar" placeholder="# Numeración" style="width: 400px">
+        </div>
+        <!--COMUNA, REGION Y BLABLABLA CON FOR-->
+                      
+        <div class="input-group" >
+          <input list="brow" class="form-select" name="cmbComuna">
+          <datalist id="brow">
+          {% for c in comuna %}
+        <option value="{{c.nombre_comuna}}"></option>
+          {% endfor %}
+          </datalist>
+        </div>
+      </div>
+    </div> 
+</div>
+               
+                    
+</Main>  
+    <div class="d-flex justify-content-center">
+      <input type="submit" value="Guardar" class="btn btn-primary">
+    </div>
+    <br>
+    <div class="d-flex justify-content-center">
+      <a href="{% url 'inicioadmin' %}" class="btn btn-secondary">Volver al inicio</a>
+    </div>
+
+    </form>
+    {{message}}
+</Main>
+
+<div class="whatsapp">
+  <a href="https://wa.me/+56946411039?text=Buenas, tengo una consulta" class="btn-wsp" target="_blank">
+      <i class="fa fa-whatsapp icono"></i>
+  </a>
+</div>
+
+{% endblock %}

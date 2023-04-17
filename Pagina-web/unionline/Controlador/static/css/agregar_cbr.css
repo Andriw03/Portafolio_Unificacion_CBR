@@ -1,0 +1,49 @@
+.contenedor{
+    width: auto;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 15px 20px;
+    margin: auto;
+    font-size: large; 
+    text-align: center;
+    align-content: center;
+    
+}
+
+.input-contenedor{
+    align-items:center;
+    justify-items: auto;
+    padding: 5px;
+    align-content: center;
+    box-sizing: border-box;
+    text-align: center;
+    
+}
+
+.card{
+    width: auto;
+    align-items: center;
+    margin-bottom: 5px;
+    justify-items: auto;
+    padding: 15px;
+    box-sizing: border-box;
+    align-content: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.horario{
+    width: -25px;
+	border-radius:3px;
+	display:inline-block;
+    box-sizing: border-box;
+}
+
+.input-group{
+    width: -25px;
+	border-radius:3px;
+    align-content: center;	
+    box-sizing: border-box;
+}

@@ -1,0 +1,74 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+*{
+    box-sizing: border-box;
+}
+.contenedor{
+    width: 100%;
+    padding: 15px;
+}
+.formulario{
+    margin-top: 150px;
+    padding: 3px;
+    margin-bottom: 140px;
+    background: white;
+}
+h1{
+    padding: 10px;
+    text-align: center;
+    color: #1A2537;
+    font-size: 30px;
+}
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"]{
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: none;
+}
+.input-contenedor{
+    margin-bottom: 15px;
+    
+}
+.icon{
+    min-width: 50px;
+    text-align: center;
+    color: #999;
+}
+.button{
+    border: none;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    background: #393E59;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+footer{
+    position: static; bottom: 0; width: 100%;
+    background-color: #1E4D40;
+    text-align: center;
+    padding:40px;
+    color: white;
+}
+.button:hover{
+    background: #010326;
+}
+@media (min-width:768px) 
+{
+    .formulario{
+        margin: auto;
+        width: 500px;
+        margin-top: 100px;
+        border-radius: 2%;
+        margin-bottom: 100px;
+    }
+}

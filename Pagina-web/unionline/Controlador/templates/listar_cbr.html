@@ -1,0 +1,64 @@
+{% extends 'templates\base_admin.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+  <title>Listado CBR</title>
+  <link rel="stylesheet" href="static/css/perfil-cliente.css">
+</head>
+  <Main>
+    <div class="px-4 py-5  text-center">
+      <img class="d-block mx-auto mb-4" src="{% static 'imagenes\LogoCBR.png' %}" alt="" width="15%" height="15%">
+      <h3 class="display-5 fw-bold">Listado de CBRS</h3>
+      <br>
+      
+      <div>
+<Main>
+
+<div class="tabla">
+  <table name= "tabla-historial"class="table table-striped">
+    <thead  class="table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Nombre CBR</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Horario de Atención</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Opciones</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      
+        {% for c in cbr %}
+      <tr>
+        <td>{{c.nombre_cbr}}</td>
+        <td>{{c.correo_cbr}}</td>
+        <td>{{c.telefono}}</td>
+        <td>{{c.HORARIOS}}</td>
+        <td>{{c.DIR_CBR}}</td>
+        <td> 
+          <a href="{% url 'modificarCbr' c.id_cbr %}" class="btn btn-sm btn-block btn-info">Editar</a>
+        </td>
+        <td>
+          <a href="{% url 'eliminarCbr' c.id_cbr %}" class="btn btn-sm btn-block btn-danger">Eliminar</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<br>
+<br>
+<br>
+
+</Main>
+<div class="whatsapp">
+  <a href="https://wa.me/+56946411039?text=Buenas, tengo una consulta" class="btn-wsp" target="_blank">
+      <i class="fa fa-whatsapp icono"></i>
+  </a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    
+    <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+  
+  <!-- CSS only -->
+  <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+  <!--sweet alert-->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    
+    <header>
+      <div class="arriba">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+              <a href="{% url 'inicioadmin' %}" class="navbar-brand">
+                <h1>CBRS de Chile<span>.</span></h1>
+              </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="{% url 'inicioadmin' %}" class="nav-item nav-link">Inicio</a>
+                        <a href="{% url 'formulario' %}" class="nav-item nav-link">Contacto</a>
+                    </div>
+                        
+                      </div>
+                    </div>
+                    <div class="navbar-nav ms-auto">
+                      {% if user.is_authenticated %}
+                      <div class="dropdown">
+                          <button class="btn dropdown-toggle text-white" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                              Bienvenido {{user.first_name}} {{user.last_name}}
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a href="{% url 'perfil' %}" class="nav-link px-2 dropdown-item">Perfil</a></li>
+                            <li><a href="{% url 'logout' %}" class="nav-link px-2 dropdown-item">Cerrar Sesión</a></li>  
+                          </ul>
+                            
+                        </div>
+                        {% else %}
+                        
+                        <div class="btn-group dropstart">
+                          <a href="#" class="nav-item nav-link" data-bs-toggle="dropdown" aria-expanded="false" > <span><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                          </svg></span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                       
+                          <ul class="dropdown-menu">
+  
+                            <li><a href="{% url 'registrarse' %}" class="dropdown-item nav-item nav-link">Registrarse</a></li>
+                            <li><a href="{% url 'iniciar_sesion' %}" class="dropdown-item nav-item nav-link">Iniciar Sesión</a></li>
+  
+                          </ul>
+                        </div>
+                        
+                       
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+         
+    
+    </header><!-- End Header -->
+    
+      </div>
+      <div class="mensaje">
+        {% if messages %}
+          <ul class="messages">
+            {% for message in messages %}
+              <div class="container-fluid p-0">
+                <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+                  {{ message }}
+                </div>
+              </div>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+
+    {% block content %} 
+    {% endblock %}
+    </main>
+    
+    <br><br><br><br><br><br>
+
+</body>
+
+<footer>
+  <p class="copyright">&copy Copyright Ministerio de Vivienda y Urbanismo - 2022</p>
+</footer>
+
+
+
+</html>

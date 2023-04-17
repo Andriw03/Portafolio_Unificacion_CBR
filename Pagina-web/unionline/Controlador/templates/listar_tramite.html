@@ -1,0 +1,36 @@
+{% extends 'templates\base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <title>Listar trámites</title>
+    <!--- CSS --->
+    <link rel="stylesheet" href="{% static 'css\listar.css' %}">
+</head>
+<br><br><br><br><br><br>
+<main>
+    <div class="container">
+        <div class="row">
+            <!-- Elementos generados a partir del JSON -->
+            <main id="items" class="col-sm-8 row">
+                {% for t in tramite %}
+                <div class="card position-relative" style="min-width: 50%;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{t.nombre_tramite}}</h5>
+                        <br>
+                        <p class="card-text">{{t.descripcion}}</p>
+                        <br>
+                        <p class="card-text">Valor: ${{t.valor_tramite}}.</p>
+                        <br>
+                        <a href="{% url 'solicitar' id=t.pk %}" class="card-link"><button type="button" class="btn btn-outline-secondary">Solicitar</button></a>
+                    </div>
+                </div>
+                {% endfor %}
+            </main>
+        </div>
+    </div>
+    
+</main>
+
+<br><br><br><br><br>
+
+{% endblock %}

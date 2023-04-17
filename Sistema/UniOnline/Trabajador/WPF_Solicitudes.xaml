@@ -1,0 +1,84 @@
+﻿<Window x:Class="UniOnline.Trabajador.WPF_Solicitudes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniOnline.Trabajador"
+        mc:Ignorable="d"
+        Title="CBR UniOnline" Height="700" Width="1020" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="439*"/>
+            <RowDefinition Height="230*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#FF010326" Height="60" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+        <TextBlock Foreground="#FFF0F2F2" FontFamily="Segoe UI Emoji" FontSize="28" MinWidth="265" Margin="5,10,0,0" Grid.RowSpan="2"><Run Language="es-es" Text="CBRS de Chile"/></TextBlock>
+        <TextBlock Foreground="#FF010326" FontFamily="Segoe UI Emoji" FontSize="28" MinWidth="265" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="364,70,364,0"><Run Language="es-es" Text="Generar solicitudes"/></TextBlock>
+        <Grid Margin="0,112,0,0" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <!--Usuario-->
+            <Label Content="Buscar Cliente:" Grid.Column="1" Height="30" Width="120" HorizontalAlignment="Left" FontSize="15"/>
+            <TextBox x:Name="txtBuscarUsu" Grid.Column="1" Grid.ColumnSpan="2" Height="30" Width="120" FontSize="13" VerticalContentAlignment="Center" HorizontalAlignment="Right" Margin="70,0" KeyUp="txtBuscarUsu_KeyUp"/>
+            <Button x:Name="btnBuscarUsu" Content="Buscar Cliente" Grid.Column="2" Grid.ColumnSpan="2" Height="30" Width="100" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnBuscarUsu_Click"/>
+            <Button x:Name="btnRegistrar" Content="Registrar Cliente" Grid.Column="3" Grid.ColumnSpan="2" Height="30" Width="100" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnRegistrar_Click"/>
+            <Label Content="Nombre Cliente:" Grid.Column="1" Grid.Row="1" Height="30" Width="122" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15"/>
+            <TextBox x:Name="txtNombre" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2" Height="30" Width="215" FontSize="13" VerticalContentAlignment="Center" HorizontalAlignment="Left" IsEnabled="False"/>
+            <Label Content="Correo Cliente:" Grid.Column="3" Grid.Row="1" Height="30" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15"/>
+            <TextBox x:Name="txtCorreo" Grid.Column="3" Grid.Row="1" Grid.RowSpan="2" Height="30" Width="159" FontSize="13" VerticalContentAlignment="Center" HorizontalAlignment="Left" IsEnabled="False"/>
+            <Label Content="Telefono Cliente:" Grid.Column="4" Grid.Row="1" Height="30" Width="120" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="15"/>
+            <TextBox x:Name="txtTelefono"  Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2" Height="30" Width="159" FontSize="13" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,75,0" IsEnabled="False"/>
+
+            <!--Propiedad-->
+            <Label Content="Buscar Foja:" Grid.Column="1" Grid.Row="2" Height="30" Width="120" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="15"/>
+            <TextBox x:Name="txtFoja" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Height="30" Width="120" FontSize="13" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="70,0"/>
+            <Button x:Name="btnBuscarFoja" Content="Buscar propiedad" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" Height="30" Width="100" VerticalAlignment="Bottom" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnBuscarFoja_Click"/>
+            <Label Content="Dirección:" Grid.Column="1" Grid.Row="3" Height="30" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15"/>
+            <TextBox x:Name="txtDireccion" Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="4" Height="30" Width="680" IsEnabled="False" FontSize="13" VerticalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="Tipo propiedad:" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="3" Height="30" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="15"/>
+            <TextBox x:Name="txtTipoP" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="4" Height="30" Width="199" IsEnabled="False" HorizontalAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top"  FontSize="15"/>
+            <Label Content="Nombre Dueño:" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" Height="30" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="15"/>
+            <TextBox x:Name="txtDueño" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" Grid.RowSpan="2" Height="30" Width="215" IsEnabled="False" FontSize="13" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <Label Content="Correo Dueño:" Grid.Column="3" Grid.Row="5" Height="30" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15"/>
+            <TextBox x:Name="txtCorreoDuenno" Grid.Column="3" Grid.Row="5" Grid.RowSpan="2" Height="30" Width="159" IsEnabled="False" FontSize="13" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+            <Label Content="Telefono Dueño:" Grid.Column="4" Grid.Row="5" Height="30" Width="120" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="15"/>
+            <TextBox x:Name="txtTelefonoDuenno" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="5" Grid.RowSpan="2" Height="30" Width="159" IsEnabled="False" FontSize="13" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,75,0"/>
+            <!--Tramite-->
+            <Label Content="Tipo de Trámite:" Grid.Column="1" Grid.Row="7" Height="30" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15"/>
+            <ComboBox x:Name="cmbTipoTraS" FontSize="15" Height="30" Width="290" IsEditable="True" Text="Seleccione un tipo de trámite" IsReadOnly="True" Focusable="False" VerticalContentAlignment="Center" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3" Grid.RowSpan="2" SelectionChanged="cmbTipoTraS_SelectionChanged"/>
+            <Label Content="Trámite:" Grid.Column="3" Grid.Row="7" Height="30" Width="120" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="15"/>
+            <ComboBox x:Name="cmbTramiteS" FontSize="15" Height="30" Width="360" IsEditable="True" Text="Seleccione un tipo de trámite" IsReadOnly="True" Focusable="False" VerticalContentAlignment="Center" HorizontalAlignment="Left" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3" Grid.RowSpan="2" SelectionChanged="cmbTramiteS_SelectionChanged"/>
+            <Label Content="Valor Trámite:" Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="2" Height="30" Width="120" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="15"/>
+            <TextBox x:Name="txtValorTra" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="7" Grid.RowSpan="2" Height="30" Width="199" IsEnabled="False" FontSize="13" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+            <!--botones-->
+            <Button x:Name="btnVolver" Content="Volver" Grid.Column="6" Grid.Row="9" Height="30" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnVolver_Click"/>
+            <Button x:Name="btnSolicitud" Content="Solicitar trámite" Grid.Column="1" Grid.Row="9" Height="30" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="#FF393E59" Foreground="#FFF0F2F2" Click="btnSolicitud_Click"/>
+            <Label Name="lblCliente" Content="" Visibility="Hidden"/>
+            <Label Name="lblProp" Content="" Visibility="Hidden"/>
+            <Label Name="lblTra" Content="" Visibility="Hidden"/>
+        </Grid>
+    </Grid>
+</Window>
+
+    

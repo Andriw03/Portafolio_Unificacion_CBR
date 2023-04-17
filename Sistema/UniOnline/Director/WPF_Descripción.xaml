@@ -1,0 +1,35 @@
+﻿<Window x:Class="UniOnline.Director.Descripción"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniOnline.Recepcion"
+        mc:Ignorable="d"
+        Title="Detalles_Solicitud" Height="300" Width="500" ResizeMode="NoResize">
+    <Grid HorizontalAlignment="Left" Width="490" Margin="0,0,0,0.4">
+        <Image Margin="205,10,200,188" Source="/UniOnline;component/LogoCBR.png"/>
+
+        <Button Content="Cerrar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Background="#FF393E59" BorderBrush="#FFF0F2F2" Foreground="#FF96ACAC" Click="Button_Click" RenderTransformOrigin="0.5,0.5" Height="25" Margin="402,235,0,0">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.294"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Label Content="Rut:" HorizontalAlignment="Left" Height="27" Margin="13,85,0,0" VerticalAlignment="Top" Width="30"/>
+        <Label Content="Nombre: " HorizontalAlignment="Left" Height="27" Margin="223,82,0,0" VerticalAlignment="Top" Width="63"/>
+        <Label Content="Asunto:" HorizontalAlignment="Left" Height="27" Margin="13,121,0,0" VerticalAlignment="Top" Width="52"/>
+        <Label Content="Detalle:" HorizontalAlignment="Left" Height="27" Margin="13,153,0,0" VerticalAlignment="Top" Width="52"/>
+        <TextBox x:Name="txtRut" HorizontalAlignment="Left" Height="23" Margin="53,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="286,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <TextBox x:Name="txtAsunto" HorizontalAlignment="Left" Height="23" Margin="65,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="403"/>
+        <TextBox x:Name="txtDetalle" HorizontalAlignment="Left" Height="62" Margin="65,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="403"/>
+        <Button x:Name="btnModificar" Content="Modificar" Background="#FF393E59" BorderBrush="#FFF0F2F2" Foreground="#FF96ACAC" HorizontalAlignment="Left" Margin="13,235,0,0" VerticalAlignment="Top" Height="25" Width="78" Click="Button_Click_1"/>
+        <Button x:Name="btnAprobar" Content="Aprobar solicitud" Background="#FF393E59" BorderBrush="#FFF0F2F2" Foreground="#FF96ACAC" HorizontalAlignment="Left" Margin="108,235,0,0" VerticalAlignment="Top" Height="25" Width="115" Click="Button_Click_2"/>
+        <Button x:Name="btnRechazar" Content="Rechazar solicitud" Background="#FF393E59" BorderBrush="#FFF0F2F2" Foreground="#FF96ACAC" HorizontalAlignment="Left" Margin="228,235,0,0" VerticalAlignment="Top" Height="25" Width="115" Click="Button_Click_3"/>
+
+    </Grid>
+</Window>
